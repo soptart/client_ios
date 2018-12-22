@@ -11,8 +11,13 @@ class HomeTodayVC: UIViewController {
     @IBOutlet  var authorCollection: UICollectionView!
     @IBOutlet  var workCollection: UICollectionView!
     
-    //서버 통신 걸 때 변경
+    @IBOutlet var authorLabel: UILabel!
     
+    @IBOutlet var workNameLabel: UILabel!
+    @IBOutlet var workDetailLabel: UILabel!
+    
+    
+    //서버 통신 걸 때 변경
     //작가 콜렉션에 사용할 모델
     var authorList = [Author]()
     
@@ -22,9 +27,9 @@ class HomeTodayVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSetting()
+        setting()
         
-        //작가 콜렉션 스크롤 불가
+        //작가 콜렉션 스크롤 불가하게 막기
         authorCollection.isScrollEnabled = false
         
         
@@ -38,24 +43,31 @@ class HomeTodayVC: UIViewController {
         
     }
     
-    func dataSetting() {
+    func setting() {
         //서버 데이터 통신으로 변경
-        authorList.append(Author(authorImg: "ggobuk", authorName: "하이"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "하이"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "하이"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "하이"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "하이"))
+        authorList.append(Author(authorImg: "ggobuk", authorName: "최윤정"))
+        authorList.append(Author(authorImg: "ggobuk", authorName: "이세은"))
+        authorList.append(Author(authorImg: "ggobuk", authorName: "윤여진"))
+        authorList.append(Author(authorImg: "ggobuk", authorName: "한선민"))
+        authorList.append(Author(authorImg: "ggobuk", authorName: "김정음"))
 
-        workList.append(Work(workImg: "ggobuk",workName: "이름1", workDetail: "설명1"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름2", workDetail: "설명2"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름3", workDetail: "설명3"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름4", workDetail: "설명4"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름5", workDetail: "설명5"))
+        workList.append(Work(workImg: "ggobuk",workName: "이름1", workDetail: "2017년 작"))
+        workList.append(Work(workImg: "ggobuk",workName: "이름2", workDetail: "2018년 작"))
+        workList.append(Work(workImg: "ggobuk",workName: "이름3", workDetail: "2019년 작"))
+        workList.append(Work(workImg: "ggobuk",workName: "이름4", workDetail: "2020년 작"))
+        workList.append(Work(workImg: "ggobuk",workName: "이름5", workDetail: "2021년 작"))
 
-    }
+        //통신 성공 시 label에 값들 넣어줌 -> 아닐시에도 처리해야함
+         let firstAuth = authorList[0].authorName
+            authorLabel.text = firstAuth + " 작가"
+        let firstWork = workList[0]
+        workNameLabel.text = firstWork.workName
+        workDetailLabel.text = firstWork.workDetail
+
+}
+    
     
 }
-
 //CollectionView를 위한 Extension
 extension HomeTodayVC : UICollectionViewDataSource {
     
@@ -113,8 +125,8 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: height)
             
         case workCollection:
-            let width = (view.frame.width - 20) / 4
-            let height = (view.frame.height - 40) / 4
+            let width = (view.frame.width - 20) / 3
+            let height = (view.frame.height) / 3
             return CGSize(width: width, height: height)
         default:
             return CGSize(width: 0, height: 0)
@@ -137,11 +149,27 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         case authorCollection:
             return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         case workCollection:
-            return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            return UIEdgeInsets(top: 0, left:0, bottom: 0, right: 0)
         default:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
 
+    }
+    
+    //콜렉션 뷰 아이템 클릭 시 이벤트
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch collectionView {
+        case authorCollection:
+            let authorInfo = authorList[indexPath.row]
+         authorLabel.text = authorInfo.authorName + " 작가"
+        case workCollection:
+            let workInfo =  workList[indexPath.row]
+            workNameLabel.text = workInfo.workName 
+            workDetailLabel.text = workInfo.workDetail
+        default:
+            return
+        }
     }
 }
 
