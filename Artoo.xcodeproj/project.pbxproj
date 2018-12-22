@@ -12,6 +12,10 @@
 		A3CEF95321CE2422000C7938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF95121CE2422000C7938 /* Main.storyboard */; };
 		A3CEF95521CE2423000C7938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF95421CE2423000C7938 /* Assets.xcassets */; };
 		A3CEF95821CE2423000C7938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF95621CE2423000C7938 /* LaunchScreen.storyboard */; };
+		A3CEF96021CE2A0A000C7938 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF95F21CE2A0A000C7938 /* Home.storyboard */; };
+		A3CEF96221CE2A5D000C7938 /* Art.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF96121CE2A5D000C7938 /* Art.storyboard */; };
+		A3CEF96421CE2A6A000C7938 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */; };
+		A3CEF96621CE2A78000C7938 /* Exhibit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		A3CEF95421CE2423000C7938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3CEF95721CE2423000C7938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3CEF95921CE2423000C7938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3CEF95F21CE2A0A000C7938 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		A3CEF96121CE2A5D000C7938 /* Art.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Art.storyboard; sourceTree = "<group>"; };
+		A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
+		A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exhibit.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		A3CEF94C21CE2421000C7938 /* Artoo */ = {
 			isa = PBXGroup;
 			children = (
+				A3CEF96921CE2E39000C7938 /* Util */,
+				A3CEF96821CE2E2A000C7938 /* VC */,
+				A3CEF96721CE2DF5000C7938 /* Storyboard */,
 				A3CEF94D21CE2421000C7938 /* AppDelegate.swift */,
-				A3CEF94F21CE2422000C7938 /* ViewController.swift */,
-				A3CEF95121CE2422000C7938 /* Main.storyboard */,
 				A3CEF95421CE2423000C7938 /* Assets.xcassets */,
 				A3CEF95621CE2423000C7938 /* LaunchScreen.storyboard */,
 				A3CEF95921CE2423000C7938 /* Info.plist */,
 			);
 			path = Artoo;
+			sourceTree = "<group>";
+		};
+		A3CEF96721CE2DF5000C7938 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF95121CE2422000C7938 /* Main.storyboard */,
+				A3CEF95F21CE2A0A000C7938 /* Home.storyboard */,
+				A3CEF96121CE2A5D000C7938 /* Art.storyboard */,
+				A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */,
+				A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A3CEF96821CE2E2A000C7938 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF94F21CE2422000C7938 /* ViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		A3CEF96921CE2E39000C7938 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +158,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CEF96621CE2A78000C7938 /* Exhibit.storyboard in Resources */,
 				A3CEF95821CE2423000C7938 /* LaunchScreen.storyboard in Resources */,
+				A3CEF96421CE2A6A000C7938 /* Mypage.storyboard in Resources */,
 				A3CEF95521CE2423000C7938 /* Assets.xcassets in Resources */,
+				A3CEF96221CE2A5D000C7938 /* Art.storyboard in Resources */,
 				A3CEF95321CE2422000C7938 /* Main.storyboard in Resources */,
+				A3CEF96021CE2A0A000C7938 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
