@@ -47,6 +47,7 @@ class HomeMainVC: UIViewController {
     }()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView(selected: 0) //기본 뷰 투데이

@@ -14,6 +14,8 @@
 		A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048E221CE50CD0042C4EF /* HomeMainVC.swift */; };
 		A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048E421CE54EE0042C4EF /* Storyboard.swift */; };
 		A30048E721CE57F10042C4EF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048E621CE57F10042C4EF /* Extension.swift */; };
+		A30048EC21CE63370042C4EF /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048EB21CE63370042C4EF /* Author.swift */; };
+		A30048EE21CE63400042C4EF /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048ED21CE63400042C4EF /* Work.swift */; };
 		A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF94D21CE2421000C7938 /* AppDelegate.swift */; };
 		A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF94F21CE2422000C7938 /* ViewController.swift */; };
 		A3CEF95321CE2422000C7938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF95121CE2422000C7938 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		A30048E221CE50CD0042C4EF /* HomeMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainVC.swift; sourceTree = "<group>"; };
 		A30048E421CE54EE0042C4EF /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		A30048E621CE57F10042C4EF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A30048EB21CE63370042C4EF /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		A30048ED21CE63400042C4EF /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		A3CEF94A21CE2421000C7938 /* Artoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CEF94D21CE2421000C7938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3CEF94F21CE2422000C7938 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 				A30048E221CE50CD0042C4EF /* HomeMainVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A30048EA21CE62E10042C4EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A30048EB21CE63370042C4EF /* Author.swift */,
+				A30048ED21CE63400042C4EF /* Work.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A3CEF94121CE2421000C7938 = {
@@ -147,6 +160,7 @@
 		A3CEF96921CE2E39000C7938 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A30048EA21CE62E10042C4EF /* Model */,
 				A30048E421CE54EE0042C4EF /* Storyboard.swift */,
 				A30048E621CE57F10042C4EF /* Extension.swift */,
 			);
@@ -230,8 +244,10 @@
 			files = (
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
 				A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */,
+				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
 				A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */,
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
+				A30048EC21CE63370042C4EF /* Author.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,

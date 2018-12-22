@@ -6,5 +6,5 @@
 import UIKit
 
 class TodayWorkCell: UICollectionViewCell {
-    
+    @IBOutlet weak var workImg: UIImageView!
 }
