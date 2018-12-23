@@ -9,5 +9,6 @@ import Foundation
 struct Author {
     let authorImg:String
     let authorName:String
+    let authorWork:[Work]
 }
  

@@ -20,9 +20,7 @@ class HomeTodayVC: UIViewController {
     //서버 통신 걸 때 변경
     //작가 콜렉션에 사용할 모델
     var authorList = [Author]()
-    
-    //작품 콜렉션에 사용할 모델
-    var workList = [Work]()
+    var authorIndex = 0
     
     
     override func viewDidLoad() {
@@ -37,34 +35,64 @@ class HomeTodayVC: UIViewController {
         authorCollection.delegate = self
         authorCollection.dataSource = self
         
-       //작품 콜렉션 delegate 위임
+        //작품 콜렉션 delegate 위임
         workCollection.delegate = self
         workCollection.dataSource = self
         
     }
     
+    
     func setting() {
+        //데이터 세팅
         //서버 데이터 통신으로 변경
-        authorList.append(Author(authorImg: "ggobuk", authorName: "최윤정"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "이세은"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "윤여진"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "한선민"))
-        authorList.append(Author(authorImg: "ggobuk", authorName: "김정음"))
+        authorList.append( Author (authorImg: "ggobuk", authorName: "최윤정",
+                                 authorWork: [Work(workImg: "ggobuk",workName: "이름1", workDetail: "2017년 작"),
+                                              Work(workImg: "ggobuk",workName: "이름2", workDetail: "2018년 작"),
+                                              Work(workImg: "ggobuk",workName: "이름3", workDetail: "2019년 작"),
+                                              Work(workImg: "ggobuk",workName: "이름4", workDetail: "2020년 작"),
+                                              Work(workImg: "ggobuk",workName: "이름5", workDetail: "2021년 작")] ) )
+        
+        authorList.append( Author (authorImg: "fire", authorName: "이세은",
+                                   authorWork: [Work(workImg: "fire",workName: "이름1", workDetail: "2017년 작"),
+                                                Work(workImg: "fire",workName: "이름2", workDetail: "2018년 작"),
+                                                Work(workImg: "fire",workName: "이름3", workDetail: "2019년 작"),
+                                                Work(workImg: "fire",workName: "이름4", workDetail: "2020년 작"),
+                                                Work(workImg: "fire",workName: "이름5", workDetail: "2021년 작")] ) )
 
-        workList.append(Work(workImg: "ggobuk",workName: "이름1", workDetail: "2017년 작"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름2", workDetail: "2018년 작"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름3", workDetail: "2019년 작"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름4", workDetail: "2020년 작"))
-        workList.append(Work(workImg: "ggobuk",workName: "이름5", workDetail: "2021년 작"))
+        authorList.append( Author (authorImg: "jiu", authorName: "윤여진",
+                                   authorWork: [Work(workImg: "jiu",workName: "이름1", workDetail: "2017년 작"),
+                                                Work(workImg: "jiu",workName: "이름2", workDetail: "2018년 작"),
+                                                Work(workImg: "jiu",workName: "이름3", workDetail: "2019년 작"),
+                                                Work(workImg: "jiu",workName: "이름4", workDetail: "2020년 작"),
+                                                Work(workImg: "jiu",workName: "이름5", workDetail: "2021년 작")] ) )
 
+        authorList.append( Author (authorImg: "king", authorName: "한선민",
+                                   authorWork: [Work(workImg: "king",workName: "이름1", workDetail: "2017년 작"),
+                                                Work(workImg: "king",workName: "이름2", workDetail: "2018년 작"),
+                                                Work(workImg: "king",workName: "이름3", workDetail: "2019년 작"),
+                                                Work(workImg: "king",workName: "이름4", workDetail: "2020년 작"),
+                                                Work(workImg: "king",workName: "이름5", workDetail: "2021년 작")] ) )
+
+        authorList.append( Author (authorImg: "meta", authorName: "김정음",
+                                   authorWork: [Work(workImg: "meta",workName: "이름1", workDetail: "2017년 작"),
+                                                Work(workImg: "meta",workName: "이름2", workDetail: "2018년 작"),
+                                                Work(workImg: "meta",workName: "이름3", workDetail: "2019년 작"),
+                                                Work(workImg: "meta",workName: "이름4", workDetail: "2020년 작"),
+                                                Work(workImg: "meta",workName: "이름5", workDetail: "2021년 작")] ) )
+
+ 
+        
         //통신 성공 시 label에 값들 넣어줌 -> 아닐시에도 처리해야함
-         let firstAuth = authorList[0].authorName
-            authorLabel.text = firstAuth + " 작가"
-        let firstWork = workList[0]
+        let firstAuth = authorList[0]
+        authorLabel.text = firstAuth.authorName + " 작가"
+        
+        guard let firstWork = firstAuth.authorWork.first else{
+            return
+        }
+        
         workNameLabel.text = firstWork.workName
         workDetailLabel.text = firstWork.workDetail
-
-}
+    }
     
     
 }
@@ -86,12 +114,13 @@ extension HomeTodayVC : UICollectionViewDataSource {
     
     //cell에 데이터 세팅
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+        
         
         switch collectionView {
         case authorCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! TodayAuthorCell
             let authorInfo = authorList[indexPath.row]
+            authorIndex = indexPath.row
             cell.authorImg.image = UIImage(named: authorInfo.authorImg)
             cell.authorName.text = authorInfo.authorName
             
@@ -99,7 +128,8 @@ extension HomeTodayVC : UICollectionViewDataSource {
             
         case workCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkCell", for: indexPath) as! TodayWorkCell
-            let workInfo = workList[indexPath.row]
+            print(authorIndex)
+            let workInfo = authorList[authorIndex].authorWork[indexPath.row]
             cell.workImg.image = UIImage(named: workInfo.workImg)
             
             return cell
@@ -109,7 +139,7 @@ extension HomeTodayVC : UICollectionViewDataSource {
         
     }
     
-
+    
 }
 
 
@@ -132,7 +162,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
             return CGSize(width: 0, height: 0)
         }
         
-     
+        
     }
     
     //하나의 행에 있는 아이템들의 가로간격
@@ -145,7 +175,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
     //섹션 내부 여백
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch collectionView {
-            //사이즈 재조정 필요
+        //사이즈 재조정 필요
         case authorCollection:
             return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         case workCollection:
@@ -153,18 +183,22 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         default:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
-
+        
     }
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         switch collectionView {
+            
         case authorCollection:
+            authorIndex = indexPath.row
+            workCollection.reloadData()
+            
             let authorInfo = authorList[indexPath.row]
-         authorLabel.text = authorInfo.authorName + " 작가"
+            authorLabel.text = authorInfo.authorName + " 작가"
         case workCollection:
-            let workInfo =  workList[indexPath.row]
+            let workInfo =  authorList[authorIndex].authorWork[indexPath.row]
             workNameLabel.text = workInfo.workName 
             workDetailLabel.text = workInfo.workDetail
         default:
