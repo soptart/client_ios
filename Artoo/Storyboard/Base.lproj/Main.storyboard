@@ -72,30 +72,31 @@
         <!--Home-->
         <scene sceneID="4R8-zX-nJQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdJ-uR-VDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aU1-de-con" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="aU1-de-con" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="n4a-w0-56f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="voY-cR-NGy">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uw3-kN-tS5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="bSs-pv-Qoa" kind="relationship" relationship="rootViewController" id="CDK-DU-rym"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdJ-uR-VDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="413.60000000000002" y="-947.67616191904051"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="bw8-ey-kKM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Moh-F5-fqx" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Moh-F5-fqx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="MyPage" id="oe7-IZ-rxf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jX4-uJ-reL">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -110,11 +111,10 @@
         <!--Art-->
         <scene sceneID="pPL-2e-Gji">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YfL-w9-Kx6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YfL-w9-Kx6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Art" id="qTE-yx-vbN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9tE-iO-eFN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -129,11 +129,10 @@
         <!--Exhibit-->
         <scene sceneID="cAb-oy-OEg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T6a-pY-KQb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="T6a-pY-KQb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Exhibit" id="yMQ-KS-c6h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p3h-cf-ZnR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

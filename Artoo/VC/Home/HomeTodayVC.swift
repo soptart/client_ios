@@ -22,7 +22,6 @@ class HomeTodayVC: UIViewController {
     var authorList = [Author]()
     var authorIndex = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setting()
@@ -120,7 +119,6 @@ extension HomeTodayVC : UICollectionViewDataSource {
         case authorCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! TodayAuthorCell
             let authorInfo = authorList[indexPath.row]
-            authorIndex = indexPath.row
             cell.authorImg.image = UIImage(named: authorInfo.authorImg)
             cell.authorName.text = authorInfo.authorName
             
