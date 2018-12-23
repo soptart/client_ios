@@ -45,18 +45,18 @@ class HomeTodayVC: UIViewController {
         //데이터 세팅
         //서버 데이터 통신으로 변경
         authorList.append( Author (authorImg: "ggobuk", authorName: "최윤정",
-                                 authorWork: [Work(workImg: "ggobuk",workName: "이름1", workDetail: "2017년 작"),
-                                              Work(workImg: "ggobuk",workName: "이름2", workDetail: "2018년 작"),
-                                              Work(workImg: "ggobuk",workName: "이름3", workDetail: "2019년 작"),
-                                              Work(workImg: "ggobuk",workName: "이름4", workDetail: "2020년 작"),
-                                              Work(workImg: "ggobuk",workName: "이름5", workDetail: "2021년 작")] ) )
+                                 authorWork: [Work(workImg: "ggobuk",workName: "꼬북1", workDetail: "2017년 작"),
+                                              Work(workImg: "ggobuk",workName: "꼬북2", workDetail: "2018년 작"),
+                                              Work(workImg: "ggobuk",workName: "꼬북3", workDetail: "2019년 작"),
+                                              Work(workImg: "ggobuk",workName: "꼬북4", workDetail: "2020년 작"),
+                                              Work(workImg: "ggobuk",workName: "꼬북5", workDetail: "2021년 작")] ) )
         
         authorList.append( Author (authorImg: "fire", authorName: "이세은",
-                                   authorWork: [Work(workImg: "fire",workName: "이름1", workDetail: "2017년 작"),
-                                                Work(workImg: "fire",workName: "이름2", workDetail: "2018년 작"),
-                                                Work(workImg: "fire",workName: "이름3", workDetail: "2019년 작"),
-                                                Work(workImg: "fire",workName: "이름4", workDetail: "2020년 작"),
-                                                Work(workImg: "fire",workName: "이름5", workDetail: "2021년 작")] ) )
+                                   authorWork: [Work(workImg: "fire",workName: "파이리1", workDetail: "2017년 작"),
+                                                Work(workImg: "fire",workName: "파이리2", workDetail: "2018년 작"),
+                                                Work(workImg: "fire",workName: "파이리3", workDetail: "2019년 작"),
+                                                Work(workImg: "fire",workName: "파이리4", workDetail: "2020년 작"),
+                                                Work(workImg: "fire",workName: "파이리5", workDetail: "2021년 작")] ) )
 
         authorList.append( Author (authorImg: "jiu", authorName: "윤여진",
                                    authorWork: [Work(workImg: "jiu",workName: "이름1", workDetail: "2017년 작"),
@@ -192,7 +192,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         case authorCollection:
             authorIndex = indexPath.row
             workCollection.reloadData()
-            
+            selectCellInit()
             let authorInfo = authorList[indexPath.row]
             authorLabel.text = authorInfo.authorName + " 작가"
         case workCollection:
@@ -203,5 +203,19 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
             return
         }
     }
+    
+    func selectCellInit() {
+        //작가 클릭 시 아래 작품 콜렉션뷰 reload와 동시에 첫번째 작품으로
+        //이름과 작품설명이 바뀌어야 함
+        
+        if let firstWork = authorList[authorIndex].authorWork.first {
+            workNameLabel.text = firstWork.workName
+            workDetailLabel.text = firstWork.workDetail
+        } else {
+            workNameLabel.text = "작품 이름이 없습니다"
+            workDetailLabel.text = "작품 설명이 없습니다."
+        }
+    }
+    
 }
 
