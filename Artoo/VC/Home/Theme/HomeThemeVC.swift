@@ -48,7 +48,6 @@ extension HomeThemeVC : UITableViewDataSource {
         let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! HomeThemeTCell
         
         tableIndex = indexPath.row
-        cell.reloadCollection()
         
         //테이블 인덱스에 따라 콜렉션 뷰의 데이터를 변경해 줌
         let themeData = themeList[indexPath.row]
@@ -63,7 +62,6 @@ extension HomeThemeVC : UITableViewDataSource {
         cell.detailBtn.addTarget(self, action: #selector(detailBtnClick), for: .touchUpInside)
         
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-    cell.reloadCollection()
         
         return cell
     }
@@ -157,7 +155,7 @@ extension HomeThemeVC {
     
     
     @objc func detailBtnClick(){
-        navigationController?.pushViewController(themeDetailVC, animated: true)
+        present(themeDetailVC, animated: true, completion: nil)
     }
 
 }

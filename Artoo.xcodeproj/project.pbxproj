@@ -25,6 +25,7 @@
 		A3CEF96221CE2A5D000C7938 /* Art.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF96121CE2A5D000C7938 /* Art.storyboard */; };
 		A3CEF96421CE2A6A000C7938 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */; };
 		A3CEF96621CE2A78000C7938 /* Exhibit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */; };
+		A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5067221D0FC7800BB6E4C /* ThemeDetailCell.swift */; };
 		A3FE1B1021CF6D310073F40F /* HomeThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B0F21CF6D310073F40F /* HomeThemeCell.swift */; };
 		A3FE1B1221CF6D870073F40F /* HomeThemeTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B1121CF6D860073F40F /* HomeThemeTCell.swift */; };
 		A3FE1B1421CF706C0073F40F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B1321CF706C0073F40F /* Theme.swift */; };
@@ -53,6 +54,7 @@
 		A3CEF96121CE2A5D000C7938 /* Art.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Art.storyboard; sourceTree = "<group>"; };
 		A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exhibit.storyboard; sourceTree = "<group>"; };
+		A3D5067221D0FC7800BB6E4C /* ThemeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailCell.swift; sourceTree = "<group>"; };
 		A3FE1B0F21CF6D310073F40F /* HomeThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeCell.swift; sourceTree = "<group>"; };
 		A3FE1B1121CF6D860073F40F /* HomeThemeTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeTCell.swift; sourceTree = "<group>"; };
 		A3FE1B1321CF706C0073F40F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -95,14 +97,9 @@
 		A30048D921CE4F3E0042C4EF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */,
-				A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */,
-				A30048DE21CE50960042C4EF /* HomeTodayVC.swift */,
-				A30048E021CE50B40042C4EF /* HomeThemeVC.swift */,
+				A3D5067121D0FC2900BB6E4C /* Today */,
+				A3D5067021D0FC2100BB6E4C /* Theme */,
 				A30048E221CE50CD0042C4EF /* HomeMainVC.swift */,
-				A3FE1B0F21CF6D310073F40F /* HomeThemeCell.swift */,
-				A3FE1B1121CF6D860073F40F /* HomeThemeTCell.swift */,
-				A3FE1B1721CF801F0073F40F /* ThemeDetailVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -182,6 +179,28 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		A3D5067021D0FC2100BB6E4C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A3FE1B1121CF6D860073F40F /* HomeThemeTCell.swift */,
+				A3FE1B1721CF801F0073F40F /* ThemeDetailVC.swift */,
+				A3FE1B0F21CF6D310073F40F /* HomeThemeCell.swift */,
+				A30048E021CE50B40042C4EF /* HomeThemeVC.swift */,
+				A3D5067221D0FC7800BB6E4C /* ThemeDetailCell.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A3D5067121D0FC2900BB6E4C /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */,
+				A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */,
+				A30048DE21CE50960042C4EF /* HomeTodayVC.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,6 +278,7 @@
 			files = (
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
 				A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */,
+				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				A3FE1B1021CF6D310073F40F /* HomeThemeCell.swift in Sources */,
 				A3FE1B1221CF6D870073F40F /* HomeThemeTCell.swift in Sources */,
 				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
