@@ -20,15 +20,27 @@ class HomeThemeTCell: UITableViewCell {
     //이미지 나타낼 콜렉션 뷰
     @IBOutlet weak var themeCollectionView: UICollectionView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //콜렉션 뷰 처리 - MVC를 해야 해서 여기서 Extension으로 콜렉션 뷰 처리하는 것은 옳지 않음
+    //컨트롤러에서 처리하도록 해야함
+    func setCollectionViewDataSourceDelegate
+        <D: UICollectionViewDataSource & UICollectionViewDelegate>
+        (dataSourceDelegate: D, forRow row: Int) {
+        
+        themeCollectionView.delegate = dataSourceDelegate
+        themeCollectionView.dataSource = dataSourceDelegate
+        
+        themeCollectionView.tag = row
+        themeCollectionView.reloadData()
     }
-
+    
+    func reloadCollection(){
+        themeCollectionView.reloadData()
+    }
 }
+
+
