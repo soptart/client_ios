@@ -8,5 +8,5 @@ import UIKit
 
 
 class ThemeDetailCell: UICollectionViewCell {
-    
+    @IBOutlet weak var themeDetailImg: UIImageView!
 }

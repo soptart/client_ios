@@ -187,6 +187,9 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="themeDetailImg" destination="ufB-vd-wun" id="TVe-AH-twB"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -222,6 +225,7 @@
                     </view>
                     <connections>
                         <outlet property="closeBtn" destination="izP-Oz-ETY" id="ylH-Yb-0K2"/>
+                        <outlet property="detailCollectionView" destination="ysw-Zx-k6L" id="RDV-0G-gh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXK-hQ-Pyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
