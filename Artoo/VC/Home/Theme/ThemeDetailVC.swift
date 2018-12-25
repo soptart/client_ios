@@ -16,8 +16,8 @@ class ThemeDetailVC: UIViewController {
         super.viewDidLoad()
 
         closeBtn.addTarget(self, action: #selector(closeDetail), for: .touchUpInside)
-        detailCollectionView.delegate = self
-        detailCollectionView.dataSource = self
+//        detailCollectionView.delegate = self
+//        detailCollectionView.dataSource = self
     }
     
 
@@ -29,22 +29,22 @@ extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
 }
 
 
-extension ThemeDetailVC : UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-    
- 
-    
-}
+//extension ThemeDetailVC : UICollectionViewDataSource {
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 2
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+//
+//
+//
+//}
 
 
 
