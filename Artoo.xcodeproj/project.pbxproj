@@ -12,6 +12,8 @@
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
 		5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606CD21D4C41B00C216FD /* Pinterest.swift */; };
 		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
+		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
+		5DB606D621D55CB400C216FD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D521D55CB400C216FD /* Filter.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
 		A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */; };
 		A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DE21CE50960042C4EF /* HomeTodayVC.swift */; };
@@ -44,6 +46,8 @@
 		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
 		5DB606CD21D4C41B00C216FD /* Pinterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pinterest.swift; path = Artoo/VC/Art/Pinterest.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
+		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
+		5DB606D521D55CB400C216FD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Artoo/Util/Model/Filter.swift; sourceTree = SOURCE_ROOT; };
 		A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAuthorCell.swift; sourceTree = "<group>"; };
 		A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkCell.swift; sourceTree = "<group>"; };
 		A30048DE21CE50960042C4EF /* HomeTodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayVC.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		A30048D821CE4F3B0042C4EF /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				5DB606D321D5286900C216FD /* BuyVC.swift */,
 				5D4607D521D3888900C787AC /* All_ArtViewController.swift */,
 				5D4607D721D3976600C787AC /* FilterViewController.swift */,
 				5D4607D921D4892000C787AC /* AllImageCell.swift */,
@@ -127,6 +132,7 @@
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
 				A3FE1B1521CF73760073F40F /* ThemeImg.swift */,
 				5DB606D121D4FF3600C216FD /* ArtImg.swift */,
+				5DB606D521D55CB400C216FD /* Filter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,8 +310,10 @@
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				5D4607D621D3888900C787AC /* All_ArtViewController.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
+				5DB606D621D55CB400C216FD /* Filter.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
 				5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */,
+				5DB606D421D5286900C216FD /* BuyVC.swift in Sources */,
 				5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */,
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,

@@ -6,4 +6,8 @@
 //  Copyright © 2018 홍정민. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct ArtImg {
+    let artImg:String//이미지 url
+}
