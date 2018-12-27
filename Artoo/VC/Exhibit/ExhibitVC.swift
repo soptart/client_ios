@@ -24,6 +24,16 @@ class ExhibitVC: UIViewController {
     //쓰레기 데이터
     var exhibitList: [Exhibit] = []
     
+    //투데이 화면 관리 컨트롤러
+    private lazy var homeTodayVC: HomeTodayVC = {
+        let storyboard = Storyboard.shared().exhibitStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: HomeTodayVC.reuseIdentifier) as! HomeTodayVC
+        
+        
+        return viewController
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +45,15 @@ class ExhibitVC: UIViewController {
 }
 
 extension ExhibitVC : UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let nextVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+//        let music = musicList[indexPath.row]
+//        nextVC.albumImg = music.albumImg
+//        nextVC.musicTitle = music.musicTitle
+//        nextVC.singer = music.singer
+//        navigationController?.pushViewController(nextVC, animated: true)
+
+    }
 }
 
 extension ExhibitVC : UITableViewDataSource {
@@ -61,8 +79,9 @@ extension ExhibitVC : UITableViewDataSource {
             //전시이미지가 없을 시에 이미지
             cell.exhibitImg.image = UIImage(named: "ggobuk")}
         return cell
-
     }
+    
+
     
     
 }
