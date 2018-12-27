@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D4607D621D3888900C787AC /* All_ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D521D3888900C787AC /* All_ArtViewController.swift */; };
 		5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D721D3976600C787AC /* FilterViewController.swift */; };
+		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
 		A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */; };
 		A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DE21CE50960042C4EF /* HomeTodayVC.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		5D4607D521D3888900C787AC /* All_ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_ArtViewController.swift; sourceTree = "<group>"; };
 		5D4607D721D3976600C787AC /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = Artoo/VC/Art/FilterViewController.swift; sourceTree = SOURCE_ROOT; };
+		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
 		A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAuthorCell.swift; sourceTree = "<group>"; };
 		A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkCell.swift; sourceTree = "<group>"; };
 		A30048DE21CE50960042C4EF /* HomeTodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayVC.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				5D4607D521D3888900C787AC /* All_ArtViewController.swift */,
 				5D4607D721D3976600C787AC /* FilterViewController.swift */,
+				5D4607D921D4892000C787AC /* AllImageCell.swift */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
 				A30048EC21CE63370042C4EF /* Author.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
+				5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				5D4607D621D3888900C787AC /* All_ArtViewController.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,

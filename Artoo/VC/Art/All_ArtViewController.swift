@@ -14,14 +14,23 @@ class All_ArtViewController: UIViewController {
     @IBOutlet weak var figureLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     
+    @IBOutlet weak var imageCollection: UICollectionView!
+    
     var sData: String?
     var fData: String?
     var cData: String?
+    
+    var image = [String]() //컬렉션 뷰를 위한 이미지
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         // Do any additional setup after loading the view.
+        
+        image = ["heartFull","heartEmpty","sopt_DoIT","exhibit","sopt_23rd_logo","ggobuk"]
+        
+        imageCollection.dataSource = self
+//        imageCollection.delegate = self
     }
     
     func setup() {
@@ -51,4 +60,43 @@ class All_ArtViewController: UIViewController {
     }
     
     
+}
+
+//collectionView extension확장기능
+extension All_ArtViewController : UICollectionViewDataSource{
+    
+    //섹션 당 아이템 몇개 보여줄래?
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return image.count //2개
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
+        
+        let image = UIImage(named:self.image[indexPath.row])
+        cell.showImg.image = image
+        
+        return cell
+    }
+    
+}
+
+extension All_ArtViewController:
+UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width: CGFloat = view.frame.width
+        
+        let img = UIImage(named:self.image[indexPath.row])
+        
+        let height: CGFloat = img!.size.height
+        
+        return CGSize(width: width, height: height)
+    }
 }
