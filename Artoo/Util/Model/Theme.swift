@@ -1,16 +1,14 @@
 //
 //  Theme.swift
 //  Artoo
-///홈 - 테마 모델, 수정 필요
+//
 
 
 import Foundation
 
 struct Theme {
-  
-    let tagImg:[String]
-    let recommandStr:String
-    let recommandImg:[String]
-    let themeImg:[String]
-    
+    let mainTag:String
+    let subTag:String
+    let themeImg:[ThemeImg]
+    //themeImg는 서버에서 주는 형태로 변경해야함
 }

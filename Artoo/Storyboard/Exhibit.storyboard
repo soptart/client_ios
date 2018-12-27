@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="449" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-lb-hHi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-lb-hHi">
                                 <rect key="frame" x="0.0" y="157" width="375" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExhibitCell" rowHeight="450" id="vP1-dz-8yd" customClass="ExhibitCell" customModule="Artoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="450"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExhibitCell" rowHeight="400" id="vP1-dz-8yd" customClass="ExhibitCell" customModule="Artoo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vP1-dz-8yd" id="vyN-PA-KBj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="449.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exhibit" translatesAutoresizingMaskIntoConstraints="NO" id="XJS-R0-fUk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -88,6 +88,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-Wp-wFy">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-Ze-2KJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -153,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="black" width="375" height="667"/>
         <image name="exhibit" width="844" height="1056"/>
         <image name="exhibitname" width="542" height="206"/>
         <image name="fire" width="498" height="381"/>
