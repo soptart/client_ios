@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--All Art View Controller-->
         <scene sceneID="k3h-Av-hBJ">
             <objects>
-                <viewController id="i1D-R2-t6c" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="all" id="i1D-R2-t6c" customClass="All_ArtViewController" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zhk-6U-Bgw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +71,9 @@
                                 <rect key="frame" x="335" y="103" width="15" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="B"/>
+                                <connections>
+                                    <action selector="filterBtn:" destination="i1D-R2-t6c" eventType="touchUpInside" id="LJp-Z8-H5G"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="55개의 작품을 찾았어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zI-Y1-Taa">
                                 <rect key="frame" x="19" y="154" width="217" height="29"/>
@@ -84,15 +87,20 @@
                         <viewLayoutGuide key="safeArea" id="VZh-hL-poz"/>
                     </view>
                     <navigationItem key="navigationItem" id="QOD-uc-ySB"/>
+                    <connections>
+                        <outlet property="categoryLabel" destination="dmY-wN-ssS" id="bO1-YX-juy"/>
+                        <outlet property="figureLabel" destination="iKY-Sx-pgq" id="Uhx-Td-dKv"/>
+                        <outlet property="sizeLabel" destination="805-aC-337" id="Ixp-1y-Igu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzL-7r-uLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="-144.3778110944528"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter-->
         <scene sceneID="sZ3-Vu-CWx">
             <objects>
-                <viewController id="vZ5-eG-ZJ1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="filter" id="vZ5-eG-ZJ1" userLabel="Filter" customClass="FilterViewController" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HhZ-aa-U6q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +166,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-Zy-ovY">
                                         <rect key="frame" x="0.0" y="0.0" width="157" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J16-05-2OR">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J16-05-2OR">
                                                 <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="66" id="KJl-qY-N4y"/>
@@ -168,7 +176,7 @@
                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJW-IU-4VD">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJW-IU-4VD">
                                                 <rect key="frame" x="91" y="0.0" width="66" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0Eq-qQ-oPU"/>
@@ -183,7 +191,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SPF-re-ABX">
                                         <rect key="frame" x="0.0" y="63" width="157" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-kl-miG">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-kl-miG">
                                                 <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="66" id="6Mu-mZ-fm2"/>
@@ -193,7 +201,7 @@
                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-UY-hTN">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-UY-hTN">
                                                 <rect key="frame" x="91" y="0.0" width="66" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="a6f-Kf-pf4"/>
@@ -214,7 +222,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tMI-lI-Ems">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="68"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20k-Hm-wrj">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20k-Hm-wrj">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="68"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="4Ug-cR-HY0"/>
@@ -323,7 +331,7 @@
                                 <rect key="frame" x="14" y="518" width="215" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Xp-BXh">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Xp-BXh">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="axU-uZ-loO"/>
@@ -346,12 +354,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHB-F6-uRX">
-                                <rect key="frame" x="0.0" y="628" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="597" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="찾기">
                                     <color key="titleColor" red="0.99259229270000005" green="0.99259229270000005" blue="0.99259229270000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="findBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="czK-9H-cij"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
