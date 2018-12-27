@@ -10,6 +10,8 @@
 		5D4607D621D3888900C787AC /* All_ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D521D3888900C787AC /* All_ArtViewController.swift */; };
 		5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D721D3976600C787AC /* FilterViewController.swift */; };
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
+		5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606CD21D4C41B00C216FD /* Pinterest.swift */; };
+		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
 		A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */; };
 		A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DE21CE50960042C4EF /* HomeTodayVC.swift */; };
@@ -40,6 +42,8 @@
 		5D4607D521D3888900C787AC /* All_ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_ArtViewController.swift; sourceTree = "<group>"; };
 		5D4607D721D3976600C787AC /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = Artoo/VC/Art/FilterViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
+		5DB606CD21D4C41B00C216FD /* Pinterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pinterest.swift; path = Artoo/VC/Art/Pinterest.swift; sourceTree = SOURCE_ROOT; };
+		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
 		A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAuthorCell.swift; sourceTree = "<group>"; };
 		A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkCell.swift; sourceTree = "<group>"; };
 		A30048DE21CE50960042C4EF /* HomeTodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayVC.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				5D4607D521D3888900C787AC /* All_ArtViewController.swift */,
 				5D4607D721D3976600C787AC /* FilterViewController.swift */,
 				5D4607D921D4892000C787AC /* AllImageCell.swift */,
+				5DB606CD21D4C41B00C216FD /* Pinterest.swift */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				A30048ED21CE63400042C4EF /* Work.swift */,
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
 				A3FE1B1521CF73760073F40F /* ThemeImg.swift */,
+				5DB606D121D4FF3600C216FD /* ArtImg.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,12 +305,14 @@
 				5D4607D621D3888900C787AC /* All_ArtViewController.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
+				5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */,
 				5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */,
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,
 				A3FE1B1421CF706C0073F40F /* Theme.swift in Sources */,
+				5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

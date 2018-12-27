@@ -24,6 +24,9 @@ class All_ArtViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let layout = imageCollection?.collectionViewLayout as? PinterLayout{
+            layout.delegate = self
+        }
         setup()
         // Do any additional setup after loading the view.
         
@@ -31,7 +34,10 @@ class All_ArtViewController: UIViewController {
         
         imageCollection.dataSource = self
 //        imageCollection.delegate = self
+        
     }
+    
+    
     
     func setup() {
         //전달받은 data에 값이 있다면 label의 text를 설정해 줍니다.
@@ -53,13 +59,10 @@ class All_ArtViewController: UIViewController {
         
        guard let fVC =
         storyboard?.instantiateViewController(withIdentifier: "filter") as? FilterViewController else{ return }
-        
         navigationController?.pushViewController(fVC, animated: true)
-        
-        
+
     }
-    
-    
+ 
 }
 
 //collectionView extension확장기능
@@ -87,16 +90,26 @@ extension All_ArtViewController : UICollectionViewDataSource{
     
 }
 
-extension All_ArtViewController:
-UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//extension All_ArtViewController:
+//UICollectionViewDelegateFlowLayout{
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let width: CGFloat = view.frame.width
+//
+//        let img = UIImage(named:self.image[indexPath.row])
+//
+//        let height: CGFloat = img!.size.height
+//
+//        return CGSize(width: width, height: height)
+//    }
+//}
 
-        let width: CGFloat = view.frame.width
+extension All_ArtViewController: PinterestLayoutDelegate{
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat{
         
         let img = UIImage(named:self.image[indexPath.row])
-        
-        let height: CGFloat = img!.size.height
-        
-        return CGSize(width: width, height: height)
+        return img!.size.height
+        //return image[indexPath.item].image.size.height
+        //return photos[indexPath.item].image.size.height
     }
 }

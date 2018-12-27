@@ -106,6 +106,7 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <size key="customSize" width="107" height="117"/>
                                         <connections>
                                             <outlet property="showImg" destination="JTv-Lq-SeL" id="rOs-mP-4jA"/>
                                         </connections>
