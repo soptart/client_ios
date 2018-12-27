@@ -24,12 +24,25 @@ class ExhibitVC: UIViewController {
     //쓰레기 데이터
     var exhibitList: Exhibit?
     
+    //전시 신청 VC
+    private lazy var exhibitApplyVC : ExhibitApplyVC = {
+        let storyboard = Storyboard.shared().exhibitStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: ExhibitApplyVC.reuseIdentifier) as! ExhibitApplyVC
+        
+        return viewController
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setData()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        setData()
+        
+        exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
     }
     
 }
@@ -66,6 +79,11 @@ extension ExhibitVC : UITableViewDataSource {
 }
 
 extension ExhibitVC {
+
+    //전시 신청하는 창 띄우기
+    @objc func goApply(){
+        present(exhibitApplyVC, animated: true)
+    }
     
     //초기 데이터 세팅
     func setData(){

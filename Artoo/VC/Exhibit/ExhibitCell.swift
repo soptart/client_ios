@@ -2,13 +2,12 @@
 //  ExhibitCell.swift
 //  Artoo
 //
-//  Created by 홍정민 on 2018. 12. 25..
-//  Copyright © 2018년 홍정민. All rights reserved.
-//
+
+//// 전시 메인 테이블뷰 셀
 
 import UIKit
 
 class ExhibitCell: UITableViewCell {
-    @IBOutlet weak var exhibitImg: UIImageView!
+    @IBOutlet weak var exhibit셀mg: UIImageView!
     
 }
