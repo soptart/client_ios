@@ -10,6 +10,7 @@ class ThemeCell: UITableViewCell {
 
     @IBOutlet weak var themeImg: UIImageView!
     
+    @IBOutlet weak var themeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

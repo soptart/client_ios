@@ -8,9 +8,8 @@ import Foundation
 
 struct Theme {
   
-    let tagImg:[String]
-    let recommandStr:String
-    let recommandImg:[String]
-    let themeImg:[String]
+    let tagStr:[String]
+    let recommand:Recommand
+    let theme:[ThemeDetail]
     
 }

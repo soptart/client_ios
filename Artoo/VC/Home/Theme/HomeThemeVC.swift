@@ -11,17 +11,27 @@ class HomeThemeVC: UIViewController {
     //태그 콜렉션 뷰
     @IBOutlet weak var tagCV: UICollectionView!
     
+    //추천 테이블 헤더
+    @IBOutlet weak var mainImageView: UICollectionView!
+    
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    @IBOutlet weak var allBtn: UIButton!
+
     //추천 콜렉션 뷰
     @IBOutlet weak var recommandCV: UICollectionView!
     
     //테마 테이블뷰
     @IBOutlet weak var themeTV: UITableView!
     
+    
     //테마 데이터 - 서버 통신 시 수정 필요
     var themeList:Theme?
    
+    
     //태그에 따라 아래 데이터들이 변경되도록
     var tagIndex = 0
+    
     
     //테마 자세히 보는 화면 VC
     private lazy var themeDetailVC : ThemeDetailVC = {
@@ -36,6 +46,8 @@ class HomeThemeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
+        
+    
         
         tagCV.delegate = self
         tagCV.dataSource = self
@@ -58,7 +70,7 @@ extension HomeThemeVC : UITableViewDataSource {
     //섹션이 하나라면 그냥 개수를 리턴하면 됨
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let count = themeList?.themeImg.count else {
+        guard let count = themeList?.theme.count else {
             return 1
         }
         return count
@@ -68,10 +80,12 @@ extension HomeThemeVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = themeTV.dequeueReusableCell(withIdentifier: "ThemeCell") as! ThemeCell
         
-        if let themeData = themeList?.themeImg[indexPath.row] {
-            cell.themeImg.image = UIImage(named: themeData)
+        if let themeData = themeList?.theme[indexPath.row] {
+            cell.themeImg.image = UIImage(named: themeData.themeImg)
+            cell.themeLabel.text = themeData.themeStr
         }else {
             cell.themeImg.image = UIImage(named: "ggobuk")
+            cell.themeLabel.text = "정보없음"
         }
        
         return cell
@@ -116,7 +130,7 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     //섹션 내부 여백
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        return UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
         
         
     }
@@ -141,12 +155,12 @@ extension HomeThemeVC : UICollectionViewDataSource {
         
         switch collectionView {
         case tagCV:
-            guard let count = themeList?.tagImg.count else {
+            guard let count = themeList?.tagStr.count else {
                 return 1
             }
             return count
         case recommandCV:
-            guard let count = themeList?.recommandImg.count else {
+            guard let count = themeList?.recommand.recommandImg.count else {
                 return 1
             }
             return count
@@ -163,17 +177,17 @@ extension HomeThemeVC : UICollectionViewDataSource {
         case tagCV:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
            
-            if let data = themeList?.tagImg[indexPath.row]{
-                cell.tagImg.image = UIImage(named: data)
+            if let data = themeList?.tagStr[indexPath.row]{
+                cell.tagStr.text = data
             } else {
-                cell.tagImg.image = UIImage(named: "ggobuk")
+                cell.tagStr.text = "태그 없음"
             }
             
             return cell
             
         case recommandCV:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommandCell", for: indexPath) as! RecommandCell
-            if let data = themeList?.recommandImg[indexPath.row]{
+            if let data = themeList?.recommand.recommandImg[indexPath.row]{
                 cell.recommandImg.image = UIImage(named: data)
             } else {
                 cell.recommandImg.image = UIImage(named: "ggobuk")
@@ -196,10 +210,17 @@ extension HomeThemeVC : UICollectionViewDataSource {
 extension HomeThemeVC {
     func setData() {
         //쓰레기 값, 서버 통신 후 변경
-        themeList = Theme(tagImg: ["tag","tag","tag", "tag", "tag","tag"], recommandStr: "거실에 걸어두면 느낌 있는 그림들",
-              recommandImg: ["recommand", "recommand","recommand", "recommand",
-                             "recommand"],
-              themeImg:["theme", "theme", "theme","theme"])
+
+        themeList = Theme(tagStr: ["따뜻한", "화려한", "아기자기한", "심플한", "등등"],
+                          recommand: Recommand(recommandStr: "거실에 걸어두면 느낌 있는 그림들", recommandImg: ["recommand","recommand", "recommand","recommand","recommand"]),
+                          theme: [ThemeDetail(themeStr: "하이1", themeImg: "theme"), ThemeDetail(themeStr: "하이2", themeImg: "theme"),
+                                   ThemeDetail(themeStr: "하이3", themeImg: "theme"),
+                                    ThemeDetail(themeStr: "하이4", themeImg: "theme"),
+                                     ThemeDetail(themeStr: "하이5", themeImg: "theme")])
+        
+
+  
+        
     }
     
     

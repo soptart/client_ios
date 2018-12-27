@@ -7,6 +7,8 @@
 import UIKit
 
 class TagCell: UICollectionViewCell {
-    //태크 이미지
-    @IBOutlet weak var tagImg: UIImageView!
+
+    //태그 스트링
+    @IBOutlet weak var tagStr: UILabel!
+
 }
