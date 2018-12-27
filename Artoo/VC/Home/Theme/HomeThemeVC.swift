@@ -47,8 +47,6 @@ class HomeThemeVC: UIViewController {
         super.viewDidLoad()
         setData()
         
-    
-        
         tagCV.delegate = self
         tagCV.dataSource = self
         
@@ -57,6 +55,8 @@ class HomeThemeVC: UIViewController {
         
         themeTV.delegate = self
         themeTV.dataSource = self
+        
+        allBtn.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
         
     }
 
@@ -95,8 +95,10 @@ extension HomeThemeVC : UITableViewDataSource {
 
 //테이블 뷰 Delegate
 extension HomeThemeVC : UITableViewDelegate {
-    
-    
+    //테마 테이블 클릭 시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goDetail(index: indexPath.row)
+    }
     
 }
 
@@ -137,9 +139,14 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
+        switch collectionView {
+        case tagCV:
+            goDetail(index: indexPath.row)
+        case recommandCV:
+            print("작품창으로 이동")
+        default:
+            print("hi")
+        }
     }
     
 }
@@ -217,14 +224,14 @@ extension HomeThemeVC {
                                    ThemeDetail(themeStr: "하이3", themeImg: "theme"),
                                     ThemeDetail(themeStr: "하이4", themeImg: "theme"),
                                      ThemeDetail(themeStr: "하이5", themeImg: "theme")])
-        
-
   
         
     }
     
     
-    @objc func detailBtnClick(){
+    //디테일 창으로 이동
+    @objc func goDetail(index:Int){
+        themeDetailVC.index = index
         present(themeDetailVC, animated: true, completion: nil)
     }
 

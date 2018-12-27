@@ -20,6 +20,7 @@
 		A350AD5C21D4BC8D00EC199E /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350AD5B21D4BC8D00EC199E /* ThemeCell.swift */; };
 		A350ADCE21D501CC00EC199E /* Recommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADCD21D501CC00EC199E /* Recommand.swift */; };
 		A350ADD021D501EF00EC199E /* ThemeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADCF21D501EF00EC199E /* ThemeDetail.swift */; };
+		A350ADD221D5161C00EC199E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD121D5161C00EC199E /* Detail.swift */; };
 		A3C4CD1021D3B43E009086AA /* ExhibitEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4CD0F21D3B43E009086AA /* ExhibitEnterVC.swift */; };
 		A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF94D21CE2421000C7938 /* AppDelegate.swift */; };
 		A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF94F21CE2422000C7938 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		A350AD5B21D4BC8D00EC199E /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		A350ADCD21D501CC00EC199E /* Recommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommand.swift; sourceTree = "<group>"; };
 		A350ADCF21D501EF00EC199E /* ThemeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetail.swift; sourceTree = "<group>"; };
+		A350ADD121D5161C00EC199E /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		A3C4CD0F21D3B43E009086AA /* ExhibitEnterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitEnterVC.swift; sourceTree = "<group>"; };
 		A3CEF94A21CE2421000C7938 /* Artoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CEF94D21CE2421000C7938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				A3FCBAA921D20CF200CB8E51 /* Exhibit.swift */,
 				A350ADCD21D501CC00EC199E /* Recommand.swift */,
 				A350ADCF21D501EF00EC199E /* ThemeDetail.swift */,
+				A350ADD121D5161C00EC199E /* Detail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				A350AD5A21D4B60300EC199E /* RecommandCell.swift in Sources */,
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
+				A350ADD221D5161C00EC199E /* Detail.swift in Sources */,
 				A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */,
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				A3FE1B1021CF6D310073F40F /* TagCell.swift in Sources */,
