@@ -43,6 +43,7 @@ class HomeThemeVC: UIViewController {
     }()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
@@ -97,7 +98,9 @@ extension HomeThemeVC : UITableViewDataSource {
 extension HomeThemeVC : UITableViewDelegate {
     //테마 테이블 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goDetail(index: indexPath.row)
+        if let index = themeList?.tag[indexPath.row].tagIndex {
+            goDetail(index: index)
+        }
     }
     
 }
@@ -162,7 +165,7 @@ extension HomeThemeVC : UICollectionViewDataSource {
         
         switch collectionView {
         case tagCV:
-            guard let count = themeList?.tagStr.count else {
+            guard let count = themeList?.tag.count else {
                 return 1
             }
             return count
@@ -184,8 +187,8 @@ extension HomeThemeVC : UICollectionViewDataSource {
         case tagCV:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
            
-            if let data = themeList?.tagStr[indexPath.row]{
-                cell.tagStr.text = data
+            if let data = themeList?.tag[indexPath.row]{
+                cell.tagStr.text = data.tagStr
             } else {
                 cell.tagStr.text = "태그 없음"
             }
@@ -218,7 +221,11 @@ extension HomeThemeVC {
     func setData() {
         //쓰레기 값, 서버 통신 후 변경
 
-        themeList = Theme(tagStr: ["따뜻한", "화려한", "아기자기한", "심플한", "등등"],
+        themeList = Theme(tag: [Tag(tagStr: "태그1", tagIndex: 0),
+                                Tag(tagStr: "태그2", tagIndex: 1),
+                                Tag(tagStr: "태그3", tagIndex: 2),
+                                Tag(tagStr: "태그4", tagIndex: 3),
+                                Tag(tagStr: "태그5", tagIndex: 4)],
                           recommand: Recommand(recommandStr: "거실에 걸어두면 느낌 있는 그림들", recommandImg: ["recommand","recommand", "recommand","recommand","recommand"]),
                           theme: [ThemeDetail(themeStr: "하이1", themeImg: "theme"), ThemeDetail(themeStr: "하이2", themeImg: "theme"),
                                    ThemeDetail(themeStr: "하이3", themeImg: "theme"),

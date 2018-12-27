@@ -7,8 +7,7 @@
 import Foundation
 
 struct Theme {
-  
-    let tagStr:[String]
+    let tag:[Tag]
     let recommand:Recommand
     let theme:[ThemeDetail]
     

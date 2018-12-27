@@ -16,13 +16,16 @@ class ThemeDetailVC: UIViewController {
     
     var detailList:Detail?
     
+    override func viewWillAppear(_ animated: Bool) {
+        ////이 태그 인덱스 값을 가지고 서버와 통신해서 detail 모델을 채움
+        print("\(index)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setData()
         
-        ////인덱스 값을 가지고 서버와 통신해서 detail 모델을 채움
-        print("\(index)")
         closeBtn.addTarget(self, action: #selector(closeDetail), for: .touchUpInside)
         
         //콜렉션 뷰 델리게이트 설정
@@ -30,6 +33,7 @@ class ThemeDetailVC: UIViewController {
         detailCollectionView.dataSource = self
     }
     
+
 
 }
 
@@ -117,5 +121,3 @@ extension ThemeDetailVC  {
     }
     
 }
-
-
