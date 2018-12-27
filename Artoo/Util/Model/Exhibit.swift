@@ -9,7 +9,10 @@ import Foundation
 struct Exhibit {
 
     ////모델 수정해야함
-    let exhibitText:String
-    let exhibitDate:String
-    let exhibitImg:[String]
+    
+    //전시 신청 정보
+    let apply: ExhibitApply
+    
+    //전시 관람 정보
+    let exhibit:[ExhibitSee]
 }
