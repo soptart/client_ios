@@ -31,7 +31,7 @@ extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
 
 //extension ThemeDetailVC : UICollectionViewDataSource {
 //    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        <#code#>
+
 //    }
 //
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
