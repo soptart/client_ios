@@ -57,6 +57,8 @@ class ExhibitApplyVC: UIViewController {
         
     }
     
+    
+    //수정 필요
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y / 180
         if offset > 1 {

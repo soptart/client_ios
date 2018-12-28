@@ -24,6 +24,7 @@ class ExhibitVC: UIViewController {
     //쓰레기 데이터
     var exhibitList: Exhibit?
     
+    
     //전시 신청 VC
     private lazy var exhibitApplyVC : ExhibitApplyVC = {
         let storyboard = Storyboard.shared().exhibitStoryboard
@@ -33,6 +34,15 @@ class ExhibitVC: UIViewController {
         return viewController
     }()
 
+    
+    //전시 관람VC
+    private lazy var exhibitEnterVC : ExhibitEnterVC = {
+        let storyboard = Storyboard.shared().exhibitStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: ExhibitEnterVC.reuseIdentifier) as! ExhibitEnterVC
+        
+        return viewController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +58,13 @@ class ExhibitVC: UIViewController {
 }
 
 extension ExhibitVC : UITableViewDelegate {
-    
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
+        present(exhibitEnterVC, animated: true)
+        
+    }
 }
 
 extension ExhibitVC : UITableViewDataSource {

@@ -82,7 +82,7 @@
         <!--Exhibit EnterVC-->
         <scene sceneID="FIP-eA-6OB">
             <objects>
-                <viewController id="dVV-RV-fAs" customClass="ExhibitEnterVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExhibitEnterVC" id="dVV-RV-fAs" customClass="ExhibitEnterVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2io-gQ-Flh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,10 +125,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fKJ-DS-Zgl"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fi6-i9-NAM"/>
+                    <connections>
+                        <outlet property="closeBtn" destination="Xll-DM-SuH" id="7C2-PV-hXS"/>
+                        <outlet property="enterBtn" destination="hKo-Y8-m7X" id="zmE-rc-gDc"/>
+                        <outlet property="mainLabel" destination="uJf-CO-oO4" id="i6N-EK-Q6H"/>
+                        <outlet property="subLabel" destination="Uii-40-T2G" id="YTm-GP-eSM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z94-Ct-hPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="-789.35532233883066"/>
+            <point key="canvasLocation" x="1087" y="-764"/>
         </scene>
         <!--Exhibit ApplyVC-->
         <scene sceneID="isY-JD-Zza">
@@ -369,12 +376,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWu-VU-Ztr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.8" y="-523.53823088455772"/>
+            <point key="canvasLocation" x="1884" y="-389"/>
         </scene>
         <!--Exhibit SeeVC-->
         <scene sceneID="lQL-FD-qV2">
             <objects>
-                <viewController id="s7p-eV-pFP" customClass="ExhibitSeeVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExhibitSeeVC" id="s7p-eV-pFP" customClass="ExhibitSeeVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uy3-9e-KOb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
