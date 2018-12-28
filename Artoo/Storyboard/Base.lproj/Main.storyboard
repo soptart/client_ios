@@ -22,7 +22,7 @@
         <!--Exhibit-->
         <scene sceneID="aoI-ZE-vJn">
             <objects>
-                <viewControllerPlaceholder storyboardName="Exhibit" id="ukQ-WX-sRx" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Exhibit" storyboardName="Exhibit" id="ukQ-WX-sRx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="363-wl-2N3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2e-rd-Na1" userLabel="First Responder" sceneMemberID="firstResponder"/>

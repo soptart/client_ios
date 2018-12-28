@@ -62,7 +62,7 @@ extension ExhibitVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
-        present(exhibitEnterVC, animated: true)
+        navigationController?.pushViewController(exhibitEnterVC, animated: true)
         
     }
 }
