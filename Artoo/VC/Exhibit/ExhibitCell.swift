@@ -8,6 +8,6 @@
 import UIKit
 
 class ExhibitCell: UITableViewCell {
-    @IBOutlet weak var exhibit셀mg: UIImageView!
+    @IBOutlet weak var exhibitImg: UIImageView!
     
 }
