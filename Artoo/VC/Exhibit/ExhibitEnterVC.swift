@@ -47,7 +47,6 @@ extension ExhibitEnterVC {
         navigationController?.pushViewController(exhibitSeeVC, animated: true)
     }
     @objc func closeExhibit(){
-        dismiss(animated: true, completion: nil)
-    }
+        navigationController?.popViewController(animated: true)    }
     
 }

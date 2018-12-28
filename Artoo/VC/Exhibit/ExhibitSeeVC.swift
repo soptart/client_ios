@@ -10,21 +10,17 @@ import UIKit
 
 class ExhibitSeeVC: UIViewController {
 
+    @IBOutlet weak var escapeBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        escapeBtn.addTarget(self, action: #selector(escape), for: .touchUpInside)
+    } 
 
-        // Do any additional setup after loading the view.
+}
+
+extension ExhibitSeeVC {
+   @objc func escape(){
+    navigationController?.popViewController(animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
