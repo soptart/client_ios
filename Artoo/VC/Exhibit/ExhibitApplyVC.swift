@@ -8,6 +8,10 @@ import UIKit
 
 class ExhibitApplyVC: UIViewController {
     
+    @IBOutlet weak var applyScrollView: UIScrollView!
+    
+    //신청 버튼
+    @IBOutlet weak var applyBtn: UIButton!
     
     //전시 테이블뷰
     @IBOutlet weak var exhibitTV: UITableView!
@@ -15,7 +19,6 @@ class ExhibitApplyVC: UIViewController {
     //내 작품 컬렉션뷰
     @IBOutlet weak var myWorkCV: UICollectionView!
     
-
     //닫기 버튼
     @IBOutlet weak var closeBtn: UIButton!
     
@@ -44,13 +47,99 @@ class ExhibitApplyVC: UIViewController {
         closeBtn.addTarget(self, action: #selector(closeApply), for: .touchUpInside)
         
         //delegate & datasource
+        
+        applyScrollView.delegate = self
+        myWorkCV.delegate = self
+        myWorkCV.dataSource = self
+        
         exhibitTV.delegate = self
         exhibitTV.dataSource = self
         
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y / 180
+        if offset > 1 {
+            applyBtn.isHidden = true
+            scrollView.updateConstraints()
+        }else {
+            applyBtn.isHidden = false
+            scrollView.updateConstraints()
+        }
+        print("\(scrollView.contentOffset.y)")
+        
+    }
+    
     
 }
+
+
+//콜렉션 뷰 Delegate
+extension ExhibitApplyVC : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (view.frame.width) / 3
+        let height = (view.frame.height) / 4
+        return CGSize(width: width, height: height)
+    }
+    
+    
+    //하나의 행에 있는 아이템들의 가로간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    
+    
+    //섹션 내부 여백
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        
+        
+    }
+    
+    //콜렉션 뷰 아이템 클릭 시 이벤트
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
+    }
+    
+}
+
+//콜렉션 뷰 DataSource
+extension ExhibitApplyVC : UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let count =  detailList?.myWork.count else {
+            return 1
+        }
+        return count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExhibitWorkCell", for: indexPath) as! ExhibitWorkCell
+        
+        if let collectionImg = detailList?.myWork[indexPath.row] {
+                  cell.workImg.image = UIImage(named: collectionImg)
+        }
+        cell.radioBtn.addTarget(self, action: #selector(selectWork), for: .touchUpInside)
+  
+        
+        return cell
+    }
+}
+
+
+
+
 
 
 extension ExhibitApplyVC : UITableViewDelegate {
@@ -120,6 +209,10 @@ extension ExhibitApplyVC {
         }
         
 
+    }
+    
+    @objc func selectWork(sender: UIButton) {
+        
     }
     
     
