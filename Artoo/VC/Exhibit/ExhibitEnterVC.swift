@@ -43,7 +43,6 @@ class ExhibitEnterVC: UIViewController {
 
 extension ExhibitEnterVC {
     @objc func enterExhibit(){
-        print("hi")
         navigationController?.pushViewController(exhibitSeeVC, animated: true)
     }
     @objc func closeExhibit(){

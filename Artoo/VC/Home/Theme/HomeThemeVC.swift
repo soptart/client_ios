@@ -81,21 +81,12 @@ extension HomeThemeVC : UITableViewDataSource {
     
     //셀에 대한 처리
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! HomeThemeTCell
-        
-        if let themeData = themeList?.theme[indexPath.row] {
-            cell.themeImg.image = UIImage(named: themeData.themeImg)
-            cell.themeLabel.text = themeData.themeStr
-        }else {
-            cell.themeImg.image = UIImage(named: "ggobuk")
-            cell.themeLabel.text = "정보없음"
+        let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! ThemeCell
+        if let data = themeList?.theme[indexPath.row] {
+            cell.themeImg.image = UIImage(named: data.themeImg)
+            cell.themeLabel.text = data.themeStr
+
         }
-       
-        //자세히 보기 버튼
-        cell.detailBtn.tag = indexPath.row
-        cell.detailBtn.addTarget(self, action: #selector(detailBtnClick), for: .touchUpInside)
-        
-        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         
         return cell
     }

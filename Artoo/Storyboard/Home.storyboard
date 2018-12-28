@@ -204,6 +204,7 @@
                         <outlet property="recommandCV" destination="WaG-AN-qak" id="SCK-YT-Zpe"/>
                         <outlet property="tagCV" destination="0xK-XR-iGu" id="hkg-q1-3IL"/>
                         <outlet property="themeTV" destination="ETb-RC-Z9S" id="KP6-Sc-JQV"/>
+                        <outlet property="themeTableView" destination="ETb-RC-Z9S" id="TTj-Oh-3hX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hh-hk-0ZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,7 +414,7 @@
     <resources>
         <image name="fire" width="498" height="381"/>
         <image name="meta" width="640" height="640"/>
-        <image name="recommand" width="16" height="16"/>
-        <image name="theme" width="16" height="16"/>
+        <image name="recommand" width="214" height="282"/>
+        <image name="theme" width="498" height="141"/>
     </resources>
 </document>
