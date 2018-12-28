@@ -22,37 +22,48 @@ class ExhibitVC: UIViewController {
     @IBOutlet weak var exhibitBtn: UIButton!
     
     //쓰레기 데이터
-    var exhibitList: [Exhibit] = []
+    var exhibitList: Exhibit?
     
-    //투데이 화면 관리 컨트롤러
-    private lazy var homeTodayVC: HomeTodayVC = {
+    
+    //전시 신청 VC
+    private lazy var exhibitApplyVC : ExhibitApplyVC = {
         let storyboard = Storyboard.shared().exhibitStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: HomeTodayVC.reuseIdentifier) as! HomeTodayVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: ExhibitApplyVC.reuseIdentifier) as! ExhibitApplyVC
         
+        return viewController
+    }()
+
+    
+    //전시 관람VC
+    private lazy var exhibitEnterVC : ExhibitEnterVC = {
+        let storyboard = Storyboard.shared().exhibitStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: ExhibitEnterVC.reuseIdentifier) as! ExhibitEnterVC
         
         return viewController
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setData()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        setData()
+        
+        exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
     }
     
 }
 
 extension ExhibitVC : UITableViewDelegate {
+   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let nextVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
-//        let music = musicList[indexPath.row]
-//        nextVC.albumImg = music.albumImg
-//        nextVC.musicTitle = music.musicTitle
-//        nextVC.singer = music.singer
-//        navigationController?.pushViewController(nextVC, animated: true)
-
+       
+        //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
+        navigationController?.pushViewController(exhibitEnterVC, animated: true)
+        
     }
 }
 
@@ -63,7 +74,7 @@ extension ExhibitVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section =  exhibitList.first?.exhibitImg.count else {
+        guard let section =  exhibitList?.exhibit.count else {
             return 1
         }
         
@@ -73,35 +84,39 @@ extension ExhibitVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitCell") as! ExhibitCell
-        if let data = exhibitList.first?.exhibitImg[indexPath.row] {
-            cell.exhibitImg.image = UIImage(named: data)
-        } else {
-            //전시이미지가 없을 시에 이미지
-            cell.exhibitImg.image = UIImage(named: "ggobuk")}
+        if let data = exhibitList?.exhibit[indexPath.row] {
+            cell.exhibitImg.image = UIImage(named: data.exhibitImg)
+        }
         return cell
-    }
-    
 
+    }
     
     
 }
 
 extension ExhibitVC {
+
+    //전시 신청하는 창 띄우기
+    @objc func goApply(){
+        present(exhibitApplyVC, animated: true)
+    }
     
     //초기 데이터 세팅
     func setData(){
-        exhibitList.append(Exhibit(exhibitText: "11월의 단체전시 신청시작! \n[익숙함이 새로웠던 전] - 일상편", exhibitDate: "2019.1.2~2019.2.3", exhibitImg:["exhibit","exhibit","exhibit","exhibit"]))
+        exhibitList = Exhibit(apply: ExhibitApply(applyStr:"11월의 단체전시 신청시작!\n[익숙함이 새로웠 던 전]-일상편", applyDate: "2019.1.2 ~ 2019.2.3", applyImg: "fire"), exhibit: [ExhibitSee(exhibitIndex: 0, exhibitImg: "exhibit"),
+                                                                                                                                                                                                ExhibitSee(exhibitIndex: 1, exhibitImg: "exhibit"),
+                                                                                                                                                                                                      ExhibitSee(exhibitIndex: 2, exhibitImg: "exhibit"),
+                                                                                                                                                                                                      ExhibitSee(exhibitIndex: 3, exhibitImg: "exhibit"),
+                                                                                                                                                                                                      ExhibitSee(exhibitIndex: 4, exhibitImg: "exhibit")
+                                                                                    ])
         
-        if let initData = exhibitList.first {
-            exhibitLabel.text = initData.exhibitText
-            dateLabel.text = initData.exhibitDate
-        }else {
-            exhibitLabel.text = "전시 이름"
-            dateLabel.text = "전시 날짜"
+        if let initData = exhibitList?.apply {
+            exhibitLabel.text = initData.applyStr
+            dateLabel.text = initData.applyDate
+            exhibitBtn.setImage(UIImage(named: initData.applyImg), for: UIControl.State.normal)
         }
+    
     }
-    
-    
     
     
 }

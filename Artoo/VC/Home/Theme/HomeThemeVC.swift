@@ -7,6 +7,8 @@
 import UIKit
 
 class HomeThemeVC: UIViewController {
+
+    @IBOutlet weak var themeTableView: UITableView!
     
     //태그 콜렉션 뷰
     @IBOutlet weak var tagCV: UICollectionView!
@@ -79,7 +81,7 @@ extension HomeThemeVC : UITableViewDataSource {
     
     //셀에 대한 처리
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = themeTV.dequeueReusableCell(withIdentifier: "ThemeCell") as! ThemeCell
+        let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! HomeThemeTCell
         
         if let themeData = themeList?.theme[indexPath.row] {
             cell.themeImg.image = UIImage(named: themeData.themeImg)
@@ -89,8 +91,17 @@ extension HomeThemeVC : UITableViewDataSource {
             cell.themeLabel.text = "정보없음"
         }
        
+        //자세히 보기 버튼
+        cell.detailBtn.tag = indexPath.row
+        cell.detailBtn.addTarget(self, action: #selector(detailBtnClick), for: .touchUpInside)
+        
+        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+        
         return cell
     }
+    
+    
+    
     
 }
 
@@ -109,27 +120,18 @@ extension HomeThemeVC : UITableViewDelegate {
 //콜렉션 뷰 Delegate
 extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch collectionView {
-        case tagCV:
-            let width = (view.frame.width) / 5 - 15
-            let height = (view.frame.height) / 20
-            return CGSize(width: width, height: height)
-        case recommandCV:
-            let width = (view.frame.width) / 2 - 32
-            let height = (view.frame.height) / 4 + 10
-            return CGSize(width: width, height: height)
-        default:
-            return CGSize(width: 1, height: 1)
-        }
-
+        
+        let width = (view.frame.width) / 3
+        let height = (view.frame.height) / 4
+        return CGSize(width: width, height: height)
     }
     
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.5
+        return 1
     }
- 
+    
     
     
     //섹션 내부 여백
@@ -158,11 +160,10 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
 extension HomeThemeVC : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         switch collectionView {
         case tagCV:
             guard let count = themeList?.tag.count else {
@@ -177,12 +178,9 @@ extension HomeThemeVC : UICollectionViewDataSource {
         default:
             return 1
         }
-        
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         switch collectionView {
         case tagCV:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
@@ -208,7 +206,6 @@ extension HomeThemeVC : UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
-
     }
 }
 
@@ -220,7 +217,6 @@ extension HomeThemeVC : UICollectionViewDataSource {
 extension HomeThemeVC {
     func setData() {
         //쓰레기 값, 서버 통신 후 변경
-
         themeList = Theme(tag: [Tag(tagStr: "태그1", tagIndex: 0),
                                 Tag(tagStr: "태그2", tagIndex: 1),
                                 Tag(tagStr: "태그3", tagIndex: 2),
@@ -232,7 +228,6 @@ extension HomeThemeVC {
                                     ThemeDetail(themeStr: "하이4", themeImg: "theme"),
                                      ThemeDetail(themeStr: "하이5", themeImg: "theme")])
   
-        
     }
     
     
