@@ -2,7 +2,7 @@
 //  All_ArtViewController.swift
 //  Artoo
 //
-//  Created by 보윤 on 26/12/2018.
+//  Created by 보윤 on 28/12/2018.
 //  Copyright © 2018 홍정민. All rights reserved.
 //
 
@@ -58,23 +58,23 @@ class All_ArtViewController: UIViewController {
         if let fTransData = fData{
             figureLabel.text = fTransData
         }
-
+        
         if let cTransData = cData{
             categoryLabel.text = cTransData
         }
     }
-
+    
     //필터 버튼 눌렀을 때 필터 화면으로 넘어가기.
     @IBAction func filterBtn(_ sender: Any) {
         
-       guard let fVC =
-        storyboard?.instantiateViewController(withIdentifier: "filter") as? FilterViewController else{ return }
+        guard let fVC =
+            storyboard?.instantiateViewController(withIdentifier: "filter") as? FilterViewController else{ return }
         navigationController?.pushViewController(fVC, animated: true)
-
+        
     }
     
     
- 
+    
 }
 
 //collectionView extension확장기능
@@ -94,7 +94,7 @@ extension All_ArtViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
         let image = imageList[indexPath.row]
-
+        
         cell.showImg.image = UIImage(named: image.artImg)
         
         return cell
@@ -112,15 +112,21 @@ extension All_ArtViewController: UICollectionViewDelegateFlowLayout{
         imageIndex = indexPath.row
         let img = imageList[indexPath.row]
         
+        print(img.artImg) //값이 표시되나,,,? -> ok
+        
         guard let bVC = storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
             return
         }
         
         //서버에서 전달해주는 이미지를 받아서 저장해줘야 함.
         
-        bVC.images = [img.artImg]
-        //화면간 이동하려고
-    navigationController?.pushViewController(bVC, animated: true)
+        
+         bVC.images = [img.artImg]
+         //화면간 이동하려고
+         print(bVC.images) // -> 이것도 오키
+          navigationController?.pushViewController(bVC, animated: true)
+        
+        //   print(bVC.images)
         
     }
 }
@@ -130,9 +136,14 @@ extension All_ArtViewController: PinterestLayoutDelegate{
         
         //이거 다이나믹 제발 좀 해결,,,ㅎㅎ
         
-     let img = UIImage(named:imageList[indexPath.row].artImg)
+        let img = UIImage(named:imageList[indexPath.row].artImg)
         return 200
-//        return imageList[indexPath.item].artImg.size.height
+        //        return imageList[indexPath.item].artImg.size.height
         //return photos[indexPath.item].image.size.height
     }
+
+    
+
+    
+
 }
