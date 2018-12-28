@@ -112,15 +112,27 @@ extension HomeThemeVC : UITableViewDelegate {
 extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (view.frame.width) / 3
-        let height = (view.frame.height) / 4
-        return CGSize(width: width, height: height)
+        switch collectionView {
+        case tagCV:
+            let width = (view.frame.width) / 5 - 15
+            let height = (view.frame.height) / 20
+            return CGSize(width: width, height: height)
+        case recommandCV:
+            let width = (view.frame.width) / 2 - 32
+            let height = (view.frame.height) / 4 + 10
+            return CGSize(width: width, height: height)
+        default:
+            return CGSize(width: 1, height: 1)
+        }
+        
     }
+
+
     
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0.5
     }
     
     
