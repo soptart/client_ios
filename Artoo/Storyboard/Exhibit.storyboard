@@ -233,6 +233,9 @@
                                                                     <rect key="frame" x="43" y="111" width="32" height="22"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <state key="normal" title="Button" image="jiu"/>
+                                                                    <connections>
+                                                                        <action selector="selectRadio:" destination="abI-kI-jHG" eventType="touchUpInside" id="1oM-nD-wMV"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </view>

@@ -14,6 +14,7 @@ class ExhibitApplyCell: UITableViewCell {
     
     //대신 처리해 줄 객체 정의
     var delegate:RadioBtnDelegate!
+    
     var indexPath: IndexPath!
     var isRadioSelected: Bool = false {
         didSet {

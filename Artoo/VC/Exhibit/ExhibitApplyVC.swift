@@ -38,7 +38,8 @@ class ExhibitApplyVC: UIViewController {
     var detailList:ExhibitApplyDetail?
     
     var selectedIndexPath: IndexPath!
-    
+    var cvSelectedIndexPath: IndexPath!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,14 +105,8 @@ extension ExhibitApplyVC : UICollectionViewDelegateFlowLayout {
         
     }
     
-    //콜렉션 뷰 아이템 클릭 시 이벤트
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
-    }
-    
 }
+
 
 //콜렉션 뷰 DataSource
 extension ExhibitApplyVC : UICollectionViewDataSource {
@@ -131,10 +126,18 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExhibitWorkCell", for: indexPath) as! ExhibitWorkCell
         
+        cell.delegate = self
+        cell.indexPath = indexPath
+        
         if let collectionImg = detailList?.myWork[indexPath.row] {
                   cell.workImg.image = UIImage(named: collectionImg)
+            if(indexPath == cvSelectedIndexPath){
+                cell.isRadioSelected = true
+            }else {
+                cell.isRadioSelected = false
+            }
         }
-        cell.radioBtn.addTarget(self, action: #selector(selectWork), for: .touchUpInside)
+    
   
         
         return cell
@@ -168,6 +171,7 @@ extension ExhibitApplyVC : UITableViewDataSource {
         if let data = detailList?.exhibitInfo[indexPath.row]{
             cell.mainLabel.text = data.mainTxt
             cell.subLabel.text = data.subTxt
+           
             if indexPath == selectedIndexPath {
                 cell.isRadioSelected = true
             } else {
@@ -182,6 +186,11 @@ extension ExhibitApplyVC : UITableViewDataSource {
 }
 
 extension ExhibitApplyVC : RadioBtnDelegate {
+    func cvSelectRadio(at indexPath: IndexPath) {
+        cvSelectedIndexPath = indexPath
+        myWorkCV.reloadData()
+    }
+    
     func selectRadioBtn(at indexPath: IndexPath) {
         selectedIndexPath = indexPath
         exhibitTV.reloadData()
