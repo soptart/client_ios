@@ -161,6 +161,9 @@ extension ExhibitApplyVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitApplyCell") as! ExhibitApplyCell
         
+        cell.delegate = self
+        cell.selectRadioBtn(indexPath.row)
+        
         if let data = detailList?.exhibitInfo[indexPath.row]{
             cell.mainLabel.text = data.mainTxt
             cell.subLabel.text = data.subTxt
@@ -176,7 +179,11 @@ extension ExhibitApplyVC : UITableViewDataSource {
     
 }
 
-
+extension ExhibitApplyVC : RadioBtnDelegate {
+    func selectRadioBtn(at indexPath: IndexPath) {
+     
+    }
+}
 
 
 extension ExhibitApplyVC {

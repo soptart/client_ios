@@ -187,6 +187,9 @@
                                                                         <constraint firstAttribute="width" constant="25" id="tEc-LF-cZd"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="jiu"/>
+                                                                    <connections>
+                                                                        <action selector="selectRadioBtn:" destination="OuE-I3-SKs" eventType="touchUpInside" id="kgr-5Z-H0b"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
