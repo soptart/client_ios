@@ -16,6 +16,7 @@
 		A30048E721CE57F10042C4EF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048E621CE57F10042C4EF /* Extension.swift */; };
 		A30048EC21CE63370042C4EF /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048EB21CE63370042C4EF /* Author.swift */; };
 		A30048EE21CE63400042C4EF /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048ED21CE63400042C4EF /* Work.swift */; };
+		A34B448121D72EF200991321 /* ExhibitSeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B448021D72EF200991321 /* ExhibitSeeCell.swift */; };
 		A350ADCE21D501CC00EC199E /* Recommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADCD21D501CC00EC199E /* Recommand.swift */; };
 		A350ADD021D501EF00EC199E /* ThemeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADCF21D501EF00EC199E /* ThemeDetail.swift */; };
 		A350ADD221D5161C00EC199E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD121D5161C00EC199E /* Detail.swift */; };
@@ -60,6 +61,7 @@
 		A30048E621CE57F10042C4EF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		A30048EB21CE63370042C4EF /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		A30048ED21CE63400042C4EF /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		A34B448021D72EF200991321 /* ExhibitSeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitSeeCell.swift; sourceTree = "<group>"; };
 		A350ADCD21D501CC00EC199E /* Recommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommand.swift; sourceTree = "<group>"; };
 		A350ADCF21D501EF00EC199E /* ThemeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetail.swift; sourceTree = "<group>"; };
 		A350ADD121D5161C00EC199E /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				A350ADDB21D532E600EC199E /* ExhibitSeeVC.swift */,
 				A350ADE121D55D1C00EC199E /* ExhibitApplyCell.swift */,
 				A350ADE321D55D4B00EC199E /* ExhibitWorkCell.swift */,
+				A34B448021D72EF200991321 /* ExhibitSeeCell.swift */,
 			);
 			path = Exhibit;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
 				A350ADD221D5161C00EC199E /* Detail.swift in Sources */,
+				A34B448121D72EF200991321 /* ExhibitSeeCell.swift in Sources */,
 				A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */,
 				A350ADDC21D532E600EC199E /* ExhibitSeeVC.swift in Sources */,
 				A3783A3D21D669B80057884D /* TagCell.swift in Sources */,
