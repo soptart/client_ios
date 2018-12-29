@@ -32,10 +32,10 @@ class All_ArtViewController: UIViewController {
             layout.delegate = self
         }
         
+        imageCollection.dataSource = self
+        imageCollection.delegate = self
         setup()
         // Do any additional setup after loading the view.
-        
-        
         
     }
     
@@ -76,46 +76,46 @@ class All_ArtViewController: UIViewController {
 }
 
 ////collectionView extension확장기능
-//extension All_ArtViewController : UICollectionViewDataSource{
-//
-//    //섹션 당 아이템 몇개 보여줄래?
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//        return imageList.count //2개
-//    }
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
-//        let image = imageList[indexPath.row]
-//        cell.showImg.image = UIImage(named: image.artImg)
-//
-//        return cell
-//    }
-//
-//}
+extension All_ArtViewController : UICollectionViewDataSource{
+
+    //섹션 당 아이템 몇개 보여줄래?
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        return imageList.count //2개
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
+        let image = imageList[indexPath.row]
+        cell.showImg.image = UIImage(named: image.artImg)
+
+        return cell
+    }
+
+}
 
 
 //collectionView Delegate
 
 extension All_ArtViewController: UICollectionViewDelegateFlowLayout{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
-    }
-    
-    
-    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
-        let image = imageList[indexPath.row]
-        cell.showImg.image = UIImage(named: image.artImg)
-        
-        return cell
-    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return imageList.count
+//    }
+//
+//
+//    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
+//        let image = imageList[indexPath.row]
+//        cell.showImg.image = UIImage(named: image.artImg)
+//
+//        return cell
+//    }
     
     //컬렉션 뷰 아이템 클릭 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -129,14 +129,15 @@ extension All_ArtViewController: UICollectionViewDelegateFlowLayout{
             return
         }
         
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-            return CGSize(width: itemSize, height: itemSize)
-        }
-        
-        func numberOfSections(in collectionView: UICollectionView) -> Int {
-                  return 1
-            }
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+//            return CGSize(width: itemSize, height: itemSize)
+//        }
+//
+//        func numberOfSections(in collectionView: UICollectionView) -> Int {
+//                  return 1
+//            }
+
         //서버에서 전달해주는 이미지를 받아서 저장해줘야 함.
         
         
@@ -147,10 +148,11 @@ extension All_ArtViewController: UICollectionViewDelegateFlowLayout{
         
     }
    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-        return CGSize(width: itemSize, height: itemSize)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+//        return CGSize(width: itemSize, height: itemSize)
+//    }
+    
 }
 
 extension All_ArtViewController: PinterestLayoutDelegate{
