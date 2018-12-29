@@ -161,6 +161,30 @@
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="727.28635682158927"/>
         </scene>
+        <!--DirectVC-->
+        <scene sceneID="Usu-sY-Dq0">
+            <objects>
+                <viewController storyboardIdentifier="direct" id="2cz-Ke-OXN" customClass="DirectVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YmA-BB-xnU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="direct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wh-49-tzY">
+                                <rect key="frame" x="166" y="95" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cfr-9e-IZW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KD5-X3-M88" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="1349.7751124437782"/>
+        </scene>
         <!--BuyVC-->
         <scene sceneID="JAe-tY-IyV">
             <objects>
@@ -378,19 +402,19 @@
             </objects>
             <point key="canvasLocation" x="1372" y="728"/>
         </scene>
-        <!--View Controller-->
+        <!--DealVC-->
         <scene sceneID="sap-lp-YJq">
             <objects>
-                <viewController id="I3j-fz-502" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="deal" id="I3j-fz-502" customClass="DealVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abM-cY-gnm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-NX-2ZJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1400"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-NX-2ZJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="780"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-Hh-JDp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-Hh-JDp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvt-2y-DK6">
                                                 <rect key="frame" x="18" y="63" width="77" height="76"/>
@@ -431,29 +455,8 @@
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="판매자 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-OP-SK6">
-                                                <rect key="frame" x="26" y="491" width="71" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="배송 소요 시간은 최소 5일이며 변동사항이 생길 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug9-6P-u5y">
                                                 <rect key="frame" x="21" y="441" width="324" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거주지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmJ-zz-lXu">
-                                                <rect key="frame" x="26" y="526" width="44" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.20784313725490194" green="0.23921568627450979" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="서울시 광진구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ys-yB-Fc7">
-                                                <rect key="frame" x="261" y="526" width="88" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -523,8 +526,11 @@
                                                 <state key="normal" title="택배">
                                                     <color key="titleColor" red="0.20784313725490194" green="0.23921568627450979" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changeView:" destination="I3j-fz-502" eventType="touchUpInside" id="tbC-a5-KSo"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq4-E8-oNE">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq4-E8-oNE">
                                                 <rect key="frame" x="198" y="366" width="157" height="63"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -532,6 +538,9 @@
                                                 <state key="normal" title="직거래">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changeView:" destination="I3j-fz-502" eventType="touchUpInside" id="JCP-df-Y8x"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buyDivideLine" translatesAutoresizingMaskIntoConstraints="NO" id="ooL-Qt-xeA">
                                                 <rect key="frame" x="15" y="151" width="342" height="2"/>
@@ -553,37 +562,46 @@
                                                 <rect key="frame" x="15" y="562" width="342" height="2"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3e-mC-HzV">
+                                                <rect key="frame" x="15" y="482" width="339" height="277"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            </containerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1000" id="nZm-vF-7cV"/>
+                                            <constraint firstAttribute="height" constant="800" id="CWR-dU-r4B"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Eo3-Hh-JDp" firstAttribute="leading" secondItem="Hzl-NX-2ZJ" secondAttribute="leading" id="70R-ro-GCZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Eo3-Hh-JDp" secondAttribute="trailing" id="awc-bX-Orl"/>
-                                    <constraint firstAttribute="bottom" secondItem="Eo3-Hh-JDp" secondAttribute="bottom" id="r1H-8j-7YP"/>
-                                    <constraint firstItem="Eo3-Hh-JDp" firstAttribute="top" secondItem="Hzl-NX-2ZJ" secondAttribute="top" id="xI8-V3-NI6"/>
+                                    <constraint firstAttribute="height" constant="800" id="4zJ-tz-wsp"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eo3-Hh-JDp" secondAttribute="bottom" id="HGW-AH-4Sk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eo3-Hh-JDp" secondAttribute="trailing" id="Oco-cd-bG1"/>
+                                    <constraint firstItem="Eo3-Hh-JDp" firstAttribute="leading" secondItem="Hzl-NX-2ZJ" secondAttribute="leading" id="T9y-Bb-B0b"/>
+                                    <constraint firstItem="Eo3-Hh-JDp" firstAttribute="top" secondItem="Hzl-NX-2ZJ" secondAttribute="top" id="zPG-4t-iLq"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KAu-bh-6oj" firstAttribute="bottom" secondItem="Hzl-NX-2ZJ" secondAttribute="bottom" id="02S-g4-LeC"/>
-                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="top" secondItem="KAu-bh-6oj" secondAttribute="top" id="BbL-GS-FaI"/>
-                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="top" secondItem="KAu-bh-6oj" secondAttribute="top" id="LMY-8N-jd2"/>
-                            <constraint firstItem="Eo3-Hh-JDp" firstAttribute="width" secondItem="abM-cY-gnm" secondAttribute="width" id="Nu5-sj-hhd"/>
-                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="leading" secondItem="KAu-bh-6oj" secondAttribute="leading" id="otV-3y-ls1"/>
-                            <constraint firstItem="KAu-bh-6oj" firstAttribute="trailing" secondItem="Hzl-NX-2ZJ" secondAttribute="trailing" id="sPn-tQ-vOr"/>
+                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="leading" secondItem="KAu-bh-6oj" secondAttribute="leading" id="0UN-Lk-nxK"/>
+                            <constraint firstItem="Eo3-Hh-JDp" firstAttribute="width" secondItem="abM-cY-gnm" secondAttribute="width" id="NTF-61-yvZ"/>
+                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="top" secondItem="KAu-bh-6oj" secondAttribute="top" id="rkN-P0-Z1m"/>
+                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="bottom" secondItem="KAu-bh-6oj" secondAttribute="bottom" id="sdZ-KY-QfG"/>
+                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="trailing" secondItem="KAu-bh-6oj" secondAttribute="trailing" id="xOC-Tk-6H2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KAu-bh-6oj"/>
                     </view>
-                    <size key="freeformSize" width="375" height="700"/>
+                    <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="containerView" destination="p3e-mC-HzV" id="85K-as-egw"/>
+                        <outlet property="deliveryBtn" destination="Ckm-dr-xqn" id="k2R-0M-vTi"/>
+                        <outlet property="directBtn" destination="Sq4-E8-oNE" id="zyH-xT-pYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGc-ig-IQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="885"/>
+            <point key="canvasLocation" x="2032.8" y="884.25787106446785"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AHF-vp-Qnv">
@@ -599,7 +617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zA9-Jj-VvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2722" y="1200"/>
+            <point key="canvasLocation" x="3948" y="1202"/>
         </scene>
         <!--Filter-->
         <scene sceneID="sZ3-Vu-CWx">
@@ -945,6 +963,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpU-eb-8vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="432.80000000000001" y="-144.3778110944528"/>
+        </scene>
+        <!--DeliveryVC-->
+        <scene sceneID="K1j-AR-7yP">
+            <objects>
+                <viewController storyboardIdentifier="delivery" id="vCs-Bh-Tfw" customClass="DeliveryVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="isx-eV-6lo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5B-oq-4dI">
+                                <rect key="frame" x="166" y="95" width="60" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2i-zB-xNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="629.2353823088456"/>
         </scene>
     </scenes>
     <resources>
