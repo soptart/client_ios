@@ -77,7 +77,7 @@ extension ExhibitSeeVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
-            //return cell
+            return cell
        
     }
 }
