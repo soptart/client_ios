@@ -8,6 +8,8 @@ import UIKit
 
 class ExhibitApplyVC: UIViewController {
     
+    @IBOutlet weak var applyBtnConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var applyScrollView: UIScrollView!
     
     //신청 버튼
@@ -65,14 +67,12 @@ class ExhibitApplyVC: UIViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y / 180
         if offset > 1 {
-            applyBtn.isHidden = true
+            applyBtnConstraint.constant = 0
             scrollView.updateConstraints()
         }else {
-            applyBtn.isHidden = false
+            applyBtnConstraint.constant = 60
             scrollView.updateConstraints()
-        }
-        print("\(scrollView.contentOffset.y)")
-        
+        }        
     }
     
     

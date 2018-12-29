@@ -370,6 +370,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="applyBtn" destination="AKK-D2-cSi" id="ZZm-YW-jE2"/>
+                        <outlet property="applyBtnConstraint" destination="bTX-5r-nhP" id="FOf-ur-Z07"/>
                         <outlet property="applyScrollView" destination="hKe-8z-o3G" id="Md5-OD-TYA"/>
                         <outlet property="closeBtn" destination="pmy-9z-LRM" id="ZbZ-X8-DTY"/>
                         <outlet property="dateLabel" destination="j8P-g5-eSw" id="isX-iV-TZi"/>
