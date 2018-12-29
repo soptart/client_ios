@@ -14,13 +14,16 @@ class ExhibitApplyCell: UITableViewCell {
     
     //대신 처리해 줄 객체 정의
     var delegate:RadioBtnDelegate!
-    var select:Bool = false
+    var indexPath: IndexPath!
+    var isRadioSelected: Bool = false {
+        didSet {
+            isRadioSelected ? radioBtn.setImage(UIImage(named: "ggobuk"), for: .normal) : radioBtn.setImage(UIImage(named: "jiu"), for: .normal)
+        }
+    }
     
     @IBAction func selectRadioBtn(_ sender: Any) {
-        select = !select
-
-        select ? radioBtn.setImage(UIImage(named:"ggobuk"), for: .normal) : radioBtn.setImage(UIImage(named:"jiu"), for: .normal)
         
+        self.delegate.selectRadioBtn(at: indexPath)
     }
     
     

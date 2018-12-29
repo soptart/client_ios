@@ -37,6 +37,8 @@ class ExhibitApplyVC: UIViewController {
     //데이터 - 서버 통신 후 변경
     var detailList:ExhibitApplyDetail?
     
+    var selectedIndexPath: IndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -145,7 +147,6 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
 
 
 extension ExhibitApplyVC : UITableViewDelegate {
-    
 }
 
 extension ExhibitApplyVC : UITableViewDataSource {
@@ -162,15 +163,16 @@ extension ExhibitApplyVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitApplyCell") as! ExhibitApplyCell
         
         cell.delegate = self
-        cell.selectRadioBtn(indexPath.row)
+        cell.indexPath = indexPath
         
         if let data = detailList?.exhibitInfo[indexPath.row]{
             cell.mainLabel.text = data.mainTxt
             cell.subLabel.text = data.subTxt
-            
-            //라디오 버튼 클릭 이벤트
-            cell.radioBtn.tag = indexPath.row
-            cell.radioBtn.addTarget(self, action: #selector(selectExhibit), for: .touchUpInside)
+            if indexPath == selectedIndexPath {
+                cell.isRadioSelected = true
+            } else {
+                cell.isRadioSelected = false
+            }
         }
         
         return cell
@@ -181,7 +183,8 @@ extension ExhibitApplyVC : UITableViewDataSource {
 
 extension ExhibitApplyVC : RadioBtnDelegate {
     func selectRadioBtn(at indexPath: IndexPath) {
-     
+        selectedIndexPath = indexPath
+        exhibitTV.reloadData()
     }
 }
 
