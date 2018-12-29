@@ -8,6 +8,11 @@
 
 import UIKit
 
+//photo의 높이를 요구하는 코드이다.
+protocol PinterestLayoutDelegate: class{
+    func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
+}
+
 class PinterLayout: UICollectionViewLayout {
     
     weak var delegate: PinterestLayoutDelegate!
@@ -97,8 +102,5 @@ class PinterLayout: UICollectionViewLayout {
     }
 }
 
-//photo의 높이를 요구하는 코드이다.
-protocol PinterestLayoutDelegate: class{
-    func collectionView(_ collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat
-}
+
 

@@ -11,7 +11,6 @@ import UIKit
 class BuyVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var moreImg: UIImageView!
-    @IBOutlet weak var pageCtr: UIPageControl!
     @IBOutlet weak var desc: UITextView?
     @IBOutlet weak var slideButton: UIButton?
     @IBOutlet weak var figureLabel: UILabel?
@@ -21,7 +20,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var feedContentTV: UITextView?
     
     
-    var images = ["exhibit","ggobuk","sopt_DoIT"]
+    var images = ""
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     var textHolder = ""
@@ -29,23 +28,21 @@ class BuyVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pageCtr.numberOfPages = images.count
-        pageCtr.currentPage = 0
-        moreImg.image = UIImage(named: images[0])
+        moreImg.image = UIImage(named: images)
         
         desc?.text = "욕망과 억압에 대해 이야기한다. 들판이라는 고상한 공간에 이 주제를 배치시키고, 고도의 훈련된 정신과 이성이 필요한 들판을 도구로이끌어 가는데, 집이라는 공간과 들판에서 오랜 시간동안 지독한 훈련과 과잉 예속 속에서 점점 더 자기 자신에게 빛이 되어가"
         
         desc?.delegate = self
+        
+        //이미지 선택 시
+        let pictureTap = UITapGestureRecognizer(target: self, action: #selector(BuyVC.bigImage))
+        moreImg.addGestureRecognizer(pictureTap)
+        moreImg.isUserInteractionEnabled = true
     }
     
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    //페이지 넘기기
-    @IBAction func pageChanged(_ sender: UIPageControl) {
-        moreImg.image = UIImage(named: images[pageCtr.currentPage])
     }
 
     //아래 버튼 누르면
@@ -84,5 +81,17 @@ class BuyVC: UIViewController, UITextViewDelegate {
     //구매하기 버튼 누른다면
     @IBAction func buyBtn(_ sender: Any) {
         
+    }
+    
+    //이미지 버튼 누른다면
+    @objc func bigImage(){
+        guard let BigVC = storyboard?.instantiateViewController(withIdentifier: "BigImg") as? BigImageVC else{ return
+        }
+        
+        /* 이거 옵셔널 좀 공부하고 다시
+         
+         BigVC.BigImageView!.image = UIImage(named: images)
+        */
+        navigationController?.pushViewController(BigVC, animated: true)
     }
 }

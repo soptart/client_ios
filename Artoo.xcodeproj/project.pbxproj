@@ -10,6 +10,7 @@
 		5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D721D3976600C787AC /* FilterViewController.swift */; };
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
 		5D9B7D7021D5D30A009C12D3 /* All_ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D6F21D5D30A009C12D3 /* All_ArtViewController.swift */; };
+		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
 		5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606CD21D4C41B00C216FD /* Pinterest.swift */; };
 		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
 		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
@@ -44,6 +45,7 @@
 		5D4607D721D3976600C787AC /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = Artoo/VC/Art/FilterViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D6F21D5D30A009C12D3 /* All_ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_ArtViewController.swift; sourceTree = "<group>"; };
+		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
 		5DB606CD21D4C41B00C216FD /* Pinterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pinterest.swift; path = Artoo/VC/Art/Pinterest.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
@@ -110,6 +112,7 @@
 				5D4607D721D3976600C787AC /* FilterViewController.swift */,
 				5D4607D921D4892000C787AC /* AllImageCell.swift */,
 				5DB606CD21D4C41B00C216FD /* Pinterest.swift */,
+				5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
 				A30048EC21CE63370042C4EF /* Author.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
+				5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */,
 				5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
