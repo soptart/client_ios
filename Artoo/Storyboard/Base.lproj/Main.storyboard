@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4e5-Tq-blF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3U6-aW-AdP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -107,9 +107,6 @@
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Jxu-0o-RgQ" kind="show" id="77x-Fw-ex1"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-T2-DDf">
                                 <rect key="frame" x="26" y="617" width="45" height="30"/>
@@ -141,7 +138,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Wh1-Gx-Ms9">
             <objects>
-                <tabBarController id="Jxu-0o-RgQ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tab" id="Jxu-0o-RgQ" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w1U-L2-ABN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -579,23 +576,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNV-cH-fYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1642" y="-2190"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hn6-uF-xC7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4e5-Tq-blF" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y19-Ae-xbe">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3U6-aW-AdP" kind="relationship" relationship="rootViewController" id="4iI-Sq-tOV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tdH-Qz-8Wq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-522" y="-1334"/>
         </scene>
     </scenes>
     <resources>
