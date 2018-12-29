@@ -81,9 +81,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
     //구매하기 버튼 누른다면
     @IBAction func buyBtn(_ sender: Any) {
         
-        guard let dVC = storyboard?.instantiateViewController(withIdentifier: "deal")as? DealVC else{ return }
-        
-        navigationController?.pushViewController(dVC, animated: true)
     }
     
     //이미지 버튼 누른다면
