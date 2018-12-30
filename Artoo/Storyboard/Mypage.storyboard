@@ -67,7 +67,7 @@
                                                             <action selector="changeView:" destination="CWR-3F-KdO" eventType="touchUpInside" id="yee-Ma-Cuo"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBo-Wh-94J">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBo-Wh-94J">
                                                         <rect key="frame" x="96" y="0.0" width="87.5" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="저장">
@@ -77,17 +77,17 @@
                                                             <action selector="changeView:" destination="CWR-3F-KdO" eventType="touchUpInside" id="4qH-YW-tUV"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m74-Uu-Vgb">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m74-Uu-Vgb">
                                                         <rect key="frame" x="191.5" y="0.0" width="88" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" title="구매">
+                                                        <state key="normal" title="거래">
                                                             <color key="titleColor" red="0.20784313730000001" green="0.23921568630000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="changeView:" destination="CWR-3F-KdO" eventType="touchUpInside" id="RUt-Wu-fkC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGK-xG-abx">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGK-xG-abx">
                                                         <rect key="frame" x="287.5" y="0.0" width="87.5" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="후기">
@@ -156,63 +156,107 @@
                     <connections>
                         <outlet property="EditTextView" destination="FBz-4b-kv3" id="o1L-7B-rsa"/>
                         <outlet property="MainIntroductionLabel" destination="Pwi-Fd-eiH" id="BEt-kc-OV3"/>
+                        <outlet property="artBtn" destination="AoN-Ie-h1D" id="Tta-6F-ebg"/>
+                        <outlet property="buyBtn" destination="m74-Uu-Vgb" id="dTL-lU-3fB"/>
+                        <outlet property="containerView" destination="a7B-hh-9X9" id="N7C-Df-IZa"/>
+                        <outlet property="reviewBtn" destination="jGK-xG-abx" id="Ako-qc-fTP"/>
+                        <outlet property="saveBtn" destination="fBo-Wh-94J" id="KWG-g2-Nut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtG-to-QvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="500" y="80.959520239880064"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page ArtVC-->
         <scene sceneID="lJ0-oP-3bp">
             <objects>
-                <viewController id="JPk-kn-IVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="art_page" id="JPk-kn-IVC" customClass="MyPageArtVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="npA-z5-JuO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIy-Jn-jzW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qIy-Jn-jzW" secondAttribute="bottom" id="AwF-Lr-2R2"/>
+                            <constraint firstAttribute="trailing" secondItem="qIy-Jn-jzW" secondAttribute="trailing" id="BPV-we-YnK"/>
+                            <constraint firstItem="qIy-Jn-jzW" firstAttribute="leading" secondItem="npA-z5-JuO" secondAttribute="leading" id="FkW-qf-09d"/>
+                            <constraint firstItem="qIy-Jn-jzW" firstAttribute="top" secondItem="npA-z5-JuO" secondAttribute="top" id="fcJ-BG-s7L"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDb-f6-D1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-105"/>
+            <point key="canvasLocation" x="1316" y="-105.69715142428787"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page BuyVC-->
         <scene sceneID="nvw-Du-QhV">
             <objects>
-                <viewController id="Cxf-Wq-Hok" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="buy_page" id="Cxf-Wq-Hok" customClass="MyPageBuyVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubB-1h-C2Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거래" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-Ct-e5x">
+                                <rect key="frame" x="166" y="323" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jk3-tn-tEr"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPS-ui-aWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="-104"/>
+            <point key="canvasLocation" x="1949.5999999999999" y="-104.7976011994003"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page StoreVC-->
         <scene sceneID="VHT-3g-tfF">
             <objects>
-                <viewController id="XL6-8x-8w7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="store_page" id="XL6-8x-8w7" customClass="MyPageStoreVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0z-R5-zxZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="저장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L32-Un-OjN">
+                                <rect key="frame" x="191" y="236" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Df-Jb-mVK"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQZ-UP-dLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="589"/>
+            <point key="canvasLocation" x="1316" y="588.75562218890559"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page ReviewVC-->
         <scene sceneID="ehq-ml-pXJ">
             <objects>
-                <viewController id="ink-Cv-z25" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="review_page" id="ink-Cv-z25" customClass="MyPageReviewVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7eU-KS-5y9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="후기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShW-qX-R07">
+                                <rect key="frame" x="131" y="192" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="clj-0p-dcn"/>
                     </view>
@@ -220,6 +264,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Py-a2-Xgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1959" y="590"/>
+        </scene>
+        <!--No ArtVC-->
+        <scene sceneID="9O8-5c-4Xg">
+            <objects>
+                <viewController storyboardIdentifier="no_art" id="3aI-6d-CqQ" customClass="NoArtVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jms-wI-G8V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="자신의 작품을 보여주세요! 더 많은 피드백과 판매 기회를 얻을 수 있어요 :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-6E-8Kz">
+                                <rect key="frame" x="54" y="188" width="275" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-vD-pgr">
+                                <rect key="frame" x="117" y="232" width="140" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="작품 업로드하기">
+                                    <color key="titleColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYP-XQ-Sdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="-782"/>
+        </scene>
+        <!--My ArtVC-->
+        <scene sceneID="XLs-kL-M9L">
+            <objects>
+                <viewController storyboardIdentifier="has_art" id="h9V-BA-mI1" customClass="MyArtVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ogb-6v-VXz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-7f-K98">
+                                <rect key="frame" x="274" y="22" width="72" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="작품 추가하기">
+                                    <color key="titleColor" red="0.7803921568627451" green="0.792156862745098" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="i3f-Qa-JH4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3U-eh-4Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309.5999999999999" y="-783.05847076461771"/>
         </scene>
     </scenes>
     <resources>
