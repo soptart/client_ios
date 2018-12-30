@@ -13,11 +13,22 @@ class DealVC: UIViewController {
     @IBOutlet weak var deliveryBtn: UIButton!
     @IBOutlet weak var directBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
-    
+    @IBOutlet weak var noticeLabel: UILabel!
     
     //택배나 직거래 버튼 눌렀을 때 화면이 변하기
     @IBAction func changeView(_ sender: UIButton) {
         updateView(selected: sender.tag)
+        if sender.tag == 0 {
+            deliveryBtn.setImage(UIImage(named: "fire"), for: .normal)
+            directBtn.setImage(UIImage(named: "ggobuk"), for: .normal)
+            noticeLabel.isHidden = false
+        } else {
+                deliveryBtn.setImage(UIImage(named: "ggobuk"), for: .normal)
+                directBtn.setImage(UIImage(named: "fire"), for: .normal)
+            
+            noticeLabel.isHidden = true
+            }
+
     }
     
     private lazy var deliveryService: DeliveryVC = {
@@ -42,7 +53,7 @@ class DealVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateView(selected: 0)
         // Do any additional setup after loading the view.
     }
 
