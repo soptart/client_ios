@@ -8,14 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
+var imageList:[String] = []
 
 class MyPageImgStoreVC: UICollectionViewController {
+   
     @IBOutlet var storeImageCollection: UICollectionView!
-    
-    var imageList = [UIImage]() //image배열
-    
+    //image배열
+    private let reuseIdentifier = "Cell"
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setting()
@@ -28,9 +29,9 @@ class MyPageImgStoreVC: UICollectionViewController {
     func setting(){
         
         //데이터 세팅
-        imageList.append(UIImage(named:"ggobuk")!)
-        imageList.append(UIImage(named: "fire")!)
-        imageList.append(UIImage(named: "jiu")!)
+        imageList.append("ggobuk")
+        imageList.append("fire")
+        imageList.append("jiu")
         
     }
     
@@ -39,23 +40,29 @@ class MyPageImgStoreVC: UICollectionViewController {
 
 extension MyPageStoreVC : UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "all_store_img", for: indexPath) as! MyPageImageStoreCell
-        
-       
-        
-        
-        return cell
-        
-    }
     
     
 }
 
 extension MyPageStoreVC : UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "all_store_img", for: indexPath) as! MyPageImageStoreCell
+        
+        let data = imageList[indexPath.row]
+        cell.showArt_img.image = UIImage(named:data)
+        return cell
+        
+    }
+    
+    func 
 }
