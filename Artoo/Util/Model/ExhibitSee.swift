@@ -11,4 +11,5 @@ import Foundation
 struct ExhibitSee {
     let exhibitIndex:Int
     let exhibitImg:String
+ 
 }
