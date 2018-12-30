@@ -78,20 +78,21 @@ class BuyVC: UIViewController, UITextViewDelegate {
         feedContentTV!.frame.origin = CGPoint(x:20, y:662 + height)
         }
     
-    //구매하기 버튼 누른다면
+    //구매하기 버튼 누른다면 거래 창으로 이동
     @IBAction func buyBtn(_ sender: Any) {
         
+        guard let dVC = storyboard?.instantiateViewController(withIdentifier: "deal") as? DealVC else { return }
+        
+        navigationController?.pushViewController(dVC, animated: true)
     }
     
     //이미지 버튼 누른다면
     @objc func bigImage(){
         guard let BigVC = storyboard?.instantiateViewController(withIdentifier: "BigImg") as? BigImageVC else{ return
         }
-        
-        /* 이거 옵셔널 좀 공부하고 다시
-         
+    /* 옵셔널 공부가 필요함.
          BigVC.BigImageView!.image = UIImage(named: images)
-        */
+      */
         navigationController?.pushViewController(BigVC, animated: true)
     }
 }

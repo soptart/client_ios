@@ -11,6 +11,9 @@
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
 		5D9B7D7021D5D30A009C12D3 /* All_ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D6F21D5D30A009C12D3 /* All_ArtViewController.swift */; };
 		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
+		5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7921D83933009C12D3 /* DealVC.swift */; };
+		5D9B7D7C21D8394D009C12D3 /* DeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7B21D8394D009C12D3 /* DeliveryVC.swift */; };
+		5D9B7D7E21D83978009C12D3 /* DirectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7D21D83978009C12D3 /* DirectVC.swift */; };
 		5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606CD21D4C41B00C216FD /* Pinterest.swift */; };
 		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
 		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
@@ -46,6 +49,9 @@
 		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D6F21D5D30A009C12D3 /* All_ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_ArtViewController.swift; sourceTree = "<group>"; };
 		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D7921D83933009C12D3 /* DealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DealVC.swift; path = Artoo/VC/Art/DealVC.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D7B21D8394D009C12D3 /* DeliveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryVC.swift; path = Artoo/VC/Art/DeliveryVC.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D7D21D83978009C12D3 /* DirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectVC.swift; path = Artoo/VC/Art/DirectVC.swift; sourceTree = SOURCE_ROOT; };
 		5DB606CD21D4C41B00C216FD /* Pinterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pinterest.swift; path = Artoo/VC/Art/Pinterest.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
@@ -113,6 +119,9 @@
 				5D4607D921D4892000C787AC /* AllImageCell.swift */,
 				5DB606CD21D4C41B00C216FD /* Pinterest.swift */,
 				5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */,
+				5D9B7D7D21D83978009C12D3 /* DirectVC.swift */,
+				5D9B7D7B21D8394D009C12D3 /* DeliveryVC.swift */,
+				5D9B7D7921D83933009C12D3 /* DealVC.swift */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -301,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
+				5D9B7D7C21D8394D009C12D3 /* DeliveryVC.swift in Sources */,
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				A3FE1B1021CF6D310073F40F /* HomeThemeCell.swift in Sources */,
 				A3FE1B1221CF6D870073F40F /* HomeThemeTCell.swift in Sources */,
@@ -308,6 +318,7 @@
 				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
 				A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */,
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
+				5D9B7D7E21D83978009C12D3 /* DirectVC.swift in Sources */,
 				A30048EC21CE63370042C4EF /* Author.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */,
@@ -322,6 +333,7 @@
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
+				5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */,
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,
 				A3FE1B1421CF706C0073F40F /* Theme.swift in Sources */,
 				5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */,
