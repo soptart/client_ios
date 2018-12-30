@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
 		A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */; };
 		A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DE21CE50960042C4EF /* HomeTodayVC.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageMainVC.swift; path = Artoo/VC/Mypage/MyPageMainVC.swift; sourceTree = SOURCE_ROOT; };
 		A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAuthorCell.swift; sourceTree = "<group>"; };
 		A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkCell.swift; sourceTree = "<group>"; };
 		A30048DE21CE50960042C4EF /* HomeTodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayVC.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		A30048D621CE4F340042C4EF /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
+				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,
