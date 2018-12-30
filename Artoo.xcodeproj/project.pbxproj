@@ -14,6 +14,10 @@
 		5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8721D8A9A6009C12D3 /* MyPageReviewVC.swift */; };
 		5D9B7D8A21D8A9D0009C12D3 /* NoArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8921D8A9CF009C12D3 /* NoArtVC.swift */; };
 		5D9B7D8C21D8A9EA009C12D3 /* MyArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8B21D8A9EA009C12D3 /* MyArtVC.swift */; };
+		5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8D21D8BE26009C12D3 /* ArtPhoto.swift */; };
+		5D9B7D9021D8C06D009C12D3 /* MyPageImgStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8F21D8C06D009C12D3 /* MyPageImgStoreVC.swift */; };
+		5D9B7D9221D8C0CA009C12D3 /* MyPageImageStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D9121D8C0CA009C12D3 /* MyPageImageStoreCell.swift */; };
+		5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D9321D8C2D9009C12D3 /* MyPagePinterLayout.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
 		A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */; };
 		A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DE21CE50960042C4EF /* HomeTodayVC.swift */; };
@@ -49,6 +53,10 @@
 		5D9B7D8721D8A9A6009C12D3 /* MyPageReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageReviewVC.swift; path = Artoo/VC/Mypage/MyPageReviewVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D8921D8A9CF009C12D3 /* NoArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoArtVC.swift; path = Artoo/VC/Mypage/NoArtVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D8B21D8A9EA009C12D3 /* MyArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyArtVC.swift; path = Artoo/VC/Mypage/MyArtVC.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D8D21D8BE26009C12D3 /* ArtPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtPhoto.swift; path = Artoo/Util/Model/ArtPhoto.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D8F21D8C06D009C12D3 /* MyPageImgStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageImgStoreVC.swift; path = Artoo/VC/Mypage/MyPageImgStoreVC.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D9121D8C0CA009C12D3 /* MyPageImageStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageImageStoreCell.swift; path = Artoo/VC/Mypage/MyPageImageStoreCell.swift; sourceTree = SOURCE_ROOT; };
+		5D9B7D9321D8C2D9009C12D3 /* MyPagePinterLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPagePinterLayout.swift; path = Artoo/VC/Mypage/MyPagePinterLayout.swift; sourceTree = SOURCE_ROOT; };
 		A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAuthorCell.swift; sourceTree = "<group>"; };
 		A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkCell.swift; sourceTree = "<group>"; };
 		A30048DE21CE50960042C4EF /* HomeTodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayVC.swift; sourceTree = "<group>"; };
@@ -99,6 +107,9 @@
 				5D9B7D8721D8A9A6009C12D3 /* MyPageReviewVC.swift */,
 				5D9B7D8921D8A9CF009C12D3 /* NoArtVC.swift */,
 				5D9B7D8B21D8A9EA009C12D3 /* MyArtVC.swift */,
+				5D9B7D8F21D8C06D009C12D3 /* MyPageImgStoreVC.swift */,
+				5D9B7D9121D8C0CA009C12D3 /* MyPageImageStoreCell.swift */,
+				5D9B7D9321D8C2D9009C12D3 /* MyPagePinterLayout.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -135,6 +146,7 @@
 				A30048ED21CE63400042C4EF /* Work.swift */,
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
 				A3FE1B1521CF73760073F40F /* ThemeImg.swift */,
+				5D9B7D8D21D8BE26009C12D3 /* ArtPhoto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,16 +320,20 @@
 				5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */,
 				A3FE1B1021CF6D310073F40F /* HomeThemeCell.swift in Sources */,
 				A3FE1B1221CF6D870073F40F /* HomeThemeTCell.swift in Sources */,
+				5D9B7D9221D8C0CA009C12D3 /* MyPageImageStoreCell.swift in Sources */,
 				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
 				A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */,
+				5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */,
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
 				5D9B7D8421D8A970009C12D3 /* MyPageStoreVC.swift in Sources */,
 				A30048EC21CE63370042C4EF /* Author.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
+				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
+				5D9B7D9021D8C06D009C12D3 /* MyPageImgStoreVC.swift in Sources */,
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,

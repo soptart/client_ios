@@ -186,6 +186,7 @@
                             <constraint firstItem="qIy-Jn-jzW" firstAttribute="leading" secondItem="npA-z5-JuO" secondAttribute="leading" id="FkW-qf-09d"/>
                             <constraint firstItem="qIy-Jn-jzW" firstAttribute="top" secondItem="npA-z5-JuO" secondAttribute="top" id="fcJ-BG-s7L"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="NPa-AZ-zPc"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                 </viewController>
@@ -265,6 +266,52 @@
             </objects>
             <point key="canvasLocation" x="1959" y="590"/>
         </scene>
+        <!--My Page Img StoreVC-->
+        <scene sceneID="Wj4-q8-drA">
+            <objects>
+                <collectionViewController id="guh-5r-Bwh" customClass="MyPageImgStoreVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rhg-tl-I64">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kt9-xA-mD2">
+                            <size key="itemSize" width="174" height="184"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="all_store_img" id="NNd-gb-Ofs" customClass="MyPageImageStoreCell" customModule="Artoo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="174" height="184"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WxB-2U-2nu">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="184"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="showArt_img" destination="WxB-2U-2nu" id="3qQ-Mi-ZCg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="guh-5r-Bwh" id="IkG-Gy-gZm"/>
+                            <outlet property="delegate" destination="guh-5r-Bwh" id="4fQ-qh-sc9"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="storeImageCollection" destination="rhg-tl-I64" id="EPJ-O4-cLE"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9h4-3U-d8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="-782.15892053973016"/>
+        </scene>
         <!--No ArtVC-->
         <scene sceneID="9O8-5c-4Xg">
             <objects>
@@ -289,6 +336,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7nE-bi-LBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYP-XQ-Sdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,33 +359,6 @@
                                     <color key="titleColor" red="0.7803921568627451" green="0.792156862745098" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s9b-5F-cbr">
-                                <rect key="frame" x="16" y="58" width="343" height="589"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="btA-Gb-epB">
-                                    <size key="itemSize" width="140" height="139"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1vt-oM-aFF">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="139"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="140" height="139"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHW-9B-yph">
-                                                    <rect key="frame" x="0.0" y="5" width="140" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="i3f-Qa-JH4"/>
@@ -345,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3U-eh-4Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309.5999999999999" y="-783.05847076461771"/>
+            <point key="canvasLocation" x="1543" y="-1641"/>
         </scene>
     </scenes>
     <resources>
