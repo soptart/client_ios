@@ -62,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hU1-X1-xCm">
-                                <rect key="frame" x="47" y="114.5" width="21" height="2"/>
+                                <rect key="frame" x="47" y="109.5" width="21" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="HRI-3M-8GG"/>
@@ -70,13 +70,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJx-F5-IHb">
-                                <rect key="frame" x="47" y="136.5" width="132.5" height="62.5"/>
+                                <rect key="frame" x="47" y="131.5" width="132.5" height="62.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="3c0-a2-fNt">
-                                <rect key="frame" x="47" y="267.5" width="281" height="152"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="3c0-a2-fNt">
+                                <rect key="frame" x="47" y="262.5" width="281" height="162"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Vtx-Jk-4Ov">
                                         <rect key="frame" x="0.0" y="0.0" width="281" height="58.5"/>
@@ -96,7 +96,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="jEp-2s-Z6u">
-                                        <rect key="frame" x="0.0" y="93.5" width="281" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="103.5" width="281" height="58.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sL-9q-TkQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="19.5"/>
@@ -118,7 +118,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2x-YG-BVk">
-                                <rect key="frame" x="47" y="455" width="281" height="30"/>
+                                <rect key="frame" x="47" y="460" width="281" height="30"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -129,7 +129,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-T2-DDf">
                                 <rect key="frame" x="47" y="603" width="45" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="750" constant="45" id="whr-Jq-mMp"/>
+                                    <constraint firstAttribute="width" priority="999" constant="45" id="whr-Jq-mMp"/>
                                 </constraints>
                                 <state key="normal" title="join us">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,14 +138,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL8-Eh-o0l">
                                 <rect key="frame" x="216" y="603" width="112" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="750" constant="112" id="eog-IT-eo1"/>
+                                    <constraint firstAttribute="width" constant="112" id="eog-IT-eo1"/>
                                 </constraints>
                                 <state key="normal" title="forgot password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artoo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uG-xI-Nrk">
-                                <rect key="frame" x="73" y="105" width="45.5" height="21.5"/>
+                                <rect key="frame" x="73" y="100" width="45.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
