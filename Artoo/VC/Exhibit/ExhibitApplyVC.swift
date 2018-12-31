@@ -7,6 +7,13 @@
 import UIKit
 
 class ExhibitApplyVC: UIViewController {
+    var selectedIndexPath: IndexPath!
+    var cvSelectedIndexPath: IndexPath!
+
+    
+   
+    @IBOutlet weak var applyBtnConstraint: NSLayoutConstraint!
+    
     
     @IBOutlet weak var applyScrollView: UIScrollView!
     
@@ -58,14 +65,13 @@ class ExhibitApplyVC: UIViewController {
     }
     
     
-    //수정 필요
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y / 180
         if offset > 1 {
-            applyBtn.isHidden = true
+            applyBtnConstraint.constant = 0
             scrollView.updateConstraints()
         }else {
-            applyBtn.isHidden = false
+            applyBtnConstraint.constant = 60
             scrollView.updateConstraints()
         }
         print("\(scrollView.contentOffset.y)")
@@ -129,10 +135,20 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExhibitWorkCell", for: indexPath) as! ExhibitWorkCell
         
+        cell.delegate = self
+        cell.indexPath = indexPath
+        
         if let collectionImg = detailList?.myWork[indexPath.row] {
                   cell.workImg.image = UIImage(named: collectionImg)
+            if(indexPath == cvSelectedIndexPath){
+                cell.isRadioSelected = true
+            }else {
+                cell.isRadioSelected = false
+            }
+
         }
-        cell.radioBtn.addTarget(self, action: #selector(selectWork), for: .touchUpInside)
+
+
   
         
         return cell
@@ -161,13 +177,18 @@ extension ExhibitApplyVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitApplyCell") as! ExhibitApplyCell
         
+        cell.delegate = self
+        cell.indexPath = indexPath
+
+        
         if let data = detailList?.exhibitInfo[indexPath.row]{
             cell.mainLabel.text = data.mainTxt
             cell.subLabel.text = data.subTxt
-            
-            //라디오 버튼 클릭 이벤트
-            cell.radioBtn.tag = indexPath.row
-            cell.radioBtn.addTarget(self, action: #selector(selectExhibit), for: .touchUpInside)
+            if indexPath == selectedIndexPath {
+                cell.isRadioSelected = true
+            } else {
+                cell.isRadioSelected = false
+            }
         }
         
         return cell
@@ -197,25 +218,18 @@ extension ExhibitApplyVC {
         dismiss(animated: true)
     }
     
-    //전시 라디오 버튼 클릭시 이미지 변경과 처리들
-    @objc func selectExhibit(sender: UIButton){
-        switch sender.tag {
-        case 0:
-            sender.setImage(UIImage(named: "ggobuk"), for: UIControl.State.normal)
-        case 1:
-            sender.setImage(UIImage(named: "ggobuk"), for: UIControl.State.normal)
-        case 2:
-            sender.setImage(UIImage(named: "ggobuk"), for: UIControl.State.normal)
-        default:
-            print("hi")
-        }
-        
+    
+}
 
+
+extension ExhibitApplyVC : RadioBtnDelegate {
+    func cvSelectRadio(at indexPath: IndexPath) {
+        cvSelectedIndexPath = indexPath
+        myWorkCV.reloadData()
     }
     
-    @objc func selectWork(sender: UIButton) {
-        
-    }
-    
-    
+    func selectRadioBtn(at indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        exhibitTV.reloadData()
+}
 }

@@ -187,6 +187,9 @@
                                                                         <constraint firstAttribute="width" constant="25" id="tEc-LF-cZd"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="jiu"/>
+                                                                    <connections>
+                                                                        <action selector="selectRadioBtn:" destination="OuE-I3-SKs" eventType="touchUpInside" id="1lZ-QW-6Cz"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -230,6 +233,9 @@
                                                                     <rect key="frame" x="43" y="111" width="32" height="22"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <state key="normal" title="Button" image="jiu"/>
+                                                                    <connections>
+                                                                        <action selector="selectRadio:" destination="abI-kI-jHG" eventType="touchUpInside" id="6h6-PW-hyW"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </view>
@@ -364,6 +370,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="applyBtn" destination="AKK-D2-cSi" id="ZZm-YW-jE2"/>
+                        <outlet property="applyBtnConstraint" destination="bTX-5r-nhP" id="Ihj-gv-dI9"/>
                         <outlet property="applyScrollView" destination="hKe-8z-o3G" id="Md5-OD-TYA"/>
                         <outlet property="closeBtn" destination="pmy-9z-LRM" id="ZbZ-X8-DTY"/>
                         <outlet property="dateLabel" destination="j8P-g5-eSw" id="isX-iV-TZi"/>
