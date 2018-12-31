@@ -10,8 +10,29 @@ class HomeThemeVC: UIViewController {
 
     @IBOutlet weak var themeTableView: UITableView!
     
-    var themeList: [Theme] = []
-    var tableIndex = 0
+    //태그 콜렉션 뷰
+    @IBOutlet weak var tagCV: UICollectionView!
+    
+    //추천 테이블 헤더
+    @IBOutlet weak var mainImageView: UICollectionView!
+    
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    @IBOutlet weak var allBtn: UIButton!
+
+    //추천 콜렉션 뷰
+    @IBOutlet weak var recommandCV: UICollectionView!
+    
+    //테마 테이블뷰
+    @IBOutlet weak var themeTV: UITableView!
+    
+    
+    //테마 데이터 - 서버 통신 시 수정 필요
+    var themeList:Theme?
+   
+    
+    //태그에 따라 아래 데이터들이 변경되도록
+    var tagIndex = 0
     
     
     //테마 자세히 보는 화면 VC
@@ -24,11 +45,22 @@ class HomeThemeVC: UIViewController {
     }()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        themeTableView.delegate = self
-        themeTableView.dataSource = self
-        setData() //초기 데이터 설정
+        setData()
+        
+        tagCV.delegate = self
+        tagCV.dataSource = self
+        
+        recommandCV.delegate = self
+        recommandCV.dataSource = self
+        
+        themeTV.delegate = self
+        themeTV.dataSource = self
+        
+        allBtn.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
+        
     }
 
 }
@@ -40,28 +72,21 @@ extension HomeThemeVC : UITableViewDataSource {
     //섹션 당 행의 개수
     //섹션이 하나라면 그냥 개수를 리턴하면 됨
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return themeList.count
+        
+        guard let count = themeList?.theme.count else {
+            return 1
+        }
+        return count
     }
     
     //셀에 대한 처리
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! HomeThemeTCell
-        
-        tableIndex = indexPath.row
-        
-        //테이블 인덱스에 따라 콜렉션 뷰의 데이터를 변경해 줌
-        let themeData = themeList[indexPath.row]
-       
-        //메인 태그
-        cell.mainTagLabel.text = themeData.mainTag
-        //서브 태그
-        cell.subTagLabel.text = themeData.subTag
-       
-        //자세히 보기 버튼
-        cell.detailBtn.tag = indexPath.row
-        cell.detailBtn.addTarget(self, action: #selector(detailBtnClick), for: .touchUpInside)
-        
-        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+        let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! ThemeCell
+        if let data = themeList?.theme[indexPath.row] {
+            cell.themeImg.image = UIImage(named: data.themeImg)
+            cell.themeLabel.text = data.themeStr
+
+        }
         
         return cell
     }
@@ -73,8 +98,12 @@ extension HomeThemeVC : UITableViewDataSource {
 
 //테이블 뷰 Delegate
 extension HomeThemeVC : UITableViewDelegate {
-    
-    
+    //테마 테이블 클릭 시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let index = themeList?.tag[indexPath.row].tagIndex {
+            goDetail(index: index)
+        }
+    }
     
 }
 
@@ -83,15 +112,27 @@ extension HomeThemeVC : UITableViewDelegate {
 extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (view.frame.width) / 3
-        let height = (view.frame.height) / 4
-        return CGSize(width: width, height: height)
+        switch collectionView {
+        case tagCV:
+            let width = (view.frame.width) / 5 - 15
+            let height = (view.frame.height) / 20
+            return CGSize(width: width, height: height)
+        case recommandCV:
+            let width = (view.frame.width) / 2 - 32
+            let height = (view.frame.height) / 4 + 10
+            return CGSize(width: width, height: height)
+        default:
+            return CGSize(width: 1, height: 1)
+        }
+        
     }
+
+
     
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0.5
     }
     
     
@@ -99,16 +140,21 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     //섹션 내부 여백
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        return UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
         
         
     }
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        
+        switch collectionView {
+        case tagCV:
+            goDetail(index: indexPath.row)
+        case recommandCV:
+            print("작품창으로 이동")
+        default:
+            print("hi")
+        }
     }
     
 }
@@ -121,17 +167,48 @@ extension HomeThemeVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        switch collectionView {
+        case tagCV:
+            guard let count = themeList?.tag.count else {
+                return 1
+            }
+            return count
+        case recommandCV:
+            guard let count = themeList?.recommand.recommandImg.count else {
+                return 1
+            }
+            return count
+        default:
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeThemeCell", for: indexPath) as! HomeThemeCell
-        
-        let collectionImg = themeList[tableIndex].themeImg[indexPath.row]
-        cell.themeImg.image = UIImage(named: collectionImg.themeImg)
-        
-        return cell
+        switch collectionView {
+        case tagCV:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
+           
+            if let data = themeList?.tag[indexPath.row]{
+                cell.tagStr.text = data.tagStr
+            } else {
+                cell.tagStr.text = "태그 없음"
+            }
+            
+            return cell
+            
+        case recommandCV:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommandCell", for: indexPath) as! RecommandCell
+            if let data = themeList?.recommand.recommandImg[indexPath.row]{
+                cell.recommandImg.image = UIImage(named: data)
+            } else {
+                cell.recommandImg.image = UIImage(named: "ggobuk")
+                return cell
+            }
+            return cell
+            
+        default:
+            return UICollectionViewCell()
+        }
     }
 }
 
@@ -143,18 +220,23 @@ extension HomeThemeVC : UICollectionViewDataSource {
 extension HomeThemeVC {
     func setData() {
         //쓰레기 값, 서버 통신 후 변경
-        themeList.append(Theme(mainTag: "#하이1", subTag: "하이1", themeImg: [ThemeImg(themeImg: "ggobuk"),ThemeImg(themeImg: "fire"),
-                ThemeImg(themeImg: "ggobuk"),ThemeImg(themeImg: "fire")]))
-        
-        themeList.append(Theme(mainTag: "#하이2", subTag: "하이2", themeImg: [ThemeImg(themeImg: "jiu"),ThemeImg(themeImg: "ggobuk"),ThemeImg(themeImg: "jiu"),ThemeImg(themeImg: "ggobuk")]))
-        
-        themeList.append(Theme(mainTag: "#하이3", subTag: "하이3", themeImg: [ThemeImg(themeImg: "meta"),ThemeImg(themeImg: "fire"),ThemeImg(themeImg: "meta"),ThemeImg(themeImg: "fire")]))
-        
-        themeList.append(Theme(mainTag: "#하이4", subTag: "하이4", themeImg: [ThemeImg(themeImg: "ggobuk"),ThemeImg(themeImg: "meta"), ThemeImg(themeImg: "ggobuk"),ThemeImg(themeImg: "meta")]))
+        themeList = Theme(tag: [Tag(tagStr: "태그1", tagIndex: 0),
+                                Tag(tagStr: "태그2", tagIndex: 1),
+                                Tag(tagStr: "태그3", tagIndex: 2),
+                                Tag(tagStr: "태그4", tagIndex: 3),
+                                Tag(tagStr: "태그5", tagIndex: 4)],
+                          recommand: Recommand(recommandStr: "거실에 걸어두면 느낌 있는 그림들", recommandImg: ["recommand","recommand", "recommand","recommand","recommand"]),
+                          theme: [ThemeDetail(themeStr: "하이1", themeImg: "theme"), ThemeDetail(themeStr: "하이2", themeImg: "theme"),
+                                   ThemeDetail(themeStr: "하이3", themeImg: "theme"),
+                                    ThemeDetail(themeStr: "하이4", themeImg: "theme"),
+                                     ThemeDetail(themeStr: "하이5", themeImg: "theme")])
+  
     }
     
     
-    @objc func detailBtnClick(){
+    //디테일 창으로 이동
+    @objc func goDetail(index:Int){
+        themeDetailVC.index = index
         present(themeDetailVC, animated: true, completion: nil)
     }
 

@@ -31,7 +31,7 @@ class DealVC: UIViewController {
 
     }
     
-    private lazy var deliveryService: DeliveryVC = {
+    private lazy var deliveryService : DeliveryVC = {
         let storyboard = Storyboard.shared().artStoryboard
         
         var viewController = storyboard.instantiateViewController(withIdentifier: "delivery") as! DeliveryVC

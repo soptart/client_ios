@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--All Art View Controller-->
+        <!--All ArtVC-->
         <scene sceneID="k3h-Av-hBJ">
             <objects>
-                <viewController storyboardIdentifier="all" id="i1D-R2-t6c" customClass="All_ArtViewController" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="all" id="i1D-R2-t6c" customClass="All_ArtVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zhk-6U-Bgw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1018,6 +1018,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CV1-3O-E3o"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2i-zB-xNi" userLabel="First Responder" sceneMemberID="firstResponder"/>

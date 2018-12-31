@@ -75,7 +75,7 @@ class FilterViewController: UIViewController {
         
         filterData = Filter(size:size, figure: figure, category:category)
         
-        guard let aVC = storyboard?.instantiateViewController(withIdentifier: "all") as? All_ArtViewController else { return }
+        guard let aVC = storyboard?.instantiateViewController(withIdentifier: "all") as? All_ArtVC else { return }
         
         
         aVC.sData = filterData?.size

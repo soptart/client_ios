@@ -14,6 +14,7 @@ class Storyboard {
     let exhibitStoryboard = UIStoryboard(name: "Exhibit", bundle: nil)
     let mypageStoryboard = UIStoryboard(name: "Mypage", bundle: nil)
     
+    
     struct StaticInstance {
         static var instance: Storyboard?
     }
