@@ -45,8 +45,6 @@ extension MyPageStoreVC : UICollectionViewDataSource {
         return 1
     }
     
-    
-    
 }
 
 extension MyPageStoreVC : UICollectionViewDelegateFlowLayout {
@@ -64,5 +62,4 @@ extension MyPageStoreVC : UICollectionViewDelegateFlowLayout {
         
     }
     
-    func 
 }

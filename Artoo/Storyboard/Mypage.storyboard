@@ -189,6 +189,9 @@
                         <viewLayoutGuide key="safeArea" id="NPa-AZ-zPc"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="containerView" destination="qIy-Jn-jzW" id="kKN-hv-Jjj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDb-f6-D1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,7 +272,7 @@
         <!--My Page Img StoreVC-->
         <scene sceneID="Wj4-q8-drA">
             <objects>
-                <collectionViewController id="guh-5r-Bwh" customClass="MyPageImgStoreVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="imgStorePage" id="guh-5r-Bwh" customClass="MyPageImgStoreVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rhg-tl-I64">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
