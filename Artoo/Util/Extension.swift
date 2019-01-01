@@ -4,12 +4,32 @@
 
 import UIKit
 import Photos
+import Kingfisher
 
 extension NSObject {
     static var reuseIdentifier:String {
         return String(describing:self)
     }
 }
+
+
+extension UIImageView {
+    public func imageFromUrl(_ urlString: String?, defaultImgPath : String) {
+        let defaultImg = UIImage(named: defaultImgPath)
+        if let url = urlString {
+            if url.isEmpty {
+                self.image = defaultImg
+            } else {
+                self.kf.setImage(with: URL(string: url), placeholder: defaultImg, options: [.transition(ImageTransition.fade(0.5))])
+            }
+        } else {
+            self.image = defaultImg
+        }
+    }
+}
+
+
+
 
 extension UITableViewCell {
     func gsno(_ value : String?) -> String{
