@@ -439,7 +439,10 @@
                         <viewLayoutGuide key="safeArea" id="DJe-8N-fne"/>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="QXo-no-gbq" id="vsu-3K-WDw"/>
                         <outlet property="goSign2Btn" destination="3yv-vW-n19" id="Xsc-yx-M6K"/>
+                        <outlet property="nameLabel" destination="GjP-GQ-0Hs" id="L6S-km-Q3W"/>
+                        <outlet property="passLabel" destination="csU-pu-2PX" id="UHm-Tj-MaS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQr-Cn-jzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,6 +525,8 @@
                         <viewLayoutGuide key="safeArea" id="QYY-x6-tzH"/>
                     </view>
                     <connections>
+                        <outlet property="accountLabel" destination="85n-K7-zbH" id="No9-r9-LNs"/>
+                        <outlet property="bankLabel" destination="vsA-b5-r19" id="WA8-mu-TWX"/>
                         <outlet property="finishSignBtn" destination="GNw-IU-2G5" id="ZOF-id-1qt"/>
                     </connections>
                 </viewController>
@@ -682,6 +687,9 @@
                     </view>
                     <connections>
                         <outlet property="goSign3Btn" destination="Y3N-xj-yJT" id="HLG-hQ-yRa"/>
+                        <outlet property="locationLabel" destination="1NV-Tq-bCA" id="zOb-p0-5PJ"/>
+                        <outlet property="phoneLabel" destination="XHz-xF-mdg" id="Tpu-Za-4qN"/>
+                        <outlet property="schoolLabel" destination="aKc-Gw-kwB" id="213-bW-JbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwm-DC-De4" userLabel="First Responder" sceneMemberID="firstResponder"/>

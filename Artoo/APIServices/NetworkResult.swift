@@ -9,5 +9,5 @@
 
 enum NetworkResult<T> {
     case success(T)
-    case error(T)
+    case error(Error)
 }

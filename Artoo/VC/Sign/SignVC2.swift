@@ -10,7 +10,25 @@ import UIKit
 
 class SignVC2: UIViewController {
     
+    //    u_email    String    not null
+    //    u_pw    String    not null
+    //    u_name    String    not null
+    //    u_phone    String    not null
+    //    u_address    String    주소
+    //    u_bank    String    은행 //not_null
+    //    u_account    String    계좌 //not_null
+    //    u_school    String    학교
+    //    u_dept    String    학과
+    
+    @IBOutlet weak var phoneLabel: UITextField!
+    @IBOutlet weak var locationLabel: UITextField!
+    @IBOutlet weak var schoolLabel: UITextField!
+    
     @IBOutlet weak var goSign3Btn: UIButton!
+    
+    var name:String!
+    var email:String!
+    var pass:String!
     
     
     private lazy var signVC3 : SignVC3 = {
@@ -20,29 +38,36 @@ class SignVC2: UIViewController {
         
         return viewController
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    goSign3Btn.addTarget(self, action: #selector(goSign3), for: .touchUpInside)
+        
+        goSign3Btn.addTarget(self, action: #selector(goSign3), for: .touchUpInside)
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
 
 extension SignVC2 {
     @objc func goSign3(){
-        navigationController?.pushViewController(signVC3, animated: true)
+        
+        if(phoneLabel.text == "" || locationLabel.text == ""){
+            print("sign2 빈칸을 채워주세요")
+            //학교는 빈칸이어도 됨
+        }else{
+            signVC3.name = name
+            signVC3.email = email
+            signVC3.pass = pass
+            
+            
+            signVC3.phone = locationLabel.text!
+            signVC3.location = locationLabel.text!
+            if let schoolText = schoolLabel.text {
+                signVC3.school = schoolText
+            }
+            navigationController?.pushViewController(signVC3, animated: true)
+        }
+        
     }
 }
