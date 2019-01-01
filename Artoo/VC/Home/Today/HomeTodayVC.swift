@@ -39,39 +39,44 @@ class HomeTodayVC: UIViewController {
         //데이터 세팅
         //서버 데이터 통신으로 변경
         authorList.append( Author (authorImg: "ggobuk", authorName: "최윤정",
-                                 authorWork: [Work(workImg: "ggobuk",workName: "꼬북1", workDetail: "2017년 작"),
-                                              Work(workImg: "ggobuk",workName: "꼬북2", workDetail: "2018년 작"),
-                                              Work(workImg: "ggobuk",workName: "꼬북3", workDetail: "2019년 작"),
-                                              Work(workImg: "ggobuk",workName: "꼬북4", workDetail: "2020년 작"),
-                                              Work(workImg: "ggobuk",workName: "꼬북5", workDetail: "2021년 작")] ) )
+                                   authorWork: [Work(authorName: "홍익대학교\n최윤정",authorIntro: "안녕하세요 최윤정입니다", workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "ggobuk")
+                                             ]) )
         
         authorList.append( Author (authorImg: "fire", authorName: "이세은",
-                                   authorWork: [Work(workImg: "fire",workName: "파이리1", workDetail: "2017년 작"),
-                                                Work(workImg: "fire",workName: "파이리2", workDetail: "2018년 작"),
-                                                Work(workImg: "fire",workName: "파이리3", workDetail: "2019년 작"),
-                                                Work(workImg: "fire",workName: "파이리4", workDetail: "2020년 작"),
-                                                Work(workImg: "fire",workName: "파이리5", workDetail: "2021년 작")] ) )
-
+                                   authorWork: [Work(authorName: "홍익대학교\n이세은",authorIntro: "안녕하세요 이세은입니다", workImg: "ggobuk"),
+                                   Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                   Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                   Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                   Work(authorName: nil,authorIntro: nil, workImg: "fire")
+            ]) )
         authorList.append( Author (authorImg: "jiu", authorName: "윤여진",
-                                   authorWork: [Work(workImg: "jiu",workName: "이름1", workDetail: "2017년 작"),
-                                                Work(workImg: "jiu",workName: "이름2", workDetail: "2018년 작"),
-                                                Work(workImg: "jiu",workName: "이름3", workDetail: "2019년 작"),
-                                                Work(workImg: "jiu",workName: "이름4", workDetail: "2020년 작"),
-                                                Work(workImg: "jiu",workName: "이름5", workDetail: "2021년 작")] ) )
+                                   authorWork: [Work(authorName: "홍익대학교\n윤여진",authorIntro: "안녕하세요 윤여진", workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire")
+            ]) )
 
-        authorList.append( Author (authorImg: "king", authorName: "한선민",
-                                   authorWork: [Work(workImg: "king",workName: "이름1", workDetail: "2017년 작"),
-                                                Work(workImg: "king",workName: "이름2", workDetail: "2018년 작"),
-                                                Work(workImg: "king",workName: "이름3", workDetail: "2019년 작"),
-                                                Work(workImg: "king",workName: "이름4", workDetail: "2020년 작"),
-                                                Work(workImg: "king",workName: "이름5", workDetail: "2021년 작")] ) )
+        authorList.append( Author (authorImg: "fire", authorName: "이다은",
+                                   authorWork: [Work(authorName: "홍익대학교\n이다은",authorIntro: "안녕하세요 이다은", workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire")
+            ]) )
 
-        authorList.append( Author (authorImg: "meta", authorName: "김정음",
-                                   authorWork: [Work(workImg: "meta",workName: "이름1", workDetail: "2017년 작"),
-                                                Work(workImg: "meta",workName: "이름2", workDetail: "2018년 작"),
-                                                Work(workImg: "meta",workName: "이름3", workDetail: "2019년 작"),
-                                                Work(workImg: "meta",workName: "이름4", workDetail: "2020년 작"),
-                                                Work(workImg: "meta",workName: "이름5", workDetail: "2021년 작")] ) )
+        authorList.append( Author (authorImg: "fire", authorName: "박유나",
+                            authorWork: [Work(authorName: "홍익대학교\n박유나",authorIntro: "안녕하세요 박유나", workImg: "ggobuk"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire"),
+                                                Work(authorName: nil,authorIntro: nil, workImg: "fire")
+            ]) )
+
 
 
     }
@@ -103,7 +108,7 @@ extension HomeTodayVC : UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! TodayAuthorCell
             let authorInfo = authorList[indexPath.row]
             cell.authorName.text = authorInfo.authorName
-            
+        
             return cell
             
         case workCollection:
@@ -111,6 +116,24 @@ extension HomeTodayVC : UICollectionViewDataSource {
             print(authorIndex)
             let workInfo = authorList[authorIndex].authorWork[indexPath.row]
             cell.workImg.image = UIImage(named: workInfo.workImg)
+           
+            if(indexPath.row != 0){
+                cell.authorIntro.isHidden = true
+                cell.authorName.isHidden = true
+                cell.arrowBtn.isHidden = true
+            }else {
+                cell.authorIntro.isHidden = false
+                cell.authorName.isHidden = false
+                cell.arrowBtn.isHidden = false
+                
+                cell.authorName.text = workInfo.authorName
+                
+                if let intro = workInfo.authorIntro {
+                    cell.authorIntro.text = intro
+                }else{
+                    cell.authorIntro.text = ""
+                }
+            }
             
             return cell
         default:

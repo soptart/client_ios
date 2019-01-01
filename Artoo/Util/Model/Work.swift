@@ -6,7 +6,7 @@ import Foundation
 
 
 struct Work {
+    let authorName:String?
+    let authorIntro:String?
     let workImg:String
-    let workName:String
-    let workDetail:String
 }
