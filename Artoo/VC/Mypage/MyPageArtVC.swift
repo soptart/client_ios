@@ -14,7 +14,7 @@ class MyPageArtVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView(isData: 0)
+        updateView(isData: 1)
         // Do any additional setup after loading the view.
     }
     
