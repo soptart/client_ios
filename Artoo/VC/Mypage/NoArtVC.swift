@@ -13,18 +13,19 @@ class NoArtVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func uploadBtn(_ sender: Any) {
+    
+      //  let image = UIImage(named: "ggobuk")
+        let alert = UIAlertController(title: "업로드 알림", message: "hello", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+   // action.setValue(image?.withRenderingMode(.alwaysOriginal), forKey: "image")
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
     }
-    */
-
+    
+   
+    
 }

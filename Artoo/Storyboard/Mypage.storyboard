@@ -363,6 +363,9 @@
                                 <state key="normal" title="작품 업로드하기">
                                     <color key="titleColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="uploadBtn:" destination="3aI-6d-CqQ" eventType="touchUpInside" id="LIY-0U-Fis"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -451,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3U-eh-4Tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="-782"/>
+            <point key="canvasLocation" x="-54" y="-782"/>
         </scene>
     </scenes>
     <resources>
