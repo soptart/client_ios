@@ -7,17 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
 		5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D721D3976600C787AC /* FilterViewController.swift */; };
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
 		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
 		5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7921D83933009C12D3 /* DealVC.swift */; };
 		5D9B7D7E21D83978009C12D3 /* DirectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7D21D83978009C12D3 /* DirectVC.swift */; };
-		5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606CD21D4C41B00C216FD /* Pinterest.swift */; };
-		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
-		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
-		5DB606D621D55CB400C216FD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D521D55CB400C216FD /* Filter.swift */; };
-		5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */; };
-		5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */; };
 		5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */; };
 		5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8121D8A94D009C12D3 /* MyPageArtVC.swift */; };
 		5D9B7D8421D8A970009C12D3 /* MyPageStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8321D8A970009C12D3 /* MyPageStoreVC.swift */; };
@@ -29,6 +24,12 @@
 		5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D9321D8C2D9009C12D3 /* MyPagePinterLayout.swift */; };
 		5DA600D721DAF71500472FD1 /* BuyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA600D621DAF71500472FD1 /* BuyItem.swift */; };
 		5DA600D921DAF9F700472FD1 /* BuyItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA600D821DAF9F700472FD1 /* BuyItemCell.swift */; };
+		5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606CD21D4C41B00C216FD /* Pinterest.swift */; };
+		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
+		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
+		5DB606D621D55CB400C216FD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D521D55CB400C216FD /* Filter.swift */; };
+		5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */; };
+		5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */; };
 		5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC434D21D9F937003F75B5 /* MyPageImgStoreVC.swift */; };
 		5DEC435021D9F9F7003F75B5 /* MyPageImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC434F21D9F9F7003F75B5 /* MyPageImgCell.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
@@ -92,12 +93,6 @@
 		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7921D83933009C12D3 /* DealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DealVC.swift; path = Artoo/VC/Art/DealVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7D21D83978009C12D3 /* DirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectVC.swift; path = Artoo/VC/Art/DirectVC.swift; sourceTree = SOURCE_ROOT; };
-		5DB606CD21D4C41B00C216FD /* Pinterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pinterest.swift; path = Artoo/VC/Art/Pinterest.swift; sourceTree = SOURCE_ROOT; };
-		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
-		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
-		5DB606D521D55CB400C216FD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Artoo/Util/Model/Filter.swift; sourceTree = SOURCE_ROOT; };
-		5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = All_ArtVC.swift; path = Artoo/VC/Art/All_ArtVC.swift; sourceTree = SOURCE_ROOT; };
-		5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryVC.swift; path = Artoo/VC/Art/DeliveryVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageMainVC.swift; path = Artoo/VC/Mypage/MyPageMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D8121D8A94D009C12D3 /* MyPageArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageArtVC.swift; path = Artoo/VC/Mypage/MyPageArtVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D8321D8A970009C12D3 /* MyPageStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageStoreVC.swift; path = Artoo/VC/Mypage/MyPageStoreVC.swift; sourceTree = SOURCE_ROOT; };
@@ -109,8 +104,16 @@
 		5D9B7D9321D8C2D9009C12D3 /* MyPagePinterLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPagePinterLayout.swift; path = Artoo/VC/Mypage/MyPagePinterLayout.swift; sourceTree = SOURCE_ROOT; };
 		5DA600D621DAF71500472FD1 /* BuyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyItem.swift; path = Artoo/Util/Model/BuyItem.swift; sourceTree = SOURCE_ROOT; };
 		5DA600D821DAF9F700472FD1 /* BuyItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyItemCell.swift; path = Artoo/VC/Mypage/BuyItemCell.swift; sourceTree = SOURCE_ROOT; };
+		5DB606CD21D4C41B00C216FD /* Pinterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pinterest.swift; path = Artoo/VC/Art/Pinterest.swift; sourceTree = SOURCE_ROOT; };
+		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
+		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
+		5DB606D521D55CB400C216FD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Artoo/Util/Model/Filter.swift; sourceTree = SOURCE_ROOT; };
+		5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = All_ArtVC.swift; path = Artoo/VC/Art/All_ArtVC.swift; sourceTree = SOURCE_ROOT; };
+		5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryVC.swift; path = Artoo/VC/Art/DeliveryVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC434D21D9F937003F75B5 /* MyPageImgStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageImgStoreVC.swift; path = Artoo/VC/Mypage/MyPageImgStoreVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC434F21D9F9F7003F75B5 /* MyPageImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageImgCell.swift; path = Artoo/VC/Mypage/MyPageImgCell.swift; sourceTree = SOURCE_ROOT; };
+		79FF4C226C2AC22C260F3A43 /* Pods-Artoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Artoo/Pods-Artoo.debug.xcconfig"; sourceTree = "<group>"; };
+		9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAuthorCell.swift; sourceTree = "<group>"; };
 		A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkCell.swift; sourceTree = "<group>"; };
 		A30048DE21CE50960042C4EF /* HomeTodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayVC.swift; sourceTree = "<group>"; };
@@ -166,6 +169,7 @@
 		A3FE1B1321CF706C0073F40F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A3FE1B1521CF73760073F40F /* ThemeImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImg.swift; sourceTree = "<group>"; };
 		A3FE1B1721CF801F0073F40F /* ThemeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailVC.swift; sourceTree = "<group>"; };
+		ED83EAC316788AD98FE61B6C /* Pods-Artoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Artoo/Pods-Artoo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,12 +177,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		678589BBC8A7EB0F6F91543A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A30048D621CE4F340042C4EF /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +312,8 @@
 			children = (
 				A3CEF94C21CE2421000C7938 /* Artoo */,
 				A3CEF94B21CE2421000C7938 /* Products */,
+				D6CC1D5CD35D2B69C918F4FC /* Pods */,
+				678589BBC8A7EB0F6F91543A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,6 +408,15 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		D6CC1D5CD35D2B69C918F4FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79FF4C226C2AC22C260F3A43 /* Pods-Artoo.debug.xcconfig */,
+				ED83EAC316788AD98FE61B6C /* Pods-Artoo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,9 +424,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3CEF95C21CE2423000C7938 /* Build configuration list for PBXNativeTarget "Artoo" */;
 			buildPhases = (
+				74345FDC80A75996E66D9264 /* [CP] Check Pods Manifest.lock */,
 				A3CEF94621CE2421000C7938 /* Sources */,
 				A3CEF94721CE2421000C7938 /* Frameworks */,
 				A3CEF94821CE2421000C7938 /* Resources */,
+				B7E5E8C89839F98162460734 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,6 +498,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		74345FDC80A75996E66D9264 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Artoo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7E5E8C89839F98162460734 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Artoo/Pods-Artoo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Artoo/Pods-Artoo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A3CEF94621CE2421000C7938 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -480,7 +551,7 @@
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
 				A350ADD221D5161C00EC199E /* Detail.swift in Sources */,
 				A34B448121D72EF200991321 /* ExhibitSeeCell.swift in Sources */,
-				A3CEF95021CE2422000C7938 /* ViewController.swift in Sources */,				A350ADDC21D532E600EC199E /* ExhibitSeeVC.swift in Sources */,
+				A350ADDC21D532E600EC199E /* ExhibitSeeVC.swift in Sources */,
 				5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */,
 				A3783A3D21D669B80057884D /* TagCell.swift in Sources */,
 				A399E47321D85F5000679162 /* ExhibitSeeDetail.swift in Sources */,
@@ -493,9 +564,7 @@
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
 				5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */,
-				A3FE1B1021CF6D310073F40F /* HomeThemeCell.swift in Sources */,
 				5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */,
-				A3FE1B1221CF6D870073F40F /* HomeThemeTCell.swift in Sources */,
 				5DA600D921DAF9F700472FD1 /* BuyItemCell.swift in Sources */,
 				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
 				A350ADE221D55D1C00EC199E /* ExhibitApplyCell.swift in Sources */,
@@ -536,7 +605,6 @@
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
 				5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */,
-				5D9B7D9021D8C06D009C12D3 /* MyPageImgStoreVC.swift in Sources */,
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
@@ -689,6 +757,7 @@
 		};
 		A3CEF95D21CE2423000C7938 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79FF4C226C2AC22C260F3A43 /* Pods-Artoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -706,6 +775,7 @@
 		};
 		A3CEF95E21CE2423000C7938 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED83EAC316788AD98FE61B6C /* Pods-Artoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
