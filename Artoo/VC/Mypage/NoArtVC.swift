@@ -16,13 +16,7 @@ class NoArtVC: UIViewController {
     }
     
     @IBAction func uploadBtn(_ sender: Any) {
-    
-      //  let image = UIImage(named: "ggobuk")
-        let alert = UIAlertController(title: "업로드 알림", message: "hello", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
-   // action.setValue(image?.withRenderingMode(.alwaysOriginal), forKey: "image")
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        performSegue(withIdentifier: "notify", sender: self)
         
     }
     

@@ -13,6 +13,8 @@
 		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
 		5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7921D83933009C12D3 /* DealVC.swift */; };
 		5D9B7D7E21D83978009C12D3 /* DirectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7D21D83978009C12D3 /* DirectVC.swift */; };
+		5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */; };
+		5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7421DB7509007AE800 /* UploadMainVC.swift */; };
 		5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */; };
 		5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8121D8A94D009C12D3 /* MyPageArtVC.swift */; };
 		5D9B7D8421D8A970009C12D3 /* MyPageStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D8321D8A970009C12D3 /* MyPageStoreVC.swift */; };
@@ -102,6 +104,8 @@
 		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7921D83933009C12D3 /* DealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DealVC.swift; path = Artoo/VC/Art/DealVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7D21D83978009C12D3 /* DirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectVC.swift; path = Artoo/VC/Art/DirectVC.swift; sourceTree = SOURCE_ROOT; };
+		5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotifyUploadVC.swift; path = Artoo/VC/Mypage/NotifyUploadVC.swift; sourceTree = SOURCE_ROOT; };
+		5D79DF7421DB7509007AE800 /* UploadMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadMainVC.swift; path = Artoo/VC/Mypage/UploadMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7F21D886EA009C12D3 /* MyPageMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageMainVC.swift; path = Artoo/VC/Mypage/MyPageMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D8121D8A94D009C12D3 /* MyPageArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageArtVC.swift; path = Artoo/VC/Mypage/MyPageArtVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D8321D8A970009C12D3 /* MyPageStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageStoreVC.swift; path = Artoo/VC/Mypage/MyPageStoreVC.swift; sourceTree = SOURCE_ROOT; };
@@ -224,6 +228,8 @@
 				5DEC434D21D9F937003F75B5 /* MyPageImgStoreVC.swift */,
 				5DEC434F21D9F9F7003F75B5 /* MyPageImgCell.swift */,
 				5DA600D821DAF9F700472FD1 /* BuyItemCell.swift */,
+				5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */,
+				5D79DF7421DB7509007AE800 /* UploadMainVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -599,6 +605,8 @@
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
 				5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */,
+				5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */,
+				A3FE1B1021CF6D310073F40F /* HomeThemeCell.swift in Sources */,
 				5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */,
 				5DA600D921DAF9F700472FD1 /* BuyItemCell.swift in Sources */,
 				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
@@ -636,6 +644,7 @@
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
 				A350ADCE21D501CC00EC199E /* Recommand.swift in Sources */,
+				5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */,
 				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
 				A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
