@@ -55,6 +55,15 @@
 		A350ADE021D55BF600EC199E /* ExhibitDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADDF21D55BF600EC199E /* ExhibitDetailInfo.swift */; };
 		A350ADE221D55D1C00EC199E /* ExhibitApplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADE121D55D1C00EC199E /* ExhibitApplyCell.swift */; };
 		A350ADE421D55D4B00EC199E /* ExhibitWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADE321D55D4B00EC199E /* ExhibitWorkCell.swift */; };
+		A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4621DB526B00EC3A8D /* APIManager.swift */; };
+		A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4821DB52FF00EC3A8D /* Requestable.swift */; };
+		A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */; };
+		A3699B4D21DB53A900EC3A8D /* ResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4C21DB53A900EC3A8D /* ResponseArray.swift */; };
+		A3699B4F21DB53B700EC3A8D /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4E21DB53B700EC3A8D /* ResponseObject.swift */; };
+		A3699B5121DB53E800EC3A8D /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5021DB53E800EC3A8D /* NetworkResult.swift */; };
+		A3699B5321DB54B000EC3A8D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5221DB54B000EC3A8D /* Token.swift */; };
+		A3699B5521DB55AB00EC3A8D /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5421DB55AB00EC3A8D /* SignService.swift */; };
+		A3699B5721DB55B400EC3A8D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5621DB55B400EC3A8D /* LoginService.swift */; };
 		A36D46B921D884FE00B45FC1 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36D46B221D8836700B45FC1 /* NotoSansCJKkr-Black.otf */; };
 		A36D46BA21D8850100B45FC1 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36D46B621D8836900B45FC1 /* NotoSansCJKkr-Bold.otf */; };
 		A36D46BB21D8850400B45FC1 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36D46B321D8836700B45FC1 /* NotoSansCJKkr-DemiLight.otf */; };
@@ -137,6 +146,15 @@
 		A350ADDF21D55BF600EC199E /* ExhibitDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitDetailInfo.swift; sourceTree = "<group>"; };
 		A350ADE121D55D1C00EC199E /* ExhibitApplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitApplyCell.swift; sourceTree = "<group>"; };
 		A350ADE321D55D4B00EC199E /* ExhibitWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitWorkCell.swift; sourceTree = "<group>"; };
+		A3699B4621DB526B00EC3A8D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A3699B4821DB52FF00EC3A8D /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayService.swift; sourceTree = "<group>"; };
+		A3699B4C21DB53A900EC3A8D /* ResponseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseArray.swift; sourceTree = "<group>"; };
+		A3699B4E21DB53B700EC3A8D /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		A3699B5021DB53E800EC3A8D /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		A3699B5221DB54B000EC3A8D /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		A3699B5421DB55AB00EC3A8D /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		A3699B5621DB55B400EC3A8D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		A36D46B021D8836600B45FC1 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
 		A36D46B121D8836600B45FC1 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
 		A36D46B221D8836700B45FC1 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
@@ -272,6 +290,9 @@
 				A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */,
 				5D9B7D8D21D8BE26009C12D3 /* ArtPhoto.swift */,
 				5DA600D621DAF71500472FD1 /* BuyItem.swift */,
+				A3699B4C21DB53A900EC3A8D /* ResponseArray.swift */,
+				A3699B4E21DB53B700EC3A8D /* ResponseObject.swift */,
+				A3699B5221DB54B000EC3A8D /* Token.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +310,19 @@
 			children = (
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		A3699B4521DB524F00EC3A8D /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				A3699B4621DB526B00EC3A8D /* APIManager.swift */,
+				A3699B4821DB52FF00EC3A8D /* Requestable.swift */,
+				A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */,
+				A3699B5021DB53E800EC3A8D /* NetworkResult.swift */,
+				A3699B5421DB55AB00EC3A8D /* SignService.swift */,
+				A3699B5621DB55B400EC3A8D /* LoginService.swift */,
+			);
+			path = APIServices;
 			sourceTree = "<group>";
 		};
 		A36D46AF21D8835600B45FC1 /* Font */ = {
@@ -328,6 +362,7 @@
 		A3CEF94C21CE2421000C7938 /* Artoo */ = {
 			isa = PBXGroup;
 			children = (
+				A3699B4521DB524F00EC3A8D /* APIServices */,
 				A3D8BBF221D8EDE100EF249C /* Protocol */,
 				A36D46AF21D8835600B45FC1 /* Font */,
 				A3CEF96921CE2E39000C7938 /* Util */,
@@ -569,6 +604,8 @@
 				A30048EE21CE63400042C4EF /* Work.swift in Sources */,
 				A350ADE221D55D1C00EC199E /* ExhibitApplyCell.swift in Sources */,
 				A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */,
+				A3699B5321DB54B000EC3A8D /* Token.swift in Sources */,
+				A3699B5721DB55B400EC3A8D /* LoginService.swift in Sources */,
 				A350ADD021D501EF00EC199E /* ThemeDetail.swift in Sources */,
 				A3C4CD1021D3B43E009086AA /* ExhibitEnterVC.swift in Sources */,
 				A3FCBAA821D2085400CB8E51 /* ExhibitCell.swift in Sources */,
@@ -577,13 +614,17 @@
 				5D9B7D7E21D83978009C12D3 /* DirectVC.swift in Sources */,
 				A3D8BBF421D8EE0800EF249C /* RadioBtnDelegate.swift in Sources */,
 				5DA600D721DAF71500472FD1 /* BuyItem.swift in Sources */,
+				A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */,
 				5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */,
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
+				A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */,
 				5D9B7D8421D8A970009C12D3 /* MyPageStoreVC.swift in Sources */,
 				A30048EC21CE63370042C4EF /* Author.swift in Sources */,
 				A350ADD621D52BC700EC199E /* ExhibitApply.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */,
+				A3699B4F21DB53B700EC3A8D /* ResponseObject.swift in Sources */,
+				A3699B5121DB53E800EC3A8D /* NetworkResult.swift in Sources */,
 				5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
@@ -596,6 +637,7 @@
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
 				A350ADCE21D501CC00EC199E /* Recommand.swift in Sources */,
 				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
+				A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
 				A350ADE021D55BF600EC199E /* ExhibitDetailInfo.swift in Sources */,
 				A350ADD821D52BCD00EC199E /* ExhibitSee.swift in Sources */,
@@ -604,11 +646,13 @@
 				A350ADDA21D532BC00EC199E /* ExhibitApplyVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
+				A3699B5521DB55AB00EC3A8D /* SignService.swift in Sources */,
 				5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */,
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
 				5D9B7D8A21D8A9D0009C12D3 /* NoArtVC.swift in Sources */,
+				A3699B4D21DB53A900EC3A8D /* ResponseArray.swift in Sources */,
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,
 				5D9B7D8C21D8A9EA009C12D3 /* MyArtVC.swift in Sources */,
 				5DEC435021D9F9F7003F75B5 /* MyPageImgCell.swift in Sources */,
