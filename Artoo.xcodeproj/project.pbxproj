@@ -64,6 +64,9 @@
 		A3699B5321DB54B000EC3A8D /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5221DB54B000EC3A8D /* Token.swift */; };
 		A3699B5521DB55AB00EC3A8D /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5421DB55AB00EC3A8D /* SignService.swift */; };
 		A3699B5721DB55B400EC3A8D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5621DB55B400EC3A8D /* LoginService.swift */; };
+		A3699B5921DB5DE500EC3A8D /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5821DB5DE500EC3A8D /* SignVC.swift */; };
+		A3699B5B21DB5E5200EC3A8D /* SignVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5A21DB5E5200EC3A8D /* SignVC2.swift */; };
+		A3699B5D21DB5E5E00EC3A8D /* SignVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B5C21DB5E5E00EC3A8D /* SignVC3.swift */; };
 		A36D46B921D884FE00B45FC1 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36D46B221D8836700B45FC1 /* NotoSansCJKkr-Black.otf */; };
 		A36D46BA21D8850100B45FC1 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36D46B621D8836900B45FC1 /* NotoSansCJKkr-Bold.otf */; };
 		A36D46BB21D8850400B45FC1 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A36D46B321D8836700B45FC1 /* NotoSansCJKkr-DemiLight.otf */; };
@@ -155,6 +158,9 @@
 		A3699B5221DB54B000EC3A8D /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		A3699B5421DB55AB00EC3A8D /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		A3699B5621DB55B400EC3A8D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A3699B5821DB5DE500EC3A8D /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
+		A3699B5A21DB5E5200EC3A8D /* SignVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC2.swift; sourceTree = "<group>"; };
+		A3699B5C21DB5E5E00EC3A8D /* SignVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC3.swift; sourceTree = "<group>"; };
 		A36D46B021D8836600B45FC1 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
 		A36D46B121D8836600B45FC1 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
 		A36D46B221D8836700B45FC1 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
@@ -308,6 +314,9 @@
 		A34B447D21D727F700991321 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				A3699B5821DB5DE500EC3A8D /* SignVC.swift */,
+				A3699B5A21DB5E5200EC3A8D /* SignVC2.swift */,
+				A3699B5C21DB5E5E00EC3A8D /* SignVC3.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -626,6 +635,7 @@
 				A3699B4F21DB53B700EC3A8D /* ResponseObject.swift in Sources */,
 				A3699B5121DB53E800EC3A8D /* NetworkResult.swift in Sources */,
 				5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */,
+				A3699B5D21DB5E5E00EC3A8D /* SignVC3.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
 				5DB606D621D55CB400C216FD /* Filter.swift in Sources */,
@@ -646,6 +656,7 @@
 				A350ADDA21D532BC00EC199E /* ExhibitApplyVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
+				A3699B5B21DB5E5200EC3A8D /* SignVC2.swift in Sources */,
 				A3699B5521DB55AB00EC3A8D /* SignService.swift in Sources */,
 				5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */,
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
@@ -656,6 +667,7 @@
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,
 				5D9B7D8C21D8A9EA009C12D3 /* MyArtVC.swift in Sources */,
 				5DEC435021D9F9F7003F75B5 /* MyPageImgCell.swift in Sources */,
+				A3699B5921DB5DE500EC3A8D /* SignVC.swift in Sources */,
 				A3FE1B1421CF706C0073F40F /* Theme.swift in Sources */,
 				5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */,
 			);
