@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MyArtVC: UIViewController {
+class UploadNotifyVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
     }
     
 
