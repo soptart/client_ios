@@ -22,8 +22,11 @@ class NotifyUploadVC: UIViewController {
         dismiss(animated: true, completion: {()-> Void in self.present(uploadVC, animated: true, completion: nil)})
         */
         
-        dismiss(animated: true, completion: {()-> Void in self.navigationController?.pushViewController(uploadVC, animated: true)})
+        guard let moveVC = storyboard?.instantiateViewController(withIdentifier: "no_art") as? NoArtVC else { return }
         
+        self.dismiss(animated: true, completion: {()-> Void in moveVC.navigationController?.pushViewController(uploadVC, animated: true)})
+        
+
         }
 
     }
