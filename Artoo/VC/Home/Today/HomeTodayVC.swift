@@ -11,12 +11,6 @@ class HomeTodayVC: UIViewController {
     @IBOutlet  var authorCollection: UICollectionView!
     @IBOutlet  var workCollection: UICollectionView!
     
-    @IBOutlet var authorLabel: UILabel!
-    
-    @IBOutlet var workNameLabel: UILabel!
-    @IBOutlet var workDetailLabel: UILabel!
-    
-    
     //서버 통신 걸 때 변경
     //작가 콜렉션에 사용할 모델
     var authorList = [Author]()
@@ -79,18 +73,7 @@ class HomeTodayVC: UIViewController {
                                                 Work(workImg: "meta",workName: "이름4", workDetail: "2020년 작"),
                                                 Work(workImg: "meta",workName: "이름5", workDetail: "2021년 작")] ) )
 
- 
-        
-        //통신 성공 시 label에 값들 넣어줌 -> 아닐시에도 처리해야함
-        let firstAuth = authorList[0]
-        authorLabel.text = firstAuth.authorName + " 작가"
-        
-        guard let firstWork = firstAuth.authorWork.first else{
-            return
-        }
-        
-        workNameLabel.text = firstWork.workName
-        workDetailLabel.text = firstWork.workDetail
+
     }
     
     
@@ -119,7 +102,6 @@ extension HomeTodayVC : UICollectionViewDataSource {
         case authorCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! TodayAuthorCell
             let authorInfo = authorList[indexPath.row]
-            cell.authorImg.image = UIImage(named: authorInfo.authorImg)
             cell.authorName.text = authorInfo.authorName
             
             return cell
@@ -149,12 +131,12 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case authorCollection:
             let width = (view.frame.width) / 6
-            let height = (view.frame.height) / 6
+            let height = (view.frame.height) / 9
             return CGSize(width: width, height: height)
             
         case workCollection:
-            let width = (view.frame.width - 20) / 3
-            let height = (view.frame.height) / 3
+            let width = (view.frame.width - 15) / 1.6
+            let height = (view.frame.height) / 3 - 38.6
             return CGSize(width: width, height: height)
         default:
             return CGSize(width: 0, height: 0)
@@ -165,7 +147,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0
     }
     
     
@@ -175,7 +157,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         switch collectionView {
         //사이즈 재조정 필요
         case authorCollection:
-            return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         case workCollection:
             return UIEdgeInsets(top: 0, left:0, bottom: 0, right: 0)
         default:
@@ -192,28 +174,11 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         case authorCollection:
             authorIndex = indexPath.row
             workCollection.reloadData()
-            selectCellInit()
             let authorInfo = authorList[indexPath.row]
-            authorLabel.text = authorInfo.authorName + " 작가"
         case workCollection:
             let workInfo =  authorList[authorIndex].authorWork[indexPath.row]
-            workNameLabel.text = workInfo.workName 
-            workDetailLabel.text = workInfo.workDetail
         default:
             return
-        }
-    }
-    
-    func selectCellInit() {
-        //작가 클릭 시 아래 작품 콜렉션뷰 reload와 동시에 첫번째 작품으로
-        //이름과 작품설명이 바뀌어야 함
-        
-        if let firstWork = authorList[authorIndex].authorWork.first {
-            workNameLabel.text = firstWork.workName
-            workDetailLabel.text = firstWork.workDetail
-        } else {
-            workNameLabel.text = "작품 이름이 없습니다"
-            workDetailLabel.text = "작품 설명이 없습니다."
         }
     }
     
