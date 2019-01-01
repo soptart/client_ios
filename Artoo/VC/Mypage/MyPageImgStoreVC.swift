@@ -2,64 +2,56 @@
 //  MyPageImgStoreVC.swift
 //  Artoo
 //
-//  Created by 보윤 on 30/12/2018.
+//  Created by 보윤 on 31/12/2018.
 //  Copyright © 2018 홍정민. All rights reserved.
 //
 
 import UIKit
 
-var imageList:[String] = []
+class MyPageImgStoreVC: UIViewController {
 
-class MyPageImgStoreVC: UICollectionViewController {
-   
-    @IBOutlet var storeImageCollection: UICollectionView!
-    //image배열
-    private let reuseIdentifier = "Cell"
-
-
+    var imageList = [ArtPhoto]()
+    
+    //collectionView하고 collectionController하고 연결해줌.
+    @IBOutlet weak var imageCollection: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setting()
-
-        storeImageCollection.dataSource = self
-        storeImageCollection.delegate = self
         
+        imageCollection.dataSource = self
+        imageCollection.delegate = self
     }
-
+    
+    //데이터 세팅해주기
     func setting(){
-        
-        //데이터 세팅
-        imageList.append("ggobuk")
-        imageList.append("fire")
-        imageList.append("jiu")
+        imageList.append(ArtPhoto(artImg:"jiu"))
+        imageList.append(ArtPhoto(artImg: "ggobuk"))
+        imageList.append(ArtPhoto(artImg: "fire"))
+        imageList.append(ArtPhoto(artImg: "buyDivideLine"))
         
     }
-    
-    
 }
 
-extension MyPageStoreVC : UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 1
-    }
-    
-}
-
-extension MyPageStoreVC : UICollectionViewDelegateFlowLayout {
+extension MyPageImgStoreVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "all_store_img", for: indexPath) as! MyPageImageStoreCell
         
-        let data = imageList[indexPath.row]
-        cell.showArt_img.image = UIImage(named:data)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"imagecell", for: indexPath) as! MyPageImgCell
+        
+        let image = imageList[indexPath.row]
+        cell.showImg.image = UIImage(named:image.artImg)
+        
         return cell
-        
     }
+    
+    
+}
+
+extension MyPageImgStoreVC: UICollectionViewDelegateFlowLayout{
     
 }
