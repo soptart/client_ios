@@ -31,8 +31,9 @@ extension Requestable {
             case .success:
                 guard let value = res.result.value else { return }
                 completion(.success(value))
-            case .failure(let err):
-                completion(.error(err))
+            case .failure:
+                guard let value = res.result.value else { return }
+                completion(.error(value))
             }
         }
     }

@@ -17,7 +17,7 @@ struct SignService: APIManager, Requestable {
     //회원가입 api
     func sign(email: String, password: String,
               name: String, phone: String, adress: String,
-              bank: String, account: String, school: String?, completion: @escaping() -> Void) {
+              bank: String, account: String, school: String?, completion: @escaping(Int) -> Void) {
         
         let body = [
             "u_email" : email,
@@ -31,13 +31,16 @@ struct SignService: APIManager, Requestable {
         ]
         
         
-        postable(signURL, body: body, header: headers) { res in
+        postable(signURL, body: body as [String : Any], header: headers) { res in
             switch res {
             case .success(let value):
                 guard let status =  value.status else { return }
+                completion(status)
                 print("success")
-            case .error(let error):
-                print(error)
+            case .error(let value):
+                guard let status =  value.status else { return }
+                completion(status)
+                print("fail")
             }
             
         }
