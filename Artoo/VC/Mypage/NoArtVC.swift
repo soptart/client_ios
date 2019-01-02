@@ -18,6 +18,8 @@ class NoArtVC: UIViewController {
     @IBAction func uploadBtn(_ sender: Any) {
         performSegue(withIdentifier: "notify", sender: self)
         
+        guard let uploadVC = storyboard?.instantiateViewController(withIdentifier: "uploadMain") as? UploadMainVC else{ return }
+        navigationController?.pushViewController(uploadVC, animated: true)
     }
     
    
