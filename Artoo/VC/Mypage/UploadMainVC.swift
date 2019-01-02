@@ -16,10 +16,12 @@ class UploadMainVC: UIViewController {
     @IBOutlet weak var YearUploadLabel: UITextField!
     @IBOutlet weak var LicenseUploadLabel: UITextField!
     
-     var CategoryPickerView: UIPickerView!
-     var figurePickerView: UIPickerView!
-     var yearPickerView: UIPickerView!
-     var licensePickerView: UIPickerView!
+    @IBOutlet weak var uploadTagBtn: UIButton!
+    
+    var CategoryPickerView: UIPickerView!
+    var figurePickerView: UIPickerView!
+    var yearPickerView: UIPickerView!
+    var licensePickerView: UIPickerView!
     var toolbar: UIToolbar!
     var toolbar2: UIToolbar!
     var toolbar3: UIToolbar!
@@ -44,6 +46,12 @@ class UploadMainVC: UIViewController {
         setUpToolbar()
     }
     
+    //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
+    @IBAction func addTagBtn(_ sender: Any) {
+        
+        performSegue(withIdentifier: "tagUploadSegue", sender: self)
+        
+    }
     func setUpToolbar(){
         
         toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
@@ -215,6 +223,5 @@ extension UploadMainVC: UIPickerViewDataSource {
         }
         return 1
     }
-    
     
 }
