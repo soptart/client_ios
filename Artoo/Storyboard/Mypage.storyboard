@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-aJ-dYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="-1714"/>
+            <point key="canvasLocation" x="1439" y="-1715"/>
         </scene>
         <!--Upload MainVC-->
         <scene sceneID="qyV-Ne-J37">
@@ -712,6 +712,7 @@
                         <outlet property="LicenseUploadLabel" destination="n3x-VQ-grz" id="SYx-SN-Op5"/>
                         <outlet property="YearUploadLabel" destination="Na0-wn-CkO" id="76b-bq-Dh4"/>
                         <outlet property="choiceImg" destination="2QT-GN-XMT" id="LNM-gC-0hr"/>
+                        <outlet property="uploadTagBtn" destination="eNy-JV-CVm" id="5dl-Sf-VRk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIm-Cw-gxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -753,23 +754,32 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Pon-bF-Mcu">
                                         <rect key="frame" x="29" y="105" width="305" height="38"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1to-fg-Oql">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1to-fg-Oql">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="38"/>
                                                 <state key="normal" title="행복한">
                                                     <color key="titleColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="UmP-FD-Fcy"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-0v-DrG">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-0v-DrG">
                                                 <rect key="frame" x="106" y="0.0" width="93" height="38"/>
                                                 <state key="normal" title="심플한">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="1Pw-BN-D5a"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-WN-nwW">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-WN-nwW">
                                                 <rect key="frame" x="212" y="0.0" width="93" height="38"/>
                                                 <state key="normal" title="감성적인">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="ohP-3x-0hX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -780,23 +790,32 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="tHE-p7-aae">
                                         <rect key="frame" x="29" y="154" width="305" height="38"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG2-7E-F7Q">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG2-7E-F7Q">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="38"/>
                                                 <state key="normal" title="화려한">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="j8L-cL-d0e"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-uN-HdD">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-uN-HdD">
                                                 <rect key="frame" x="106" y="0.0" width="93" height="38"/>
                                                 <state key="normal" title="심오한">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="oV3-Ts-uSu"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaQ-IB-rP7">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaQ-IB-rP7">
                                                 <rect key="frame" x="212" y="0.0" width="93" height="38"/>
                                                 <state key="normal" title="아기자기한">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="h8g-Oe-qdU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -807,29 +826,41 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-3A-vsI">
                                         <rect key="frame" x="28" y="249" width="324" height="38"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgN-LH-dFh">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgN-LH-dFh">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="38"/>
                                                 <state key="normal" title="봄">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="KZt-cC-UAL"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ru-C3-GKo">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ru-C3-GKo">
                                                 <rect key="frame" x="84" y="0.0" width="72" height="38"/>
                                                 <state key="normal" title="여름">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="KpB-kO-uCc"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvj-2I-Xhu">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvj-2I-Xhu">
                                                 <rect key="frame" x="168" y="0.0" width="72" height="38"/>
                                                 <state key="normal" title="가을">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="Ia8-Pb-b10"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-zB-R6z">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-zB-R6z">
                                                 <rect key="frame" x="252" y="0.0" width="72" height="38"/>
                                                 <state key="normal" title="겨울">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="2cA-ff-AcA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -844,7 +875,8 @@
                                             <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="finish:" destination="R90-Cw-h46" eventType="touchUpInside" id="XhL-SB-ktq"/>
+                                            <action selector="finishBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="8Qg-GQ-EHx"/>
+                                            <segue destination="vis-e8-DtT" kind="presentation" identifier="backSegue" id="gai-bC-6GW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -879,6 +911,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FyI-Se-gMM"/>
                     </view>
+                    <connections>
+                        <outlet property="tagName1" destination="1to-fg-Oql" id="2Gr-wo-V1a"/>
+                        <outlet property="tagName10" destination="tRw-zB-R6z" id="F3z-RV-l3Z"/>
+                        <outlet property="tagName2" destination="g6z-0v-DrG" id="5Qd-Ly-sks"/>
+                        <outlet property="tagName3" destination="LG2-7E-F7Q" id="d3C-xc-hd4"/>
+                        <outlet property="tagName4" destination="LG2-7E-F7Q" id="SpF-DV-XtE"/>
+                        <outlet property="tagName5" destination="DlF-uN-HdD" id="Ppx-8X-I3u"/>
+                        <outlet property="tagName6" destination="UaQ-IB-rP7" id="D9F-V0-7Zg"/>
+                        <outlet property="tagName7" destination="WgN-LH-dFh" id="6Qp-pb-MOC"/>
+                        <outlet property="tagName8" destination="2ru-C3-GKo" id="exl-kg-a0j"/>
+                        <outlet property="tagName9" destination="bvj-2I-Xhu" id="OCX-6M-JdZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsp-JV-YJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -987,4 +1031,7 @@
         <image name="fire" width="373.5" height="285.75"/>
         <image name="ggobuk" width="400" height="367"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="da8-ZN-5yU"/>
+    </inferredMetricsTieBreakers>
 </document>

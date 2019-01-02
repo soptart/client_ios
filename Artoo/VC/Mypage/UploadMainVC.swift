@@ -16,6 +16,8 @@ class UploadMainVC: UIViewController {
     @IBOutlet weak var YearUploadLabel: UITextField!
     @IBOutlet weak var LicenseUploadLabel: UITextField!
     
+    @IBOutlet weak var uploadTagBtn: UIButton!
+    
     var CategoryPickerView: UIPickerView!
     var figurePickerView: UIPickerView!
     var yearPickerView: UIPickerView!
