@@ -10,4 +10,5 @@ pod 'Alamofire'
 pod 'AlamofireObjectMapper'
 pod 'ObjectMapper'
 pod 'Kingfisher'
+pod 'Toaster'
 end

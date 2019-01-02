@@ -5,12 +5,14 @@ PODS:
     - ObjectMapper (~> 3.3)
   - Kingfisher (4.10.1)
   - ObjectMapper (3.3.0)
+  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
   - Kingfisher
   - ObjectMapper
+  - Toaster
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Kingfisher
     - ObjectMapper
+    - Toaster
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: c03cf34454bb02e5cc094b1139ec9398fbe640a9
+PODFILE CHECKSUM: 1a95c15513d4827aed35d7b32297029e28259d3b
 
 COCOAPODS: 1.5.3
