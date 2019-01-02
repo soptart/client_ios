@@ -8,44 +8,39 @@ import UIKit
 
 
 class ThemeDetailVC: UIViewController {
-
+    
     var index:Int = 0
     
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var detailCollectionView: UICollectionView!
     
-    var detailList:Detail?
+    var detailList = [ThemeDetail]()
     
     override func viewWillAppear(_ animated: Bool) {
-        ////이 태그 인덱스 값을 가지고 서버와 통신해서 detail 모델을 채움
         print("\(index)")
+        setData()
+        setDelegate()
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setData()
+
         
         closeBtn.addTarget(self, action: #selector(closeDetail), for: .touchUpInside)
         
-        //콜렉션 뷰 델리게이트 설정
-        detailCollectionView.delegate = self
-        detailCollectionView.dataSource = self
     }
-    
-
-
 }
 
 
 extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
-
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-     
-            let width = (view.frame.width) / 3 - 18
-            let height = (view.frame.height) / 4 - 60
-            return CGSize(width: width, height: height)
+        
+        let width = (view.frame.width) / 3 - 18
+        let height = (view.frame.height) / 4 - 60
+        return CGSize(width: width, height: height)
         
     }
     
@@ -54,7 +49,7 @@ extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
-
+    
     
     //섹션 내부 여백
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -65,7 +60,7 @@ extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       // goArt()
+        // goArt()
         
     }
     
@@ -73,46 +68,69 @@ extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
 
 
 extension ThemeDetailVC : UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        guard let count = detailList?.detailImg.count else {
-            return 1
-        }
-        return count
-        
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
-        
+        let count = detailList.count
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeDetailCell", for: indexPath) as! ThemeDetailCell
-            if let data = detailList?.detailImg[indexPath.row]{
-                cell.themeDetailImg.image = UIImage(named: data)
-            }
-
-            return cell
+        if let photoUrl = detailList[indexPath.item].themeDetailImg {
+            cell.themeDetailImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+        }
+        
+        return cell
         
     }
-
-
-
+    
+    
+    
 }
 
 
 
 
 extension ThemeDetailVC  {
-
-    //초기 데이터 세팅 - 서버 통신 후 변경
-    func setData(){
-        detailList = Detail(mainTag: "#거실에 걸어두면 이쁠 것 같아", subTag: "허전했던 벽에 한 번 걸어보자", detailImg: ["ggobuk","fire", "recommand","jiu","meta", "ggobuk","fire", "recommand","jiu","meta","ggobuk","fire", "recommand","jiu","meta"
-            ])
+    
+    func setDelegate(){
+        //콜렉션 뷰 델리게이트 설정
+        detailCollectionView.delegate = self
+        detailCollectionView.dataSource = self
     }
+    
+    //서버통신
+    func setData(){
+        ThemeDetailService.shared.themeDetail (index: index){
+            (data) in guard let status = data.status else { return }
+
+            switch status {
+            case 200:
+                guard let detailData = data.data else { return }
+                self.detailList = detailData
+
+                print("\(self.detailList)")
+                print("success")
+                
+            case 404:
+                self.view.makeToast("컨텐츠가 존재하지 않습니다")
+                print("fail")
+            case 500:
+                self.view.makeToast("서버 내부 에러")
+                print("fail2")
+            default:
+                print("hi")
+            }
+            
+            self.detailCollectionView.reloadData()
+        }
+        
+
+    }
+    
+    //작품 탭으로 이동(navigation)
     func goArt(){
-        //작품 탭으로 이동(navigation)
     }
     
     //close버튼 클릭시 -> 모달 내려주는 함수

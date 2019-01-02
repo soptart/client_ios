@@ -30,14 +30,13 @@ class HomeThemeVC: UIViewController {
     
     //테마 데이터
     var themeList = [Theme]()
-    
-    
+
+    var tagIndex = 1
+
     //태그 이미지 배열
     var tagList:[String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
                             "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
     
-    //태그에 따라 아래 데이터들이 변경되도록
-    var tagIndex = 0
     
     
     //테마 자세히 보는 화면 VC
@@ -54,7 +53,7 @@ class HomeThemeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
-        allBtn.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
+        allBtn.addTarget(self, action: #selector(goDetail2), for: .touchUpInside)
         
     }
     
@@ -102,8 +101,9 @@ extension HomeThemeVC : UITableViewDataSource {
 extension HomeThemeVC : UITableViewDelegate {
     //테마 테이블 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let index = themeList[indexPath.row].tagIndex {
-            goDetail(index: index)
+        if let index = themeList[indexPath.row + 1].tagIndex {
+            tagIndex = index
+            goDetail()
         }
     }
     
@@ -152,7 +152,8 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case tagCV:
             if let index = themeList[indexPath.row].tagIndex {
-                goDetail(index: index)
+                tagIndex = index
+                goDetail()
             }
         case recommandCV:
             print("작품창으로 이동")
@@ -263,9 +264,14 @@ extension HomeThemeVC {
     }
     
     //디테일 창으로 이동
-    @objc func goDetail(index:Int){
-        themeDetailVC.index = index
+    @objc func goDetail(){
+        themeDetailVC.index = tagIndex
         present(themeDetailVC, animated: true, completion: nil)
     }
-    
+
+    @objc func goDetail2(){
+        themeDetailVC.index = 1
+        present(themeDetailVC, animated: true, completion: nil)
+    }
+
 }
