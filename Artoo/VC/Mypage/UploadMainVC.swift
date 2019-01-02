@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UploadMainVC: UIViewController {
+class UploadMainVC: UIViewController{
 
     @IBOutlet weak var choiceImg: UIImageView!
     @IBOutlet weak var CategoryUploadLabel: UITextField!
@@ -17,10 +17,13 @@ class UploadMainVC: UIViewController {
     @IBOutlet weak var LicenseUploadLabel: UITextField!
     
     @IBOutlet weak var artNameUploadTF: UITextField!
+    @IBOutlet weak var artPriceTF: UITextField!
+    @IBOutlet weak var artArticleTF: UITextField!
+    
     
     @IBOutlet weak var uploadTagBtn: UIButton!
-    
-    
+    @IBOutlet weak var artDescriptionTV: UITextView!
+    @IBOutlet weak var artMethodTV: UITextView!
     
     var CategoryPickerView: UIPickerView!
     var figurePickerView: UIPickerView!
@@ -30,6 +33,11 @@ class UploadMainVC: UIViewController {
     var toolbar2: UIToolbar!
     var toolbar3: UIToolbar!
     var toolbar4: UIToolbar!
+    
+    var artName: String?
+    var artDescription: String?
+    var artArticle: String?
+    var artMethod: String?
     
     let picker = UIImagePickerController()
    
@@ -48,9 +56,12 @@ class UploadMainVC: UIViewController {
         
         setupPicker()
         setUpToolbar()
+
+        artNameUploadTF.delegate = self
+        artArticleTF.delegate = self
+        artDescriptionTV.delegate = self
+        artMethodTV.delegate = self
         
-       artNameUploadTF.delegate = self
-       
     }
     
     //작품명 클릭하면 placeholder없어지기
@@ -235,13 +246,41 @@ extension UploadMainVC: UIPickerViewDataSource {
     
 }
 
-
-extension UploadMainVC: UITextFieldDelegate {
+extension UploadMainVC: UITextViewDelegate, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
         if artNameUploadTF.isFirstResponder == true {
-            artNameUploadTF.placeholder = nil
+        artNameUploadTF.placeholder = nil
         }
+         if artArticleTF.isFirstResponder == true {
+         artArticleTF.placeholder = nil
+         }
+    }
+    
+    //수정 끝나면 string 에 내용 넣어주기
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        artName = artNameUploadTF.text!
+        artArticle = artArticleTF.text!
+    }
+    // 누르면 텍스트 뷰의 내용 없애기.
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if artDescriptionTV.isFirstResponder == true {
+            artDescriptionTV.text = ""
+        }
+        
+        if artMethodTV.isFirstResponder == true {
+            artMethodTV.text = ""
+        }
+        
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        artDescription = artDescriptionTV.text!
+        artMethod = artMethodTV.text!
     }
 }
-
