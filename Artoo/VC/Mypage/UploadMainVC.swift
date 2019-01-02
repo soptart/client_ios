@@ -16,7 +16,11 @@ class UploadMainVC: UIViewController {
     @IBOutlet weak var YearUploadLabel: UITextField!
     @IBOutlet weak var LicenseUploadLabel: UITextField!
     
+    @IBOutlet weak var artNameUploadTF: UITextField!
+    
     @IBOutlet weak var uploadTagBtn: UIButton!
+    
+    
     
     var CategoryPickerView: UIPickerView!
     var figurePickerView: UIPickerView!
@@ -44,7 +48,12 @@ class UploadMainVC: UIViewController {
         
         setupPicker()
         setUpToolbar()
+        
+       artNameUploadTF.delegate = self
+       
     }
+    
+    //작품명 클릭하면 placeholder없어지기
     
     //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
     @IBAction func addTagBtn(_ sender: Any) {
@@ -225,3 +234,14 @@ extension UploadMainVC: UIPickerViewDataSource {
     }
     
 }
+
+
+extension UploadMainVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if artNameUploadTF.isFirstResponder == true {
+            artNameUploadTF.placeholder = nil
+        }
+    }
+}
+

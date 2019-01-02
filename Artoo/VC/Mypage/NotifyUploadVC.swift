@@ -28,7 +28,7 @@ class NotifyUploadVC: UIViewController {
         self.dismiss(animated: true, completion: {()-> Void in moveVC.navigationController?.pushViewController(uploadVC, animated: true)})
         */
 
-        dismiss(animated: true)
+        self.dismiss(animated: true)
      
         }
 
