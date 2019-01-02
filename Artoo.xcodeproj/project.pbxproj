@@ -49,7 +49,6 @@
 		A350ADCE21D501CC00EC199E /* Recommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADCD21D501CC00EC199E /* Recommand.swift */; };
 		A350ADD021D501EF00EC199E /* ThemeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADCF21D501EF00EC199E /* ThemeDetail.swift */; };
 		A350ADD221D5161C00EC199E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD121D5161C00EC199E /* Detail.swift */; };
-		A350ADD421D5221400EC199E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD321D5221400EC199E /* Tag.swift */; };
 		A350ADD621D52BC700EC199E /* ExhibitApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD521D52BC700EC199E /* ExhibitApply.swift */; };
 		A350ADD821D52BCD00EC199E /* ExhibitSee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD721D52BCD00EC199E /* ExhibitSee.swift */; };
 		A350ADDA21D532BC00EC199E /* ExhibitApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADD921D532BC00EC199E /* ExhibitApplyVC.swift */; };
@@ -82,6 +81,7 @@
 		A3783A3D21D669B80057884D /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A3C21D669B80057884D /* TagCell.swift */; };
 		A3783A3F21D66A960057884D /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A3E21D66A960057884D /* ThemeCell.swift */; };
 		A3783A4121D66CCD0057884D /* RecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A4021D66CCD0057884D /* RecommandCell.swift */; };
+		A392416C21DC89F900371E77 /* HomeThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392416B21DC89F900371E77 /* HomeThemeService.swift */; };
 		A399E47321D85F5000679162 /* ExhibitSeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */; };
 		A3C4CD1021D3B43E009086AA /* ExhibitEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4CD0F21D3B43E009086AA /* ExhibitEnterVC.swift */; };
 		A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF94D21CE2421000C7938 /* AppDelegate.swift */; };
@@ -98,7 +98,7 @@
 		A3FCBAA821D2085400CB8E51 /* ExhibitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FCBAA721D2085400CB8E51 /* ExhibitCell.swift */; };
 		A3FCBAAA21D20CF200CB8E51 /* Exhibit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FCBAA921D20CF200CB8E51 /* Exhibit.swift */; };
 		A3FE1B1421CF706C0073F40F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B1321CF706C0073F40F /* Theme.swift */; };
-		A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B1521CF73760073F40F /* ThemeImg.swift */; };
+		A3FE1B1621CF73760073F40F /* ThemeWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B1521CF73760073F40F /* ThemeWork.swift */; };
 		A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1B1721CF801F0073F40F /* ThemeDetailVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,7 +146,6 @@
 		A350ADCD21D501CC00EC199E /* Recommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommand.swift; sourceTree = "<group>"; };
 		A350ADCF21D501EF00EC199E /* ThemeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetail.swift; sourceTree = "<group>"; };
 		A350ADD121D5161C00EC199E /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
-		A350ADD321D5221400EC199E /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		A350ADD521D52BC700EC199E /* ExhibitApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitApply.swift; sourceTree = "<group>"; };
 		A350ADD721D52BCD00EC199E /* ExhibitSee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitSee.swift; sourceTree = "<group>"; };
 		A350ADD921D532BC00EC199E /* ExhibitApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitApplyVC.swift; sourceTree = "<group>"; };
@@ -179,6 +178,7 @@
 		A3783A3C21D669B80057884D /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		A3783A3E21D66A960057884D /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		A3783A4021D66CCD0057884D /* RecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCell.swift; sourceTree = "<group>"; };
+		A392416B21DC89F900371E77 /* HomeThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeService.swift; sourceTree = "<group>"; };
 		A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitSeeDetail.swift; sourceTree = "<group>"; };
 		A3C4CD0F21D3B43E009086AA /* ExhibitEnterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitEnterVC.swift; sourceTree = "<group>"; };
 		A3CEF94A21CE2421000C7938 /* Artoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +197,7 @@
 		A3FCBAA721D2085400CB8E51 /* ExhibitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitCell.swift; sourceTree = "<group>"; };
 		A3FCBAA921D20CF200CB8E51 /* Exhibit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exhibit.swift; sourceTree = "<group>"; };
 		A3FE1B1321CF706C0073F40F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		A3FE1B1521CF73760073F40F /* ThemeImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImg.swift; sourceTree = "<group>"; };
+		A3FE1B1521CF73760073F40F /* ThemeWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeWork.swift; sourceTree = "<group>"; };
 		A3FE1B1721CF801F0073F40F /* ThemeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailVC.swift; sourceTree = "<group>"; };
 		ED83EAC316788AD98FE61B6C /* Pods-Artoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Artoo/Pods-Artoo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,14 +290,13 @@
 				A30048EB21CE63370042C4EF /* Today.swift */,
 				A30048ED21CE63400042C4EF /* TodayWork.swift */,
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
-				A3FE1B1521CF73760073F40F /* ThemeImg.swift */,
+				A3FE1B1521CF73760073F40F /* ThemeWork.swift */,
 				5DB606D121D4FF3600C216FD /* ArtImg.swift */,
 				5DB606D521D55CB400C216FD /* Filter.swift */,
 				A3FCBAA921D20CF200CB8E51 /* Exhibit.swift */,
 				A350ADCD21D501CC00EC199E /* Recommand.swift */,
 				A350ADCF21D501EF00EC199E /* ThemeDetail.swift */,
 				A350ADD121D5161C00EC199E /* Detail.swift */,
-				A350ADD321D5221400EC199E /* Tag.swift */,
 				A350ADD521D52BC700EC199E /* ExhibitApply.swift */,
 				A350ADD721D52BCD00EC199E /* ExhibitSee.swift */,
 				A350ADDD21D55A6700EC199E /* ExhibitApplyDetail.swift */,
@@ -339,6 +338,7 @@
 				A3699B5021DB53E800EC3A8D /* NetworkResult.swift */,
 				A3699B5421DB55AB00EC3A8D /* SignService.swift */,
 				A3699B5621DB55B400EC3A8D /* LoginService.swift */,
+				A392416B21DC89F900371E77 /* HomeThemeService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -615,7 +615,6 @@
 				A350ADE421D55D4B00EC199E /* ExhibitWorkCell.swift in Sources */,
 				A3FCBAAA21D20CF200CB8E51 /* Exhibit.swift in Sources */,
 				A34B447F21D7280F00991321 /* LoginVC.swift in Sources */,
-				A350ADD421D5221400EC199E /* Tag.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
 				5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */,
@@ -655,6 +654,7 @@
 				5DB606D621D55CB400C216FD /* Filter.swift in Sources */,
 				5DB606CE21D4C41B00C216FD /* Pinterest.swift in Sources */,
 				5DB606D421D5286900C216FD /* BuyVC.swift in Sources */,
+				A392416C21DC89F900371E77 /* HomeThemeService.swift in Sources */,
 				5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */,
 				A350ADDE21D55A6700EC199E /* ExhibitApplyDetail.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
@@ -663,7 +663,7 @@
 				5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */,
 				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
 				A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */,
-				A3FE1B1621CF73760073F40F /* ThemeImg.swift in Sources */,
+				A3FE1B1621CF73760073F40F /* ThemeWork.swift in Sources */,
 				A350ADE021D55BF600EC199E /* ExhibitDetailInfo.swift in Sources */,
 				A350ADD821D52BCD00EC199E /* ExhibitSee.swift in Sources */,
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,

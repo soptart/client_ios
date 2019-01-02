@@ -97,16 +97,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meta" translatesAutoresizingMaskIntoConstraints="NO" id="na3-Dc-gSI">
-                                            <rect key="frame" x="24" y="15" width="46" height="23"/>
+                                            <rect key="frame" x="24" y="8" width="46" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거실에 걸어두면 느낌 있는 그림들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="967-KK-ZMF">
-                                            <rect key="frame" x="24" y="44" width="260" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-AN-qak">
                                             <rect key="frame" x="0.0" y="79" width="375" height="186"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -124,12 +117,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="155" height="175"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recommand" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-wH-KrE">
-                                                                <rect key="frame" x="-1" y="1" width="155" height="175"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recommand" translatesAutoresizingMaskIntoConstraints="NO" id="gZ5-wH-KrE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="155" height="175"/>
                                                             </imageView>
                                                         </subviews>
                                                     </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="gZ5-wH-KrE" secondAttribute="trailing" id="FoT-ZS-YlL"/>
+                                                        <constraint firstItem="gZ5-wH-KrE" firstAttribute="leading" secondItem="5Jg-Xk-cWY" secondAttribute="leading" id="ZWq-tw-eXr"/>
+                                                        <constraint firstItem="gZ5-wH-KrE" firstAttribute="top" secondItem="5Jg-Xk-cWY" secondAttribute="top" id="c17-Na-9l8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="gZ5-wH-KrE" secondAttribute="bottom" id="lUO-Ho-b1s"/>
+                                                    </constraints>
                                                     <size key="customSize" width="155" height="175"/>
                                                     <connections>
                                                         <outlet property="recommandImg" destination="gZ5-wH-KrE" id="fJ8-gl-dZ7"/>
@@ -145,6 +143,12 @@
                                                 <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거실에 걸어두면 느낌 있는 그림들" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="967-KK-ZMF">
+                                            <rect key="frame" x="8" y="25" width="260" height="63"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -160,8 +164,8 @@
                                                     <rect key="frame" x="0.0" y="11" width="375" height="105"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="진짜 라벨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjz-a7-Y2G">
-                                                    <rect key="frame" x="88" y="33" width="132" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="진짜 라벨" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjz-a7-Y2G">
+                                                    <rect key="frame" x="21" y="27" width="332" height="71"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,8 +180,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0xK-XR-iGu">
-                                <rect key="frame" x="0.0" y="13" width="375" height="49"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0xK-XR-iGu">
+                                <rect key="frame" x="0.0" y="13" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UxY-dY-A9Z">
@@ -187,28 +191,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCell" id="dEx-rQ-45I" customClass="TagCell" customModule="Artoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="9.5" width="60" height="30"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="TagCell" id="dEx-rQ-45I" customClass="TagCell" customModule="Artoo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4.5" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="8X0-3Q-w3C">
-                                                    <rect key="frame" x="2" y="1" width="60" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="themeHappy" translatesAutoresizingMaskIntoConstraints="NO" id="8X0-3Q-w3C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="따뜻한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGu-AU-QOH">
-                                                    <rect key="frame" x="11" y="6" width="39" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8X0-3Q-w3C" secondAttribute="trailing" id="9f8-m3-eYP"/>
+                                            <constraint firstItem="8X0-3Q-w3C" firstAttribute="leading" secondItem="dEx-rQ-45I" secondAttribute="leading" id="Mjr-eg-dDJ"/>
+                                            <constraint firstItem="8X0-3Q-w3C" firstAttribute="top" secondItem="dEx-rQ-45I" secondAttribute="top" id="eVH-ZY-kiZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="8X0-3Q-w3C" secondAttribute="bottom" id="yGl-yD-bfp"/>
+                                        </constraints>
                                         <size key="customSize" width="60" height="30"/>
                                         <connections>
-                                            <outlet property="tagStr" destination="SGu-AU-QOH" id="vwj-vi-hiW"/>
+                                            <outlet property="tagImg" destination="8X0-3Q-w3C" id="TOv-pg-KgG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -219,7 +222,7 @@
                     </view>
                     <connections>
                         <outlet property="allBtn" destination="4F0-ab-cd8" id="w6P-5f-nk7"/>
-                        <outlet property="mainImageView" destination="WaG-AN-qak" id="fy3-qe-AA0"/>
+                        <outlet property="mainImageView" destination="qtf-8n-E8v" id="Pmw-pk-hhb"/>
                         <outlet property="mainLabel" destination="967-KK-ZMF" id="5CT-QJ-UFp"/>
                         <outlet property="recommandCV" destination="WaG-AN-qak" id="SCK-YT-Zpe"/>
                         <outlet property="tagCV" destination="0xK-XR-iGu" id="hkg-q1-3IL"/>
@@ -502,5 +505,6 @@
         <image name="meta" width="640" height="640"/>
         <image name="recommand" width="214" height="282"/>
         <image name="theme" width="498" height="141"/>
+        <image name="themeHappy" width="68" height="33"/>
     </resources>
 </document>

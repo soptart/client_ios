@@ -7,5 +7,5 @@
 import UIKit
 
 class TagCell: UICollectionViewCell {
-    @IBOutlet weak var tagStr: UILabel!
+    @IBOutlet weak var tagImg: UIImageView!
 }
