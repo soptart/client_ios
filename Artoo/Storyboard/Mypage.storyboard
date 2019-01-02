@@ -538,7 +538,7 @@
                                                 <color key="textColor" red="0.20784313730000001" green="0.23921568630000001" blue="0.27450980390000002" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="원" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c37-UL-2uK">
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="원" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c37-UL-2uK">
                                                 <rect key="frame" x="15" y="762" width="340" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="0.50414704623287676" colorSpace="custom" customColorSpace="displayP3"/>
@@ -575,7 +575,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="띄어쓰기 포함 30자 이내" borderStyle="bezel" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oom-hD-7ei">
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="띄어쓰기 포함 30자 이내" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oom-hD-7ei">
                                                 <rect key="frame" x="15" y="1026" width="340" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
@@ -711,7 +711,11 @@
                         <outlet property="FigureUploadLabel" destination="qJ7-94-94c" id="0eA-ZM-Caq"/>
                         <outlet property="LicenseUploadLabel" destination="n3x-VQ-grz" id="hBO-Ad-7Zd"/>
                         <outlet property="YearUploadLabel" destination="Na0-wn-CkO" id="76b-bq-Dh4"/>
+                        <outlet property="artArticleTF" destination="oom-hD-7ei" id="lqp-Yb-U8Q"/>
+                        <outlet property="artDescriptionTV" destination="J6P-KI-Irf" id="43m-ER-wXt"/>
+                        <outlet property="artMethodTV" destination="ZQ0-uA-Tpp" id="ssu-W5-Fe4"/>
                         <outlet property="artNameUploadTF" destination="ctT-cW-xRO" id="8rI-rw-0Lf"/>
+                        <outlet property="artPriceTF" destination="c37-UL-2uK" id="RUW-tS-Iwt"/>
                         <outlet property="choiceImg" destination="2QT-GN-XMT" id="LNM-gC-0hr"/>
                         <outlet property="uploadTagBtn" destination="eNy-JV-CVm" id="5dl-Sf-VRk"/>
                     </connections>
@@ -1033,6 +1037,6 @@
         <image name="ggobuk" width="400" height="367"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="da8-ZN-5yU"/>
+        <segue reference="gai-bC-6GW"/>
     </inferredMetricsTieBreakers>
 </document>
