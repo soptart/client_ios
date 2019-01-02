@@ -29,7 +29,10 @@ class HomeThemeVC: UIViewController {
     
     //테마 데이터 - 서버 통신 시 수정 필요
     var themeList:Theme?
-   
+    
+    //태그 이미지 배열
+    var tagList:[String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
+            "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
     
     //태그에 따라 아래 데이터들이 변경되도록
     var tagIndex = 0
@@ -163,16 +166,13 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
 extension HomeThemeVC : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case tagCV:
-            guard let count = themeList?.tag.count else {
-                return 1
-            }
-            return count
+            return tagList.count
         case recommandCV:
             guard let count = themeList?.recommand.recommandImg.count else {
                 return 1
@@ -186,13 +186,11 @@ extension HomeThemeVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case tagCV:
+            //태그 셀
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
-           
-            if let data = themeList?.tag[indexPath.row]{
-                cell.tagStr.text = data.tagStr
-            } else {
-                cell.tagStr.text = "태그 없음"
-            }
+            
+            let tagImage = tagList[indexPath.row]
+            cell.tagImg.image = UIImage(named: tagImage)
             
             return cell
             
@@ -220,17 +218,17 @@ extension HomeThemeVC : UICollectionViewDataSource {
 extension HomeThemeVC {
     func setData() {
         //쓰레기 값, 서버 통신 후 변경
-        themeList = Theme(tag: [Tag(tagStr: "태그1", tagIndex: 0),
-                                Tag(tagStr: "태그2", tagIndex: 1),
-                                Tag(tagStr: "태그3", tagIndex: 2),
-                                Tag(tagStr: "태그4", tagIndex: 3),
-                                Tag(tagStr: "태그5", tagIndex: 4)],
-                          recommand: Recommand(recommandStr: "거실에 걸어두면 느낌 있는 그림들", recommandImg: ["recommand","recommand", "recommand","recommand","recommand"]),
-                          theme: [ThemeDetail(themeStr: "하이1", themeImg: "theme"), ThemeDetail(themeStr: "하이2", themeImg: "theme"),
-                                   ThemeDetail(themeStr: "하이3", themeImg: "theme"),
-                                    ThemeDetail(themeStr: "하이4", themeImg: "theme"),
-                                     ThemeDetail(themeStr: "하이5", themeImg: "theme")])
-  
+//        themeList = Theme(tag: [Tag(tagStr: "태그1", tagIndex: 0),
+//                                Tag(tagStr: "태그2", tagIndex: 1),
+//                                Tag(tagStr: "태그3", tagIndex: 2),
+//                                Tag(tagStr: "태그4", tagIndex: 3),
+//                                Tag(tagStr: "태그5", tagIndex: 4)],
+//                          recommand: Recommand(recommandStr: "거실에 걸어두면 느낌 있는 그림들", recommandImg: ["recommand","recommand", "recommand","recommand","recommand"]),
+//                          theme: [ThemeDetail(themeStr: "하이1", themeImg: "theme"), ThemeDetail(themeStr: "하이2", themeImg: "theme"),
+//                                   ThemeDetail(themeStr: "하이3", themeImg: "theme"),
+//                                    ThemeDetail(themeStr: "하이4", themeImg: "theme"),
+//                                     ThemeDetail(themeStr: "하이5", themeImg: "theme")])
+//
     }
     
     
