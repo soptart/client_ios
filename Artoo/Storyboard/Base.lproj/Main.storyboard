@@ -181,8 +181,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ULA-86-9Cf"/>
                     <connections>
+                        <outlet property="emailTextField" destination="lb5-cP-ZXf" id="sO5-WA-lJa"/>
                         <outlet property="joinBtn" destination="uhQ-T2-DDf" id="s4g-tF-I08"/>
                         <outlet property="loginBtn" destination="P2x-YG-BVk" id="33v-QX-wPg"/>
+                        <outlet property="passTextField" destination="Zlp-dw-qKJ" id="wPT-y3-F2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZi-3E-W5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
