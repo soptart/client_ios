@@ -15,8 +15,8 @@ struct HomeThemeService: APIManager, Requestable {
     let themeURL = url("/themes")
     
     
-    //오늘의 작품 조희 API
-    func today(completion: @escaping (NetworkData) -> Void) {
+    //테마 조희 API
+    func theme(completion: @escaping (NetworkData) -> Void) {
         gettable(themeURL, body: nil, header: nil) { res in
             switch res {
             case .success(let value):

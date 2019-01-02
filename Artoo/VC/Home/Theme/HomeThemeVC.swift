@@ -7,7 +7,8 @@
 import UIKit
 
 class HomeThemeVC: UIViewController {
-
+    
+    //테마 테이블 뷰
     @IBOutlet weak var themeTableView: UITableView!
     
     //태그 콜렉션 뷰
@@ -19,7 +20,7 @@ class HomeThemeVC: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
     
     @IBOutlet weak var allBtn: UIButton!
-
+    
     //추천 콜렉션 뷰
     @IBOutlet weak var recommandCV: UICollectionView!
     
@@ -27,12 +28,13 @@ class HomeThemeVC: UIViewController {
     @IBOutlet weak var themeTV: UITableView!
     
     
-    //테마 데이터 - 서버 통신 시 수정 필요
-    var themeList:Theme?
+    //테마 데이터
+    var themeList = [Theme]()
+    
     
     //태그 이미지 배열
     var tagList:[String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
-            "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
+                            "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
     
     //태그에 따라 아래 데이터들이 변경되도록
     var tagIndex = 0
@@ -52,20 +54,10 @@ class HomeThemeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
-        
-        tagCV.delegate = self
-        tagCV.dataSource = self
-        
-        recommandCV.delegate = self
-        recommandCV.dataSource = self
-        
-        themeTV.delegate = self
-        themeTV.dataSource = self
-        
         allBtn.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
         
     }
-
+    
 }
 
 
@@ -75,20 +67,27 @@ extension HomeThemeVC : UITableViewDataSource {
     //섹션 당 행의 개수
     //섹션이 하나라면 그냥 개수를 리턴하면 됨
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let count = themeList?.theme.count else {
-            return 1
-        }
-        return count
+        return themeList.count - 1 //추천 빼고
     }
     
     //셀에 대한 처리
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = themeTableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! ThemeCell
-        if let data = themeList?.theme[indexPath.row] {
-            cell.themeImg.image = UIImage(named: data.themeImg)
-            cell.themeLabel.text = data.themeStr
-
+        
+        
+        let data = themeList[indexPath.row + 1]
+        if let themePhotoUrl = data.themeImg {
+            cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk") }
+        
+        if let themeText = data.mainTag {
+            print(themeText)
+            if(themeText.contains("\\n")){
+                let newText = themeText.replacingOccurrences(of: "\\n", with: "\n")
+                cell.themeLabel.text = newText
+                
+            }else {
+                cell.themeLabel.text = themeText}
+            
         }
         
         return cell
@@ -103,7 +102,7 @@ extension HomeThemeVC : UITableViewDataSource {
 extension HomeThemeVC : UITableViewDelegate {
     //테마 테이블 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let index = themeList?.tag[indexPath.row].tagIndex {
+        if let index = themeList[indexPath.row].tagIndex {
             goDetail(index: index)
         }
     }
@@ -129,8 +128,8 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
         }
         
     }
-
-
+    
+    
     
     
     //하나의 행에 있는 아이템들의 가로간격
@@ -152,7 +151,9 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case tagCV:
-            goDetail(index: indexPath.row)
+            if let index = themeList[indexPath.row].tagIndex {
+                goDetail(index: index)
+            }
         case recommandCV:
             print("작품창으로 이동")
         default:
@@ -174,10 +175,10 @@ extension HomeThemeVC : UICollectionViewDataSource {
         case tagCV:
             return tagList.count
         case recommandCV:
-            guard let count = themeList?.recommand.recommandImg.count else {
+            guard let recommandData = themeList.first?.themeWork else {
                 return 1
             }
-            return count
+            return recommandData.count
         default:
             return 1
         }
@@ -196,12 +197,12 @@ extension HomeThemeVC : UICollectionViewDataSource {
             
         case recommandCV:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommandCell", for: indexPath) as! RecommandCell
-            if let data = themeList?.recommand.recommandImg[indexPath.row]{
-                cell.recommandImg.image = UIImage(named: data)
-            } else {
-                cell.recommandImg.image = UIImage(named: "ggobuk")
-                return cell
+            
+            if let recommandData = themeList.first?.themeWork?[indexPath.row] {
+                let photoUrl = recommandData.workImg
+                cell.recommandImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
             }
+            
             return cell
             
         default:
@@ -217,18 +218,24 @@ extension HomeThemeVC : UICollectionViewDataSource {
 
 extension HomeThemeVC {
     func setData() {
-        //쓰레기 값, 서버 통신 후 변경
-//        themeList = Theme(tag: [Tag(tagStr: "태그1", tagIndex: 0),
-//                                Tag(tagStr: "태그2", tagIndex: 1),
-//                                Tag(tagStr: "태그3", tagIndex: 2),
-//                                Tag(tagStr: "태그4", tagIndex: 3),
-//                                Tag(tagStr: "태그5", tagIndex: 4)],
-//                          recommand: Recommand(recommandStr: "거실에 걸어두면 느낌 있는 그림들", recommandImg: ["recommand","recommand", "recommand","recommand","recommand"]),
-//                          theme: [ThemeDetail(themeStr: "하이1", themeImg: "theme"), ThemeDetail(themeStr: "하이2", themeImg: "theme"),
-//                                   ThemeDetail(themeStr: "하이3", themeImg: "theme"),
-//                                    ThemeDetail(themeStr: "하이4", themeImg: "theme"),
-//                                     ThemeDetail(themeStr: "하이5", themeImg: "theme")])
-//
+        HomeThemeService.shared.theme {
+            (data) in guard let themeData = data.data else { return }
+            self.themeList = themeData
+            print("\(self.themeList)")
+            self.setDelegate()
+        }
+    }
+    
+    
+    func setDelegate(){
+        tagCV.delegate = self
+        tagCV.dataSource = self
+        
+        recommandCV.delegate = self
+        recommandCV.dataSource = self
+        
+        themeTV.delegate = self
+        themeTV.dataSource = self
     }
     
     
@@ -237,5 +244,5 @@ extension HomeThemeVC {
         themeDetailVC.index = index
         present(themeDetailVC, animated: true, completion: nil)
     }
-
+    
 }
