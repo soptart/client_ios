@@ -15,7 +15,7 @@ class HomeThemeVC: UIViewController {
     @IBOutlet weak var tagCV: UICollectionView!
     
     //추천 테이블 헤더
-    @IBOutlet weak var mainImageView: UICollectionView!
+    @IBOutlet weak var mainImageView: UIImageView!
     
     @IBOutlet weak var mainLabel: UILabel!
     
@@ -217,16 +217,20 @@ extension HomeThemeVC : UICollectionViewDataSource {
 
 
 extension HomeThemeVC {
+   
+    //서버 통신
     func setData() {
         HomeThemeService.shared.theme {
             (data) in guard let themeData = data.data else { return }
             self.themeList = themeData
             print("\(self.themeList)")
             self.setDelegate()
+            self.setMain()
         }
     }
     
     
+    //델리게이트 세팅
     func setDelegate(){
         tagCV.delegate = self
         tagCV.dataSource = self
@@ -238,6 +242,25 @@ extension HomeThemeVC {
         themeTV.dataSource = self
     }
     
+    
+    //추천 컬렉션 뷰 부분 데이터 세팅(리스트의 첫번째 데이터들로 채워줌)
+    func setMain(){
+        guard let data = themeList.first else { return }
+        
+        let photoUrl = data.themeImg
+        mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
+        
+        if let mainText = data.mainTag {
+            
+            if(mainText.contains("\\n")){
+                let newText = mainText.replacingOccurrences(of: "\\n", with: "\n")
+                mainLabel.text = newText
+            }else {
+                mainLabel.text = mainText
+            }
+        }
+        self.recommandCV.backgroundView = mainImageView
+    }
     
     //디테일 창으로 이동
     @objc func goDetail(index:Int){
