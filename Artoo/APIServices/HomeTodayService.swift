@@ -5,29 +5,22 @@ import Alamofire
 
 struct HomeTodayService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<Token>
-    static let shared = HomeTodayVC()
-    let loginURL = url("/login")
-    let headers: HTTPHeaders = [
-        "Content-Type" : "application/json"
-    ]
+    typealias NetworkData = ResponseArray<Today>
+    static let shared = HomeTodayService()
+    let todayURL = url("/today")
+
     
-    //로그인 api
-    func login(email: String, password: String, completion: @escaping (Token) -> Void) {
-        let body = [
-            "email" : email,
-            "password" : password,
-            ]
-        postable(loginURL, body: body, header: headers) { res in
+    //오늘의 작품 조희 API
+    func today(completion: @escaping (NetworkData) -> Void) {
+        gettable(todayURL, body: nil, header: nil) { res in
             switch res {
             case .success(let value):
-                guard let token = value.data else {return}
-                completion(token)
+                completion(value)
             case .error(let error):
-                print(error)
+                completion(error)
             }
         }
-        
     }
+    
     
 }
