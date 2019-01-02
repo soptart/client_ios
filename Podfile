@@ -10,5 +10,5 @@ pod 'Alamofire'
 pod 'AlamofireObjectMapper'
 pod 'ObjectMapper'
 pod 'Kingfisher'
-pod 'Toaster'
+pod 'Toast-Swift', '~> 4.0.0'
 end

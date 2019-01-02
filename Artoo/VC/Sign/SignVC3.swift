@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SignVC3: UIViewController {
     
@@ -69,22 +70,9 @@ extension SignVC3 {
     }
     
     
-    //    var name:String!
-    //    var email:String!
-    //    var pass:String!
-    //
-    //    //sign2에서 받는 정보
-    //    var phone:String!
-    //    var location:String!
-    //    var school:String?     //선택 사항
-    //
-    //    //sign 3에서 받는 정보
-    //    var bank:String!
-    //    var account:String!
-    
-    
     func goSign(){
         SignService.shared.sign(email: email, password: pass, name: name, phone: phone, adress: location, bank: bank, account: account, school: school) {
+            //escape 클로저로 받아온 status 정보로 분기
             (status) in let status = status
             
             print(status)
@@ -93,10 +81,9 @@ extension SignVC3 {
             case 201:
                 self.navigationController?.pushViewController(self.loginVC, animated: true)
             case 400:
-                //이메일 중복
-                print("이미 존재하는 이메일입니다")
+                self.view.makeToast("이미 존재하는 이메일입니다")
             case 401...601:
-                print("네트워크 연결이 원활하지 않습니다.")
+                self.view.makeToast("네트워크 연결이 원활하지 않습니다.")
             default:
                 print("hi")
             }
