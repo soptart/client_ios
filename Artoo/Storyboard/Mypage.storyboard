@@ -463,7 +463,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-fw-Rny">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1310"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="띄어쓰기 포함 13자 이내" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctT-cW-xRO">
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="띄어쓰기 포함 13자 이내" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctT-cW-xRO">
                                                 <rect key="frame" x="8" y="291" width="340" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.7803921568627451" green="0.792156862745098" blue="0.81960784313725488" alpha="0.50414704623287676" colorSpace="custom" customColorSpace="displayP3"/>
@@ -709,8 +709,9 @@
                     <connections>
                         <outlet property="CategoryUploadLabel" destination="0hO-Eb-ozo" id="o11-Jf-vxi"/>
                         <outlet property="FigureUploadLabel" destination="qJ7-94-94c" id="0eA-ZM-Caq"/>
-                        <outlet property="LicenseUploadLabel" destination="n3x-VQ-grz" id="SYx-SN-Op5"/>
+                        <outlet property="LicenseUploadLabel" destination="n3x-VQ-grz" id="hBO-Ad-7Zd"/>
                         <outlet property="YearUploadLabel" destination="Na0-wn-CkO" id="76b-bq-Dh4"/>
+                        <outlet property="artNameUploadTF" destination="ctT-cW-xRO" id="8rI-rw-0Lf"/>
                         <outlet property="choiceImg" destination="2QT-GN-XMT" id="LNM-gC-0hr"/>
                         <outlet property="uploadTagBtn" destination="eNy-JV-CVm" id="5dl-Sf-VRk"/>
                     </connections>
