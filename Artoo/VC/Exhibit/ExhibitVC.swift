@@ -18,12 +18,19 @@ class ExhibitVC: UIViewController {
     //상단 전시 날짜
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var applyView: UIView!
+    
     //상단 전시 버튼 -> 클릭시 새 창
     @IBOutlet weak var exhibitBtn: UIButton!
     
-    //쓰레기 데이터
-    var exhibitList: Exhibit?
+    //전시에 대한 전체 데이터
+    var exhibitList = [Exhibit]()
     
+    //메인에서만 쓸 데이터
+    var exhibitMainList = [Exhibit]()
+    
+    //신청에서만 쓸 데이터
+    var exhibitApplyList = [Exhibit]()
     
     //전시 신청 VC
     private lazy var exhibitApplyVC : ExhibitApplyVC = {
@@ -33,7 +40,7 @@ class ExhibitVC: UIViewController {
         
         return viewController
     }()
-
+    
     
     //전시 관람VC
     private lazy var exhibitEnterVC : ExhibitEnterVC = {
@@ -44,13 +51,15 @@ class ExhibitVC: UIViewController {
         return viewController
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setDelegate()
         setData()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        if(exhibitMainList.count == 0){
+            applyView.isHidden = true
+        }
         
         exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
     }
@@ -58,44 +67,45 @@ class ExhibitVC: UIViewController {
 }
 
 extension ExhibitVC : UITableViewDelegate {
-   
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+
         //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
         navigationController?.pushViewController(exhibitEnterVC, animated: true)
-        
+
     }
 }
 
 extension ExhibitVC : UITableViewDataSource {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section =  exhibitList?.exhibit.count else {
-            return 1
-        }
-        
-        return section
-        
+
+        //메인화면에서만 쓸 데이터의 카운트를 리턴함
+        return exhibitMainList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitCell") as! ExhibitCell
-        if let data = exhibitList?.exhibit[indexPath.row] {
-            cell.exhibitImg.image = UIImage(named: data.exhibitImg)
+        
+         let exhibitMainData = exhibitMainList[indexPath.row]
+        print("\(exhibitMainData)")
+
+        if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
+            cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "ggobuk")
         }
         return cell
 
     }
-    
-    
+
+
 }
 
 extension ExhibitVC {
-
+    
     //전시 신청하는 창 띄우기
     @objc func goApply(){
         present(exhibitApplyVC, animated: true)
@@ -103,20 +113,41 @@ extension ExhibitVC {
     
     //초기 데이터 세팅
     func setData(){
-        exhibitList = Exhibit(apply: ExhibitApply(applyStr:"11월의 단체전시 신청시작!\n[익숙함이 새로웠 던 전]-일상편", applyDate: "2019.1.2 ~ 2019.2.3", applyImg: "fire"), exhibit: [ExhibitSee(exhibitIndex: 0, exhibitImg: "exhibit"),
-                                                                                                                                                                                                ExhibitSee(exhibitIndex: 1, exhibitImg: "exhibit"),
-                                                                                                                                                                                                      ExhibitSee(exhibitIndex: 2, exhibitImg: "exhibit"),
-                                                                                                                                                                                                      ExhibitSee(exhibitIndex: 3, exhibitImg: "exhibit"),
-                                                                                                                                                                                                      ExhibitSee(exhibitIndex: 4, exhibitImg: "exhibit")
-                                                                                    ])
-        
-        if let initData = exhibitList?.apply {
-            exhibitLabel.text = initData.applyStr
-            dateLabel.text = initData.applyDate
-            exhibitBtn.setImage(UIImage(named: initData.applyImg), for: UIControl.State.normal)
+        ExhibitMainService.shared.exhibitMain { (data) in guard let status = data.status else{ return }
+            switch status{
+            case 200:
+                guard let exhibitData = data.data else { return }
+               
+                //전체 전시데이터
+                self.exhibitList = exhibitData
+               
+                //메인화면에서만 쓸 전시데이터
+                self.exhibitMainList =  self.exhibitList.filter{ $0.isNowExhibit == 1}
+                
+                //전시신청에서 쓸 전시데이터
+                self.exhibitApplyList = self.exhibitList.filter{ $0.isNowExhibit == 0}
+                
+                print("success")
+                
+                //데이터 가져온 후 테이블뷰 리로드
+                self.tableView.reloadData()
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+            
+            
         }
-    
     }
+    
+    func setDelegate(){
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    
+    
     
     
 }
