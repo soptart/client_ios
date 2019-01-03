@@ -10,6 +10,11 @@
 		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
 		5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D721D3976600C787AC /* FilterViewController.swift */; };
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
+		5D40F9FD21DD24F600636890 /* SellListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D40F9FC21DD24F600636890 /* SellListVC.swift */; };
+		5D40F9FF21DD252700636890 /* sellFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D40F9FE21DD252700636890 /* sellFirstCell.swift */; };
+		5D40FA0121DD253C00636890 /* sellSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D40FA0021DD253C00636890 /* sellSecondCell.swift */; };
+		5D40FA0321DD38C200636890 /* BuyItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D40FA0221DD38C200636890 /* BuyItemInfo.swift */; };
+		5D40FA0521DD391E00636890 /* sellerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D40FA0421DD391E00636890 /* sellerInfo.swift */; };
 		5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */; };
 		5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7421DB7509007AE800 /* UploadMainVC.swift */; };
 		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
@@ -33,6 +38,7 @@
 		5DB606D621D55CB400C216FD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D521D55CB400C216FD /* Filter.swift */; };
 		5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */; };
 		5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */; };
+		5DCC9FF021DCC37900F960A0 /* MultiNotifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */; };
 		5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC434D21D9F937003F75B5 /* MyPageImgStoreVC.swift */; };
 		5DEC435021D9F9F7003F75B5 /* MyPageImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC434F21D9F9F7003F75B5 /* MyPageImgCell.swift */; };
 		A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */; };
@@ -104,6 +110,11 @@
 /* Begin PBXFileReference section */
 		5D4607D721D3976600C787AC /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = Artoo/VC/Art/FilterViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
+		5D40F9FC21DD24F600636890 /* SellListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SellListVC.swift; path = Artoo/VC/Mypage/SellListVC.swift; sourceTree = SOURCE_ROOT; };
+		5D40F9FE21DD252700636890 /* sellFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellFirstCell.swift; path = Artoo/VC/Mypage/sellFirstCell.swift; sourceTree = SOURCE_ROOT; };
+		5D40FA0021DD253C00636890 /* sellSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellSecondCell.swift; path = Artoo/VC/Mypage/sellSecondCell.swift; sourceTree = SOURCE_ROOT; };
+		5D40FA0221DD38C200636890 /* BuyItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyItemInfo.swift; path = Artoo/Util/Model/BuyItemInfo.swift; sourceTree = SOURCE_ROOT; };
+		5D40FA0421DD391E00636890 /* sellerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellerInfo.swift; path = Artoo/Util/Model/sellerInfo.swift; sourceTree = SOURCE_ROOT; };
 		5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotifyUploadVC.swift; path = Artoo/VC/Mypage/NotifyUploadVC.swift; sourceTree = SOURCE_ROOT; };
 		5D79DF7421DB7509007AE800 /* UploadMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadMainVC.swift; path = Artoo/VC/Mypage/UploadMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
@@ -127,6 +138,7 @@
 		5DB606D521D55CB400C216FD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Artoo/Util/Model/Filter.swift; sourceTree = SOURCE_ROOT; };
 		5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = All_ArtVC.swift; path = Artoo/VC/Art/All_ArtVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryVC.swift; path = Artoo/VC/Art/DeliveryVC.swift; sourceTree = SOURCE_ROOT; };
+		5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiNotifyVC.swift; path = Artoo/VC/Mypage/MultiNotifyVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC434D21D9F937003F75B5 /* MyPageImgStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageImgStoreVC.swift; path = Artoo/VC/Mypage/MyPageImgStoreVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC434F21D9F9F7003F75B5 /* MyPageImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageImgCell.swift; path = Artoo/VC/Mypage/MyPageImgCell.swift; sourceTree = SOURCE_ROOT; };
 		79FF4C226C2AC22C260F3A43 /* Pods-Artoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Artoo/Pods-Artoo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +249,10 @@
 				5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */,
 				5D79DF7421DB7509007AE800 /* UploadMainVC.swift */,
 				5DA412C021DC73EF009EDAB3 /* tagUploadVC.swift */,
+				5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */,
+				5D40FA0021DD253C00636890 /* sellSecondCell.swift */,
+				5D40F9FE21DD252700636890 /* sellFirstCell.swift */,
+				5D40F9FC21DD24F600636890 /* SellListVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -303,6 +319,8 @@
 				A3699B4C21DB53A900EC3A8D /* ResponseArray.swift */,
 				A3699B4E21DB53B700EC3A8D /* ResponseObject.swift */,
 				A3699B5221DB54B000EC3A8D /* Token.swift */,
+				5D40FA0221DD38C200636890 /* BuyItemInfo.swift */,
+				5D40FA0421DD391E00636890 /* sellerInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -615,8 +633,12 @@
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
 				A392416E21DCB40C00371E77 /* ThemeDetailService.swift in Sources */,
 				5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */,
+				5D40FA0521DD391E00636890 /* sellerInfo.swift in Sources */,
 				5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */,
 				5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */,
+				A3FE1B1221CF6D870073F40F /* HomeThemeTCell.swift in Sources */,
+				5D40FA0321DD38C200636890 /* BuyItemInfo.swift in Sources */,
+				5D40F9FF21DD252700636890 /* sellFirstCell.swift in Sources */,
 				5DA412C121DC73EF009EDAB3 /* tagUploadVC.swift in Sources */,
 				5DA600D921DAF9F700472FD1 /* BuyItemCell.swift in Sources */,
 				A30048EE21CE63400042C4EF /* TodayWork.swift in Sources */,
@@ -634,6 +656,7 @@
 				5DA600D721DAF71500472FD1 /* BuyItem.swift in Sources */,
 				A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */,
 				5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */,
+				5D40F9FD21DD24F600636890 /* SellListVC.swift in Sources */,
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
 				A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */,
 				5D9B7D8421D8A970009C12D3 /* MyPageStoreVC.swift in Sources */,
@@ -654,6 +677,7 @@
 				5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */,
 				A350ADDE21D55A6700EC199E /* ExhibitApplyDetail.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
+				5D40FA0121DD253C00636890 /* sellSecondCell.swift in Sources */,
 				A30048E321CE50CD0042C4EF /* HomeMainVC.swift in Sources */,
 				5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */,
 				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
@@ -672,6 +696,7 @@
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
+				5DCC9FF021DCC37900F960A0 /* MultiNotifyVC.swift in Sources */,
 				5D9B7D8A21D8A9D0009C12D3 /* NoArtVC.swift in Sources */,
 				A3699B4D21DB53A900EC3A8D /* ResponseArray.swift in Sources */,
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,

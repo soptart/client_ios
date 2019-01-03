@@ -16,6 +16,8 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var YearUploadLabel: UITextField!
     @IBOutlet weak var LicenseUploadLabel: UITextField!
     
+    @IBOutlet weak var popUpViewConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var artNameUploadTF: UITextField!
     @IBOutlet weak var artPriceTF: UITextField!
     @IBOutlet weak var artArticleTF: UITextField!
@@ -61,6 +63,8 @@ class UploadMainVC: UIViewController{
         artArticleTF.delegate = self
         artDescriptionTV.delegate = self
         artMethodTV.delegate = self
+        
+        
         
     }
     

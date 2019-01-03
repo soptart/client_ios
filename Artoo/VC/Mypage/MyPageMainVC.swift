@@ -27,6 +27,14 @@ class MyPageMainVC: UIViewController {
         updateView(selected: 0)
     }
     
+    //알림 버튼 눌렀을 때
+    @IBAction func notificationBtn(_ sender: Any) {
+        
+        guard let noticeVC = storyboard?.instantiateViewController(withIdentifier: "multinotify") as? MultiNotifyVC else { return }
+        
+        navigationController?.pushViewController(noticeVC, animated: true)
+    }
+    
     
     //버튼 눌렀을 때
     @IBAction func EditBtn(_ sender: Any) {
