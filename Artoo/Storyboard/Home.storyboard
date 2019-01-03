@@ -242,35 +242,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-jq-pOF">
-                                <rect key="frame" x="0.0" y="33" width="375" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-jq-pOF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="172"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#거실에 걸어두면 이쁠 것 같아!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbU-dH-exk">
-                                <rect key="frame" x="20" y="126" width="234" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거실에 걸어두면 이쁠 것 같아!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbU-dH-exk">
+                                <rect key="frame" x="24" y="68" width="170" height="53.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="170" id="PYE-ZN-Wa7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="허전했던 벽에 한 번 걸어보자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv4-E6-q9C">
-                                <rect key="frame" x="20" y="150" width="195" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izP-Oz-ETY">
-                                <rect key="frame" x="329" y="46" width="30" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izP-Oz-ETY">
+                                <rect key="frame" x="325" y="40" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="HvY-qt-N6P"/>
+                                    <constraint firstAttribute="width" secondItem="izP-Oz-ETY" secondAttribute="height" multiplier="1:1" id="s3c-h7-Ki9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="X">
+                                <state key="normal" backgroundImage="closeBlack">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysw-Zx-k6L">
-                                <rect key="frame" x="20" y="209" width="339" height="438"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ysw-Zx-k6L">
+                                <rect key="frame" x="24" y="221" width="327" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CZK-cQ-kMa">
                                     <size key="itemSize" width="112" height="120"/>
@@ -280,31 +276,78 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThemeDetailCell" id="Dr3-io-PGh" customClass="ThemeDetailCell" customModule="Artoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="112" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="112" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-vd-wun">
-                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="120"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-vd-wun">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ufB-vd-wun" secondAttribute="height" multiplier="1:1" id="mCQ-2E-lJn"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="ufB-vd-wun" firstAttribute="top" secondItem="Dr3-io-PGh" secondAttribute="top" id="4dW-QE-Bpr"/>
+                                            <constraint firstAttribute="bottom" secondItem="ufB-vd-wun" secondAttribute="bottom" id="IS5-Pj-2Z5"/>
+                                            <constraint firstAttribute="trailing" secondItem="ufB-vd-wun" secondAttribute="trailing" id="RQ7-Lg-gBj"/>
+                                            <constraint firstItem="ufB-vd-wun" firstAttribute="leading" secondItem="Dr3-io-PGh" secondAttribute="leading" id="W1R-WO-3Wy"/>
+                                        </constraints>
+                                        <size key="customSize" width="101" height="101"/>
                                         <connections>
                                             <outlet property="themeDetailImg" destination="ufB-vd-wun" id="TVe-AH-twB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRM-Jv-vXG">
+                                <rect key="frame" x="24" y="134.5" width="12" height="1"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Hcc-hW-gRE"/>
+                                    <constraint firstAttribute="width" constant="12" id="alF-bn-Pth"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="허전했던 벽에 한 번 걸어보자" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv4-E6-q9C">
+                                <rect key="frame" x="24" y="148.5" width="240" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="tu3-zh-yNE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JBR-Rf-Fuj" firstAttribute="bottom" secondItem="ysw-Zx-k6L" secondAttribute="bottom" constant="10" id="5km-jm-h0k"/>
+                            <constraint firstItem="JbU-dH-exk" firstAttribute="leading" secondItem="oxo-jq-pOF" secondAttribute="leading" constant="24" id="AhV-bz-PFm"/>
+                            <constraint firstItem="ysw-Zx-k6L" firstAttribute="top" secondItem="oxo-jq-pOF" secondAttribute="bottom" constant="29" id="Aoy-Cd-tbz"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="top" secondItem="izP-Oz-ETY" secondAttribute="top" constant="-20" id="NDt-5r-776"/>
+                            <constraint firstItem="JBR-Rf-Fuj" firstAttribute="trailing" secondItem="ysw-Zx-k6L" secondAttribute="trailing" constant="24" id="Rzl-hV-lDV"/>
+                            <constraint firstItem="ysw-Zx-k6L" firstAttribute="leading" secondItem="JBR-Rf-Fuj" secondAttribute="leading" constant="24" id="Tc0-zi-t28"/>
+                            <constraint firstItem="CRM-Jv-vXG" firstAttribute="top" secondItem="JbU-dH-exk" secondAttribute="bottom" constant="13" id="Yeo-kj-JZt"/>
+                            <constraint firstItem="CRM-Jv-vXG" firstAttribute="leading" secondItem="JbU-dH-exk" secondAttribute="leading" id="a6y-9K-2hg"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="width" secondItem="BuV-mY-jG4" secondAttribute="width" id="aGO-nX-gKS"/>
+                            <constraint firstItem="izP-Oz-ETY" firstAttribute="trailing" secondItem="oxo-jq-pOF" secondAttribute="trailing" constant="-20" id="amJ-kg-fbI"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="trailing" secondItem="JBR-Rf-Fuj" secondAttribute="trailing" id="b6a-0t-rQs"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="leading" secondItem="JBR-Rf-Fuj" secondAttribute="leading" id="cHk-71-Nen"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="top" secondItem="JBR-Rf-Fuj" secondAttribute="top" id="dOC-WK-wwL"/>
+                            <constraint firstItem="Jv4-E6-q9C" firstAttribute="top" secondItem="CRM-Jv-vXG" secondAttribute="bottom" constant="13" id="svR-Jo-sa9"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="height" secondItem="BuV-mY-jG4" secondAttribute="height" multiplier="170:660" id="v1b-L3-yhv"/>
+                            <constraint firstItem="oxo-jq-pOF" firstAttribute="top" secondItem="JbU-dH-exk" secondAttribute="top" constant="-48" id="vho-Gw-D5V"/>
+                            <constraint firstItem="Jv4-E6-q9C" firstAttribute="leading" secondItem="CRM-Jv-vXG" secondAttribute="leading" id="wN4-lh-Vpy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JBR-Rf-Fuj"/>
                     </view>
                     <connections>
                         <outlet property="closeBtn" destination="izP-Oz-ETY" id="ylH-Yb-0K2"/>
                         <outlet property="detailCollectionView" destination="ysw-Zx-k6L" id="RDV-0G-gh1"/>
+                        <outlet property="mainTagLabel" destination="JbU-dH-exk" id="G40-QH-49H"/>
+                        <outlet property="subTagLabel" destination="Jv4-E6-q9C" id="OsF-4i-a1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXK-hQ-Pyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -500,6 +543,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeBlack" width="19" height="19"/>
         <image name="fire" width="498" height="381"/>
         <image name="ggobuk" width="400" height="367"/>
         <image name="meta" width="640" height="640"/>

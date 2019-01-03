@@ -1,14 +1,19 @@
-//
-//  ThemeDetail.swift
-//  Artoo
-//
-//  Created by 홍정민 on 2018. 12. 27..
-//  Copyright © 2018년 홍정민. All rights reserved.
-//
+
+//// 테마 - 디테일 모델
 
 import Foundation
+import ObjectMapper
 
-struct ThemeDetail {
-    let themeStr:String
-    let themeImg:String
+struct ThemeDetail : Mappable {
+    var themeIndex:Int?
+    var themeDetailImg:String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        themeIndex <- map["a_idx"]
+        themeDetailImg <- map["pic_url"]
+    }
 }
