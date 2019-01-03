@@ -23,7 +23,7 @@ class ExhibitVC: UIViewController {
     //상단 전시 버튼 -> 클릭시 새 창
     @IBOutlet weak var exhibitBtn: UIButton!
     
-    //전시에 대한 전체 데이터
+    //전시에 대한 전체 데이터(처음에 통으로 다 넘겨줌)
     var exhibitList = [Exhibit]()
     
     //메인에서만 쓸 데이터
@@ -31,6 +31,7 @@ class ExhibitVC: UIViewController {
     
     //신청에서만 쓸 데이터
     var exhibitApplyList = [Exhibit]()
+    
     
     //전시 신청 VC
     private lazy var exhibitApplyVC : ExhibitApplyVC = {
@@ -55,53 +56,47 @@ class ExhibitVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
-        setData()
-        
-        if(exhibitMainList.count == 0){
-            applyView.isHidden = true
-        }
-        
-        exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
+        setData(completion: setUI)
     }
     
 }
 
 extension ExhibitVC : UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
         navigationController?.pushViewController(exhibitEnterVC, animated: true)
-
+        
     }
 }
 
 extension ExhibitVC : UITableViewDataSource {
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         //메인화면에서만 쓸 데이터의 카운트를 리턴함
         return exhibitMainList.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitCell") as! ExhibitCell
         
-         let exhibitMainData = exhibitMainList[indexPath.row]
+        let exhibitMainData = exhibitMainList[indexPath.row]
         print("\(exhibitMainData)")
-
+        
         if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
             cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "ggobuk")
         }
         return cell
-
+        
     }
-
-
+    
+    
 }
 
 extension ExhibitVC {
@@ -111,16 +106,31 @@ extension ExhibitVC {
         present(exhibitApplyVC, animated: true)
     }
     
+    
+    //데이터 세팅 후 UI변경 (setData의 escaping closure)
+    func setUI(){
+        
+        //데이터 가져온 후 테이블뷰 리로드
+        self.tableView.reloadData()
+        
+        //전시 신청리스트가 0이면 신청버튼없애줌
+        if(exhibitApplyList.count == 0){
+            applyView.isHidden = true
+        }
+        exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
+    }
+    
+    
     //초기 데이터 세팅
-    func setData(){
+    func setData(completion: @escaping() -> Void){
         ExhibitMainService.shared.exhibitMain { (data) in guard let status = data.status else{ return }
             switch status{
             case 200:
                 guard let exhibitData = data.data else { return }
-               
+                
                 //전체 전시데이터
                 self.exhibitList = exhibitData
-               
+                
                 //메인화면에서만 쓸 전시데이터
                 self.exhibitMainList =  self.exhibitList.filter{ $0.isNowExhibit == 1}
                 
@@ -128,16 +138,12 @@ extension ExhibitVC {
                 self.exhibitApplyList = self.exhibitList.filter{ $0.isNowExhibit == 0}
                 
                 print("success")
-                
-                //데이터 가져온 후 테이블뷰 리로드
-                self.tableView.reloadData()
+                completion()
             case 500:
                 print("서버 내부 오류")
             default:
                 print("hihi")
             }
-            
-            
         }
     }
     
