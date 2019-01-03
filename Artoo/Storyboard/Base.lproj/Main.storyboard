@@ -18,7 +18,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qK-7U-GaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2534" y="-127"/>
+            <point key="canvasLocation" x="1704" y="-151"/>
         </scene>
         <!--Exhibit-->
         <scene sceneID="aoI-ZE-vJn">
@@ -28,7 +28,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2e-rd-Na1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2550" y="619"/>
+            <point key="canvasLocation" x="3011" y="329"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="ksS-BY-6jR">
@@ -38,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pS-mD-1fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510" y="1372"/>
+            <point key="canvasLocation" x="2128" y="365"/>
         </scene>
         <!--Home-->
         <scene sceneID="xob-fy-xcZ">
@@ -48,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olb-Hd-NSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3460.8000000000002" y="-914.84257871064472"/>
+            <point key="canvasLocation" x="3402" y="-914"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="78n-0N-FaC">
@@ -209,13 +209,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBN-Tn-zQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="-913.49325337331345"/>
+            <point key="canvasLocation" x="1994" y="-913"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="4R8-zX-nJQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdJ-uR-VDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="aU1-de-con" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="n4a-w0-56f"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="homeGray" selectedImage="homeColor" id="n4a-w0-56f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="voY-cR-NGy">
                         <autoresizingMask key="autoresizingMask"/>
@@ -228,15 +229,14 @@
                         <segue destination="bSs-pv-Qoa" kind="relationship" relationship="rootViewController" id="CDK-DU-rym"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdJ-uR-VDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2887.1999999999998" y="-913.49325337331345"/>
+            <point key="canvasLocation" x="2838" y="-913"/>
         </scene>
-        <!--MyPage-->
+        <!--My-->
         <scene sceneID="bw8-ey-kKM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Moh-F5-fqx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyPage" id="oe7-IZ-rxf"/>
+                    <tabBarItem key="tabBarItem" title="My" image="mypageGray" selectedImage="mypageColor" id="oe7-IZ-rxf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jX4-uJ-reL">
                         <autoresizingMask key="autoresizingMask"/>
@@ -248,13 +248,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDs-Io-xrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="1373"/>
+            <point key="canvasLocation" x="2130" y="-48"/>
         </scene>
-        <!--Art-->
+        <!--작품-->
         <scene sceneID="pPL-2e-Gji">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YfL-w9-Kx6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Art" id="qTE-yx-vbN"/>
+                    <tabBarItem key="tabBarItem" title="작품" image="pictureGray" selectedImage="pictureColor" id="qTE-yx-vbN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9tE-iO-eFN">
                         <autoresizingMask key="autoresizingMask"/>
@@ -266,13 +266,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbx-aw-WvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="-126"/>
+            <point key="canvasLocation" x="1186" y="-149"/>
         </scene>
-        <!--Exhibit-->
+        <!--전시-->
         <scene sceneID="cAb-oy-OEg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="T6a-pY-KQb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exhibit" id="yMQ-KS-c6h"/>
+                    <tabBarItem key="tabBarItem" title="전시" image="exhibitionGray" selectedImage="exhibitionColor" id="yMQ-KS-c6h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p3h-cf-ZnR">
                         <autoresizingMask key="autoresizingMask"/>
@@ -284,7 +284,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK6-mm-hSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="620"/>
+            <point key="canvasLocation" x="3012" y="-150"/>
         </scene>
         <!--SignVC-->
         <scene sceneID="wyy-pi-ERZ">
@@ -717,7 +717,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="exhibitionColor" width="27" height="23"/>
+        <image name="exhibitionGray" width="27" height="23"/>
         <image name="fire" width="498" height="381"/>
+        <image name="homeColor" width="22" height="24"/>
+        <image name="homeGray" width="22" height="24"/>
         <image name="meta" width="640" height="640"/>
+        <image name="mypageColor" width="34" height="15"/>
+        <image name="mypageGray" width="34" height="15"/>
+        <image name="pictureColor" width="23" height="24"/>
+        <image name="pictureGray" width="23" height="24"/>
     </resources>
 </document>
