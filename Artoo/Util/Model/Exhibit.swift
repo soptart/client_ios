@@ -24,7 +24,6 @@ struct Exhibit : Mappable {
     var isNowExhibit:Int? //전시중인지 신청중인지를 나타내는 변수 -> 첫화면
     
 
-
     
     init?(map: Map) {
      
@@ -42,7 +41,7 @@ struct Exhibit : Mappable {
         exhibitTitleImg <- map["d_titleImg_url"]
         exhibitMainImg <- map["d_mainImg_url"]
         exhibitTitle <- map["d_title"]
-        exhibitSubTitle <- map["subTitle"]
+        exhibitSubTitle <- map["d_subTitle"]
         exhibitEnterText <- map["d_longDetail"]
         exhibitApplyText <- map["d_shortDetail"]
         isNowExhibit <- map["isNow"]

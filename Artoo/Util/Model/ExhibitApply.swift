@@ -1,15 +1,23 @@
-//
-//  ExhibitApply.swift
-//  Artoo
-//
-//  Created by 홍정민 on 2018. 12. 28..
-//  Copyright © 2018년 홍정민. All rights reserved.
+
 //// 전시 신청 모델
 
 import Foundation
+import ObjectMapper
 
-struct ExhibitApply {
-    let applyStr:String
-    let applyDate:String
-    let applyImg:String
+struct ExhibitApply : Mappable {
+    
+    var displayInfo:[Exhibit]?
+    var artWorkInfo:[ArtWork]?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        displayInfo <- map["displays"]
+        artWorkInfo <- map["artworks"]
+    }
+    
+    
+    
 }

@@ -9,11 +9,11 @@ import UIKit
 class ExhibitApplyVC: UIViewController {
     var selectedIndexPath: IndexPath!
     var cvSelectedIndexPath: IndexPath!
-
     
-   
+    //전시신청서 배경
+    @IBOutlet weak var mainImageView: UIImageView!
+    
     @IBOutlet weak var applyBtnConstraint: NSLayoutConstraint!
-    
     
     @IBOutlet weak var applyScrollView: UIScrollView!
     
@@ -41,41 +41,35 @@ class ExhibitApplyVC: UIViewController {
     //신청인원 라벨
     @IBOutlet weak var personLabel: UILabel!
     
-    //데이터 - 서버 통신 후 변경
-    var detailList:ExhibitApplyDetail?
+    //내 작품이 없을 때만 나타나는 뷰
+    @IBOutlet weak var workEmptyView: UIView!
+    
+    
+    var exhibitApplyList:ExhibitApply?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //쓰레기 값
-        setData()
+        workEmptyView.isHidden = true
+        setDelegate()
+        setData(completion: setUI)
         
         //닫기 버튼 누르면 dismiss
         closeBtn.addTarget(self, action: #selector(closeApply), for: .touchUpInside)
-        
-        //delegate & datasource
-        
-        applyScrollView.delegate = self
-        myWorkCV.delegate = self
-        myWorkCV.dataSource = self
-        
-        exhibitTV.delegate = self
-        exhibitTV.dataSource = self
-        
     }
     
     
+    //스크롤뷰를 이용해서 버튼 숨기기
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y / 180
-        if offset > 1 {
-            applyBtnConstraint.constant = 0
-            scrollView.updateConstraints()
-        }else {
-            applyBtnConstraint.constant = 60
-            scrollView.updateConstraints()
+        if(scrollView == applyScrollView){
+            let offset = scrollView.contentOffset.y / 180
+            if offset > 1 {
+                applyBtnConstraint.constant = 0
+                scrollView.updateConstraints()
+            }else {
+                applyBtnConstraint.constant = 60
+                scrollView.updateConstraints()
+            }
         }
-        print("\(scrollView.contentOffset.y)")
-        
     }
     
     
@@ -125,7 +119,7 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count =  detailList?.myWork.count else {
+        guard let count =  exhibitApplyList?.artWorkInfo?.count else {
             return 1
         }
         return count
@@ -138,18 +132,15 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
         cell.delegate = self
         cell.indexPath = indexPath
         
-        if let collectionImg = detailList?.myWork[indexPath.row] {
-                  cell.workImg.image = UIImage(named: collectionImg)
+        if let collectionImg = exhibitApplyList?.artWorkInfo?[indexPath.row].artImg {
+            cell.workImg.imageFromUrl(collectionImg, defaultImgPath: "ggobuk")
             if(indexPath == cvSelectedIndexPath){
                 cell.isRadioSelected = true
             }else {
                 cell.isRadioSelected = false
             }
-
+            
         }
-
-
-  
         
         return cell
     }
@@ -167,7 +158,7 @@ extension ExhibitApplyVC : UITableViewDelegate {
 extension ExhibitApplyVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let count = detailList?.exhibitInfo.count else {
+        guard let count = exhibitApplyList?.displayInfo?.count else {
             return 1
         }
         
@@ -179,11 +170,22 @@ extension ExhibitApplyVC : UITableViewDataSource {
         
         cell.delegate = self
         cell.indexPath = indexPath
-
         
-        if let data = detailList?.exhibitInfo[indexPath.row]{
-            cell.mainLabel.text = data.mainTxt
-            cell.subLabel.text = data.subTxt
+        
+        if let data = exhibitApplyList?.displayInfo?[indexPath.row]{
+            var applyStr = ""
+            
+            if let mainStr = data.exhibitTitle {
+                applyStr += mainStr
+            }
+            if let subStr = data.exhibitSubTitle {
+                applyStr += ("-" + subStr)
+            }
+            
+            
+            cell.mainLabel.text = applyStr
+            
+            cell.subLabel.text = data.exhibitApplyText!
             if indexPath == selectedIndexPath {
                 cell.isRadioSelected = true
             } else {
@@ -201,17 +203,25 @@ extension ExhibitApplyVC : UITableViewDataSource {
 
 
 extension ExhibitApplyVC {
-    func setData(){
-        detailList = ExhibitApplyDetail(
-            exhibitInfo: [ExhibitDetailInfo(mainTxt: "익숙함이 새로웠던 전 - 일상편", subTxt: "허전했던 벽에 걸어보자", exhibitDate: "2019.0.2~2019.0.4", applyDate: "2019.0.2~2019.0.4" , workNum: "1인 1작품 제한", personNum: "30명"),
-                          ExhibitDetailInfo(mainTxt: "익숙함이 새로웠던 전 - 자유편", subTxt: "허전했던 벽에 걸어보자", exhibitDate: "2019.0.2~2019.0.5", applyDate: "2019.0.2~2019.0.5" , workNum: "1인 2작품 제한", personNum: "40명"),
-                          ExhibitDetailInfo(mainTxt: "익숙함이 새로웠던 전 - 치유편", subTxt: "허전했던 벽에 걸어보자", exhibitDate: "2019.0.2~2019.0.6", applyDate: "2019.0.2~2019.0.6" , workNum: "1인 13작품 제한", personNum: "50명"),
-                          ], myWork: ["ggobuk", "fire",
-                                      "jiu", "meta",
-                                      "ggobuk", "fire",
-                                      "jiu", "meta",
-                                      "ggobuk", "fire",
-                                      "jiu", "meta"])
+    func setData(completion: @escaping() -> Void){
+        //userIndex값은 로그인할 때 서버에서 줄 것 -> 변경 필요
+        ExhibitApplyService.shared.exhibitApply(user_idx: 10) {
+            (data) in guard let status = data.status else { return }
+            print("\(status)")
+            switch status{
+            case 200:
+                guard let applyData = data.data else { return }
+                self.exhibitApplyList = applyData
+                completion()
+            case 401:
+                self.view.makeToast("인증 실패")
+            case 500:
+                self.view.makeToast("네트워크 오류")
+            default:
+                print("hi2")
+            }
+        }
+        
     }
     
     @objc func closeApply(){
@@ -219,9 +229,79 @@ extension ExhibitApplyVC {
     }
     
     
+    func setDelegate(){
+        applyScrollView.delegate = self
+        myWorkCV.delegate = self
+        myWorkCV.dataSource = self
+        
+        exhibitTV.delegate = self
+        exhibitTV.dataSource = self
+    }
+    
+    
+    func setUI(){
+        
+        //첫번째로 들어오는 정보와 아래 정보들은 모두 일치하기 때문에 헤더의 정보들은 첫번째 아이템으로 함
+        guard let firstExhibitInfo = exhibitApplyList?.displayInfo?.first else { return }
+        
+        //메인 이미지뷰에 서버이미지 띄우기
+        if let photoUrl = firstExhibitInfo.exhibitMainImg {
+            mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
+        }
+        
+        //전시 기간 처리
+        var exhibitDateStr = ""
+        
+        if let startDate = firstExhibitInfo.startDate {
+            exhibitDateStr = startDate.datecontrol(startDate)
+        }
+        
+        if let endDate = firstExhibitInfo.endDate {
+            exhibitDateStr += endDate.datecontrol(endDate)
+        }
+        
+        dateLabel.text = exhibitDateStr
+        
+        
+        //신청 기간 처리
+        var applyDateStr = ""
+        
+        if let aStartDate = firstExhibitInfo.applyStartDate {
+            applyDateStr = aStartDate.datecontrol(aStartDate)
+        }
+        
+        if let aEndDate = firstExhibitInfo.endDate {
+            applyDateStr += aEndDate.datecontrol(aEndDate)
+        }
+        
+        deadLineLabel.text = applyDateStr
+        
+        
+        //정보 갱신 (테이블뷰 , 컬렉션뷰)
+        exhibitTV.reloadData()
+        myWorkCV.reloadData()
+        
+        
+        //내 작품이 없으면 empty뷰가 보이게
+        //라디오 버튼과 신청하기 버튼도 막힘(라디오 버튼은 아직 못막음)
+        if (exhibitApplyList?.artWorkInfo) != nil {
+            workEmptyView.isHidden = true
+            applyBtn.setBackgroundColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), forState: .normal)
+        }else{
+            workEmptyView.isHidden = false
+            applyBtn.setBackgroundColor(UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1), forState: .normal)
+            applyBtn.isEnabled = false
+        }
+        
+        
+        
+    }
+    
+    
 }
 
 
+//라디오 버튼 delegate
 extension ExhibitApplyVC : RadioBtnDelegate {
     func cvSelectRadio(at indexPath: IndexPath) {
         cvSelectedIndexPath = indexPath
@@ -231,5 +311,5 @@ extension ExhibitApplyVC : RadioBtnDelegate {
     func selectRadioBtn(at indexPath: IndexPath) {
         selectedIndexPath = indexPath
         exhibitTV.reloadData()
-}
+    }
 }

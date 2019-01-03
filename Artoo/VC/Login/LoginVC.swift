@@ -54,6 +54,7 @@ extension LoginVC {
                     guard let token = response.data?.token else { return }
                     //어디서든 쓸 수 있도록 UserDefault에 token을 저장함
                     UserDefaults.standard.set(token, forKey: "token")
+                    print("\(token)")
                     self.goTab()
                 case 400:
                     self.view.makeToast("로그인에 실패했습니다")

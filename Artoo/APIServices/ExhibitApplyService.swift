@@ -1,23 +1,22 @@
-
-
-////전시 - 메인 서비스
+////전시 - 전시 신청서 서비스
 
 import Foundation
 import Alamofire
 
-struct ExhibitMainService: APIManager, Requestable {
+struct ExhibitApplyService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseArray<Exhibit>
-    static let shared = ExhibitMainService()
-    let exhibitURL = url("/displays")
+    typealias NetworkData = ResponseObject<ExhibitApply>
+    static let shared = ExhibitApplyService()
+    let applyURL = url("/discontents/application/")
     let header: HTTPHeaders = [
         "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi"
     ]
-
     
-    //전시 메인 API
-    func exhibitMain(completion: @escaping (NetworkData) -> Void) {
-        gettable(exhibitURL, body: nil, header: header) {
+    
+    //전시 신청서 API
+    func exhibitApply(user_idx: Int, completion: @escaping (NetworkData) -> Void) {
+
+        gettable(applyURL+"\(user_idx)", body: nil, header: header) {
             res in
             switch res {
             case .success(let value):
@@ -28,9 +27,8 @@ struct ExhibitMainService: APIManager, Requestable {
                 completion(error)
                 
             }
-            print("\(self.exhibitURL)")
+
         }
     }
-    
-    
 }
+
