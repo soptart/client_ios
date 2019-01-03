@@ -312,9 +312,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="허전했던 벽에 한 번 걸어보자" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv4-E6-q9C">
-                                <rect key="frame" x="24" y="148.5" width="195.5" height="22.5"/>
+                                <rect key="frame" x="24" y="148.5" width="240" height="22.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="195.5" id="tu3-zh-yNE"/>
+                                    <constraint firstAttribute="width" constant="240" id="tu3-zh-yNE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                 <color key="textColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
@@ -346,6 +346,8 @@
                     <connections>
                         <outlet property="closeBtn" destination="izP-Oz-ETY" id="ylH-Yb-0K2"/>
                         <outlet property="detailCollectionView" destination="ysw-Zx-k6L" id="RDV-0G-gh1"/>
+                        <outlet property="mainTagLabel" destination="JbU-dH-exk" id="G40-QH-49H"/>
+                        <outlet property="subTagLabel" destination="Jv4-E6-q9C" id="OsF-4i-a1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXK-hQ-Pyj" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,11 @@ import UIKit
 class ThemeDetailVC: UIViewController {
     
     var index:Int = 0
+    var mainTag:String = ""
+    var subTag:String = ""
+    
+    @IBOutlet weak var mainTagLabel: UILabel!
+    @IBOutlet weak var subTagLabel: UILabel!
     
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var detailCollectionView: UICollectionView!
@@ -20,7 +25,7 @@ class ThemeDetailVC: UIViewController {
         print("\(index)")
         setData()
         setDelegate()
-
+        setLabel()
     }
     
     override func viewDidLoad() {
@@ -109,25 +114,28 @@ extension ThemeDetailVC  {
             case 200:
                 guard let detailData = data.data else { return }
                 self.detailList = detailData
-
                 print("\(self.detailList)")
                 print("success")
-                
             case 404:
+                self.detailList.removeAll()
                 self.view.makeToast("컨텐츠가 존재하지 않습니다")
-                print("fail")
             case 500:
+                self.detailList.removeAll()
                 self.view.makeToast("서버 내부 에러")
-                print("fail2")
             default:
                 print("hi")
             }
-            
             self.detailCollectionView.reloadData()
-        }
-        
 
+        }
     }
+    
+    
+    func setLabel(){
+        mainTagLabel.text = mainTag
+        subTagLabel.text = subTag
+    }
+    
     
     //작품 탭으로 이동(navigation)
     func goArt(){

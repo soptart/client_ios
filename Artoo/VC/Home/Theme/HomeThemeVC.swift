@@ -30,9 +30,12 @@ class HomeThemeVC: UIViewController {
     
     //테마 데이터
     var themeList = [Theme]()
-
+    
     var tagIndex = 1
-
+    var mainTag:String = ""
+    var subTag:String = ""
+    
+    
     //태그 이미지 배열
     var tagList:[String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
                             "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
@@ -79,14 +82,7 @@ extension HomeThemeVC : UITableViewDataSource {
             cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk") }
         
         if let themeText = data.mainTag {
-            print(themeText)
-            if(themeText.contains("\\n")){
-                let newText = themeText.replacingOccurrences(of: "\\n", with: "\n")
-                cell.themeLabel.text = newText
-                
-            }else {
-                cell.themeLabel.text = themeText}
-            
+            cell.themeLabel.text = removeNewLine(str: themeText)
         }
         
         return cell
@@ -101,10 +97,18 @@ extension HomeThemeVC : UITableViewDataSource {
 extension HomeThemeVC : UITableViewDelegate {
     //테마 테이블 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let index = themeList[indexPath.row + 1].tagIndex {
-            tagIndex = index
-            goDetail()
-        }
+        let data = themeList[indexPath.row + 1]
+        
+        guard let index = data.tagIndex else { return }
+        tagIndex = index
+        
+        guard let mainTagData = data.mainTag else { return }
+        mainTag = mainTagData
+        
+        guard let subTagData = data.subTag else { return }
+        subTag = subTagData
+        
+        goDetail()
     }
     
 }
@@ -151,10 +155,19 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case tagCV:
-            if let index = themeList[indexPath.row].tagIndex {
-                tagIndex = index
-                goDetail()
-            }
+            let themeData = themeList[indexPath.row]
+            
+            guard let index = themeData.tagIndex else { return }
+            tagIndex = index
+            
+            guard let mainTagData = themeData.mainTag else { return }
+            mainTag = mainTagData
+            
+            guard let subTagData = themeData.subTag else { return }
+            subTag = subTagData
+            
+            goDetail()
+            
         case recommandCV:
             print("작품창으로 이동")
         default:
@@ -218,7 +231,7 @@ extension HomeThemeVC : UICollectionViewDataSource {
 
 
 extension HomeThemeVC {
-   
+    
     //서버 통신
     func setData() {
         HomeThemeService.shared.theme {
@@ -265,13 +278,40 @@ extension HomeThemeVC {
     
     //디테일 창으로 이동
     @objc func goDetail(){
+        //메인 태그, 서브 태그 , 인덱스
         themeDetailVC.index = tagIndex
+        themeDetailVC.mainTag = removeNewLine(str: mainTag)
+        themeDetailVC.subTag = subTag
         present(themeDetailVC, animated: true, completion: nil)
     }
-
+    
     @objc func goDetail2(){
-        themeDetailVC.index = 1
+        
+        guard let themeData = themeList.first else { return }
+        
+        guard let index = themeData.tagIndex else { return }
+        tagIndex = index
+        
+        guard let mainTagData = themeData.mainTag else { return }
+        mainTag = mainTagData
+        
+        guard let subTagData = themeData.subTag else { return }
+        subTag = subTagData
+        
+        themeDetailVC.index = tagIndex
+        themeDetailVC.mainTag = removeNewLine(str: mainTag)
+        themeDetailVC.subTag = subTag
         present(themeDetailVC, animated: true, completion: nil)
     }
-
+    
+    
+    // \\n -> \n으로 바꾸어 주는 함수
+    func removeNewLine(str: String) -> String {
+        if(str.contains("\\n")){
+            let newText = str.replacingOccurrences(of: "\\n", with: "\n")
+            return newText
+        }
+        return str
+    }
+    
 }
