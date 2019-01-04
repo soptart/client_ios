@@ -106,18 +106,13 @@
                                                 <constraint firstAttribute="height" constant="328" id="6th-MV-NGk"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meta" translatesAutoresizingMaskIntoConstraints="NO" id="na3-Dc-gSI">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meta" translatesAutoresizingMaskIntoConstraints="NO" id="na3-Dc-gSI">
                                             <rect key="frame" x="14" y="14" width="55" height="27"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="55" id="gCl-1K-ftX"/>
-                                                <constraint firstAttribute="height" constant="27" id="nCG-WW-3a3"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-AN-qak">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-AN-qak">
                                             <rect key="frame" x="22" y="98" width="353" height="202"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="202" id="LGE-J3-EJJ"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SaJ-oo-xWW">
                                                 <size key="itemSize" width="153" height="175"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -154,15 +149,17 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F0-ab-cd8">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F0-ab-cd8">
                                             <rect key="frame" x="321" y="47" width="33" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                             <state key="normal" title="ALL">
                                                 <color key="titleColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거실에 걸어두면 느낌 있는 그림들" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="967-KK-ZMF">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="거실에 걸어두면 느낌 있는 그림들" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="967-KK-ZMF">
                                             <rect key="frame" x="14" y="50" width="252" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -170,18 +167,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="967-KK-ZMF" firstAttribute="leading" secondItem="na3-Dc-gSI" secondAttribute="leading" id="6VF-al-c6j"/>
-                                        <constraint firstItem="WaG-AN-qak" firstAttribute="trailing" secondItem="qtf-8n-E8v" secondAttribute="trailing" id="7Q0-sV-tII"/>
                                         <constraint firstItem="qtf-8n-E8v" firstAttribute="leading" secondItem="V3l-RE-jEA" secondAttribute="leading" id="8yA-Uo-2y3"/>
                                         <constraint firstItem="qtf-8n-E8v" firstAttribute="top" secondItem="V3l-RE-jEA" secondAttribute="top" id="9qe-eQ-unw"/>
-                                        <constraint firstItem="4F0-ab-cd8" firstAttribute="centerY" secondItem="967-KK-ZMF" secondAttribute="centerY" id="FIK-Ql-fk2"/>
-                                        <constraint firstItem="4F0-ab-cd8" firstAttribute="trailing" secondItem="qtf-8n-E8v" secondAttribute="trailing" constant="-21" id="Kaj-Nx-O8A"/>
-                                        <constraint firstItem="WaG-AN-qak" firstAttribute="leading" secondItem="qtf-8n-E8v" secondAttribute="leading" constant="22" id="MyA-jy-ZoO"/>
                                         <constraint firstAttribute="trailing" secondItem="qtf-8n-E8v" secondAttribute="trailing" id="NCN-7w-rf6"/>
-                                        <constraint firstItem="qtf-8n-E8v" firstAttribute="top" secondItem="na3-Dc-gSI" secondAttribute="top" constant="-14" id="O0s-4H-D8d"/>
-                                        <constraint firstItem="na3-Dc-gSI" firstAttribute="leading" secondItem="V3l-RE-jEA" secondAttribute="leading" constant="14" id="RaH-PB-5gr"/>
-                                        <constraint firstItem="967-KK-ZMF" firstAttribute="top" secondItem="na3-Dc-gSI" secondAttribute="bottom" constant="9" id="dN8-OU-Qwu"/>
-                                        <constraint firstItem="WaG-AN-qak" firstAttribute="top" secondItem="967-KK-ZMF" secondAttribute="bottom" constant="21" id="gkz-yF-4yn"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

@@ -26,11 +26,19 @@ extension UIImageView {
             self.image = defaultImg
         }
     }
+    
+    //이미지 둥글게 만드는 코드
+    public func roundImage(num: Float){
+        self.layer.cornerRadius =  self.bounds.width * CGFloat(num)
+        self.clipsToBounds = true
+    }
+    
+    
 }
 
 
 extension Date {
-   public func datecontrol(_ value: Date?) -> String{
+    public func datecontrol(_ value: Date?) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd, hh:mm:ss.SSSZ"
         
