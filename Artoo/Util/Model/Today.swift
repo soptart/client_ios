@@ -9,6 +9,7 @@ import ObjectMapper
 struct Today : Mappable {
     var authorIndex: Int?
     var authorName:String?
+    var authorSchool:String?
     var authorIntro:String?
     var authorWork:[TodayWork]?
     
@@ -18,6 +19,7 @@ struct Today : Mappable {
     mutating func mapping(map: Map) {
         authorIndex <- map["u_idx"]
         authorName <- map["u_name"]
+        authorSchool <- map["u_school"]
         authorIntro <- map["u_description"]
         authorWork <- map["list"]
     }
