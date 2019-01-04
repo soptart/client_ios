@@ -318,6 +318,15 @@
 				5D3DA6C821DEE3D2005239F8 /* refundNoticeVC.swift */,
 				5D3DA6CA21DEE408005239F8 /* transactionCancelNoticeVC.swift */,
 				5D3DA6CC21DEE421005239F8 /* exhibitCancelNoticeVC.swift */,
+				5DB4139F21DF189300576883 /* QnaVC.swift */,
+				5DB413A121DF18AA00576883 /* QnaCell.swift */,
+				5DB4138921DF06E800576883 /* SettingMainVC.swift */,
+				5DB4138B21DF070100576883 /* SettingMainCell.swift */,
+				5DB4138D21DF071900576883 /* MyInfoVC.swift */,
+				5DB4138F21DF073000576883 /* MyInfoCell.swift */,
+				5DB4139121DF074400576883 /* LogoutVC.swift */,
+				5DB4139321DF075E00576883 /* UsingVC.swift */,
+				5DB4139521DF076E00576883 /* ProtectionVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -391,6 +400,8 @@
 				A34DFD0A21DDE43B00CEDA74 /* ArtWork.swift */,
 				5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */,
 				5D3DA6C021DDF610005239F8 /* exhibitInfo.swift */,
+				5DB4139D21DF10E000576883 /* MyInfo.swift */,
+				5DB4139721DF0AB600576883 /* Setting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,17 +500,6 @@
 				A3CEF95F21CE2A0A000C7938 /* Home.storyboard */,
 				A3CEF96121CE2A5D000C7938 /* Art.storyboard */,
 				A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */,
-				5DB4139F21DF189300576883 /* QnaVC.swift */,
-				5DB413A121DF18AA00576883 /* QnaCell.swift */,
-				5DB4139D21DF10E000576883 /* MyInfo.swift */,
-				5DB4139721DF0AB600576883 /* Setting.swift */,
-				5DB4138921DF06E800576883 /* SettingMainVC.swift */,
-				5DB4138B21DF070100576883 /* SettingMainCell.swift */,
-				5DB4138D21DF071900576883 /* MyInfoVC.swift */,
-				5DB4138F21DF073000576883 /* MyInfoCell.swift */,
-				5DB4139121DF074400576883 /* LogoutVC.swift */,
-				5DB4139321DF075E00576883 /* UsingVC.swift */,
-				5DB4139521DF076E00576883 /* ProtectionVC.swift */,
 				A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */,
 			);
 			path = Storyboard;
@@ -729,7 +729,6 @@
 				5D40FA0521DD391E00636890 /* sellerInfo.swift in Sources */,
 				5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */,
 				5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */,
-				5DEA022321DF4B6F00AD95A8 /* reviewData.swift in Sources */,
 				5D3DA6AF21DDE65B005239F8 /* sellTableVC.swift in Sources */,
 				5DB4139E21DF10E000576883 /* MyInfo.swift in Sources */,
 				5D3DA6C721DEE3BA005239F8 /* reviewNotice.swift in Sources */,
