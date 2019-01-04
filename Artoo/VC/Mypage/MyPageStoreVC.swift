@@ -9,22 +9,50 @@
 import UIKit
 
 class MyPageStoreVC: UIViewController {
+    
+    var storePhotos: [StoreArtPhoto] = []
+    
+    @IBOutlet weak var storeImgTable: UICollectionView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setting()
+        
+        storeImgTable.delegate = self
+        storeImgTable.dataSource = self
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setting(){
+        storePhotos.append(StoreArtPhoto(storeImg:"fire"))
+        storePhotos.append(StoreArtPhoto(storeImg:"ggobuk"))
+        storePhotos.append(StoreArtPhoto(storeImg:"01"))
+        
     }
-    */
 
 }
+
+extension MyPageStoreVC: UICollectionViewDataSource, UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return storePhotos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"storeCell", for: indexPath) as! MyPageStoreCell
+        
+        let image = storePhotos[indexPath.row]
+        cell.StoreImg.image = UIImage(named:image.storeImg)
+        
+        return cell
+    }
+    
+    
+}
+
+
