@@ -37,9 +37,9 @@ extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.frame.width - 36
-        let height = view.frame.height - 200
+        let height = view.frame.height / 2
        
-        return CGSize(width: width, height: height)
+         return CGSize(width: width, height: height)
         
     }
     
