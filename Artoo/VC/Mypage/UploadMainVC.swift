@@ -53,6 +53,7 @@ class UploadMainVC: UIViewController{
     var yOff: String!
     var height: String!
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     let picker = UIImagePickerController()
    
     let categorys: [String] = ["인물", "동물", "식물", "사물", "추상", "풍경"]
@@ -67,7 +68,7 @@ class UploadMainVC: UIViewController{
         
         choiceImg.addGestureRecognizer(pictureTap)
         choiceImg.isUserInteractionEnabled = true
-        
+        heightConstraint.constant = 0
         setupPicker()
         setUpToolbar()
 
@@ -87,7 +88,7 @@ class UploadMainVC: UIViewController{
     
     //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
     @IBAction func addTagBtn(_ sender: Any) {
-        
+        heightConstraint.constant = 378
         performSegue(withIdentifier: "tagUploadSegue", sender: self)
         
     }

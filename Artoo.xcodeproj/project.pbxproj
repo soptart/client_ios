@@ -335,6 +335,8 @@
 				5DB4139121DF074400576883 /* LogoutVC.swift */,
 				5DB4139321DF075E00576883 /* UsingVC.swift */,
 				5DB4139521DF076E00576883 /* ProtectionVC.swift */,
+				5D9E582721DF9977008225F6 /* MyPageStoreCell.swift */,
+				5D9E582921DF99B3008225F6 /* MyPageReviewCell.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -410,6 +412,8 @@
 				5D3DA6C021DDF610005239F8 /* exhibitInfo.swift */,
 				5DB4139D21DF10E000576883 /* MyInfo.swift */,
 				5DB4139721DF0AB600576883 /* Setting.swift */,
+				5D9E582B21DF9E88008225F6 /* StoreArtPhoto.swift */,
+				5D9E582521DF993E008225F6 /* reviewData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -508,10 +512,6 @@
 				A3CEF95F21CE2A0A000C7938 /* Home.storyboard */,
 				A3CEF96121CE2A5D000C7938 /* Art.storyboard */,
 				A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */,
-				5D9E582B21DF9E88008225F6 /* StoreArtPhoto.swift */,
-				5D9E582521DF993E008225F6 /* reviewData.swift */,
-				5D9E582721DF9977008225F6 /* MyPageStoreCell.swift */,
-				5D9E582921DF99B3008225F6 /* MyPageReviewCell.swift */,
 				A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */,
 			);
 			path = Storyboard;
