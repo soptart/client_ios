@@ -23,6 +23,14 @@ class MyInfoVC: UIViewController {
         setData()
     }
     
+    @IBAction func logoutBtn(_ sender: Any) {
+        
+        guard let logVC = storyboard?.instantiateViewController(withIdentifier: "Logout") as? LogoutVC else { return }
+        
+        navigationController?.pushViewController(logVC, animated: true)
+    }
+    
+    
 }
 
 extension MyInfoVC: UITableViewDataSource{
