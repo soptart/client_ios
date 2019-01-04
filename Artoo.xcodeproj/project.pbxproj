@@ -116,6 +116,7 @@
 		A392416E21DCB40C00371E77 /* ThemeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392416D21DCB40C00371E77 /* ThemeDetailService.swift */; };
 		A399E47321D85F5000679162 /* ExhibitSeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */; };
 		A3BE837621DF66B400206154 /* ExhibitSeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE837521DF66B400206154 /* ExhibitSeeService.swift */; };
+		A3BE837821DFD47E00206154 /* HomeSeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE837721DFD47E00206154 /* HomeSeriesCell.swift */; };
 		A3C4CD1021D3B43E009086AA /* ExhibitEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4CD0F21D3B43E009086AA /* ExhibitEnterVC.swift */; };
 		A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF94D21CE2421000C7938 /* AppDelegate.swift */; };
 		A3CEF95321CE2422000C7938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF95121CE2422000C7938 /* Main.storyboard */; };
@@ -246,6 +247,7 @@
 		A392416D21DCB40C00371E77 /* ThemeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailService.swift; sourceTree = "<group>"; };
 		A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitSeeDetail.swift; sourceTree = "<group>"; };
 		A3BE837521DF66B400206154 /* ExhibitSeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitSeeService.swift; sourceTree = "<group>"; };
+		A3BE837721DFD47E00206154 /* HomeSeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSeriesCell.swift; sourceTree = "<group>"; };
 		A3C4CD0F21D3B43E009086AA /* ExhibitEnterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitEnterVC.swift; sourceTree = "<group>"; };
 		A3CEF94A21CE2421000C7938 /* Artoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CEF94D21CE2421000C7938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				A30048DC21CE4FDD0042C4EF /* TodayWorkCell.swift */,
 				A30048DA21CE4FC30042C4EF /* TodayAuthorCell.swift */,
 				A30048DE21CE50960042C4EF /* HomeTodayVC.swift */,
+				A3BE837721DFD47E00206154 /* HomeSeriesCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				A3699B4F21DB53B700EC3A8D /* ResponseObject.swift in Sources */,
 				A3699B5121DB53E800EC3A8D /* NetworkResult.swift in Sources */,
 				A34DFD0721DDAFD100CEDA74 /* ExhibitMainService.swift in Sources */,
+				A3BE837821DFD47E00206154 /* HomeSeriesCell.swift in Sources */,
 				5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */,
 				A3699B5D21DB5E5E00EC3A8D /* SignVC3.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,

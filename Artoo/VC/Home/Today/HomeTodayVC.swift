@@ -8,11 +8,15 @@ import UIKit
 
 class HomeTodayVC: UIViewController {
     
+    //정적 데이터인 시리즈 테이블뷰
+    @IBOutlet weak var seriesTableView: UITableView!
+    
     @IBOutlet  var authorCollection: UICollectionView!
     @IBOutlet  var workCollection: UICollectionView!
     
     
     var todayList = [Today]()
+    let seriesList = ["today_demo1","today_demo2"]
     var authorIndex = 0
     
     override func viewDidLoad() {
@@ -20,11 +24,38 @@ class HomeTodayVC: UIViewController {
         
         //서버 통신해서 todayList 채우기
         getToday()
-      
+        
+        //서버정보가 아닌 시리즈 정보들(디자이너 데이터)
+        seriesTableView.delegate = self
+        seriesTableView.dataSource = self
     }
     
     
 }
+
+////시리즈 TableView를 위한 Extension
+
+extension HomeTodayVC : UITableViewDelegate {
+    //클릭 이벤트 처리
+}
+
+extension HomeTodayVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return seriesList.count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell") as! HomeSeriesCell
+        cell.homeSeriesImg.image = UIImage(named: seriesList[indexPath.row])
+        return cell
+    }
+    
+    
+}
+
 
 
 ////CollectionView를 위한 Extension
