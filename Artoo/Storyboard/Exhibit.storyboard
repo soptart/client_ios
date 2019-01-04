@@ -163,21 +163,37 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sW3-Pf-B9A">
+                                <rect key="frame" x="44" y="84" width="246" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-JO-vC2">
+                                <rect key="frame" x="44" y="300" width="246" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fKJ-DS-Zgl"/>
                     </view>
                     <navigationItem key="navigationItem" id="fi6-i9-NAM"/>
                     <connections>
+                        <outlet property="authorLabel" destination="J1W-JO-vC2" id="ZzV-MS-ZKO"/>
                         <outlet property="closeBtn" destination="Xll-DM-SuH" id="7C2-PV-hXS"/>
                         <outlet property="enterBtn" destination="hKo-Y8-m7X" id="zmE-rc-gDc"/>
+                        <outlet property="exhibitDateLabel" destination="sW3-Pf-B9A" id="rHt-9q-q9a"/>
                         <outlet property="mainLabel" destination="uJf-CO-oO4" id="i6N-EK-Q6H"/>
                         <outlet property="subLabel" destination="Uii-40-T2G" id="YTm-GP-eSM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z94-Ct-hPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="-764"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="-764.16791604197908"/>
         </scene>
         <!--Exhibit ApplyVC-->
         <scene sceneID="isY-JD-Zza">
