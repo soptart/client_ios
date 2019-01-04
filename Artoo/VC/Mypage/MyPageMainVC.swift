@@ -35,6 +35,12 @@ class MyPageMainVC: UIViewController {
         navigationController?.pushViewController(noticeVC, animated: true)
     }
     
+    //설정 버튼 눌렀을 때
+    
+    @IBAction func settingBtn(_ sender: Any) {
+        guard let settingVC = storyboard?.instantiateViewController(withIdentifier: "settingMainPage") as? SettingMainVC else { return }
+        navigationController?.pushViewController(settingVC, animated: true)
+    }
     
     //버튼 눌렀을 때
     @IBAction func EditBtn(_ sender: Any) {

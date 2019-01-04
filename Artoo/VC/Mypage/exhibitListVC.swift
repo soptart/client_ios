@@ -27,10 +27,9 @@ class exhibitListVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print(indexPath.row)
+
         let cell = exhibitTable.dequeueReusableCell(withIdentifier: "exhibitList") as! exhibitListCell
         
-        print(indexPath.row)
         
         let exhibit = exhibitInofrmation[indexPath.row]
         
