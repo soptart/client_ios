@@ -1735,6 +1735,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         <state key="normal" title="예">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="okBtn:" destination="pqE-Mn-CA8" eventType="touchUpInside" id="ATu-C3-ZBL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPx-RY-Mpq">
                                         <rect key="frame" x="149" y="136" width="149" height="46"/>
@@ -1744,6 +1747,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         <state key="normal" title="아니오">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="okBtn:" destination="pqE-Mn-CA8" eventType="touchUpInside" id="sNT-sQ-Up0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1791,6 +1797,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         <state key="normal" title="예">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="okBtn:" destination="fcd-WG-Y8N" eventType="touchUpInside" id="5Uh-U8-asI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIz-zI-MNV">
                                         <rect key="frame" x="149" y="136" width="149" height="46"/>
@@ -1800,6 +1809,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         <state key="normal" title="아니오">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="okBtn:" destination="fcd-WG-Y8N" eventType="touchUpInside" id="TA2-66-f95"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
