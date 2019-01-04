@@ -10,24 +10,32 @@ import UIKit
 
 class ExhibitSeeVC: UIViewController {
     
+    
     @IBOutlet weak var escapeBtn: UIButton!
-    var exhibitSeeList:[ExhibitSeeDetail] = []
+    
+    var displayIdx:Int?
+    var titleImg:String?
+    var exhibitSeeList = [ExhibitSee]()
+    
+    @IBOutlet weak var titleImageView: UIImageView!
     
     
     //전시 관람 콜렉션 뷰
     @IBOutlet weak var exhibitCollectionView: UICollectionView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        setDelegate()
+        setData(completion: setUI)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData()
+     
+ 
         
         //전시 퇴장 버튼
         escapeBtn.addTarget(self, action: #selector(escape), for: .touchUpInside)
         
-        //전시 콜렉션뷰 하나의 셀만 보이도록
-        exhibitCollectionView.isPagingEnabled = true
-        exhibitCollectionView.delegate = self
-        exhibitCollectionView.dataSource = self
     }
 }
 
@@ -38,8 +46,8 @@ extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
         
         let width = view.frame.width - 36
         let height = view.frame.height / 2
-       
-         return CGSize(width: width, height: height)
+        
+        return CGSize(width: width, height: height)
         
     }
     
@@ -82,13 +90,17 @@ extension ExhibitSeeVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExhibitSeeCell", for: indexPath) as! ExhibitSeeCell
         
+        
         let data = exhibitSeeList[indexPath.row]
-        cell.exhibitSeeImg.image = UIImage(named: data.exhibitImg)
-        cell.workTitleLabel.text = data.workTitle
-        cell.authorNameLabel.text = data.authorName
-        cell.themeLabel.text = data.theme
-        cell.sizeLabel.text = "\(data.widthSize)x\(data.heightSize)"
-        cell.yearLabel.text = "\(data.year)"
+        cell.exhibitSeeImg.imageFromUrl(gsno(data.artImg), defaultImgPath: "ggobuk")
+        cell.workTitleLabel.text = gsno(data.displayTitle)
+        print("\(gsno(data.displayTitle))")
+        cell.authorNameLabel.text = gsno(data.userName)
+        cell.themeLabel.text = gsno(data.artForm)
+        cell.sizeLabel.text = "\(gino(data.artWidth))x\(gino(data.artHeight))"
+        cell.yearLabel.text = gsno(data.artYear)
+        
+    
         return cell
         
     }
@@ -100,20 +112,38 @@ extension ExhibitSeeVC {
         navigationController?.popViewController(animated: true)
     }
     
-    func setData(){
-        exhibitSeeList.append(ExhibitSeeDetail(exhibitIndex: 0, exhibitImg: "ggobuk",
-                                         workTitle: "무제2(Untiitled)",
-                                         authorName: "홍정민",
-                                         theme: "페인팅",
-                                         widthSize: 130,
-                                         heightSize:163,                                    year: 2018))
-            exhibitSeeList.append(ExhibitSeeDetail(exhibitIndex: 1, exhibitImg: "fire",
-                                                    workTitle: "무제3(Untiitled)",
-                                                    authorName: "홍정민",
-                                                    theme: "수채화",
-                                                    widthSize: 140,
-                                                    heightSize:164,                                    year: 2019))
-        
+    func setUI(){
+             titleImageView.imageFromUrl(gsno(titleImg), defaultImgPath: "ggobuk")
+        exhibitCollectionView.reloadData()
         
     }
+    func setDelegate(){
+        //전시 콜렉션뷰 하나의 셀만 보이도록
+        exhibitCollectionView.isPagingEnabled = true
+        exhibitCollectionView.delegate = self
+        exhibitCollectionView.dataSource = self
+    }
+    
+    
+    //초기 데이터 세팅
+    func setData(completion: @escaping() -> Void){
+        ExhibitSeeService.shared.exhibitSee(display_idx: displayIdx!) {
+            (data) in guard let status = data.status else{ return }
+            switch status{
+            case 200:
+                guard let data = data.data else { return }
+                self.exhibitSeeList = data
+                completion()
+            case 404:
+                print("전시회 존재X")
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
+    }
+    
+    
+    
 }

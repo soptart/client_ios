@@ -89,7 +89,7 @@ extension ExhibitVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitCell") as! ExhibitCell
         
         let exhibitMainData = exhibitMainList[indexPath.row]
-        print("\(exhibitMainData)")
+        print("메인 데이타\(exhibitMainData)")
         
         if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
             cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "ggobuk")

@@ -39,7 +39,7 @@ struct Exhibit : Mappable {
         applyEndDate <- map["d_eDateApply"]
 
         
-        exhibitImg <- map["d_repimg_url"]
+        exhibitImg <- map["d_repImg_url"]
         exhibitTitleImg <- map["d_titleImg_url"]
         exhibitMainImg <- map["d_mainImg_url"]
         exhibitTitle <- map["d_title"]
