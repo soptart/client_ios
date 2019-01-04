@@ -40,6 +40,10 @@ class UploadMainVC: UIViewController{
     var artDescription: String?
     var artArticle: String?
     var artMethod: String?
+    var category: String!
+    var figure: String!
+    var artYear: String!
+    var artLicense: String!
     
     let picker = UIImagePickerController()
    
@@ -64,7 +68,7 @@ class UploadMainVC: UIViewController{
         artDescriptionTV.delegate = self
         artMethodTV.delegate = self
         
-        
+        picker.delegate = self
         
     }
     
@@ -136,6 +140,8 @@ class UploadMainVC: UIViewController{
             print("카메라 안됨")
         }
     }
+    
+   
 
     func setupPicker() {
         
@@ -168,7 +174,8 @@ class UploadMainVC: UIViewController{
        
         CategoryUploadLabel.text = part1
         CategoryUploadLabel.endEditing(true)
-        
+        category = part1
+     
     }
     
     //작품 형태 데이터 등록
@@ -183,7 +190,8 @@ class UploadMainVC: UIViewController{
         
         FigureUploadLabel.text = part2
         FigureUploadLabel.endEditing(true)
-        
+        figure = part2
+       
     }
     
     //제작년도 데이터 등록
@@ -195,7 +203,8 @@ class UploadMainVC: UIViewController{
         
         YearUploadLabel.text = part3
         YearUploadLabel.endEditing(true)
-
+        artYear = part3
+        
     }
     
     //라이센스 데이터 등록
@@ -207,6 +216,7 @@ class UploadMainVC: UIViewController{
         
         LicenseUploadLabel.text = part4
         LicenseUploadLabel.endEditing(true)
+        artLicense = part4
         
     }
     
@@ -286,5 +296,16 @@ extension UploadMainVC: UITextViewDelegate, UITextFieldDelegate {
         
         artDescription = artDescriptionTV.text!
         artMethod = artMethodTV.text!
+    }
+}
+
+extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[.originalImage] as? UIImage {
+            choiceImg.image = image
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
