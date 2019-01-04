@@ -23,7 +23,16 @@ class MyInfoVC: UIViewController {
         setData()
     }
     
+    @IBAction func okBtn(_ sender: Any) {
+        
+        guard let logoutVC = storyboard?.instantiateViewController(withIdentifier: "Logout") as? LogoutVC else { return }
+        
+        navigationController?.pushViewController(logoutVC, animated: true)
+        
+    }
 }
+
+
 
 extension MyInfoVC: UITableViewDataSource{
     
@@ -44,6 +53,7 @@ extension MyInfoVC: UITableViewDataSource{
         return cell
         
     }
+    
     
     
 }
