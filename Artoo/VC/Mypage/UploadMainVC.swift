@@ -15,6 +15,10 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var FigureUploadLabel: UITextField!
     @IBOutlet weak var YearUploadLabel: UITextField!
     @IBOutlet weak var LicenseUploadLabel: UITextField!
+    @IBOutlet weak var widthTF: UITextField!
+    @IBOutlet weak var yOffTF: UITextField!
+    @IBOutlet weak var heightTF: UITextField!
+    
     
     @IBOutlet weak var popUpViewConstraint: NSLayoutConstraint!
     
@@ -45,6 +49,9 @@ class UploadMainVC: UIViewController{
     var artYear: String!
     var artLicense: String!
     var transactionMethod: String!
+    var width: String!
+    var yOff: String!
+    var height: String!
     
     let picker = UIImagePickerController()
    
@@ -68,6 +75,9 @@ class UploadMainVC: UIViewController{
         artArticleTF.delegate = self
         artDescriptionTV.delegate = self
         artMethodTV.delegate = self
+        widthTF.delegate = self
+        yOffTF.delegate = self
+        heightTF.delegate = self
         
         picker.delegate = self
         
@@ -282,6 +292,18 @@ extension UploadMainVC: UITextViewDelegate, UITextFieldDelegate {
          if artArticleTF.isFirstResponder == true {
          artArticleTF.placeholder = nil
          }
+        
+        if widthTF.isFirstResponder == true {
+            widthTF.placeholder = nil
+        }
+        
+        if yOffTF.isFirstResponder == true {
+            yOffTF.placeholder = nil
+        }
+        
+        if heightTF.isFirstResponder == true {
+            heightTF.placeholder = nil
+        }
     }
     
     //수정 끝나면 string 에 내용 넣어주기
@@ -290,6 +312,9 @@ extension UploadMainVC: UITextViewDelegate, UITextFieldDelegate {
         
         artName = artNameUploadTF.text!
         artArticle = artArticleTF.text!
+        width = widthTF.text!
+        yOff = yOffTF.text!
+        height = heightTF.text!
     }
     // 누르면 텍스트 뷰의 내용 없애기.
     func textViewDidBeginEditing(_ textView: UITextView) {
