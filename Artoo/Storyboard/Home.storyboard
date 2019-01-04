@@ -469,7 +469,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="272" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-Nq-6fs">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="272" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-Nq-6fs">
                                                 <rect key="frame" x="0.0" y="637" width="375" height="516"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -512,27 +512,34 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AuthorCell" id="Ilb-9F-2W2" customClass="TodayAuthorCell" customModule="Artoo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="2" width="71" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="71" height="26.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWO-AG-B2U">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="26.5"/>
-                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                                    <nil key="textColor"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-ux-juZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="김민정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWO-AG-B2U">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="qWO-AG-B2U" secondAttribute="trailing" id="0Tg-nI-fcW"/>
+                                                            <constraint firstItem="qWO-AG-B2U" firstAttribute="leading" secondItem="Ilb-9F-2W2" secondAttribute="leading" id="1dm-Lh-hip"/>
                                                             <constraint firstItem="qWO-AG-B2U" firstAttribute="top" secondItem="Ilb-9F-2W2" secondAttribute="top" id="1il-he-Dsf"/>
                                                             <constraint firstItem="qWO-AG-B2U" firstAttribute="leading" secondItem="Ilb-9F-2W2" secondAttribute="leading" id="1n7-GV-WoT"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qWO-AG-B2U" secondAttribute="bottom" id="HpL-40-lqT"/>
+                                                            <constraint firstItem="qWO-AG-B2U" firstAttribute="top" secondItem="Ilb-9F-2W2" secondAttribute="top" id="T2H-sh-e11"/>
+                                                            <constraint firstAttribute="trailing" secondItem="qWO-AG-B2U" secondAttribute="trailing" id="TXQ-1j-X97"/>
                                                             <constraint firstAttribute="bottom" secondItem="qWO-AG-B2U" secondAttribute="bottom" id="eE4-9T-VVQ"/>
                                                         </constraints>
-                                                        <size key="customSize" width="71" height="26.5"/>
+                                                        <size key="customSize" width="71" height="30"/>
                                                         <connections>
                                                             <outlet property="authorName" destination="qWO-AG-B2U" id="Upb-nk-cfq"/>
                                                         </connections>

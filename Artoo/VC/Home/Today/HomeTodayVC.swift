@@ -114,13 +114,10 @@ extension HomeTodayVC : UICollectionViewDataSource {
                 cell.arrowImg.isHidden = false
 
                 
-                cell.authorName.text = workInfo.authorName
-                
-                if let intro = workInfo.authorIntro {
-                    cell.authorIntro.text = intro
-                }else{
-                    cell.authorIntro.text = ""
-                }
+                cell.authorName.text = gsno(workInfo.authorName)
+                cell.schoolLabel.text = gsno(workInfo.authorSchool)
+                cell.authorIntro.text = gsno(workInfo.authorIntro)
+               
             }
             
             return cell
@@ -141,7 +138,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         //사이즈 재조정 필요
         switch collectionView {
         case authorCollection:
-            return CGSize(width: 44, height: 24)
+            return CGSize(width: 50, height: 24)
         case workCollection:
             return CGSize(width: 250, height: 347)
         default:
@@ -153,7 +150,7 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 30
     }
     
     
