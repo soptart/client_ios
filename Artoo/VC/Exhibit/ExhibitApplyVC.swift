@@ -252,13 +252,9 @@ extension ExhibitApplyVC {
         //전시 기간 처리
         var exhibitDateStr = ""
         
-        if let startDate = firstExhibitInfo.startDate {
-            exhibitDateStr = startDate.datecontrol(startDate)
-        }
-        
-        if let endDate = firstExhibitInfo.endDate {
-            exhibitDateStr += endDate.datecontrol(endDate)
-        }
+            exhibitDateStr += gsno(firstExhibitInfo.startDate)
+            exhibitDateStr += ("~" + gsno(firstExhibitInfo.endDate))
+
         
         dateLabel.text = exhibitDateStr
         
@@ -266,13 +262,8 @@ extension ExhibitApplyVC {
         //신청 기간 처리
         var applyDateStr = ""
         
-        if let aStartDate = firstExhibitInfo.applyStartDate {
-            applyDateStr = aStartDate.datecontrol(aStartDate)
-        }
-        
-        if let aEndDate = firstExhibitInfo.endDate {
-            applyDateStr += aEndDate.datecontrol(aEndDate)
-        }
+        applyDateStr += gsno(firstExhibitInfo.applyStartDate)
+        applyDateStr += ("~" + gsno(firstExhibitInfo.applyEndDate))
         
         deadLineLabel.text = applyDateStr
         
