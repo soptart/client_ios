@@ -44,6 +44,7 @@ class UploadMainVC: UIViewController{
     var figure: String!
     var artYear: String!
     var artLicense: String!
+    var transactionMethod: String!
     
     let picker = UIImagePickerController()
    
@@ -80,6 +81,17 @@ class UploadMainVC: UIViewController{
         performSegue(withIdentifier: "tagUploadSegue", sender: self)
         
     }
+    
+    // 택배하고 직거래 버튼 누르면 그 해당 정보를 문자열에 저장함
+    @IBAction func transactionBtn(_ sender: UIButton) {
+        
+        if(sender.tag == 0) {
+            transactionMethod = "택배"
+        }else {
+            transactionMethod = "직거래"
+        }
+    }
+    
     func setUpToolbar(){
         
         toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))

@@ -1371,13 +1371,19 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                 <state key="normal" title="택배">
                                                     <color key="titleColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="transactionBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="bAz-JU-DOQ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-xf-Hpa">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-xf-Hpa">
                                                 <rect key="frame" x="197" y="884" width="159" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="직거래">
                                                     <color key="titleColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="transactionBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="2Wd-iP-bhM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auC-U3-fYi">
                                                 <rect key="frame" x="138" y="677" width="100" height="34"/>
