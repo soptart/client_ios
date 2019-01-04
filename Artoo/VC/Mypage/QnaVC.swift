@@ -13,6 +13,7 @@ class QnaVC: UIViewController {
     var Qnas = [Qna]()
     
     @IBOutlet weak var QnaTable: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,5 +54,11 @@ extension QnaVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let content = Qnas[indexPath.row]
+        content.expanded = !content.expanded
+        QnaTable.reloadRows(at: [indexPath], with: .automatic)
+       
+    }
     
 }

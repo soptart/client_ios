@@ -21,8 +21,39 @@ class SettingMainVC: UIViewController {
         setData()
         // Do any additional setup after loading the view.
         settingTable.dataSource = self
+        settingTable.delegate = self
     }
     
+}
+
+extension SettingMainVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        
+        switch  row {
+        case 0:
+            guard let MyInfoPage = storyboard?.instantiateViewController(withIdentifier: "MyInfo") as? MyInfoVC else { return }
+            
+            navigationController?.pushViewController(MyInfoPage, animated: true)
+            
+        case 1:
+            guard let QnaPage = storyboard?.instantiateViewController(withIdentifier: "Qna") as? QnaVC else { return }
+            
+            navigationController?.pushViewController(QnaPage, animated: true)
+            
+        case 2:
+            guard let ServicePage = storyboard?.instantiateViewController(withIdentifier: "Using") as? UsingVC else { return }
+            
+            navigationController?.pushViewController(ServicePage, animated: true)
+            
+        case 3:
+            guard let PrivacyPage = storyboard?.instantiateViewController(withIdentifier: "Protection") as? ProtectionVC else { return }
+            
+            navigationController?.pushViewController(PrivacyPage, animated: true)
+        default: print("")
+            
+        }
+    }
 }
 
 extension SettingMainVC: UITableViewDataSource{

@@ -38,11 +38,13 @@ class QnaCell: UITableViewCell {
         if check {
             self.title.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
             self.subTitle.text = content.subtitle
-            self.expandBtn.setImage(UIImage(named: "up"), for: .normal)
+           /* self.expandBtn.setImage(UIImage(named: "up"), for: .normal)*/
+            
         }else {
             self.title.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
             self.subTitle.text = ""
-            self.expandBtn.setImage(UIImage(named: "down"), for: .normal)
+           /* self.expandBtn.setImage(UIImage(named: "down"), for: .normal)*/
+            
         }
     }
 
