@@ -12,35 +12,55 @@ class SellListVC: UIViewController {
     
     @IBOutlet var SellTable: UITableView!
     
-    var buyItems: [BuyItemInfo] = []
-    var sellers: [sellerInfo] = []
+    var buyInformation: [buyInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBuyItem()
-        setSeller()
-       
+
+        setUpData()
+        
         SellTable.dataSource = self
     }
+    
+    //환불버튼 눌렀을 때
+    
+    @IBAction func refundBtn(_ sender: UIButton) {
+        if(sender.tag == 0){
+            performSegue(withIdentifier: "firstCellRefundSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "secondCellRefundSegue", sender: self)
+        }
+        
+        
+        
+    }
+    
+    //리뷰버튼 눌렀을 때
+    @IBAction func reviewBtn(_ sender: UIButton) {
+        
+        if(sender.tag == 0){
+            performSegue(withIdentifier: "firstCellRiviewSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "secondCellRiviewSegue", sender: self)
+
+        }
+        
+    }
+    
     
 }
 
 extension SellListVC {
     
-    func setBuyItem(){
-        let buyitem1 = BuyItemInfo(buyItemName: "7살과 그녀", buyItemAuthor: "최윤정", transactionMethod: "직거래", buyItemImg: "01")
-        
-        let buyItem2 = BuyItemInfo(buyItemName: "02", buyItemAuthor: "배선영", transactionMethod: "직거래", buyItemImg: "02")
-        
-        buyItems = [buyitem1, buyItem2]
-        
-    }
     
-    func setSeller(){
-        let seller1 = sellerInfo(sellerName: "최윤정", sellerPhone: "010-3111-0988", sellerAddr: "서울시 노원구")
-
-        sellers = [seller1]
+    func setUpData(){
+        let buyitem1 = buyInfo(state: 0, isDelivery: 0, date: "2015-3-2", artName: "7살 어딘가", artAuthor: "배선영", sellerName:"김보윤", sellerPhone: "010-3333-3333", sellerAddress: "서울시 용산구", artImg: "01")
+        
+        let buyitem2 = buyInfo(state: 1, isDelivery: 1, date: "2015-3-4", artName: "지금 이순간", artAuthor: "최윤정", sellerName:"김보윤", sellerPhone: "010-3243-3333", sellerAddress: "서울시 금호동", artImg: "02")
+        
+        buyInformation = [buyitem1, buyitem2]
     }
+ 
     
 }
 
@@ -48,7 +68,8 @@ extension SellListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return buyItems.count
+        
+        return buyInformation.count
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,75 +78,34 @@ extension SellListVC: UITableViewDataSource {
         
            let cell2 = SellTable.dequeueReusableCell(withIdentifier: "second") as! sellSecondCell
         
-        let buy = buyItems[indexPath.row]
-        let sell = sellers[indexPath.row]
         
-        cell.sellImg.image = UIImage(named: buy.buyItemImg)
-        cell.buyItem.text = buy.buyItemName
-        cell.buyItemAuthor.text = buy.buyItemAuthor
-        cell.transaction.text = buy.transactionMethod
-        cell.seller.text = sell.sellerName
-        cell.sellerNumber.text = sell.sellerPhone
-        cell.sellerAddress.text = sell.sellerAddr
+        let buy = buyInformation[indexPath.row]
         
-        cell2.sellImg.image = UIImage(named: buy.buyItemImg)
-        cell2.buyItem.text = buy.buyItemName
-        cell2.buyItemAuthor.text = buy.buyItemAuthor
-        cell2.transaction.text = buy.transactionMethod
-        
-        if buy.transactionMethod == "직거래" {
+        //서버 정보로 바꿔줘야 함
+        if buy.isDelivery == 0 {
+            
+            cell.sellImg.image = UIImage(named: buy.artImg)
+            cell.buyItem.text = buy.artName
+            cell.buyItemAuthor.text = buy.artAuthor
+            cell.transaction.text = "직거래"
+            cell.seller.text = buy.sellerName
+            cell.sellerNumber.text = buy.sellerPhone
+            cell.sellerAddress.text = buy.sellerAddress
+            
+            return cell
+        } else {
+            
+            cell2.sellImg.image = UIImage(named: buy.artImg)
+            cell2.buyItem.text = buy.artName
+            cell2.buyItemAuthor.text = buy.artAuthor
+            cell2.transaction.text = "택배"
             
             return cell2
-        } else {
-            return cell
         }
         
     }
+    
 }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

@@ -35,6 +35,7 @@ extension MyPageBuyVC: UITableViewDataSource {
         
         let cell = BuyTable.dequeueReusableCell(withIdentifier: "all_buyItem") as! BuyItemCell
         
+        print(indexPath.row)
         let buy = buyList[indexPath.row]
         
         cell.artImg.image = buy.artImg
