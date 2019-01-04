@@ -134,7 +134,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="맨발로 기억을 거닐다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJf-CO-oO4">
-                                <rect key="frame" x="44" y="113" width="168" height="29"/>
+                                <rect key="frame" x="44" y="113" width="246" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,6 +184,7 @@
                     <navigationItem key="navigationItem" id="fi6-i9-NAM"/>
                     <connections>
                         <outlet property="authorLabel" destination="J1W-JO-vC2" id="ZzV-MS-ZKO"/>
+                        <outlet property="backgroundImg" destination="LMB-Wp-wFy" id="f0s-9T-NkX"/>
                         <outlet property="closeBtn" destination="Xll-DM-SuH" id="7C2-PV-hXS"/>
                         <outlet property="enterBtn" destination="hKo-Y8-m7X" id="zmE-rc-gDc"/>
                         <outlet property="exhibitDateLabel" destination="sW3-Pf-B9A" id="rHt-9q-q9a"/>

@@ -10,6 +10,7 @@ class ExhibitEnterVC: UIViewController {
     //전시 입장 창에서 써야 할 데이터
     var exhibitEnterData:Exhibit?
     
+    @IBOutlet weak var backgroundImg: UIImageView!
     
     //전시 기간 라벨
     @IBOutlet weak var exhibitDateLabel: UILabel!
@@ -44,14 +45,15 @@ class ExhibitEnterVC: UIViewController {
         return viewController
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //UI에 받아온 데이터 반영
+        setUI()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-  
-        //UI에 받아온 데이터 반영
-        setUI()
-        
         enterBtn.addTarget(self, action: #selector(enterExhibit), for: .touchUpInside)
         closeBtn.addTarget(self, action: #selector(closeExhibit), for: .touchUpInside)
 
@@ -76,6 +78,7 @@ extension ExhibitEnterVC {
         subLabel.text = gsno(data.exhibitSubTitle)
         authorLabel.text = "윤여정 홍정민 등등등"
         
+        backgroundImg.imageFromUrl(gsno(data.exhibitMainImg), defaultImgPath: "ggobuk")
     }
     
     
