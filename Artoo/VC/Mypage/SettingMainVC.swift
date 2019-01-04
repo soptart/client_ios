@@ -24,6 +24,11 @@ class SettingMainVC: UIViewController {
         settingTable.delegate = self
     }
     
+    @IBAction func exitBtn(_ sender: Any) {
+
+        //나중에 구현
+        
+    }
 }
 
 extension SettingMainVC: UITableViewDelegate {
