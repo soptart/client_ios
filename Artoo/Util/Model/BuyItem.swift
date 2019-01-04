@@ -18,6 +18,7 @@ struct BuyItem {
     var date: String
     
     init(artName: String, artItem: String, buyer: String, price: String, date: String) {
+        
         self.artImg = UIImage(named: artName)
         self.artItem = artItem
         self.buyer = buyer
