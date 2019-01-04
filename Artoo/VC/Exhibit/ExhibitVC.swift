@@ -92,6 +92,11 @@ extension ExhibitVC : UITableViewDataSource {
         if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
             cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "ggobuk")
         }
+        
+        if let intro = exhibitMainData.exhibitEnterText {
+            cell.exhibitIntroLabel.text = intro
+        }
+        
         return cell
         
     }

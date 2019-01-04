@@ -289,7 +289,7 @@ extension ExhibitApplyVC {
             applyBtn.setBackgroundColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), forState: .normal)
         }else{
             workEmptyView.isHidden = false
-            applyBtn.setBackgroundColor(UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1), forState: .normal)
+            applyBtn.setBackgroundColor(UIColor(red: 176/255, green: 179/255, blue: 186/255, alpha: 1), forState: .normal)
             applyBtn.isEnabled = false
         }
         

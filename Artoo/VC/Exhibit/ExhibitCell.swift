@@ -10,4 +10,5 @@ import UIKit
 class ExhibitCell: UITableViewCell {
     @IBOutlet weak var exhibitImg: UIImageView!
     
+    @IBOutlet weak var exhibitIntroLabel: UILabel!
 }
