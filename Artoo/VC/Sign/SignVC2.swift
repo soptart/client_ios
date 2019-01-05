@@ -10,21 +10,14 @@ import UIKit
 
 class SignVC2: UIViewController {
     
-    //    u_email    String    not null
-    //    u_pw    String    not null
-    //    u_name    String    not null
-    //    u_phone    String    not null
-    //    u_address    String    주소
-    //    u_bank    String    은행 //not_null
-    //    u_account    String    계좌 //not_null
-    //    u_school    String    학교
-    //    u_dept    String    학과
+ 
     
     @IBOutlet weak var phoneLabel: UITextField!
     @IBOutlet weak var locationLabel: UITextField!
     @IBOutlet weak var schoolLabel: UITextField!
     
     @IBOutlet weak var goSign3Btn: UIButton!
+    @IBOutlet weak var sign2BackBtn: UIButton!
     
     var name:String!
     var email:String!
@@ -43,7 +36,7 @@ class SignVC2: UIViewController {
         super.viewDidLoad()
         
         goSign3Btn.addTarget(self, action: #selector(goSign3), for: .touchUpInside)
-        
+        sign2BackBtn.addTarget(self, action: #selector(popSign2), for: .touchUpInside)
     }
     
     
@@ -69,5 +62,9 @@ extension SignVC2 {
             navigationController?.pushViewController(signVC3, animated: true)
         }
         
+    }
+    
+    @objc func popSign2(){
+        navigationController?.popViewController(animated: true)
     }
 }
