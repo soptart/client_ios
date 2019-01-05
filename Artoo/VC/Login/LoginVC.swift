@@ -35,6 +35,7 @@ class LoginVC: UIViewController {
         joinBtn.addTarget(self, action: #selector(goSign), for: .touchUpInside)
     }
     
+    //로그인으로 돌아올 unwindSegue
     @IBAction func unwindToLogin(_ sender: UIStoryboardSegue) {}
     
 }
@@ -84,6 +85,7 @@ extension LoginVC {
         guard let joinVC = storyboard?.instantiateViewController(withIdentifier: "JoinRootNavi") else { return }
         present(joinVC, animated: true)
     }
+    
     
     //탭으로 이동하는 함수 (로그인 성공시에만)
     func goTab(){

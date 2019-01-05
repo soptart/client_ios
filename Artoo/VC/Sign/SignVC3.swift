@@ -27,6 +27,7 @@ class SignVC3: UIViewController {
     var bank:String!
     var account:String!
     
+    @IBOutlet weak var sign3BackBtn: UIButton!
     
     @IBOutlet weak var bankLabel: UITextField!
     @IBOutlet weak var accountLabel: UITextField!
@@ -48,7 +49,7 @@ class SignVC3: UIViewController {
         super.viewDidLoad()
         
         finishSignBtn.addTarget(self, action: #selector(backToLogin), for: .touchUpInside)
-        
+        sign3BackBtn.addTarget(self, action: #selector(popSign3), for: .touchUpInside)
     }
     
     
@@ -69,6 +70,9 @@ extension SignVC3 {
         }
     }
     
+    @objc func popSign3(){
+        navigationController?.popViewController(animated: true)
+    }
     
     func goSign(){
         SignService.shared.sign(email: email, password: pass, name: name, phone: phone, adress: location, bank: bank, account: account, school: school) {

@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "loginArtoo.png",
       "scale" : "1x",
-      "filename" : "loginArtoo.jpg"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "loginArtoo@2x.png",
       "scale" : "2x",
-      "filename" : "loginArtoo@2x.jpg"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "loginArtoo@3x.png",
       "scale" : "3x",
-      "filename" : "loginArtoo@3x.jpg"
+      "idiom" : "universal"
     }
   ],
   "info" : {
