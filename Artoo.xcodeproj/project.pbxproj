@@ -64,6 +64,9 @@
 		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
 		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
 		5DB606D621D55CB400C216FD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D521D55CB400C216FD /* Filter.swift */; };
+		5DC6F0DF21DFDB34002C8DBE /* UserDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */; };
+		5DC6F0E121E09424002C8DBE /* UserModifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0E021E09424002C8DBE /* UserModifyService.swift */; };
+		5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */; };
 		5DCC9FF021DCC37900F960A0 /* MultiNotifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */; };
 		5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */; };
 		5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */; };
@@ -197,6 +200,9 @@
 		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D521D55CB400C216FD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Artoo/Util/Model/Filter.swift; sourceTree = SOURCE_ROOT; };
+		5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDescriptionService.swift; path = Artoo/APIServices/UserDescriptionService.swift; sourceTree = SOURCE_ROOT; };
+		5DC6F0E021E09424002C8DBE /* UserModifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifyService.swift; sourceTree = "<group>"; };
+		5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckartWorksService.swift; sourceTree = "<group>"; };
 		5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiNotifyVC.swift; path = Artoo/VC/Mypage/MultiNotifyVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = All_ArtVC.swift; path = Artoo/VC/Art/All_ArtVC.swift; sourceTree = SOURCE_ROOT; };
 		5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryVC.swift; path = Artoo/VC/Art/DeliveryVC.swift; sourceTree = SOURCE_ROOT; };
@@ -387,6 +393,7 @@
 		A30048EA21CE62E10042C4EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A30048E421CE54EE0042C4EF /* Storyboard.swift */,
 				A30048EB21CE63370042C4EF /* Today.swift */,
 				A30048ED21CE63400042C4EF /* TodayWork.swift */,
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
@@ -451,7 +458,9 @@
 				A392416D21DCB40C00371E77 /* ThemeDetailService.swift */,
 				A34DFD0621DDAFD100CEDA74 /* ExhibitMainService.swift */,
 				A34DFD0821DDDCEA00CEDA74 /* ExhibitApplyService.swift */,
+				5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */,
 				A3BE837521DF66B400206154 /* ExhibitSeeService.swift */,
+				5DC6F0E021E09424002C8DBE /* UserModifyService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -514,6 +523,7 @@
 				A3CEF95F21CE2A0A000C7938 /* Home.storyboard */,
 				A3CEF96121CE2A5D000C7938 /* Art.storyboard */,
 				A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */,
+				5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */,
 				A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */,
 			);
 			path = Storyboard;
@@ -536,7 +546,6 @@
 			isa = PBXGroup;
 			children = (
 				A30048EA21CE62E10042C4EF /* Model */,
-				A30048E421CE54EE0042C4EF /* Storyboard.swift */,
 				A30048E621CE57F10042C4EF /* Extension.swift */,
 			);
 			path = Util;
@@ -738,6 +747,7 @@
 				5D3DA6C321DE1122005239F8 /* buyInfo.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
 				5DB4139021DF073000576883 /* MyInfoCell.swift in Sources */,
+				5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */,
 				5DB413A221DF18AA00576883 /* QnaCell.swift in Sources */,
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
 				5D3DA6BD21DDF5C5005239F8 /* exhibitListVC.swift in Sources */,
@@ -748,6 +758,7 @@
 				5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */,
 				5D3DA6AF21DDE65B005239F8 /* sellTableVC.swift in Sources */,
 				5DB4139E21DF10E000576883 /* MyInfo.swift in Sources */,
+				5DC6F0DF21DFDB34002C8DBE /* UserDescriptionService.swift in Sources */,
 				5D3DA6C721DEE3BA005239F8 /* reviewNotice.swift in Sources */,
 				5D40FA0321DD38C200636890 /* BuyItemInfo.swift in Sources */,
 				5D40F9FF21DD252700636890 /* sellFirstCell.swift in Sources */,
@@ -786,6 +797,7 @@
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */,
 				A3699B4F21DB53B700EC3A8D /* ResponseObject.swift in Sources */,
+				5DC6F0E121E09424002C8DBE /* UserModifyService.swift in Sources */,
 				A3699B5121DB53E800EC3A8D /* NetworkResult.swift in Sources */,
 				A34DFD0721DDAFD100CEDA74 /* ExhibitMainService.swift in Sources */,
 				A3BE837821DFD47E00206154 /* HomeSeriesCell.swift in Sources */,
