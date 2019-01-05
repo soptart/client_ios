@@ -11,10 +11,12 @@ import ObjectMapper
 struct Token: Mappable {
     
     var token: String?
+    var userIndex: Int?
     
     init?(map: Map) {}
     
     mutating func mapping(map: Map) {
         token <- map["token"]
+        userIndex <- map["userIdx"]
     }
 }

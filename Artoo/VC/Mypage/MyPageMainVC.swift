@@ -19,6 +19,7 @@ class MyPageMainVC: UIViewController {
     @IBOutlet weak var reviewBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     
+    var userInfo: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,28 @@ class MyPageMainVC: UIViewController {
     @IBAction func SaveBtn(_ sender: Any) {
         EditTextView.isEditable = false
         MainIntroductionLabel.textColor = UIColor.darkGray
+        let userIndex = UserDefaults.standard.integer(forKey: "userIndex")
+        UserModifyService.shared.modifyUserInfo(user_idx: userIndex) {
+            (res) in guard let status = res.status else { return }
+            switch status {
+            case 200:
+                print("hi1")
+                //editable = true, 색깔 바꿔놓은 회색이 다시 검은색
+                //그 정보가 띄워지면 됨.
+                
+                //회원 정보 수정 성공
+            case 404:
+                print("hi2")
+                //유저 조회 실패
+            case 401:
+                print("hi3")
+                //회원 인증 실패
+            default:
+                print("hi")
+                
+            }
+            
+        }
     }
     
     //버튼에 따라서 아래 뷰가 바뀌기.
