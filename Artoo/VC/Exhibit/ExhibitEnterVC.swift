@@ -76,7 +76,17 @@ extension ExhibitEnterVC {
         
         mainLabel.text = gsno(data.exhibitTitle)
         subLabel.text = gsno(data.exhibitSubTitle)
-        authorLabel.text = "윤여정 홍정민 등등등"
+        
+        var userStr = ""
+        
+        if let users = data.artworkUser {
+            for i in users {
+                userStr += i
+            }
+
+        }
+     
+        authorLabel.text = userStr
         
         backgroundImg.imageFromUrl(gsno(data.exhibitMainImg), defaultImgPath: "ggobuk")
     }

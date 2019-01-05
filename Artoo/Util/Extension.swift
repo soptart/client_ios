@@ -70,6 +70,18 @@ extension UICollectionViewCell {
     }
 }
 
+extension String {
+    // \\n -> \n으로 바꾸어 주는 함수
+    func removeNewLine(str: String) -> String {
+        if(str.contains("\\n")){
+            let newText = str.replacingOccurrences(of: "\\n", with: "\n")
+            return newText
+        }
+        return str
+    }
+
+}
+
 extension UIViewController {
     
     func gsno(_ value : String?) -> String{
@@ -97,6 +109,7 @@ extension UIViewController {
         viewController.view.removeFromSuperview()
         viewController.removeFromParent()
     }
+    
     
 }
 

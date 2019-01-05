@@ -21,8 +21,7 @@ struct Exhibit : Mappable {
     var exhibitSubTitle:String? //전시 부타이틀
     var exhibitEnterText:String? //전시 입장시 나타나는 글
     var exhibitApplyText:String? //전시 신청시 나타나는 글
-    var isNowExhibit:Int? //전시중인지 신청중인지를 나타내는 변수 -> 첫화면
-    
+    var artworkUser:[String]? //작가 정보
 
     
     init?(map: Map) {
@@ -46,7 +45,7 @@ struct Exhibit : Mappable {
         exhibitSubTitle <- map["d_subTitle"]
         exhibitEnterText <- map["d_longDetail"]
         exhibitApplyText <- map["d_shortDetail"]
-        isNowExhibit <- map["isNow"]
+        artworkUser <- map["d_artworkUser"]
     }
 
 }

@@ -82,7 +82,7 @@ extension HomeThemeVC : UITableViewDataSource {
             cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk") }
         
         if let themeText = data.mainTag {
-            cell.themeLabel.text = removeNewLine(str: themeText)
+            cell.themeLabel.text = themeText.removeNewLine(str: themeText)
         }
         
         return cell
@@ -280,7 +280,7 @@ extension HomeThemeVC {
     @objc func goDetail(){
         //메인 태그, 서브 태그 , 인덱스
         themeDetailVC.index = tagIndex
-        themeDetailVC.mainTag = removeNewLine(str: mainTag)
+        themeDetailVC.mainTag = mainTag.removeNewLine(str: mainTag)
         themeDetailVC.subTag = subTag
         present(themeDetailVC, animated: true, completion: nil)
     }
@@ -299,19 +299,12 @@ extension HomeThemeVC {
         subTag = subTagData
         
         themeDetailVC.index = tagIndex
-        themeDetailVC.mainTag = removeNewLine(str: mainTag)
+        themeDetailVC.mainTag = mainTag.removeNewLine(str: mainTag)
         themeDetailVC.subTag = subTag
         present(themeDetailVC, animated: true, completion: nil)
     }
     
     
-    // \\n -> \n으로 바꾸어 주는 함수
-    func removeNewLine(str: String) -> String {
-        if(str.contains("\\n")){
-            let newText = str.replacingOccurrences(of: "\\n", with: "\n")
-            return newText
-        }
-        return str
-    }
+    
     
 }

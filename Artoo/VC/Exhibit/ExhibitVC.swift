@@ -26,8 +26,6 @@ class ExhibitVC: UIViewController {
     //전시에 대한 전체 데이터(처음에 통으로 다 넘겨줌)
     var exhibitList = [Exhibit]()
     
-    //메인에서만 쓸 데이터
-    var exhibitMainList = [Exhibit]()
     
     //신청에서만 쓸 데이터
     var exhibitApplyList = [Exhibit]()
@@ -66,8 +64,8 @@ extension ExhibitVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
-               exhibitEnterVC.exhibitEnterData = exhibitMainList[indexPath.row]
-        print("이동이동 \(exhibitMainList[indexPath.row])")
+               exhibitEnterVC.exhibitEnterData = exhibitList[indexPath.row]
+        print("이동이동 \(exhibitList[indexPath.row])")
         navigationController?.pushViewController(exhibitEnterVC, animated: true)
         
     }
@@ -82,13 +80,13 @@ extension ExhibitVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //메인화면에서만 쓸 데이터의 카운트를 리턴함
-        return exhibitMainList.count
+        return exhibitList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitCell") as! ExhibitCell
         
-        let exhibitMainData = exhibitMainList[indexPath.row]
+        let exhibitMainData = exhibitList[indexPath.row]
         print("메인 데이타\(exhibitMainData)")
         
         if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
@@ -96,7 +94,7 @@ extension ExhibitVC : UITableViewDataSource {
         }
         
         if let intro = exhibitMainData.exhibitEnterText {
-            cell.exhibitIntroLabel.text = intro
+        cell.exhibitIntroLabel.text = intro.removeNewLine(str: intro)
         }
         
         return cell
@@ -121,9 +119,10 @@ extension ExhibitVC {
         self.tableView.reloadData()
         
         //전시 신청리스트가 0이면 신청버튼없애줌
-        if(exhibitApplyList.count == 0){
+        if(exhibitList.count == 0){
             applyView.isHidden = true
         }
+        
         exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
     }
     
@@ -134,15 +133,8 @@ extension ExhibitVC {
             switch status{
             case 200:
                 guard let exhibitData = data.data else { return }
-                
                 //전체 전시데이터
                 self.exhibitList = exhibitData
-                
-                //메인화면에서만 쓸 전시데이터
-                self.exhibitMainList =  self.exhibitList.filter{ $0.isNowExhibit == 1}
-                
-                //전시신청에서 쓸 전시데이터
-                self.exhibitApplyList = self.exhibitList.filter{ $0.isNowExhibit == 0}
                 
                 print("success")
                 completion()
