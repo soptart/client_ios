@@ -14,6 +14,7 @@ class HomeTodayVC: UIViewController {
     @IBOutlet  var authorCollection: UICollectionView!
     @IBOutlet  var workCollection: UICollectionView!
     
+    var selectedIndex:IndexPath!
     
     var todayList = [Today]()
     let seriesList = ["today_demo1","today_demo2"]
@@ -85,10 +86,21 @@ extension HomeTodayVC : UICollectionViewDataSource {
         case authorCollection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! TodayAuthorCell
             
+            cell.delegate = self
+            cell.indexPath = indexPath
+
+            
+            if selectedIndex == indexPath {
+                cell.cellSelected = true
+            }else {
+                cell.cellSelected = false
+            }
+            
+            
             //작가 이름
             let todayData = todayList[indexPath.row]
             cell.authorName.text = todayData.authorName
-            
+            cell.authorName.sizeToFit()
             return cell
             
         case workCollection:
@@ -112,12 +124,12 @@ extension HomeTodayVC : UICollectionViewDataSource {
                 cell.schoolLabel.isHidden = false
                 cell.img.isHidden = false
                 cell.arrowImg.isHidden = false
-
+                
                 
                 cell.authorName.text = gsno(workInfo.authorName)
                 cell.schoolLabel.text = gsno(workInfo.authorSchool)
                 cell.authorIntro.text = gsno(workInfo.authorIntro)
-               
+                
             }
             
             return cell
@@ -135,10 +147,9 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        //사이즈 재조정 필요
         switch collectionView {
         case authorCollection:
-            return CGSize(width: 50, height: 24)
+            return CGSize(width: 44, height: 29)
         case workCollection:
             return CGSize(width: 250, height: 347)
         default:
@@ -148,25 +159,20 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         
     }
     
-   
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 34
-    }
-    
-    
-    //섹션 내부 여백
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        switch collectionView {
         //사이즈 재조정 필요
+        switch collectionView {
         case authorCollection:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            return 30
         case workCollection:
-            return UIEdgeInsets(top: 0, left:0, bottom: 0, right: 0)
+            return 43
         default:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            return 0
         }
-        
     }
+    
+    
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -175,8 +181,11 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
             
         case authorCollection:
             authorIndex = indexPath.row
-            workCollection.reloadData()
+            let cell =  authorCollection.cellForItem(at: indexPath) as! TodayAuthorCell
+            cell.delegate.selectAuthor(at: indexPath)
+            
             //스크롤 포지션을 처음으로 되돌림
+            workCollection.reloadData()
             workCollection.contentOffset.x = 0
         case workCollection:
             //작품창으로 이동
@@ -187,7 +196,13 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
     }
     
 }
-
+extension HomeTodayVC : AuthorCellDelegate {
+    func selectAuthor(at indexPath: IndexPath) {
+        selectedIndex = indexPath
+        authorCollection.reloadData()
+    }
+    
+}
 extension HomeTodayVC {
     func getToday() {
         HomeTodayService.shared.today { (data) in guard let status = data.status else { return }
@@ -199,8 +214,7 @@ extension HomeTodayVC {
                 if let todayData = data.data {
                     //서버데이터를 todayList에 담아줌
                     self.todayList = todayData
-                    print("\(todayData)")
-                    
+                    print("\(self.todayList)")
                     //다 담은 후 delegate 설정해주기
                     self.setDelegate()
                 }
