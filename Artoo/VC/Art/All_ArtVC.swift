@@ -20,32 +20,34 @@ class All_ArtVC: UIViewController {
     var fData: String?
     var cData: String?
     
-    var imageList = [ArtImg]() //컬렉션 뷰를 위한 이미지 배열
+    var imageList = [ArtWork]() //컬렉션 뷰를 위한 이미지 배열
     var imageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
+        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
         
-        dataSetting()
-        
+        /*
         if let layout = imageCollection?.collectionViewLayout as? PinterLayout{
             layout.delegate = self
-        }
-        imageCollection.dataSource = self
-        imageCollection.delegate = self
+        }*/
+        // imageCollection.dataSource = self
+       // imageCollection.delegate = self
         setup()
         // Do any additional setup after loading the view.
         
     }
     
-    
+    /* 직접 서버에 데이터 전송
     func dataSetting(){
         imageList.append(ArtImg (artImg: "heartFull"))
         imageList.append(ArtImg (artImg: "heartEmpty"))
         imageList.append(ArtImg (artImg: "sopt_DoIT"))
         imageList.append(ArtImg (artImg: "exhibit"))
         imageList.append(ArtImg (artImg: "ggobuk"))
-    }
+    }*/
+    
     func setup() {
         //전달받은 data에 값이 있다면 label의 text를 설정해 줍니다.
         if let sTransData = sData {
@@ -91,7 +93,8 @@ extension All_ArtVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
         let image = imageList[indexPath.row]
-        cell.showImg.image = UIImage(named: image.artImg)
+        //url을 만들어놓은 extension함수를 통해서 스트링으로 바꾸고 이를 이미지 뷰에 넣어주는 함수, 만약 그 값이 잘못들어왔다면 "ggobuk이를 띄운다.
+        cell.showImg.imageFromUrl(gsno(image.artImg), defaultImgPath: "ggobuk")
         
         return cell
     }
@@ -120,9 +123,9 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         imageIndex = indexPath.row
         let img = imageList[indexPath.row]
-        let imageHeight = UIImage(named: img.artImg)?.size.height
+        let imageHeight = UIImage(named: img.artImg!)?.size.height
         
-        print(img.artImg) //값이 표시되나,,,? -> ok
+        print(img.artImg!) //값이 표시되나,,,? -> ok
         print(imageHeight)
         guard let bVC = storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
             return
@@ -139,7 +142,7 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         //서버에서 전달해주는 이미지를 받아서 저장해줘야 함.
         
         
-        bVC.images = img.artImg
+        bVC.images = img.artImg!
         //화면간 이동하려고
         print(bVC.images) // -> 이것도 오키
         navigationController?.pushViewController(bVC, animated: true)
@@ -157,7 +160,7 @@ extension All_ArtVC: PinterestLayoutDelegate{
         
         //이거 다이나믹 제발 좀 해결,,,ㅎㅎ
         
-        let imageHeight = UIImage(named: imageList[indexPath.row].artImg)?.size.height
+        let imageHeight = UIImage(named: imageList[indexPath.row].artImg!)?.size.height
         
         return imageHeight!
         
@@ -177,5 +180,48 @@ extension All_ArtVC: PinterestLayoutDelegate{
     
 }
 
+extension All_ArtVC{
+    
+    // 데이터를 불러올 때는 completion을 해야하는데, escaping()이거는 들어오는 인자를 말하는 거고 void는 반환할 형태가 null임을 말하는 것이다. 우리는 completion(setUI)이것을 사용하는데, 이것은 받는 인자는 없고 반환형태는 void라는 것을 알 수 있다.
+    func setUpData(completion: @escaping() -> Void){
+        CheckartWorksService.shared.check { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    self.imageList = allArtData
+                    print("\(allArtData)")
+                    completion() //-> 사실은 setUI함수가 호출되는 것이다. 
+                }
+            case 400:
+                print("나는 400이다")
+            case 500:
+                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
+            default:
+                print("hi")
+            }
+        }
+    }
+    
+    func setUI(){
+        imageCollection.reloadData()
+    }
+    
+    
+    func setDelegate(){
+        
+        
+        if let layout = imageCollection?.collectionViewLayout as? PinterLayout{
+            layout.delegate = self
+        }
+        imageCollection.delegate = self
+        imageCollection.dataSource = self
+        
+        
+    }
+}
 
 

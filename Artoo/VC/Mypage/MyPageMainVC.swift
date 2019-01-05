@@ -50,6 +50,7 @@ class MyPageMainVC: UIViewController {
         MainIntroductionLabel.textColor = UIColor.lightGray
     }
     
+    /*
     //저장 버튼 눌렀을 때
     @IBAction func SaveBtn(_ sender: Any) {
         EditTextView.isEditable = false
@@ -77,7 +78,7 @@ class MyPageMainVC: UIViewController {
             
         }
     }
-    
+    */
     //버튼에 따라서 아래 뷰가 바뀌기.
     @IBAction func changeView(_ sender: UIButton) {
         updateView(selected: sender.tag)
