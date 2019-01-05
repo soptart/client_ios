@@ -17,7 +17,17 @@ class HomeMainVC: UIViewController {
     
     
     @IBAction func changeView(_ sender: UIButton) {
-        updateView(selected: sender.tag)
+        let tag = sender.tag
+        if(tag == 0){
+            todayBtn.setTitleColor(UIColor(red: 53/255, green: 61/255, blue: 70/255, alpha: 1.0), for: .normal)
+            themeBtn.setTitleColor(UIColor(red: 176/255, green: 179/255, blue: 186/255, alpha: 1.0), for: .normal)
+        }else{
+            todayBtn.setTitleColor(UIColor(red: 176/255, green: 179/255, blue: 186/255, alpha: 1.0), for: .normal)
+            themeBtn.setTitleColor(UIColor(red: 53/255, green: 61/255, blue: 70/255, alpha: 1.0), for: .normal)
+
+        }
+        
+        updateView(selected: tag)
     }
     
     

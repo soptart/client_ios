@@ -439,7 +439,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김민정 작가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmW-OX-OWF">
                                                                     <rect key="frame" x="20" y="89" width="88" height="27"/>
-                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="18"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -475,7 +475,7 @@
                                                         <constraints>
                                                             <constraint firstItem="0Zu-yU-RZs" firstAttribute="leading" secondItem="HAe-JS-HWI" secondAttribute="leading" id="1Jp-JY-euo"/>
                                                             <constraint firstItem="HAe-JS-HWI" firstAttribute="top" secondItem="JmW-OX-OWF" secondAttribute="bottom" constant="2" id="1qk-nn-NTi"/>
-                                                            <constraint firstItem="mwa-Lf-GWb" firstAttribute="bottom" secondItem="3Cr-Sw-N5S" secondAttribute="bottom" constant="24" id="3PH-1b-dSr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3Cr-Sw-N5S" secondAttribute="trailing" constant="19" id="3Tj-uh-8GL"/>
                                                             <constraint firstItem="mwa-Lf-GWb" firstAttribute="top" secondItem="V5H-WV-45h" secondAttribute="top" id="5SD-0G-6JM"/>
                                                             <constraint firstItem="mwa-Lf-GWb" firstAttribute="leading" secondItem="V5H-WV-45h" secondAttribute="leading" id="5yJ-Ed-QGx"/>
                                                             <constraint firstItem="eVq-ha-OUa" firstAttribute="top" secondItem="0Zu-yU-RZs" secondAttribute="bottom" constant="14" id="8Lv-T0-zoe"/>
@@ -483,10 +483,10 @@
                                                             <constraint firstAttribute="bottom" secondItem="mwa-Lf-GWb" secondAttribute="bottom" id="LfD-6K-y9S"/>
                                                             <constraint firstItem="eVq-ha-OUa" firstAttribute="leading" secondItem="0Zu-yU-RZs" secondAttribute="leading" id="O5j-5n-Akl"/>
                                                             <constraint firstAttribute="trailing" secondItem="mwa-Lf-GWb" secondAttribute="trailing" id="ZfJ-Vd-1w4"/>
-                                                            <constraint firstItem="3Cr-Sw-N5S" firstAttribute="trailing" secondItem="mwa-Lf-GWb" secondAttribute="trailing" constant="-19" id="gpR-s5-X37"/>
-                                                            <constraint firstItem="JmW-OX-OWF" firstAttribute="top" secondItem="mwa-Lf-GWb" secondAttribute="top" constant="89" id="nni-k6-kWt"/>
+                                                            <constraint firstItem="JmW-OX-OWF" firstAttribute="top" secondItem="V5H-WV-45h" secondAttribute="top" constant="89" id="nni-k6-kWt"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3Cr-Sw-N5S" secondAttribute="bottom" constant="24" id="qbt-oY-xmX"/>
                                                             <constraint firstItem="0Zu-yU-RZs" firstAttribute="top" secondItem="HAe-JS-HWI" secondAttribute="bottom" constant="16" id="qnc-Qy-T2f"/>
-                                                            <constraint firstItem="JmW-OX-OWF" firstAttribute="leading" secondItem="mwa-Lf-GWb" secondAttribute="leading" constant="20" id="zGo-vF-aSk"/>
+                                                            <constraint firstItem="JmW-OX-OWF" firstAttribute="leading" secondItem="V5H-WV-45h" secondAttribute="leading" constant="20" id="zGo-vF-aSk"/>
                                                         </constraints>
                                                         <size key="customSize" width="225" height="347"/>
                                                         <connections>
