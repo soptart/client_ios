@@ -33,6 +33,11 @@ class SignVC: UIViewController {
         super.viewDidLoad()
         
         goSign2Btn.addTarget(self, action: #selector(goSign2), for: .touchUpInside)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     
@@ -52,5 +57,11 @@ extension SignVC {
             signVC2.pass = passLabel.text!
             navigationController?.pushViewController(signVC2, animated: true)
         }
+    }
+}
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return topViewController?.preferredStatusBarStyle ?? .default
     }
 }

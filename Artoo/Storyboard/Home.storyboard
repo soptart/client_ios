@@ -368,14 +368,14 @@
             <objects>
                 <viewController storyboardIdentifier="HomeTodayVC" id="XnJ-h7-R5b" customClass="HomeTodayVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8v-5o-DTO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4k-w7-9xp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1228"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLX-DD-C4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1228"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VvU-r5-bfp">
                                                 <rect key="frame" x="17" y="181" width="358" height="347"/>
@@ -470,8 +470,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="272" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ru-Nq-6fs">
-                                                <rect key="frame" x="0.0" y="637" width="375" height="516"/>
+                                                <rect key="frame" x="0.0" y="637" width="375" height="544"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="544" id="bTj-ru-lsC"/>
+                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeSeriesCell" rowHeight="272" id="qqe-gy-AYF" customClass="HomeSeriesCell" customModule="Artoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="272"/>
@@ -522,7 +525,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="71" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="김민정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWO-AG-B2U">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김민정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWO-AG-B2U">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                                                                     <nil key="highlightedColor"/>
@@ -530,13 +533,13 @@
                                                             </subviews>
                                                         </view>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="qWO-AG-B2U" secondAttribute="trailing" id="0Tg-nI-fcW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="qWO-AG-B2U" secondAttribute="trailing" constant="1" id="0Tg-nI-fcW"/>
                                                             <constraint firstItem="qWO-AG-B2U" firstAttribute="leading" secondItem="Ilb-9F-2W2" secondAttribute="leading" id="1dm-Lh-hip"/>
                                                             <constraint firstItem="qWO-AG-B2U" firstAttribute="top" secondItem="Ilb-9F-2W2" secondAttribute="top" id="1il-he-Dsf"/>
                                                             <constraint firstItem="qWO-AG-B2U" firstAttribute="leading" secondItem="Ilb-9F-2W2" secondAttribute="leading" id="1n7-GV-WoT"/>
                                                             <constraint firstAttribute="bottom" secondItem="qWO-AG-B2U" secondAttribute="bottom" id="HpL-40-lqT"/>
                                                             <constraint firstItem="qWO-AG-B2U" firstAttribute="top" secondItem="Ilb-9F-2W2" secondAttribute="top" id="T2H-sh-e11"/>
-                                                            <constraint firstAttribute="trailing" secondItem="qWO-AG-B2U" secondAttribute="trailing" id="TXQ-1j-X97"/>
+                                                            <constraint firstAttribute="trailing" secondItem="qWO-AG-B2U" secondAttribute="trailing" constant="1" id="TXQ-1j-X97"/>
                                                             <constraint firstAttribute="bottom" secondItem="qWO-AG-B2U" secondAttribute="bottom" id="eE4-9T-VVQ"/>
                                                         </constraints>
                                                         <size key="customSize" width="71" height="30"/>
@@ -558,11 +561,11 @@
                                             <constraint firstItem="VvU-r5-bfp" firstAttribute="top" secondItem="5Qv-D4-hbE" secondAttribute="bottom" constant="35" id="3z5-qp-qtO"/>
                                             <constraint firstItem="5Qv-D4-hbE" firstAttribute="top" secondItem="TcG-ud-ZtT" secondAttribute="bottom" constant="22" id="70S-ai-NTZ"/>
                                             <constraint firstAttribute="trailing" secondItem="5ru-Nq-6fs" secondAttribute="trailing" id="7DE-t3-mPj"/>
-                                            <constraint firstAttribute="bottom" secondItem="5ru-Nq-6fs" secondAttribute="bottom" constant="47" id="BIP-8A-VI1"/>
+                                            <constraint firstAttribute="bottom" secondItem="5ru-Nq-6fs" secondAttribute="bottom" constant="47" id="H5s-G8-rzW"/>
                                             <constraint firstAttribute="trailing" secondItem="VvU-r5-bfp" secondAttribute="trailing" id="HC3-pm-ZPg"/>
                                             <constraint firstItem="5Qv-D4-hbE" firstAttribute="leading" secondItem="TcG-ud-ZtT" secondAttribute="leading" id="Jkd-Xe-SlP"/>
                                             <constraint firstItem="5ru-Nq-6fs" firstAttribute="top" secondItem="O2n-e2-jhj" secondAttribute="bottom" constant="26" id="Mz2-4k-UWF"/>
-                                            <constraint firstAttribute="height" constant="1200" id="OXj-TA-no2"/>
+                                            <constraint firstAttribute="height" constant="1228" id="OXj-TA-no2"/>
                                             <constraint firstAttribute="trailing" secondItem="5Qv-D4-hbE" secondAttribute="trailing" constant="15" id="OZ7-w9-kjc"/>
                                             <constraint firstItem="5ru-Nq-6fs" firstAttribute="leading" secondItem="XLX-DD-C4u" secondAttribute="leading" id="eNR-C9-brY"/>
                                             <constraint firstItem="O2n-e2-jhj" firstAttribute="leading" secondItem="VvU-r5-bfp" secondAttribute="leading" id="eyS-O8-0Qt"/>
@@ -591,7 +594,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZLr-IK-i0Y"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1228"/>
                     <connections>
                         <outlet property="authorCollection" destination="5Qv-D4-hbE" id="eQT-yu-PbD"/>
                         <outlet property="seriesTableView" destination="5ru-Nq-6fs" id="TId-dR-jj3"/>

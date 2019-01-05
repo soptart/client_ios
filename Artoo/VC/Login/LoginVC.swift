@@ -35,6 +35,8 @@ class LoginVC: UIViewController {
         joinBtn.addTarget(self, action: #selector(goSign), for: .touchUpInside)
     }
     
+    @IBAction func unwindToLogin(_ sender: UIStoryboardSegue) {}
+    
 }
 extension LoginVC {
     
@@ -76,7 +78,8 @@ extension LoginVC {
     
     //회원가입 창으로 이동하는 함수
     @objc func goSign(){
-        navigationController?.pushViewController(signVC, animated: true)
+        guard let joinVC = storyboard?.instantiateViewController(withIdentifier: "JoinRootNavi") else { return }
+        present(joinVC, animated: true)
     }
     
     //탭으로 이동하는 함수 (로그인 성공시에만)
