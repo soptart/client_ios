@@ -55,7 +55,8 @@ class HomeThemeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData()
+        setDelegate()
+        setData(completion: setUI)
         allBtn.addTarget(self, action: #selector(goDetail2), for: .touchUpInside)
         
     }
@@ -79,7 +80,9 @@ extension HomeThemeVC : UITableViewDataSource {
         
         let data = themeList[indexPath.row + 1]
         if let themePhotoUrl = data.themeImg {
-            cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk") }
+            cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk")
+            cell.themeImg.roundImage(num: 0.05)
+        }
         
         if let themeText = data.mainTag {
             cell.themeLabel.text = themeText.removeNewLine(str: themeText)
@@ -124,9 +127,7 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
             let height = (view.frame.height) / 20
             return CGSize(width: width, height: height)
         case recommandCV:
-            let width = (view.frame.width) / 2 - 32
-            let height = (view.frame.height) / 4 + 10
-            return CGSize(width: width, height: height)
+            return CGSize(width: 150, height: 202)
         default:
             return CGSize(width: 1, height: 1)
         }
@@ -215,6 +216,8 @@ extension HomeThemeVC : UICollectionViewDataSource {
             if let recommandData = themeList.first?.themeWork?[indexPath.row] {
                 let photoUrl = recommandData.workImg
                 cell.recommandImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+                cell.recommandImg.roundImage(num: 0.05)
+   
             }
             
             return cell
@@ -233,13 +236,12 @@ extension HomeThemeVC : UICollectionViewDataSource {
 extension HomeThemeVC {
     
     //서버 통신
-    func setData() {
+    func setData(completion: @escaping() -> Void) {
         HomeThemeService.shared.theme {
             (data) in guard let themeData = data.data else { return }
             self.themeList = themeData
             print("\(self.themeList)")
-            self.setDelegate()
-            self.setMain()
+            completion()
         }
     }
     
@@ -258,7 +260,7 @@ extension HomeThemeVC {
     
     
     //추천 컬렉션 뷰 부분 데이터 세팅(리스트의 첫번째 데이터들로 채워줌)
-    func setMain(){
+    func setUI(){
         guard let data = themeList.first else { return }
         
         let photoUrl = data.themeImg

@@ -148,11 +148,10 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
         
     }
     
-    //하나의 행에 있는 아이템들의 가로간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 30
+   
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 34
     }
-    
     
     
     //섹션 내부 여백
