@@ -2830,7 +2830,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
         </scene>
     </scenes>
     <resources>
-        <image name="buyDivideLine" width="343" height="2"/>
+        <image name="buyDivideLine" width="16" height="16"/>
         <image name="down" width="16" height="16"/>
         <image name="exhibitionExit" width="17" height="16"/>
         <image name="fire" width="373.5" height="285.75"/>
