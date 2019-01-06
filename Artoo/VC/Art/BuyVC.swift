@@ -18,6 +18,13 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var feedBackLabel: UILabel?
     @IBOutlet weak var feedContentLabel: UILabel?
     @IBOutlet weak var feedContentTV: UITextView?
+    @IBOutlet weak var artNameLabel: UILabel!
+    @IBOutlet weak var artLikeCountLabel: UILabel!
+    @IBOutlet weak var authorSchoolLabel: UILabel!
+    @IBOutlet weak var authorNameabel: UILabel!
+    @IBOutlet weak var artYearLabel: UILabel!
+    @IBOutlet weak var artPriceLabel: UILabel!
+    
     
     
     var images = ""
@@ -29,10 +36,12 @@ class BuyVC: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         print("hihihhi")
         print("\(artDetailInfo!)")
-        moreImg.image = UIImage(named: images)
+//        moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
         
+        setDetail()
+        /*
         desc?.text = "욕망과 억압에 대해 이야기한다. 들판이라는 고상한 공간에 이 주제를 배치시키고, 고도의 훈련된 정신과 이성이 필요한 들판을 도구로이끌어 가는데, 집이라는 공간과 들판에서 오랜 시간동안 지독한 훈련과 과잉 예속 속에서 점점 더 자기 자신에게 빛이 되어가"
-        
+        */
         desc?.delegate = self
         
         //이미지 선택 시
@@ -49,8 +58,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     //아래 버튼 누르면
     @IBAction func slideBtn(_ sender: Any) {
         
+        /*
         desc?.text = "욕망과 억압에 대해 이야기한다. 들판이라는 고상한 공간에 이 주제를 배치시키고, 고도의 훈련된 정신과 이성이 필요한 들판을 도구로이끌어 가는데, 집이라는 공간과 들판에서 오랜 시간동안 지독한 훈련과 과잉 예속 속에서 점점 더 자기 자신에게 빛이 되어가.   에 더해서 말이죠 더 추가할건데,,,어땟을까요? 한번 늘어나나 보죠, 아요파팅입니다만,,,,ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ네네네. 어어어어어어어어어어어러재ㅓㄹ젇럊러쟈ㅓㄹ재ㅓ랻러ㅑㄷㅈ러ㅑㄷ저랴ㅐㄷ저래ㅑㅈ더랴저래ㅑㄷ저래ㅑㅈ덜ㅈ덜저래ㅑㄷ럊더래ㅑㅓㄹ절덜절댜ㅓㅑ저래ㅑㅈ더래저랴ㅐㅈ더래ㅑ저래ㅑ더랴ㅐ젇래ㅑㅓㄷㅈ래ㅑㅓㅈㄷjdfjsdoifjdsfjdsfjdoisjfidsfjisdjfidsojfoidsjfoisdjfiosdjfoisdfjoiwfjwiofjwiofjwiofjwoifjewiofjweoifjweoifjwoifjwoifjweoif"
-        
+        */
         //텍스트 뷰의 높이를 얻어옴
         
         desc?.delegate = self
@@ -89,11 +99,34 @@ class BuyVC: UIViewController, UITextViewDelegate {
     
     //이미지 버튼 누른다면
     @objc func bigImage(){
-        guard let BigVC = storyboard?.instantiateViewController(withIdentifier: "BigImg") as? BigImageVC else{ return
-        }
-    /* 옵셔널 공부가 필요함.
-         BigVC.BigImageView!.image = UIImage(named: images)
-      */
+        guard let BigVC = storyboard?.instantiateViewController(withIdentifier: "BigImg") as? BigImageVC else{ return }
+        
         navigationController?.pushViewController(BigVC, animated: true)
+        
+        BigVC.imageName = artDetailInfo?.artName!
+        BigVC.imageUrl = artDetailInfo?.artImg!
+        
+    }
+}
+
+extension BuyVC {
+    
+    func setDetail(){
+        moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
+        
+        artNameLabel.text = artDetailInfo?.artName!
+        authorSchoolLabel.text = artDetailInfo?.userSchool!
+        authorNameabel.text = artDetailInfo?.userName!
+        var count = artDetailInfo?.likeCount!
+        
+    artLikeCountLabel.text = String(describing: gino(artDetailInfo?.likeCount!))
+        print(String(describing: gino(artDetailInfo?.likeCount)))
+        
+        artPriceLabel.text = String(describing: gino(artDetailInfo?.price))
+        desc?.text = artDetailInfo?.workDetail!
+        artYearLabel.text = artDetailInfo?.artYear!
+        
+        
+        
     }
 }
