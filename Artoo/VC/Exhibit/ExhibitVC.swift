@@ -12,13 +12,13 @@ class ExhibitVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //상단 전시설명 라벨
-    @IBOutlet weak var exhibitLabel: UILabel!
-    
-    //상단 전시 날짜
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var applyView: UIView!
+//    //상단 전시설명 라벨
+//    @IBOutlet weak var exhibitLabel: UILabel!
+//    
+////    //상단 전시 날짜
+////    @IBOutlet weak var dateLabel: UILabel!
+////    
+////    @IBOutlet weak var applyView: UIView!
     
     //상단 전시 버튼 -> 클릭시 새 창
     @IBOutlet weak var exhibitBtn: UIButton!
@@ -94,7 +94,7 @@ extension ExhibitVC : UITableViewDataSource {
         }
         
         if let intro = exhibitMainData.exhibitEnterText {
-        cell.exhibitIntroLabel.text = intro.removeNewLine(str: intro)
+       // cell.exhibitIntroLabel.text = intro.removeNewLine(str: intro)
         }
         
         return cell
@@ -120,7 +120,7 @@ extension ExhibitVC {
         
         //전시 신청리스트가 0이면 신청버튼없애줌
         if(exhibitList.count == 0){
-            applyView.isHidden = true
+//            applyView.isHidden = true
         }
         
         exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
