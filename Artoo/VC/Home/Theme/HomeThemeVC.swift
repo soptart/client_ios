@@ -87,6 +87,7 @@ extension HomeThemeVC : UITableViewDataSource {
         if let themeText = data.mainTag {
             cell.themeLabel.text = themeText.removeNewLine(str: themeText)
         }
+        cell.themeLabel.sizeToFit()
         
         return cell
     }
@@ -123,9 +124,7 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case tagCV:
-            let width = (view.frame.width) / 5 - 15
-            let height = (view.frame.height) / 20
-            return CGSize(width: width, height: height)
+            return CGSize(width: 68, height: 42)
         case recommandCV:
             return CGSize(width: 150, height: 202)
         default:
@@ -138,19 +137,19 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
     
     
     //하나의 행에 있는 아이템들의 가로간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.5
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case tagCV:
+            return 13
+        case recommandCV:
+            return 14
+        default:
+            return 0
+        }
     }
     
-    
-    
-    //섹션 내부 여백
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
-        
-        
-    }
+
+ 
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -217,6 +216,7 @@ extension HomeThemeVC : UICollectionViewDataSource {
                 let photoUrl = recommandData.workImg
                 cell.recommandImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
                 cell.recommandImg.roundImage(num: 0.05)
+                
    
             }
             
@@ -265,7 +265,7 @@ extension HomeThemeVC {
         
         let photoUrl = data.themeImg
         mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
-        
+        mainLabel.sizeToFit()
         if let mainText = data.mainTag {
             
             if(mainText.contains("\\n")){
@@ -275,7 +275,9 @@ extension HomeThemeVC {
                 mainLabel.text = mainText
             }
         }
-        self.recommandCV.backgroundView = mainImageView
+        
+        mainLabel.sizeToFit()
+
     }
     
     //디테일 창으로 이동
