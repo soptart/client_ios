@@ -10,8 +10,12 @@ import UIKit
 class ThemeDetailVC: UIViewController {
     
     var index:Int = 0
+    
+    var mainImg:String = ""
     var mainTag:String = ""
     var subTag:String = ""
+    
+    @IBOutlet weak var themeImageView: UIImageView!
     
     @IBOutlet weak var mainTagLabel: UILabel!
     @IBOutlet weak var subTagLabel: UILabel!
@@ -42,26 +46,17 @@ extension ThemeDetailVC : UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = (view.frame.width) / 3 - 18
-        let height = (view.frame.height) / 4 - 60
-        return CGSize(width: width, height: height)
+        return CGSize(width: 101, height: 101)
         
     }
     
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 12
     }
     
-    
-    //섹션 내부 여백
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        
-    }
+ 
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -84,6 +79,7 @@ extension ThemeDetailVC : UICollectionViewDataSource {
         let cell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeDetailCell", for: indexPath) as! ThemeDetailCell
         if let photoUrl = detailList[indexPath.item].themeDetailImg {
             cell.themeDetailImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+            cell.themeDetailImg.roundImage(num: 0.1)
         }
         
         return cell
@@ -132,6 +128,7 @@ extension ThemeDetailVC  {
     
     
     func setLabel(){
+        themeImageView.imageFromUrl(mainImg, defaultImgPath: "ggobuk")
         mainTagLabel.text = mainTag
         subTagLabel.text = subTag
     }

@@ -34,7 +34,7 @@ class HomeThemeVC: UIViewController {
     var tagIndex = 1
     var mainTag:String = ""
     var subTag:String = ""
-    
+    var mainImg:String = ""
     
     //태그 이미지 배열
     var tagList:[String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
@@ -81,7 +81,7 @@ extension HomeThemeVC : UITableViewDataSource {
         let data = themeList[indexPath.row + 1]
         if let themePhotoUrl = data.themeImg {
             cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk")
-            cell.themeImg.roundImage(num: 0.05)
+            cell.themeImg.roundImage(num: 0.03)
         }
         
         if let themeText = data.mainTag {
@@ -111,6 +111,7 @@ extension HomeThemeVC : UITableViewDelegate {
         
         guard let subTagData = data.subTag else { return }
         subTag = subTagData
+        mainImg = gsno(data.themeImg)
         
         goDetail()
     }
@@ -166,6 +167,7 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
             guard let subTagData = themeData.subTag else { return }
             subTag = subTagData
             
+            mainImg = gsno(themeData.themeImg)
             goDetail()
             
         case recommandCV:
@@ -215,7 +217,7 @@ extension HomeThemeVC : UICollectionViewDataSource {
             if let recommandData = themeList.first?.themeWork?[indexPath.row] {
                 let photoUrl = recommandData.workImg
                 cell.recommandImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
-                cell.recommandImg.roundImage(num: 0.05)
+                cell.recommandImg.roundImage(num: 0.06)
                 
    
             }
@@ -281,6 +283,7 @@ extension HomeThemeVC {
         themeDetailVC.index = tagIndex
         themeDetailVC.mainTag = mainTag.removeNewLine(str: mainTag)
         themeDetailVC.subTag = subTag
+        themeDetailVC.mainImg = mainImg
         present(themeDetailVC, animated: true, completion: nil)
     }
     
@@ -297,9 +300,12 @@ extension HomeThemeVC {
         guard let subTagData = themeData.subTag else { return }
         subTag = subTagData
         
+         let themeImage = gsno(themeData.themeImg)
+        
         themeDetailVC.index = tagIndex
         themeDetailVC.mainTag = mainTag.removeNewLine(str: mainTag)
         themeDetailVC.subTag = subTag
+        themeDetailVC.mainImg = themeImage
         present(themeDetailVC, animated: true, completion: nil)
     }
     
