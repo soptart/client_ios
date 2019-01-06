@@ -16,17 +16,6 @@ class NotifyUploadVC: UIViewController {
     }
  
     @IBAction func OkBtn(_ sender: Any) {
-        
-        /*
-          guard let uploadVC = storyboard?.instantiateViewController(withIdentifier: "uploadMain") as? UploadMainVC else{ return }
-        /*
-        dismiss(animated: true, completion: {()-> Void in self.present(uploadVC, animated: true, completion: nil)})
-        */
-        
-        guard let moveVC = storyboard?.instantiateViewController(withIdentifier: "no_art") as? NoArtVC else { return }
-        
-        self.dismiss(animated: true, completion: {()-> Void in moveVC.navigationController?.pushViewController(uploadVC, animated: true)})
-        */
 
         self.dismiss(animated: true)
      

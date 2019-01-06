@@ -20,7 +20,8 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var heightTF: UITextField!
     
     
-    @IBOutlet weak var popUpViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var popUpViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var popUpView: UIView!
     
     @IBOutlet weak var artNameUploadTF: UITextField!
     @IBOutlet weak var artPriceTF: UITextField!
@@ -53,7 +54,6 @@ class UploadMainVC: UIViewController{
     var yOff: String!
     var height: String!
     
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     let picker = UIImagePickerController()
    
     let categorys: [String] = ["인물", "동물", "식물", "사물", "추상", "풍경"]
@@ -82,15 +82,23 @@ class UploadMainVC: UIViewController{
         
         picker.delegate = self
         
+        popUpViewBottomConstraint.constant = -375
+        
+        
     }
     
     //작품명 클릭하면 placeholder없어지기
     
     //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
     @IBAction func addTagBtn(_ sender: Any) {
-        heightConstraint.constant = 378
-        performSegue(withIdentifier: "tagUploadSegue", sender: self)
-        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.popUpViewBottomConstraint.constant = 0
+            self.popUpView.layer.shadowColor = UIColor.init(red: 146/255, green: 146/255, blue: 146/255, alpha: 1).cgColor
+            self.popUpView.layer.shadowOpacity = 0.5
+            self.popUpView.layer.shadowRadius = 7
+            self.popUpView.layer.shadowOffset = CGSize(width: 0, height: -2)
+            self.view.layoutIfNeeded()
+        })
     }
     
     // 택배하고 직거래 버튼 누르면 그 해당 정보를 문자열에 저장함
@@ -101,6 +109,15 @@ class UploadMainVC: UIViewController{
         }else {
             transactionMethod = "직거래"
         }
+    }
+    
+    // 완료 버튼 누르면 뷰가 사라지기
+    @IBAction func finishBtn(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.popUpViewBottomConstraint.constant = -378
+            self.popUpView.layer.shadowOpacity = 0
+            self.view.layoutIfNeeded()
+        })
     }
     
     func setUpToolbar(){

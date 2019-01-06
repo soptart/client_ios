@@ -9,19 +9,17 @@
 import UIKit
 
 class NoArtVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
     @IBAction func uploadBtn(_ sender: Any) {
+        /*
         performSegue(withIdentifier: "notify", sender: self)
-        
-        
-        guard let uploadVC = storyboard?.instantiateViewController(withIdentifier: "uploadMain") as? UploadMainVC else{ return }
-        navigationController?.pushViewController(uploadVC, animated: true) 
-        
+        */
+        NotificationCenter.default.post(name: Notification.Name("presentNoticeView"), object: nil)
     }
     
    

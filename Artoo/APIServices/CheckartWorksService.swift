@@ -12,7 +12,7 @@ import Alamofire
 struct CheckartWorksService: APIManager, Requestable {
     typealias NetworkData = ResponseArray<ArtImage>
     static let shared = CheckartWorksService()
-    let artCheckURL = url("/artworks/mini")
+    let artCheckURL = url("/artworksmini")
     
     //모든 작품 조회하는 api
         func check(completion: @escaping(NetworkData) -> Void){
