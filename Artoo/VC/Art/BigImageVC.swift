@@ -11,12 +11,19 @@ import UIKit
 class BigImageVC: UIViewController {
 
     @IBOutlet weak var ImageNameLabel: UILabel!
-    @IBOutlet weak var BigImageView: UIImageView?
+    @IBOutlet weak var BigImageView: UIImageView!
+    
+    var imageName: String!
+    var imageUrl: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        ImageNameLabel.text = imageName!
+        BigImageView.imageFromUrl(gsno(imageUrl!), defaultImgPath: "ggobuk")
+    
     }
 
 }

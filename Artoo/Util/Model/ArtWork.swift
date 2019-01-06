@@ -28,6 +28,15 @@ struct ArtWork : Mappable {
     var artSize: Int? // 작품 사이즈
     var artIsDisplay: Bool? // 사용할 필요 없음
     var artActive: Bool? // 사용할 필용 없음.
+    var artMaterial: String? //작품 재료
+    var artExpression: String? //작품 표현기법
+    var artPurchaseState: Int? //작품 구매상태
+    var userName: String? //작가 이름
+    var userSchool: String? //작가 학교
+    var artIsLike: Bool? //좋아요 여부
+    
+    
+    
 
     init?(map: Map) {
         
@@ -54,6 +63,12 @@ struct ArtWork : Mappable {
         artSize <- map["a_size"]
         artIsDisplay <- map["a_isDisplay"]
         artActive <- map["a_active"]
+        artMaterial <- map["a_material"]
+        artExpression <- map["a_expression"]
+        artPurchaseState <- map["a_purchaseState"]
+        userName <- map["u_name"]
+        userSchool <- map["u_school"]
+        artIsLike <- map["islike"]
 
     }
     
