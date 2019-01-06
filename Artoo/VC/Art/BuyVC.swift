@@ -22,12 +22,13 @@ class BuyVC: UIViewController, UITextViewDelegate {
     
     var images = ""
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-    
+    var artDetailInfo: ArtWork?
     var textHolder = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("hihihhi")
+        print("\(artDetailInfo!)")
         moreImg.image = UIImage(named: images)
         
         desc?.text = "욕망과 억압에 대해 이야기한다. 들판이라는 고상한 공간에 이 주제를 배치시키고, 고도의 훈련된 정신과 이성이 필요한 들판을 도구로이끌어 가는데, 집이라는 공간과 들판에서 오랜 시간동안 지독한 훈련과 과잉 예속 속에서 점점 더 자기 자신에게 빛이 되어가"

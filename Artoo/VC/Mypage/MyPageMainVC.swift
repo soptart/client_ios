@@ -18,6 +18,7 @@ class MyPageMainVC: UIViewController {
     @IBOutlet weak var buyBtn: UIButton!
     @IBOutlet weak var reviewBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var noticeView: UIView!
     
     var userInfo: String!
     
@@ -27,6 +28,17 @@ class MyPageMainVC: UIViewController {
         // Do any additional setup after loading the view.
         EditTextView.isScrollEnabled = false
         updateView(selected: 0)
+        noticeView.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeObserver()
     }
     
     //알림 버튼 눌렀을 때
@@ -35,6 +47,13 @@ class MyPageMainVC: UIViewController {
         guard let noticeVC = storyboard?.instantiateViewController(withIdentifier: "multinotify") as? MultiNotifyVC else { return }
         
         navigationController?.pushViewController(noticeVC, animated: true)
+    }
+    
+    // 확인 번튼 눌렀을 때 작품 업로드 창 넘어가기
+    @IBAction func okBtn(_ sender: Any) {
+        guard let uploadVC = storyboard?.instantiateViewController(withIdentifier: "uploadMain") as? UploadMainVC else { return }
+        
+        navigationController?.pushViewController(uploadVC, animated: true)
     }
     
     //설정 버튼 눌렀을 때
@@ -173,5 +192,17 @@ extension MyPageMainVC {
             remove(asChildViewController: buyPage)
             add(asChildViewController: reviewPage)
         }
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(presentNoticeView), name: Notification.Name("presentNoticeView"), object: nil)
+    }
+    
+    private func removeObserver() {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("presentNoticeView"), object: nil)
+    }
+    
+    @objc func presentNoticeView() {
+        noticeView.isHidden = false
     }
 }

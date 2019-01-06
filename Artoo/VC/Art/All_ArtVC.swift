@@ -19,8 +19,7 @@ class All_ArtVC: UIViewController {
     var sData: String?
     var fData: String?
     var cData: String?
-    
-    var imageList = [ArtWork]() //컬렉션 뷰를 위한 이미지 배열
+    var imageList = [ArtImage]() //컬렉션 뷰를 위한 이미지 배열
     var imageIndex = 0
     
     override func viewDidLoad() {
@@ -28,26 +27,13 @@ class All_ArtVC: UIViewController {
         setDelegate()
         setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
         
-        /*
-        if let layout = imageCollection?.collectionViewLayout as? PinterLayout{
-            layout.delegate = self
-        }*/
-        // imageCollection.dataSource = self
-       // imageCollection.delegate = self
+
+        setDelegate()
+        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
         setup()
         // Do any additional setup after loading the view.
         
     }
-    
-    /* 직접 서버에 데이터 전송
-    func dataSetting(){
-        imageList.append(ArtImg (artImg: "heartFull"))
-        imageList.append(ArtImg (artImg: "heartEmpty"))
-        imageList.append(ArtImg (artImg: "sopt_DoIT"))
-        imageList.append(ArtImg (artImg: "exhibit"))
-        imageList.append(ArtImg (artImg: "ggobuk"))
-    }*/
-    
     func setup() {
         //전달받은 data에 값이 있다면 label의 text를 설정해 줍니다.
         if let sTransData = sData {
@@ -93,7 +79,6 @@ extension All_ArtVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
         let image = imageList[indexPath.row]
-        //url을 만들어놓은 extension함수를 통해서 스트링으로 바꾸고 이를 이미지 뷰에 넣어주는 함수, 만약 그 값이 잘못들어왔다면 "ggobuk이를 띄운다.
         cell.showImg.imageFromUrl(gsno(image.artImg), defaultImgPath: "ggobuk")
         
         return cell
@@ -125,11 +110,10 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         let img = imageList[indexPath.row]
         let imageHeight = UIImage(named: img.artImg!)?.size.height
         
-        print(img.artImg!) //값이 표시되나,,,? -> ok
         print(imageHeight)
-        guard let bVC = storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
-            return
-        }
+        moveBuyVC(selectedImg: img)
+        
+    
         
         //        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
@@ -140,13 +124,7 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         //                  return 1
         //            }
         //서버에서 전달해주는 이미지를 받아서 저장해줘야 함.
-        
-        
-        bVC.images = img.artImg!
-        //화면간 이동하려고
-        print(bVC.images) // -> 이것도 오키
-        navigationController?.pushViewController(bVC, animated: true)
-        
+
     }
     //
     //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -194,7 +172,7 @@ extension All_ArtVC{
                     //서버데이터를 todayList에 담아줌
                     self.imageList = allArtData
                     print("\(allArtData)")
-                    completion() //-> 사실은 setUI함수가 호출되는 것이다. 
+                    completion() //-> 사실은 setUI함수가 호출되는 것이다.
                 }
             case 400:
                 print("나는 400이다")
@@ -208,6 +186,37 @@ extension All_ArtVC{
     
     func setUI(){
         imageCollection.reloadData()
+    }
+    
+    func moveBuyVC(selectedImg: ArtImage)
+    {
+        
+        ArtDescriptionService.shared.artDescription(art_index: selectedImg.artIndex!) { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
+                    guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
+                        return
+                    }
+                    
+                    bVC.artDetailInfo = allArtData
+                    //데이터이동
+                    self.navigationController?.pushViewController(bVC, animated: true)
+              
+                }
+            case 400:
+                print("나는 400이다")
+            case 500:
+                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
+            default:
+                print("hi")
+            }
+        }
     }
     
     
