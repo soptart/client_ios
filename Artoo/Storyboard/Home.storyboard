@@ -103,12 +103,13 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="qtf-8n-E8v">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="318"/>
                                         </imageView>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-AN-qak">
-                                            <rect key="frame" x="22" y="95" width="353" height="202"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-AN-qak">
+                                            <rect key="frame" x="22" y="85" width="353" height="202"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="202" id="ug1-A1-0st"/>
                                             </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SaJ-oo-xWW">
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="SaJ-oo-xWW">
                                                 <size key="itemSize" width="153" height="175"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -127,6 +128,7 @@
                                                             </imageView>
                                                         </subviews>
                                                     </view>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="gZ5-wH-KrE" secondAttribute="bottom" id="VvO-mf-bfS"/>
                                                         <constraint firstItem="gZ5-wH-KrE" firstAttribute="top" secondItem="5Jg-Xk-cWY" secondAttribute="top" id="pEi-C1-Ae8"/>
@@ -141,7 +143,7 @@
                                             </cells>
                                         </collectionView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F0-ab-cd8">
-                                            <rect key="frame" x="321" y="49.5" width="33" height="22"/>
+                                            <rect key="frame" x="321" y="52.5" width="33" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="Uyn-9O-Hr4"/>
                                                 <constraint firstAttribute="width" priority="250" constant="19" id="fme-md-7oT"/>
@@ -151,8 +153,8 @@
                                                 <color key="titleColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거실에 걸어두면 느낌 있는 그림들" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="967-KK-ZMF">
-                                            <rect key="frame" x="22" y="47" width="252" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거실에 걸어두면 느낌 있는 그림들" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="967-KK-ZMF">
+                                            <rect key="frame" x="22" y="50" width="252" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" priority="250" constant="242" id="btE-ML-vLg"/>
                                                 <constraint firstAttribute="height" priority="250" constant="27" id="pmR-gC-Paq"/>
@@ -184,7 +186,7 @@
                                         <constraint firstItem="na3-Dc-gSI" firstAttribute="top" secondItem="V3l-RE-jEA" secondAttribute="top" constant="14" id="0F0-eA-dNM"/>
                                         <constraint firstAttribute="trailing" secondItem="4F0-ab-cd8" secondAttribute="trailing" constant="21" id="1wY-af-2pY"/>
                                         <constraint firstItem="qtf-8n-E8v" firstAttribute="leading" secondItem="V3l-RE-jEA" secondAttribute="leading" id="2fT-qr-2bs"/>
-                                        <constraint firstItem="967-KK-ZMF" firstAttribute="top" secondItem="na3-Dc-gSI" secondAttribute="bottom" constant="6" id="555-sc-REg"/>
+                                        <constraint firstItem="967-KK-ZMF" firstAttribute="top" secondItem="na3-Dc-gSI" secondAttribute="bottom" constant="9" id="555-sc-REg"/>
                                         <constraint firstItem="WRW-LN-ekL" firstAttribute="centerY" secondItem="na3-Dc-gSI" secondAttribute="centerY" id="90v-Jc-blp"/>
                                         <constraint firstItem="qtf-8n-E8v" firstAttribute="top" secondItem="V3l-RE-jEA" secondAttribute="top" id="AH9-WM-wRD"/>
                                         <constraint firstItem="4F0-ab-cd8" firstAttribute="centerY" secondItem="967-KK-ZMF" secondAttribute="centerY" id="AjW-BQ-via"/>
@@ -192,7 +194,7 @@
                                         <constraint firstItem="WRW-LN-ekL" firstAttribute="leading" secondItem="na3-Dc-gSI" secondAttribute="leading" constant="11" id="JW7-ln-t6O"/>
                                         <constraint firstAttribute="bottom" secondItem="qtf-8n-E8v" secondAttribute="bottom" constant="15" id="Jaq-nv-vFu"/>
                                         <constraint firstItem="WaG-AN-qak" firstAttribute="leading" secondItem="967-KK-ZMF" secondAttribute="leading" id="Nnh-M0-b85"/>
-                                        <constraint firstItem="WaG-AN-qak" firstAttribute="top" secondItem="967-KK-ZMF" secondAttribute="bottom" constant="21" id="Xzx-dD-0li"/>
+                                        <constraint firstItem="WaG-AN-qak" firstAttribute="bottom" secondItem="qtf-8n-E8v" secondAttribute="bottom" constant="-31" id="UyC-kR-gjB"/>
                                         <constraint firstItem="na3-Dc-gSI" firstAttribute="leading" secondItem="V3l-RE-jEA" secondAttribute="leading" constant="22" id="e0o-Tb-Jcz"/>
                                         <constraint firstAttribute="trailing" secondItem="qtf-8n-E8v" secondAttribute="trailing" id="koG-HE-lk0"/>
                                         <constraint firstAttribute="trailing" secondItem="WaG-AN-qak" secondAttribute="trailing" id="qlR-2k-jyh"/>
@@ -247,7 +249,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ag5-ds-1Ea"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UxY-dY-A9Z">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="UxY-dY-A9Z">
                                     <size key="itemSize" width="95" height="32"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -256,7 +258,7 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="TagCell" id="dEx-rQ-45I" customClass="TagCell" customModule="Artoo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="68" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>

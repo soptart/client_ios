@@ -265,15 +265,10 @@ extension HomeThemeVC {
         
         let photoUrl = data.themeImg
         mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
-        mainLabel.sizeToFit()
+        
         if let mainText = data.mainTag {
-            
-            if(mainText.contains("\\n")){
-                let newText = mainText.replacingOccurrences(of: "\\n", with: "\n")
-                mainLabel.text = newText
-            }else {
-                mainLabel.text = mainText
-            }
+            //개행 없애주는 함수
+            mainLabel.text = mainText.newLineToBlank(str:mainText)
         }
         
         mainLabel.sizeToFit()
