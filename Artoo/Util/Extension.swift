@@ -87,6 +87,14 @@ extension String {
         }
         return str
     }
+    
+    func newLineToBlank(str: String) -> String {
+        if(str.contains("\\n")){
+            let newText = str.replacingOccurrences(of: "\\n", with: " ")
+            return newText
+        }
+        return str
+    }
 
 }
 

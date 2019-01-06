@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "themeSummer.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "themeSummer.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "themeSummer@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "themeSummer@2x.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "themeSummer@3x.png",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "themeSummer@3x.png"
     }
   ],
   "info" : {
