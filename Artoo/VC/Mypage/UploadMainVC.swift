@@ -68,7 +68,7 @@ class UploadMainVC: UIViewController{
         
         choiceImg.addGestureRecognizer(pictureTap)
         choiceImg.isUserInteractionEnabled = true
-        heightConstraint.constant = 0
+        //heightConstraint.constant = 0
         setupPicker()
         setUpToolbar()
 

@@ -47,4 +47,21 @@ extension Requestable {
             }
         }
     }
+    
+    //서버에 put 요청을 보내는 함수
+    func puttable(_ url: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
+        Alamofire.request(url, method: .put, parameters: body, encoding: JSONEncoding.default, headers: header).responseObject { (res: DataResponse<NetworkData>) in
+            switch res.result {
+            case .success:
+                guard let value = res.result.value else { return }
+                completion(.success(value))
+            case .failure:
+                guard let value = res.result.value else { return }
+                completion(.error(value))
+            }
+        }
+        
+    }
+    
+    
 }
