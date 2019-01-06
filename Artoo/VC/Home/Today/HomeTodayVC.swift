@@ -14,7 +14,7 @@ class HomeTodayVC: UIViewController {
     @IBOutlet  var authorCollection: UICollectionView!
     @IBOutlet  var workCollection: UICollectionView!
     
-    var selectedIndex:IndexPath!
+    var selectedIndex:IndexPath = IndexPath.init(row: 0, section: 0)
     
     var todayList = [Today]()
     let seriesList = ["today_demo1","today_demo2"]
@@ -90,11 +90,13 @@ extension HomeTodayVC : UICollectionViewDataSource {
             cell.indexPath = indexPath
 
             
+      
             if selectedIndex == indexPath {
                 cell.cellSelected = true
             }else {
                 cell.cellSelected = false
             }
+            
             
             
             //작가 이름
@@ -111,6 +113,8 @@ extension HomeTodayVC : UICollectionViewDataSource {
             
             let photoUrl = detailWorkInfo.workImg!
             cell.workImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+            
+            
             
             if(indexPath.row != 0){
                 cell.authorIntro.isHidden = true
