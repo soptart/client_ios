@@ -28,6 +28,8 @@
 		5D40FA0521DD391E00636890 /* sellerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D40FA0421DD391E00636890 /* sellerInfo.swift */; };
 		5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D721D3976600C787AC /* FilterViewController.swift */; };
 		5D4607DA21D4892000C787AC /* AllImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4607D921D4892000C787AC /* AllImageCell.swift */; };
+		5D49021D21E3067400D661C4 /* buyItemBuyerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49021C21E3067400D661C4 /* buyItemBuyerInfo.swift */; };
+		5D49021F21E3656100D661C4 /* uploadCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49021E21E3656100D661C4 /* uploadCommentService.swift */; };
 		5D5488D121E2C67D00EFDD2F /* BuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D021E2C67D00EFDD2F /* BuyService.swift */; };
 		5D5488D321E2C91400EFDD2F /* CheckBuyItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */; };
 		5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */; };
@@ -167,6 +169,8 @@
 		5D40FA0421DD391E00636890 /* sellerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellerInfo.swift; path = Artoo/Util/Model/sellerInfo.swift; sourceTree = SOURCE_ROOT; };
 		5D4607D721D3976600C787AC /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = Artoo/VC/Art/FilterViewController.swift; sourceTree = SOURCE_ROOT; };
 		5D4607D921D4892000C787AC /* AllImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllImageCell.swift; path = Artoo/VC/Art/AllImageCell.swift; sourceTree = SOURCE_ROOT; };
+		5D49021C21E3067400D661C4 /* buyItemBuyerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyItemBuyerInfo.swift; sourceTree = "<group>"; };
+		5D49021E21E3656100D661C4 /* uploadCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadCommentService.swift; sourceTree = "<group>"; };
 		5D5488D021E2C67D00EFDD2F /* BuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyService.swift; sourceTree = "<group>"; };
 		5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBuyItemService.swift; sourceTree = "<group>"; };
 		5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotifyUploadVC.swift; path = Artoo/VC/Mypage/NotifyUploadVC.swift; sourceTree = SOURCE_ROOT; };
@@ -424,6 +428,7 @@
 				5D3DA6C421DE1129005239F8 /* saleInfo.swift */,
 				5D40FA0421DD391E00636890 /* sellerInfo.swift */,
 				A34DFD0A21DDE43B00CEDA74 /* ArtWork.swift */,
+				5D49021C21E3067400D661C4 /* buyItemBuyerInfo.swift */,
 				5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */,
 				5D3DA6C021DDF610005239F8 /* exhibitInfo.swift */,
 				5DB4139D21DF10E000576883 /* MyInfo.swift */,
@@ -458,6 +463,7 @@
 				A3699B4621DB526B00EC3A8D /* APIManager.swift */,
 				5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */,
 				5D5488D021E2C67D00EFDD2F /* BuyService.swift */,
+				5D49021E21E3656100D661C4 /* uploadCommentService.swift */,
 				A3699B4821DB52FF00EC3A8D /* Requestable.swift */,
 				A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */,
 				A3699B5021DB53E800EC3A8D /* NetworkResult.swift */,
@@ -829,6 +835,7 @@
 				A34DFD0B21DDE43B00CEDA74 /* ArtWork.swift in Sources */,
 				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
 				A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */,
+				5D49021F21E3656100D661C4 /* uploadCommentService.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeWork.swift in Sources */,
 				A350ADE021D55BF600EC199E /* ExhibitDetailInfo.swift in Sources */,
 				A350ADD821D52BCD00EC199E /* ExhibitSee.swift in Sources */,
@@ -848,6 +855,7 @@
 				5DB413A021DF189300576883 /* QnaVC.swift in Sources */,
 				5D3DA6C121DDF610005239F8 /* exhibitInfo.swift in Sources */,
 				5D3DA6CB21DEE409005239F8 /* transactionCancelNoticeVC.swift in Sources */,
+				5D49021D21E3067400D661C4 /* buyItemBuyerInfo.swift in Sources */,
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,

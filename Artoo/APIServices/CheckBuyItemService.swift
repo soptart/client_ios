@@ -11,28 +11,43 @@ import Alamofire
 
 struct CheckBuyItemService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<ArtWork>
+    typealias NetworkData = ResponseArray<ArtWork>
     static let shared = CheckBuyItemService()
     let checkBuyItemUrl = url("/artworks/")
     let header: HTTPHeaders = [
-        "Content-Type" : "application/json"]
+        "Content-Type" : "application/json",
+        "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi"
+    ]
     
     
-    //작품 클릭 시 작품 세부 설명
-    func artDescription(art_index: Int, user_index: Int, completion: @escaping (NetworkData) -> Void) {
+    //구매하기 버튼 눌렀을 때 구매자의 정보
+    func buy(art_index: Int, user_index: Int, delivery: Bool, buyerName: String, buyerAddress: String,
+             buyerPhone: String, Payment: Int, completion: @escaping(NetworkData) -> Void) {
         
-        gettable(checkBuyItemUrl+"\(art_index)" + "/description" + "\(user_index)" , body: nil, header: header) {
-            res in
+        let body = delivery ?  [
+            "p_isPost" : true,
+            "p_recipient" : buyerName,
+            "p_address" : buyerAddress,
+            "p_phone" : buyerPhone,
+            "p_payment" : Payment
+            ]:[
+                
+                "p_isPost" : false,
+                "p_payment" : Payment
+        ]
+        
+        
+        postable(checkBuyItemUrl+"\(art_index)"+"/purchase/"+"\(user_index)", body: body, header: header) { res in
             switch res {
             case .success(let value):
-                print("success")
                 completion(value)
-            case .error(let error):
+                print("success")
+            case .error(let value):
+                completion(value)
                 print("fail")
-                completion(error)
-                
             }
             
         }
+        
     }
 }
