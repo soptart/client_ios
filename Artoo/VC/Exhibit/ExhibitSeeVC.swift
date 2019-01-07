@@ -11,13 +11,15 @@ import UIKit
 class ExhibitSeeVC: UIViewController {
     
     
-    @IBOutlet weak var escapeBtn: UIButton!
     
-    var displayIdx:Int?
-    var titleImg:String?
+    var displayIdx:Int!
+    var titleText:String!
     var exhibitSeeList = [ExhibitSee]()
     
-    @IBOutlet weak var titleImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var escapeBtn: UIButton!
+
     
     
     //전시 관람 콜렉션 뷰
@@ -31,7 +33,8 @@ class ExhibitSeeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
- 
+        titleLabel.text = titleText.newLineToBlank(str: titleText)
+        titleLabel.sizeToFit()
         
         //전시 퇴장 버튼
         escapeBtn.addTarget(self, action: #selector(escape), for: .touchUpInside)
@@ -44,31 +47,16 @@ class ExhibitSeeVC: UIViewController {
 extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = view.frame.width - 36
-        let height = view.frame.height / 2
-        
-        return CGSize(width: width, height: height)
+        return CGSize(width: 236, height: 502)
         
     }
     
     
     
-    
-    
-    //하나의 행에 있는 아이템들의 가로간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 48
     }
     
-    
-    
-    //섹션 내부 여백
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 1, left: 1, bottom: 0, right: 1)
-        
-        
-    }
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -92,8 +80,9 @@ extension ExhibitSeeVC : UICollectionViewDataSource {
         
         
         let data = exhibitSeeList[indexPath.row]
-        cell.exhibitSeeImg.imageFromUrl(gsno(data.artImg), defaultImgPath: "ggobuk")
-        cell.workTitleLabel.text = gsno(data.displayTitle)
+        cell.exhibitSeeImg.imageFromUrl(gsno(data.artImg), defaultImgPath: "")
+        
+        cell.workTitleLabel.text = gsno(data.artName)
         print("\(gsno(data.displayTitle))")
         cell.authorNameLabel.text = gsno(data.userName)
         cell.themeLabel.text = gsno(data.artForm)
@@ -113,7 +102,7 @@ extension ExhibitSeeVC {
     }
     
     func setUI(){
-             titleImageView.imageFromUrl(gsno(titleImg), defaultImgPath: "ggobuk")
+   
         exhibitCollectionView.reloadData()
         
     }

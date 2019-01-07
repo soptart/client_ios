@@ -95,7 +95,7 @@ extension ExhibitEnterVC {
      
         authorLabel.text = authorStr1
         authorLabel2.text = authorStr2
-        backgroundImg.imageFromUrl(gsno(data.exhibitMainImg), defaultImgPath: "ggobuk")
+        backgroundImg.imageFromUrl(gsno(data.exhibitMainImg), defaultImgPath: "")
     }
     
     
@@ -104,7 +104,7 @@ extension ExhibitEnterVC {
         
         let idx = gino(exhibitEnterData?.exhibitIndex)
         let title = gsno(exhibitEnterData?.exhibitTitle)
-        exhibitSeeVC.titleImg = title
+        exhibitSeeVC.titleText = title
         exhibitSeeVC.displayIdx = idx
         navigationController?.pushViewController(exhibitSeeVC, animated: true)
     }
