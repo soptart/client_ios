@@ -29,9 +29,11 @@ class ExhibitEnterVC: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     
     
-    //참여 작가를 나타낼 라벨
+    //참여 작가를 나타낼 라벨1
     @IBOutlet weak var authorLabel: UILabel!
     
+    //참여 작가를 나타낼 라벨2
+    @IBOutlet weak var authorLabel2: UILabel!
     
     
     
@@ -74,20 +76,25 @@ extension ExhibitEnterVC {
         
         exhibitDateLabel.text = exhibitDate
         
-        mainLabel.text = gsno(data.exhibitTitle)
-        subLabel.text = gsno(data.exhibitSubTitle)
+        let exhibitName = gsno(data.exhibitTitle)
+        mainLabel.text = exhibitName.newLineToBlank(str: exhibitName)
+        subLabel.text = gsno(data.exhibitApplyText)
         
-        var userStr = ""
-        
-        if let users = data.artworkUser {
-            for i in users {
-                userStr += i
-            }
+        var authorStr1 = ""
+        var authorStr2 = ""
 
+        if let users = data.artworkUser {
+            
+            for i in 0..<users.count {
+                if(i % 2 == 0){ authorStr1 += (users[i] + "\n")
+                    } else {
+                authorStr2 += (users[i] + "\n")
+            }
+        }
         }
      
-        authorLabel.text = userStr
-        
+        authorLabel.text = authorStr1
+        authorLabel2.text = authorStr2
         backgroundImg.imageFromUrl(gsno(data.exhibitMainImg), defaultImgPath: "ggobuk")
     }
     

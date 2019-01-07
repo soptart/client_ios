@@ -38,14 +38,25 @@ class ExhibitVC: UIViewController {
         return viewController
     }()
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        setDelegate()
-        setData(completion: setUI)
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        //선택된 셀이 있으면 디셀렉트
+        if let index = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: index, animated: true)
+        }
+        // 스크롤 포지션 되돌리기
+        tableView.contentOffset.y = 0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setDelegate()
+        setData(completion: setUI)
+
     }
     
 }
@@ -90,7 +101,6 @@ extension ExhibitVC : UITableViewDataSource {
         
         //전시 서브 이름
         let subText = gsno(exhibitMainData.exhibitSubTitle)
-        print("\(subText)")
         cell.exhibitSubLabel.text = subText
         
         //전시 디테일

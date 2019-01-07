@@ -175,7 +175,7 @@ extension ExhibitApplyVC : UITableViewDataSource {
             if let mainStr = data.exhibitTitle {
                 applyStr += mainStr
             }
-            if let subStr = data.exhibitSubTitle {
+            if let subStr = data.exhibitEnterText {
                 applyStr += ("-" + subStr)
             }
             
