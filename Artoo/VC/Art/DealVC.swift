@@ -14,6 +14,14 @@ class DealVC: UIViewController {
     @IBOutlet weak var directBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var noticeLabel: UILabel!
+    @IBOutlet weak var buyImage: UIImageView!
+    @IBOutlet weak var buyItemNameLabel: UILabel!
+    @IBOutlet weak var buyItemPriceLabel: UILabel!
+    @IBOutlet weak var buyItemPriceLabel2: UILabel!
+    
+    var buyImageUrl: String!
+    var buyItemName: String!
+    var buyPrice: Int!
     
     //택배나 직거래 버튼 눌렀을 때 화면이 변하기
     @IBAction func changeView(_ sender: UIButton) {
@@ -55,6 +63,10 @@ class DealVC: UIViewController {
         super.viewDidLoad()
         updateView(selected: 0)
         // Do any additional setup after loading the view.
+        buyImage.imageFromUrl(gsno(buyImageUrl!), defaultImgPath: "ggobuk")
+        buyItemNameLabel.text = buyItemName!
+        buyItemPriceLabel.text = String(describing: buyPrice!)
+        buyItemPriceLabel2.text = String(describing: buyPrice!)
     }
 
 }

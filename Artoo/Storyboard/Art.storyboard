@@ -430,7 +430,7 @@
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="바람의 빛" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opc-vR-gy6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opc-vR-gy6">
                                                 <rect key="frame" x="104" y="86" width="58" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -593,6 +593,10 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="buyImage" destination="Cvt-2y-DK6" id="foi-ef-jT5"/>
+                        <outlet property="buyItemNameLabel" destination="opc-vR-gy6" id="sG5-Tv-v47"/>
+                        <outlet property="buyItemPriceLabel" destination="s1g-Wx-9bW" id="lLk-L4-Y3G"/>
+                        <outlet property="buyItemPriceLabel2" destination="a8n-j1-CIN" id="DDe-eF-Pji"/>
                         <outlet property="containerView" destination="p3e-mC-HzV" id="85K-as-egw"/>
                         <outlet property="deliveryBtn" destination="Ckm-dr-xqn" id="k2R-0M-vTi"/>
                         <outlet property="directBtn" destination="Sq4-E8-oNE" id="zyH-xT-pYV"/>

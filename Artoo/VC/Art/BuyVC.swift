@@ -95,6 +95,11 @@ class BuyVC: UIViewController, UITextViewDelegate {
         guard let dVC = storyboard?.instantiateViewController(withIdentifier: "deal") as? DealVC else { return }
         
         navigationController?.pushViewController(dVC, animated: true)
+        
+        dVC.buyItemName = artNameLabel.text!
+        dVC.buyImageUrl = artDetailInfo?.artImg!
+       dVC.buyPrice = artDetailInfo?.price!
+        print(dVC.buyPrice)
     }
     
     //이미지 버튼 누른다면
@@ -117,8 +122,6 @@ extension BuyVC {
         artNameLabel.text = artDetailInfo?.artName!
         authorSchoolLabel.text = artDetailInfo?.userSchool!
         authorNameabel.text = artDetailInfo?.userName!
-        var count = artDetailInfo?.likeCount!
-        
     artLikeCountLabel.text = String(describing: gino(artDetailInfo?.likeCount!))
         print(String(describing: gino(artDetailInfo?.likeCount)))
         
