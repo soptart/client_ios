@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" text="원하는 작품 키워드를 입력해주세요" translatesAutoresizingMaskIntoConstraints="NO" id="L8x-zg-c3v">
+                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="원하는 작품 키워드를 입력해주세요" translatesAutoresizingMaskIntoConstraints="NO" id="L8x-zg-c3v">
                                 <rect key="frame" x="15" y="54" width="341" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="-4"/>
@@ -122,6 +122,7 @@
                         <outlet property="categoryLabel" destination="dmY-wN-ssS" id="xy2-DW-UbM"/>
                         <outlet property="figureLabel" destination="iKY-Sx-pgq" id="tBf-WP-lYP"/>
                         <outlet property="imageCollection" destination="eRf-cP-s3X" id="Wto-B8-08z"/>
+                        <outlet property="search" destination="L8x-zg-c3v" id="4ch-Kb-PS9"/>
                         <outlet property="sizeLabel" destination="805-aC-337" id="ON5-cI-Tm3"/>
                     </connections>
                 </viewController>

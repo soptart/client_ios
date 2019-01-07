@@ -131,7 +131,6 @@ extension DealVC {
     
     func sendTakerInfo(){
 
-        print("\(isDelivery)")
         CheckBuyItemService.shared.buy(art_index: sendArtIndex!, user_index: sendUserIndex!, delivery: isDelivery!, buyerName: takerName!, buyerAddress: takerAddress!, buyerPhone: takerPhone!, Payment: 1){
             (data) in guard let status = data.status else { return }
             
