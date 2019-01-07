@@ -14,18 +14,42 @@ class DealVC: UIViewController {
     @IBOutlet weak var directBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var noticeLabel: UILabel!
+    @IBOutlet weak var buyImage: UIImageView!
+    @IBOutlet weak var buyItemNameLabel: UILabel!
+    @IBOutlet weak var buyItemPriceLabel: UILabel!
+    @IBOutlet weak var buyItemPriceLabel2: UILabel!
+    @IBOutlet weak var deliveryFeeLabel: UILabel!
+    
+    var buyImageUrl: String!
+    var buyItemName: String!
+    var buyPrice: Int!
+    var totalPrice: Int? //나중에 계산해주기.
+    var isDelivery: Bool? //택배면 true, 직거래면 false
+    var sendArtIndex: Int?
+    var sendUserIndex: Int?
+    var takerName: String?
+    var takerAddress: String?
+    var takerPhone: String?
+    var isPayment: Int?
     
     //택배나 직거래 버튼 눌렀을 때 화면이 변하기
     @IBAction func changeView(_ sender: UIButton) {
         updateView(selected: sender.tag)
         if sender.tag == 0 {
-            deliveryBtn.setImage(UIImage(named: "fire"), for: .normal)
-            directBtn.setImage(UIImage(named: "ggobuk"), for: .normal)
+            deliveryBtn.setBackgroundColor(UIColor(displayP3Red: 255/255, green: 111/255, blue: 97/255, alpha: 1), forState: .normal)
+           deliveryBtn.setTitleColor(UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1), for: .normal)
+            directBtn.setBackgroundColor(UIColor(displayP3Red: 236/255, green: 239/255, blue: 243/255, alpha: 1), forState: .normal)
+            directBtn.setTitleColor(UIColor(displayP3Red: 74/255, green: 74/255, blue: 74/255, alpha: 1), for: .normal)
+            
+            isDelivery = true
             noticeLabel.isHidden = false
         } else {
-                deliveryBtn.setImage(UIImage(named: "ggobuk"), for: .normal)
-                directBtn.setImage(UIImage(named: "fire"), for: .normal)
+                directBtn.setBackgroundColor(UIColor(displayP3Red: 255/255, green: 111/255, blue: 97/255, alpha: 1), forState: .normal)
+            directBtn.setTitleColor(UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1), for: .normal)
+            deliveryBtn.setBackgroundColor(UIColor(displayP3Red: 236/255, green: 239/255, blue: 243/255, alpha: 1), forState: .normal)
+            deliveryBtn.setTitleColor(UIColor(displayP3Red: 74/255, green: 74/255, blue: 74/255, alpha: 1), for: .normal)
             
+            isDelivery = false
             noticeLabel.isHidden = true
             }
 
@@ -55,8 +79,23 @@ class DealVC: UIViewController {
         super.viewDidLoad()
         updateView(selected: 0)
         // Do any additional setup after loading the view.
+        buyImage.imageFromUrl(gsno(buyImageUrl!), defaultImgPath: "ggobuk")
+        buyItemNameLabel.text = buyItemName!
+        buyItemPriceLabel.text = String(describing: buyPrice!)
+        buyItemPriceLabel2.text = String(describing: buyPrice!)
+        
     }
-
+    
+    
+    @IBAction func dealBtn(_ sender: Any) {
+        takerName = deliveryService.takerNameLabel.text!
+        takerAddress = deliveryService.takerAddressLabel.text!
+        takerPhone = deliveryService.takerPhoneLabel.text!
+        
+        sendTakerInfo()
+        isPayment = 1
+    }
+    
 }
 
 //DealVC의 확장 기능
@@ -83,9 +122,34 @@ extension DealVC {
         if selected == 0{
             remove(asChildViewController: directService)
             add(asChildViewConroller: deliveryService)
+            
         } else {
             remove(asChildViewController: deliveryService)
             add(asChildViewConroller: directService)
         }
     }
+    
+    func sendTakerInfo(){
+
+        print("\(isDelivery)")
+        CheckBuyItemService.shared.buy(art_index: sendArtIndex!, user_index: sendUserIndex!, delivery: isDelivery!, buyerName: takerName!, buyerAddress: takerAddress!, buyerPhone: takerPhone!, Payment: 1){
+            (data) in guard let status = data.status else { return }
+            
+            print("나는 천재다")
+            print(status)
+            
+            switch status{
+            case 200:
+                self.view.makeToast("구매 저장 정보 성공")
+            case 204:
+                self.view.makeToast("구매 항목 미기입")
+            case 600:
+                self.view.makeToast("데이터베이스 에러")
+            case 500:
+                self.view.makeToast("서버 내부 에러")
+            default: print("hihih")
+            }
+        }
 }
+}
+
