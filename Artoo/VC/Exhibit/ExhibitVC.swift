@@ -1,10 +1,4 @@
-//
-//  ExhibitVC.swift
-//  Artoo
-//
-//  Created by 홍정민 on 2018. 12. 25..
-//  Copyright © 2018년 홍정민. All rights reserved.
-//
+
 
 import UIKit
 
@@ -12,13 +6,7 @@ class ExhibitVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-//    //상단 전시설명 라벨
-//    @IBOutlet weak var exhibitLabel: UILabel!
-//    
-////    //상단 전시 날짜
-////    @IBOutlet weak var dateLabel: UILabel!
-////    
-////    @IBOutlet weak var applyView: UIView!
+    
     
     //상단 전시 버튼 -> 클릭시 새 창
     @IBOutlet weak var exhibitBtn: UIButton!
@@ -50,11 +38,14 @@ class ExhibitVC: UIViewController {
         return viewController
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        setDelegate()
+        setData(completion: setUI)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegate()
-        setData(completion: setUI)
+        
     }
     
 }
@@ -64,7 +55,7 @@ extension ExhibitVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //전시 관람 VC로 이동 - 데이터 전달은 모델보고 변경
-               exhibitEnterVC.exhibitEnterData = exhibitList[indexPath.row]
+        exhibitEnterVC.exhibitEnterData = exhibitList[indexPath.row]
         print("이동이동 \(exhibitList[indexPath.row])")
         navigationController?.pushViewController(exhibitEnterVC, animated: true)
         
@@ -79,7 +70,6 @@ extension ExhibitVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //메인화면에서만 쓸 데이터의 카운트를 리턴함
         return exhibitList.count
     }
     
@@ -87,16 +77,30 @@ extension ExhibitVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExhibitCell") as! ExhibitCell
         
         let exhibitMainData = exhibitList[indexPath.row]
-        print("메인 데이타\(exhibitMainData)")
         
+        
+        //전시 이미지
         if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
             cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "ggobuk")
         }
         
-        if let intro = exhibitMainData.exhibitEnterText {
-       // cell.exhibitIntroLabel.text = intro.removeNewLine(str: intro)
-        }
+        //전시 이름
+        let mainText = gsno(exhibitMainData.exhibitTitle)
+        cell.exhibitMainLabel.text = mainText.removeNewLine(str: mainText)
         
+        //전시 서브 이름
+        let subText = gsno(exhibitMainData.exhibitSubTitle)
+        print("\(subText)")
+        cell.exhibitSubLabel.text = subText
+        
+        //전시 디테일
+        let detailText = gsno(exhibitMainData.exhibitEnterText)
+        cell.exhibitDetailLabel.text = detailText.removeNewLine(str: detailText)
+        
+        //라벨 사이즈 오토로
+        cell.exhibitMainLabel.sizeToFit()
+        cell.exhibitSubLabel.sizeToFit()
+        cell.exhibitDetailLabel.sizeToFit()
         return cell
         
     }
@@ -120,7 +124,7 @@ extension ExhibitVC {
         
         //전시 신청리스트가 0이면 신청버튼없애줌
         if(exhibitList.count == 0){
-//            applyView.isHidden = true
+            //            applyView.isHidden = true
         }
         
         exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
