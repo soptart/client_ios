@@ -792,7 +792,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-aD-v0p">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-aD-v0p">
                                 <rect key="frame" x="0.0" y="217.66666666666663" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -854,8 +854,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-Vz-Ezj">
                                                     <rect key="frame" x="16" y="474" width="205" height="18"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="페인팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aip-Ku-P6Y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="페인팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aip-Ku-P6Y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" priority="250" constant="39" id="GJZ-gr-itb"/>
                                                             </constraints>
@@ -863,8 +863,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="130x163cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-wx-bhv">
-                                                            <rect key="frame" x="73" y="0.0" width="71" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130x163cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-wx-bhv">
+                                                            <rect key="frame" x="84" y="0.0" width="63.333333333333343" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" priority="250" constant="71" id="pQy-fQ-dY0"/>
                                                             </constraints>
@@ -872,8 +872,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-Xt-mBk">
-                                                            <rect key="frame" x="175" y="0.0" width="30" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-Xt-mBk">
+                                                            <rect key="frame" x="178.33333333333334" y="0.0" width="26.666666666666657" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" priority="250" constant="30" id="aj0-ww-K8H"/>
                                                             </constraints>
@@ -953,6 +953,7 @@
                         <viewLayoutGuide key="safeArea" id="DCd-nZ-KG2"/>
                     </view>
                     <connections>
+                        <outlet property="currentIndexLabel" destination="IC0-vX-F6I" id="5aG-8Z-JyL"/>
                         <outlet property="escapeBtn" destination="tZ0-Pg-snw" id="PfB-WW-oWe"/>
                         <outlet property="exhibitCollectionView" destination="3p1-aD-v0p" id="dDw-Kb-p5f"/>
                         <outlet property="titleLabel" destination="TCX-CN-s8a" id="CJ4-TH-fH9"/>
