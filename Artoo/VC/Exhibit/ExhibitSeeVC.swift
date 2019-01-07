@@ -11,17 +11,23 @@ import UIKit
 class ExhibitSeeVC: UIViewController {
     
     
-    @IBOutlet weak var escapeBtn: UIButton!
-    
-    var displayIdx:Int?
-    var titleImg:String?
+    var visibleIndex:IndexPath!
+    var displayIdx:Int!
+    var titleText:String!
     var exhibitSeeList = [ExhibitSee]()
     
-    @IBOutlet weak var titleImageView: UIImageView!
+    //현재 무슨 아이템인지 알려줌
+    @IBOutlet weak var currentIndexLabel: UILabel!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var escapeBtn: UIButton!
+    
     
     
     //전시 관람 콜렉션 뷰
     @IBOutlet weak var exhibitCollectionView: UICollectionView!
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         setDelegate()
@@ -30,13 +36,29 @@ class ExhibitSeeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
- 
         
         //전시 퇴장 버튼
         escapeBtn.addTarget(self, action: #selector(escape), for: .touchUpInside)
         
     }
+    
+    //스크롤 포지션 잡는 함수(나중에 공부다시해야함)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = exhibitCollectionView.contentOffset
+        visibleRect.size = exhibitCollectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        guard let indexPath = exhibitCollectionView.indexPathForItem(at: visiblePoint) else { return }
+        
+        visibleIndex = indexPath
+        currentIndexLabel.text = "\(visibleIndex.row + 1)/\(exhibitSeeList.count)"
+    }
+    
+    
+    
 }
 
 
@@ -44,31 +66,16 @@ class ExhibitSeeVC: UIViewController {
 extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = view.frame.width - 36
-        let height = view.frame.height / 2
-        
-        return CGSize(width: width, height: height)
+        return CGSize(width: 236, height: 502)
         
     }
     
     
     
-    
-    
-    //하나의 행에 있는 아이템들의 가로간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 48
     }
     
-    
-    
-    //섹션 내부 여백
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 1, left: 1, bottom: 0, right: 1)
-        
-        
-    }
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -92,15 +99,16 @@ extension ExhibitSeeVC : UICollectionViewDataSource {
         
         
         let data = exhibitSeeList[indexPath.row]
-        cell.exhibitSeeImg.imageFromUrl(gsno(data.artImg), defaultImgPath: "ggobuk")
-        cell.workTitleLabel.text = gsno(data.displayTitle)
+        cell.exhibitSeeImg.imageFromUrl(gsno(data.artImg), defaultImgPath: "")
+        
+        cell.workTitleLabel.text = gsno(data.artName)
         print("\(gsno(data.displayTitle))")
         cell.authorNameLabel.text = gsno(data.userName)
         cell.themeLabel.text = gsno(data.artForm)
         cell.sizeLabel.text = "\(gino(data.artWidth))x\(gino(data.artHeight))"
         cell.yearLabel.text = gsno(data.artYear)
         
-    
+        
         return cell
         
     }
@@ -113,10 +121,14 @@ extension ExhibitSeeVC {
     }
     
     func setUI(){
-             titleImageView.imageFromUrl(gsno(titleImg), defaultImgPath: "ggobuk")
+        
         exhibitCollectionView.reloadData()
+        titleLabel.text = titleText.removeNewLine(str: titleText)
+        titleLabel.sizeToFit()
+        currentIndexLabel.text = "1/\(exhibitSeeList.count)"
         
     }
+    
     func setDelegate(){
         //전시 콜렉션뷰 하나의 셀만 보이도록
         exhibitCollectionView.isPagingEnabled = true
