@@ -23,10 +23,18 @@ class ExhibitApplyCell: UITableViewCell {
         }
     }
     
+    var isEmpty: Bool = false {
+        didSet{
+            isEmpty ? radioBtn.setImage(UIImage(named: "exhibitionRadioGray"), for: .normal) : radioBtn.setImage(UIImage(named: "exhibitionRadioNoneGray"), for: .normal)
+            radioBtn.isUserInteractionEnabled = false
+        }
+    }
+    
+    
     @IBAction func selectRadioBtn(_ sender: Any) {
         
         self.delegate.selectRadioBtn(at: indexPath)
     }
     
-
+    
 }
