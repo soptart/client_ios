@@ -52,6 +52,15 @@ class HomeThemeVC: UIViewController {
     }()
     
     
+    override func viewDidDisappear(_ animated: Bool) {
+        //선택된 셀이 있으면 디셀렉트
+        if let index = themeTV.indexPathForSelectedRow {
+            themeTV.deselectRow(at: index, animated: true)
+        }
+        // 스크롤 포지션 되돌리기
+        themeTV.contentOffset.y = 0
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

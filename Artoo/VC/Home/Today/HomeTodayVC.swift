@@ -20,6 +20,18 @@ class HomeTodayVC: UIViewController {
     let seriesList = ["today_demo1","today_demo2"]
     var authorIndex = 0
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        selectedIndex = IndexPath(row:0,section:0)
+
+        authorCollection.reloadData()
+
+        authorIndex = 0
+
+        workCollection.reloadData()
+        workCollection.contentOffset.x = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,9 +100,9 @@ extension HomeTodayVC : UICollectionViewDataSource {
             
             cell.delegate = self
             cell.indexPath = indexPath
-
             
-      
+            
+            
             if selectedIndex == indexPath {
                 cell.cellSelected = true
             }else {
