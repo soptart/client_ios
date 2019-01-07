@@ -19,7 +19,7 @@ class ExhibitApplyCell: UITableViewCell {
     var indexPath: IndexPath!
     var isRadioSelected: Bool = false {
         didSet {
-            isRadioSelected ? radioBtn.setImage(UIImage(named: "ggobuk"), for: .normal) : radioBtn.setImage(UIImage(named: "jiu"), for: .normal)
+            isRadioSelected ? radioBtn.setImage(UIImage(named: "exhibitionRadioClickColor"), for: .normal) : radioBtn.setImage(UIImage(named: "exhibitionRadioNoneColor"), for: .normal)
         }
     }
     

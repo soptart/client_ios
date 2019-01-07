@@ -10,8 +10,6 @@ class ExhibitApplyVC: UIViewController {
     var selectedIndexPath: IndexPath!
     var cvSelectedIndexPath: IndexPath!
     
-    //전시신청서 배경
-    @IBOutlet weak var mainImageView: UIImageView!
     
     @IBOutlet weak var applyBtnConstraint: NSLayoutConstraint!
     
@@ -81,15 +79,13 @@ extension ExhibitApplyVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (view.frame.width) / 3
-        let height = (view.frame.height) / 4
-        return CGSize(width: width, height: height)
+        return CGSize(width: 90, height: 135)
     }
     
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
     
     
@@ -134,6 +130,7 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
         
         if let collectionImg = exhibitApplyList?.artWorkInfo?[indexPath.row].artImg {
             cell.workImg.imageFromUrl(collectionImg, defaultImgPath: "ggobuk")
+            cell.workImg.roundImage(num: 0.08)
             if(indexPath == cvSelectedIndexPath){
                 cell.isRadioSelected = true
             }else {
@@ -244,10 +241,7 @@ extension ExhibitApplyVC {
         //첫번째로 들어오는 정보와 아래 정보들은 모두 일치하기 때문에 헤더의 정보들은 첫번째 아이템으로 함
         guard let firstExhibitInfo = exhibitApplyList?.displayInfo?.first else { return }
         
-        //메인 이미지뷰에 서버이미지 띄우기
-        if let photoUrl = firstExhibitInfo.exhibitMainImg {
-            mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
-        }
+       
         
         //전시 기간 처리
         var exhibitDateStr = ""
