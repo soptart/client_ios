@@ -78,7 +78,7 @@ extension ThemeDetailVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "ThemeDetailCell", for: indexPath) as! ThemeDetailCell
         if let photoUrl = detailList[indexPath.item].themeDetailImg {
-            cell.themeDetailImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+            cell.themeDetailImg.imageFromUrl(photoUrl, defaultImgPath: "")
             cell.themeDetailImg.roundImage(num: 0.1)
         }
         

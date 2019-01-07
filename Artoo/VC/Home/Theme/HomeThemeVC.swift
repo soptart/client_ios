@@ -216,7 +216,7 @@ extension HomeThemeVC : UICollectionViewDataSource {
             
             if let recommandData = themeList.first?.themeWork?[indexPath.row] {
                 let photoUrl = recommandData.workImg
-                cell.recommandImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+                cell.recommandImg.imageFromUrl(photoUrl, defaultImgPath: "")
                 cell.recommandImg.roundImage(num: 0.06)
                 
    

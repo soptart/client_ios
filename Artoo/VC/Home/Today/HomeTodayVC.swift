@@ -112,7 +112,7 @@ extension HomeTodayVC : UICollectionViewDataSource {
             let detailWorkInfo = workInfo.authorWork![indexPath.row]
             
             let photoUrl = detailWorkInfo.workImg!
-            cell.workImg.imageFromUrl(photoUrl, defaultImgPath: "ggobuk")
+            cell.workImg.imageFromUrl(photoUrl, defaultImgPath: "")
             
             
             

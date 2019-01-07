@@ -5,6 +5,7 @@ import UIKit
 class ExhibitVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var applyExistImg: UIImageView!
     
     
     
@@ -56,7 +57,7 @@ class ExhibitVC: UIViewController {
         super.viewDidLoad()
         setDelegate()
         setData(completion: setUI)
-
+        
     }
     
 }
@@ -92,7 +93,7 @@ extension ExhibitVC : UITableViewDataSource {
         
         //전시 이미지
         if let exhibitPhotoUrl = exhibitMainData.exhibitImg {
-            cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "ggobuk")
+            cell.exhibitImg.imageFromUrl(exhibitPhotoUrl, defaultImgPath: "")
         }
         
         //전시 이름
@@ -132,9 +133,9 @@ extension ExhibitVC {
         //데이터 가져온 후 테이블뷰 리로드
         self.tableView.reloadData()
         
-        //전시 신청리스트가 0이면 신청버튼없애줌
+        //전시 신청리스트가 0이면 신청시작 없애줌
         if(exhibitList.count == 0){
-            //            applyView.isHidden = true
+            applyExistImg.isHidden = true
         }
         
         exhibitBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)

@@ -180,6 +180,7 @@
                         <viewLayoutGuide key="safeArea" id="oQH-Dr-Sf4"/>
                     </view>
                     <connections>
+                        <outlet property="applyExistImg" destination="1lV-vZ-EY1" id="Gqd-8B-haS"/>
                         <outlet property="exhibitBtn" destination="SWQ-IL-0zw" id="Zp7-M3-Erh"/>
                         <outlet property="tableView" destination="qqQ-lb-hHi" id="Bps-dG-Xej"/>
                     </connections>
