@@ -7,11 +7,9 @@
 import UIKit
 
 class ExhibitApplyVC: UIViewController {
-    var selectedIndexPath: IndexPath!
-    var cvSelectedIndexPath: IndexPath!
+    var selectedIndexPath: IndexPath = IndexPath.init(row: 0, section: 0)
+    var cvSelectedIndexPath: IndexPath = IndexPath.init(row: 0, section: 0)
     
-    //전시신청서 배경
-    @IBOutlet weak var mainImageView: UIImageView!
     
     @IBOutlet weak var applyBtnConstraint: NSLayoutConstraint!
     
@@ -81,15 +79,13 @@ extension ExhibitApplyVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (view.frame.width) / 3
-        let height = (view.frame.height) / 4
-        return CGSize(width: width, height: height)
+        return CGSize(width: 90, height: 135)
     }
     
     
     //하나의 행에 있는 아이템들의 가로간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
     
     
@@ -134,6 +130,7 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
         
         if let collectionImg = exhibitApplyList?.artWorkInfo?[indexPath.row].artImg {
             cell.workImg.imageFromUrl(collectionImg, defaultImgPath: "ggobuk")
+            cell.workImg.roundImage(num: 0.08)
             if(indexPath == cvSelectedIndexPath){
                 cell.isRadioSelected = true
             }else {
@@ -186,11 +183,22 @@ extension ExhibitApplyVC : UITableViewDataSource {
             cell.mainLabel.text = applyStr
             
             cell.subLabel.text = data.exhibitApplyText!
-            if indexPath == selectedIndexPath {
-                cell.isRadioSelected = true
-            } else {
-                cell.isRadioSelected = false
+            
+            //작품이 없으면 버튼 클릭을 막고 empty를 true로 해서 색변경
+            if(exhibitApplyList?.artWorkInfo == nil){
+                if(cell.indexPath.row == 0){
+                    cell.isEmpty = true
+                }else {cell.isEmpty = false}
+                
+            }else {
+                if indexPath == selectedIndexPath {
+                    cell.isRadioSelected = true
+                } else {
+                    cell.isRadioSelected = false
+                }
+                
             }
+            
         }
         
         return cell
@@ -205,7 +213,9 @@ extension ExhibitApplyVC : UITableViewDataSource {
 extension ExhibitApplyVC {
     func setData(completion: @escaping() -> Void){
         //userIndex값은 로그인할 때 서버에서 줄 것 -> 변경 필요
-        ExhibitApplyService.shared.exhibitApply(user_idx: 10) {
+        let user_idx = UserDefaults.standard.integer(forKey: "userIndex")
+        
+        ExhibitApplyService.shared.exhibitApply(user_idx: user_idx ) {
             (data) in guard let status = data.status else { return }
             print("\(status)")
             switch status{
@@ -244,17 +254,14 @@ extension ExhibitApplyVC {
         //첫번째로 들어오는 정보와 아래 정보들은 모두 일치하기 때문에 헤더의 정보들은 첫번째 아이템으로 함
         guard let firstExhibitInfo = exhibitApplyList?.displayInfo?.first else { return }
         
-        //메인 이미지뷰에 서버이미지 띄우기
-        if let photoUrl = firstExhibitInfo.exhibitMainImg {
-            mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
-        }
+        
         
         //전시 기간 처리
         var exhibitDateStr = ""
         
         exhibitDateStr += gsno(firstExhibitInfo.startDate)
         exhibitDateStr += ("~" + gsno(firstExhibitInfo.endDate))
-
+        
         
         dateLabel.text = exhibitDateStr
         
@@ -264,7 +271,7 @@ extension ExhibitApplyVC {
         
         applyDateStr += gsno(firstExhibitInfo.applyStartDate)
         applyDateStr += ("~" + gsno(firstExhibitInfo.applyEndDate))
-
+        
         
         deadLineLabel.text = applyDateStr
         

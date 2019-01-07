@@ -19,14 +19,22 @@ class ExhibitApplyCell: UITableViewCell {
     var indexPath: IndexPath!
     var isRadioSelected: Bool = false {
         didSet {
-            isRadioSelected ? radioBtn.setImage(UIImage(named: "ggobuk"), for: .normal) : radioBtn.setImage(UIImage(named: "jiu"), for: .normal)
+            isRadioSelected ? radioBtn.setImage(UIImage(named: "exhibitionRadioClickColor"), for: .normal) : radioBtn.setImage(UIImage(named: "exhibitionRadioNoneColor"), for: .normal)
         }
     }
+    
+    var isEmpty: Bool = false {
+        didSet{
+            isEmpty ? radioBtn.setImage(UIImage(named: "exhibitionRadioGray"), for: .normal) : radioBtn.setImage(UIImage(named: "exhibitionRadioNoneGray"), for: .normal)
+            radioBtn.isUserInteractionEnabled = false
+        }
+    }
+    
     
     @IBAction func selectRadioBtn(_ sender: Any) {
         
         self.delegate.selectRadioBtn(at: indexPath)
     }
     
-
+    
 }
