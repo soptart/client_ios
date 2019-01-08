@@ -20,8 +20,7 @@ class SignVC3: UIViewController {
     
     //sign2에서 받는 정보
     var phone:String!
-    var location:String!
-    var school:String?     //선택 사항
+    var school:String!
     
     //sign 3에서 받는 정보
     var bank:String!
@@ -75,7 +74,7 @@ extension SignVC3 {
     }
     
     func goSign(){
-        SignService.shared.sign(email: email, password: pass, name: name, phone: phone, adress: location, bank: bank, account: account, school: school) {
+        SignService.shared.sign(email: email, password: pass, name: name, phone: phone, bank: bank, account: account, school: school) {
             //escape 클로저로 받아온 status 정보로 분기
             (status) in let status = status
             

@@ -16,7 +16,7 @@ struct SignService: APIManager, Requestable {
     
     //회원가입 api
     func sign(email: String, password: String,
-              name: String, phone: String, adress: String,
+              name: String, phone: String,
               bank: String, account: String, school: String?, completion: @escaping(Int) -> Void) {
         
         let body = [
@@ -24,7 +24,6 @@ struct SignService: APIManager, Requestable {
             "u_pw" : password,
             "u_name" : name,
             "u_phone" : phone,
-            "u_address" : adress,
             "u_bank" : bank,
             "u_account" : account,
             "u_school" : school

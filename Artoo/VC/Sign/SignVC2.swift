@@ -10,10 +10,9 @@ import UIKit
 
 class SignVC2: UIViewController {
     
- 
+    
     
     @IBOutlet weak var phoneLabel: UITextField!
-    @IBOutlet weak var locationLabel: UITextField!
     @IBOutlet weak var schoolLabel: UITextField!
     
     @IBOutlet weak var goSign3Btn: UIButton!
@@ -45,20 +44,17 @@ class SignVC2: UIViewController {
 extension SignVC2 {
     @objc func goSign3(){
         
-        if(phoneLabel.text == "" || locationLabel.text == ""){
+        if(phoneLabel.text == ""||schoolLabel.text == ""){
             print("sign2 빈칸을 채워주세요")
-            //학교는 빈칸이어도 됨
         }else{
             signVC3.name = name
             signVC3.email = email
             signVC3.pass = pass
             
             
-            signVC3.phone = locationLabel.text!
-            signVC3.location = locationLabel.text!
-            if let schoolText = schoolLabel.text {
-                signVC3.school = schoolText
-            }
+            signVC3.phone = phoneLabel.text!
+            
+            signVC3.school = schoolLabel.text!
             navigationController?.pushViewController(signVC3, animated: true)
         }
         
