@@ -10,6 +10,9 @@
 		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
 		5D03B89421E480F200D9122C /* FilterDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03B89321E480F200D9122C /* FilterDataDelegate.swift */; };
 		5D0C9FDB21E4096B009D2D68 /* filterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C9FDA21E4096B009D2D68 /* filterService.swift */; };
+		5D3C387121E4B985005CF329 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387021E4B985005CF329 /* Comments.swift */; };
+		5D3C387321E4BA06005CF329 /* AllCommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387221E4BA06005CF329 /* AllCommentsService.swift */; };
+		5D3C387521E4BCE3005CF329 /* CheckCommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */; };
 		5D3DA6AF21DDE65B005239F8 /* sellTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6AE21DDE65B005239F8 /* sellTableVC.swift */; };
 		5D3DA6B321DDE771005239F8 /* sellTableSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6B221DDE771005239F8 /* sellTableSecondCell.swift */; };
 		5D3DA6B521DDE8F6005239F8 /* buyerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */; };
@@ -153,6 +156,9 @@
 /* Begin PBXFileReference section */
 		5D03B89321E480F200D9122C /* FilterDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataDelegate.swift; sourceTree = "<group>"; };
 		5D0C9FDA21E4096B009D2D68 /* filterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterService.swift; sourceTree = "<group>"; };
+		5D3C387021E4B985005CF329 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		5D3C387221E4BA06005CF329 /* AllCommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsService.swift; sourceTree = "<group>"; };
+		5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCommentsService.swift; sourceTree = "<group>"; };
 		5D3DA6AE21DDE65B005239F8 /* sellTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellTableVC.swift; path = Artoo/VC/Mypage/sellTableVC.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6B221DDE771005239F8 /* sellTableSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellTableSecondCell.swift; path = Artoo/VC/Mypage/sellTableSecondCell.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyerInfo.swift; sourceTree = "<group>"; };
@@ -408,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				A30048E421CE54EE0042C4EF /* Storyboard.swift */,
+				5D3C387021E4B985005CF329 /* Comments.swift */,
 				A30048EB21CE63370042C4EF /* Today.swift */,
 				A30048ED21CE63400042C4EF /* TodayWork.swift */,
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
@@ -465,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				A3699B4621DB526B00EC3A8D /* APIManager.swift */,
+				5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */,
 				5D0C9FDA21E4096B009D2D68 /* filterService.swift */,
 				5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */,
 				5D5488D021E2C67D00EFDD2F /* BuyService.swift */,
@@ -483,6 +491,7 @@
 				A3BE837521DF66B400206154 /* ExhibitSeeService.swift */,
 				5DC6F0E021E09424002C8DBE /* UserModifyService.swift */,
 				5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */,
+				5D3C387221E4BA06005CF329 /* AllCommentsService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -758,6 +767,8 @@
 				A3783A3F21D66A960057884D /* ThemeCell.swift in Sources */,
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				A350ADE421D55D4B00EC199E /* ExhibitWorkCell.swift in Sources */,
+				5D3C387321E4BA06005CF329 /* AllCommentsService.swift in Sources */,
+				5D3C387121E4B985005CF329 /* Comments.swift in Sources */,
 				A3FCBAAA21D20CF200CB8E51 /* Exhibit.swift in Sources */,
 				A34B447F21D7280F00991321 /* LoginVC.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
@@ -788,6 +799,7 @@
 				A30048EE21CE63400042C4EF /* TodayWork.swift in Sources */,
 				A350ADE221D55D1C00EC199E /* ExhibitApplyCell.swift in Sources */,
 				A30048DD21CE4FDD0042C4EF /* TodayWorkCell.swift in Sources */,
+				5D3C387521E4BCE3005CF329 /* CheckCommentsService.swift in Sources */,
 				A3699B5321DB54B000EC3A8D /* Token.swift in Sources */,
 				A3699B5721DB55B400EC3A8D /* LoginService.swift in Sources */,
 				A350ADD021D501EF00EC199E /* ThemeDetail.swift in Sources */,

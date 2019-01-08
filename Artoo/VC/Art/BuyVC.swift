@@ -14,7 +14,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var desc: UITextView?
     @IBOutlet weak var slideButton: UIButton?
     @IBOutlet weak var figureLabel: UILabel?
-    @IBOutlet weak var procedureLabel: UILabel?
     @IBOutlet weak var feedBackLabel: UILabel?
     @IBOutlet weak var feedContentLabel: UILabel?
     @IBOutlet weak var feedContentTV: UITextView?
@@ -23,10 +22,12 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var authorSchoolLabel: UILabel!
     @IBOutlet weak var authorNameabel: UILabel!
     @IBOutlet weak var artYearLabel: UILabel!
-   
+    @IBOutlet weak var artFigureLabel: UILabel!
+    @IBOutlet weak var artFigureLabelText: UILabel!
+    @IBOutlet weak var artArticleLabel: UILabel!
+    @IBOutlet weak var artArticleLabelText: UILabel!
     
-    
-    
+    //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
     var images = ""
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     var artDetailInfo: ArtWork?
@@ -38,13 +39,20 @@ class BuyVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hihihhi")
-        print("\(artDetailInfo!)")
-//        moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
+        
+        feedContentTV?.delegate = self
         
         setDetail()
 
+        //처음에는 안 보이게 한다
         desc?.delegate = self
+        artFigureLabel.isHidden = true
+        artFigureLabelText.isHidden = true
+        artArticleLabel.isHidden = true
+        artArticleLabelText.isHidden = true
+//        artFigureLabelText.text = artDetailInfo?.artExpression!
+//        artArticleLabelText.text = artDetailInfo?.artMaterial!
+        figureLabel?.isHidden = false
         
         //이미지 선택 시
         let pictureTap = UITapGestureRecognizer(target: self, action: #selector(BuyVC.bigImage))
@@ -56,25 +64,39 @@ class BuyVC: UIViewController, UITextViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        //댓글 창을 처음 딱 닿으면 기존 값 없애기
+        if feedContentTV?.isFirstResponder == true {
+            feedContentTV?.text = ""
+        }
+    }
 
     //댓글 저장하기 버튼 누르면
     @IBAction func commentBtn(_ sender: Any) {
         
         comments = feedContentTV!.text!
+        feedContentTV?.text! = comments!
         sendArtIndex = artDetailInfo?.artIndex!
         userIndex = UserDefaults.standard.integer(forKey: "userIndex")
         uploadCommentService.shared.comment(comment: self.comments!, comment_Index: userIndex!, art_Index: self.sendArtIndex!){
             (status) in let status = status
 
             print(status)
-            print(self.comments)
-            print(self.sendArtIndex)
-            print(self.userIndex)
+            
             switch status {
-            case 201:
+            case 201: do {
+                //작품 표현 기법, 재료가 보인다.
+                self.artFigureLabel.isHidden = false
+                self.artFigureLabelText.isHidden = false
+                self.artArticleLabel.isHidden = false
+            self.artArticleLabelText.isHidden = false
+                self.figureLabel?.isHidden = true
+            }
             self.view.makeToast("댓글 작성 성공")
             case 400:
-            self.view.makeToast("댓글 수정 실패")
+            self.view.makeToast("댓글을 작성하고 저장버튼을 눌러주세요")
             default: print("댓글 설정 부분")
                 
             }
@@ -104,7 +126,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         slideButton!.frame.origin = CGPoint(x: 0, y: 500 + height)
         
         figureLabel!.frame.origin = CGPoint(x: 113, y:541 + height)
-        procedureLabel!.frame.origin = CGPoint(x:138, y: 563 + height)
         feedBackLabel!.frame.origin = CGPoint(x:20, y:608 + height)
         feedContentLabel!.frame.origin = CGPoint(x:20, y:632 + height)
         feedContentTV!.frame.origin = CGPoint(x:20, y:662 + height)
