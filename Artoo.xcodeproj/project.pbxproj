@@ -482,6 +482,7 @@
 				5DE48B7721E121DF00FAD631 /* ArtDescriptionService.swift */,
 				A3BE837521DF66B400206154 /* ExhibitSeeService.swift */,
 				5DC6F0E021E09424002C8DBE /* UserModifyService.swift */,
+				5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -544,7 +545,6 @@
 				A3CEF95F21CE2A0A000C7938 /* Home.storyboard */,
 				A3CEF96121CE2A5D000C7938 /* Art.storyboard */,
 				A3CEF96321CE2A6A000C7938 /* Mypage.storyboard */,
-				5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */,
 				A3CEF96521CE2A78000C7938 /* Exhibit.storyboard */,
 			);
 			path = Storyboard;
