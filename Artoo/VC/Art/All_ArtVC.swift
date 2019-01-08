@@ -13,12 +13,15 @@ class All_ArtVC: UIViewController {
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var figureLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    
+    @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
     
     var sData: String?
     var fData: String?
     var cData: String?
+    var searchBarData: String?
+    
+
     var imageList = [ArtImage]() //컬렉션 뷰를 위한 이미지 배열
     var imageIndex = 0
     
@@ -32,6 +35,7 @@ class All_ArtVC: UIViewController {
         setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
         setup()
         // Do any additional setup after loading the view.
+        search.delegate = self
         
     }
     func setup() {
@@ -82,6 +86,32 @@ extension All_ArtVC : UICollectionViewDataSource{
         cell.showImg.imageFromUrl(gsno(image.artImg), defaultImgPath: "ggobuk")
         
         return cell
+    }
+    
+}
+
+extension All_ArtVC: UISearchBarDelegate{
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.search.showsCancelButton = true
+        if search.isFirstResponder == true{
+            search.placeholder = nil
+        }
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.search.text = ""
+        self.search.showsCancelButton = false
+        self.search.endEditing(true) //키보드 내려감
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        self.search.endEditing(true)
+        self.searchBarData = search.text!
+        filterSetupData(completion: setUI)
     }
     
 }
@@ -184,6 +214,32 @@ extension All_ArtVC{
         }
     }
     
+        func filterSetupData(completion: @escaping() -> Void){
+            
+            filterService.shared.filter(artSize: sData!, artForm: fData!, artCategory: cData!, artKeyword: searchBarData!){
+                (data) in guard let
+                    status = data.status else { return }
+                
+                print (status)
+                
+                switch status {
+                case 200:
+                    if let allFilterData = data.data {
+                        self.imageList = allFilterData
+                        print("\(allFilterData)")
+                        print("뭘 고를까")
+                        completion()
+                    }
+                case 204:
+                    print("컨텐츠가 존재하지 않습니다")
+                case 500:
+                    print("서버 내부 에러")
+                default: print("필터검색")
+                }
+            }
+    }
+    
+    
     func setUI(){
         imageCollection.reloadData()
     }
@@ -219,7 +275,6 @@ extension All_ArtVC{
         }
     }
     
-    
     func setDelegate(){
         
         
@@ -231,6 +286,7 @@ extension All_ArtVC{
         
         
     }
+    
 }
 
 

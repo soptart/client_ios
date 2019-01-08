@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
+		5D0C9FDB21E4096B009D2D68 /* filterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C9FDA21E4096B009D2D68 /* filterService.swift */; };
 		5D3DA6AF21DDE65B005239F8 /* sellTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6AE21DDE65B005239F8 /* sellTableVC.swift */; };
 		5D3DA6B321DDE771005239F8 /* sellTableSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6B221DDE771005239F8 /* sellTableSecondCell.swift */; };
 		5D3DA6B521DDE8F6005239F8 /* buyerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */; };
@@ -151,6 +152,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0C9FDA21E4096B009D2D68 /* filterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterService.swift; sourceTree = "<group>"; };
 		5D3DA6AE21DDE65B005239F8 /* sellTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellTableVC.swift; path = Artoo/VC/Mypage/sellTableVC.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6B221DDE771005239F8 /* sellTableSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellTableSecondCell.swift; path = Artoo/VC/Mypage/sellTableSecondCell.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyerInfo.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				A3699B4621DB526B00EC3A8D /* APIManager.swift */,
+				5D0C9FDA21E4096B009D2D68 /* filterService.swift */,
 				5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */,
 				5D5488D021E2C67D00EFDD2F /* BuyService.swift */,
 				5D49021E21E3656100D661C4 /* uploadCommentService.swift */,
@@ -878,6 +881,7 @@
 				5DB4139221DF074400576883 /* LogoutVC.swift in Sources */,
 				5D9B7D8C21D8A9EA009C12D3 /* MyArtVC.swift in Sources */,
 				5DEC435021D9F9F7003F75B5 /* MyPageImgCell.swift in Sources */,
+				5D0C9FDB21E4096B009D2D68 /* filterService.swift in Sources */,
 				A3699B5921DB5DE500EC3A8D /* SignVC.swift in Sources */,
 				A3FE1B1421CF706C0073F40F /* Theme.swift in Sources */,
 				5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */,

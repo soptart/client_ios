@@ -31,6 +31,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     var artDetailInfo: ArtWork?
     var textHolder = ""
+    var comments: String?
+    var sendArtIndex: Int?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +59,22 @@ class BuyVC: UIViewController, UITextViewDelegate {
     //댓글 저장하기 버튼 누르면
     @IBAction func commentBtn(_ sender: Any) {
         
+        comments = feedContentTV!.text!
+        sendArtIndex = artDetailInfo?.artIndex!
+        uploadCommentService.shared.comment(comment: comments!, comment_Index:1, art_Index: sendArtIndex!){
+            (status) in let status = status
+
+            print(status)
+            
+            switch status {
+            case 201:
+            self.view.makeToast("댓글 작성 성공")
+            case 400:
+            self.view.makeToast("댓글 수정 실패")
+            default: print("댓글 설정 부분")
+                
+            }
+        }
         
     }
     //아래 버튼 누르면
