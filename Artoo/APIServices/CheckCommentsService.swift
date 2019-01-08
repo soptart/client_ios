@@ -17,6 +17,7 @@ struct CheckCommentsService: APIManager, Requestable{
     let header: HTTPHeaders = [
         "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi" ]
     
+    //댓글 조회 기능
     func comments(art_index: Int, completion: @escaping (NetworkData) -> Void){
 
         gettable(checkCommentsURL+"\(art_index)", body: nil, header: header) {

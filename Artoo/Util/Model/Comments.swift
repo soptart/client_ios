@@ -9,10 +9,10 @@
 import Foundation
 import ObjectMapper
 
-struct comments: Mappable {
+struct Comments: Mappable {
     
     var commentsText: String? //댓글내용
-    var commentsDate: String? //댓글 날짜
+    var commentsDate: Date? //댓글 날짜
     var commentsName: String? //댓글작성자
     var commentIndex: Int? //댓글 고유 인덱스
     var artIndex: Int? //작품 인덱스

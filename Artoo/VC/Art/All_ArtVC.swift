@@ -114,7 +114,6 @@ extension All_ArtVC: UISearchBarDelegate{
     {
         self.search.endEditing(true)
         self.searchBarData = search.text!
-        //   filterSetupData(completion: setUI)
     }
     
 }

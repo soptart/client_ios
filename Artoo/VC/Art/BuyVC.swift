@@ -35,7 +35,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var comments: String?
     var sendArtIndex: Int?
     var userIndex: Int?
-
+    var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
+    @IBOutlet weak var commentsTable: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,10 @@ class BuyVC: UIViewController, UITextViewDelegate {
         let pictureTap = UITapGestureRecognizer(target: self, action: #selector(BuyVC.bigImage))
         moreImg.addGestureRecognizer(pictureTap)
         moreImg.isUserInteractionEnabled = true
+        setUpData(completion: setUI)
+        commentsTable.delegate = self
+        commentsTable.dataSource = self
+        
     }
     
    
@@ -173,5 +179,62 @@ extension BuyVC {
         artYearLabel.text = artDetailInfo?.artYear!
 
     }
+    
+    func setUpData(completion: @escaping() -> Void){
+        
+        let artIndex = artDetailInfo?.artIndex!
+        CheckCommentsService.shared.comments(art_index: artIndex!){
+            (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status{
+            case 200:
+                if let allCommentsData = data.data {
+                    self.commentsList = allCommentsData
+                    print("\(allCommentsData)")
+                    completion()
+                    print("hello")
+                }
+            case 204:
+                print("유저가 쓴 댓글이 없음")
+            case 500:
+                print("서버 내부 에러")
+            default:
+                print("댓글조회")
+            }
+        }
+    }
+    
+    func setUI(){
+        self.commentsTable.reloadData()
+    }
 }
+
+extension BuyVC: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = commentsTable.dequeueReusableCell(withIdentifier: "commentsCell") as! CommentsTableCell
+        
+        let comment = commentsList[indexPath.row]
+        
+        cell.commentsContent.text = comment.commentsText!
+        //이거 어케 쓰는지 물어보기
+        
+        
+        cell.userName.text = comment.commentsName!
+
+        return cell
+    }
+
+    
+    
+}
+
+//테이블 뷰에 서버에서 전달해주는 데이터 전해주기.
 
