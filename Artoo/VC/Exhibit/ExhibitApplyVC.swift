@@ -42,8 +42,33 @@ class ExhibitApplyVC: UIViewController {
     //내 작품이 없을 때만 나타나는 뷰
     @IBOutlet weak var workEmptyView: UIView!
     
-    
+    var goApplyList:ExhibitGoApply?
     var exhibitApplyList:ExhibitApply?
+    
+    
+    //전시 신청 성공 다이얼로그
+    private lazy var applySuccessVC: ApplySuccessVC = {
+        let storyboard = Storyboard.shared().exhibitStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: ApplySuccessVC.reuseIdentifier) as! ApplySuccessVC
+        
+        
+        return viewController
+    }()
+    
+    
+    //전시 신청 실패 다이얼로그
+    private lazy var applyFailVC: ApplyFailVC = {
+        let storyboard = Storyboard.shared().exhibitStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: ApplyFailVC.reuseIdentifier) as! ApplyFailVC
+        
+        
+        return viewController
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +78,7 @@ class ExhibitApplyVC: UIViewController {
         
         //닫기 버튼 누르면 dismiss
         closeBtn.addTarget(self, action: #selector(closeApply), for: .touchUpInside)
+        applyBtn.addTarget(self, action: #selector(goApply), for: .touchUpInside)
     }
     
     
@@ -231,11 +257,66 @@ extension ExhibitApplyVC {
                 print("hi2")
             }
         }
+    }
+    
+    
+    //서버에 신청서 보내는 함수
+    func goApplyServer(completion: @escaping(Int) -> Void ){
+        let user_idx = UserDefaults.standard.integer(forKey: "userIndex")
+        
+        
+        guard let displayInfo = exhibitApplyList?.displayInfo?[selectedIndexPath.row] else { return }
+        guard let artInfo = exhibitApplyList?.artWorkInfo?[selectedIndexPath.row] else { return}
+        
+        let display_idx = displayInfo.exhibitIndex!
+        let art_idx = artInfo.artIndex!
+        
+        
+        ExhibitGoApplyService.shared.exhibitGoApply(art_idx: art_idx, display_idx: display_idx, user_idx: user_idx) {
+            (data) in guard let status = data.status else { return }
+            switch status{
+            case 201:
+                self.goApplyList = data.data
+                self.applySuccessVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                completion(status)
+            case 204:
+                self.applyFailVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+                completion(status)
+            case 500:
+                self.view.makeToast("네트워크 오류")
+            default:
+                print("hi2")
+            }
+        }
+    
+        
         
     }
     
+    
+    //전시 신청서 닫아주는 함수
     @objc func closeApply(){
         dismiss(animated: true)
+    }
+    
+    //신청 보내는 함수
+    @objc func goApply(){
+        goApplyServer(completion: showDialog)
+    }
+    
+    func showDialog(status:Int){
+        if(status == 201) {
+            applyScrollView.contentOffset.y = 0
+            let exhibit = goApplyList!
+            applySuccessVC.displayText = gsno(exhibit.displayTitle) + "-" +
+                gsno(exhibit.displaySubTitle)
+            applySuccessVC.authorText = gsno(exhibit.userName)
+            applySuccessVC.workText = gsno(exhibit.artName)
+            present(applySuccessVC, animated: true)
+        }else{
+            applyScrollView.contentOffset.y = 0
+            present(applyFailVC, animated: true)
+        }
     }
     
     
@@ -247,6 +328,7 @@ extension ExhibitApplyVC {
         exhibitTV.delegate = self
         exhibitTV.dataSource = self
     }
+    
     
     
     func setUI(){

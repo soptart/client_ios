@@ -128,6 +128,8 @@
 		A3783A4121D66CCD0057884D /* RecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A4021D66CCD0057884D /* RecommandCell.swift */; };
 		A3866D6D21E475CD00CE3C94 /* ApplySuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D6C21E475CD00CE3C94 /* ApplySuccessVC.swift */; };
 		A3866D6F21E475D700CE3C94 /* ApplyFailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D6E21E475D700CE3C94 /* ApplyFailVC.swift */; };
+		A3866D7121E4773400CE3C94 /* ExhibitGoApplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */; };
+		A3866D7321E477B000CE3C94 /* ExhibitGoApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */; };
 		A392416C21DC89F900371E77 /* HomeThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392416B21DC89F900371E77 /* HomeThemeService.swift */; };
 		A392416E21DCB40C00371E77 /* ThemeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392416D21DCB40C00371E77 /* ThemeDetailService.swift */; };
 		A399E47321D85F5000679162 /* ExhibitSeeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */; };
@@ -276,6 +278,8 @@
 		A3783A4021D66CCD0057884D /* RecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCell.swift; sourceTree = "<group>"; };
 		A3866D6C21E475CD00CE3C94 /* ApplySuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplySuccessVC.swift; sourceTree = "<group>"; };
 		A3866D6E21E475D700CE3C94 /* ApplyFailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyFailVC.swift; sourceTree = "<group>"; };
+		A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitGoApplyService.swift; sourceTree = "<group>"; };
+		A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitGoApply.swift; sourceTree = "<group>"; };
 		A392416B21DC89F900371E77 /* HomeThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeService.swift; sourceTree = "<group>"; };
 		A392416D21DCB40C00371E77 /* ThemeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailService.swift; sourceTree = "<group>"; };
 		A399E47221D85F5000679162 /* ExhibitSeeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitSeeDetail.swift; sourceTree = "<group>"; };
@@ -447,6 +451,7 @@
 				5DB4139721DF0AB600576883 /* Setting.swift */,
 				5D9E582B21DF9E88008225F6 /* StoreArtPhoto.swift */,
 				5D9E582521DF993E008225F6 /* reviewData.swift */,
+				A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				5DE48B7721E121DF00FAD631 /* ArtDescriptionService.swift */,
 				A3BE837521DF66B400206154 /* ExhibitSeeService.swift */,
 				5DC6F0E021E09424002C8DBE /* UserModifyService.swift */,
+				A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
 				5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */,
 				A350ADDA21D532BC00EC199E /* ExhibitApplyVC.swift in Sources */,
+				A3866D7121E4773400CE3C94 /* ExhibitGoApplyService.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
 				A3699B5B21DB5E5200EC3A8D /* SignVC2.swift in Sources */,
@@ -886,6 +893,7 @@
 				A3699B4D21DB53A900EC3A8D /* ResponseArray.swift in Sources */,
 				A3FCBAA621D1F1F200CB8E51 /* ExhibitVC.swift in Sources */,
 				5DB4138E21DF071900576883 /* MyInfoVC.swift in Sources */,
+				A3866D7321E477B000CE3C94 /* ExhibitGoApply.swift in Sources */,
 				5DB4139221DF074400576883 /* LogoutVC.swift in Sources */,
 				5D9B7D8C21D8A9EA009C12D3 /* MyArtVC.swift in Sources */,
 				5DEC435021D9F9F7003F75B5 /* MyPageImgCell.swift in Sources */,

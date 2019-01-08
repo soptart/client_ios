@@ -10,6 +10,26 @@ import UIKit
 
 class ApplySuccessVC: UIViewController {
 
+    //익숙함이 새로웠던 전 - 일상편
+    @IBOutlet weak var displayTitleName: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var workNameLabel: UILabel!
+   
+    var displayText:String = ""
+    var authorText:String = ""
+    var workText:String = ""
+    
+    @IBAction func dismissDialog(_ sender: Any) {
+        
+        dismiss(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        displayTitleName.text = displayText
+        authorLabel.text = authorText
+        workNameLabel.text = workText
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

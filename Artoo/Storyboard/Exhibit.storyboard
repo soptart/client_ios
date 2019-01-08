@@ -761,7 +761,7 @@
         <!--Apply SuccessVC-->
         <scene sceneID="pLO-Go-eme">
             <objects>
-                <viewController id="GA0-vC-bjX" customClass="ApplySuccessVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ApplySuccessVC" id="GA0-vC-bjX" customClass="ApplySuccessVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7KU-0e-YHU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -859,6 +859,9 @@
                                         <state key="normal" title="확인">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="dismissDialog:" destination="GA0-vC-bjX" eventType="touchUpInside" id="g0P-pz-BnH"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginRound" translatesAutoresizingMaskIntoConstraints="NO" id="eoZ-Ya-ONP">
                                         <rect key="frame" x="20" y="211" width="7" height="7"/>
@@ -908,6 +911,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a7d-f3-MzW"/>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="5PB-nb-Uie" id="XgX-VW-SCX"/>
+                        <outlet property="displayTitleName" destination="mIM-Jb-Gj5" id="l8R-dn-UUj"/>
+                        <outlet property="workNameLabel" destination="hxH-fU-ETX" id="AOU-8K-I0M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ake-R2-n3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1121,7 +1129,7 @@
         <!--Apply FailVC-->
         <scene sceneID="GtS-nq-1Ez">
             <objects>
-                <viewController id="msB-WJ-PGy" customClass="ApplyFailVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ApplyFailVC" id="msB-WJ-PGy" customClass="ApplyFailVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2p1-hz-PFa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1158,6 +1166,9 @@
                                         <state key="normal" title="확인">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="dismissDialog:" destination="msB-WJ-PGy" eventType="touchUpInside" id="sR0-qd-brx"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginRound" translatesAutoresizingMaskIntoConstraints="NO" id="fs5-ih-Dt0">
                                         <rect key="frame" x="20.000000000000007" y="136" width="7" height="7"/>

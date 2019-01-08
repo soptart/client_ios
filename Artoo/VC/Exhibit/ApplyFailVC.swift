@@ -10,6 +10,10 @@ import UIKit
 
 class ApplyFailVC: UIViewController {
 
+    @IBAction func dismissDialog(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
