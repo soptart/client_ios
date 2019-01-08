@@ -16,9 +16,7 @@ class All_ArtVC: UIViewController {
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
     
-    var sData: String?
-    var fData: String?
-    var cData: String?
+    var filterData: Filter?
     var searchBarData: String?
     
     var imageList = [ArtImage]() //컬렉션 뷰를 위한 이미지 배열
@@ -30,23 +28,28 @@ class All_ArtVC: UIViewController {
         setDelegate()
         setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
         
-        setup()
         // Do any additional setup after loading the view.
         search.delegate = self
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setup()
+        filterSetupData()
+    }
+    
     func setup() {
         //전달받은 data에 값이 있다면 label의 text를 설정해 줍니다.
-        if let sTransData = sData {
+        if let sTransData = filterData?.size {
             sizeLabel.text = sTransData
         }
         
-        if let fTransData = fData{
+        if let fTransData = filterData?.figure {
             figureLabel.text = fTransData
         }
         
-        if let cTransData = cData{
+        if let cTransData = filterData?.category {
             categoryLabel.text = cTransData
         }
     }
@@ -56,6 +59,7 @@ class All_ArtVC: UIViewController {
         
         guard let fVC =
             storyboard?.instantiateViewController(withIdentifier: "filter") as? FilterViewController else{ return }
+        fVC.delegate = self
         navigationController?.pushViewController(fVC, animated: true)
         
     }
@@ -82,7 +86,7 @@ extension All_ArtVC : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
         let image = imageList[indexPath.row]
         cell.showImg.imageFromUrl(gsno(image.artImg), defaultImgPath: "ggobuk")
-
+        
         
         return cell
     }
@@ -110,7 +114,7 @@ extension All_ArtVC: UISearchBarDelegate{
     {
         self.search.endEditing(true)
         self.searchBarData = search.text!
-        filterSetupData(completion: setUI)
+        //   filterSetupData(completion: setUI)
     }
     
 }
@@ -142,7 +146,7 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         print(imageHeight)
         moveBuyVC(selectedImg: img)
         
-    
+        
         
         //        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
@@ -191,7 +195,8 @@ extension All_ArtVC{
     
     // 데이터를 불러올 때는 completion을 해야하는데, escaping()이거는 들어오는 인자를 말하는 거고 void는 반환할 형태가 null임을 말하는 것이다. 우리는 completion(setUI)이것을 사용하는데, 이것은 받는 인자는 없고 반환형태는 void라는 것을 알 수 있다.
     func setUpData(completion: @escaping() -> Void){
-        CheckartWorksService.shared.check { (data) in guard let status = data.status else { return }
+        CheckartWorksService.shared.check { (data) in
+            guard let status = data.status else { return }
             
             print(status)
             
@@ -213,29 +218,29 @@ extension All_ArtVC{
         }
     }
     
-        func filterSetupData(completion: @escaping() -> Void){
+    func filterSetupData() {
+        guard filterData != nil else { return }
+        filterService.shared.filter(artSize: filterData?.size ?? "", artForm: filterData?.figure ?? "", artCategory: filterData?.category ?? "", artKeyword: searchBarData ?? nil) {
+            [weak self] data in
+            guard let `self` = self else { return }
+            guard let status = data.status else { return }
+            print(status)
             
-            filterService.shared.filter(artSize: sData!, artForm: fData!, artCategory: cData!, artKeyword: searchBarData!){
-                (data) in guard let
-                    status = data.status else { return }
-                
-                print (status)
-                
-                switch status {
-                case 200:
-                    if let allFilterData = data.data {
-                        self.imageList = allFilterData
-                        print("\(allFilterData)")
-                        print("뭘 고를까")
-                        completion()
-                    }
-                case 204:
-                    print("컨텐츠가 존재하지 않습니다")
-                case 500:
-                    print("서버 내부 에러")
-                default: print("필터검색")
+            switch status {
+            case 200:
+                if let allFilterData = data.data {
+                    self.imageList = allFilterData
+                    print("\(allFilterData)")
+                    print("뭘 고를까")
+                    self.imageCollection.reloadData()
                 }
+            case 204:
+                print("컨텐츠가 존재하지 않습니다")
+            case 500:
+                print("서버 내부 에러")
+            default: print("필터검색")
             }
+        }
     }
     
     
@@ -262,7 +267,7 @@ extension All_ArtVC{
                     bVC.artDetailInfo = allArtData
                     //데이터이동
                     self.navigationController?.pushViewController(bVC, animated: true)
-              
+                    
                 }
             case 400:
                 print("나는 400이다")
@@ -286,6 +291,12 @@ extension All_ArtVC{
         
     }
     
+}
+
+extension All_ArtVC: FilterDataDelegate {
+    func sendFilterData(data: Filter) {
+        filterData = data
+    }
 }
 
 

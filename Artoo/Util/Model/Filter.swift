@@ -9,7 +9,7 @@
 import Foundation
 
 struct Filter{
-    let size: String?
-    let figure: String?
-    let category: String?
+    var size: String?
+    var figure: String?
+    var category: String?
 }

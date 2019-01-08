@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
+		5D03B89421E480F200D9122C /* FilterDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03B89321E480F200D9122C /* FilterDataDelegate.swift */; };
 		5D0C9FDB21E4096B009D2D68 /* filterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C9FDA21E4096B009D2D68 /* filterService.swift */; };
 		5D3DA6AF21DDE65B005239F8 /* sellTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6AE21DDE65B005239F8 /* sellTableVC.swift */; };
 		5D3DA6B321DDE771005239F8 /* sellTableSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6B221DDE771005239F8 /* sellTableSecondCell.swift */; };
@@ -150,6 +151,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D03B89321E480F200D9122C /* FilterDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataDelegate.swift; sourceTree = "<group>"; };
 		5D0C9FDA21E4096B009D2D68 /* filterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterService.swift; sourceTree = "<group>"; };
 		5D3DA6AE21DDE65B005239F8 /* sellTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellTableVC.swift; path = Artoo/VC/Mypage/sellTableVC.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6B221DDE771005239F8 /* sellTableSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sellTableSecondCell.swift; path = Artoo/VC/Mypage/sellTableSecondCell.swift; sourceTree = SOURCE_ROOT; };
@@ -597,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D8BBF321D8EE0800EF249C /* RadioBtnDelegate.swift */,
+				5D03B89321E480F200D9122C /* FilterDataDelegate.swift */,
 			);
 			name = Protocol;
 			path = "New Group";
@@ -846,6 +849,7 @@
 				5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */,
 				A350ADDA21D532BC00EC199E /* ExhibitApplyVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
+				5D03B89421E480F200D9122C /* FilterDataDelegate.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
 				A3699B5B21DB5E5200EC3A8D /* SignVC2.swift in Sources */,
 				A3699B5521DB55AB00EC3A8D /* SignService.swift in Sources */,
