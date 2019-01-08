@@ -201,9 +201,6 @@ extension ExhibitApplyVC : UITableViewDataSource {
             if let mainStr = data.exhibitTitle {
                 applyStr += mainStr
             }
-            if let subStr = data.exhibitEnterText {
-                applyStr += ("-" + subStr)
-            }
             
             
             cell.mainLabel.text = applyStr
