@@ -33,6 +33,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var textHolder = ""
     var comments: String?
     var sendArtIndex: Int?
+    var commentIdx: Int?
 
     
     override func viewDidLoad() {
@@ -61,11 +62,14 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         comments = feedContentTV!.text!
         sendArtIndex = artDetailInfo?.artIndex!
-        uploadCommentService.shared.comment(comment: comments!, comment_Index:1, art_Index: sendArtIndex!){
+        commentIdx = 2
+        uploadCommentService.shared.comment(comment: self.comments!, comment_Index: self.commentIdx!, art_Index: self.sendArtIndex!){
             (status) in let status = status
 
             print(status)
-            
+            print(self.comments)
+            print(self.sendArtIndex)
+            print(self.commentIdx)
             switch status {
             case 201:
             self.view.makeToast("댓글 작성 성공")
