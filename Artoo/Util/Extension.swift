@@ -129,5 +129,8 @@ extension UIViewController {
     
 }
 
-
-
+extension UIImage {
+    var cropRatio: CGFloat {
+        return self.size.width / self.size.height
+    }
+}

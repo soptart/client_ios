@@ -37,7 +37,7 @@ class HomeThemeVC: UIViewController {
     var mainImg:String = ""
     
     //태그 이미지 배열
-    var tagList:[String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
+    var tagList: [String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
                             "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
     
     
@@ -134,7 +134,9 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case tagCV:
-            return CGSize(width: 68, height: 42)
+            let currentImage = UIImage(named: tagList[indexPath.item]) ?? UIImage()
+            let cropRatio = currentImage.cropRatio
+            return CGSize(width: 32 * cropRatio, height: 32)
         case recommandCV:
             return CGSize(width: 150, height: 202)
         default:

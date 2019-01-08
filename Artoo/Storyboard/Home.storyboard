@@ -244,20 +244,20 @@
                                 </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0xK-XR-iGu">
-                                <rect key="frame" x="15" y="45" width="360" height="32"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ag5-ds-1Ea"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="UxY-dY-A9Z">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="13" sectionInsetReference="safeArea" id="UxY-dY-A9Z">
                                     <size key="itemSize" width="95" height="32"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="TagCell" id="dEx-rQ-45I" customClass="TagCell" customModule="Artoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="32"/>
+                                        <rect key="frame" x="15" y="0.0" width="68" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="68" height="32"/>
@@ -286,7 +286,7 @@
                         <constraints>
                             <constraint firstItem="0xK-XR-iGu" firstAttribute="top" secondItem="ZTb-KZ-KUo" secondAttribute="top" constant="25" id="HSA-Zb-PUE"/>
                             <constraint firstItem="ETb-RC-Z9S" firstAttribute="top" secondItem="0xK-XR-iGu" secondAttribute="bottom" constant="16" id="UGE-kL-HS6"/>
-                            <constraint firstItem="0xK-XR-iGu" firstAttribute="leading" secondItem="ZTb-KZ-KUo" secondAttribute="leading" constant="15" id="nhn-fN-bNH"/>
+                            <constraint firstItem="0xK-XR-iGu" firstAttribute="leading" secondItem="ZTb-KZ-KUo" secondAttribute="leading" id="nhn-fN-bNH"/>
                             <constraint firstItem="ETb-RC-Z9S" firstAttribute="bottom" secondItem="ZTb-KZ-KUo" secondAttribute="bottom" id="oXz-Rb-VeH"/>
                             <constraint firstItem="0xK-XR-iGu" firstAttribute="trailing" secondItem="ZTb-KZ-KUo" secondAttribute="trailing" id="qUh-9n-cQt"/>
                             <constraint firstItem="ETb-RC-Z9S" firstAttribute="trailing" secondItem="ZTb-KZ-KUo" secondAttribute="trailing" id="yIt-Q6-8Uu"/>
