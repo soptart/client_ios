@@ -203,7 +203,7 @@ extension BuyVC {
         artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
         lilcense = artDetailInfo?.artLicense!
         
-        if lilcense == "저작자표시" {
+        if lilcense ==  "저작자표시" {
             licenseImage.image = UIImage(named: "ccBy")
         } else if lilcense == "저작자표시-동일조건변경표시"{
             licenseImage.image = UIImage(named: "ccBySaCopy")
@@ -216,6 +216,7 @@ extension BuyVC {
         } else if lilcense == "저작자표시-비영리-변경금지"{
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
+        
     }
     
     func setUpData(completion: @escaping() -> Void){
@@ -291,10 +292,16 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
         
         let comment = commentsList[indexPath.row]
         
-        cell.commentsContentTF.text = comment.commentsText!
-        //이거 어케 쓰는지 물어보기-> date
-        cell.userName.text = comment.commentsName!
-        
+        cell.commentsContentTF.text = gsno(comment.commentsText)
+        //cell.commen
+        cell.userName.text = gsno(comment.commentsName)
+        if (artDetailInfo?.auth! == true){
+            cell.saveBtn.isHidden = true
+            cell.updateBtn.isHidden = false
+        } else {
+            cell.saveBtn.isHidden = false
+            cell.updateBtn.isHidden = false
+        }
         return cell
     }
     
