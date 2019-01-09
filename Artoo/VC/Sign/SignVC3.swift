@@ -56,18 +56,59 @@ class SignVC3: UIViewController {
         })
     }
     
-//    @IBAction func selectBank(_ sender: UIButton) {
-//        switch sender.tag {
-//        case 0:
-//            
-//            
-//            
-//        case 14:
-//            
-//        default:
-//            
-//        }
-//    }
+    @IBAction func selectBank(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 1:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 2:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 3:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 4:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 5:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 6:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 7:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 8:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 9:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 10:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 11:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 12:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 13:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        case 14:
+            cancelSelectBank()
+            bankLabel.text = sender.currentTitle
+        default:
+            print("hihi")
+        }
+    }
+    
+    
     
     @objc func cancelSelectBank() {
         self.view.layoutIfNeeded()

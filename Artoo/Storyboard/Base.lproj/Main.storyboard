@@ -306,9 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Igy-gc-nwg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Igy-gc-nwg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginRound" translatesAutoresizingMaskIntoConstraints="NO" id="iVG-wc-eaW">
                                 <rect key="frame" x="39" y="393.66666666666669" width="5" height="5"/>
@@ -487,6 +486,7 @@
                             <constraint firstItem="zfL-OC-fW9" firstAttribute="centerY" secondItem="b9E-sG-AN0" secondAttribute="centerY" id="ARX-K5-3wF"/>
                             <constraint firstItem="hF2-LD-si4" firstAttribute="leading" secondItem="DJe-8N-fne" secondAttribute="leading" constant="47" id="Aor-7Z-r6a"/>
                             <constraint firstItem="pgv-cp-W9a" firstAttribute="top" secondItem="DKR-rZ-hmo" secondAttribute="bottom" id="EBC-ys-Mg3"/>
+                            <constraint firstItem="Igy-gc-nwg" firstAttribute="leading" secondItem="DJe-8N-fne" secondAttribute="leading" id="EXq-i4-dho"/>
                             <constraint firstItem="3yv-vW-n19" firstAttribute="trailing" secondItem="DKR-rZ-hmo" secondAttribute="trailing" id="EoP-NV-PA2"/>
                             <constraint firstItem="pgv-cp-W9a" firstAttribute="leading" secondItem="DKR-rZ-hmo" secondAttribute="leading" id="FIL-Qy-CbD"/>
                             <constraint firstItem="zfL-OC-fW9" firstAttribute="centerX" secondItem="DJe-8N-fne" secondAttribute="centerX" id="HJF-cN-pCw"/>
@@ -496,14 +496,17 @@
                             <constraint firstItem="DKR-rZ-hmo" firstAttribute="top" secondItem="Ei7-gF-2Y8" secondAttribute="bottom" id="Jq5-sj-B79"/>
                             <constraint firstItem="Fbc-Wh-zjZ" firstAttribute="trailing" secondItem="d03-Zn-9Zv" secondAttribute="trailing" id="KAI-gV-Xeo"/>
                             <constraint firstItem="DJe-8N-fne" firstAttribute="trailing" secondItem="Y57-9l-oHA" secondAttribute="trailing" constant="15" id="MtT-sM-rFQ"/>
+                            <constraint firstItem="Igy-gc-nwg" firstAttribute="top" secondItem="XrY-Za-qhC" secondAttribute="top" id="NYQ-Z1-2lL"/>
                             <constraint firstItem="oZ5-4A-8SU" firstAttribute="top" secondItem="3hV-MY-Mi3" secondAttribute="top" constant="3" id="Tvb-Na-iJf"/>
                             <constraint firstItem="qv9-zW-0zQ" firstAttribute="top" secondItem="Ei7-gF-2Y8" secondAttribute="top" constant="3" id="UXo-hM-v8h"/>
                             <constraint firstItem="t0I-ch-6a0" firstAttribute="centerY" secondItem="3hV-MY-Mi3" secondAttribute="centerY" id="Vtk-qj-ufD"/>
                             <constraint firstItem="zHa-g3-73b" firstAttribute="top" secondItem="hF2-LD-si4" secondAttribute="top" constant="3" id="WCg-L4-Xky"/>
                             <constraint firstItem="b9E-sG-AN0" firstAttribute="top" secondItem="XrY-Za-qhC" secondAttribute="top" constant="43" id="WOx-8B-dCl"/>
+                            <constraint firstItem="Igy-gc-nwg" firstAttribute="bottom" secondItem="XrY-Za-qhC" secondAttribute="bottom" id="XeK-Yh-mjm"/>
                             <constraint firstItem="b01-S8-AOA" firstAttribute="top" secondItem="pgv-cp-W9a" secondAttribute="bottom" constant="15" id="Y2t-uP-xOJ"/>
                             <constraint firstItem="3yv-vW-n19" firstAttribute="top" secondItem="DKR-rZ-hmo" secondAttribute="bottom" constant="124" id="Y5Y-IU-fKh"/>
                             <constraint firstItem="QXo-no-gbq" firstAttribute="leading" secondItem="3hV-MY-Mi3" secondAttribute="leading" id="ecl-05-bkv"/>
+                            <constraint firstItem="Igy-gc-nwg" firstAttribute="trailing" secondItem="DJe-8N-fne" secondAttribute="trailing" id="fFD-Yo-KGU"/>
                             <constraint firstItem="pgv-cp-W9a" firstAttribute="trailing" secondItem="DKR-rZ-hmo" secondAttribute="trailing" id="hFM-9S-l0H"/>
                             <constraint firstItem="QXo-no-gbq" firstAttribute="top" secondItem="hF2-LD-si4" secondAttribute="bottom" id="lxW-ae-DWx"/>
                             <constraint firstItem="Ei7-gF-2Y8" firstAttribute="leading" secondItem="d03-Zn-9Zv" secondAttribute="leading" id="n7X-ff-SIT"/>
@@ -557,9 +560,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vcj-vr-E3z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vcj-vr-E3z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이화여자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VV-F8-g3P">
                                 <rect key="frame" x="236.66666666666663" y="244" width="59" height="24"/>
@@ -724,14 +726,17 @@
                             <constraint firstItem="hIF-R9-PG8" firstAttribute="centerY" secondItem="Jim-Pn-ZMA" secondAttribute="centerY" id="Du9-dN-A1h"/>
                             <constraint firstItem="qcw-Mz-Qki" firstAttribute="trailing" secondItem="sj4-4P-Eox" secondAttribute="trailing" constant="15" id="EUj-S0-IsF"/>
                             <constraint firstItem="51n-Ui-e3D" firstAttribute="trailing" secondItem="8br-AV-Vh1" secondAttribute="leading" constant="-3" id="Fnj-bV-7Oq"/>
+                            <constraint firstItem="vcj-vr-E3z" firstAttribute="bottom" secondItem="NXA-7q-cDR" secondAttribute="bottom" id="GYS-cK-c0B"/>
                             <constraint firstItem="mLf-zD-Bvt" firstAttribute="top" secondItem="Jim-Pn-ZMA" secondAttribute="top" constant="3" id="H6y-KU-6cY"/>
                             <constraint firstItem="hIF-R9-PG8" firstAttribute="trailing" secondItem="mQB-qS-epS" secondAttribute="trailing" id="JMw-ze-D6o"/>
                             <constraint firstItem="gE9-93-Ih4" firstAttribute="trailing" secondItem="rJL-Z5-8I9" secondAttribute="trailing" id="JTD-vT-Ky1"/>
                             <constraint firstItem="Dxv-gt-PaP" firstAttribute="leading" secondItem="mQB-qS-epS" secondAttribute="leading" id="JtO-N3-ZWe"/>
+                            <constraint firstItem="vcj-vr-E3z" firstAttribute="trailing" secondItem="qcw-Mz-Qki" secondAttribute="trailing" id="KWO-1r-QUL"/>
                             <constraint firstItem="jkd-we-o4u" firstAttribute="centerY" secondItem="7VV-F8-g3P" secondAttribute="centerY" id="Kya-Um-mXH"/>
                             <constraint firstItem="s2e-my-ft4" firstAttribute="trailing" secondItem="rJL-Z5-8I9" secondAttribute="trailing" id="Ofq-ZX-XSc"/>
                             <constraint firstItem="rJL-Z5-8I9" firstAttribute="top" secondItem="8br-AV-Vh1" secondAttribute="bottom" id="S7n-cM-gYV"/>
                             <constraint firstItem="T9c-qZ-jfA" firstAttribute="centerX" secondItem="qcw-Mz-Qki" secondAttribute="centerX" id="Slf-UU-MOM"/>
+                            <constraint firstItem="vcj-vr-E3z" firstAttribute="top" secondItem="NXA-7q-cDR" secondAttribute="top" id="VgC-OT-fxj"/>
                             <constraint firstItem="rJL-Z5-8I9" firstAttribute="leading" secondItem="AVU-ZU-zkh" secondAttribute="leading" id="Wd9-Xk-wz0"/>
                             <constraint firstItem="sj4-4P-Eox" firstAttribute="centerY" secondItem="T9c-qZ-jfA" secondAttribute="centerY" id="XMC-ix-pEa"/>
                             <constraint firstItem="Dxv-gt-PaP" firstAttribute="top" secondItem="mQB-qS-epS" secondAttribute="bottom" id="cIw-He-nfD"/>
@@ -745,6 +750,7 @@
                             <constraint firstItem="gE9-93-Ih4" firstAttribute="top" secondItem="rJL-Z5-8I9" secondAttribute="bottom" constant="203.99999999999994" id="pel-4Q-YTO"/>
                             <constraint firstItem="Jim-Pn-ZMA" firstAttribute="leading" secondItem="qcw-Mz-Qki" secondAttribute="leading" constant="47" id="uvE-np-dvh"/>
                             <constraint firstItem="8br-AV-Vh1" firstAttribute="top" secondItem="Dxv-gt-PaP" secondAttribute="bottom" constant="27" id="yL3-6B-L6V"/>
+                            <constraint firstItem="vcj-vr-E3z" firstAttribute="leading" secondItem="qcw-Mz-Qki" secondAttribute="leading" id="yeF-aa-cyH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qcw-Mz-Qki"/>
                     </view>
@@ -956,103 +962,163 @@
                                                             <constraint firstAttribute="width" constant="100" id="Fnt-p5-boJ"/>
                                                             <constraint firstAttribute="height" constant="45" id="OQF-Qj-blG"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="NH농협">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="6hx-Qe-b2p"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s2-uC-mcJ">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s2-uC-mcJ">
                                                         <rect key="frame" x="0.0" y="70.000000000000028" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="신한">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="05Z-jb-bFm"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79C-Ej-LNz">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79C-Ej-LNz">
                                                         <rect key="frame" x="0.0" y="140.00000000000003" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="BNK 부산">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="s9F-eG-Eof"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-kt-JLr">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-kt-JLr">
                                                         <rect key="frame" x="0.0" y="210.00000000000003" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="KDB 산업">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="wJ1-DJ-zIk"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-Sy-JBy">
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-Sy-JBy">
                                                         <rect key="frame" x="0.0" y="280" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="Sh 수협">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="VHU-uj-X27"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-Cx-SDn">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="325"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O9-B4-fp3">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O9-B4-fp3">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="KB국민">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="OJO-2q-R4C"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-no-Avr">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-no-Avr">
                                                         <rect key="frame" x="0.0" y="70.000000000000028" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="우리">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="bsx-W1-MMb"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsZ-75-nuI">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsZ-75-nuI">
                                                         <rect key="frame" x="0.0" y="140.00000000000003" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="한국씨티">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="ZON-dt-RKb"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vef-na-Ty1">
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vef-na-Ty1">
                                                         <rect key="frame" x="0.0" y="210.00000000000003" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="DCB 대구">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="RM9-fw-fch"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEK-CR-LJX">
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEK-CR-LJX">
                                                         <rect key="frame" x="0.0" y="280" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="광주">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="ZiS-GG-0mJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="i8U-dR-E4R">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="325"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-5f-JWb">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-5f-JWb">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="KEB 하나">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="puv-9q-mk2"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8L-lr-Jo5">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8L-lr-Jo5">
                                                         <rect key="frame" x="0.0" y="70.000000000000028" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="IBK 기업">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="gSs-q3-7zV"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-sV-8DH">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-sV-8DH">
                                                         <rect key="frame" x="0.0" y="140.00000000000003" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="SC 제일">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="eOC-Pr-fsK"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-t4-6KU">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-t4-6KU">
                                                         <rect key="frame" x="0.0" y="210.00000000000003" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="BNK 경남">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="Y1x-7j-FgK"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7m-Aj-ezV">
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7m-Aj-ezV">
                                                         <rect key="frame" x="0.0" y="280" width="100" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                         <state key="normal" title="전북">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="selectBank:" destination="gmq-c1-9mZ" eventType="touchUpInside" id="c0r-7b-OMO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
