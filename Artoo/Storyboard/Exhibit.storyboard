@@ -230,7 +230,7 @@
                                     <constraint firstAttribute="height" constant="30" id="S2K-rb-YMi"/>
                                     <constraint firstAttribute="width" constant="30" id="qGB-5P-inM"/>
                                 </constraints>
-                                <state key="normal" image="closeBlack">
+                                <state key="normal" image="closeWhite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -666,7 +666,7 @@
                                             <constraint firstAttribute="width" constant="30" id="Dqi-bT-7Yi"/>
                                             <constraint firstAttribute="width" secondItem="pmy-9z-LRM" secondAttribute="height" multiplier="1:1" id="Mh3-8b-wOr"/>
                                         </constraints>
-                                        <state key="normal" image="closeBlack">
+                                        <state key="normal" image="closeWhite">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -1222,7 +1222,7 @@
     </scenes>
     <resources>
         <image name="art" width="684" height="652"/>
-        <image name="closeBlack" width="19" height="19"/>
+        <image name="closeWhite" width="19" height="19"/>
         <image name="exhibitionAdmit" width="196" height="41"/>
         <image name="exhibitionApplication" width="15" height="31"/>
         <image name="exhibitionApplystartCopy" width="82" height="27"/>

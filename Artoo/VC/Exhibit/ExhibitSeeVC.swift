@@ -28,6 +28,16 @@ class ExhibitSeeVC: UIViewController {
     @IBOutlet weak var exhibitCollectionView: UICollectionView!
     
     
+    //작품 상세 정보창으로 이동하는 컨트롤러
+    private lazy var artBuyVC: BuyVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "choiceArt") as! BuyVC
+        
+        return viewController
+    }()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         setDelegate()
@@ -79,6 +89,10 @@ extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = exhibitSeeList[indexPath.row]
+        artBuyVC.sendArtIndex = data.artIndex!
+        navigationController?.pushViewController(artBuyVC, animated: true)
+        print("hihi")
     }
     
 }
