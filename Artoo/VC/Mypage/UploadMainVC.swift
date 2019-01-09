@@ -19,8 +19,9 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var yOffTF: UITextField!
     @IBOutlet weak var heightTF: UITextField!
     
+
+    @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var popUpViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var popUpView: UIView!
     
     @IBOutlet weak var artNameUploadTF: UITextField!
@@ -64,6 +65,7 @@ class UploadMainVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        popUpConstraint.constant = 0
          let pictureTap = UITapGestureRecognizer(target: self, action: #selector(choiceImage))
         
         choiceImg.addGestureRecognizer(pictureTap)
@@ -82,7 +84,6 @@ class UploadMainVC: UIViewController{
         
         picker.delegate = self
         
-        popUpViewBottomConstraint.constant = -375
         
         
     }
@@ -92,12 +93,11 @@ class UploadMainVC: UIViewController{
     //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
     @IBAction func addTagBtn(_ sender: Any) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.popUpViewBottomConstraint.constant = 0
+            self.popUpConstraint.constant = 370
             self.popUpView.layer.shadowColor = UIColor.init(red: 146/255, green: 146/255, blue: 146/255, alpha: 1).cgColor
             self.popUpView.layer.shadowOpacity = 0.5
             self.popUpView.layer.shadowRadius = 7
             self.popUpView.layer.shadowOffset = CGSize(width: 0, height: -2)
-            self.view.layoutIfNeeded()
         })
     }
     
@@ -114,7 +114,7 @@ class UploadMainVC: UIViewController{
     // 완료 버튼 누르면 뷰가 사라지기
     @IBAction func finishBtn(_ sender: Any) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.popUpViewBottomConstraint.constant = -378
+            self.popUpConstraint.constant = 0
             self.popUpView.layer.shadowOpacity = 0
             self.view.layoutIfNeeded()
         })
