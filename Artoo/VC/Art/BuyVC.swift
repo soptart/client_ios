@@ -26,7 +26,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var artFigureLabelText: UILabel!
     @IBOutlet weak var artArticleLabel: UILabel!
     @IBOutlet weak var artArticleLabelText: UILabel!
-
+    @IBOutlet weak var artPriceLabel: UILabel!
+    @IBOutlet weak var licenseImage: UIImageView!
+    
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
     var images = ""
@@ -37,6 +39,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var sendArtIndex: Int?
     var userIndex: Int?
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
+    var lilcense: String?
     
     @IBOutlet weak var commentsTable: UITableView!
     
@@ -46,8 +49,11 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         feedContentTV?.delegate = self
         
-        setDetail()
-
+        moveBuyVC(completion: setDetail)
+        print("아트 이름만 먼저")
+        print(artNameLabel.text = artDetailInfo?.artName!)
+        
+        
         //처음에는 안 보이게 한다
         desc?.delegate = self
         artFigureLabel.isHidden = true
@@ -188,19 +194,34 @@ extension BuyVC {
     
     func setDetail(){
         moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
-        
         artNameLabel.text = artDetailInfo?.artName!
         authorSchoolLabel.text = artDetailInfo?.userSchool!
         authorNameabel.text = artDetailInfo?.userName!
         artLikeCountLabel.text = String(describing: gino(artDetailInfo?.likeCount!))
         desc?.text = artDetailInfo?.workDetail!
         artYearLabel.text = artDetailInfo?.artYear!
-
+        artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
+        lilcense = artDetailInfo?.artLicense!
+        
+        if lilcense == "저작자표시" {
+            licenseImage.image = UIImage(named: "ccBy")
+        } else if lilcense == "저작자표시-동일조건변경표시"{
+            licenseImage.image = UIImage(named: "ccBySaCopy")
+        } else if lilcense == "저작자표시-비영리"{
+            licenseImage.image = UIImage(named: "ccByNc")
+        } else if lilcense == "저작자표시-비영리-동일조건변경허락"{
+            licenseImage.image = UIImage(named: "ccByNcSa")
+        } else if lilcense == "저작자표시-변경금지"{
+            licenseImage.image = UIImage(named: "ccByNd")
+        } else if lilcense == "저작자표시-비영리-변경금지"{
+            licenseImage.image = UIImage(named: "ccByNcNd")
+        }
     }
     
     func setUpData(completion: @escaping() -> Void){
         
-        let artIndex = artDetailInfo?.artIndex!
+       // let artIndex = artDetailInfo?.artIndex!
+        let artIndex = sendArtIndex
         CheckCommentsService.shared.comments(art_index: artIndex!){
             (data) in guard let status = data.status else { return }
             
@@ -226,6 +247,32 @@ extension BuyVC {
     
     func setUI(){
         self.commentsTable.reloadData()
+    }
+    
+    func moveBuyVC(completion: @escaping() -> Void)
+    {
+        
+        ArtDescriptionService.shared.artDescription(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
+                    self.artDetailInfo = allArtData
+                    //데이터이동
+                    completion()
+                }
+            case 400:
+                print("나는 400이다")
+            case 500:
+                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
+            default:
+                print("hi")
+            }
+        }
     }
 }
 
