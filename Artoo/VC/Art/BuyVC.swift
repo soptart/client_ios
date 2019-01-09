@@ -28,6 +28,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var artArticleLabelText: UILabel!
     @IBOutlet weak var artPriceLabel: UILabel!
     @IBOutlet weak var licenseImage: UIImageView!
+    @IBOutlet weak var buyBtn: UIButton!
+    @IBOutlet weak var priceImage: UIImageView!
+    @IBOutlet weak var heartImg: UIImageView!
     
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
@@ -96,6 +99,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         comments = feedContentTV!.text!
         feedContentTV?.text! = comments!
+        //sendArtIndex = artDetailInfo?.artIndex!
         sendArtIndex = artDetailInfo?.artIndex!
         userIndex = UserDefaults.standard.integer(forKey: "userIndex")
         uploadCommentService.shared.comment(comment: self.comments!, comment_Index: userIndex!, art_Index: self.sendArtIndex!){
@@ -113,6 +117,8 @@ class BuyVC: UIViewController, UITextViewDelegate {
                 self.figureLabel?.isHidden = true
                 self.feedContentTV?.text = ""
                 //테이블 뷰에 바로 로드되게 list에 넣어줘야 함.
+                self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
+                self.priceImage.image = UIImage(named:"artworkPriceColor")
             }
             self.view.makeToast("댓글 작성 성공")
             case 400:
@@ -179,15 +185,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
     }
     
-    //삭제하기 버튼 눌렀을 때 -> 지우기
-    @IBAction func deleteBtn(_ sender: Any) {
-        
-    }
-    
-    //수정하기 버튼 눌렀을 때
-    
-    
-    
 }
 
 extension BuyVC {
@@ -203,7 +200,7 @@ extension BuyVC {
         artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
         lilcense = artDetailInfo?.artLicense!
         
-        if lilcense == "저작자표시" {
+        if lilcense ==  "저작자표시" {
             licenseImage.image = UIImage(named: "ccBy")
         } else if lilcense == "저작자표시-동일조건변경표시"{
             licenseImage.image = UIImage(named: "ccBySaCopy")
@@ -216,7 +213,15 @@ extension BuyVC {
         } else if lilcense == "저작자표시-비영리-변경금지"{
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
-    }
+        
+        //좋아요가 표시된 거라면 색깔있는 것
+        artDetailInfo?.artIsLike == true; do {
+            self.heartImg.image = UIImage(named: "heartColor")
+        }
+
+        }
+        
+    
     
     func setUpData(completion: @escaping() -> Void){
         
@@ -291,10 +296,16 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
         
         let comment = commentsList[indexPath.row]
         
-        cell.commentsContentTF.text = comment.commentsText!
-        //이거 어케 쓰는지 물어보기-> date
-        cell.userName.text = comment.commentsName!
-        
+        cell.commentsContentTF.text = gsno(comment.commentsText)
+        //cell.commen
+        cell.userName.text = gsno(comment.commentsName)
+        if (artDetailInfo?.auth! == true){
+            cell.saveBtn.isHidden = true
+            cell.updateBtn.isHidden = false
+        } else {
+            cell.saveBtn.isHidden = false
+            cell.updateBtn.isHidden = false
+        }
         return cell
     }
     
@@ -340,6 +351,7 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
     
     
 }
+
 
 //테이블 뷰에 서버에서 전달해주는 데이터 전해주기.
 
