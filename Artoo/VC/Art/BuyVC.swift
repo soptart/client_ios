@@ -26,7 +26,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var artFigureLabelText: UILabel!
     @IBOutlet weak var artArticleLabel: UILabel!
     @IBOutlet weak var artArticleLabelText: UILabel!
-
+    @IBOutlet weak var artPriceLabel: UILabel!
+    @IBOutlet weak var licenseImage: UIImageView!
+    
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
     var images = ""
@@ -37,6 +39,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var sendArtIndex: Int?
     var userIndex: Int?
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
+    var lilcense: String?
     
     @IBOutlet weak var commentsTable: UITableView!
     
@@ -197,7 +200,22 @@ extension BuyVC {
         artLikeCountLabel.text = String(describing: gino(artDetailInfo?.likeCount!))
         desc?.text = artDetailInfo?.workDetail!
         artYearLabel.text = artDetailInfo?.artYear!
-
+        artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
+        lilcense = artDetailInfo?.artLicense!
+        
+        if lilcense == "저작자표시" {
+            licenseImage.image = UIImage(named: "ccBy")
+        } else if lilcense == "저작자표시-동일조건변경표시"{
+            licenseImage.image = UIImage(named: "ccBySaCopy")
+        } else if lilcense == "저작자표시-비영리"{
+            licenseImage.image = UIImage(named: "ccByNc")
+        } else if lilcense == "저작자표시-비영리-동일조건변경허락"{
+            licenseImage.image = UIImage(named: "ccByNcSa")
+        } else if lilcense == "저작자표시-변경금지"{
+            licenseImage.image = UIImage(named: "ccByNd")
+        } else if lilcense == "저작자표시-비영리-변경금지"{
+            licenseImage.image = UIImage(named: "ccByNcNd")
+        }
     }
     
     func setUpData(completion: @escaping() -> Void){

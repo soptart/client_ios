@@ -211,10 +211,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H83-hf-whh">
-                                                <rect key="frame" x="100" y="248" width="97" height="19"/>
+                                                <rect key="frame" x="100" y="359" width="97" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-1u-62Q">
@@ -243,7 +243,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100*90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ta-Me-2Iz">
-                                                <rect key="frame" x="87" y="359" width="47" height="19"/>
+                                                <rect key="frame" x="87" y="411" width="47" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
@@ -518,6 +518,7 @@
                         <outlet property="artFigureLabelText" destination="Ib7-nX-CZp" id="Vdv-6e-1bL"/>
                         <outlet property="artLikeCountLabel" destination="i5Q-1u-62Q" id="ch7-SB-Oea"/>
                         <outlet property="artNameLabel" destination="jSe-Be-IfH" id="Byi-Fr-9CB"/>
+                        <outlet property="artPriceLabel" destination="iVl-RF-P7I" id="kmC-mb-VZV"/>
                         <outlet property="artYearLabel" destination="2MP-pF-6H5" id="1tB-3l-HY6"/>
                         <outlet property="authorNameabel" destination="H83-hf-whh" id="XUZ-iL-dpP"/>
                         <outlet property="authorSchoolLabel" destination="icm-ED-IpE" id="lAd-Eo-Dg7"/>
@@ -527,6 +528,7 @@
                         <outlet property="feedContentLabel" destination="emD-Wz-aiX" id="bdp-Yx-MOo"/>
                         <outlet property="feedContentTV" destination="J33-Il-jjf" id="lWI-7p-YA1"/>
                         <outlet property="figureLabel" destination="Czy-Kl-ID3" id="kyy-KG-3Fn"/>
+                        <outlet property="licenseImage" destination="lDQ-Is-iQy" id="nIv-yF-nQU"/>
                         <outlet property="moreImg" destination="mJc-gv-WfU" id="vCO-aj-Jcs"/>
                         <outlet property="slideButton" destination="t0H-50-J8p" id="6Mp-0n-KfN"/>
                     </connections>
