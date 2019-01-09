@@ -40,6 +40,15 @@ class HomeThemeVC: UIViewController {
     var tagList: [String] = ["themeHappy","themeUnfathomable","themeFancy","themeSimple","themeSesitive",
                             "themeCute","themeSpring","themeSummer","themeFall","themeWinter"]
     
+    //작품 상세 정보창으로 이동하는 컨트롤러
+    private lazy var artBuyVC: BuyVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "choiceArt") as! BuyVC
+        
+        return viewController
+    }()
     
     
     //테마 자세히 보는 화면 VC
@@ -182,6 +191,9 @@ extension HomeThemeVC : UICollectionViewDelegateFlowLayout {
             goDetail()
             
         case recommandCV:
+            guard let recommandData = themeList.first?.themeWork else { return }
+            artBuyVC.sendArtIndex = recommandData[indexPath.row].workIndex!
+            navigationController?.pushViewController(artBuyVC, animated: true)
             print("작품창으로 이동")
         default:
             print("hi")
@@ -295,7 +307,9 @@ extension HomeThemeVC {
         themeDetailVC.mainTag = mainTag.removeNewLine(str: mainTag)
         themeDetailVC.subTag = subTag
         themeDetailVC.mainImg = mainImg
-        present(themeDetailVC, animated: true, completion: nil)
+        guard let themeDetailVC = storyboard?.instantiateViewController(withIdentifier: "DetailRootNavi") else { return }
+        present(themeDetailVC, animated: true)
+        
     }
     
     @objc func goDetail2(){

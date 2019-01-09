@@ -20,6 +20,18 @@ class HomeTodayVC: UIViewController {
     var authorIndex = 0
     var artooList = ["homeContents1Content","homeContents2Content"]
     
+    //작품 상세 정보창으로 이동하는 컨트롤러
+    private lazy var artBuyVC: BuyVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "choiceArt") as! BuyVC
+        
+        return viewController
+    }()
+    
+    
+    
     //오늘의 아투 컨텐츠 보는 컨트롤러
     private lazy var artooDetailVC: TodayArtooDetailVC = {
         let storyboard = Storyboard.shared().homeStoryboard
@@ -224,6 +236,9 @@ extension HomeTodayVC : UICollectionViewDelegateFlowLayout {
             workCollection.contentOffset.x = 0
         case workCollection:
             //작품창으로 이동
+            let workInfo = todayList[authorIndex] //작가에 대한 대략적 정보
+            artBuyVC.sendArtIndex = workInfo.authorWork![indexPath.row].workIndex
+            navigationController?.pushViewController(artBuyVC, animated: true)
             print("hihi")
         default:
             return

@@ -294,6 +294,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZTb-KZ-KUo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oP1-V3-46t"/>
                     <connections>
                         <outlet property="allBtn" destination="4F0-ab-cd8" id="w6P-5f-nk7"/>
                         <outlet property="mainImageView" destination="qtf-8n-E8v" id="Pmw-pk-hhb"/>
@@ -306,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hh-hk-0ZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="130"/>
+            <point key="canvasLocation" x="3682.4000000000001" y="129.98500749625188"/>
         </scene>
         <!--Theme DetailVC-->
         <scene sceneID="v8c-xM-LkU">
@@ -419,6 +420,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JBR-Rf-Fuj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jJI-1U-jGd"/>
                     <connections>
                         <outlet property="closeBtn" destination="izP-Oz-ETY" id="ylH-Yb-0K2"/>
                         <outlet property="detailCollectionView" destination="ysw-Zx-k6L" id="RDV-0G-gh1"/>
@@ -429,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXK-hQ-Pyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="647.22638680659679"/>
+            <point key="canvasLocation" x="2082.4000000000001" y="647.22638680659679"/>
         </scene>
         <!--Home TodayVC-->
         <scene sceneID="KfT-rh-8jS">
@@ -893,7 +895,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwy-UT-5mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629.5999999999999" y="-853.22338830584715"/>
+            <point key="canvasLocation" x="4447.1999999999998" y="-853.22338830584715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cei-4D-2jp">
+            <objects>
+                <navigationController storyboardIdentifier="DetailRootNavi" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dIl-fn-Gp0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QQW-an-rNc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="87u-5B-zdS" kind="relationship" relationship="rootViewController" id="qQx-tv-lWz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4D-PO-UCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143.2" y="647.22638680659679"/>
         </scene>
     </scenes>
     <resources>
