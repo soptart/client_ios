@@ -27,11 +27,14 @@ class CommentsTableCell: UITableViewCell {
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var commentsContentTF: UITextField!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        saveBtn.isHidden = true
     }
 
+    
     @IBAction func deleteBtn(_ sender: UIButton) {
         
         delegate?.deleteTapped(self)
