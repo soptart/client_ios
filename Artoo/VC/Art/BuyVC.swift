@@ -26,6 +26,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var artFigureLabelText: UILabel!
     @IBOutlet weak var artArticleLabel: UILabel!
     @IBOutlet weak var artArticleLabelText: UILabel!
+
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
     var images = ""
@@ -36,6 +37,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var sendArtIndex: Int?
     var userIndex: Int?
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
+    
     @IBOutlet weak var commentsTable: UITableView!
     
     
@@ -77,6 +79,10 @@ class BuyVC: UIViewController, UITextViewDelegate {
         if feedContentTV?.isFirstResponder == true {
             feedContentTV?.text = ""
         }
+        
+        if feedContentTV?.isEditable == true{
+            feedContentTV?.textColor = UIColor(displayP3Red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        }
     }
 
     //댓글 저장하기 버튼 누르면
@@ -99,6 +105,8 @@ class BuyVC: UIViewController, UITextViewDelegate {
                 self.artArticleLabel.isHidden = false
             self.artArticleLabelText.isHidden = false
                 self.figureLabel?.isHidden = true
+                self.feedContentTV?.text = ""
+                //테이블 뷰에 바로 로드되게 list에 넣어줘야 함.
             }
             self.view.makeToast("댓글 작성 성공")
             case 400:
@@ -164,6 +172,16 @@ class BuyVC: UIViewController, UITextViewDelegate {
         BigVC.imageUrl = artDetailInfo?.artImg!
         
     }
+    
+    //삭제하기 버튼 눌렀을 때 -> 지우기
+    @IBAction func deleteBtn(_ sender: Any) {
+        
+    }
+    
+    //수정하기 버튼 눌렀을 때
+    
+    
+    
 }
 
 extension BuyVC {
@@ -194,7 +212,7 @@ extension BuyVC {
                     self.commentsList = allCommentsData
                     print("\(allCommentsData)")
                     completion()
-                    print("hello")
+                    
                 }
             case 204:
                 print("유저가 쓴 댓글이 없음")
@@ -211,7 +229,8 @@ extension BuyVC {
     }
 }
 
-extension BuyVC: UITableViewDelegate, UITableViewDataSource{
+extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDelegate {
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentsList.count
@@ -221,20 +240,60 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource{
         
         let cell = commentsTable.dequeueReusableCell(withIdentifier: "commentsCell") as! CommentsTableCell
         
+        cell.delegate = self
+        
         let comment = commentsList[indexPath.row]
         
-        cell.commentsContent.text = comment.commentsText!
-        //이거 어케 쓰는지 물어보기
-        
-        
+        cell.commentsContentTF.text = comment.commentsText!
+        //이거 어케 쓰는지 물어보기-> date
         cell.userName.text = comment.commentsName!
-
+        
         return cell
     }
+    
+    //삭제버튼 눌렀을 때
+    func deleteTapped(_ sender: CommentsTableCell){
+        guard let indexPath = commentsTable.indexPath(for: sender) else { return }
+        
+        var commentsUser: Int?
+        commentsUser = commentsList[indexPath.row].commentIndex!
+        print(commentsUser)
+        DeleteCommentService.shared.delete(comment_index: commentsUser!){
+            (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status{
+            case 200:
+                self.commentsList.remove(at: indexPath.row)
+                self.commentsTable.reloadData()
+            case 401:
+                print("인증 실패")
+            case 404:
+                print("댓글이 존재하지 않습니다")
+            default: print("댓글 삭제 기능")
+            }
+            
+        }
+    }
 
+    //수정버튼 눌렀을 때
+    
+    func editTapped(_ sender: CommentsTableCell) {
+        guard let indexPath = commentsTable.indexPath(for: sender) else { return }
+        
+
+    }
+    
+    //저장버튼 눌렀을 때
+    func saveTapped(_ sender: CommentsTableCell) {
+        //서버연동
+        
+    }
     
     
 }
 
 //테이블 뷰에 서버에서 전달해주는 데이터 전해주기.
+
 
