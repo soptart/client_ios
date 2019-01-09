@@ -338,7 +338,7 @@
                                     <constraint firstAttribute="width" constant="30" id="HvY-qt-N6P"/>
                                     <constraint firstAttribute="width" secondItem="izP-Oz-ETY" secondAttribute="height" multiplier="1:1" id="s3c-h7-Ki9"/>
                                 </constraints>
-                                <state key="normal" image="closeBlack">
+                                <state key="normal" image="closeWhite">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXK-hQ-Pyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="648"/>
+            <point key="canvasLocation" x="204" y="647.22638680659679"/>
         </scene>
         <!--Home TodayVC-->
         <scene sceneID="KfT-rh-8jS">
@@ -544,7 +544,7 @@
                                                     <constraint firstAttribute="height" constant="658" id="bTj-ru-lsC"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeSeriesCell" rowHeight="329" id="qqe-gy-AYF" customClass="HomeSeriesCell" customModule="Artoo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeSeriesCell" rowHeight="329" id="qqe-gy-AYF" customClass="HomeSeriesCell" customModule="Artoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="329"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qqe-gy-AYF" id="vPO-zb-TRN">
@@ -641,7 +641,7 @@
                                                             <constraint firstItem="F1J-W3-s15" firstAttribute="width" secondItem="qqe-gy-AYF" secondAttribute="width" id="fyG-gx-JZu"/>
                                                         </constraints>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HomeSeriesCell2" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeSeriesCell2" rowHeight="329" id="Xdo-2A-wVp" customClass="HomeSeriesCell2" customModule="Artoo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HomeSeriesCell2" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeSeriesCell2" rowHeight="329" id="Xdo-2A-wVp" customClass="HomeSeriesCell2" customModule="Artoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="357" width="375" height="329"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xdo-2A-wVp" id="fIT-wI-JtW">
@@ -664,7 +664,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다양한 미술표현 알아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-Z4-spd">
                                                                     <rect key="frame" x="102" y="291.5" width="160.5" height="22.5"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeContentsTag1" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-I0-6hd">
@@ -825,29 +825,42 @@
             <objects>
                 <viewController storyboardIdentifier="TodayArtooDetailVC" id="BFq-1y-TZj" customClass="TodayArtooDetailVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uFY-UP-aT2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2853"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2873"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-Wx-7fJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="2853"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="2853" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-Wx-7fJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="2853"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wow-rN-YjJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2853"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2873"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeContents1Content" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-LS-S9M">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeContents1Content" translatesAutoresizingMaskIntoConstraints="NO" id="Mir-LS-S9M">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="2853"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Mir-LS-S9M" secondAttribute="height" multiplier="125:951" id="QgO-rr-bFq"/>
+                                                    <constraint firstAttribute="width" secondItem="Mir-LS-S9M" secondAttribute="height" multiplier="125:951" id="Bck-Sk-0yd"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgM-P4-Xbb">
+                                                <rect key="frame" x="330" y="15" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="V2p-BV-WnA"/>
+                                                    <constraint firstAttribute="width" secondItem="BgM-P4-Xbb" secondAttribute="height" multiplier="1:1" id="bjO-Ye-Y6H"/>
+                                                </constraints>
+                                                <state key="normal" image="closeBlack"/>
+                                                <connections>
+                                                    <action selector="dismissDetail:" destination="BFq-1y-TZj" eventType="touchUpInside" id="0eJ-G8-V4c"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Mir-LS-S9M" firstAttribute="top" secondItem="wow-rN-YjJ" secondAttribute="top" id="7W0-ka-4WC"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mir-LS-S9M" secondAttribute="trailing" id="CGH-dd-XYd"/>
-                                            <constraint firstItem="Mir-LS-S9M" firstAttribute="leading" secondItem="wow-rN-YjJ" secondAttribute="leading" id="FEQ-fb-cAp"/>
-                                            <constraint firstAttribute="height" constant="2853" id="MJI-w3-eIH"/>
-                                            <constraint firstAttribute="bottom" secondItem="Mir-LS-S9M" secondAttribute="bottom" id="gDp-OH-3rc"/>
+                                            <constraint firstItem="BgM-P4-Xbb" firstAttribute="top" secondItem="wow-rN-YjJ" secondAttribute="top" constant="15" id="6Qb-PO-JqT"/>
+                                            <constraint firstItem="Mir-LS-S9M" firstAttribute="leading" secondItem="wow-rN-YjJ" secondAttribute="leading" id="Lp8-rw-196"/>
+                                            <constraint firstAttribute="height" constant="2873" id="MJI-w3-eIH"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mir-LS-S9M" secondAttribute="trailing" id="PpQ-fI-6lM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mir-LS-S9M" secondAttribute="bottom" constant="20" id="Yqc-6S-UF2"/>
+                                            <constraint firstAttribute="trailing" secondItem="BgM-P4-Xbb" secondAttribute="trailing" constant="15" id="czl-PR-vcB"/>
+                                            <constraint firstItem="Mir-LS-S9M" firstAttribute="top" secondItem="wow-rN-YjJ" secondAttribute="top" id="v2N-qP-by2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -855,23 +868,26 @@
                                     <constraint firstItem="wow-rN-YjJ" firstAttribute="top" secondItem="D8I-Wx-7fJ" secondAttribute="top" id="4aH-Rt-FMa"/>
                                     <constraint firstAttribute="trailing" secondItem="wow-rN-YjJ" secondAttribute="trailing" id="ESO-Yu-ape"/>
                                     <constraint firstAttribute="bottom" secondItem="wow-rN-YjJ" secondAttribute="bottom" id="K1d-hS-LoD"/>
+                                    <constraint firstAttribute="trailing" secondItem="wow-rN-YjJ" secondAttribute="trailing" id="N4N-9l-hvE"/>
+                                    <constraint firstItem="wow-rN-YjJ" firstAttribute="leading" secondItem="D8I-Wx-7fJ" secondAttribute="leading" id="Z7s-0i-hpp"/>
+                                    <constraint firstItem="wow-rN-YjJ" firstAttribute="top" secondItem="D8I-Wx-7fJ" secondAttribute="top" id="n3J-YW-RJW"/>
                                     <constraint firstItem="wow-rN-YjJ" firstAttribute="leading" secondItem="D8I-Wx-7fJ" secondAttribute="leading" id="oSl-Ds-zdb"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="leading" secondItem="K2Q-1K-YZg" secondAttribute="leading" id="HJS-U8-9z5"/>
+                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="trailing" secondItem="K2Q-1K-YZg" secondAttribute="trailing" id="Qp1-Wd-1UQ"/>
+                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="bottom" secondItem="K2Q-1K-YZg" secondAttribute="bottom" id="RXR-1q-gJ9"/>
                             <constraint firstItem="wow-rN-YjJ" firstAttribute="width" secondItem="uFY-UP-aT2" secondAttribute="width" id="Use-00-X0j"/>
-                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="trailing" secondItem="K2Q-1K-YZg" secondAttribute="trailing" id="Vfo-Gc-FVj"/>
-                            <constraint firstItem="K2Q-1K-YZg" firstAttribute="top" secondItem="D8I-Wx-7fJ" secondAttribute="top" constant="20" id="WxK-Wc-pIl"/>
-                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="bottom" secondItem="K2Q-1K-YZg" secondAttribute="bottom" id="aUW-c6-Bss"/>
-                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="top" secondItem="uFY-UP-aT2" secondAttribute="top" id="gSD-BY-9sn"/>
+                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="top" secondItem="K2Q-1K-YZg" secondAttribute="top" id="bNd-YA-zAb"/>
+                            <constraint firstItem="D8I-Wx-7fJ" firstAttribute="leading" secondItem="K2Q-1K-YZg" secondAttribute="leading" id="klX-9Q-sha"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K2Q-1K-YZg"/>
                     </view>
-                    <size key="freeformSize" width="375" height="2853"/>
+                    <size key="freeformSize" width="375" height="2873"/>
                     <connections>
+                        <outlet property="contentHeightConst" destination="MJI-w3-eIH" id="Byp-gQ-j5x"/>
                         <outlet property="detailImageView" destination="Mir-LS-S9M" id="e66-fk-mKG"/>
                     </connections>
                 </viewController>
@@ -883,6 +899,7 @@
     <resources>
         <image name="arrowRightBlackCopy2" width="10" height="17"/>
         <image name="closeBlack" width="19" height="19"/>
+        <image name="closeWhite" width="19" height="19"/>
         <image name="fire" width="498" height="381"/>
         <image name="homeContents1" width="375" height="277"/>
         <image name="homeContents1Content" width="375" height="2853"/>

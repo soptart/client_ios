@@ -11,11 +11,29 @@ import UIKit
 class TodayArtooDetailVC: UIViewController {
     var img:String?
     
+    @IBAction func dismissDetail(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    @IBOutlet weak var contentHeightConst: NSLayoutConstraint!
+    
     @IBOutlet weak var detailImageView: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if(img == "homeContents2Content"){
+            contentHeightConst.constant = 4000
+        }else{
+            contentHeightConst.constant = 2853
+        }
+
+     
+            detailImageView.image = UIImage(named: img!)
+       
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailImageView.image = UIImage(named: img!)
-      
+        
     }
     
 

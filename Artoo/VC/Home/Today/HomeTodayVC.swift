@@ -62,7 +62,8 @@ extension HomeTodayVC : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         artooDetailVC.img = artooList[indexPath.row]
-        navigationController?.pushViewController(artooDetailVC, animated: true)
+        present(artooDetailVC,animated: true)
+
     }
 }
 
