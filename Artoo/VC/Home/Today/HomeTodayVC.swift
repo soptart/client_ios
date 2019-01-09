@@ -17,7 +17,6 @@ class HomeTodayVC: UIViewController {
     var selectedIndex:IndexPath = IndexPath.init(row: 0, section: 0)
     
     var todayList = [Today]()
-    let seriesList = ["today_demo1","today_demo2"]
     var authorIndex = 0
     
     
@@ -53,16 +52,19 @@ extension HomeTodayVC : UITableViewDelegate {
 
 extension HomeTodayVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return seriesList.count
+        return 2
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell") as! HomeSeriesCell
-        cell.homeSeriesImg.image = UIImage(named: seriesList[indexPath.row])
-        return cell
+        if(indexPath.row == 0){
+             let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell") as! HomeSeriesCell
+                return cell} else {
+                     let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell2") as! HomeSeriesCell2
+                    return cell
+            }
     }
     
     
