@@ -389,13 +389,6 @@
                                                                     <color key="textColor" red="0.20784313725490194" green="0.23921568627450979" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXX-5q-XMS">
-                                                                    <rect key="frame" x="15" y="40" width="320" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE7-NL-DTX">
                                                                     <rect key="frame" x="288" y="7" width="49" height="29"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -403,6 +396,21 @@
                                                                     <state key="normal" title="삭제하기">
                                                                         <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="deleteBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="Ahq-bm-pl6"/>
+                                                                        <action selector="deleteBtn:" destination="IHH-tT-GwJ" eventType="touchUpInside" id="mDn-3v-ECr"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM1-gT-xhf">
+                                                                    <rect key="frame" x="288" y="36" width="49" height="29"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <state key="normal" title="수정하기">
+                                                                        <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="editBtn:" destination="IHH-tT-GwJ" eventType="touchUpInside" id="1f3-ir-cpW"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOR-Av-Siq">
                                                                     <rect key="frame" x="92" y="10" width="188" height="21"/>
@@ -411,12 +419,32 @@
                                                                     <color key="textColor" red="0.7803921568627451" green="0.792156862745098" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uqm-vi-gOb">
+                                                                    <rect key="frame" x="15" y="39" width="265" height="40"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <nil key="textColor"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-N5-9DO">
+                                                                    <rect key="frame" x="298" y="36" width="30" height="29"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <state key="normal" title="저장">
+                                                                        <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="saveBtn:" destination="IHH-tT-GwJ" eventType="touchUpInside" id="fLM-8F-h8D"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="commentsContent" destination="yXX-5q-XMS" id="ioH-LX-JtH"/>
+                                                            <outlet property="commentsContentTF" destination="uqm-vi-gOb" id="0hV-pU-DHi"/>
                                                             <outlet property="commentsDate" destination="cOR-Av-Siq" id="Ral-jI-nVB"/>
                                                             <outlet property="deleteBtn" destination="HE7-NL-DTX" id="83O-ur-gAk"/>
+                                                            <outlet property="saveBtn" destination="0CQ-N5-9DO" id="NDb-8l-AmO"/>
+                                                            <outlet property="updateBtn" destination="rM1-gT-xhf" id="asX-BH-0nn"/>
                                                             <outlet property="userName" destination="1E8-UW-QNV" id="yGf-hH-oew"/>
                                                         </connections>
                                                     </tableViewCell>
