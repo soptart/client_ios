@@ -11,6 +11,26 @@ import Toast_Swift
 
 class SignVC3: UIViewController {
     
+    @IBOutlet weak var bankBtn1: UIButton!
+    @IBOutlet weak var bankBtn2: UIButton!
+    @IBOutlet weak var bankBtn3: UIButton!
+    @IBOutlet weak var bankBtn4: UIButton!
+    @IBOutlet weak var bankBtn5: UIButton!
+    @IBOutlet weak var bankBtn6: UIButton!
+    @IBOutlet weak var bankBtn7: UIButton!
+    @IBOutlet weak var bankBtn8: UIButton!
+    @IBOutlet weak var bankBtn9: UIButton!
+    @IBOutlet weak var bankBtn10: UIButton!
+    @IBOutlet weak var bankBtn11: UIButton!
+    @IBOutlet weak var bankBtn12: UIButton!
+    @IBOutlet weak var bankBtn13: UIButton!
+    @IBOutlet weak var bankBtn14: UIButton!
+    @IBOutlet weak var bankBtn15: UIButton!
+    
+    
+    
+    
+    
     @IBOutlet weak var finishSignBtn: UIButton!
     @IBOutlet weak var bankView: UIView!
     @IBOutlet weak var bankViewBlur: UIVisualEffectView!
@@ -52,9 +72,11 @@ class SignVC3: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
             self.bankView.isHidden = false
             self.bankView.alpha = 1
+            self.setButtonBound()
             self.bankViewBlur.isHidden = false
         })
     }
+    
     
     @IBAction func selectBank(_ sender: UIButton) {
         switch sender.tag {
@@ -117,6 +139,63 @@ class SignVC3: UIViewController {
             self.bankView.alpha = 0
             self.bankViewBlur.isHidden = true
         })
+    }
+    
+    func setButtonBound(){
+        bankBtn1.layer.borderWidth = 1
+        bankBtn1.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        bankBtn2.layer.borderWidth = 1
+        bankBtn2.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        bankBtn3.layer.borderWidth = 1
+        bankBtn3.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        bankBtn4.layer.borderWidth = 1
+        bankBtn4.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        bankBtn5.layer.borderWidth = 1
+        bankBtn5.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn6.layer.borderWidth = 1
+        bankBtn6.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn7.layer.borderWidth = 1
+        bankBtn7.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn8.layer.borderWidth = 1
+        bankBtn8.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn9.layer.borderWidth = 1
+        bankBtn9.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn10.layer.borderWidth = 1
+        bankBtn10.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn11.layer.borderWidth = 1
+        bankBtn11.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn12.layer.borderWidth = 1
+        bankBtn12.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn13.layer.borderWidth = 1
+        bankBtn13.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn14.layer.borderWidth = 1
+        bankBtn14.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
+        
+        
+        bankBtn15.layer.borderWidth = 1
+        bankBtn15.layer.borderColor = UIColor(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0).cgColor
     }
 
     

@@ -963,7 +963,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="OQF-Qj-blG"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                                        <state key="normal" title="NH농협">
+                                                        <state key="normal" title="NH 농협">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -1188,6 +1188,21 @@
                     <navigationItem key="navigationItem" id="Gw4-bd-R0c"/>
                     <connections>
                         <outlet property="accountLabel" destination="cuJ-aA-s2Y" id="TCR-VG-Z9L"/>
+                        <outlet property="bankBtn1" destination="BET-Jl-NUL" id="F4a-ot-Qgj"/>
+                        <outlet property="bankBtn10" destination="FRD-kt-JLr" id="IYn-La-5Nh"/>
+                        <outlet property="bankBtn11" destination="vef-na-Ty1" id="hFp-LB-imn"/>
+                        <outlet property="bankBtn12" destination="ImU-t4-6KU" id="KIW-h0-OVE"/>
+                        <outlet property="bankBtn13" destination="vMR-Sy-JBy" id="FmP-Au-l6z"/>
+                        <outlet property="bankBtn14" destination="nEK-CR-LJX" id="lMI-z9-iab"/>
+                        <outlet property="bankBtn15" destination="V7m-Aj-ezV" id="c3Z-4S-Hjr"/>
+                        <outlet property="bankBtn2" destination="9O9-B4-fp3" id="vOy-Of-6nq"/>
+                        <outlet property="bankBtn3" destination="rbT-5f-JWb" id="DvS-Ib-uC8"/>
+                        <outlet property="bankBtn4" destination="5s2-uC-mcJ" id="SSU-fH-5PE"/>
+                        <outlet property="bankBtn5" destination="h9X-no-Avr" id="THM-dk-H3d"/>
+                        <outlet property="bankBtn6" destination="I8L-lr-Jo5" id="JV9-cq-S04"/>
+                        <outlet property="bankBtn7" destination="79C-Ej-LNz" id="Vqe-V7-pQu"/>
+                        <outlet property="bankBtn8" destination="jsZ-75-nuI" id="11D-zD-Geg"/>
+                        <outlet property="bankBtn9" destination="ThP-sV-8DH" id="Kp6-U2-yrF"/>
                         <outlet property="bankLabel" destination="N0p-dw-wgg" id="HS2-gh-MVo"/>
                         <outlet property="bankView" destination="in4-6T-roI" id="i9V-aa-IAg"/>
                         <outlet property="bankViewBlur" destination="Zo4-Jc-ZjH" id="wuf-Jt-fKG"/>
