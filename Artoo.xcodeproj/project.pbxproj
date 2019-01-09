@@ -74,6 +74,7 @@
 		5DB606D221D4FF3600C216FD /* ArtImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D121D4FF3600C216FD /* ArtImg.swift */; };
 		5DB606D421D5286900C216FD /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D321D5286900C216FD /* BuyVC.swift */; };
 		5DB606D621D55CB400C216FD /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB606D521D55CB400C216FD /* Filter.swift */; };
+		5DC570FC21E5524A00229F2F /* DeleteCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC570FB21E5524A00229F2F /* DeleteCommentService.swift */; };
 		5DC6F0DF21DFDB34002C8DBE /* UserDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */; };
 		5DC6F0E121E09424002C8DBE /* UserModifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0E021E09424002C8DBE /* UserModifyService.swift */; };
 		5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */; };
@@ -230,6 +231,7 @@
 		5DB606D121D4FF3600C216FD /* ArtImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtImg.swift; path = Artoo/Util/Model/ArtImg.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D321D5286900C216FD /* BuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Artoo/VC/Art/BuyVC.swift; sourceTree = SOURCE_ROOT; };
 		5DB606D521D55CB400C216FD /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Artoo/Util/Model/Filter.swift; sourceTree = SOURCE_ROOT; };
+		5DC570FB21E5524A00229F2F /* DeleteCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCommentService.swift; sourceTree = "<group>"; };
 		5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDescriptionService.swift; path = Artoo/APIServices/UserDescriptionService.swift; sourceTree = SOURCE_ROOT; };
 		5DC6F0E021E09424002C8DBE /* UserModifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifyService.swift; sourceTree = "<group>"; };
 		5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckartWorksService.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				A392416B21DC89F900371E77 /* HomeThemeService.swift */,
 				A392416D21DCB40C00371E77 /* ThemeDetailService.swift */,
 				A34DFD0621DDAFD100CEDA74 /* ExhibitMainService.swift */,
+				5DC570FB21E5524A00229F2F /* DeleteCommentService.swift */,
 				A34DFD0821DDDCEA00CEDA74 /* ExhibitApplyService.swift */,
 				5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */,
 				5DE48B7721E121DF00FAD631 /* ArtDescriptionService.swift */,
@@ -881,6 +884,7 @@
 				5D4607D821D3976600C787AC /* FilterViewController.swift in Sources */,
 				A350ADDE21D55A6700EC199E /* ExhibitApplyDetail.swift in Sources */,
 				5D5488D121E2C67D00EFDD2F /* BuyService.swift in Sources */,
+				5DC570FC21E5524A00229F2F /* DeleteCommentService.swift in Sources */,
 				A30048E521CE54EE0042C4EF /* Storyboard.swift in Sources */,
 				5D40FA0121DD253C00636890 /* sellSecondCell.swift in Sources */,
 				5DB4139421DF075E00576883 /* UsingVC.swift in Sources */,
