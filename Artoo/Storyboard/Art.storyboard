@@ -55,16 +55,16 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="필터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LS-Zz-iy7">
-                                <rect key="frame" x="299" y="107" width="27" height="22"/>
+                                <rect key="frame" x="299" y="125" width="27" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5q-kj-dDj">
-                                <rect key="frame" x="335" y="103" width="15" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5q-kj-dDj">
+                                <rect key="frame" x="333" y="127" width="17" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="B"/>
+                                <state key="normal" image="filter"/>
                                 <connections>
                                     <action selector="filterBtn:" destination="i1D-R2-t6c" eventType="touchUpInside" id="5co-dX-z8R"/>
                                 </connections>
@@ -224,7 +224,7 @@
                                                 <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartGray" translatesAutoresizingMaskIntoConstraints="NO" id="223-xk-JYG" customClass="heartGray">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartGray" translatesAutoresizingMaskIntoConstraints="NO" id="223-xk-JYG">
                                                 <rect key="frame" x="293" y="363" width="21" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -375,7 +375,6 @@
                                                                         <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="deleteBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="Ahq-bm-pl6"/>
                                                                         <action selector="deleteBtn:" destination="IHH-tT-GwJ" eventType="touchUpInside" id="mDn-3v-ECr"/>
                                                                     </connections>
                                                                 </button>
@@ -522,20 +521,23 @@
                         <outlet property="artYearLabel" destination="2MP-pF-6H5" id="1tB-3l-HY6"/>
                         <outlet property="authorNameabel" destination="H83-hf-whh" id="XUZ-iL-dpP"/>
                         <outlet property="authorSchoolLabel" destination="icm-ED-IpE" id="lAd-Eo-Dg7"/>
+                        <outlet property="buyBtn" destination="C4F-mh-MAU" id="Ztj-h7-4nd"/>
                         <outlet property="commentsTable" destination="8hy-o2-Cvu" id="VBK-jR-Yw1"/>
                         <outlet property="desc" destination="Kbs-Kd-oHB" id="wpy-rf-QH6"/>
                         <outlet property="feedBackLabel" destination="hIC-D7-Trl" id="wxV-NA-zsc"/>
                         <outlet property="feedContentLabel" destination="emD-Wz-aiX" id="bdp-Yx-MOo"/>
                         <outlet property="feedContentTV" destination="J33-Il-jjf" id="lWI-7p-YA1"/>
                         <outlet property="figureLabel" destination="Czy-Kl-ID3" id="kyy-KG-3Fn"/>
+                        <outlet property="heartImg" destination="223-xk-JYG" id="tlE-hS-05H"/>
                         <outlet property="licenseImage" destination="lDQ-Is-iQy" id="nIv-yF-nQU"/>
                         <outlet property="moreImg" destination="mJc-gv-WfU" id="vCO-aj-Jcs"/>
+                        <outlet property="priceImage" destination="8pL-TG-RdH" id="Feh-sM-RpM"/>
                         <outlet property="slideButton" destination="t0H-50-J8p" id="6Mp-0n-KfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEp-O3-XJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="727.7361319340331"/>
+            <point key="canvasLocation" x="1372" y="629"/>
         </scene>
         <!--DealVC-->
         <scene sceneID="sap-lp-YJq">
@@ -787,14 +789,14 @@
             <objects>
                 <viewController storyboardIdentifier="filter" id="vZ5-eG-ZJ1" userLabel="Filter" customClass="FilterViewController" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HhZ-aa-U6q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zg3-Ju-yv4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbt-Pj-9PF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사이즈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQE-KF-6Hq">
                                                 <rect key="frame" x="15" y="111" width="49" height="27"/>
@@ -915,8 +917,46 @@
                                                 <rect key="frame" x="15" y="572" width="320" height="166"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-bI-rPJ">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r8y-4C-ecf">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Xp-BXh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="78"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="axU-uZ-loO"/>
+                                                                    <constraint firstAttribute="height" constant="78" id="gwz-Tl-AQS"/>
+                                                                </constraints>
+                                                                <state key="normal" image="filterPersonNoSelect">
+                                                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="categoryBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="fwW-0z-qkT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5X-49-of2">
+                                                                <rect key="frame" x="110" y="0.0" width="100" height="78"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="78" id="gjN-nl-jAT"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="xDY-Gs-fFc"/>
+                                                                </constraints>
+                                                                <state key="normal" image="filterAnimalNoSelect">
+                                                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="categoryBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="jex-48-V0Y"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-aU-SIY">
+                                                                <rect key="frame" x="220" y="0.0" width="100" height="78"/>
+                                                                <state key="normal" image="filterPlantNoSelect"/>
+                                                                <connections>
+                                                                    <action selector="categoryBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="AyS-TV-rqa"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-bI-rPJ">
+                                                        <rect key="frame" x="0.0" y="88" width="320" height="78"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qX-Cl-jSE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="78"/>
@@ -959,45 +999,10 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r8y-4C-ecf">
-                                                        <rect key="frame" x="0.0" y="88" width="320" height="78"/>
-                                                        <subviews>
-                                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Xp-BXh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="78"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="100" id="axU-uZ-loO"/>
-                                                                    <constraint firstAttribute="height" constant="78" id="gwz-Tl-AQS"/>
-                                                                </constraints>
-                                                                <state key="normal" image="filterPersonNoSelect">
-                                                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="categoryBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="fwW-0z-qkT"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5X-49-of2">
-                                                                <rect key="frame" x="110" y="0.0" width="100" height="78"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="78" id="gjN-nl-jAT"/>
-                                                                    <constraint firstAttribute="width" constant="100" id="xDY-Gs-fFc"/>
-                                                                </constraints>
-                                                                <state key="normal" image="filterAnimalNoSelect">
-                                                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="categoryBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="jex-48-V0Y"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-aU-SIY">
-                                                                <rect key="frame" x="220" y="0.0" width="100" height="78"/>
-                                                                <state key="normal" image="filterPlantNoSelect"/>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGB-WM-jkT">
-                                                <rect key="frame" x="0.0" y="949" width="375" height="51"/>
+                                                <rect key="frame" x="0.0" y="799" width="375" height="51"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="oc4-Dk-xTQ"/>
@@ -1089,6 +1094,14 @@
                                                 <rect key="frame" x="15" y="518" width="340" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWl-qG-ty0">
+                                                <rect key="frame" x="330" y="57" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="filterClose"/>
+                                                <connections>
+                                                    <action selector="backBtn:" destination="vZ5-eG-ZJ1" eventType="touchUpInside" id="cA7-V1-KqG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1096,7 +1109,7 @@
                                             <constraint firstAttribute="trailing" secondItem="GGB-WM-jkT" secondAttribute="trailing" id="H92-l4-8W5"/>
                                             <constraint firstItem="GGB-WM-jkT" firstAttribute="width" secondItem="Lbt-Pj-9PF" secondAttribute="width" id="f5b-sQ-FZP"/>
                                             <constraint firstAttribute="bottom" secondItem="GGB-WM-jkT" secondAttribute="bottom" id="hIp-sg-CHn"/>
-                                            <constraint firstAttribute="height" constant="1000" id="prn-yO-lZN"/>
+                                            <constraint firstAttribute="height" constant="850" id="prn-yO-lZN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1129,7 +1142,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yy5-xS-YSm"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="850"/>
                     <connections>
                         <outlet property="LsizeBtn" destination="2fb-kl-miG" id="VN6-td-Zqn"/>
                         <outlet property="MsizeBtn" destination="TJW-IU-4VD" id="q31-vN-ddH"/>
@@ -1283,8 +1296,10 @@
         <image name="artworkBuyGray" width="177" height="74"/>
         <image name="artworkPriceGray" width="198" height="74"/>
         <image name="buyDivideLine" width="343" height="2"/>
+        <image name="filter" width="18" height="16"/>
         <image name="filterAbstractNoSelect" width="51" height="73"/>
         <image name="filterAnimalNoSelect" width="51" height="76"/>
+        <image name="filterClose" width="19" height="19"/>
         <image name="filterCraftNoSelect" width="56" height="73"/>
         <image name="filterDrawingNoSelect" width="51" height="75"/>
         <image name="filterMixNoSelect" width="53" height="77"/>
