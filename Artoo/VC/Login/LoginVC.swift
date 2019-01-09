@@ -46,14 +46,16 @@ extension LoginVC {
         let pass = passTextField.text
         
         if( email == "" || pass == ""){
-            self.view.makeToast("빈 칸을 입력해주세요")
+            let alert = UIAlertController(title: "경고", message: "빈 칸을 채워주세요", preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion:nil)
         }else{
             LoginService.shared.login(email: email!, password: pass!){
                 (response) in guard let status = response.status else{ return }
                 print(status)
                 switch status {
                 case 200:
-                    self.view.makeToast("로그인 되었습니다")
                     guard let token = response.data?.token else { return }
                     guard let userIndex = response.data?.userIndex else { return }
                     //어디서든 쓸 수 있도록 UserDefault에 token을 저장함
