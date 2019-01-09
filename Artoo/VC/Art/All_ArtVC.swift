@@ -140,12 +140,21 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         imageIndex = indexPath.row
         let img = imageList[indexPath.row]
+        
         let imageHeight = UIImage(named: img.artImg!)?.size.height
         
         print(imageHeight)
-        moveBuyVC(selectedImg: img)
+        //moveBuyVC(selectedImg: img)
         
+        guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
+            return
+        }
         
+        bVC.sendArtIndex = img.artIndex!
+        print("하하")
+        print(bVC.sendArtIndex)
+        //데이터이동
+        self.navigationController?.pushViewController(bVC, animated: true)
         
         //        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
@@ -247,6 +256,7 @@ extension All_ArtVC{
         imageCollection.reloadData()
     }
     
+    /*
     func moveBuyVC(selectedImg: ArtImage)
     {
         
@@ -277,6 +287,7 @@ extension All_ArtVC{
             }
         }
     }
+    */
     
     func setDelegate(){
         

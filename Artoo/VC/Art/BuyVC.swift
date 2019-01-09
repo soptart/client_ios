@@ -46,8 +46,11 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         feedContentTV?.delegate = self
         
-        setDetail()
-
+        moveBuyVC(completion: setDetail)
+        print("아트 이름만 먼저")
+        print(artNameLabel.text = artDetailInfo?.artName!)
+        
+        
         //처음에는 안 보이게 한다
         desc?.delegate = self
         artFigureLabel.isHidden = true
@@ -188,7 +191,6 @@ extension BuyVC {
     
     func setDetail(){
         moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
-        
         artNameLabel.text = artDetailInfo?.artName!
         authorSchoolLabel.text = artDetailInfo?.userSchool!
         authorNameabel.text = artDetailInfo?.userName!
@@ -200,7 +202,8 @@ extension BuyVC {
     
     func setUpData(completion: @escaping() -> Void){
         
-        let artIndex = artDetailInfo?.artIndex!
+       // let artIndex = artDetailInfo?.artIndex!
+        let artIndex = sendArtIndex
         CheckCommentsService.shared.comments(art_index: artIndex!){
             (data) in guard let status = data.status else { return }
             
@@ -226,6 +229,32 @@ extension BuyVC {
     
     func setUI(){
         self.commentsTable.reloadData()
+    }
+    
+    func moveBuyVC(completion: @escaping() -> Void)
+    {
+        
+        ArtDescriptionService.shared.artDescription(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
+                    self.artDetailInfo = allArtData
+                    //데이터이동
+                    completion()
+                }
+            case 400:
+                print("나는 400이다")
+            case 500:
+                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
+            default:
+                print("hi")
+            }
+        }
     }
 }
 
