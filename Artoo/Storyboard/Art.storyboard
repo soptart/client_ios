@@ -197,17 +197,17 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="바람의 빛" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSe-Be-IfH">
-                                                <rect key="frame" x="20" y="213" width="77" height="29"/>
+                                                <rect key="frame" x="20" y="323" width="77" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="홍익대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icm-ED-IpE">
-                                                <rect key="frame" x="17" y="248" width="97" height="19"/>
+                                                <rect key="frame" x="20" y="359" width="97" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H83-hf-whh">
@@ -218,39 +218,39 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-1u-62Q">
-                                                <rect key="frame" x="283" y="236" width="42" height="29"/>
+                                                <rect key="frame" x="324" y="358" width="42" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="223-xk-JYG">
-                                                <rect key="frame" x="333" y="242" width="22" height="19"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="223-xk-JYG" customClass="heartGray">
+                                                <rect key="frame" x="293" y="363" width="21" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사이즈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGd-WY-T24">
-                                                <rect key="frame" x="22" y="288" width="36" height="19"/>
+                                                <rect key="frame" x="22" y="411" width="38" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제작년도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-zW-4IQ">
-                                                <rect key="frame" x="259" y="291" width="47" height="19"/>
+                                                <rect key="frame" x="253" y="411" width="51" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100*90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ta-Me-2Iz">
-                                                <rect key="frame" x="87" y="288" width="47" height="19"/>
+                                                <rect key="frame" x="87" y="359" width="47" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHt-2k-s9w">
-                                                <rect key="frame" x="143" y="287" width="30" height="19"/>
+                                                <rect key="frame" x="149" y="414" width="30" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="S">
@@ -334,18 +334,6 @@
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4F-mh-MAU">
-                                                <rect key="frame" x="0.0" y="930" width="375" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <state key="normal" title="구매하기">
-                                                    <color key="titleColor" red="0.99259229270000005" green="0.99259229270000005" blue="0.99259229270000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buyBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="Fou-V5-C3o"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUd-pg-jsh">
                                                 <rect key="frame" x="317" y="700" width="40" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -357,7 +345,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="라이선스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itP-BP-zUB">
-                                                <rect key="frame" x="17" y="315" width="47" height="19"/>
+                                                <rect key="frame" x="20" y="449" width="47" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -457,6 +445,10 @@
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDQ-Is-iQy">
+                                                <rect key="frame" x="88" y="448" width="83" height="23"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -471,14 +463,50 @@
                                     <constraint firstAttribute="bottom" secondItem="cE1-5p-lSY" secondAttribute="bottom" id="zfe-Um-kJr"/>
                                 </constraints>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artworkPriceGray" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-TG-RdH">
+                                <rect key="frame" x="0.0" y="926" width="198" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="tSc-Px-OdA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4F-mh-MAU">
+                                <rect key="frame" x="198" y="926" width="177" height="74"/>
+                                <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="SgC-n0-JgA"/>
+                                </constraints>
+                                <state key="normal" image="artworkBuyGray">
+                                    <color key="titleColor" red="0.99259229270000005" green="0.99259229270000005" blue="0.99259229270000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="Fou-V5-C3o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-RF-P7I">
+                                <rect key="frame" x="66" y="949" width="42" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="9ja-Ht-efK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8pL-TG-RdH" firstAttribute="bottom" secondItem="1bu-2h-rVO" secondAttribute="bottom" id="7VW-xV-RMB"/>
+                            <constraint firstItem="8pL-TG-RdH" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" id="8DW-eO-LVi"/>
                             <constraint firstItem="UXT-wm-J69" firstAttribute="top" secondItem="1bu-2h-rVO" secondAttribute="top" id="9pZ-6V-l5o"/>
+                            <constraint firstItem="C4F-mh-MAU" firstAttribute="trailing" secondItem="1bu-2h-rVO" secondAttribute="trailing" id="EfN-Qv-1U9"/>
                             <constraint firstItem="cE1-5p-lSY" firstAttribute="width" secondItem="k42-DH-QTz" secondAttribute="width" id="FMR-uq-nib"/>
+                            <constraint firstItem="1bu-2h-rVO" firstAttribute="bottom" secondItem="C4F-mh-MAU" secondAttribute="bottom" id="HLN-yN-XR9"/>
                             <constraint firstItem="1bu-2h-rVO" firstAttribute="bottom" secondItem="UXT-wm-J69" secondAttribute="bottom" id="Jss-Oe-sz5"/>
+                            <constraint firstItem="1bu-2h-rVO" firstAttribute="bottom" secondItem="iVl-RF-P7I" secondAttribute="bottom" constant="22" id="Jyq-St-tec"/>
                             <constraint firstItem="1bu-2h-rVO" firstAttribute="trailing" secondItem="UXT-wm-J69" secondAttribute="trailing" id="MW8-Vv-X0O"/>
                             <constraint firstItem="UXT-wm-J69" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" id="MYB-j2-oga"/>
+                            <constraint firstItem="iVl-RF-P7I" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" constant="66" id="P43-Co-GB4"/>
+                            <constraint firstItem="C4F-mh-MAU" firstAttribute="trailing" secondItem="1bu-2h-rVO" secondAttribute="trailing" id="fdl-he-OJe"/>
+                            <constraint firstItem="C4F-mh-MAU" firstAttribute="bottom" secondItem="1bu-2h-rVO" secondAttribute="bottom" id="pIB-et-rPZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1bu-2h-rVO"/>
                     </view>
@@ -1250,6 +1278,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="artworkBuyGray" width="177" height="74"/>
+        <image name="artworkPriceGray" width="198" height="74"/>
         <image name="buyDivideLine" width="343" height="2"/>
         <image name="filterAbstractNoSelect" width="51" height="73"/>
         <image name="filterAnimalNoSelect" width="51" height="76"/>
