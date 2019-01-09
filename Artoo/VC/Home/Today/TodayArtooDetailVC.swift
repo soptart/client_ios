@@ -1,10 +1,3 @@
-//
-//  TodayArtooDetailVC.swift
-//  Artoo
-//
-//  Created by 홍정민 on 2019. 1. 9..
-//  Copyright © 2019년 홍정민. All rights reserved.
-//
 
 import UIKit
 
@@ -19,23 +12,21 @@ class TodayArtooDetailVC: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
-        if(img == "homeContents2Content"){
-            contentHeightConst.constant = 4000
-        }else{
-            contentHeightConst.constant = 2853
-        }
-
-     
-            detailImageView.image = UIImage(named: img!)
-       
+        setupImageView()
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
+    func setupImageView() {
+        guard let image = UIImage(named: img ?? "") else { return }
+        let ratio = image.cropRatioOfWidth
+        let height = self.view.frame.width * ratio
+        contentHeightConst.constant = height
+        detailImageView.image = image
+    }
 
     /*
     // MARK: - Navigation

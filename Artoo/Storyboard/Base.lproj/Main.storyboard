@@ -769,9 +769,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-sV-Kjl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-sV-Kjl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginRound" translatesAutoresizingMaskIntoConstraints="NO" id="mxY-fV-717">
                                 <rect key="frame" x="39" y="291.66666666666669" width="5" height="5"/>
@@ -915,6 +914,161 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="in4-6T-roI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo4-Jc-ZjH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="GmO-LB-p3I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dv-90-CS0">
+                                        <rect key="frame" x="331" y="48" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Vqe-DS-f5z"/>
+                                            <constraint firstAttribute="height" constant="30" id="xIP-1E-YGy"/>
+                                        </constraints>
+                                        <state key="normal" image="closeWhite"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gP9-iY-OBq">
+                                        <rect key="frame" x="165.66666666666666" y="180.66666666666666" width="44" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="BoX-n0-YNs"/>
+                                            <constraint firstAttribute="width" constant="44" id="ufc-Og-KxK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oHf-vU-Fsf">
+                                        <rect key="frame" x="27.666666666666657" y="243.66666666666663" width="320" height="325"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tCt-Lp-cB7">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="325"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BET-Jl-NUL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Fnt-p5-boJ"/>
+                                                            <constraint firstAttribute="height" constant="45" id="OQF-Qj-blG"/>
+                                                        </constraints>
+                                                        <state key="normal" title="NH농협">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s2-uC-mcJ">
+                                                        <rect key="frame" x="0.0" y="70.000000000000028" width="100" height="45"/>
+                                                        <state key="normal" title="신한">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79C-Ej-LNz">
+                                                        <rect key="frame" x="0.0" y="140.00000000000003" width="100" height="45"/>
+                                                        <state key="normal" title="BNK 부산">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-kt-JLr">
+                                                        <rect key="frame" x="0.0" y="210.00000000000003" width="100" height="45"/>
+                                                        <state key="normal" title="KDB 산업">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-Sy-JBy">
+                                                        <rect key="frame" x="0.0" y="280" width="100" height="45"/>
+                                                        <state key="normal" title="Sh 수협">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-Cx-SDn">
+                                                <rect key="frame" x="110" y="0.0" width="100" height="325"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O9-B4-fp3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                                                        <state key="normal" title="KB국민">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-no-Avr">
+                                                        <rect key="frame" x="0.0" y="70.000000000000028" width="100" height="45"/>
+                                                        <state key="normal" title="우리">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsZ-75-nuI">
+                                                        <rect key="frame" x="0.0" y="140.00000000000003" width="100" height="45"/>
+                                                        <state key="normal" title="한국씨티">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vef-na-Ty1">
+                                                        <rect key="frame" x="0.0" y="210.00000000000003" width="100" height="45"/>
+                                                        <state key="normal" title="DCB 대구">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEK-CR-LJX">
+                                                        <rect key="frame" x="0.0" y="280" width="100" height="45"/>
+                                                        <state key="normal" title="광주">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="i8U-dR-E4R">
+                                                <rect key="frame" x="220" y="0.0" width="100" height="325"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-5f-JWb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                                                        <state key="normal" title="KEB 하나">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8L-lr-Jo5">
+                                                        <rect key="frame" x="0.0" y="70.000000000000028" width="100" height="45"/>
+                                                        <state key="normal" title="IBK 기업">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-sV-8DH">
+                                                        <rect key="frame" x="0.0" y="140.00000000000003" width="100" height="45"/>
+                                                        <state key="normal" title="SC 제일">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-t4-6KU">
+                                                        <rect key="frame" x="0.0" y="210.00000000000003" width="100" height="45"/>
+                                                        <state key="normal" title="BNK 경남">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7m-Aj-ezV">
+                                                        <rect key="frame" x="0.0" y="280" width="100" height="45"/>
+                                                        <state key="normal" title="전북">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gP9-iY-OBq" firstAttribute="centerX" secondItem="in4-6T-roI" secondAttribute="centerX" id="95T-JN-rX2"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Dv-90-CS0" secondAttribute="trailing" constant="14" id="IcH-lV-if1"/>
+                                    <constraint firstItem="oHf-vU-Fsf" firstAttribute="centerX" secondItem="in4-6T-roI" secondAttribute="centerX" id="Ymd-f3-peA"/>
+                                    <constraint firstItem="oHf-vU-Fsf" firstAttribute="centerY" secondItem="in4-6T-roI" secondAttribute="centerY" id="rok-1l-zq7"/>
+                                    <constraint firstItem="oHf-vU-Fsf" firstAttribute="top" secondItem="gP9-iY-OBq" secondAttribute="bottom" constant="33" id="tO3-LG-2rX"/>
+                                    <constraint firstItem="1Dv-90-CS0" firstAttribute="top" secondItem="in4-6T-roI" secondAttribute="top" constant="48" id="vkX-oC-TOw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -928,6 +1082,7 @@
                             <constraint firstItem="uhB-cz-doy" firstAttribute="centerY" secondItem="OnA-O2-2oP" secondAttribute="centerY" id="FA9-Cm-kzV"/>
                             <constraint firstItem="8LF-io-gS9" firstAttribute="top" secondItem="kOe-gd-zbc" secondAttribute="bottom" constant="174.99999999999994" id="Fnd-cM-Wvs"/>
                             <constraint firstItem="OnA-O2-2oP" firstAttribute="leading" secondItem="gyf-Mq-NTg" secondAttribute="leading" constant="5" id="HNQ-FO-PVA"/>
+                            <constraint firstAttribute="bottom" secondItem="in4-6T-roI" secondAttribute="bottom" id="Ksa-q7-YXn"/>
                             <constraint firstItem="uhB-cz-doy" firstAttribute="centerX" secondItem="gyf-Mq-NTg" secondAttribute="centerX" id="Ld2-4Q-RVB"/>
                             <constraint firstItem="IjY-d1-mfG" firstAttribute="top" secondItem="tOS-cN-QBH" secondAttribute="top" constant="3" id="N3n-hd-Ryy"/>
                             <constraint firstItem="IjY-d1-mfG" firstAttribute="trailing" secondItem="tOS-cN-QBH" secondAttribute="leading" constant="-3" id="PvS-ql-scE"/>
@@ -937,14 +1092,21 @@
                             <constraint firstItem="Dm6-xz-jPy" firstAttribute="trailing" secondItem="o95-Rh-rcz" secondAttribute="trailing" id="VDP-Do-3AQ"/>
                             <constraint firstItem="Dm6-xz-jPy" firstAttribute="top" secondItem="igx-aU-vGd" secondAttribute="bottom" constant="5" id="Wwa-ec-Dzc"/>
                             <constraint firstItem="BaF-AV-hYz" firstAttribute="centerY" secondItem="tOS-cN-QBH" secondAttribute="centerY" id="XkL-FZ-fco"/>
+                            <constraint firstItem="dL6-sV-Kjl" firstAttribute="bottom" secondItem="kPq-WR-4oE" secondAttribute="bottom" id="YQ8-Vq-0n0"/>
                             <constraint firstItem="8LF-io-gS9" firstAttribute="trailing" secondItem="cuJ-aA-s2Y" secondAttribute="trailing" id="bWP-x2-lOZ"/>
+                            <constraint firstItem="in4-6T-roI" firstAttribute="top" secondItem="kPq-WR-4oE" secondAttribute="top" id="bdh-x7-aQH"/>
+                            <constraint firstItem="in4-6T-roI" firstAttribute="trailing" secondItem="gyf-Mq-NTg" secondAttribute="trailing" id="eZc-PT-KtZ"/>
                             <constraint firstItem="gyf-Mq-NTg" firstAttribute="trailing" secondItem="cuJ-aA-s2Y" secondAttribute="trailing" constant="35" id="f8K-hb-i1V"/>
                             <constraint firstItem="igx-aU-vGd" firstAttribute="top" secondItem="uhB-cz-doy" secondAttribute="bottom" constant="76" id="faR-sn-EpT"/>
                             <constraint firstItem="BaF-AV-hYz" firstAttribute="trailing" secondItem="cuJ-aA-s2Y" secondAttribute="trailing" id="hDx-VF-lUb"/>
+                            <constraint firstItem="dL6-sV-Kjl" firstAttribute="top" secondItem="kPq-WR-4oE" secondAttribute="top" id="hV5-he-pKy"/>
                             <constraint firstItem="tOS-cN-QBH" firstAttribute="leading" secondItem="Dm6-xz-jPy" secondAttribute="leading" id="m2Y-re-qW7"/>
+                            <constraint firstItem="dL6-sV-Kjl" firstAttribute="trailing" secondItem="gyf-Mq-NTg" secondAttribute="trailing" id="mAx-WE-qc9"/>
                             <constraint firstItem="Ke6-YO-0aG" firstAttribute="top" secondItem="cuJ-aA-s2Y" secondAttribute="bottom" id="mtV-fg-ik2"/>
                             <constraint firstItem="o95-Rh-rcz" firstAttribute="centerY" secondItem="N0p-dw-wgg" secondAttribute="centerY" id="nKB-3X-pOH"/>
+                            <constraint firstItem="in4-6T-roI" firstAttribute="leading" secondItem="gyf-Mq-NTg" secondAttribute="leading" id="nR2-dQ-uR3"/>
                             <constraint firstItem="cuJ-aA-s2Y" firstAttribute="top" secondItem="tOS-cN-QBH" secondAttribute="bottom" id="o5P-QM-zmP"/>
+                            <constraint firstItem="dL6-sV-Kjl" firstAttribute="leading" secondItem="gyf-Mq-NTg" secondAttribute="leading" id="oyp-x2-5rg"/>
                             <constraint firstItem="igx-aU-vGd" firstAttribute="leading" secondItem="VgL-L9-2bS" secondAttribute="trailing" constant="3" id="r6g-I0-0O9"/>
                             <constraint firstItem="mxY-fV-717" firstAttribute="top" secondItem="kOe-gd-zbc" secondAttribute="top" constant="3" id="s5e-LB-Zho"/>
                             <constraint firstItem="8LF-io-gS9" firstAttribute="leading" secondItem="cuJ-aA-s2Y" secondAttribute="leading" id="sJc-s1-Tp6"/>
@@ -961,6 +1123,9 @@
                     <connections>
                         <outlet property="accountLabel" destination="cuJ-aA-s2Y" id="TCR-VG-Z9L"/>
                         <outlet property="bankLabel" destination="N0p-dw-wgg" id="HS2-gh-MVo"/>
+                        <outlet property="bankView" destination="in4-6T-roI" id="i9V-aa-IAg"/>
+                        <outlet property="bankViewBlur" destination="Zo4-Jc-ZjH" id="wuf-Jt-fKG"/>
+                        <outlet property="cancelBtn" destination="1Dv-90-CS0" id="VDw-Iz-SfV"/>
                         <outlet property="finishSignBtn" destination="8LF-io-gS9" id="ffQ-jV-O5t"/>
                         <outlet property="sign3BackBtn" destination="OnA-O2-2oP" id="a6O-zM-x3n"/>
                     </connections>
@@ -970,192 +1135,9 @@
             </objects>
             <point key="canvasLocation" x="2765.5999999999999" y="-1667.7339901477833"/>
         </scene>
-        <!--BankVC-->
-        <scene sceneID="bw4-4u-CDs">
-            <objects>
-                <viewController storyboardIdentifier="BankVC" id="KHi-wd-Oz3" customClass="BankVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ypO-0A-Udx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s2-uC-mcJ">
-                                <rect key="frame" x="42" y="244" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="신한">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="6MO-2q-SUh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-no-Avr">
-                                <rect key="frame" x="152" y="244" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="우리">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="lJ3-mP-JIQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8L-lr-Jo5">
-                                <rect key="frame" x="256" y="244" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="IBK 기업">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="YTq-mO-K1F"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-kt-JLr">
-                                <rect key="frame" x="40" y="283" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="KDB 산업">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="WM6-EE-cgV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsZ-75-nuI">
-                                <rect key="frame" x="150" y="283" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="한국씨티">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="ZP9-jo-WFt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-sV-8DH">
-                                <rect key="frame" x="254" y="283" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SC 제일">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="r2H-rX-mQP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79C-Ej-LNz">
-                                <rect key="frame" x="42" y="325" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="BNK 부산">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="V0P-AO-anv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vef-na-Ty1">
-                                <rect key="frame" x="152" y="325" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="DCB 대구">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="WiM-zh-O5M"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-t4-6KU">
-                                <rect key="frame" x="256" y="325" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="BNK 경남">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="WUj-EA-cAk"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gP9-iY-OBq">
-                                <rect key="frame" x="166" y="89" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELn-MW-gTn">
-                                <rect key="frame" x="331" y="58" width="19" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="closeBlack"/>
-                                <connections>
-                                    <action selector="selectClose:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="dpO-Mo-fP2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BET-Jl-NUL">
-                                <rect key="frame" x="42" y="196" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="NH농협">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="bzn-CI-4b2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9O9-B4-fp3">
-                                <rect key="frame" x="152" y="196" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="KB국민">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="cy6-pi-JxP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-5f-JWb">
-                                <rect key="frame" x="256" y="196" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="KEB 하나">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="KNP-ku-JQI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMR-Sy-JBy">
-                                <rect key="frame" x="45" y="374" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sh 수협">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="tYF-M9-GGs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEK-CR-LJX">
-                                <rect key="frame" x="155" y="374" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="광주">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="udb-Q6-P9n"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7m-Aj-ezV">
-                                <rect key="frame" x="259" y="374" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="전북">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectBank:" destination="KHi-wd-Oz3" eventType="touchUpInside" id="CLV-dO-n4a"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.68999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="WHr-5d-Bv5"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x2L-5E-uXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3495.1999999999998" y="-1675.1231527093596"/>
-        </scene>
     </scenes>
     <resources>
         <image name="arrowLeftWhite" width="12" height="22"/>
-        <image name="closeBlack" width="19" height="19"/>
         <image name="closeWhite" width="19" height="19"/>
         <image name="exhibitionColor" width="27" height="23"/>
         <image name="exhibitionGray" width="27" height="23"/>

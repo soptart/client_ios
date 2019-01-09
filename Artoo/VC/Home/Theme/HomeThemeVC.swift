@@ -303,12 +303,14 @@ extension HomeThemeVC {
     //디테일 창으로 이동
     @objc func goDetail(){
         //메인 태그, 서브 태그 , 인덱스
-        themeDetailVC.index = tagIndex
-        themeDetailVC.mainTag = mainTag.removeNewLine(str: mainTag)
-        themeDetailVC.subTag = subTag
-        themeDetailVC.mainImg = mainImg
-        guard let themeDetailVC = storyboard?.instantiateViewController(withIdentifier: "DetailRootNavi") else { return }
-        present(themeDetailVC, animated: true)
+        guard let themeDetailNaviVC = storyboard?.instantiateViewController(withIdentifier: "DetailRootNavi") as? UINavigationController else { return }
+        guard let topVC = themeDetailNaviVC.topViewController as? ThemeDetailVC else { return }
+        topVC.index = tagIndex
+        topVC.mainTag = mainTag.removeNewLine(str: mainTag)
+        topVC.subTag = subTag
+        topVC.mainImg = mainImg
+
+        present(themeDetailNaviVC, animated: true)
         
     }
     

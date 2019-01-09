@@ -132,4 +132,8 @@ extension UIImage {
     var cropRatio: CGFloat {
         return self.size.width / self.size.height
     }
+    
+    var cropRatioOfWidth: CGFloat {
+        return self.size.height / self.size.width
+    }
 }

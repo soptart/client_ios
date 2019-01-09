@@ -88,9 +88,7 @@ extension SellListVC: UITableViewDataSource {
             cell.buyItem.text = buy.artName
             cell.buyItemAuthor.text = buy.artAuthor
             cell.transaction.text = "직거래"
-            cell.seller.text = buy.sellerName
-            cell.sellerNumber.text = buy.sellerPhone
-            cell.sellerAddress.text = buy.sellerAddress
+  
             
             return cell
         } else {

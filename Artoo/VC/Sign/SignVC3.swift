@@ -12,6 +12,9 @@ import Toast_Swift
 class SignVC3: UIViewController {
     
     @IBOutlet weak var finishSignBtn: UIButton!
+    @IBOutlet weak var bankView: UIView!
+    @IBOutlet weak var bankViewBlur: UIVisualEffectView!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     //sign1에서 받는 정보
     var name:String!
@@ -30,16 +33,6 @@ class SignVC3: UIViewController {
     
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountLabel: UITextField!
-    
-    
-    //뱅크 VC
-    private lazy var bankVC : BankVC = {
-        let storyboard = Storyboard.shared().mainStoryboard
-        
-        var viewController = storyboard.instantiateViewController(withIdentifier: BankVC.reuseIdentifier) as! BankVC
-        
-        return viewController
-    }()
 
     
     
@@ -55,14 +48,43 @@ class SignVC3: UIViewController {
     
     //은행 선택하기 버튼 눌렀을 시
     @IBAction func bankSelectBtn(_ sender: Any) {
-        bankVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        present(bankVC, animated: true)
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
+            self.bankView.isHidden = false
+            self.bankView.alpha = 1
+            self.bankViewBlur.isHidden = false
+        })
+    }
+    
+//    @IBAction func selectBank(_ sender: UIButton) {
+//        switch sender.tag {
+//        case 0:
+//            
+//            
+//            
+//        case 14:
+//            
+//        default:
+//            
+//        }
+//    }
+    
+    @objc func cancelSelectBank() {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut, animations: {
+            self.bankView.isHidden = true
+            self.bankView.alpha = 0
+            self.bankViewBlur.isHidden = true
+        })
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        bankView.isHidden = true
+        bankViewBlur.isHidden = true
+        self.bankView.alpha = 0
+        cancelBtn.addTarget(self, action: #selector(cancelSelectBank), for: .touchUpInside)
         finishSignBtn.addTarget(self, action: #selector(backToLogin), for: .touchUpInside)
         sign3BackBtn.addTarget(self, action: #selector(popSign3), for: .touchUpInside)
     }
