@@ -20,7 +20,7 @@
 		5D3DA6BD21DDF5C5005239F8 /* exhibitListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6BC21DDF5C5005239F8 /* exhibitListVC.swift */; };
 		5D3DA6BF21DDF5EC005239F8 /* exhibitListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6BE21DDF5EC005239F8 /* exhibitListCell.swift */; };
 		5D3DA6C121DDF610005239F8 /* exhibitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6C021DDF610005239F8 /* exhibitInfo.swift */; };
-		5D3DA6C321DE1122005239F8 /* buyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6C221DE1122005239F8 /* buyInfo.swift */; };
+		5D3DA6C321DE1122005239F8 /* BuyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6C221DE1122005239F8 /* BuyInfo.swift */; };
 		5D3DA6C521DE1129005239F8 /* saleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6C421DE1129005239F8 /* saleInfo.swift */; };
 		5D3DA6C721DEE3BA005239F8 /* reviewNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6C621DEE3BA005239F8 /* reviewNotice.swift */; };
 		5D3DA6C921DEE3D2005239F8 /* refundNoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3DA6C821DEE3D2005239F8 /* refundNoticeVC.swift */; };
@@ -111,8 +111,7 @@
 		A350ADE221D55D1C00EC199E /* ExhibitApplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADE121D55D1C00EC199E /* ExhibitApplyCell.swift */; };
 		A350ADE421D55D4B00EC199E /* ExhibitWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350ADE321D55D4B00EC199E /* ExhibitWorkCell.swift */; };
 		A3559EC921E61B9800A7A31B /* SellThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3559EC821E61B9800A7A31B /* SellThirdCell.swift */; };
-		A3559ECB21E6200300A7A31B /* AlarmPurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3559ECA21E6200300A7A31B /* AlarmPurchaseService.swift */; };
-		A3559ECD21E6208700A7A31B /* AlarmPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3559ECC21E6208700A7A31B /* AlarmPurchase.swift */; };
+		A3559ECB21E6200300A7A31B /* AlarmBuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3559ECA21E6200300A7A31B /* AlarmBuyService.swift */; };
 		A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4621DB526B00EC3A8D /* APIManager.swift */; };
 		A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4821DB52FF00EC3A8D /* Requestable.swift */; };
 		A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */; };
@@ -179,7 +178,7 @@
 		5D3DA6BC21DDF5C5005239F8 /* exhibitListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = exhibitListVC.swift; path = Artoo/VC/Mypage/exhibitListVC.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6BE21DDF5EC005239F8 /* exhibitListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = exhibitListCell.swift; path = Artoo/VC/Mypage/exhibitListCell.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6C021DDF610005239F8 /* exhibitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exhibitInfo.swift; sourceTree = "<group>"; };
-		5D3DA6C221DE1122005239F8 /* buyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buyInfo.swift; sourceTree = "<group>"; };
+		5D3DA6C221DE1122005239F8 /* BuyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyInfo.swift; sourceTree = "<group>"; };
 		5D3DA6C421DE1129005239F8 /* saleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saleInfo.swift; sourceTree = "<group>"; };
 		5D3DA6C621DEE3BA005239F8 /* reviewNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = reviewNotice.swift; path = Artoo/VC/Mypage/reviewNotice.swift; sourceTree = SOURCE_ROOT; };
 		5D3DA6C821DEE3D2005239F8 /* refundNoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = refundNoticeVC.swift; path = Artoo/VC/Mypage/refundNoticeVC.swift; sourceTree = SOURCE_ROOT; };
@@ -272,8 +271,7 @@
 		A350ADE121D55D1C00EC199E /* ExhibitApplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitApplyCell.swift; sourceTree = "<group>"; };
 		A350ADE321D55D4B00EC199E /* ExhibitWorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitWorkCell.swift; sourceTree = "<group>"; };
 		A3559EC821E61B9800A7A31B /* SellThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellThirdCell.swift; sourceTree = "<group>"; };
-		A3559ECA21E6200300A7A31B /* AlarmPurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPurchaseService.swift; sourceTree = "<group>"; };
-		A3559ECC21E6208700A7A31B /* AlarmPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPurchase.swift; sourceTree = "<group>"; };
+		A3559ECA21E6200300A7A31B /* AlarmBuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmBuyService.swift; sourceTree = "<group>"; };
 		A3699B4621DB526B00EC3A8D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A3699B4821DB52FF00EC3A8D /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayService.swift; sourceTree = "<group>"; };
@@ -465,7 +463,7 @@
 				A3699B4E21DB53B700EC3A8D /* ResponseObject.swift */,
 				A3699B5221DB54B000EC3A8D /* Token.swift */,
 				5D40FA0221DD38C200636890 /* BuyItemInfo.swift */,
-				5D3DA6C221DE1122005239F8 /* buyInfo.swift */,
+				5D3DA6C221DE1122005239F8 /* BuyInfo.swift */,
 				5D3DA6C421DE1129005239F8 /* saleInfo.swift */,
 				5D40FA0421DD391E00636890 /* sellerInfo.swift */,
 				A34DFD0A21DDE43B00CEDA74 /* ArtWork.swift */,
@@ -477,7 +475,6 @@
 				5D9E582B21DF9E88008225F6 /* StoreArtPhoto.swift */,
 				5D9E582521DF993E008225F6 /* reviewData.swift */,
 				A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */,
-				A3559ECC21E6208700A7A31B /* AlarmPurchase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,7 +523,7 @@
 				A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */,
 				5DC6F0DE21DFDB34002C8DBE /* UserDescriptionService.swift */,
 				5D3C387221E4BA06005CF329 /* AllCommentsService.swift */,
-				A3559ECA21E6200300A7A31B /* AlarmPurchaseService.swift */,
+				A3559ECA21E6200300A7A31B /* AlarmBuyService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -816,7 +813,7 @@
 				A392416E21DCB40C00371E77 /* ThemeDetailService.swift in Sources */,
 				5D3DA6B321DDE771005239F8 /* sellTableSecondCell.swift in Sources */,
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
-				5D3DA6C321DE1122005239F8 /* buyInfo.swift in Sources */,
+				5D3DA6C321DE1122005239F8 /* BuyInfo.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
 				5DB4139021DF073000576883 /* MyInfoCell.swift in Sources */,
 				5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */,
@@ -900,7 +897,6 @@
 				A34DFD0B21DDE43B00CEDA74 /* ArtWork.swift in Sources */,
 				5D9B7D8E21D8BE26009C12D3 /* ArtPhoto.swift in Sources */,
 				A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */,
-				A3559ECD21E6208700A7A31B /* AlarmPurchase.swift in Sources */,
 				5D49021F21E3656100D661C4 /* uploadCommentService.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeWork.swift in Sources */,
 				A350ADE021D55BF600EC199E /* ExhibitDetailInfo.swift in Sources */,
@@ -919,7 +915,7 @@
 				5D3DA6BF21DDF5EC005239F8 /* exhibitListCell.swift in Sources */,
 				A3FE1B1621CF73760073F40F /* ThemeWork.swift in Sources */,
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
-				A3559ECB21E6200300A7A31B /* AlarmPurchaseService.swift in Sources */,
+				A3559ECB21E6200300A7A31B /* AlarmBuyService.swift in Sources */,
 				5DE48B7821E121DF00FAD631 /* ArtDescriptionService.swift in Sources */,
 				5D3DA6CD21DEE421005239F8 /* exhibitCancelNoticeVC.swift in Sources */,
 				5DB413A021DF189300576883 /* QnaVC.swift in Sources */,
