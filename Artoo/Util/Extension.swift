@@ -12,7 +12,6 @@ extension NSObject {
     }
 }
 
-
 extension UIImageView {
     public func imageFromUrl(_ urlString: String?, defaultImgPath : String) {
         let defaultImg = UIImage(named: defaultImgPath)

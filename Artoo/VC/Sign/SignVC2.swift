@@ -45,7 +45,10 @@ extension SignVC2 {
     @objc func goSign3(){
         
         if(phoneLabel.text == ""||schoolLabel.text == ""){
-            print("sign2 빈칸을 채워주세요")
+            let alert = UIAlertController(title: "경고", message: "빈 칸을 채워주세요", preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion:nil)
         }else{
             signVC3.name = name
             signVC3.email = email

@@ -48,18 +48,27 @@ extension SignVC {
     //두번째 회원가입 창으로 넘어가는 함수
     @objc func goSign2(){
         
-        //필수 항목 하나라도 빠져있을 시 경고창 -> 디자인과 상의해야함
         if(nameLabel.text == "" || emailLabel.text == "" || passLabel.text == ""){
-            print("sign1 빈칸을 채워주세요")
+            // 하나라도 빈 값이 있을 시
+            let alert = UIAlertController(title: "경고", message: "빈 칸을 채워주세요", preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion:nil)
+        } else if (passLabel.text?.count)! < 8 {
+            //비밀번호가 8자리 이상이 아닐 시
+            let alert = UIAlertController(title: "경고", message: "비밀번호는 8자리 이상 입력해주세요", preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion:nil)
         }else{
+            //두 케이스에 모두 해당하지 않을 시 다음 컨트롤러로 값을 옮김
             signVC2.name = nameLabel.text!
             signVC2.email = emailLabel.text!
             signVC2.pass = passLabel.text!
             navigationController?.pushViewController(signVC2, animated: true)
-        }
     }
     
-    
+    }
 
 }
 

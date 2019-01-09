@@ -28,8 +28,19 @@ class SignVC3: UIViewController {
     
     @IBOutlet weak var sign3BackBtn: UIButton!
     
-    @IBOutlet weak var bankLabel: UITextField!
+    @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet weak var accountLabel: UITextField!
+    
+    
+    //뱅크 VC
+    private lazy var bankVC : BankVC = {
+        let storyboard = Storyboard.shared().mainStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: BankVC.reuseIdentifier) as! BankVC
+        
+        return viewController
+    }()
+
     
     
     //로그인VC
@@ -42,7 +53,12 @@ class SignVC3: UIViewController {
     }()
     
     
-    
+    //은행 선택하기 버튼 눌렀을 시
+    @IBAction func bankSelectBtn(_ sender: Any) {
+        bankVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        present(bankVC, animated: true)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +73,15 @@ class SignVC3: UIViewController {
 
 extension SignVC3 {
     @objc func backToLogin(){
+        
         //만약 성공하면 로그인화면으로, 아니면 알림창
         
         if(bankLabel.text == "" || accountLabel.text == ""){
-            print("sign3 빈칸을 채워주세요")
+            //빈 값 처리
+            let alert = UIAlertController(title: "경고", message: "빈 칸을 채워주세요", preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion:nil)
         }else{
             //회원가입 통신 후 이동
             bank = bankLabel.text
@@ -75,20 +96,30 @@ extension SignVC3 {
     
     func goSign(){
         SignService.shared.sign(email: email, password: pass, name: name, phone: phone, bank: bank, account: account, school: school) {
-            //escape 클로저로 받아온 status 정보로 분기
             (status) in let status = status
             
             print(status)
             
             switch status {
             case 201:
-                self.navigationController?.pushViewController(self.loginVC, animated: true)
+                //회원가입 완료
+                let alert = UIAlertController(title: "회원가입성공", message: "로그인 창으로 이동합니다", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion:{ self.navigationController?.pushViewController(self.loginVC, animated: true)
+                })
             case 400:
-                self.view.makeToast("이미 존재하는 이메일입니다")
+                //이메일 중복
+                let alert = UIAlertController(title: "경고", message: "이미 존재하는 이메일입니다", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion:nil)
             case 401...601:
-                self.view.makeToast("네트워크 연결이 원활하지 않습니다.")
-            default:
-                print("hi")
+                let alert = UIAlertController(title: "경고", message: "네트워크 연결을 확인해주세요", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion:nil)            default:
+                    print("hi")
             }
             
         }

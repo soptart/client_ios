@@ -17,7 +17,7 @@ struct SignService: APIManager, Requestable {
     //회원가입 api
     func sign(email: String, password: String,
               name: String, phone: String,
-              bank: String, account: String, school: String?, completion: @escaping(Int) -> Void) {
+              bank: String, account: String, school: String, completion: @escaping(Int) -> Void) {
         
         let body = [
             "u_email" : email,
