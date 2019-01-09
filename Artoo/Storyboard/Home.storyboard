@@ -820,15 +820,15 @@
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="-1065.5172413793105"/>
         </scene>
-        <!--View Controller-->
+        <!--Today Artoo DetailVC-->
         <scene sceneID="v8G-Vf-aqf">
             <objects>
-                <viewController id="BFq-1y-TZj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodayArtooDetailVC" id="BFq-1y-TZj" customClass="TodayArtooDetailVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uFY-UP-aT2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2853"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-Wx-7fJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-Wx-7fJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="2853"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wow-rN-YjJ">
@@ -864,12 +864,16 @@
                             <constraint firstItem="D8I-Wx-7fJ" firstAttribute="leading" secondItem="K2Q-1K-YZg" secondAttribute="leading" id="HJS-U8-9z5"/>
                             <constraint firstItem="wow-rN-YjJ" firstAttribute="width" secondItem="uFY-UP-aT2" secondAttribute="width" id="Use-00-X0j"/>
                             <constraint firstItem="D8I-Wx-7fJ" firstAttribute="trailing" secondItem="K2Q-1K-YZg" secondAttribute="trailing" id="Vfo-Gc-FVj"/>
+                            <constraint firstItem="K2Q-1K-YZg" firstAttribute="top" secondItem="D8I-Wx-7fJ" secondAttribute="top" constant="20" id="WxK-Wc-pIl"/>
                             <constraint firstItem="D8I-Wx-7fJ" firstAttribute="bottom" secondItem="K2Q-1K-YZg" secondAttribute="bottom" id="aUW-c6-Bss"/>
                             <constraint firstItem="D8I-Wx-7fJ" firstAttribute="top" secondItem="uFY-UP-aT2" secondAttribute="top" id="gSD-BY-9sn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K2Q-1K-YZg"/>
                     </view>
                     <size key="freeformSize" width="375" height="2853"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="Mir-LS-S9M" id="e66-fk-mKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwy-UT-5mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,15 +18,26 @@ class HomeTodayVC: UIViewController {
     
     var todayList = [Today]()
     var authorIndex = 0
+    var artooList = ["homeContents1Content","homeContents2Content"]
+    
+    //오늘의 아투 컨텐츠 보는 컨트롤러
+    private lazy var artooDetailVC: TodayArtooDetailVC = {
+        let storyboard = Storyboard.shared().homeStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: TodayArtooDetailVC.reuseIdentifier) as! TodayArtooDetailVC
+        
+        return viewController
+    }()
     
     
     override func viewWillAppear(_ animated: Bool) {
         selectedIndex = IndexPath(row:0,section:0)
-
+        
         authorCollection.reloadData()
-
+        
         authorIndex = 0
-
+        
         workCollection.reloadData()
         workCollection.contentOffset.x = 0
     }
@@ -48,6 +59,11 @@ class HomeTodayVC: UIViewController {
 
 extension HomeTodayVC : UITableViewDelegate {
     //클릭 이벤트 처리
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        artooDetailVC.img = artooList[indexPath.row]
+        navigationController?.pushViewController(artooDetailVC, animated: true)
+    }
 }
 
 extension HomeTodayVC : UITableViewDataSource {
@@ -60,11 +76,11 @@ extension HomeTodayVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0){
-             let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell") as! HomeSeriesCell
-                return cell} else {
-                     let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell2") as! HomeSeriesCell2
-                    return cell
-            }
+            let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell") as! HomeSeriesCell
+            return cell} else {
+            let cell = seriesTableView.dequeueReusableCell(withIdentifier: "HomeSeriesCell2") as! HomeSeriesCell2
+            return cell
+        }
     }
     
     
