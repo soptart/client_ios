@@ -38,6 +38,10 @@ class SignVC2: UIViewController {
         sign2BackBtn.addTarget(self, action: #selector(popSign2), for: .touchUpInside)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
     
 }
 

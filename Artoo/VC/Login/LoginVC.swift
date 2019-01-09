@@ -35,6 +35,12 @@ class LoginVC: UIViewController {
         joinBtn.addTarget(self, action: #selector(goSign), for: .touchUpInside)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
+    
+    
     //로그인으로 돌아올 unwindSegue
     @IBAction func unwindToLogin(_ sender: UIStoryboardSegue) {}
     

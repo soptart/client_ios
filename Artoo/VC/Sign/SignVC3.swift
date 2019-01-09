@@ -67,7 +67,9 @@ class SignVC3: UIViewController {
         sign3BackBtn.addTarget(self, action: #selector(popSign3), for: .touchUpInside)
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     
 }
 
