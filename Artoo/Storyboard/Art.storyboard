@@ -69,8 +69,8 @@
                                     <action selector="filterBtn:" destination="i1D-R2-t6c" eventType="touchUpInside" id="5co-dX-z8R"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="55개의 작품을 찾았어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zI-Y1-Taa">
-                                <rect key="frame" x="17" y="157" width="217" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개의 작품을 찾았어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zI-Y1-Taa">
+                                <rect key="frame" x="70" y="157" width="217" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,12 +114,20 @@
                                 <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="-1" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssC-Z7-lfa">
+                                <rect key="frame" x="21" y="157" width="41" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VZh-hL-poz"/>
                     </view>
                     <navigationItem key="navigationItem" id="QOD-uc-ySB"/>
                     <connections>
+                        <outlet property="artCountLabel" destination="ssC-Z7-lfa" id="YAR-OM-tEc"/>
                         <outlet property="categoryLabel" destination="dmY-wN-ssS" id="xy2-DW-UbM"/>
                         <outlet property="figureLabel" destination="iKY-Sx-pgq" id="tBf-WP-lYP"/>
                         <outlet property="imageCollection" destination="eRf-cP-s3X" id="Wto-B8-08z"/>
@@ -1016,7 +1024,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="oc4-Dk-xTQ"/>
                                                 </constraints>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="완료">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>

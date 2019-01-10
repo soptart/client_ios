@@ -15,6 +15,7 @@ class All_ArtVC: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
+    @IBOutlet weak var artCountLabel: UILabel!
     
     var filterData: Filter?
     var searchBarData: String?
@@ -129,18 +130,6 @@ extension All_ArtVC: UISearchBarDelegate{
 
 extension All_ArtVC: UICollectionViewDelegateFlowLayout{
     
-    //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //        return imageList.count
-    //    }
-    //
-    //
-    //    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
-    //        let image = imageList[indexPath.row]
-    //        cell.showImg.image = UIImage(named: image.artImg)
-    //
-    //        return cell
-    //    }
     
     //컬렉션 뷰 아이템 클릭 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -157,27 +146,13 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         }
         
         bVC.sendArtIndex = img.artIndex!
-        print("하하")
-        print(bVC.sendArtIndex)
+       
         //데이터이동
         self.navigationController?.pushViewController(bVC, animated: true)
         
-        //        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-        //            return CGSize(width: itemSize, height: itemSize)
-        //        }
-        //
-        //        func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //                  return 1
-        //            }
-        //서버에서 전달해주는 이미지를 받아서 저장해줘야 함.
 
     }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-    //        return CGSize(width: itemSize, height: itemSize)
-    //    }
+  
 }
 
 extension All_ArtVC: PinterestLayoutDelegate{
@@ -188,19 +163,7 @@ extension All_ArtVC: PinterestLayoutDelegate{
         let imageHeight = UIImage(named: imageList[indexPath.row].artImg!)?.size.height
         
         return imageHeight!
-        
-        //        let img = UIImage(named:imageList[indexPath.row].artImg)
-        //       return 200
-        
-        /*
-         //           return imageList[indexPath.item].artImg.frame.height
-         //        return imageList[indexPath.item].art
-         */
-        
-        //return img?.size.height ?? 200
-        
-        
-        //return photos[indexPath.item].image.size.height
+      
     }
     
 }
@@ -221,6 +184,7 @@ extension All_ArtVC{
                     self.imageList = allArtData
                     print("\(allArtData)")
                     completion() //-> 사실은 setUI함수가 호출되는 것이다.
+                    self.artCountLabel.text = String(describing: self.imageList.count)
                 }
             case 400:
                 print("나는 400이다")
@@ -245,8 +209,8 @@ extension All_ArtVC{
                 if let allFilterData = data.data {
                     self.imageList = allFilterData
                     print("\(allFilterData)")
-                    print("뭘 고를까")
                     self.imageCollection.reloadData()
+                    self.artCountLabel.text = String(describing: self.imageList.count)
                 }
             case 204:
                 print("컨텐츠가 존재하지 않습니다")
@@ -262,38 +226,6 @@ extension All_ArtVC{
         imageCollection.reloadData()
     }
     
-    /*
-    func moveBuyVC(selectedImg: ArtImage)
-    {
-        
-        ArtDescriptionService.shared.artDescription(art_index: selectedImg.artIndex!) { (data) in guard let status = data.status else { return }
-            
-            print(status)
-            
-            switch status {
-            case 200:
-                if let allArtData = data.data {
-                    //서버데이터를 todayList에 담아줌
-                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
-                    guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
-                        return
-                    }
-                    
-                    bVC.artDetailInfo = allArtData
-                    //데이터이동
-                    self.navigationController?.pushViewController(bVC, animated: true)
-                    
-                }
-            case 400:
-                print("나는 400이다")
-            case 500:
-                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
-            default:
-                print("hi")
-            }
-        }
-    }
-    */
     
     func setDelegate(){
         
