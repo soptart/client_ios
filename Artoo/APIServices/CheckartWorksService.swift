@@ -30,5 +30,5 @@ struct CheckartWorksService: APIManager, Requestable {
             }
         
         }
-    }
+}
 

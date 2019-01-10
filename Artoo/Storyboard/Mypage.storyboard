@@ -40,6 +40,13 @@
                                                     <action selector="settingBtn:" destination="CWR-3F-KdO" eventType="touchUpInside" id="nIp-Si-I3e"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFq-KQ-JmC">
+                                                <rect key="frame" x="166" y="439" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="김일혁 님의 작품 공간입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwi-Fd-eiH">
                                                 <rect key="frame" x="8" y="53" width="165" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1525,7 +1532,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="UmP-FD-Fcy"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="UNO-Os-8hU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-0v-DrG">
@@ -1534,7 +1541,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="1Pw-BN-D5a"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="9co-VS-uDN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-WN-nwW">
@@ -1543,7 +1550,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="ohP-3x-0hX"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="DkB-2a-Tqf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1558,7 +1565,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="j8L-cL-d0e"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="10Q-ny-00M"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-uN-HdD">
@@ -1567,7 +1574,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="oV3-Ts-uSu"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="YGW-PP-c70"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaQ-IB-rP7">
@@ -1576,7 +1583,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="h8g-Oe-qdU"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="E7N-bk-qfO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1591,7 +1598,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="KZt-cC-UAL"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="9HA-vG-I9O"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ru-C3-GKo">
@@ -1600,7 +1607,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="KpB-kO-uCc"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="FLm-3S-Jvd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvj-2I-Xhu">
@@ -1609,7 +1616,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="Ia8-Pb-b10"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="DnE-8q-hSk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-zB-R6z">
@@ -1618,7 +1625,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="choiceTagBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="2cA-ff-AcA"/>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="Uud-cZ-tJB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1631,7 +1638,6 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="finishBtn:" destination="R90-Cw-h46" eventType="touchUpInside" id="8Qg-GQ-EHx"/>
                                             <action selector="finishBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="kPt-pH-Jne"/>
                                             <segue destination="vis-e8-DtT" kind="presentation" identifier="backSegue" id="gai-bC-6GW"/>
                                         </connections>
@@ -1667,6 +1673,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="artNameUploadTF" destination="ctT-cW-xRO" id="8rI-rw-0Lf"/>
                         <outlet property="artPriceTF" destination="c37-UL-2uK" id="RUW-tS-Iwt"/>
                         <outlet property="choiceImg" destination="2QT-GN-XMT" id="LNM-gC-0hr"/>
+                        <outlet property="happyBtn" destination="1to-fg-Oql" id="9oD-cu-ktj"/>
                         <outlet property="heightTF" destination="fs9-SH-6ZD" id="Srk-jZ-Luy"/>
                         <outlet property="popUpView" destination="2II-GX-HaV" id="Uo5-ph-0Tt"/>
                         <outlet property="popUpViewBottomConstraint" destination="B9q-RN-eVq" id="g7t-HJ-nmY"/>
@@ -1677,33 +1684,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIm-Cw-gxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.599999999999994" y="-1889.0554722638683"/>
-        </scene>
-        <!--Tag UploadVC-->
-        <scene sceneID="CcA-r6-J82">
-            <objects>
-                <viewController id="R90-Cw-h46" customClass="tagUploadVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o7L-wd-hPq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="FyI-Se-gMM"/>
-                    </view>
-                    <connections>
-                        <outlet property="tagName1" destination="1to-fg-Oql" id="2Gr-wo-V1a"/>
-                        <outlet property="tagName10" destination="tRw-zB-R6z" id="F3z-RV-l3Z"/>
-                        <outlet property="tagName2" destination="g6z-0v-DrG" id="5Qd-Ly-sks"/>
-                        <outlet property="tagName3" destination="LG2-7E-F7Q" id="d3C-xc-hd4"/>
-                        <outlet property="tagName4" destination="LG2-7E-F7Q" id="SpF-DV-XtE"/>
-                        <outlet property="tagName5" destination="DlF-uN-HdD" id="Ppx-8X-I3u"/>
-                        <outlet property="tagName6" destination="UaQ-IB-rP7" id="D9F-V0-7Zg"/>
-                        <outlet property="tagName7" destination="WgN-LH-dFh" id="6Qp-pb-MOC"/>
-                        <outlet property="tagName8" destination="2ru-C3-GKo" id="exl-kg-a0j"/>
-                        <outlet property="tagName9" destination="bvj-2I-Xhu" id="OCX-6M-JdZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsp-JV-YJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="815" y="-2178"/>
+            <point key="canvasLocation" x="-156" y="-1900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M2x-b7-6do">

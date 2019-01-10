@@ -21,6 +21,7 @@ class MyPageMainVC: UIViewController {
     @IBOutlet weak var noticeView: UIView!
     
     var userInfo: String!
+    var userMypageInfomation: MyArt?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,18 +74,28 @@ class MyPageMainVC: UIViewController {
     @IBAction func SaveBtn(_ sender: Any) {
         EditTextView.isEditable = false
         MainIntroductionLabel.textColor = UIColor.darkGray
+        if EditTextView!.text == "" {
+            self.view.makeToast("회원정보를 입력하고 저장 버튼을 눌러주세요.")
+        }
         let userIndex = UserDefaults.standard.integer(forKey: "userIndex")
-        UserModifyService.shared.modifyUserInfo(user_idx: userIndex) {
-            (res) in guard let status = res.status else { return }
+        userInfo = self.EditTextView?.text!
+       print(userIndex)
+        print(userInfo)
+        print("하하하")
+        UserModifyService.shared.modifyUserInfo(user_idx: userIndex, u_description: self.userInfo!) {
+            (data) in guard let status = data.status else { return }
             switch status {
-            case 200:
-                print("hi1")
-                //editable = true, 색깔 바꿔놓은 회색이 다시 검은색
-                //그 정보가 띄워지면 됨.
-                
-                //회원 정보 수정 성공
+            case 200: do{
+                print("회원정보수정")
+                if let mypageData = data.data{
+                    self.userMypageInfomation = mypageData
+                    print("\(mypageData)")
+                }
+                self.MainIntroductionLabel.isEnabled = true
+                self.MainIntroductionLabel.textColor = UIColor(displayP3Red: 74, green: 74, blue: 74, alpha: 1)
+            }
             case 404:
-                print("hi2")
+                print("유저 조회 실패")
                 //유저 조회 실패
             case 401:
                 print("hi3")

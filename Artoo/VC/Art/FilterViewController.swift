@@ -70,7 +70,7 @@ class FilterViewController: UIViewController {
             SsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             MsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             LsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
-            sizeImage.image = UIImage(named:"filterSizeXLSelect")
+            sizeImage.image = UIImage(named:"filterSizeXlSelect")
         }
     }
     
@@ -130,38 +130,14 @@ class FilterViewController: UIViewController {
     
     @IBAction func categoryBtn(_ sender: UIButton) {
         if sender.tag == 11{
-            filterData.category = "사물"
-            objectBtn.setImage(UIImage(named:"filterObjectSelect"), for: .normal)
-            abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
-            sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
-            personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
-            animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
-            plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
-        }else if sender.tag == 12{
-            filterData.category = "추상"
-            objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
-            abstractBtn.setImage(UIImage(named:"filterAbstractSelect"), for: .normal)
-            sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
-            personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
-            animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
-            plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
-        }else if sender.tag == 13{
-            filterData.category = "풍경"
-            objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
-            abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
-            sineryBtn.setImage(UIImage(named:"filterScenerySelect"), for: .normal)
-            personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
-            animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
-            plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
-        }else if sender.tag == 14{
             filterData.category = "인물"
-            objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
+            objectBtn.setImage(UIImage(named:"filterNoObjectNoSelect"), for: .normal)
             abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
             sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
             personBtn.setImage(UIImage(named:"filterPersonSelect"), for: .normal)
             animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
             plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
-        }else if sender.tag == 15{
+        }else if sender.tag == 12{
             filterData.category = "동물"
             objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
             abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
@@ -169,14 +145,38 @@ class FilterViewController: UIViewController {
             personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
             animalBtn.setImage(UIImage(named:"filterAnimalSelect"), for: .normal)
             plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
-        }else if sender.tag == 16{
-            filterData.category = "식물"
+        }else if sender.tag == 13{
+            filterData.category = "사물"
             objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
             abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
             sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
             personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
             animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
             plantBtn.setImage(UIImage(named:"filterPlantSelect"), for: .normal)
+        }else if sender.tag == 14{
+            filterData.category = "사물"
+            objectBtn.setImage(UIImage(named:"filterObjectSelect"), for: .normal)
+            abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
+            sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
+            personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
+            animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
+            plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
+        }else if sender.tag == 15{
+            filterData.category = "추상"
+            objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
+            abstractBtn.setImage(UIImage(named:"filterAbstractSelect"), for: .normal)
+            sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
+            personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
+            animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
+            plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
+        }else if sender.tag == 16{
+            filterData.category = "풍경"
+            objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
+            abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
+            sineryBtn.setImage(UIImage(named:"filterScenerySelect"), for: .normal)
+            personBtn.setImage(UIImage(named:"filterPersonNoSelect"), for: .normal)
+            animalBtn.setImage(UIImage(named:"filterAnimalNoSelect"), for: .normal)
+            plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
         }
     }
     
