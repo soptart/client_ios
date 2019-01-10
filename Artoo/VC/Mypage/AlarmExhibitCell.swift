@@ -10,6 +10,10 @@ import UIKit
 
 class AlarmExhibitCell: UITableViewCell{
 
+    @IBOutlet weak var backImg: UIImageView!
+    
+    @IBOutlet weak var cancelBtn: UIButton!
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var exhibitNameLabel: UILabel!
     @IBOutlet weak var exhibitDateLabel: UILabel!
