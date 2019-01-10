@@ -10,6 +10,12 @@ import UIKit
 
 class MultiNotifyVC: UIViewController {
     
+    @IBOutlet weak var firstImg: UIImageView!
+    @IBOutlet weak var secondImg: UIImageView!
+    @IBOutlet weak var thirdImg: UIImageView!
+    
+    
+    
     //탭 버튼 3개
     @IBOutlet weak var buyListBtn: UIButton! //구매내역
     @IBOutlet weak var sellListBtn: UIButton! //판매내역
@@ -21,7 +27,8 @@ class MultiNotifyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView(selected: 0)
-        
+        secondImg.isHidden = true
+        thirdImg.isHidden = true
     }
     
     
@@ -32,10 +39,10 @@ class MultiNotifyVC: UIViewController {
     
     
     //구매 내역 VC
-    private lazy var buyListPage: SellListVC = {
+    private lazy var purchaseVC: PurchaseVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "allSellList") as! SellListVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: "PurchaseVC") as! PurchaseVC
         
         self.add(asChildViewController: viewController)
         
@@ -93,17 +100,23 @@ extension MultiNotifyVC {
     
     private func updateView(selected: Int){
         if selected == 0{
-           
+           firstImg.isHidden = false
+            secondImg.isHidden = true
+            thirdImg.isHidden = true
+
             remove(asChildViewController: transactionListPage)
             remove(asChildViewController: exhibitListPage)
-            add(asChildViewController: buyListPage)
+            add(asChildViewController: purchaseVC)
             buyListBtn.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
             sellListBtn.setTitleColor(UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), for: .normal)
             exhibitListBtn.setTitleColor(UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), for: .normal)
             
         } else if selected == 1{
-           
-            remove(asChildViewController: buyListPage)
+            firstImg.isHidden = true
+            secondImg.isHidden = false
+            thirdImg.isHidden = true
+            
+            remove(asChildViewController: purchaseVC)
             remove(asChildViewController: exhibitListPage)
             add(asChildViewController: transactionListPage)
             sellListBtn.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
@@ -111,8 +124,11 @@ extension MultiNotifyVC {
             exhibitListBtn.setTitleColor(UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), for: .normal)
             
         } else {
+            firstImg.isHidden = true
+            secondImg.isHidden = true
+            thirdImg.isHidden = false
            print("firts")
-            remove(asChildViewController: buyListPage)
+            remove(asChildViewController: purchaseVC)
            remove(asChildViewController: transactionListPage)
             add(asChildViewController: exhibitListPage)
             sellListBtn.setTitleColor(UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1), for: .normal)
