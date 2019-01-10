@@ -1,11 +1,15 @@
-//전시신청 -> 업로드에 사용
-//내 작품에 대한 정보들을 담고 있음
-
+//
+//  ArtWorkLike.swift
+//  Artoo
+//
+//  Created by 보윤 on 10/01/2019.
+//  Copyright © 2019 홍정민. All rights reserved.
+//
 
 import Foundation
 import ObjectMapper
 
-struct ArtWork : Mappable {
+struct ArtWorkLike : Mappable {
     
     //17개
     var artIndex:Int? //작품 인덱스 -> 전시신청서에서 사용
@@ -13,8 +17,8 @@ struct ArtWork : Mappable {
     var artWidth:Int? //작품 width
     var artHeight:Int? //작품 height
     var artDepth:Int? //작품 depth
-   // var artCategory:Int? //작품 카테고리
-   // var artForm:Int? //작품 형태
+    var artCategory:Int? //작품 카테고리
+    var artForm:Int? //작품 형태
     var price:Int? //작품 가격
     var likeCount:Int? //작품 좋아요 수
     var userIndex:Int? //유저 인덱스
@@ -22,22 +26,16 @@ struct ArtWork : Mappable {
     var artDate:Date? //작품 날짜
     var artYear:String? //작품 년도
     var artImg:String? //작품 이미지 -> 전시신청서에서 사용
-    var auth:Bool? //작품 올린 당사자 -> true
-   // var artTag:String? //태그
+    var artTag:String? //태그
     var artLicense:String? //라이센스
     var artSize: Int? // 작품 사이즈
-    //var artIsDisplay: Bool? // 사용할 필요 없음
+    var artIsDisplay: Bool? // 사용할 필요 없음
     var artActive: Bool? // 사용할 필용 없음.
-    //var artMaterial: String? //작품 재료
-    var artExpression: String? //작품 표현기법
-    var artPurchaseState: Int? //작품 구매상태
-    var userName: String? //작가 이름
-    var userSchool: String? //작가 학교
     var artIsLike: Bool? //좋아요 여부
     
     
     
-
+    
     init?(map: Map) {
         
     }
@@ -48,8 +46,8 @@ struct ArtWork : Mappable {
         artWidth <- map["a_width"]
         artHeight <- map["a_height"]
         artDepth <- map["a_depth"]
-        //rtCategory <- map["a_category"]
-//artForm <- map["a_form"]
+        artCategory <- map["a_category"]
+        artForm <- map["a_form"]
         price <- map["a_price"]
         likeCount <- map["a_like_count"]
         userIndex <- map["u_idx"]
@@ -57,20 +55,12 @@ struct ArtWork : Mappable {
         artDate <- map["a_date"]
         artYear <- map["a_year"]
         artImg <- map["pic_url"]
-        auth <- map["auth"]
-        //artTag <- map["a_tag"]
+        artTag <- map["a_tag"]
         artLicense <- map["a_license"]
         artSize <- map["a_size"]
-        //artIsDisplay <- map["a_isDisplay"]
-        artActive <- map["a_active"]
-//artMaterial <- map["a_material"]
-        artExpression <- map["a_expression"]
-        artPurchaseState <- map["a_purchaseState"]
-        userName <- map["u_name"]
-        userSchool <- map["u_school"]
+        artIsDisplay <- map["a_isDisplay"]
         artIsLike <- map["islike"]
-
+        
     }
     
 }
-
