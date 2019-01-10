@@ -71,8 +71,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         artFigureLabelText.isHidden = true
         artArticleLabel.isHidden = true
         artArticleLabelText.isHidden = true
-//        artFigureLabelText.text = artDetailInfo?.artExpression!
-//        artArticleLabelText.text = artDetailInfo?.artMaterial!
         figureLabel?.isHidden = false
         //이미지 선택 시
         let pictureTap = UITapGestureRecognizer(target: self, action: #selector(BuyVC.bigImage))
@@ -106,6 +104,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         feedContentTV?.text! = comments!
         sendArtIndex = artDetailInfo?.artIndex!
         userIndex = UserDefaults.standard.integer(forKey: "userIndex")
+        
         uploadCommentService.shared.comment(comment: self.comments!, comment_Index: userIndex!, art_Index: self.sendArtIndex!){
             (status) in let status = status
 
@@ -221,6 +220,9 @@ extension BuyVC {
         width = artDetailInfo?.artWidth!
         height = artDetailInfo?.artHeight!
         sizeLabelText.text = "\(String(describing: width!))" + "*" + "\(String(describing: height!))"
+        artArticleLabelText.text = artDetailInfo?.artMaterial!
+        artFigureLabelText.text = artDetailInfo?.artExpression!
+        
         
         if((artDetailInfo?.artSize)! < 2411){
             sizeImg.image = UIImage(named: "sizeS")
@@ -248,7 +250,7 @@ extension BuyVC {
 
         
         //좋아요를 이미 눌렀을 경우i
-         if (likeDetailInfo?.artIsLike == true) {
+         if (artDetailInfo?.artIsLike == true) {
          heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
          }else {
          heartImg.setImage(UIImage(named:"heartGray"), for: .normal
@@ -262,18 +264,29 @@ extension BuyVC {
             figureLabel?.isHidden = false
         }
         
+        if (artDetailInfo?.artPurchaseState == 0){
+            buyBtn.setImage(UIImage(named:"artworkBuyGray"), for: .normal)
+            priceImage.image = UIImage(named: "artworkPriceGray")
+        } else if (artDetailInfo?.artPurchaseState == 1){
+            buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
+            priceImage.image = UIImage(named: "artworkPriceColor")
+        } else {
+            buyBtn.setImage(UIImage(named:"artworkComplete"), for: .normal)
+            priceImage.image = UIImage(named: "artworkPriceGray")
+        }
         
+        setUpData(completion: setUI)
     }
     
     func heartDetail(){
        
-            moreImg.imageFromUrl(gsno(likeDetailInfo?.artImg), defaultImgPath: "ggobuk")
+            moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
             artNameLabel.text = likeDetailInfo?.artName!
-            artLikeCountLabel.text = String(describing: gino(likeDetailInfo?.likeCount!))
-            desc?.text = likeDetailInfo?.workDetail!
-            artYearLabel.text = likeDetailInfo?.artYear!
-            artPriceLabel.text = String(describing: gino(likeDetailInfo?.price!))
-            lilcense = likeDetailInfo?.artLicense!
+            artLikeCountLabel.text = String(describing: gino(artDetailInfo?.likeCount!))
+            desc?.text = artDetailInfo?.workDetail!
+            artYearLabel.text = artDetailInfo?.artYear!
+            artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
+            lilcense = artDetailInfo?.artLicense!
             
             if (lilcense ==  "저작자표시") {
                 licenseImage.image = UIImage(named: "ccBy")
@@ -291,14 +304,14 @@ extension BuyVC {
         
         
             //좋아요를 이미 눌렀을 경우i
-            if (likeDetailInfo?.artIsLike == true) {
+            if (artDetailInfo?.artIsLike == true) {
                 heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
             }else {
                 heartImg.setImage(UIImage(named:"heartGray"), for: .normal
                 )
             }
         
-        artDetailInfo?.artIsLike = likeDetailInfo?.artIsLike
+        //artDetailInfo?.artIsLike = likeDetailInfo?.artIsLike
         
     }
     
@@ -314,7 +327,7 @@ extension BuyVC {
                     //서버데이터를 todayList에 담아줌
                     print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
                     print("다음은 하트 정보")
-                    self.likeDetailInfo = allArtData
+                    self.artDetailInfo = allArtData
                     //데이터이동
                     completion()
                 }
@@ -332,9 +345,9 @@ extension BuyVC {
     //댓글 조회
     func setUpData(completion: @escaping() -> Void){
         
-        let artIndex = sendArtIndex
+        //let artIndex = sendArtIndex
         
-        CheckCommentsService.shared.comments(art_index: artIndex!){
+        CheckCommentsService.shared.comments(art_index: sendArtIndex!){
             (data) in guard let status = data.status else { return }
             
             print(status)
@@ -385,6 +398,25 @@ extension BuyVC {
             }
         }
     }
+    
+    func alert(){
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let update = UIAlertAction(title: "수정하기", style: .default, handler: nil)
+        let delete = UIAlertAction(title: "삭제하기", style: .default, handler: nil)
+        
+        alert.addAction(update)
+        alert.addAction(delete)
+        
+        present(alert, animated: true)
+        
+        func del(){
+            print("wfjwfjwof")
+        }
+    }
+    
+    
+
 }
 
 extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDelegate {

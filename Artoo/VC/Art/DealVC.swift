@@ -19,10 +19,11 @@ class DealVC: UIViewController {
     @IBOutlet weak var buyItemPriceLabel: UILabel!
     @IBOutlet weak var buyItemPriceLabel2: UILabel!
     @IBOutlet weak var deliveryFeeLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     var buyImageUrl: String!
     var buyItemName: String!
-    var buyPrice: Int!
+    var buyPrice: Int?
     var totalPrice: Int? //나중에 계산해주기.
     var isDelivery: Bool? //택배면 true, 직거래면 false
     var sendArtIndex: Int?
@@ -31,6 +32,8 @@ class DealVC: UIViewController {
     var takerAddress: String?
     var takerPhone: String?
     var isPayment: Int?
+    var deliveryFee: Int?
+    var buyItemInfo: buyItemBuyerInfo!
     
     //택배나 직거래 버튼 눌렀을 때 화면이 변하기
     @IBAction func changeView(_ sender: UIButton) {
@@ -80,10 +83,7 @@ class DealVC: UIViewController {
         updateView(selected: 0)
         // Do any additional setup after loading the view.
         buyImage.imageFromUrl(gsno(buyImageUrl!), defaultImgPath: "ggobuk")
-        buyItemNameLabel.text = buyItemName!
-        buyItemPriceLabel.text = String(describing: buyPrice!)
-        buyItemPriceLabel2.text = String(describing: buyPrice!)
-        
+        setUpdata()
     }
     
     
@@ -126,6 +126,40 @@ extension DealVC {
         } else {
             remove(asChildViewController: deliveryService)
             add(asChildViewConroller: directService)
+        }
+    }
+    
+    //작품의 정보 얻어오기
+    func setUpdata(){
+        
+        print(sendArtIndex!)
+        
+        BuyItemInfoService.shared.buyItemInfo(art_index: sendArtIndex!){
+            (data) in guard let status = data.status else { return }
+            
+            switch status{
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    self.buyItemInfo = allArtData
+                    print("\(allArtData)")
+                    self.buyItemNameLabel.text = (self.buyItemInfo?.artworkName)!
+                    self.buyItemPriceLabel.text = String(describing: (self.buyItemInfo?.artworkPrice!)!)
+                    self.buyItemPriceLabel2.text = String(describing: (self.buyItemInfo?.artworkPrice!)!)
+                    self.deliveryFeeLabel.text = String(describing:(self.buyItemInfo?.deliveryCharge!)!)
+                    
+                    self.buyPrice = self.buyItemInfo.artworkPrice!
+                    self.deliveryFee = self.buyItemInfo.deliveryCharge!
+                    self.totalPrice = self.buyPrice! + self.deliveryFee!
+                    self.totalPriceLabel.text = String(describing:(self.totalPrice!))
+                     print("작품 조회 성공")
+                }
+            case 400:
+                print("미술 작품 없음")
+            case 500:
+                print("서버 내부 에러")
+            default: print("작품 정보 얻어옵니다.")
+            }
         }
     }
     

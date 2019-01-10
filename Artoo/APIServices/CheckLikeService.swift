@@ -11,7 +11,7 @@ import Alamofire
 
 struct CheckLikeService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<ArtWorkLike>
+    typealias NetworkData = ResponseObject<ArtWork>
     static let shared = CheckLikeService()
     let artDescriptionURL = url("/artworks/")
     let header: HTTPHeaders = [
