@@ -31,6 +31,10 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var buyBtn: UIButton!
     @IBOutlet weak var priceImage: UIImageView!
     @IBOutlet weak var heartImg: UIButton!
+    @IBOutlet weak var sizeLabelText: UILabel!
+    
+    @IBOutlet weak var sizeImg: UIImageView!
+    
     
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
@@ -44,6 +48,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
     var lilcense: String?
     var likeDetailInfo: ArtWorkLike?
+    var width: Int?
+    var height: Int?
+    var depth: Int?
     
     @IBOutlet weak var commentsTable: UITableView!
     
@@ -53,8 +60,10 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         feedContentTV?.delegate = self
         
-        moveBuyVC(completion: setDetail)
-        
+        moveBuyVC(completion: setDetail) //작품 상세 조회
+        setUpData(completion: setUI) //댓글 조회
+        commentsTable.delegate = self
+        commentsTable.dataSource = self
         
         //처음에는 안 보이게 한다
         desc?.delegate = self
@@ -65,14 +74,11 @@ class BuyVC: UIViewController, UITextViewDelegate {
 //        artFigureLabelText.text = artDetailInfo?.artExpression!
 //        artArticleLabelText.text = artDetailInfo?.artMaterial!
         figureLabel?.isHidden = false
-        
         //이미지 선택 시
         let pictureTap = UITapGestureRecognizer(target: self, action: #selector(BuyVC.bigImage))
         moreImg.addGestureRecognizer(pictureTap)
         moreImg.isUserInteractionEnabled = true
-        setUpData(completion: setUI)
-        commentsTable.delegate = self
-        commentsTable.dataSource = self
+       
         
     }
     
@@ -114,7 +120,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
             self.artArticleLabelText.isHidden = false
                 self.figureLabel?.isHidden = true
                 self.feedContentTV?.text = ""
-                self.setUpData(completion: self.setUI)
+                //self.setUpData(completion: self.setUI)
             self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
                 self.priceImage.image = UIImage(named:"artworkPriceColor")
             }
@@ -212,6 +218,19 @@ extension BuyVC {
         artYearLabel.text = artDetailInfo?.artYear!
         artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
         lilcense = artDetailInfo?.artLicense!
+        width = artDetailInfo?.artWidth!
+        height = artDetailInfo?.artHeight!
+        sizeLabelText.text = "\(String(describing: width!))" + "*" + "\(String(describing: height!))"
+        
+        if((artDetailInfo?.artSize)! < 2411){
+            sizeImg.image = UIImage(named: "sizeS")
+        } else if(((artDetailInfo?.artSize)! < 6609) && (artDetailInfo?.artSize)! >= 2411) {
+            sizeImg.image = UIImage(named: "sizeM")
+        } else if(((artDetailInfo?.artSize)! < 10628) && (artDetailInfo?.artSize)! >= 6609) {
+            sizeImg.image = UIImage(named: "sizeL")
+        } else {
+            sizeImg.image = UIImage(named: "sizeXl")
+        }
         
         if (lilcense ==  "저작자표시") {
             licenseImage.image = UIImage(named: "ccBy")
@@ -227,20 +246,23 @@ extension BuyVC {
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
 
-        //좋아요를 이미 눌렀을 경우i
-        if (artDetailInfo?.artIsLike == true) {
-            heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
-        }else {
-            heartImg.setImage(UIImage(named:"heartGray"), for: .normal
-            )
-        }
         
+        //좋아요를 이미 눌렀을 경우i
+         if (likeDetailInfo?.artIsLike == true) {
+         heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
+         }else {
+         heartImg.setImage(UIImage(named:"heartGray"), for: .normal
+         )
+         }
+ 
         //판매자라면
         if (artDetailInfo?.auth == true) {
             figureLabel?.isHidden = true
         } else {
             figureLabel?.isHidden = false
         }
+        
+        
     }
     
     func heartDetail(){
@@ -266,7 +288,8 @@ extension BuyVC {
             } else if (lilcense == "저작자표시-비영리-변경금지") {
                 licenseImage.image = UIImage(named: "ccByNcNd")
             }
-            
+        
+        
             //좋아요를 이미 눌렀을 경우i
             if (likeDetailInfo?.artIsLike == true) {
                 heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
@@ -274,6 +297,8 @@ extension BuyVC {
                 heartImg.setImage(UIImage(named:"heartGray"), for: .normal
                 )
             }
+        
+        artDetailInfo?.artIsLike = likeDetailInfo?.artIsLike
         
     }
     
@@ -304,6 +329,7 @@ extension BuyVC {
         
     }
     
+    //댓글 조회
     func setUpData(completion: @escaping() -> Void){
         
         let artIndex = sendArtIndex
@@ -319,7 +345,6 @@ extension BuyVC {
                     self.commentsList = allCommentsData
                     print("\(allCommentsData)")
                     completion()
-                    
                 }
             case 204:
                 print("유저가 쓴 댓글이 없음")
@@ -380,13 +405,6 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
         cell.commentsContentTF.text = gsno(comment.commentsText)
         //cell.commen
         cell.userName.text = gsno(comment.commentsName)
-        if (artDetailInfo?.auth == true){
-            cell.saveBtn.isHidden = true
-            cell.updateBtn.isHidden = false
-        } else {
-            cell.saveBtn.isHidden = false
-            cell.updateBtn.isHidden = false
-        }
         return cell
     }
     
@@ -415,21 +433,6 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
             
         }
     }
-
-    //수정버튼 눌렀을 때
-    
-    func editTapped(_ sender: CommentsTableCell) {
-        guard let indexPath = commentsTable.indexPath(for: sender) else { return }
-        
-
-    }
-    
-    //저장버튼 눌렀을 때
-    func saveTapped(_ sender: CommentsTableCell) {
-        //서버연동
-        
-    }
-    
     
 }
 
