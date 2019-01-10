@@ -43,10 +43,10 @@ class MultiNotifyVC: UIViewController {
     }()
     
     //판매 내역 VC
-    private lazy var transactionListPage: sellTableVC = {
+    private lazy var transactionListPage: SellVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "transactionList") as! sellTableVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: "SellVC") as! SellVC
         
         self.add(asChildViewController: viewController)
         
