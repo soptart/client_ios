@@ -10,6 +10,9 @@ import UIKit
 
 class sellFirstCell: UITableViewCell {
 
+    @IBOutlet weak var backImg: UIImageView!
+    @IBOutlet weak var refundBtn: UIButton!
+    @IBOutlet weak var reviewBtn: UIButton!
     
     //날짜
     @IBOutlet weak var dateLabel: UILabel!

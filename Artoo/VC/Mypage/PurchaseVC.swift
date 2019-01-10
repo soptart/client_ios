@@ -68,6 +68,20 @@ extension PurchaseVC : UITableViewDataSource {
         if(isPay == 1 && isDelivery == 1){
             let cell = putchaseTableView.dequeueReusableCell(withIdentifier: "first") as! sellFirstCell
             cell.dateLabel.text = gsno(data.pDate)
+          
+            //배경 이미지 처리
+            cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
+            cell.backImg.layer.borderWidth = 2
+            
+            //버튼 라운드 처리
+            cell.refundBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+            cell.refundBtn.layer.borderWidth = 0.5
+            
+            cell.reviewBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+            cell.reviewBtn.layer.borderWidth = 0.5
+            
+            
+            
             cell.workImageView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
             cell.workNameLabel.text = gsno(data.aName)
             cell.authorNameLabel.text = gsno(data.auName)
@@ -75,10 +89,26 @@ extension PurchaseVC : UITableViewDataSource {
             cell.sellerNameLabel.text = gsno(data.uName)
             cell.sellerPhoneLabel.text = gsno(data.uPhone)
             cell.sellerAdressLabel.text = gsno(data.uAdress)
+            cell.sellerAdressLabel.sizeToFit()
+            
+            
+            updateViewConstraints()
             return cell
         } else if(isPay == 1 && isDelivery == 0){
             //결제 완료 - 직거래(1 / 0)
             let cell = putchaseTableView.dequeueReusableCell(withIdentifier: "second") as! sellSecondCell
+            cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
+            cell.backImg.layer.borderWidth = 0.5
+            
+            
+            //버튼 라운드 처리
+            cell.refundBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+            cell.refundBtn.layer.borderWidth = 0.5
+            
+            cell.reviewBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+            cell.reviewBtn.layer.borderWidth = 0.5
+            
+            
             cell.dateLabel.text = gsno(data.pDate)
             cell.sellImg.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
             cell.buyItem.text = gsno(data.aName)
@@ -87,13 +117,17 @@ extension PurchaseVC : UITableViewDataSource {
             return cell
         }else {
             //결제 미완료
+            
+            
             let cell = putchaseTableView.dequeueReusableCell(withIdentifier: "SellThirdCell") as! SellThirdCell
+            cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
+            cell.backImg.layer.borderWidth = 2
             cell.dateLabel.text = gsno(data.pDate)
             cell.artImgView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
             cell.workNameLabel.text = gsno(data.aName)
             cell.authorNameLabel.text = gsno(data.auName)
-
-        
+            
+            
             let tType = gino(data.pIsDelivery)
             if(tType == 0){
                 cell.typeLabel.text = "직거래"
@@ -101,8 +135,9 @@ extension PurchaseVC : UITableViewDataSource {
                 cell.typeLabel.text = "택배"
             }
             
-            cell.moneyLabel.text = "\(gino(data.aPrice))"
+            cell.moneyLabel.text = "\(gino(data.aPrice))원"
             cell.accountLabel.text = gsno(data.uBank) + " " + gsno(data.uAccount) + " " + gsno(data.uName)
+            cell.accountLabel.sizeToFit()
             return cell
         }
         

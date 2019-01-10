@@ -10,6 +10,9 @@ import UIKit
 
 class sellSecondCell: UITableViewCell {
 
+    @IBOutlet weak var backImg: UIImageView!
+    @IBOutlet weak var refundBtn: UIButton!
+    @IBOutlet weak var reviewBtn: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var sellImg: UIImageView!
     @IBOutlet weak var buyItem: UILabel!
