@@ -10,23 +10,28 @@ import UIKit
 
 class MultiNotifyVC: UIViewController {
     
-    @IBOutlet weak var buyListBtn: UIButton!
-    @IBOutlet weak var sellListBtn: UIButton!
-    @IBOutlet weak var exhibitListBtn: UIButton!
+    //탭 버튼 3개
+    @IBOutlet weak var buyListBtn: UIButton! //구매내역
+    @IBOutlet weak var sellListBtn: UIButton! //판매내역
+    @IBOutlet weak var exhibitListBtn: UIButton! //전시내역
     
+   //컨테이너 뷰(내용이 변함)
+    @IBOutlet weak var containerView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView(selected: 0)
-        // Do any additional setup after loading the view.
+        
     }
-    @IBOutlet weak var containerView: UIView!
     
     
+    //버튼 눌러서 아래 컨테이너가 변하는 액션
     @IBAction func ChangeTapBtn(_ sender: UIButton) {
-    
         updateView(selected: sender.tag)
     }
     
+    
+    //구매 내역 VC
     private lazy var buyListPage: SellListVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
@@ -37,16 +42,18 @@ class MultiNotifyVC: UIViewController {
         return viewController
     }()
     
-    private lazy var transactionListPage: sellTableVC = {
+    //판매 내역 VC
+    private lazy var transactionListPage: SellVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "transactionList") as! sellTableVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: "SellVC") as! SellVC
         
         self.add(asChildViewController: viewController)
         
         return viewController
     }()
     
+    //전시 내역 VC
     private lazy var exhibitListPage: exhibitListVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
@@ -59,7 +66,11 @@ class MultiNotifyVC: UIViewController {
     
 }
 
+
+
 extension MultiNotifyVC {
+    
+
     
     private func add(asChildViewController viewController: UIViewController) {
         
