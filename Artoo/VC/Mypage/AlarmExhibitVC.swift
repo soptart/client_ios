@@ -43,6 +43,15 @@ extension AlarmExhibitVC : UITableViewDataSource {
         let displayData = data.display!
 
         let cell = exhibitTableView.dequeueReusableCell(withIdentifier: "AlarmExhibitCell") as! AlarmExhibitCell
+        
+        //배경 이미지 처리
+        cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
+        cell.backImg.layer.borderWidth = 1
+        
+        //버튼 라운드 처리
+        cell.cancelBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+        cell.cancelBtn.layer.borderWidth = 0.5
+        
         cell.dateLabel.text = gsno(data.dcDate)
         cell.exhibitNameLabel.text = gsno(displayData.exhibitTitle)
         cell.exhibitDateLabel.text = gsno(displayData.startDate) + "~" + gsno(displayData.endDate)

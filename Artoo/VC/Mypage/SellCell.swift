@@ -10,6 +10,8 @@ import UIKit
 
 class SellCell: UITableViewCell {
 
+    @IBOutlet weak var backImg: UIImageView!
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var workImageView: UIImageView!
     @IBOutlet weak var workNameLabel: UILabel!

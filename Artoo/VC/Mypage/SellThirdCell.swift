@@ -10,6 +10,7 @@ import UIKit
 
 class SellThirdCell: UITableViewCell {
 
+    @IBOutlet weak var backImg: UIImageView!
     //작품 이미지
     @IBOutlet weak var artImgView: UIImageView!
     

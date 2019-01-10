@@ -34,6 +34,11 @@ extension SellVC : UITableViewDataSource {
         let isDelivery = gino(data.pIsDelivery)
         
         let cell = sellTableView.dequeueReusableCell(withIdentifier: "SellCell") as! SellCell
+        
+        //배경 이미지 처리
+        cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
+        cell.backImg.layer.borderWidth = 1
+
         cell.dateLabel.text = gsno(data.pDate)
         cell.workImageView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
         cell.workNameLabel.text = gsno(data.aName)
