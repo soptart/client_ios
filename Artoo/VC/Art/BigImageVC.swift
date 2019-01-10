@@ -26,4 +26,7 @@ class BigImageVC: UIViewController {
     
     }
 
+    @IBAction func backBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
