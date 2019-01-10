@@ -11,17 +11,20 @@ import Alamofire
 
 struct CheckLikeService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<ArtWork>
+    typealias NetworkData = ResponseObject<ArtWorkLike>
     static let shared = CheckLikeService()
     let artDescriptionURL = url("/artworks/")
     let header: HTTPHeaders = [
-        "Content-Type" : "application/json"]
+        "Content-Type" : "application/json",
+        "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi"
+        ]
     
     
     //좋아요 누르면 
     func like(art_index: Int, completion: @escaping (NetworkData) -> Void) {
         
-        gettable(artDescriptionURL+"\(art_index)", body: nil, header: header) {
+        postable(artDescriptionURL+"\(art_index)" +
+    "/likes", body: nil, header: header) {
             res in
             switch res {
             case .success(let value):

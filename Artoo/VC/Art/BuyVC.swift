@@ -43,6 +43,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var userIndex: Int?
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
     var lilcense: String?
+    var likeDetailInfo: ArtWorkLike?
     
     @IBOutlet weak var commentsTable: UITableView!
     
@@ -192,8 +193,8 @@ class BuyVC: UIViewController, UITextViewDelegate {
     
     //좋아요 버튼 누르면
     @IBAction func heartBtn(_ sender: Any) {
-        
-        setHeart(completion: setDetail)
+        print("좋아요 누르면)")
+        setHeart(completion: heartDetail)
     }
     
     
@@ -241,11 +242,44 @@ extension BuyVC {
             figureLabel?.isHidden = false
         }
     }
+    
+    func heartDetail(){
+       
+            moreImg.imageFromUrl(gsno(likeDetailInfo?.artImg), defaultImgPath: "ggobuk")
+            artNameLabel.text = likeDetailInfo?.artName!
+            artLikeCountLabel.text = String(describing: gino(likeDetailInfo?.likeCount!))
+            desc?.text = likeDetailInfo?.workDetail!
+            artYearLabel.text = likeDetailInfo?.artYear!
+            artPriceLabel.text = String(describing: gino(likeDetailInfo?.price!))
+            lilcense = likeDetailInfo?.artLicense!
+            
+            if (lilcense ==  "저작자표시") {
+                licenseImage.image = UIImage(named: "ccBy")
+            } else if (lilcense == "저작자표시-동일조건변경표시") {
+                licenseImage.image = UIImage(named: "ccBySaCopy")
+            } else if (lilcense == "저작자표시-비영리") {
+                licenseImage.image = UIImage(named: "ccByNc")
+            } else if (lilcense == "저작자표시-비영리-동일조건변경허락") {
+                licenseImage.image = UIImage(named: "ccByNcSa")
+            } else if (lilcense == "저작자표시-변경금지") {
+                licenseImage.image = UIImage(named: "ccByNd")
+            } else if (lilcense == "저작자표시-비영리-변경금지") {
+                licenseImage.image = UIImage(named: "ccByNcNd")
+            }
+            
+            //좋아요를 이미 눌렀을 경우i
+            if (likeDetailInfo?.artIsLike == true) {
+                heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
+            }else {
+                heartImg.setImage(UIImage(named:"heartGray"), for: .normal
+                )
+            }
         
+    }
     
     func setHeart(completion: @escaping() -> Void){
-        
-        ArtDescriptionService.shared.artDescription(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
+        print(sendArtIndex)
+        CheckLikeService.shared.like(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
             
             print(status)
             
@@ -254,12 +288,13 @@ extension BuyVC {
                 if let allArtData = data.data {
                     //서버데이터를 todayList에 담아줌
                     print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
-                    self.artDetailInfo = allArtData
+                    print("다음은 하트 정보")
+                    self.likeDetailInfo = allArtData
                     //데이터이동
                     completion()
                 }
-            case 400:
-                print("나는 400이다")
+            case 401:
+                print("회원 인증 실패")
             case 500:
                 self.view.makeToast("네트워크 통신이 원활하지 않습니다")
             default:
