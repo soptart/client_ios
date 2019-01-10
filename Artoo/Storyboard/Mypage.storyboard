@@ -1314,6 +1314,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                     </view>
                     <size key="freeformSize" width="375" height="660"/>
                     <connections>
+                        <outlet property="backBtn" destination="uPc-yD-Uvr" id="lqT-bg-Qmi"/>
                         <outlet property="buyListBtn" destination="ILB-fA-lUq" id="l7B-BJ-2mg"/>
                         <outlet property="containerView" destination="fGf-rl-gpb" id="xO5-fF-OdG"/>
                         <outlet property="exhibitListBtn" destination="ZRQ-ZD-iJ0" id="WyF-nt-TjL"/>

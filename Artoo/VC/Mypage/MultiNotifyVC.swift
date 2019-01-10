@@ -15,6 +15,7 @@ class MultiNotifyVC: UIViewController {
     @IBOutlet weak var thirdImg: UIImageView!
     
     
+    @IBOutlet weak var backBtn: UIButton!
     
     //탭 버튼 3개
     @IBOutlet weak var buyListBtn: UIButton! //구매내역
@@ -29,6 +30,7 @@ class MultiNotifyVC: UIViewController {
         updateView(selected: 0)
         secondImg.isHidden = true
         thirdImg.isHidden = true
+        backBtn.addTarget(self, action: #selector(backMyPage), for: .touchUpInside)
     }
     
     
@@ -76,7 +78,9 @@ class MultiNotifyVC: UIViewController {
 
 
 extension MultiNotifyVC {
-    
+    @objc func backMyPage(){
+        navigationController?.popViewController(animated: true)
+    }
 
     
     private func add(asChildViewController viewController: UIViewController) {
