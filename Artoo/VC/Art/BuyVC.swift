@@ -218,21 +218,21 @@ extension BuyVC {
         } else if lilcense == "저작자표시-비영리-변경금지"{
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
-        
-        //좋아요가 표시된 거라면 색깔있는 것
+
+        //좋아요를 이미 눌렀을 경우i
         if (artDetailInfo?.artIsLike == true) {
             heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
-        } else {
-            heartImg.setImage(UIImage(named:"heartGray"), for: .normal)
+        }else {
+            heartImg.setImage(UIImage(named:"heartGray"), for: .normal
+            )
         }
         
-        //판매자라면 가리는 부분없이 다 보여줄 것.
-        if (artDetailInfo?.auth == true){
-            figureLabel?.isHidden == false
-        }else {
-            figureLabel?.isHidden == true
+        //판매자라면
+        if (artDetailInfo?.auth == true) {
+            figureLabel?.isHidden = true
+        } else {
+            figureLabel?.isHidden = false
         }
-
     }
         
     
