@@ -456,6 +456,9 @@
                                                 <rect key="frame" x="293" y="363" width="21" height="19"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="heartGray"/>
+                                                <connections>
+                                                    <action selector="heartBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="SjM-pn-LRi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

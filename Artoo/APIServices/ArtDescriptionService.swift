@@ -35,4 +35,21 @@ struct ArtDescriptionService: APIManager, Requestable {
             
         }
     }
+    
+    //좋아요 버튼 눌렀을 때
+    func heart(art_index: Int, completion: @escaping (NetworkData) -> Void){
+        
+        postable(artDescriptionURL+"\(art_index)" + "/likes", body: nil, header: header) {
+            res in
+            switch res {
+            case .success(let value):
+                print("success")
+                completion(value)
+            case .error(let error):
+                print("fail")
+                completion(error)
+            }
+        
+        }
+    }
 }

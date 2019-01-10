@@ -190,6 +190,13 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
     }
     
+    //좋아요 버튼 누르면
+    @IBAction func heartBtn(_ sender: Any) {
+        
+        setHeart(completion: setDetail)
+    }
+    
+    
 }
 
 extension BuyVC {
@@ -205,17 +212,17 @@ extension BuyVC {
         artPriceLabel.text = String(describing: gino(artDetailInfo?.price!))
         lilcense = artDetailInfo?.artLicense!
         
-        if lilcense ==  "저작자표시" {
+        if (lilcense ==  "저작자표시") {
             licenseImage.image = UIImage(named: "ccBy")
-        } else if lilcense == "저작자표시-동일조건변경표시"{
+        } else if (lilcense == "저작자표시-동일조건변경표시") {
             licenseImage.image = UIImage(named: "ccBySaCopy")
-        } else if lilcense == "저작자표시-비영리"{
+        } else if (lilcense == "저작자표시-비영리") {
             licenseImage.image = UIImage(named: "ccByNc")
-        } else if lilcense == "저작자표시-비영리-동일조건변경허락"{
+        } else if (lilcense == "저작자표시-비영리-동일조건변경허락") {
             licenseImage.image = UIImage(named: "ccByNcSa")
-        } else if lilcense == "저작자표시-변경금지"{
+        } else if (lilcense == "저작자표시-변경금지") {
             licenseImage.image = UIImage(named: "ccByNd")
-        } else if lilcense == "저작자표시-비영리-변경금지"{
+        } else if (lilcense == "저작자표시-비영리-변경금지") {
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
 
@@ -236,10 +243,36 @@ extension BuyVC {
     }
         
     
+    func setHeart(completion: @escaping() -> Void){
+        
+        ArtDescriptionService.shared.artDescription(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
+                    self.artDetailInfo = allArtData
+                    //데이터이동
+                    completion()
+                }
+            case 400:
+                print("나는 400이다")
+            case 500:
+                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
+            default:
+                print("hi")
+            }
+        }
+        
+    }
     
     func setUpData(completion: @escaping() -> Void){
         
         let artIndex = sendArtIndex
+        
         CheckCommentsService.shared.comments(art_index: artIndex!){
             (data) in guard let status = data.status else { return }
             

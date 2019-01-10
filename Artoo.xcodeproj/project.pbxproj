@@ -10,6 +10,8 @@
 		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
 		5D03B89421E480F200D9122C /* FilterDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03B89321E480F200D9122C /* FilterDataDelegate.swift */; };
 		5D0C9FDB21E4096B009D2D68 /* filterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C9FDA21E4096B009D2D68 /* filterService.swift */; };
+		5D39551921E72CB2008C2813 /* CheckLikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39551821E72CB2008C2813 /* CheckLikeService.swift */; };
+		5D39551B21E72EBA008C2813 /* ArtWorkLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D39551A21E72EBA008C2813 /* ArtWorkLike.swift */; };
 		5D3C387121E4B985005CF329 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387021E4B985005CF329 /* Comments.swift */; };
 		5D3C387321E4BA06005CF329 /* AllCommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387221E4BA06005CF329 /* AllCommentsService.swift */; };
 		5D3C387521E4BCE3005CF329 /* CheckCommentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */; };
@@ -167,6 +169,8 @@
 /* Begin PBXFileReference section */
 		5D03B89321E480F200D9122C /* FilterDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataDelegate.swift; sourceTree = "<group>"; };
 		5D0C9FDA21E4096B009D2D68 /* filterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterService.swift; sourceTree = "<group>"; };
+		5D39551821E72CB2008C2813 /* CheckLikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLikeService.swift; sourceTree = "<group>"; };
+		5D39551A21E72EBA008C2813 /* ArtWorkLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtWorkLike.swift; sourceTree = "<group>"; };
 		5D3C387021E4B985005CF329 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		5D3C387221E4BA06005CF329 /* AllCommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsService.swift; sourceTree = "<group>"; };
 		5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCommentsService.swift; sourceTree = "<group>"; };
@@ -460,6 +464,7 @@
 				5D3DA6C221DE1122005239F8 /* BuyInfo.swift */,
 				5D3DA6C421DE1129005239F8 /* saleInfo.swift */,
 				5D40FA0421DD391E00636890 /* sellerInfo.swift */,
+				5D39551A21E72EBA008C2813 /* ArtWorkLike.swift */,
 				A34DFD0A21DDE43B00CEDA74 /* ArtWork.swift */,
 				5D49021C21E3067400D661C4 /* buyItemBuyerInfo.swift */,
 				5D3DA6B421DDE8F6005239F8 /* buyerInfo.swift */,
@@ -497,6 +502,7 @@
 			children = (
 				A3699B4621DB526B00EC3A8D /* APIManager.swift */,
 				5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */,
+				5D39551821E72CB2008C2813 /* CheckLikeService.swift */,
 				5D0C9FDA21E4096B009D2D68 /* filterService.swift */,
 				5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */,
 				5D5488D021E2C67D00EFDD2F /* BuyService.swift */,
@@ -797,6 +803,8 @@
 				A350ADDC21D532E600EC199E /* ExhibitSeeVC.swift in Sources */,
 				5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */,
 				A3783A3D21D669B80057884D /* TagCell.swift in Sources */,
+				5D39551921E72CB2008C2813 /* CheckLikeService.swift in Sources */,
+				A399E47321D85F5000679162 /* ExhibitSeeDetail.swift in Sources */,
 				A3783A3F21D66A960057884D /* ThemeCell.swift in Sources */,
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				A350ADE421D55D4B00EC199E /* ExhibitWorkCell.swift in Sources */,
@@ -813,6 +821,7 @@
 				5DB4139021DF073000576883 /* MyInfoCell.swift in Sources */,
 				5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */,
 				5DB413A221DF18AA00576883 /* QnaCell.swift in Sources */,
+				5D39551B21E72EBA008C2813 /* ArtWorkLike.swift in Sources */,
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
 				5D3DA6BD21DDF5C5005239F8 /* AlarmExhibitVC.swift in Sources */,
 				5D9E582A21DF99B3008225F6 /* MyPageReviewCell.swift in Sources */,
