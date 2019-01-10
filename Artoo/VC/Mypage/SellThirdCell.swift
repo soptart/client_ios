@@ -28,6 +28,9 @@ class SellThirdCell: UITableViewCell {
     //금액
     @IBOutlet weak var moneyLabel: UILabel!
     
+    //계좌정보
+    @IBOutlet weak var accountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,14 +10,14 @@ import UIKit
 
 class SellListVC: UIViewController {
     
-    @IBOutlet var SellTable: UITableView!
+    @IBOutlet weak var sellTableView: UITableView!
     
-    var buyList: [BuyInfo] = []
+    var buyList: [BuyInfo] = [] //서버에서 받아오는 구매 내역
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setData(completion: setUI)
-      //  SellTable.dataSource = self
+        
     }
     
     //환불버튼 눌렀을 때
@@ -48,9 +48,78 @@ class SellListVC: UIViewController {
     
 }
 
+
+extension SellListVC : UITableViewDelegate {
+    
+}
+
+extension SellListVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return buyList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //결제 완료 - 택배(1 / 1)
+        let data = buyList[indexPath.row]
+        let isPay = gino(data.pIsPay)
+        let isDelivery = gino(data.pIsDelivery)
+        
+        if(isPay == 1 && isDelivery == 1){
+            let cell = sellTableView.dequeueReusableCell(withIdentifier: "first") as! sellFirstCell
+            cell.dateLabel.text = gsno(data.pDate)
+            cell.workImageView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
+            cell.workNameLabel.text = gsno(data.aName)
+            cell.authorNameLabel.text = gsno(data.auName)
+            cell.tTypeLabel.text = "택배"
+            cell.sellerNameLabel.text = gsno(data.uName)
+            cell.sellerPhoneLabel.text = gsno(data.uPhone)
+            cell.sellerAdressLabel.text = gsno(data.uAdress)
+            return cell
+        } else if(isPay == 1 && isDelivery == 0){
+            //결제 완료 - 직거래(1 / 0)
+            let cell = sellTableView.dequeueReusableCell(withIdentifier: "second") as! sellSecondCell
+            cell.dateLabel.text = gsno(data.pDate)
+            cell.sellImg.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
+            cell.buyItem.text = gsno(data.aName)
+            cell.buyItemAuthor.text = gsno(data.auName)
+            cell.transaction.text = "직거래"
+            return cell
+        }else {
+            //결제 미완료
+            let cell = sellTableView.dequeueReusableCell(withIdentifier: "SellThirdCell") as! SellThirdCell
+            cell.dateLabel.text = gsno(data.pDate)
+            cell.artImgView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
+            cell.workNameLabel.text = gsno(data.aName)
+            cell.authorNameLabel.text = gsno(data.auName)
+
+        
+            let tType = gino(data.pIsDelivery)
+            if(tType == 0){
+                cell.typeLabel.text = "직거래"
+            }else {
+                cell.typeLabel.text = "택배"
+            }
+            
+            cell.moneyLabel.text = "\(gino(data.aPrice))"
+            cell.accountLabel.text = gsno(data.uBank) + " " + gsno(data.uAccount) + " " + gsno(data.uName)
+            return cell
+        }
+        
+        
+        
+    }
+    
+    
+    
+}
+
+
 extension SellListVC {
     func setUI(){
-        
+        sellTableView.delegate = self
+        sellTableView.dataSource = self
+        sellTableView.reloadData()
     }
     
     
@@ -76,47 +145,7 @@ extension SellListVC {
     
     
 }
-//
-//extension SellListVC: UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//
-//        return buyInformation.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = SellTable.dequeueReusableCell(withIdentifier: "first") as! sellFirstCell
-//
-//        let cell2 = SellTable.dequeueReusableCell(withIdentifier: "second") as! sellSecondCell
-//
-//
-//        let buy = buyInformation[indexPath.row]
-//
-//        //서버 정보로 바꿔줘야 함
-//        if buy.isDelivery == 0 {
-//
-//            cell.sellImg.image = UIImage(named: buy.artImg)
-//            cell.buyItem.text = buy.artName
-//            cell.buyItemAuthor.text = buy.artAuthor
-//            cell.transaction.text = "직거래"
-//
-//
-//            return cell
-//        } else {
-//
-//            cell2.sellImg.image = UIImage(named: buy.artImg)
-//            cell2.buyItem.text = buy.artName
-//            cell2.buyItemAuthor.text = buy.artAuthor
-//            cell2.transaction.text = "택배"
-//
-//            return cell2
-//        }
-//
-//    }
-//
-//}
+
 
 
 

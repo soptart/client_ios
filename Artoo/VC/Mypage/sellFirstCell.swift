@@ -15,22 +15,22 @@ class sellFirstCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     //작품 이미지
-    @IBOutlet weak var sellImg: UIImageView!
+    @IBOutlet weak var workImageView: UIImageView!
     
     //작품 이름
-    @IBOutlet weak var buyItem: UILabel!
+    @IBOutlet weak var workNameLabel: UILabel!
     
     //작가 이름
-    @IBOutlet weak var buyItemAuthor: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
     
     //배송 방식
-    @IBOutlet weak var transaction: UILabel!
+    @IBOutlet weak var tTypeLabel: UILabel!
     
- 
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
+    //판매자 정보
+    @IBOutlet weak var sellerNameLabel: UILabel!
+    @IBOutlet weak var sellerPhoneLabel: UILabel!
+    @IBOutlet weak var sellerAdressLabel: UILabel!
+    
 
 }

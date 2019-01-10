@@ -1168,49 +1168,12 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <rect key="frame" x="0.0" y="0.0" width="375" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nlV-fV-8ZA">
-                                <rect key="frame" x="15" y="102" width="264" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-fA-lUq">
-                                        <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
-                                        <state key="normal" title="구매 내역">
-                                            <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="RNS-fj-pfR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-Ve-4bf">
-                                        <rect key="frame" x="88" y="0.0" width="88" height="30"/>
-                                        <state key="normal" title="판매 내역">
-                                            <color key="titleColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="DYq-DL-yDq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRQ-ZD-iJ0">
-                                        <rect key="frame" x="176" y="0.0" width="88" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="전시 내역">
-                                            <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="Ncb-ZL-bXY"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="264" id="adw-A8-WGE"/>
-                                    <constraint firstAttribute="height" constant="30" id="eUp-xO-ZlW"/>
-                                </constraints>
-                            </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-rl-gpb">
-                                <rect key="frame" x="15" y="174" width="344" height="466"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="544"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxw-Zj-Tly">
-                                <rect key="frame" x="31" y="73" width="30" height="21"/>
+                                <rect key="frame" x="23" y="58" width="30" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1221,14 +1184,42 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="nlV-fV-8ZA">
+                                <rect key="frame" x="23" y="87" width="229" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-fA-lUq">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="34"/>
+                                        <state key="normal" title="구매 내역">
+                                            <color key="titleColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="RNS-fj-pfR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-Ve-4bf">
+                                        <rect key="frame" x="81" y="0.0" width="67" height="34"/>
+                                        <state key="normal" title="판매 내역">
+                                            <color key="titleColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="DYq-DL-yDq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRQ-ZD-iJ0">
+                                        <rect key="frame" x="162" y="0.0" width="67" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="전시 내역">
+                                            <color key="titleColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="Ncb-ZL-bXY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cFa-TB-xsj" firstAttribute="trailing" secondItem="nlV-fV-8ZA" secondAttribute="trailing" constant="96" id="SPO-zI-q3W"/>
-                            <constraint firstItem="nlV-fV-8ZA" firstAttribute="leading" secondItem="cFa-TB-xsj" secondAttribute="leading" constant="15" id="Wtl-GP-tch"/>
-                            <constraint firstItem="nlV-fV-8ZA" firstAttribute="top" secondItem="W6m-CN-Jgx" secondAttribute="top" constant="136" id="aXj-vX-gvC"/>
-                            <constraint firstItem="cFa-TB-xsj" firstAttribute="bottom" secondItem="nlV-fV-8ZA" secondAttribute="bottom" constant="494" id="eHu-xd-fbK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cFa-TB-xsj"/>
                     </view>
                     <size key="freeformSize" width="375" height="660"/>
@@ -1241,7 +1232,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-aJ-dYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949.60000000000002" y="989.5052473763119"/>
+            <point key="canvasLocation" x="949.60000000000002" y="989.40886699507394"/>
         </scene>
         <!--Upload MainVC-->
         <scene sceneID="qyV-Ne-J37">
@@ -1991,9 +1982,8 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="417" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TaU-TO-he6">
-                                <rect key="frame" x="0.0" y="15" width="375" height="1485"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="417" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TaU-TO-he6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="first" rowHeight="435" id="9Kd-AN-2kx" customClass="sellFirstCell" customModule="Artoo" customModuleProvider="target">
@@ -2144,7 +2134,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTQ-Ji-A47">
-                                                    <rect key="frame" x="46" y="19" width="42" height="21"/>
+                                                    <rect key="frame" x="46" y="26" width="42" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -2161,11 +2151,14 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="buyItem" destination="mco-Uf-Vaf" id="el7-wU-6Mc"/>
-                                            <outlet property="buyItemAuthor" destination="7os-x1-KZY" id="ZDx-my-4zd"/>
-                                            <outlet property="dateLabel" destination="rTQ-Ji-A47" id="dZs-Id-3eI"/>
-                                            <outlet property="sellImg" destination="uGF-AB-xpc" id="j80-fZ-d8Q"/>
-                                            <outlet property="transaction" destination="HJf-oV-pgD" id="pRg-2n-B6Y"/>
+                                            <outlet property="authorNameLabel" destination="7os-x1-KZY" id="SzG-Np-Q8Z"/>
+                                            <outlet property="dateLabel" destination="rTQ-Ji-A47" id="JEx-94-xwu"/>
+                                            <outlet property="sellerAdressLabel" destination="0U4-Fv-SOY" id="a5i-v6-Ogu"/>
+                                            <outlet property="sellerNameLabel" destination="LWX-5q-KjU" id="IhH-rs-y4z"/>
+                                            <outlet property="sellerPhoneLabel" destination="mnv-gQ-PqW" id="2Xe-nv-oSM"/>
+                                            <outlet property="tTypeLabel" destination="HJf-oV-pgD" id="aZM-hM-72G"/>
+                                            <outlet property="workImageView" destination="uGF-AB-xpc" id="vlv-Vj-lKN"/>
+                                            <outlet property="workNameLabel" destination="mco-Uf-Vaf" id="8lw-42-0l6"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="second" rowHeight="322" id="EHd-Js-BLZ" customClass="sellSecondCell" customModule="Artoo" customModuleProvider="target">
@@ -2282,6 +2275,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         <connections>
                                             <outlet property="buyItem" destination="Kgh-iZ-pxH" id="8eD-Ck-hlS"/>
                                             <outlet property="buyItemAuthor" destination="jpL-zw-TAc" id="hcB-qZ-1aG"/>
+                                            <outlet property="dateLabel" destination="KDA-L0-qXu" id="mPx-YK-ukb"/>
                                             <outlet property="sellImg" destination="eXF-V0-ZvB" id="rWo-64-hAz"/>
                                             <outlet property="transaction" destination="96b-t7-D2A" id="8EP-7n-7ow"/>
                                         </connections>
@@ -2406,6 +2400,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="accountLabel" destination="iET-9e-vjL" id="Q40-wY-0qa"/>
                                             <outlet property="artImgView" destination="2vF-lI-Ocm" id="sib-k2-d6j"/>
                                             <outlet property="authorNameLabel" destination="KBc-RF-aPH" id="43m-PW-Pbp"/>
                                             <outlet property="dateLabel" destination="2lg-yr-FvJ" id="HWE-1g-cwQ"/>
@@ -2418,11 +2413,17 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TaU-TO-he6" firstAttribute="trailing" secondItem="mlI-LR-lvR" secondAttribute="trailing" id="1Ea-OK-Mvg"/>
+                            <constraint firstItem="TaU-TO-he6" firstAttribute="top" secondItem="Wln-Ge-0xd" secondAttribute="top" id="OT2-aP-URr"/>
+                            <constraint firstItem="mlI-LR-lvR" firstAttribute="bottom" secondItem="TaU-TO-he6" secondAttribute="bottom" constant="10" id="jWN-49-z2G"/>
+                            <constraint firstItem="TaU-TO-he6" firstAttribute="leading" secondItem="mlI-LR-lvR" secondAttribute="leading" id="pv3-e3-b8J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mlI-LR-lvR"/>
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
-                        <outlet property="SellTable" destination="TaU-TO-he6" id="WE7-45-077"/>
+                        <outlet property="sellTableView" destination="TaU-TO-he6" id="Aoa-Dp-p2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmS-nE-sJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
