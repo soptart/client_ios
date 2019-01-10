@@ -16,6 +16,7 @@ class All_ArtVC: UIViewController {
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
     
+    
     var filterData: Filter?
     var searchBarData: String?
     

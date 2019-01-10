@@ -43,6 +43,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var userIndex: Int?
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
     var lilcense: String?
+    var heartDetailInfo: ArtWork?
     
     @IBOutlet weak var commentsTable: UITableView!
     
@@ -179,6 +180,12 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
     }
     
+    //하트 누른다면 -> heartGray이는 활성화, 아닐때는 비활성화
+    @IBAction func heartBtnClick(_ sender: Any) {
+        setHeart(completion: setDetail)
+    }
+    
+    
     //이미지 버튼 누른다면
     @objc func bigImage(){
         guard let BigVC = storyboard?.instantiateViewController(withIdentifier: "BigImg") as? BigImageVC else{ return }
@@ -259,6 +266,31 @@ extension BuyVC {
                 print("서버 내부 에러")
             default:
                 print("댓글조회")
+            }
+        }
+    }
+    
+    //하트 버튼 눌렀을 때
+    func setHeart(completion: @escaping() -> Void){
+            let artIndex = sendArtIndex
+        ArtDescriptionService.shared.artDescription(art_index: artIndex!) { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    print("좋아요 누른 다음")
+                    print("\(allArtData)")
+                    self.heartDetailInfo = allArtData
+                    completion()
+                }
+            case 404:
+                print("콘텐츠가 없습니다.")
+            case 410:
+                self.view.makeToast("인증실패")
+            default:
+                print("hi")
             }
         }
     }
