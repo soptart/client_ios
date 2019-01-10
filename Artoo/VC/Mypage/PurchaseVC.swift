@@ -71,7 +71,7 @@ extension PurchaseVC : UITableViewDataSource {
           
             //배경 이미지 처리
             cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
-            cell.backImg.layer.borderWidth = 2
+            cell.backImg.layer.borderWidth = 1
             
             //버튼 라운드 처리
             cell.refundBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
@@ -98,7 +98,7 @@ extension PurchaseVC : UITableViewDataSource {
             //결제 완료 - 직거래(1 / 0)
             let cell = putchaseTableView.dequeueReusableCell(withIdentifier: "second") as! sellSecondCell
             cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
-            cell.backImg.layer.borderWidth = 0.5
+            cell.backImg.layer.borderWidth = 1
             
             
             //버튼 라운드 처리
@@ -121,7 +121,9 @@ extension PurchaseVC : UITableViewDataSource {
             
             let cell = putchaseTableView.dequeueReusableCell(withIdentifier: "SellThirdCell") as! SellThirdCell
             cell.backImg.layer.borderColor = UIColor(red: 236/255, green: 239/255, blue: 243/255, alpha: 1.0).cgColor
-            cell.backImg.layer.borderWidth = 2
+            cell.backImg.layer.borderWidth = 1
+            
+            
             cell.dateLabel.text = gsno(data.pDate)
             cell.artImgView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
             cell.workNameLabel.text = gsno(data.aName)
