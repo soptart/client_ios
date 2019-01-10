@@ -184,7 +184,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     
     //하트 누른다면 -> heartGray이는 활성화, 아닐때는 비활성화
     @IBAction func heartBtnClick(_ sender: Any) {
-        setHeart(completion: setHeartImage)
+        setHeart(completion: setDetail)
     }
     
     
@@ -285,7 +285,8 @@ extension BuyVC {
     
     //하트 버튼 눌렀을 때
     func setHeart(completion: @escaping() -> Void){
- ArtDescriptionService.shared.artDescription(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
+            let artIndex = sendArtIndex
+        ArtDescriptionService.shared.artDescription(art_index: artIndex!) { (data) in guard let status = data.status else { return }
             
             print(status)
             
@@ -306,13 +307,7 @@ extension BuyVC {
             }
         }
     }
-    func setHeartImage(){
-        if heartDetailInfo?.artIsLike == true{
-            heartBtn.setImage(UIImage(named:"heartColor"), for: .normal)
-        } else {
-            heartBtn.setImage(UIImage(named: "heartGray"), for: .normal)
-        }
-    }
+    
     func setUI(){
         self.commentsTable.reloadData()
     }
@@ -361,7 +356,7 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
         cell.commentsContentTF.text = gsno(comment.commentsText)
         //cell.commen
         cell.userName.text = gsno(comment.commentsName)
-        if (artDetailInfo?.auth! == true){
+        if (artDetailInfo?.auth == true){
             cell.saveBtn.isHidden = true
             cell.updateBtn.isHidden = false
         } else {
