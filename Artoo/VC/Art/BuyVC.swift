@@ -241,14 +241,20 @@ extension BuyVC {
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
         
-        if artDetailInfo?.artIsLike == true{
+        //좋아요를 이미 눌렀을 경우i
+        if (artDetailInfo?.artIsLike == true) {
             heartBtn.setImage(UIImage(named:"heartColor"), for: .normal)
         }else {
             heartBtn.setImage(UIImage(named:"heartGray"), for: .normal
             )
         }
         
-        //판매자라면 
+        //판매자라면
+        if (artDetailInfo?.auth == true) {
+            figureLabel?.isHidden = true
+        } else {
+            figureLabel?.isHidden = false
+        }
     }
     
     func setUpData(completion: @escaping() -> Void){
