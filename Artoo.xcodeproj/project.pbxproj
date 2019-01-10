@@ -79,6 +79,7 @@
 		5DC6F0E121E09424002C8DBE /* UserModifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0E021E09424002C8DBE /* UserModifyService.swift */; };
 		5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */; };
 		5DCC9FF021DCC37900F960A0 /* MultiNotifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */; };
+		5DD5460121E798E400E5FF31 /* BuyItemInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5460021E798E400E5FF31 /* BuyItemInfoService.swift */; };
 		5DE48B7821E121DF00FAD631 /* ArtDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE48B7721E121DF00FAD631 /* ArtDescriptionService.swift */; };
 		5DE48B7A21E1391800FAD631 /* ArtImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE48B7921E1391800FAD631 /* ArtImage.swift */; };
 		5DEC42CE21D901A7003F75B5 /* All_ArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */; };
@@ -238,6 +239,7 @@
 		5DC6F0E021E09424002C8DBE /* UserModifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifyService.swift; sourceTree = "<group>"; };
 		5DC6F0E221E09FE2002C8DBE /* CheckartWorksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckartWorksService.swift; sourceTree = "<group>"; };
 		5DCC9FEF21DCC37900F960A0 /* MultiNotifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiNotifyVC.swift; path = Artoo/VC/Mypage/MultiNotifyVC.swift; sourceTree = SOURCE_ROOT; };
+		5DD5460021E798E400E5FF31 /* BuyItemInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyItemInfoService.swift; sourceTree = "<group>"; };
 		5DE48B7721E121DF00FAD631 /* ArtDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDescriptionService.swift; sourceTree = "<group>"; };
 		5DE48B7921E1391800FAD631 /* ArtImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtImage.swift; sourceTree = "<group>"; };
 		5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = All_ArtVC.swift; path = Artoo/VC/Art/All_ArtVC.swift; sourceTree = SOURCE_ROOT; };
@@ -504,6 +506,7 @@
 				5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */,
 				5D39551821E72CB2008C2813 /* CheckLikeService.swift */,
 				5D0C9FDA21E4096B009D2D68 /* filterService.swift */,
+				5DD5460021E798E400E5FF31 /* BuyItemInfoService.swift */,
 				5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */,
 				5D5488D021E2C67D00EFDD2F /* BuyService.swift */,
 				5D49021E21E3656100D661C4 /* uploadCommentService.swift */,
@@ -809,6 +812,7 @@
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				A350ADE421D55D4B00EC199E /* ExhibitWorkCell.swift in Sources */,
 				5D3C387321E4BA06005CF329 /* AllCommentsService.swift in Sources */,
+				5DD5460121E798E400E5FF31 /* BuyItemInfoService.swift in Sources */,
 				5D3C387121E4B985005CF329 /* Comments.swift in Sources */,
 				A3FCBAAA21D20CF200CB8E51 /* Exhibit.swift in Sources */,
 				A34B447F21D7280F00991321 /* LoginVC.swift in Sources */,

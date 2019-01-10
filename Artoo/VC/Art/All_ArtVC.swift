@@ -26,14 +26,10 @@ class All_ArtVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegate()
-        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
         
-
+        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
 
         setDelegate()
-
-
         // Do any additional setup after loading the view.
         search.delegate = self
         

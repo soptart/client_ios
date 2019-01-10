@@ -29,7 +29,11 @@ struct ArtWork : Mappable {
     var userName: String? //작가 이름
     var userSchool: String? //작가 학교
     var artIsLike: Bool? //좋아요 여부
-    
+    var artMaterial: String? //작품 재료
+    var artCategory: String?
+    var artForm: String?
+    var artDisplay: Bool?
+    var artTag: String?
     
 
     init?(map: Map) {
@@ -58,7 +62,13 @@ struct ArtWork : Mappable {
         userName <- map["u_name"]
         userSchool <- map["u_school"]
         artIsLike <- map["islike"]
-
+        artMaterial <- map["a_material"]
+        artCategory <- map["a_category"]
+       artForm <- map["a_form"]
+       artDisplay <- map["a_isDisplay"]
+        artTag <- map["a_tags"]
+        
+        
     }
     
 }
