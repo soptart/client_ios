@@ -8,13 +8,15 @@
 
 import UIKit
 
-class exhibitListCell: UITableViewCell{
+class AlarmExhibitCell: UITableViewCell{
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var exhibitNameLabel: UILabel!
+    @IBOutlet weak var exhibitDateLabel: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var authorWorkLabel: UILabel!
     
-    @IBOutlet weak var exhibitTitle: UILabel!
-    @IBOutlet weak var exhibitDate: UILabel!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var artName: UILabel!
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -54,10 +54,10 @@ class MultiNotifyVC: UIViewController {
     }()
     
     //전시 내역 VC
-    private lazy var exhibitListPage: exhibitListVC = {
+    private lazy var exhibitListPage : AlarmExhibitVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "exhibitList") as! exhibitListVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: "AlarmExhibitVC") as! AlarmExhibitVC
         
         self.add(asChildViewController: viewController)
         
