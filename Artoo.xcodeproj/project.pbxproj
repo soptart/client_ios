@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00166354520C72E30335F27A /* Pods_Artoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9239F0F8427ACC87974BCC36 /* Pods_Artoo.framework */; };
+		5D02136821E62D9E00618A4F /* UploadArtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02136721E62D9E00618A4F /* UploadArtService.swift */; };
+		5D02136A21E6420900618A4F /* ZigzagLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02136921E6420900618A4F /* ZigzagLayout.swift */; };
 		5D03B89421E480F200D9122C /* FilterDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D03B89321E480F200D9122C /* FilterDataDelegate.swift */; };
 		5D0C9FDB21E4096B009D2D68 /* filterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C9FDA21E4096B009D2D68 /* filterService.swift */; };
 		5D3C387121E4B985005CF329 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C387021E4B985005CF329 /* Comments.swift */; };
@@ -38,6 +40,9 @@
 		5D49021F21E3656100D661C4 /* uploadCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49021E21E3656100D661C4 /* uploadCommentService.swift */; };
 		5D5488D121E2C67D00EFDD2F /* BuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D021E2C67D00EFDD2F /* BuyService.swift */; };
 		5D5488D321E2C91400EFDD2F /* CheckBuyItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */; };
+		5D64259621E682F600E2F21A /* CheckArtCollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64259521E682F600E2F21A /* CheckArtCollectionService.swift */; };
+		5D64259821E6853600E2F21A /* MyArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64259721E6853600E2F21A /* MyArt.swift */; };
+		5D64259A21E6864400E2F21A /* MyArtDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64259921E6864400E2F21A /* MyArtDisplay.swift */; };
 		5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */; };
 		5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7421DB7509007AE800 /* UploadMainVC.swift */; };
 		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
@@ -167,6 +172,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D02136721E62D9E00618A4F /* UploadArtService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadArtService.swift; sourceTree = "<group>"; };
+		5D02136921E6420900618A4F /* ZigzagLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigzagLayout.swift; sourceTree = "<group>"; };
 		5D03B89321E480F200D9122C /* FilterDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataDelegate.swift; sourceTree = "<group>"; };
 		5D0C9FDA21E4096B009D2D68 /* filterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterService.swift; sourceTree = "<group>"; };
 		5D3C387021E4B985005CF329 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
@@ -197,6 +204,9 @@
 		5D49021E21E3656100D661C4 /* uploadCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadCommentService.swift; sourceTree = "<group>"; };
 		5D5488D021E2C67D00EFDD2F /* BuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyService.swift; sourceTree = "<group>"; };
 		5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBuyItemService.swift; sourceTree = "<group>"; };
+		5D64259521E682F600E2F21A /* CheckArtCollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckArtCollectionService.swift; sourceTree = "<group>"; };
+		5D64259721E6853600E2F21A /* MyArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArt.swift; sourceTree = "<group>"; };
+		5D64259921E6864400E2F21A /* MyArtDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArtDisplay.swift; sourceTree = "<group>"; };
 		5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotifyUploadVC.swift; path = Artoo/VC/Mypage/NotifyUploadVC.swift; sourceTree = SOURCE_ROOT; };
 		5D79DF7421DB7509007AE800 /* UploadMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadMainVC.swift; path = Artoo/VC/Mypage/UploadMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
@@ -418,6 +428,7 @@
 			children = (
 				5DB606D321D5286900C216FD /* BuyVC.swift */,
 				5D4607D721D3976600C787AC /* FilterViewController.swift */,
+				5D02136921E6420900618A4F /* ZigzagLayout.swift */,
 				5D3F66CF21E50F2100EC979A /* CommentsTableCell.swift */,
 				5D4607D921D4892000C787AC /* AllImageCell.swift */,
 				5DB606CD21D4C41B00C216FD /* Pinterest.swift */,
@@ -445,6 +456,8 @@
 			children = (
 				A30048E421CE54EE0042C4EF /* Storyboard.swift */,
 				5D3C387021E4B985005CF329 /* Comments.swift */,
+				5D64259721E6853600E2F21A /* MyArt.swift */,
+				5D64259921E6864400E2F21A /* MyArtDisplay.swift */,
 				A30048EB21CE63370042C4EF /* Today.swift */,
 				A30048ED21CE63400042C4EF /* TodayWork.swift */,
 				A3FE1B1321CF706C0073F40F /* Theme.swift */,
@@ -505,7 +518,9 @@
 			children = (
 				A3699B4621DB526B00EC3A8D /* APIManager.swift */,
 				5D3C387421E4BCE3005CF329 /* CheckCommentsService.swift */,
+				5D02136721E62D9E00618A4F /* UploadArtService.swift */,
 				5D0C9FDA21E4096B009D2D68 /* filterService.swift */,
+				5D64259521E682F600E2F21A /* CheckArtCollectionService.swift */,
 				5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */,
 				5D5488D021E2C67D00EFDD2F /* BuyService.swift */,
 				5D49021E21E3656100D661C4 /* uploadCommentService.swift */,
@@ -819,6 +834,7 @@
 				5D3DA6C321DE1122005239F8 /* buyInfo.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
 				5DB4139021DF073000576883 /* MyInfoCell.swift in Sources */,
+				5D64259821E6853600E2F21A /* MyArt.swift in Sources */,
 				5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */,
 				5DB413A221DF18AA00576883 /* QnaCell.swift in Sources */,
 				5D9B7D8621D8A98C009C12D3 /* MyPageBuyVC.swift in Sources */,
@@ -826,6 +842,7 @@
 				5D9E582A21DF99B3008225F6 /* MyPageReviewCell.swift in Sources */,
 				5D9B7D8821D8A9A6009C12D3 /* MyPageReviewVC.swift in Sources */,
 				5D40FA0521DD391E00636890 /* sellerInfo.swift in Sources */,
+				5D02136821E62D9E00618A4F /* UploadArtService.swift in Sources */,
 				5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */,
 				5DEC434E21D9F937003F75B5 /* MyPageImgStoreVC.swift in Sources */,
 				5D3DA6AF21DDE65B005239F8 /* sellTableVC.swift in Sources */,
@@ -856,6 +873,7 @@
 				5D3DA6C521DE1129005239F8 /* saleInfo.swift in Sources */,
 				5DB4139621DF076E00576883 /* ProtectionVC.swift in Sources */,
 				5DA600D721DAF71500472FD1 /* BuyItem.swift in Sources */,
+				5D02136A21E6420900618A4F /* ZigzagLayout.swift in Sources */,
 				A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */,
 				5DB4138A21DF06E800576883 /* SettingMainVC.swift in Sources */,
 				5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */,
@@ -912,6 +930,7 @@
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,
 				5D03B89421E480F200D9122C /* FilterDataDelegate.swift in Sources */,
 				A30048E121CE50B40042C4EF /* HomeThemeVC.swift in Sources */,
+				5D64259A21E6864400E2F21A /* MyArtDisplay.swift in Sources */,
 				A3699B5B21DB5E5200EC3A8D /* SignVC2.swift in Sources */,
 				A3699B5521DB55AB00EC3A8D /* SignService.swift in Sources */,
 				5D9B7D7A21D83933009C12D3 /* DealVC.swift in Sources */,
@@ -925,6 +944,7 @@
 				5DB413A021DF189300576883 /* QnaVC.swift in Sources */,
 				5D3DA6C121DDF610005239F8 /* exhibitInfo.swift in Sources */,
 				5D3DA6CB21DEE409005239F8 /* transactionCancelNoticeVC.swift in Sources */,
+				5D64259621E682F600E2F21A /* CheckArtCollectionService.swift in Sources */,
 				5D49021D21E3067400D661C4 /* buyItemBuyerInfo.swift in Sources */,
 				5D9B7D8021D886EA009C12D3 /* MyPageMainVC.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,

@@ -22,7 +22,7 @@ struct ArtWork : Mappable {
     var artDate:Date? //작품 날짜
     var artYear:String? //작품 년도
     var artImg:String? //작품 이미지 -> 전시신청서에서 사용
-    var auth:Bool? //작품 올린 당사자 -> true
+    var auth:Bool! //작품 올린 당사자 -> true
     var artTag:String? //태그
     var artLicense:String? //라이센스
     var artSize: Int? // 작품 사이즈
@@ -33,7 +33,7 @@ struct ArtWork : Mappable {
     var artPurchaseState: Int? //작품 구매상태
     var userName: String? //작가 이름
     var userSchool: String? //작가 학교
-    var artIsLike: Bool? //좋아요 여부
+    var artIsLike: Bool! //좋아요 여부
     
     
     

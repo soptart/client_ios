@@ -73,7 +73,7 @@ class FilterViewController: UIViewController {
             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             MsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             LsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
-            sizeImage.image = UIImage(named:"filterSizeXLSelect")
+            sizeImage.image = UIImage(named:"filterSizeXlSelect")
         }
     }
     
@@ -134,7 +134,8 @@ class FilterViewController: UIViewController {
     @IBAction func categoryBtn(_ sender: UIButton) {
         if sender.tag == 11{
             filterData.category = "인물"
-            objectBtn.setImage(UIImage(named:"filterObjectNoSelect"), for: .normal)
+
+            objectBtn.setImage(UIImage(named:"filterNoObjectNoSelect"), for: .normal)
             abstractBtn.setImage(UIImage(named:"filterAbstractNoSelect"), for: .normal)
             sineryBtn.setImage(UIImage(named:"filterSceneryNoSelect"), for: .normal)
             personBtn.setImage(UIImage(named:"filterPersonSelect"), for: .normal)

@@ -42,18 +42,20 @@ class UploadMainVC: UIViewController{
     var toolbar3: UIToolbar!
     var toolbar4: UIToolbar!
     
-    var artName: String?
-    var artDescription: String?
-    var artArticle: String?
-    var artMethod: String?
-    var category: String!
-    var figure: String!
-    var artYear: String!
-    var artLicense: String!
-    var transactionMethod: String!
-    var width: String!
-    var yOff: String!
-    var height: String!
+    var artName: String? //작품이름
+    var artDescription: String? //작품설명
+    var artArticle: String? //작품재료
+    var artMethod: String? //작품방법
+    var category: String! //카테고리
+    var figure: String! //작품형태
+    var artYear: String! //제작년도
+    var artLicense: String! //라이센스
+    var transactionMethod: String! //거래방법
+    var width: Int! //너비
+    var yOff: Int! // 세로
+    var height: Int! //높이
+    var a_tag: String! // 해시태그
+    var price: Int! //가격
     
     let picker = UIImagePickerController()
    
@@ -70,7 +72,6 @@ class UploadMainVC: UIViewController{
         
         choiceImg.addGestureRecognizer(pictureTap)
         choiceImg.isUserInteractionEnabled = true
-        //heightConstraint.constant = 0
         setupPicker()
         setUpToolbar()
 
@@ -181,7 +182,16 @@ class UploadMainVC: UIViewController{
         }
     }
     
-   
+    @IBAction func tagBtn(_ sender: UIButton) {
+        if (sender.tag == 1){
+            a_tag = "1"
+        } else if (sender.tag == 2){
+            a_tag = "2"
+        } else if (sender.tag == 3){
+            
+        }
+    }
+    
 
     func setupPicker() {
         
@@ -330,9 +340,10 @@ extension UploadMainVC: UITextViewDelegate, UITextFieldDelegate {
         
         artName = artNameUploadTF.text!
         artArticle = artArticleTF.text!
-        width = widthTF.text!
-        yOff = yOffTF.text!
-        height = heightTF.text!
+        width = Int(widthTF.text!)
+        yOff = Int(yOffTF.text!)
+        height = Int(heightTF.text!)
+        price = Int(artPriceTF.text!)
     }
     // 누르면 텍스트 뷰의 내용 없애기.
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -364,3 +375,26 @@ extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerD
         dismiss(animated: true, completion: nil)
     }
 }
+
+/*
+extension UploadMainVC{
+    
+    func setUpData(){
+        UploadArtService.shared.upload(a_name: artName!,a_width: width, a_height: yOff, a_depth: height, a_category: category!, a_form: figure!, a_price: price!, u_idx: Int, a_detail: artDescription!, a_date: nil, a_year: artYear!, pic_url: choiceImg.image!, a_tags:a_tag!, a_license: artLicense! ){
+            (status) in let status = status
+
+            print(status)
+            
+            switch status {
+            case 201:
+                print("컨텐츠 성공")
+            case 500:
+                print("서버 내부 에러")
+            case 400:
+                print("실패")
+            }
+        }
+        }
+    }
+
+*/

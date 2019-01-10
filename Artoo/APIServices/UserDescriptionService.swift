@@ -18,18 +18,18 @@ struct UserDescriptionService: APIManager, Requestable {
     ]
     
 
-    func UserDescription(completion: @escaping(NetworkData) -> Void) {
+    func UserDescription(u_description: String, completion: @escaping(NetworkData) -> Void) {
 
+        let body = [
+            "u_description" : u_description
+        ]
         
-        postable(userDescriptionURL, body: nil, header: headers) { res in
+        puttable(userDescriptionURL, body: body, header: headers) { res in
             switch res {
             case .success(let value):
-                //                guard let status =  value.status else { return }
-                //                guard let token = value.data?.token else { return }
                 completion(value)
                 print("success")
             case .error(let value):
-                //                guard let status =  value.status else { return }
                 completion(value)
                 print("fail")
             }
