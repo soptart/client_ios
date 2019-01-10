@@ -152,7 +152,7 @@ extension DealVC {
                     self.deliveryFee = self.buyItemInfo.deliveryCharge!
                     self.totalPrice = self.buyPrice! + self.deliveryFee!
                     self.totalPriceLabel.text = String(describing:(self.totalPrice!))
-                     print("작품 조회 성공")
+                    
                 }
             case 400:
                 print("미술 작품 없음")
