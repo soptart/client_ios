@@ -28,12 +28,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var artArticleLabelText: UILabel!
     @IBOutlet weak var artPriceLabel: UILabel!
     @IBOutlet weak var licenseImage: UIImageView!
-
     @IBOutlet weak var buyBtn: UIButton!
     @IBOutlet weak var priceImage: UIImageView!
     @IBOutlet weak var heartImg: UIImageView!
-    @IBOutlet weak var heartBtn: UIButton!
- 
     
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
@@ -46,7 +43,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
     var userIndex: Int?
     var commentsList : [Comments] = [] //코멘트 테이블 뷰를 위한 댓글 리스트
     var lilcense: String?
-    var heartDetailInfo: ArtWork?
     
     @IBOutlet weak var commentsTable: UITableView!
     
@@ -57,7 +53,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         feedContentTV?.delegate = self
         
         moveBuyVC(completion: setDetail)
-        
+        print("아트 이름만 먼저")
         print(artNameLabel.text = artDetailInfo?.artName!)
         
         
@@ -78,8 +74,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         setUpData(completion: setUI)
         commentsTable.delegate = self
         commentsTable.dataSource = self
-      
-       
+        
     }
     
    
@@ -124,9 +119,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
                 //테이블 뷰에 바로 로드되게 list에 넣어줘야 함.
                 self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
                 self.priceImage.image = UIImage(named:"artworkPriceColor")
-
-                self.setUpData(completion: self.setUI)
-
             }
             self.view.makeToast("댓글 작성 성공")
             case 400:
@@ -137,17 +129,9 @@ class BuyVC: UIViewController, UITextViewDelegate {
         }
         
     }
-    
-    // 옆에 버튼 누른다면
-    @IBAction func deleteSideBtn(_ sender: Any) {
-        
-        
-    }
-    
     //아래 버튼 누르면
     @IBAction func slideBtn(_ sender: Any) {
         
-        //오토레이아웃 걸어주기/
         desc?.delegate = self
         
         let fixedHeight = desc?.frame.size.width
@@ -190,12 +174,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
     }
     
-    //하트 누른다면 -> heartGray이는 활성화, 아닐때는 비활성화
-    @IBAction func heartBtnClick(_ sender: Any) {
-        setHeart(completion: setHeartImage)
-    }
-    
-    
     //이미지 버튼 누른다면
     @objc func bigImage(){
         guard let BigVC = storyboard?.instantiateViewController(withIdentifier: "BigImg") as? BigImageVC else{ return }
@@ -206,21 +184,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         BigVC.imageUrl = artDetailInfo?.artImg!
         
     }
-
-    //삭제하기 버튼 눌렀을 때 -> 지우기
-    @IBAction func deleteBtn(_ sender: Any) {
-        
-    }
     
-    //수정하기 버튼 눌렀을 때
-    
-    
-    //뒤로가기 버튼 눌렀을 때
-    @IBAction func backBtn(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-
 }
 
 extension BuyVC {
@@ -251,18 +215,17 @@ extension BuyVC {
         }
         
         //좋아요가 표시된 거라면 색깔있는 것
-        if artDetailInfo?.artIsLike == true{
-            heartBtn.setImage(UIImage(named:"heartColor"), for: .normal)
-        }else {
-            heartBtn.setImage(UIImage(named:"heartGray"), for: .normal
-            )
+        artDetailInfo?.artIsLike == true; do {
+            self.heartImg.image = UIImage(named: "heartColor")
+        }
+
         }
         
-        //판매자라면 
-    }
+    
     
     func setUpData(completion: @escaping() -> Void){
         
+       // let artIndex = artDetailInfo?.artIndex!
         let artIndex = sendArtIndex
         CheckCommentsService.shared.comments(art_index: artIndex!){
             (data) in guard let status = data.status else { return }
@@ -275,7 +238,7 @@ extension BuyVC {
                     self.commentsList = allCommentsData
                     print("\(allCommentsData)")
                     completion()
-
+                    
                 }
             case 204:
                 print("유저가 쓴 댓글이 없음")
@@ -287,36 +250,6 @@ extension BuyVC {
         }
     }
     
-    //하트 버튼 눌렀을 때
-    func setHeart(completion: @escaping() -> Void){
- ArtDescriptionService.shared.artDescription(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
-            
-            print(status)
-            
-            switch status {
-            case 200:
-                if let allArtData = data.data {
-                    print("좋아요 누른 다음")
-                    print("\(allArtData)")
-                    self.heartDetailInfo = allArtData
-                    completion()
-                }
-            case 404:
-                print("콘텐츠가 없습니다.")
-            case 410:
-                self.view.makeToast("인증실패")
-            default:
-                print("hi")
-            }
-        }
-    }
-    func setHeartImage(){
-        if heartDetailInfo?.artIsLike == true{
-            heartBtn.setImage(UIImage(named:"heartColor"), for: .normal)
-        } else {
-            heartBtn.setImage(UIImage(named: "heartGray"), for: .normal)
-        }
-    }
     func setUI(){
         self.commentsTable.reloadData()
     }
@@ -331,7 +264,8 @@ extension BuyVC {
             switch status {
             case 200:
                 if let allArtData = data.data {
-                    print("\(allArtData)") 
+                    //서버데이터를 todayList에 담아줌
+                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
                     self.artDetailInfo = allArtData
                     //데이터이동
                     completion()

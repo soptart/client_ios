@@ -5,7 +5,7 @@ import Alamofire
 
 struct UserModifyService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<MyArt>
+    typealias NetworkData = ResponseObject<Token>
     static let shared = UserModifyService()
     let modifyURL = url("/users/")
     let header: HTTPHeaders = [
@@ -15,13 +15,9 @@ struct UserModifyService: APIManager, Requestable {
     
     
     //유저 정보 수정 함수
-    func modifyUserInfo(user_idx: Int, u_description: String, completion: @escaping (NetworkData) -> Void) {
+    func modifyUserInfo(user_idx: Int, completion: @escaping (NetworkData) -> Void) {
         
-        let body = [
-            "u_description" : u_description
-        ]
-        
-        puttable(modifyURL+"\(user_idx)" + "/description", body: body, header: header) {
+        postable(modifyURL+"\(user_idx)" + "/description", body: nil, header: header) {
             res in
             switch res {
             case .success(let value):

@@ -15,7 +15,6 @@ class All_ArtVC: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var imageCollection: UICollectionView!
-    @IBOutlet weak var artCountLabel: UILabel!
     
     var filterData: Filter?
     var searchBarData: String?
@@ -26,19 +25,16 @@ class All_ArtVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
+        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
+        
+
 
         setDelegate()
-        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
-    
-        setDelegate()
-        setUpData(completion: setUI) //서버에서 받은 데이터 저장 후에 뷰 띄우는 함수
+
 
         // Do any additional setup after loading the view.
         search.delegate = self
-        imageCollection.contentInset = UIEdgeInsets(top: 6, left: 10, bottom: 10, right: 0)
-        
-        imageCollection.showsVerticalScrollIndicator = false
-        imageCollection.contentInsetAdjustmentBehavior = .always
         
     }
 
@@ -133,35 +129,78 @@ extension All_ArtVC: UISearchBarDelegate{
 
 extension All_ArtVC: UICollectionViewDelegateFlowLayout{
     
+    //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    //        return imageList.count
+    //    }
+    //
+    //
+    //    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
+    //        let image = imageList[indexPath.row]
+    //        cell.showImg.image = UIImage(named: image.artImg)
+    //
+    //        return cell
+    //    }
+    
     //컬렉션 뷰 아이템 클릭 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         imageIndex = indexPath.row
         let img = imageList[indexPath.row]
-
+        
         let imageHeight = UIImage(named: img.artImg!)?.size.height
-
+        
+        print(imageHeight)
+        //moveBuyVC(selectedImg: img)
+        
         guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
             return
         }
-
+        
         bVC.sendArtIndex = img.artIndex!
+        print("하하")
+        print(bVC.sendArtIndex)
         //데이터이동
         self.navigationController?.pushViewController(bVC, animated: true)
+        
+        //        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        //            return CGSize(width: itemSize, height: itemSize)
+        //        }
+        //
+        //        func numberOfSections(in collectionView: UICollectionView) -> Int {
+        //                  return 1
+        //            }
+        //서버에서 전달해주는 이미지를 받아서 저장해줘야 함.
 
     }
-
+    //
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    //        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+    //        return CGSize(width: itemSize, height: itemSize)
+    //    }
 }
 
-extension All_ArtVC: ZigzagLayoutDelegate{
-    func collectionView(_ collectionView: UICollectionView, heightForImageAtIndexPath indexPath:IndexPath) -> CGFloat{
+extension All_ArtVC: PinterestLayoutDelegate{
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat{
         
-        let image = UIImage(named: gsno(imageList[indexPath.row].artImg!)) ?? UIImage()
-        print("이미지 이미지 이미지 \(image)")
-        let cropRatio = image.cropRatio2
-        let heightOfRatio = (view.frame.width - 30) / 2 * cropRatio
+        //이거 다이나믹 제발 좀 해결,,,ㅎㅎ
         
-        return heightOfRatio
-
+        let imageHeight = UIImage(named: imageList[indexPath.row].artImg!)?.size.height
+        
+        return imageHeight!
+        
+        //        let img = UIImage(named:imageList[indexPath.row].artImg)
+        //       return 200
+        
+        /*
+         //           return imageList[indexPath.item].artImg.frame.height
+         //        return imageList[indexPath.item].art
+         */
+        
+        //return img?.size.height ?? 200
+        
+        
+        //return photos[indexPath.item].image.size.height
     }
     
 }
@@ -181,8 +220,6 @@ extension All_ArtVC{
                     //서버데이터를 todayList에 담아줌
                     self.imageList = allArtData
                     print("\(allArtData)")
-                    print("하이 반갑고")
-                    self.artCountLabel.text = String(describing: self.imageList.count)
                     completion() //-> 사실은 setUI함수가 호출되는 것이다.
                 }
             case 400:
@@ -210,7 +247,6 @@ extension All_ArtVC{
                     print("\(allFilterData)")
                     print("뭘 고를까")
                     self.imageCollection.reloadData()
-                    self.artCountLabel.text = String(describing: self.imageList.count)
                 }
             case 204:
                 print("컨텐츠가 존재하지 않습니다")
@@ -223,20 +259,50 @@ extension All_ArtVC{
     
     
     func setUI(){
-        setDelegate()
         imageCollection.reloadData()
     }
+    
+    /*
+    func moveBuyVC(selectedImg: ArtImage)
+    {
+        
+        ArtDescriptionService.shared.artDescription(art_index: selectedImg.artIndex!) { (data) in guard let status = data.status else { return }
+            
+            print(status)
+            
+            switch status {
+            case 200:
+                if let allArtData = data.data {
+                    //서버데이터를 todayList에 담아줌
+                    print("\(allArtData)") //-> 사실은 setUI함수가 호출되는 것이다.
+                    guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
+                        return
+                    }
+                    
+                    bVC.artDetailInfo = allArtData
+                    //데이터이동
+                    self.navigationController?.pushViewController(bVC, animated: true)
+                    
+                }
+            case 400:
+                print("나는 400이다")
+            case 500:
+                self.view.makeToast("네트워크 통신이 원활하지 않습니다")
+            default:
+                print("hi")
+            }
+        }
+    }
+    */
     
     func setDelegate(){
         
         
-        if let layout = imageCollection?.collectionViewLayout as? ZigzagLayout{
+        if let layout = imageCollection?.collectionViewLayout as? PinterLayout{
             layout.delegate = self
-        }else {
-            print("하이하이하이하ㅣ아힝")
         }
-        imageCollection.dataSource = self
         imageCollection.delegate = self
+        imageCollection.dataSource = self
         
         
     }
@@ -246,12 +312,6 @@ extension All_ArtVC{
 extension All_ArtVC: FilterDataDelegate {
     func sendFilterData(data: Filter) {
         filterData = data
-    }
-}
-
-extension UIImage{
-    var cropRatio2: CGFloat {
-        return CGFloat(self.size.height / self.size.width)
     }
 }
 
