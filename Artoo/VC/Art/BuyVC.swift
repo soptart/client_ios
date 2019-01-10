@@ -30,7 +30,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var licenseImage: UIImageView!
     @IBOutlet weak var buyBtn: UIButton!
     @IBOutlet weak var priceImage: UIImageView!
-    @IBOutlet weak var heartImg: UIImageView!
+    @IBOutlet weak var heartImg: UIButton!
     
     
     //작품 표현기법, 재료 등이 표시되어야 함 -> 서버에서 정보를 불러올 것.
@@ -53,8 +53,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         feedContentTV?.delegate = self
         
         moveBuyVC(completion: setDetail)
-        print("아트 이름만 먼저")
-        print(artNameLabel.text = artDetailInfo?.artName!)
         
         
         //처음에는 안 보이게 한다
@@ -99,7 +97,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         comments = feedContentTV!.text!
         feedContentTV?.text! = comments!
-        //sendArtIndex = artDetailInfo?.artIndex!
         sendArtIndex = artDetailInfo?.artIndex!
         userIndex = UserDefaults.standard.integer(forKey: "userIndex")
         uploadCommentService.shared.comment(comment: self.comments!, comment_Index: userIndex!, art_Index: self.sendArtIndex!){
@@ -116,8 +113,8 @@ class BuyVC: UIViewController, UITextViewDelegate {
             self.artArticleLabelText.isHidden = false
                 self.figureLabel?.isHidden = true
                 self.feedContentTV?.text = ""
-                //테이블 뷰에 바로 로드되게 list에 넣어줘야 함.
-                self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
+                self.setUpData(completion: self.setUI)
+            self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
                 self.priceImage.image = UIImage(named:"artworkPriceColor")
             }
             self.view.makeToast("댓글 작성 성공")
@@ -129,6 +126,14 @@ class BuyVC: UIViewController, UITextViewDelegate {
         }
         
     }
+    
+    //뒤로 버튼 누르면
+    @IBAction func backBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
+    
     //아래 버튼 누르면
     @IBAction func slideBtn(_ sender: Any) {
         
@@ -215,17 +220,25 @@ extension BuyVC {
         }
         
         //좋아요가 표시된 거라면 색깔있는 것
-        artDetailInfo?.artIsLike == true; do {
-            self.heartImg.image = UIImage(named: "heartColor")
+        if (artDetailInfo?.artIsLike == true) {
+            heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
+        } else {
+            heartImg.setImage(UIImage(named:"heartGray"), for: .normal)
+        }
+        
+        //판매자라면 가리는 부분없이 다 보여줄 것.
+        if (artDetailInfo?.auth == true){
+            figureLabel?.isHidden == false
+        }else {
+            figureLabel?.isHidden == true
         }
 
-        }
+    }
         
     
     
     func setUpData(completion: @escaping() -> Void){
         
-       // let artIndex = artDetailInfo?.artIndex!
         let artIndex = sendArtIndex
         CheckCommentsService.shared.comments(art_index: artIndex!){
             (data) in guard let status = data.status else { return }
@@ -299,7 +312,7 @@ extension BuyVC: UITableViewDelegate, UITableViewDataSource, CommentsTableCellDe
         cell.commentsContentTF.text = gsno(comment.commentsText)
         //cell.commen
         cell.userName.text = gsno(comment.commentsName)
-        if (artDetailInfo?.auth! == true){
+        if (artDetailInfo?.auth == true){
             cell.saveBtn.isHidden = true
             cell.updateBtn.isHidden = false
         } else {

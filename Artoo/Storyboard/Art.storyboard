@@ -224,10 +224,6 @@
                                                 <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heartGray" translatesAutoresizingMaskIntoConstraints="NO" id="223-xk-JYG">
-                                                <rect key="frame" x="293" y="363" width="21" height="19"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사이즈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGd-WY-T24">
                                                 <rect key="frame" x="22" y="411" width="38" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -448,6 +444,11 @@
                                                     <action selector="commentBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="eXN-Lb-qaq"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D91-Hf-kLI">
+                                                <rect key="frame" x="293" y="363" width="21" height="19"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="heartGray"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -462,6 +463,14 @@
                                     <constraint firstAttribute="bottom" secondItem="cE1-5p-lSY" secondAttribute="bottom" id="zfe-Um-kJr"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0j-VG-dxR">
+                                <rect key="frame" x="15" y="50" width="11" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="arrowRightBlackCopy5"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="DEC-Z8-dQy"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artworkPriceGray" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-TG-RdH">
                                 <rect key="frame" x="0.0" y="926" width="198" height="74"/>
                                 <constraints>
@@ -528,7 +537,7 @@
                         <outlet property="feedContentLabel" destination="emD-Wz-aiX" id="bdp-Yx-MOo"/>
                         <outlet property="feedContentTV" destination="J33-Il-jjf" id="lWI-7p-YA1"/>
                         <outlet property="figureLabel" destination="Czy-Kl-ID3" id="kyy-KG-3Fn"/>
-                        <outlet property="heartImg" destination="223-xk-JYG" id="tlE-hS-05H"/>
+                        <outlet property="heartImg" destination="D91-Hf-kLI" id="17S-sx-mxS"/>
                         <outlet property="licenseImage" destination="lDQ-Is-iQy" id="nIv-yF-nQU"/>
                         <outlet property="moreImg" destination="mJc-gv-WfU" id="vCO-aj-Jcs"/>
                         <outlet property="priceImage" destination="8pL-TG-RdH" id="Feh-sM-RpM"/>
@@ -1293,6 +1302,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowRightBlackCopy5" width="11" height="19"/>
         <image name="artworkBuyGray" width="177" height="74"/>
         <image name="artworkPriceGray" width="198" height="74"/>
         <image name="buyDivideLine" width="343" height="2"/>
