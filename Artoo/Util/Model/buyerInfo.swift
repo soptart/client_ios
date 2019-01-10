@@ -7,23 +7,42 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct buyerInfo{
-    var buyerName: String!
-    var buyerNumber: String!
-    var buyerAddress: String!
-    var buyerDetailAddress: String!
+struct buyerInfo : Mappable {
+    
+    var p_isPost: Bool?
+    var p_recipient: String?
+    var p_address: String?
+    var p_phone: String?
+    var p_payment: Int?
+    var p_currentTime: Date?
+    var p_comment: String?
+    var a_idx: Int?
+    var p_sellerIdx: Int?
+    var p_buyerIdx: Int?
+    var p_price: Int?
     
     
-    init(buyerName: String, buyerNumber: String, buyerAddress: String){
-      self.buyerName = buyerName
-      self.buyerNumber = buyerNumber
-      self.buyerAddress = buyerAddress
+    init?(map: Map) {
+        
     }
     
-    init(buyerName: String, buyerNumber: String, buyerDetailAddress: String){
-        self.buyerName = buyerName
-        self.buyerNumber = buyerNumber
-        self.buyerDetailAddress = buyerDetailAddress
+    mutating func mapping(map: Map) {
+        
+        p_isPost <- map["p_isPost"]
+        p_recipient <- map["p_recipient"]
+        p_address <- map["p_address"]
+        p_phone <- map["p_phone"]
+        p_payment <- map["p_payment"]
+        p_currentTime <- map["p_currentTime"]
+        p_comment <- map["p_comment"]
+        a_idx <- map["a_idx"]
+        p_sellerIdx <- map["p_sellerIdx"]
+        p_buyerIdx <- map["p_buyerIdx"]
+        p_price <- map["p_price"]
     }
+    
+    
+    
 }

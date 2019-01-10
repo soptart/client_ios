@@ -21,6 +21,8 @@ class DealVC: UIViewController {
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     
+    @IBOutlet weak var totalPriceBtn: UILabel!
+    
     var buyImageUrl: String!
     var buyItemName: String!
     var buyPrice: Int?
@@ -91,9 +93,10 @@ class DealVC: UIViewController {
         takerName = deliveryService.takerNameLabel.text!
         takerAddress = deliveryService.takerAddressLabel.text!
         takerPhone = deliveryService.takerPhoneLabel.text!
-        
-        sendTakerInfo()
         isPayment = 1
+        
+        print("\(takerName)"+"\(takerAddress)"+"\(takerPhone)")
+        sendTakerInfo()
     }
     
 }
@@ -131,9 +134,6 @@ extension DealVC {
     
     //작품의 정보 얻어오기
     func setUpdata(){
-        
-        print(sendArtIndex!)
-        
         BuyItemInfoService.shared.buyItemInfo(art_index: sendArtIndex!){
             (data) in guard let status = data.status else { return }
             
@@ -152,7 +152,7 @@ extension DealVC {
                     self.deliveryFee = self.buyItemInfo.deliveryCharge!
                     self.totalPrice = self.buyPrice! + self.deliveryFee!
                     self.totalPriceLabel.text = String(describing:(self.totalPrice!))
-                    
+                    self.totalPriceBtn.text = String(describing:(self.totalPrice!))
                 }
             case 400:
                 print("미술 작품 없음")
@@ -164,7 +164,7 @@ extension DealVC {
     }
     
     func sendTakerInfo(){
-
+        print("\(sendArtIndex)" + "\(sendUserIndex)" + "\(isDelivery)")
         CheckBuyItemService.shared.buy(art_index: sendArtIndex!, user_index: sendUserIndex!, delivery: isDelivery!, buyerName: takerName!, buyerAddress: takerAddress!, buyerPhone: takerPhone!, Payment: 1){
             (data) in guard let status = data.status else { return }
             

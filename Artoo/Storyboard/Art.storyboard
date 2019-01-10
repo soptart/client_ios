@@ -546,14 +546,14 @@
             <objects>
                 <viewController storyboardIdentifier="deal" id="I3j-fz-502" customClass="DealVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abM-cY-gnm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-NX-2ZJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="780"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-Hh-JDp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvt-2y-DK6">
                                                 <rect key="frame" x="18" y="63" width="77" height="76"/>
@@ -671,10 +671,6 @@
                                                 <color key="textColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3e-mC-HzV">
-                                                <rect key="frame" x="15" y="482" width="339" height="277"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                            </containerView>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq4-E8-oNE">
                                                 <rect key="frame" x="192" y="368" width="153" height="63"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -699,40 +695,74 @@
                                                     <action selector="changeView:" destination="I3j-fz-502" eventType="touchUpInside" id="tbC-a5-KSo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWk-a7-ptS">
-                                                <rect key="frame" x="0.0" y="706" width="375" height="53"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="구매하기"/>
-                                                <connections>
-                                                    <action selector="dealBtn:" destination="I3j-fz-502" eventType="touchUpInside" id="Xbr-9K-DdJ"/>
-                                                </connections>
-                                            </button>
+                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3e-mC-HzV">
+                                                <rect key="frame" x="15" y="481" width="339" height="399"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            </containerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="800" id="CWR-dU-r4B"/>
+                                            <constraint firstAttribute="height" constant="900" id="CWR-dU-r4B"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Eo3-Hh-JDp" secondAttribute="bottom" id="HGW-AH-4Sk"/>
+                                    <constraint firstItem="Eo3-Hh-JDp" firstAttribute="top" secondItem="Hzl-NX-2ZJ" secondAttribute="top" id="Nb3-lY-aoS"/>
                                     <constraint firstAttribute="trailing" secondItem="Eo3-Hh-JDp" secondAttribute="trailing" id="Oco-cd-bG1"/>
                                     <constraint firstItem="Eo3-Hh-JDp" firstAttribute="leading" secondItem="Hzl-NX-2ZJ" secondAttribute="leading" id="T9y-Bb-B0b"/>
                                     <constraint firstItem="Eo3-Hh-JDp" firstAttribute="top" secondItem="Hzl-NX-2ZJ" secondAttribute="top" id="zPG-4t-iLq"/>
                                 </constraints>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artworkPriceColor" translatesAutoresizingMaskIntoConstraints="NO" id="zxt-nj-pHK">
+                                <rect key="frame" x="0.0" y="826" width="198" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="7R2-IJ-NGC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6p-6v-AiK">
+                                <rect key="frame" x="82" y="847" width="42" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Zsv-V1-OCV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysz-Vu-GTU">
+                                <rect key="frame" x="198" y="826" width="177" height="74"/>
+                                <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="OvL-cR-uML"/>
+                                </constraints>
+                                <state key="normal" image="artworkBuyColor">
+                                    <color key="titleColor" red="0.99259229270000005" green="0.99259229270000005" blue="0.99259229270000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="rbe-H2-H6R"/>
+                                    <action selector="dealBtn:" destination="I3j-fz-502" eventType="touchUpInside" id="J5e-Hc-wjn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="leading" secondItem="KAu-bh-6oj" secondAttribute="leading" id="0UN-Lk-nxK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="zxt-nj-pHK" secondAttribute="bottom" id="3fC-3g-eiA"/>
+                            <constraint firstAttribute="trailing" secondItem="Hzl-NX-2ZJ" secondAttribute="trailing" id="6Jf-i3-5Bh"/>
+                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="top" secondItem="abM-cY-gnm" secondAttribute="top" id="JKu-L2-U3u"/>
+                            <constraint firstItem="zxt-nj-pHK" firstAttribute="leading" secondItem="KAu-bh-6oj" secondAttribute="leading" id="KBL-rY-FUt"/>
                             <constraint firstItem="Eo3-Hh-JDp" firstAttribute="width" secondItem="abM-cY-gnm" secondAttribute="width" id="NTF-61-yvZ"/>
-                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="top" secondItem="KAu-bh-6oj" secondAttribute="top" id="rkN-P0-Z1m"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ysz-Vu-GTU" secondAttribute="bottom" id="pwp-Dv-8MD"/>
                             <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="bottom" secondItem="KAu-bh-6oj" secondAttribute="bottom" id="sdZ-KY-QfG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="r6p-6v-AiK" secondAttribute="bottom" constant="24" id="ujH-wn-uhR"/>
                             <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="trailing" secondItem="KAu-bh-6oj" secondAttribute="trailing" id="xOC-Tk-6H2"/>
+                            <constraint firstItem="KAu-bh-6oj" firstAttribute="trailing" secondItem="ysz-Vu-GTU" secondAttribute="trailing" id="xSd-Op-yTc"/>
+                            <constraint firstItem="r6p-6v-AiK" firstAttribute="leading" secondItem="abM-cY-gnm" secondAttribute="leadingMargin" constant="66" id="xlm-oo-ufu"/>
+                            <constraint firstItem="Hzl-NX-2ZJ" firstAttribute="leading" secondItem="abM-cY-gnm" secondAttribute="leading" id="xy2-KD-DIz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KAu-bh-6oj"/>
                     </view>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="buyImage" destination="Cvt-2y-DK6" id="foi-ef-jT5"/>
                         <outlet property="buyItemNameLabel" destination="opc-vR-gy6" id="sG5-Tv-v47"/>
@@ -743,6 +773,7 @@
                         <outlet property="deliveryFeeLabel" destination="aJ2-Kv-NTu" id="BoT-m4-pey"/>
                         <outlet property="directBtn" destination="Sq4-E8-oNE" id="zyH-xT-pYV"/>
                         <outlet property="noticeLabel" destination="Ug9-6P-u5y" id="W8I-r6-kSf"/>
+                        <outlet property="totalPriceBtn" destination="r6p-6v-AiK" id="ezI-Yu-ao4"/>
                         <outlet property="totalPriceLabel" destination="5CF-iI-uMb" id="G98-iL-V9g"/>
                     </connections>
                 </viewController>
@@ -1202,7 +1233,7 @@
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOx-us-k4l">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOx-us-k4l">
                                 <rect key="frame" x="75" y="92" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -1216,14 +1247,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-De-PeX">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-De-PeX">
                                 <rect key="frame" x="75" y="174" width="284" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01033333333" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26H-8S-2gi">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01033333333" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26H-8S-2gi">
                                 <rect key="frame" x="75" y="216" width="284" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -1276,7 +1307,9 @@
     </scenes>
     <resources>
         <image name="arrowRightBlackCopy5" width="11" height="19"/>
+        <image name="artworkBuyColor" width="177" height="74"/>
         <image name="artworkBuyGray" width="177" height="74"/>
+        <image name="artworkPriceColor" width="198" height="74"/>
         <image name="artworkPriceGray" width="198" height="74"/>
         <image name="closeBlack" width="19" height="19"/>
         <image name="filter" width="18" height="16"/>
