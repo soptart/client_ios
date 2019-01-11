@@ -21,10 +21,10 @@ struct CheckLikeService: APIManager, Requestable {
     
     
     //좋아요 누르면 
-    func like(art_index: Int, completion: @escaping (NetworkData) -> Void) {
+    func like(art_index: Int, user_index: Int, completion: @escaping (NetworkData) -> Void) {
         
         postable(artDescriptionURL+"\(art_index)" +
-    "/likes", body: nil, header: header) {
+    "/likes/" + "\(user_index)", body: nil, header: header) {
             res in
             switch res {
             case .success(let value):
