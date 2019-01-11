@@ -337,7 +337,8 @@ extension BuyVC {
     
     func setHeart(completion: @escaping() -> Void){
         print(sendArtIndex)
-        CheckLikeService.shared.like(art_index: sendArtIndex!) { (data) in guard let status = data.status else { return }
+        let user_idx = artDetailInfo?.userIndex!
+        CheckLikeService.shared.like(art_index: sendArtIndex!, user_index: user_idx! ) { (data) in guard let status = data.status else { return }
             
             print(status)
             
