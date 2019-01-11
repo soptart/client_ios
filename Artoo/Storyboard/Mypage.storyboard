@@ -553,9 +553,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-Iq-u1H">
-                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-Iq-u1H">
+                                <rect key="frame" x="0.0" y="95" width="375" height="683"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hUj-vQ-qLr">
                                     <size key="itemSize" width="134" height="158"/>
@@ -571,26 +570,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-Jw-lfk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-Jw-lfk">
                                                     <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="vNM-Jw-lfk" secondAttribute="bottom" id="S7O-lb-YME"/>
+                                            <constraint firstItem="vNM-Jw-lfk" firstAttribute="leading" secondItem="L7c-mL-Jmc" secondAttribute="leading" id="ZPt-gg-um3"/>
+                                            <constraint firstAttribute="trailing" secondItem="vNM-Jw-lfk" secondAttribute="trailing" id="aIE-ql-nLi"/>
+                                            <constraint firstItem="vNM-Jw-lfk" firstAttribute="top" secondItem="L7c-mL-Jmc" secondAttribute="top" id="eCs-CZ-hPO"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="showImg" destination="vNM-Jw-lfk" id="xOB-ib-VbH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Fg-PBb">
-                                <rect key="frame" x="345" y="65" width="12" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Fg-PBb">
+                                <rect key="frame" x="336" y="58" width="12" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="LLA-FT-nt3"/>
+                                    <constraint firstAttribute="height" constant="20" id="TY5-fS-HOj"/>
+                                </constraints>
                                 <state key="normal" image="upload"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="작품 올리기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-v1-Myg">
-                                <rect key="frame" x="252.66666666666663" y="65" width="83" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작품 올리기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-v1-Myg">
+                                <rect key="frame" x="243.66666666666663" y="58.666666666666657" width="83" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="ZHf-eC-mBQ"/>
+                                    <constraint firstAttribute="height" constant="19" id="io2-nJ-lb9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -643,10 +653,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="efp-Fg-PBb" firstAttribute="centerY" secondItem="dYj-v1-Myg" secondAttribute="centerY" id="EtE-Vm-gPG"/>
                             <constraint firstItem="GsF-tm-3Wn" firstAttribute="bottom" secondItem="itq-dN-38u" secondAttribute="bottom" id="GIR-hi-edt"/>
+                            <constraint firstItem="efp-Fg-PBb" firstAttribute="leading" secondItem="dYj-v1-Myg" secondAttribute="trailing" constant="9.5" id="KTy-fr-fCj"/>
                             <constraint firstItem="GsF-tm-3Wn" firstAttribute="top" secondItem="itq-dN-38u" secondAttribute="top" id="N7L-NE-Nc9"/>
+                            <constraint firstItem="efp-Fg-PBb" firstAttribute="top" secondItem="itq-dN-38u" secondAttribute="top" constant="14" id="Rgo-eb-Zry"/>
                             <constraint firstItem="GsF-tm-3Wn" firstAttribute="leading" secondItem="itq-dN-38u" secondAttribute="leading" id="TZe-io-n2x"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="leading" secondItem="itq-dN-38u" secondAttribute="leading" id="cvG-bM-Qqe"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="trailing" secondItem="itq-dN-38u" secondAttribute="trailing" id="dW3-yQ-y1M"/>
                             <constraint firstItem="GsF-tm-3Wn" firstAttribute="trailing" secondItem="itq-dN-38u" secondAttribute="trailing" id="pvJ-8D-P0G"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="bottom" secondItem="itq-dN-38u" secondAttribute="bottom" id="qqz-yu-nl8"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="top" secondItem="itq-dN-38u" secondAttribute="top" constant="51" id="xRe-Wq-OuG"/>
+                            <constraint firstItem="itq-dN-38u" firstAttribute="trailing" secondItem="efp-Fg-PBb" secondAttribute="trailing" constant="27" id="zjc-Gv-eGL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="itq-dN-38u"/>
                     </view>
