@@ -52,6 +52,8 @@ class ExhibitSeeVC: UIViewController {
         
     }
     
+    
+    
     //스크롤 포지션 잡는 함수(나중에 공부다시해야함)
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()
@@ -65,6 +67,9 @@ class ExhibitSeeVC: UIViewController {
         
         visibleIndex = indexPath
         currentIndexLabel.text = "\(visibleIndex.row + 1)/\(exhibitSeeList.count)"
+        
+
+
     }
     
     
@@ -83,7 +88,7 @@ extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 48
+        return 139
     }
     
     
@@ -94,6 +99,8 @@ extension ExhibitSeeVC : UICollectionViewDelegateFlowLayout {
         navigationController?.pushViewController(artBuyVC, animated: true)
         print("hihi")
     }
+    
+    
     
 }
 

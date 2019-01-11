@@ -155,7 +155,7 @@ extension ExhibitApplyVC : UICollectionViewDataSource {
         cell.indexPath = indexPath
         
         if let collectionImg = exhibitApplyList?.artWorkInfo?[indexPath.row].artImg {
-            cell.workImg.imageFromUrl(collectionImg, defaultImgPath: "ggobuk")
+            cell.workImg.imageFromUrl(collectionImg, defaultImgPath: "")
             cell.workImg.roundImage(num: 0.08)
             if(indexPath == cvSelectedIndexPath){
                 cell.isRadioSelected = true
