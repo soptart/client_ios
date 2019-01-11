@@ -213,7 +213,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="바람의 빛" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSe-Be-IfH">
-                                                <rect key="frame" x="20" y="323" width="77" height="29"/>
+                                                <rect key="frame" x="20" y="323" width="165" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,6 +440,14 @@
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FV9-C3-eLS">
+                                                <rect key="frame" x="348" y="52" width="7" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="artworkDelete"/>
+                                                <connections>
+                                                    <action selector="artDeleteBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="VPp-j3-yci"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1309,6 +1317,7 @@
         <image name="arrowRightBlackCopy5" width="11" height="19"/>
         <image name="artworkBuyColor" width="177" height="74"/>
         <image name="artworkBuyGray" width="177" height="74"/>
+        <image name="artworkDelete" width="7" height="25"/>
         <image name="artworkPriceColor" width="198" height="74"/>
         <image name="artworkPriceGray" width="198" height="74"/>
         <image name="closeBlack" width="19" height="19"/>

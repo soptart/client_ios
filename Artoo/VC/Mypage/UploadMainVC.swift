@@ -54,6 +54,7 @@ class UploadMainVC: UIViewController{
     var width: String!
     var yOff: String!
     var height: String!
+    var a_tag: String?
     
     let picker = UIImagePickerController()
    
@@ -86,6 +87,11 @@ class UploadMainVC: UIViewController{
         
         
         
+    }
+    
+    //완료 버튼 누르면 작품 업로드하기
+    @IBAction func uploadBtn(_ sender: Any) {
+        upload()
     }
     
     //작품명 클릭하면 placeholder없어지기
@@ -364,3 +370,21 @@ extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerD
         dismiss(animated: true, completion: nil)
     }
 }
+
+extension UploadMainVC{
+    
+    //서버에 등록하기
+    func upload(){
+        
+        print("\(artName)" + "입니다.")
+        
+        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width!) ?? 0 , a_height: Int(yOff!) ?? 0, a_depth: Int(height!) ?? 0, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: "1,3,5", a_license: artLicense!){ (res) in guard let status = res.status else { return }
+            
+            print(status)
+        
+            }
+            
+        }
+    }
+
+

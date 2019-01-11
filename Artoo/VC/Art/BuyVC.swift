@@ -61,7 +61,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         feedContentTV?.delegate = self
         
         moveBuyVC(completion: setDetail) //작품 상세 조회
-        setUpData(completion: setUI) //댓글 조회
+       // setUpData(completion: setUI) //댓글 조회
         commentsTable.delegate = self
         commentsTable.dataSource = self
         
@@ -78,6 +78,19 @@ class BuyVC: UIViewController, UITextViewDelegate {
         moreImg.isUserInteractionEnabled = true
        
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (artDetailInfo?.artIsLike == true) {
+            
+            print("이미 눌렸다구요!")
+            heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
+        }else {
+            heartImg.setImage(UIImage(named:"heartGray"), for: .normal
+            )
+        }
     }
     
    
@@ -119,8 +132,8 @@ class BuyVC: UIViewController, UITextViewDelegate {
             self.artArticleLabelText.isHidden = false
                 self.figureLabel?.isHidden = true
                 self.feedContentTV?.text = ""
-                //self.setUpData(completion: self.setUI)
-            self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
+                self.setUpData(completion: self.setUI)
+                self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
                 self.priceImage.image = UIImage(named:"artworkPriceColor")
             }
             self.view.makeToast("댓글 작성 성공")
@@ -202,6 +215,11 @@ class BuyVC: UIViewController, UITextViewDelegate {
         setHeart(completion: heartDetail)
     }
     
+    //사이드 버튼 누른다면
+    @IBAction func artDeleteBtn(_ sender: Any) {
+        alert()
+    }
+    
     
 }
 
@@ -248,15 +266,17 @@ extension BuyVC {
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
 
-        
+        /*
         //좋아요를 이미 눌렀을 경우i
          if (artDetailInfo?.artIsLike == true) {
-         heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
+        
+           print("이미 눌렸다구요!")
+        heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
          }else {
          heartImg.setImage(UIImage(named:"heartGray"), for: .normal
          )
          }
- 
+ */
         //판매자라면
         if (artDetailInfo?.auth == true) {
             figureLabel?.isHidden = true
