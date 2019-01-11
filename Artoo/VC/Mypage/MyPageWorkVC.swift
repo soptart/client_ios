@@ -10,16 +10,6 @@ import UIKit
 
 class MyPageWorkVC: UIViewController {
     
-    //업로드 주의사항
-    private lazy var upLoadNotiVC: UpLoadNotiVC = {
-        let storyboard = Storyboard.shared().mypageStoryboard
-        
-        
-        var viewController = storyboard.instantiateViewController(withIdentifier: UpLoadNotiVC.reuseIdentifier) as! UpLoadNotiVC
-        
-        
-        return viewController
-    }()
     
     //작품 업로드 하는 창
     private lazy var upLoadMainVC : UploadMainVC = {
@@ -39,7 +29,7 @@ class MyPageWorkVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uploadBtn.addTarget(self, action: #selector(showDialog), for: .touchUpInside)
+        uploadBtn.addTarget(self, action: #selector(goUpLoad), for: .touchUpInside)
         imageCollection.dataSource = self
         imageCollection.delegate = self
     }
@@ -47,12 +37,12 @@ class MyPageWorkVC: UIViewController {
 }
 
 extension MyPageWorkVC {
-    @objc func showDialog(){
-        self.upLoadNotiVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        present(upLoadNotiVC, animated: true)
-    }
+//    @objc func showDialog(){
+//        self.upLoadNotiVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+//        present(upLoadNotiVC, animated: true)
+//    }
     
-    func goUpLoad(){
+    @objc func goUpLoad(){
         present(upLoadMainVC, animated: true)
     }
     

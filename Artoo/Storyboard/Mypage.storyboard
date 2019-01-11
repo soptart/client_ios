@@ -283,7 +283,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6R-Cf-8sU">
-                                                    <rect key="frame" x="285" y="26.333333333333329" width="55" height="55"/>
+                                                    <rect key="frame" x="285" y="26.666666666666671" width="55" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="55" id="NK3-1F-7X5"/>
                                                         <constraint firstAttribute="width" constant="55" id="ibE-sy-XNf"/>
@@ -2633,7 +2633,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIm-Cw-gxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="-1899.0147783251232"/>
+            <point key="canvasLocation" x="84" y="-1129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M2x-b7-6do">
@@ -3692,7 +3692,6 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
     <resources>
         <image name="alramTime" width="78" height="26"/>
         <image name="arrowRightBlackCopy5" width="11" height="19"/>
-        <image name="buyDivideLine" width="343" height="2"/>
         <image name="down" width="16" height="16"/>
         <image name="exhibitionExit" width="17" height="16"/>
         <image name="loginArtoo" width="57" height="27"/>
@@ -3703,8 +3702,8 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
         <image name="mypageSaveicon" width="21" height="21"/>
         <image name="mypageSetup" width="20" height="20"/>
         <image name="settingGetout" width="196" height="41"/>
-        <image name="upload" width="14" height="14"/>
         <image name="themeUnfathomableCopy" width="68" height="33"/>
+        <image name="upload" width="14" height="14"/>
         <image name="withdrawalArtooLogo" width="126" height="102"/>
     </resources>
 </document>
