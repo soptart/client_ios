@@ -11,6 +11,6 @@ protocol APIManager {}
 
 extension APIManager {
     static func url(_ path: String) -> String {
-        return "http://13.209.128.210:9090" + path
+        return "http://13.209.128.210:8080" + path
     }
 }

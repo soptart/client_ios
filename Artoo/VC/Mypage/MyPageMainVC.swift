@@ -14,6 +14,11 @@ class MyPageMainVC: UIViewController {
     var tabName : [String] = ["작품", "저장", "거래" , "후기"]
     var tabCount : [Int] = [0,0,0,0]
     var workInfo: [MyArtWork]? //MyPageWork는 세부 데이터
+    var saveWorkInfo: [MyArtWork]?
+    var buyInfo: [MyPurchase]?
+    var reviewInfo: [MyReview]?
+
+    
     var userName:String?
     var userDescription:String?
     var artworkNum:Int?
@@ -227,21 +232,76 @@ extension MyPageMainVC {
                 self.userName = data.u_name
                 self.userDescription = data.u_description
                 self.artworkNum = data.dataNum //작품 수
-                completion()
             case 500:
                 print("서버 내부 오류")
             default:
                 print("hihi")
             }
         }
+        
+        MyPageSaveService.shared.getSaveWork(user_idx: userIdx ){
+            (data) in guard let status = data.status else{ return }
+            print("i am status \(status)")
+            switch status{
+            case 201:
+                guard let saveWorkData = data.data else { return }
+                self.saveWorkInfo = saveWorkData
+                print("\(saveWorkData)")
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
+        
+        
+        MyPageBuyService.shared.getBuyList(user_idx: userIdx ){
+            (data) in guard let status = data.status else{ return }
+            print("i am status \(status)")
+            switch status{
+            case 200:
+                guard let buyData = data.data else { return }
+                self.buyInfo = buyData
+                print("\(buyData)")
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
+
+        MyPageReviewService.shared.getReviewList(user_idx: userIdx ){
+            (data) in guard let status = data.status else{ return }
+            print("i am status \(status)")
+            switch status{
+            case 201:
+                guard let reviewData = data.data else { return }
+                self.reviewInfo = reviewData
+                print("\(reviewData)")
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
+        
+        completion()
+        
+        
     }
     
     
     func setUI(){
+        
+        if let count1 = workInfo?.count {tabCount[0] = count1}
+        if let count2 = saveWorkInfo?.count {tabCount[1] = count2}
+        if let count3 = buyInfo?.count {tabCount[2] = count3}
+        if let count4 = reviewInfo?.count {tabCount[3] = count4}
+
         updateView(selected: 0)
         MainIntroductionLabel.text = userName
         introTextView.text = userDescription
-        
+        mypageCollectionView.reloadData()
     }
     
     
@@ -294,14 +354,14 @@ extension MyPageMainVC {
             remove(asChildViewController: storePage)
             remove(asChildViewController: buyPage)
             remove(asChildViewController: reviewPage)
-            
-           
-            add(asChildViewController: artPage)
             print("hihihi")
             if let info =  self.workInfo {
                 print("정보오오전달")
                 artPage.workInfo = info
             }
+           
+            add(asChildViewController: artPage)
+     
 
         } else if selected == 1 {
             remove(asChildViewController: artPage)

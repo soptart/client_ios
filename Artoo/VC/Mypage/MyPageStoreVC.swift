@@ -3,14 +3,14 @@ import UIKit
 
 class MyPageStoreVC: UIViewController {
     
-    var workInfo:[MyArtWork]?
+    var saveWorkInfo:[MyArtWork]?
     
     @IBOutlet weak var imageCollection: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData(completion: setUI)
+       // setData(completion: setUI)
 
     }
     
@@ -33,7 +33,7 @@ extension MyPageStoreVC {
             switch status{
             case 201:
                 guard let workData = data.data else { return }
-                self.workInfo = workData
+                self.saveWorkInfo = workData
                 print("\(workData)")
                 print("방가비방가비")
                 completion()
@@ -51,7 +51,7 @@ extension MyPageStoreVC {
 extension MyPageStoreVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = workInfo?.count else {return 1}
+        guard let count = saveWorkInfo?.count else {return 1}
         return count
     }
     
@@ -59,7 +59,7 @@ extension MyPageStoreVC: UICollectionViewDataSource{
         
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier:"storeCell", for: indexPath) as! MyPageStoreCell
         
-        let data = workInfo![indexPath.row]
+        let data = saveWorkInfo![indexPath.row]
         cell.StoreImg.imageFromUrl(gsno(data.aUrl), defaultImgPath: "")
         cell.StoreImg.roundImage(num: 0.08)
         
