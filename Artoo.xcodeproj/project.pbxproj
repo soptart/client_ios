@@ -145,6 +145,8 @@
 		A3783A3F21D66A960057884D /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A3E21D66A960057884D /* ThemeCell.swift */; };
 		A3783A4121D66CCD0057884D /* RecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A4021D66CCD0057884D /* RecommandCell.swift */; };
 		A382CF1421E8B68E003AA9B7 /* MyPageBuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */; };
+		A382CF1621E8C3A9003AA9B7 /* MyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382CF1521E8C3A9003AA9B7 /* MyReview.swift */; };
+		A382CF1821E8C485003AA9B7 /* MyPageReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382CF1721E8C485003AA9B7 /* MyPageReviewService.swift */; };
 		A3866D6D21E475CD00CE3C94 /* ApplySuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D6C21E475CD00CE3C94 /* ApplySuccessVC.swift */; };
 		A3866D6F21E475D700CE3C94 /* ApplyFailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D6E21E475D700CE3C94 /* ApplyFailVC.swift */; };
 		A3866D7121E4773400CE3C94 /* ExhibitGoApplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */; };
@@ -318,6 +320,8 @@
 		A3783A3E21D66A960057884D /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		A3783A4021D66CCD0057884D /* RecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCell.swift; sourceTree = "<group>"; };
 		A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBuyService.swift; sourceTree = "<group>"; };
+		A382CF1521E8C3A9003AA9B7 /* MyReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReview.swift; sourceTree = "<group>"; };
+		A382CF1721E8C485003AA9B7 /* MyPageReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageReviewService.swift; sourceTree = "<group>"; };
 		A3866D6C21E475CD00CE3C94 /* ApplySuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplySuccessVC.swift; sourceTree = "<group>"; };
 		A3866D6E21E475D700CE3C94 /* ApplyFailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyFailVC.swift; sourceTree = "<group>"; };
 		A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitGoApplyService.swift; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 				A35D924521E85F150032FDD9 /* MyArtWork.swift */,
 				A35D924721E8660F0032FDD9 /* ResponseCustom.swift */,
 				A35D924D21E89B280032FDD9 /* MyPurchase.swift */,
+				A382CF1521E8C3A9003AA9B7 /* MyReview.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				A35D924121E85E380032FDD9 /* MyPageWorkService.swift */,
 				A35D924B21E892700032FDD9 /* MyPageSaveService.swift */,
 				A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */,
+				A382CF1721E8C485003AA9B7 /* MyPageReviewService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -834,6 +840,7 @@
 				5D9E582C21DF9E88008225F6 /* StoreArtPhoto.swift in Sources */,
 				A35D924A21E884110032FDD9 /* UpLoadNotiVC.swift in Sources */,
 				A3AF370821E121600013DD5E /* AuthorCellDelegate.swift in Sources */,
+				A382CF1621E8C3A9003AA9B7 /* MyReview.swift in Sources */,
 				5DB4138C21DF070100576883 /* SettingMainCell.swift in Sources */,
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
 				A34B448121D72EF200991321 /* ExhibitSeeCell.swift in Sources */,
@@ -977,6 +984,7 @@
 				5DB4139821DF0AB600576883 /* Setting.swift in Sources */,
 				5DE48B7A21E1391800FAD631 /* ArtImage.swift in Sources */,
 				A3AD880921E7163500AEE977 /* SellCell.swift in Sources */,
+				A382CF1821E8C485003AA9B7 /* MyPageReviewService.swift in Sources */,
 				5DCC9FF021DCC37900F960A0 /* MultiNotifyVC.swift in Sources */,
 				5D3DA6B521DDE8F6005239F8 /* buyerInfo.swift in Sources */,
 				5D9B7D8A21D8A9D0009C12D3 /* NoArtVC.swift in Sources */,
