@@ -2298,7 +2298,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2II-GX-HaV">
-                                <rect key="frame" x="0.0" y="862" width="375" height="378"/>
+                                <rect key="frame" x="0.0" y="898" width="375" height="378"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 3개의 테마 해시태그를 골라주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kG-pu-izK">
                                         <rect key="frame" x="28" y="28" width="290" height="21.666666666666671"/>
@@ -2332,12 +2332,18 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                         <state key="normal" image="themeUnfathomableCopy">
                                                             <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="phf-r2-FtJ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-WN-nwW">
                                                         <rect key="frame" x="106" y="0.0" width="93" height="38"/>
                                                         <state key="normal" image="themeUnfathomableCopy">
                                                             <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="ud5-Wi-82X"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1to-fg-Oql">
                                                         <rect key="frame" x="212" y="0.0" width="93" height="38"/>
@@ -2348,6 +2354,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                         <state key="normal" image="themeUnfathomableCopy">
                                                             <color key="titleColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="NJB-Nm-5zx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -2359,12 +2368,18 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                         <state key="normal" image="themeUnfathomableCopy">
                                                             <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="ebq-04-EgX"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-uN-HdD">
                                                         <rect key="frame" x="106" y="0.0" width="93" height="38"/>
                                                         <state key="normal" image="themeUnfathomableCopy">
                                                             <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="KeN-jO-Kbz"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaQ-IB-rP7">
                                                         <rect key="frame" x="212" y="0.0" width="93" height="38"/>
@@ -2375,6 +2390,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                         <state key="normal" image="themeUnfathomableCopy">
                                                             <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="X6X-Em-BJi"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -2454,24 +2472,36 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                 <state key="normal" image="themeUnfathomableCopy">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="cGg-Pr-Xbb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ru-C3-GKo">
                                                 <rect key="frame" x="84" y="0.0" width="72" height="38"/>
                                                 <state key="normal" image="themeUnfathomableCopy">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="Llh-CN-F6Y"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvj-2I-Xhu">
                                                 <rect key="frame" x="168" y="0.0" width="72" height="38"/>
                                                 <state key="normal" image="themeUnfathomableCopy">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="7yz-0r-78O"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-zB-R6z">
                                                 <rect key="frame" x="252" y="0.0" width="72" height="38"/>
                                                 <state key="normal" image="themeUnfathomableCopy">
                                                     <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="VBj-Kw-Zgf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2541,7 +2571,6 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                     <constraint firstItem="qQV-HV-B6I" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" constant="265" id="0gx-B0-UbO"/>
                                     <constraint firstItem="Of6-Xh-oxc" firstAttribute="top" secondItem="2II-GX-HaV" secondAttribute="top" constant="112" id="1Oe-jI-YRE"/>
                                     <constraint firstItem="Of6-Xh-oxc" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" constant="267" id="2vq-xi-cCR"/>
-                                    <constraint firstItem="Wkt-6h-GnC" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" id="67w-yr-9na"/>
                                     <constraint firstItem="3kG-pu-izK" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" constant="28" id="6d8-cg-ZrM"/>
                                     <constraint firstItem="2ci-bG-hWn" firstAttribute="top" secondItem="2II-GX-HaV" secondAttribute="top" constant="64" id="8ZM-G8-ws4"/>
                                     <constraint firstItem="K7j-hZ-oqg" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" constant="167" id="Cwa-Rn-4na"/>
@@ -2565,6 +2594,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                     <constraint firstItem="AtQ-2X-uMy" firstAttribute="top" secondItem="2II-GX-HaV" secondAttribute="top" constant="256" id="g33-IE-Hx2"/>
                                     <constraint firstItem="1fz-1q-4MV" firstAttribute="top" secondItem="2II-GX-HaV" secondAttribute="top" constant="105" id="hUK-Jw-yzR"/>
                                     <constraint firstAttribute="bottom" secondItem="Wkt-6h-GnC" secondAttribute="bottom" id="lpr-xh-RTr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wkt-6h-GnC" secondAttribute="bottom" id="o22-Ut-KeL"/>
                                     <constraint firstItem="7wh-WK-eC8" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" constant="219" id="rfp-ws-qJB"/>
                                     <constraint firstItem="3kG-pu-izK" firstAttribute="top" secondItem="2II-GX-HaV" secondAttribute="top" constant="28" id="s3d-vL-mk8"/>
                                     <constraint firstItem="CeU-xg-Kuo" firstAttribute="leading" secondItem="2II-GX-HaV" secondAttribute="leading" constant="167" id="xRr-vy-Xh8"/>
@@ -2577,7 +2607,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                             <constraint firstItem="2II-GX-HaV" firstAttribute="width" secondItem="T21-M8-WK6" secondAttribute="width" id="6Uy-jr-L2i"/>
                             <constraint firstItem="2II-GX-HaV" firstAttribute="trailing" secondItem="5g4-5s-X6k" secondAttribute="trailing" id="7Sb-DJ-qQw"/>
                             <constraint firstItem="hBs-Xs-z5a" firstAttribute="trailing" secondItem="5g4-5s-X6k" secondAttribute="trailing" id="7aD-B2-tLH"/>
-                            <constraint firstItem="5g4-5s-X6k" firstAttribute="bottom" secondItem="2II-GX-HaV" secondAttribute="bottom" constant="36" id="MrG-bK-HN4"/>
+                            <constraint firstItem="5g4-5s-X6k" firstAttribute="bottom" secondItem="2II-GX-HaV" secondAttribute="bottom" id="MrG-bK-HN4"/>
                             <constraint firstItem="R3Q-fw-Rny" firstAttribute="width" secondItem="T21-M8-WK6" secondAttribute="width" id="QaV-n8-4XR"/>
                             <constraint firstItem="hBs-Xs-z5a" firstAttribute="leading" secondItem="5g4-5s-X6k" secondAttribute="leading" id="WDF-8a-GAc"/>
                             <constraint firstItem="2II-GX-HaV" firstAttribute="leading" secondItem="5g4-5s-X6k" secondAttribute="leading" id="iZd-Dv-5Nb"/>

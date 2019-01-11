@@ -54,7 +54,7 @@ class UploadMainVC: UIViewController{
     var width: String!
     var yOff: String!
     var height: String!
-    var a_tag: String?
+    var a_tag = [String]()
     
     let picker = UIImagePickerController()
    
@@ -124,6 +124,50 @@ class UploadMainVC: UIViewController{
             self.popUpView.layer.shadowOpacity = 0
             self.view.layoutIfNeeded()
         })
+        
+          print("\(a_tag[a_tag.count-3])" + "," + "\(a_tag[a_tag.count-2])" + "," + "\(a_tag[a_tag.count-1])")
+        
+    }
+    
+    
+    
+    //태그 선택했을 때
+    @IBAction func tagBtn(_ sender: UIButton) {
+        
+        if(a_tag.count>3){
+            a_tag.remove(at: 0)
+        } else {
+            if(sender.tag == 1){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 2) {
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 3){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 4){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 5){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 6){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 7){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 8) {
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 9){
+                a_tag.append(String(describing: sender.tag))
+            }
+            if(sender.tag == 10){
+                a_tag.append(String(describing: sender.tag))
+            }
+        }
     }
     
     func setUpToolbar(){

@@ -38,6 +38,8 @@
 		5D49021F21E3656100D661C4 /* uploadCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49021E21E3656100D661C4 /* uploadCommentService.swift */; };
 		5D5488D121E2C67D00EFDD2F /* BuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D021E2C67D00EFDD2F /* BuyService.swift */; };
 		5D5488D321E2C91400EFDD2F /* CheckBuyItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */; };
+		5D6EA77621E89871002C4746 /* CreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EA77521E89871002C4746 /* CreditVC.swift */; };
+		5D6EA77821E8989C002C4746 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EA77721E8989C002C4746 /* AccountVC.swift */; };
 		5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */; };
 		5D79DF7521DB7509007AE800 /* UploadMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7421DB7509007AE800 /* UploadMainVC.swift */; };
 		5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */; };
@@ -199,6 +201,8 @@
 		5D49021E21E3656100D661C4 /* uploadCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadCommentService.swift; sourceTree = "<group>"; };
 		5D5488D021E2C67D00EFDD2F /* BuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyService.swift; sourceTree = "<group>"; };
 		5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBuyItemService.swift; sourceTree = "<group>"; };
+		5D6EA77521E89871002C4746 /* CreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreditVC.swift; path = Artoo/VC/Art/CreditVC.swift; sourceTree = SOURCE_ROOT; };
+		5D6EA77721E8989C002C4746 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotifyUploadVC.swift; path = Artoo/VC/Mypage/NotifyUploadVC.swift; sourceTree = SOURCE_ROOT; };
 		5D79DF7421DB7509007AE800 /* UploadMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadMainVC.swift; path = Artoo/VC/Mypage/UploadMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BigImageVC.swift; path = Artoo/VC/Art/BigImageVC.swift; sourceTree = SOURCE_ROOT; };
@@ -424,11 +428,13 @@
 				5D3F66CF21E50F2100EC979A /* CommentsTableCell.swift */,
 				5D4607D921D4892000C787AC /* AllImageCell.swift */,
 				5DB606CD21D4C41B00C216FD /* Pinterest.swift */,
+				5D6EA77721E8989C002C4746 /* AccountVC.swift */,
 				5D9B7D7121D6AB2A009C12D3 /* BigImageVC.swift */,
 				5D9B7D7D21D83978009C12D3 /* DirectVC.swift */,
 				5D9B7D7921D83933009C12D3 /* DealVC.swift */,
 				5DEC42CF21D901C8003F75B5 /* DeliveryVC.swift */,
 				5DEC42CD21D901A7003F75B5 /* All_ArtVC.swift */,
+				5D6EA77521E89871002C4746 /* CreditVC.swift */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -841,6 +847,7 @@
 				5D3DA6C721DEE3BA005239F8 /* reviewNotice.swift in Sources */,
 				5D40FA0321DD38C200636890 /* BuyItemInfo.swift in Sources */,
 				5D40F9FF21DD252700636890 /* sellFirstCell.swift in Sources */,
+				5D6EA77621E89871002C4746 /* CreditVC.swift in Sources */,
 				5DA412C121DC73EF009EDAB3 /* tagUploadVC.swift in Sources */,
 				5DA600D921DAF9F700472FD1 /* BuyItemCell.swift in Sources */,
 				A3866D6D21E475CD00CE3C94 /* ApplySuccessVC.swift in Sources */,
@@ -866,6 +873,7 @@
 				5DA600D721DAF71500472FD1 /* BuyItem.swift in Sources */,
 				A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */,
 				5DB4138A21DF06E800576883 /* SettingMainVC.swift in Sources */,
+				5D6EA77821E8989C002C4746 /* AccountVC.swift in Sources */,
 				5D9B7D9421D8C2D9009C12D3 /* MyPagePinterLayout.swift in Sources */,
 				5D40F9FD21DD24F600636890 /* PurchaseVC.swift in Sources */,
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,

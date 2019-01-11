@@ -23,12 +23,15 @@ class DeliveryVC: UIViewController {
     var isDelivery: Bool?
 //    var sendArtIndex: Int?
 //    var sendUserIndex: Int?
-//    
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         isDelivery = true
+        
         guard let deal = storyboard?.instantiateViewController(withIdentifier: "deal") as? DealVC else { return }
         
         
@@ -36,6 +39,26 @@ class DeliveryVC: UIViewController {
 //        takerAddress = takerAddressLabel.text!
 //        takerPhone = takerPhoneLabel.text!
     }
+    
+    private lazy var creditService : CreditVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "delivery") as! CreditVC
+        
+        self.add(asChildViewConroller: viewController)
+        
+        return viewController
+    }()
+    
+    private lazy var accountService: AccountVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "direct") as! AccountVC
+        
+        self.add(asChildViewConroller: viewController)
+        
+        return viewController
+    }()
 
     @IBAction func choiceCheckMethodBtn(_ sender: UIButton) {
         if sender.tag == 0 {
@@ -54,6 +77,38 @@ class DeliveryVC: UIViewController {
         
     }
     
+    
+    
+}
+
+extension DeliveryVC{
+    private func add(asChildViewConroller viewController: UIViewController) {
+        
+        addChild(viewController)
+        containerView.addSubview(viewController.view)
+        
+        viewController.view.frame = containerView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        viewController.didMove(toParent: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController){
+        viewController.willMove(toParent: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParent()
+    }
+    
+    private func updateView(selected: Int){
+        if selected == 0{
+            remove(asChildViewController: accountService)
+            add(asChildViewConroller: creditService)
+            
+        } else {
+            remove(asChildViewController: creditService)
+            add(asChildViewConroller: accountService)
+        }
+    }
 }
 
 

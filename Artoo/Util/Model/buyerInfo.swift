@@ -22,6 +22,7 @@ struct buyerInfo : Mappable {
     var p_sellerIdx: Int?
     var p_buyerIdx: Int?
     var p_price: Int?
+    var p_state: Int?
     
     
     init?(map: Map) {
@@ -41,6 +42,7 @@ struct buyerInfo : Mappable {
         p_sellerIdx <- map["p_sellerIdx"]
         p_buyerIdx <- map["p_buyerIdx"]
         p_price <- map["p_price"]
+        p_state <- map["p_state"]
     }
     
     

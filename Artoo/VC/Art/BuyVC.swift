@@ -188,7 +188,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
         
         navigationController?.pushViewController(dVC, animated: true)
         
-        dVC.buyItemName = artNameLabel.text!
+        dVC.buyItemName = artNameLabel?.text!
         dVC.buyImageUrl = artDetailInfo?.artImg!
        dVC.buyPrice = artDetailInfo?.price!
         print(dVC.buyPrice)
