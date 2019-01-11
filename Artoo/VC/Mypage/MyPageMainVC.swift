@@ -18,11 +18,7 @@ class MyPageMainVC: UIViewController {
     @IBOutlet weak var MainIntroductionLabel: UILabel!
     @IBOutlet weak var EditTextView: UITextView!
     
-    //버튼 -> 컬렉션 뷰로 변경
-    @IBOutlet weak var artBtn: UIButton!
-    @IBOutlet weak var saveBtn: UIButton!
-    @IBOutlet weak var buyBtn: UIButton!
-    @IBOutlet weak var reviewBtn: UIButton!
+    var selectedIndex:IndexPath = IndexPath.init(row: 0, section: 0)
     
     //내용 변경할 containerView
     @IBOutlet weak var containerView: UIView!
@@ -166,6 +162,10 @@ class MyPageMainVC: UIViewController {
 
 extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell =  mypageCollectionView.cellForItem(at: indexPath) as! MyPageTabCell
+        cell.delegate.selectTab(at: indexPath)
+        mypageCollectionView.reloadData()
+        
         updateView(selected: indexPath.row)
     }
     
@@ -190,15 +190,34 @@ extension MyPageMainVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let data = Array(tabInfo.keys)
         let count = Array(tabInfo.values)
         let cell =  mypageCollectionView.dequeueReusableCell(withReuseIdentifier: "MyPageTabCell", for: indexPath) as! MyPageTabCell
+        cell.delegate = self
+        cell.indexPath = indexPath
+        
+        
+        
+        if selectedIndex == indexPath {
+            cell.cellSelected = true
+        }else {
+            cell.cellSelected = false
+        }
+        
         cell.tabName.text = gsno(data[indexPath.row])
         cell.tabCount.text = "\(gino(count[indexPath.row]))"
         return cell
     }
     
     
+}
+
+extension MyPageMainVC : MyMainDelegate {
+    func selectTab(at indexPath: IndexPath) {
+        selectedIndex = indexPath
+        mypageCollectionView.reloadData()
+    }
 }
 
 
