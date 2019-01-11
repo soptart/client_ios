@@ -22,6 +22,7 @@ class MyPageMainVC: UIViewController {
     var userName:String?
     var userDescription:String?
     var artworkNum:Int?
+    var count:Int = 0
     
     //탭 바로 사용할 컬렉션뷰
     @IBOutlet weak var mypageCollectionView: UICollectionView!
@@ -59,7 +60,6 @@ class MyPageMainVC: UIViewController {
         // noticeView.isHidden = true
         mypageCollectionView.delegate = self
         mypageCollectionView.dataSource = self
-        setData(completion: setUI)
         
 
     
@@ -69,6 +69,7 @@ class MyPageMainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setData(completion: setUI)
         addObserver()
     }
     
@@ -158,7 +159,7 @@ extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 48, height: 33.5)
+        return CGSize(width: 73, height: 33.5)
     }
     
     
@@ -166,7 +167,7 @@ extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 48
+        return 20
     }
     
 }
@@ -227,6 +228,8 @@ extension MyPageMainVC {
                 self.userName = data.u_name
                 self.userDescription = data.u_description
                 self.artworkNum = data.dataNum //작품 수
+                completion()
+                print("i am first done")
             case 500:
                 print("서버 내부 오류")
             default:
@@ -242,6 +245,7 @@ extension MyPageMainVC {
                 guard let saveWorkData = data.data else { return }
                 self.saveWorkInfo = saveWorkData
                 print("\(saveWorkData)")
+                completion()
             case 500:
                 print("서버 내부 오류")
             default:
@@ -257,7 +261,9 @@ extension MyPageMainVC {
             case 200:
                 guard let buyData = data.data else { return }
                 self.buyInfo = buyData
+                completion()
                 print("\(buyData)")
+                print("i am third done")
             case 500:
                 print("서버 내부 오류")
             default:
@@ -272,6 +278,7 @@ extension MyPageMainVC {
             case 201:
                 guard let reviewData = data.data else { return }
                 self.reviewInfo = reviewData
+                completion()
                 print("\(reviewData)")
             case 500:
                 print("서버 내부 오류")
@@ -286,15 +293,23 @@ extension MyPageMainVC {
     
     
     func setUI(){
-        
-        if let count1 = workInfo?.count {tabCount[0] = count1}
-        if let count2 = saveWorkInfo?.count {tabCount[1] = count2}
-        if let count3 = buyInfo?.count {tabCount[2] = count3}
-        if let count4 = reviewInfo?.count {tabCount[3] = count4}
+        count+=1
+      
 
-     //   updateView(selected: 0)
-        MainIntroductionLabel.text = userName
-        introTextView.text = userDescription
+        print("i am setUI done")
+        
+        if(self.count == 4){
+            updateView(selected: 0)
+            
+            if let count1 = workInfo?.count {tabCount[0] = count1}
+            if let count2 = saveWorkInfo?.count {tabCount[1] = count2}
+            if let count3 = buyInfo?.count {tabCount[2] = count3}
+            if let count4 = reviewInfo?.count {tabCount[3] = count4}
+            mypageCollectionView.reloadData()
+            MainIntroductionLabel.text = userName
+            introTextView.text = userDescription
+        }
+      
         
         //작품 저장 거래 후기
         //컬렉션뷰 세팅
