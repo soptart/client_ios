@@ -229,7 +229,6 @@ extension MyPageMainVC {
                 self.userDescription = data.u_description
                 self.artworkNum = data.dataNum //작품 수
                 completion()
-                print("i am first done")
             case 500:
                 print("서버 내부 오류")
             default:
@@ -239,7 +238,6 @@ extension MyPageMainVC {
         
         MyPageSaveService.shared.getSaveWork(user_idx: userIdx ){
             (data) in guard let status = data.status else{ return }
-            print("i am status \(status)")
             switch status{
             case 201:
                 guard let saveWorkData = data.data else { return }
@@ -263,7 +261,6 @@ extension MyPageMainVC {
                 self.buyInfo = buyData
                 completion()
                 print("\(buyData)")
-                print("i am third done")
             case 500:
                 print("서버 내부 오류")
             default:
@@ -295,9 +292,6 @@ extension MyPageMainVC {
     func setUI(){
         count+=1
       
-
-        print("i am setUI done")
-        
         if(self.count == 4){
             updateView(selected: 0)
             

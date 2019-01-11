@@ -7,10 +7,19 @@ class MyPageStoreVC: UIViewController {
     
     @IBOutlet weak var imageCollection: UICollectionView!
     
+    //작품 상세 정보창으로 이동하는 컨트롤러
+    private lazy var artBuyVC: BuyVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "choiceArt") as! BuyVC
+        
+        return viewController
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // setData(completion: setUI)
         imageCollection.reloadData()
         imageCollection.dataSource = self
         imageCollection.delegate = self
@@ -20,30 +29,7 @@ class MyPageStoreVC: UIViewController {
 
 extension MyPageStoreVC {
     
-    func setUI(){
-      
-    }
     
-    func setData(completion: @escaping() -> Void){
-        let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
-        print("\(userIdx)")
-        MyPageSaveService.shared.getSaveWork(user_idx: userIdx ){
-            (data) in guard let status = data.status else{ return }
-            print("i am status \(status)")
-            switch status{
-            case 201:
-                guard let workData = data.data else { return }
-                self.saveWorkInfo = workData
-                print("\(workData)")
-                print("방가비방가비")
-                completion()
-            case 500:
-                print("서버 내부 오류")
-            default:
-                print("hihi")
-            }
-        }
-    }
     
 }
 
@@ -87,10 +73,9 @@ extension MyPageStoreVC: UICollectionViewDelegateFlowLayout{
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        let data = exhibitSeeList[indexPath.row]
-        //        artBuyVC.sendArtIndex = data.artIndex!
-        //        navigationController?.pushViewController(artBuyVC, animated: true)
-        //        print("hihi")
+        guard let data = saveWorkInfo?[indexPath.row] else { return }
+        artBuyVC.sendArtIndex = data.aIndex!
+        navigationController?.pushViewController(artBuyVC, animated: true)
     }
     
     
