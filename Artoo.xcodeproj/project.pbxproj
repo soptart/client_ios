@@ -119,6 +119,7 @@
 		A35D924821E8660F0032FDD9 /* ResponseCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924721E8660F0032FDD9 /* ResponseCustom.swift */; };
 		A35D924A21E884110032FDD9 /* UpLoadNotiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924921E884110032FDD9 /* UpLoadNotiVC.swift */; };
 		A35D924C21E892700032FDD9 /* MyPageSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924B21E892700032FDD9 /* MyPageSaveService.swift */; };
+		A35D924E21E89B280032FDD9 /* MyPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924D21E89B280032FDD9 /* MyPurchase.swift */; };
 		A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4621DB526B00EC3A8D /* APIManager.swift */; };
 		A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4821DB52FF00EC3A8D /* Requestable.swift */; };
 		A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */; };
@@ -143,6 +144,7 @@
 		A3783A3D21D669B80057884D /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A3C21D669B80057884D /* TagCell.swift */; };
 		A3783A3F21D66A960057884D /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A3E21D66A960057884D /* ThemeCell.swift */; };
 		A3783A4121D66CCD0057884D /* RecommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3783A4021D66CCD0057884D /* RecommandCell.swift */; };
+		A382CF1421E8B68E003AA9B7 /* MyPageBuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */; };
 		A3866D6D21E475CD00CE3C94 /* ApplySuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D6C21E475CD00CE3C94 /* ApplySuccessVC.swift */; };
 		A3866D6F21E475D700CE3C94 /* ApplyFailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D6E21E475D700CE3C94 /* ApplyFailVC.swift */; };
 		A3866D7121E4773400CE3C94 /* ExhibitGoApplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */; };
@@ -290,6 +292,7 @@
 		A35D924721E8660F0032FDD9 /* ResponseCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCustom.swift; sourceTree = "<group>"; };
 		A35D924921E884110032FDD9 /* UpLoadNotiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpLoadNotiVC.swift; sourceTree = "<group>"; };
 		A35D924B21E892700032FDD9 /* MyPageSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSaveService.swift; sourceTree = "<group>"; };
+		A35D924D21E89B280032FDD9 /* MyPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPurchase.swift; sourceTree = "<group>"; };
 		A3699B4621DB526B00EC3A8D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A3699B4821DB52FF00EC3A8D /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayService.swift; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 		A3783A3C21D669B80057884D /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		A3783A3E21D66A960057884D /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		A3783A4021D66CCD0057884D /* RecommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCell.swift; sourceTree = "<group>"; };
+		A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBuyService.swift; sourceTree = "<group>"; };
 		A3866D6C21E475CD00CE3C94 /* ApplySuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplySuccessVC.swift; sourceTree = "<group>"; };
 		A3866D6E21E475D700CE3C94 /* ApplyFailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyFailVC.swift; sourceTree = "<group>"; };
 		A3866D7021E4773400CE3C94 /* ExhibitGoApplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitGoApplyService.swift; sourceTree = "<group>"; };
@@ -500,6 +504,7 @@
 				A3AD880E21E728CF00AEE977 /* ExhibitAlarm.swift */,
 				A35D924521E85F150032FDD9 /* MyArtWork.swift */,
 				A35D924721E8660F0032FDD9 /* ResponseCustom.swift */,
+				A35D924D21E89B280032FDD9 /* MyPurchase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				A3AD880C21E728B400AEE977 /* AlarmExhibitService.swift */,
 				A35D924121E85E380032FDD9 /* MyPageWorkService.swift */,
 				A35D924B21E892700032FDD9 /* MyPageSaveService.swift */,
+				A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -888,6 +894,7 @@
 				A3CEF94E21CE2421000C7938 /* AppDelegate.swift in Sources */,
 				5D9B7D7E21D83978009C12D3 /* DirectVC.swift in Sources */,
 				A3D8BBF421D8EE0800EF249C /* RadioBtnDelegate.swift in Sources */,
+				A35D924E21E89B280032FDD9 /* MyPurchase.swift in Sources */,
 				5D3DA6C521DE1129005239F8 /* saleInfo.swift in Sources */,
 				5DB4139621DF076E00576883 /* ProtectionVC.swift in Sources */,
 				5DA600D721DAF71500472FD1 /* BuyItem.swift in Sources */,
@@ -910,6 +917,7 @@
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */,
 				A3699B4F21DB53B700EC3A8D /* ResponseObject.swift in Sources */,
+				A382CF1421E8B68E003AA9B7 /* MyPageBuyService.swift in Sources */,
 				5DC6F0E121E09424002C8DBE /* UserModifyService.swift in Sources */,
 				A3699B5121DB53E800EC3A8D /* NetworkResult.swift in Sources */,
 				A32BCF9121E5C65300D08C60 /* TodayArtooDetailVC.swift in Sources */,

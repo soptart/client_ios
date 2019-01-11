@@ -12,48 +12,83 @@ class MyPageBuyVC: UIViewController {
 
     @IBOutlet weak var BuyTable: UITableView!
     
-    var buyList: [BuyItem] = []
+    var buyInfo: [MyPurchase]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBuyItem()
+        setData(completion: setUI)
         
-        BuyTable.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
 
+}
+
+extension MyPageBuyVC: UITableViewDelegate {
+    
 }
 
 extension MyPageBuyVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buyList.count
+        guard let count = buyInfo?.count else { return 1 }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = BuyTable.dequeueReusableCell(withIdentifier: "all_buyItem") as! BuyItemCell
         
-        print(indexPath.row)
-        let buy = buyList[indexPath.row]
+        guard let data = buyInfo?[indexPath.row] else { return UITableViewCell() }
         
-        cell.artImg.image = buy.artImg
-        cell.artItem.text = buy.artItem
-        cell.buyer.text = buy.buyer
-        cell.price.text = buy.price
-        cell.date.text = buy.date
+        cell.artImg.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
+        cell.artImg.roundImage(num: 0.08)
+        
+        cell.artItem.text = gsno(data.aName)
+        
+        if let isBuyer = data.buyer {
+            if(isBuyer){
+                cell.isBuyerLabel.text = "판매자:"
+                cell.buyer.text = gsno(data.uName)
+                cell.buyImg.image = UIImage(named:"mypageSell")
+            }else {
+                cell.isBuyerLabel.text = "구매자:"
+                cell.buyer.text = gsno(data.uName)
+                cell.buyImg.image = UIImage(named:"mypagePay")
+            }
+        }
+        
+        cell.price.text = "\(gino(data.aPrice))원"
+        cell.date.text = gsno(data.pDate)
         
         return cell
     }
     
 }
 
+
 extension MyPageBuyVC {
-    func setBuyItem(){
-        let item1 = BuyItem(artName: "01", artItem: "7살", buyer: "배선영", price: "25,000", date: "2018.03.05")
-         let item2 = BuyItem(artName: "02", artItem: "그곳 어딘가", buyer: "최윤정", price: "120,000", date: "2018.03.09")
-        let item3 = BuyItem(artName: "03", artItem: "겨울", buyer: "윤여진", price: "120,00", date: "2018.03.11")
-        buyList = [item1,item2,item3]
+    func setUI(){
+        BuyTable.reloadData()
+        BuyTable.dataSource = self
+        BuyTable.delegate = self
+    }
+    
+    func setData(completion: @escaping() -> Void){
+        let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+        print("\(userIdx)")
+        MyPageBuyService.shared.getBuyList(user_idx: userIdx ){
+            (data) in guard let status = data.status else{ return }
+            print("i am status \(status)")
+            switch status{
+            case 200:
+                guard let buyData = data.data else { return }
+                self.buyInfo = buyData
+                print("\(buyData)")
+                completion()
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
     }
 }
