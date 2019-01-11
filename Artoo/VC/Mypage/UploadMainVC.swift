@@ -18,6 +18,8 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var widthTF: UITextField!
     @IBOutlet weak var yOffTF: UITextField!
     @IBOutlet weak var heightTF: UITextField!
+    @IBOutlet weak var price: UITextField!
+    @IBOutlet weak var puchaseStateBtn: UIButton!
     
 
     @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
@@ -55,6 +57,9 @@ class UploadMainVC: UIViewController{
     var yOff: String!
     var height: String!
     var a_tag = [String]()
+    var a_tagValue: String?
+    var puchaseState: Int?
+    var artPrice: Int?
     
     let picker = UIImagePickerController()
    
@@ -85,8 +90,14 @@ class UploadMainVC: UIViewController{
         
         picker.delegate = self
         
-        
-        
+    }
+    
+    @IBAction func puchaseBtn(_ sender: Any) {
+        if puchaseStateBtn.isFocused == true{
+            puchaseState = 1
+        } else {
+            puchaseState = 0
+        }
     }
     
     //완료 버튼 누르면 작품 업로드하기
@@ -95,6 +106,7 @@ class UploadMainVC: UIViewController{
     }
     
     //작품명 클릭하면 placeholder없어지기
+    
     
     //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
     @IBAction func addTagBtn(_ sender: Any) {
@@ -127,6 +139,7 @@ class UploadMainVC: UIViewController{
         
           print("\(a_tag[a_tag.count-3])" + "," + "\(a_tag[a_tag.count-2])" + "," + "\(a_tag[a_tag.count-1])")
         
+        a_tagValue = ("\(a_tag[a_tag.count-3])" + "," + "\(a_tag[a_tag.count-2])" + "," + "\(a_tag[a_tag.count-1])")
     }
     
     
@@ -418,18 +431,17 @@ extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerD
 
 extension UploadMainVC{
     
+  
     //서버에 등록하기
     func upload(){
         
-        print("\(artName)" + "입니다.")
- 
-        
-        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width)! , a_height: Int(yOff)!, a_depth: Int(height)!, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: "1,3,5", a_license: artLicense!){ (res) in guard let status = res.status else { return }
+        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width)! , a_height: Int(yOff)!, a_depth: Int(height)!, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: "1,2,3", a_license: artLicense!){ (res) in guard let status = res.status else { return }
             
             print(status)
             
             }
-    print("\(artName!) " + "\(Int(width)!) " + "\(Int(yOff)!) " + "\(Int(height)!) " + "\(category!) " + "\(figure!) " + "\(artDescription!) " + "\(artYear!) " + "\(artLicense!) ")
+    print("\(artName!) " + "\(Int(width)!) " + "\(Int(yOff)!) " + "\(Int(height)!) " + "\(category!) " + "\(figure!) " + "\(artDescription!) " + "\(artYear!) " + "\(artLicense!)")
+        
         }
     
     }

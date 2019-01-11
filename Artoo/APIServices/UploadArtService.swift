@@ -32,6 +32,8 @@ struct UploadArtService: APIManager, Requestable{
             multipart.append(String(describing: a_width).data(using: .utf8)!, withName: "a_width")
             multipart.append(String(describing: a_height).data(using: .utf8)!, withName: "a_height")
             multipart.append(String(describing: a_depth).data(using: .utf8)!, withName: "a_depth")
+            multipart.append(a_form.data(using: .utf8)!, withName: "a_form")
+            multipart.append(a_detail.data(using: .utf8)!, withName: "a_detail")
             multipart.append(a_year.data(using: .utf8)!, withName: "a_year")
              multipart.append(a_category.data(using: .utf8)!, withName: "a_category")
              multipart.append(a_tags.data(using: .utf8)!, withName: "a_tags")
