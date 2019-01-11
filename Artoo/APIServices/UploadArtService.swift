@@ -9,22 +9,20 @@
 import Foundation
 import Alamofire
 
-
 struct UploadArtService: APIManager, Requestable{
     
     typealias NetworkData = ResponseArray<ArtWork>
     static let shared = UploadArtService()
     let uploadURL = url("/artworks")
     let header: HTTPHeaders = [
-        "Content-Type": "multipart/form-data",
-        "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi"
+        "Content-Type": "multipart/form-data"
     ]
     
     func upload(a_name: String, a_width: Int, a_height: Int, a_depth: Int, a_category: String,
                 a_purchaseState: Int, a_form: String, a_price: Int, a_detail: String, a_year: String, pic_url: UIImage, a_tags: String, a_license: String, completion: @escaping(NetworkData) -> Void){
         
         let uploadHeaders: HTTPHeaders = [
-            "Authorization": "token"
+             "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi"
         ]
         
         // 업로드 함수를 통해 먼저 여러 데이터를 multipart로 인코딩하는 과정을 거치게 됩니다.
@@ -40,7 +38,7 @@ struct UploadArtService: APIManager, Requestable{
              multipart.append(a_license.data(using: .utf8)!, withName: "a_license")
              multipart.append(String(describing: a_purchaseState).data(using: .utf8)!, withName: "a_purchaseState")
              multipart.append(String(describing: a_price).data(using: .utf8)!, withName: "a_price")
-            multipart.append(pic_url.jpegData(compressionQuality: 0.5)!, withName: "photo", fileName: "image.jpeg", mimeType: "image/jpeg")
+            multipart.append(pic_url.jpegData(compressionQuality: 0.5)!, withName: "pic_url", fileName: "image.jpeg", mimeType: "image/jpeg")
             
         }, to: uploadURL,
            headers: uploadHeaders) { (result) in

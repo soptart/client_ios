@@ -422,14 +422,16 @@ extension UploadMainVC{
     func upload(){
         
         print("\(artName)" + "입니다.")
+ 
         
-        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width!) ?? 0 , a_height: Int(yOff!) ?? 0, a_depth: Int(height!) ?? 0, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: "1,3,5", a_license: artLicense!){ (res) in guard let status = res.status else { return }
+        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width)! , a_height: Int(yOff)!, a_depth: Int(height)!, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: "1,3,5", a_license: artLicense!){ (res) in guard let status = res.status else { return }
             
             print(status)
-        
-            }
             
+            }
+    print("\(artName!) " + "\(Int(width)!) " + "\(Int(yOff)!) " + "\(Int(height)!) " + "\(category!) " + "\(figure!) " + "\(artDescription!) " + "\(artYear!) " + "\(artLicense!) ")
         }
+    
     }
 
 
