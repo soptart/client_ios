@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "exhibitionRadioClickColor.png",
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "exhibitionRadioClickColor.png"
     },
     {
-      "filename" : "exhibitionRadioClickColor@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "exhibitionRadioClickColor@2x.png"
     },
     {
-      "filename" : "exhibitionRadioClickColor@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "exhibitionRadioClickColor@3x.png"
     }
   ],
   "info" : {

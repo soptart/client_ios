@@ -99,7 +99,7 @@ class UploadMainVC: UIViewController{
     //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
     @IBAction func addTagBtn(_ sender: Any) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.popUpConstraint.constant = 370
+            self.popUpConstraint.constant = 390
             self.popUpView.layer.shadowColor = UIColor.init(red: 146/255, green: 146/255, blue: 146/255, alpha: 1).cgColor
             self.popUpView.layer.shadowOpacity = 0.5
             self.popUpView.layer.shadowRadius = 7
