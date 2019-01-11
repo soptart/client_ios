@@ -2164,6 +2164,9 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="B"/>
+                                                <connections>
+                                                    <action selector="puchaseBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="pkR-HI-1YF"/>
+                                                </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="띄어쓰기 포함 100자 이내" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ0-uA-Tpp">
                                                 <rect key="frame" x="15" y="1139" width="345" height="74"/>
@@ -2192,7 +2195,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="작품 카테고리" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hO-Eb-ozo">
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="작품 카테고리" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hO-Eb-ozo">
                                                 <rect key="frame" x="188" y="109" width="167" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.20784313725490194" green="0.23921568627450979" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
@@ -2665,6 +2668,8 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="heightTF" destination="fs9-SH-6ZD" id="Srk-jZ-Luy"/>
                         <outlet property="popUpConstraint" destination="VZm-LM-RHQ" id="P3h-0o-rIs"/>
                         <outlet property="popUpView" destination="2II-GX-HaV" id="Uo5-ph-0Tt"/>
+                        <outlet property="price" destination="c37-UL-2uK" id="yKM-aq-O1T"/>
+                        <outlet property="puchaseStateBtn" destination="zas-q9-d1T" id="lmU-VY-jWK"/>
                         <outlet property="uploadTagBtn" destination="eNy-JV-CVm" id="5dl-Sf-VRk"/>
                         <outlet property="widthTF" destination="xzP-eA-Sfe" id="eqW-er-ylB"/>
                         <outlet property="yOffTF" destination="IEF-VM-HqB" id="FT4-qr-XVB"/>
