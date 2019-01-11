@@ -12,7 +12,7 @@ import UIKit
 class MyPageMainVC: UIViewController {
     
     var tabInfo : [String:Int] = ["작품":0, "저장":0, "거래":0 , "후기":0]
-    var workInfo: MyArtWork? //MyPageWork는 세부 데이터
+    var workInfo: [MyArtWork]? //MyPageWork는 세부 데이터
     var userName:String?
     var userDescription:String?
     var artworkNum:Int?
@@ -50,7 +50,6 @@ class MyPageMainVC: UIViewController {
         introTextView.isUserInteractionEnabled = false
         
         
-        updateView(selected: 0)
         // noticeView.isHidden = true
         
         setData(completion: setUI)
@@ -100,15 +99,16 @@ class MyPageMainVC: UIViewController {
     }
     
     //art_page리턴
-    private lazy var artPage: MyPageArtVC = {
+    private lazy var artPage: MyPageWorkVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "art_page") as! MyPageArtVC
-        
+        var viewController = storyboard.instantiateViewController(withIdentifier: MyPageWorkVC.reuseIdentifier) as! MyPageWorkVC
+
         self.add(asChildViewController: viewController)
         
         return viewController
     }()
+    
     
     //store_page리턴
     private lazy var storePage: MyPageStoreVC = {
@@ -219,6 +219,7 @@ extension MyPageMainVC {
             switch status{
             case 200:
                 guard let workData = data.data else { return }
+                self.workInfo = workData
                 print("\(workData)")
                 self.userName = data.u_name
                 self.userDescription = data.u_description
@@ -234,9 +235,10 @@ extension MyPageMainVC {
     
     
     func setUI(){
-        print("hihihihihihihhi")
+        updateView(selected: 0)
         MainIntroductionLabel.text = userName
         introTextView.text = userDescription
+        
     }
     
     
@@ -289,7 +291,15 @@ extension MyPageMainVC {
             remove(asChildViewController: storePage)
             remove(asChildViewController: buyPage)
             remove(asChildViewController: reviewPage)
+            
+           
             add(asChildViewController: artPage)
+            print("hihihi")
+            if let info =  self.workInfo {
+                print("정보오오전달")
+                artPage.workInfo = info
+            }
+
         } else if selected == 1 {
             remove(asChildViewController: artPage)
             remove(asChildViewController: buyPage)

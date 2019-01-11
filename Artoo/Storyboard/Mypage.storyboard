@@ -215,36 +215,6 @@
             </objects>
             <point key="canvasLocation" x="1364" y="79.802955665024641"/>
         </scene>
-        <!--My Page ArtVC-->
-        <scene sceneID="lJ0-oP-3bp">
-            <objects>
-                <viewController storyboardIdentifier="art_page" id="JPk-kn-IVC" customClass="MyPageArtVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="npA-z5-JuO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIy-Jn-jzW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qIy-Jn-jzW" secondAttribute="bottom" id="AwF-Lr-2R2"/>
-                            <constraint firstAttribute="trailing" secondItem="qIy-Jn-jzW" secondAttribute="trailing" id="BPV-we-YnK"/>
-                            <constraint firstItem="qIy-Jn-jzW" firstAttribute="leading" secondItem="npA-z5-JuO" secondAttribute="leading" id="FkW-qf-09d"/>
-                            <constraint firstItem="qIy-Jn-jzW" firstAttribute="top" secondItem="npA-z5-JuO" secondAttribute="top" id="fcJ-BG-s7L"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="NPa-AZ-zPc"/>
-                    </view>
-                    <size key="freeformSize" width="375" height="667"/>
-                    <connections>
-                        <outlet property="containerView" destination="qIy-Jn-jzW" id="kKN-hv-Jjj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NDb-f6-D1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2255.1999999999998" y="-105.69715142428787"/>
-        </scene>
         <!--My Page BuyVC-->
         <scene sceneID="nvw-Du-QhV">
             <objects>
@@ -484,14 +454,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="자신의 작품을 보여주세요! 더 많은 피드백과 판매 기회를 얻을 수 있어요 :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-6E-8Kz">
-                                <rect key="frame" x="54" y="188" width="275" height="36"/>
+                                <rect key="frame" x="0.0" y="160" width="275" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-vD-pgr">
-                                <rect key="frame" x="117" y="232" width="140" height="44"/>
+                                <rect key="frame" x="63" y="204" width="140" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="작품 업로드하기">
                                     <color key="titleColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -500,6 +470,10 @@
                                     <action selector="uploadBtn:" destination="3aI-6d-CqQ" eventType="touchUpInside" id="LIY-0U-Fis"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDO-jq-Eya">
+                                <rect key="frame" x="112" y="152" width="227" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7nE-bi-LBY"/>
@@ -509,51 +483,78 @@
             </objects>
             <point key="canvasLocation" x="838" y="-768"/>
         </scene>
-        <!--My Page Img StoreVC-->
+        <!--My Page WorkVC-->
         <scene sceneID="Rip-hN-Kcx">
             <objects>
-                <viewController storyboardIdentifier="imgStorePage" id="EMR-Lm-7sh" customClass="MyPageImgStoreVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageWorkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EMR-Lm-7sh" customClass="MyPageWorkVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7mv-Hl-lFn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-Iq-u1H">
-                                <rect key="frame" x="16" y="110" width="343" height="537"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-Iq-u1H">
+                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hUj-vQ-qLr">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hUj-vQ-qLr">
                                     <size key="itemSize" width="134" height="158"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="27" minY="0.0" maxX="27" maxY="27"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="imagecell" reuseIdentifier="imagecell" id="L7c-mL-Jmc" customClass="MyPageImgCell" customModule="Artoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyWorkCell" id="L7c-mL-Jmc" customClass="MyWorkCell" customModule="Artoo" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="0.0" width="134" height="158"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-Jw-lfk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-Jw-lfk">
                                                     <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="vNM-Jw-lfk" firstAttribute="leading" secondItem="L7c-mL-Jmc" secondAttribute="leading" id="BlX-8t-cEN"/>
+                                            <constraint firstAttribute="bottom" secondItem="vNM-Jw-lfk" secondAttribute="bottom" id="PAJ-Qx-5nL"/>
+                                            <constraint firstItem="vNM-Jw-lfk" firstAttribute="top" secondItem="L7c-mL-Jmc" secondAttribute="top" id="luF-kc-zNG"/>
+                                            <constraint firstAttribute="trailing" secondItem="vNM-Jw-lfk" secondAttribute="trailing" id="qZ5-Da-oeN"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="showImg" destination="vNM-Jw-lfk" id="xOB-ib-VbH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Fg-PBb">
-                                <rect key="frame" x="235" y="47" width="99" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="작품 추가하기"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Fg-PBb">
+                                <rect key="frame" x="345" y="65" width="12" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="eIV-Kt-SFL"/>
+                                    <constraint firstAttribute="width" constant="12" id="srI-74-HdD"/>
+                                </constraints>
+                                <state key="normal" image="upload"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작품 올리기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-v1-Myg">
+                                <rect key="frame" x="252.66666666666663" y="65" width="83" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="62" id="IkC-2K-imD"/>
+                                    <constraint firstAttribute="height" constant="19" id="ToF-Od-ysC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="itq-dN-38u" firstAttribute="trailing" secondItem="efp-Fg-PBb" secondAttribute="trailing" constant="18" id="06T-iw-Vcb"/>
+                            <constraint firstItem="efp-Fg-PBb" firstAttribute="top" secondItem="itq-dN-38u" secondAttribute="top" constant="21" id="7Kh-7j-AmG"/>
+                            <constraint firstItem="itq-dN-38u" firstAttribute="bottom" secondItem="tNj-Iq-u1H" secondAttribute="bottom" id="8jC-zK-8x7"/>
+                            <constraint firstItem="efp-Fg-PBb" firstAttribute="leading" secondItem="dYj-v1-Myg" secondAttribute="trailing" constant="9.5" id="Z00-F5-HsO"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="leading" secondItem="itq-dN-38u" secondAttribute="leading" id="qd7-4n-ik3"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="top" secondItem="dYj-v1-Myg" secondAttribute="bottom" constant="18" id="rxU-VL-6Sr"/>
+                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="trailing" secondItem="itq-dN-38u" secondAttribute="trailing" id="sz1-oK-4JS"/>
+                            <constraint firstItem="efp-Fg-PBb" firstAttribute="centerY" secondItem="dYj-v1-Myg" secondAttribute="centerY" id="xMZ-dq-Ade"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="itq-dN-38u"/>
                     </view>
                     <connections>
@@ -562,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dss-6X-ehx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="-755"/>
+            <point key="canvasLocation" x="1488.8" y="-755.17241379310349"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="gM7-ly-pgc">
@@ -3357,6 +3358,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
         <image name="mypageSaveicon" width="21" height="21"/>
         <image name="mypageSetup" width="20" height="20"/>
         <image name="settingGetout" width="196" height="41"/>
+        <image name="upload" width="14" height="14"/>
         <image name="withdrawalArtooLogo" width="126" height="102"/>
     </resources>
 </document>
