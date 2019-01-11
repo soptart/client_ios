@@ -98,7 +98,7 @@ extension HomeThemeVC : UITableViewDataSource {
         
         let data = themeList[indexPath.row + 1]
         if let themePhotoUrl = data.themeImg {
-            cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "ggobuk")
+            cell.themeImg.imageFromUrl(themePhotoUrl, defaultImgPath: "")
             cell.themeImg.roundImage(num: 0.03)
         }
         
@@ -289,7 +289,7 @@ extension HomeThemeVC {
         guard let data = themeList.first else { return }
         
         let photoUrl = data.themeImg
-        mainImageView.imageFromUrl(photoUrl, defaultImgPath: "fire")
+        mainImageView.imageFromUrl(photoUrl, defaultImgPath: "")
         
         if let mainText = data.mainTag {
             //개행 없애주는 함수
