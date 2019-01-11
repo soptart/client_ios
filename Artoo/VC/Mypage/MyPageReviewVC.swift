@@ -19,7 +19,7 @@ class MyPageReviewVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        setData(completion: setUI)
+        //setData(completion: setUI)
 
     }
 

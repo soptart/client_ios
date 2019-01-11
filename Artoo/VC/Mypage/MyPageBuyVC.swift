@@ -16,7 +16,7 @@ class MyPageBuyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData(completion: setUI)
+       // setData(completion: setUI)
         
     }
 
