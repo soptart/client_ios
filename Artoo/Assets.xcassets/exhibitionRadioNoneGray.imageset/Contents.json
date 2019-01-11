@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "exhibitionRadioNoneGray.png",
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "exhibitionRadioNoneGray.png"
     },
     {
-      "filename" : "exhibitionRadioNoneGray@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "exhibitionRadioNoneGray@2x.png"
     },
     {
-      "filename" : "exhibitionRadioNoneGray@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "exhibitionRadioNoneGray@3x.png"
     }
   ],
   "info" : {

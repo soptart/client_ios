@@ -49,31 +49,31 @@ class FilterViewController: UIViewController {
         if sender.tag == 1 {
             filterData.size = "S"
             SsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
-            MsizeBtn.setImage(UIImage(named: "filterSizeM "), for: .normal)
-             LsizeBtn.setImage(UIImage(named: "filterSizeM "), for: .normal)
-             XLsizeBtn.setImage(UIImage(named: "filterSizeM "), for: .normal)
+            MsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+             LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+             XLsizeBtn.setImage(UIImage(named:"filterSizeM"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeSSelect")
         }else if sender.tag == 2{
             filterData.size = "M"
-             MsizeBtn.setImage(UIImage(named: "filterSizeM "), for: .normal)
-            SsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
-            SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
-            SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+            MsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
+            LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+            XLsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeMSelect")
         }else if sender.tag == 3{
             filterData.size = "L"
-            LsizeBtn.setImage(UIImage(named: "filterSizeM "), for: .normal)
             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
-            MsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
+            MsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+            LsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             XLsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeLSelect")
         }else if sender.tag == 4{
             filterData.size = "XL"
-            XLsizeBtn.setImage(UIImage(named: "filterSizeM "), for: .normal)
             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             MsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
-            LsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
-            sizeImage.image = UIImage(named:"filterSizeXLSelect")
+            LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+            XLsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
+            sizeImage.image = UIImage(named:"filterSizeXlSelect")
         }
     }
     
@@ -182,6 +182,12 @@ class FilterViewController: UIViewController {
             plantBtn.setImage(UIImage(named:"filterPlantNoSelect"), for: .normal)
         }
     }
+    
+    //닫기 버튼 누르면 아웃
+    @IBAction func closeBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     @IBAction func findBtn(_ sender: UIButton) {
         //데이터 선택 안되었을 경우의 예외처리 추가 요망
