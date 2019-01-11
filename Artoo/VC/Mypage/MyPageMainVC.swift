@@ -11,28 +11,43 @@ import UIKit
 
 class MyPageMainVC: UIViewController {
     
+    var userInfo: String!
+    var tabInfo : [String:Int] = ["작품":0, "저장":0, "거래":0 , "후기":0]
+    
+    
     //탭 바로 사용할 컬렉션뷰
     @IBOutlet weak var mypageCollectionView: UICollectionView!
     
+    //탭 변경할 인덱스
+    var selectedIndex:IndexPath = IndexPath.init(row: 0, section: 0)
+    
     
     @IBOutlet weak var MainIntroductionLabel: UILabel!
-    @IBOutlet weak var EditTextView: UITextView!
+ 
+    @IBOutlet weak var introTextView: UITextView!
     
-    var selectedIndex:IndexPath = IndexPath.init(row: 0, section: 0)
+    //자기 소개 변경하는 버튼
+    @IBOutlet weak var editIntroBtn: UIButton!
+    
+    //자기 소개 저장하는 버튼
+    @IBOutlet weak var saveIntroBtn: UIButton!
+    
     
     //내용 변경할 containerView
     @IBOutlet weak var containerView: UIView!
     
+    //작품 업로드 전 다이얼로그
     @IBOutlet weak var noticeView: UIView!
     
-    var userInfo: String!
-    var tabInfo : [String:Int] = ["작품":0, "저장":0, "거래":0 , "후기":0]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        EditTextView.isScrollEnabled = false
+        saveIntroBtn.isHidden = true
+        introTextView.isUserInteractionEnabled = false
+
+        
         updateView(selected: 0)
         // noticeView.isHidden = true
         
@@ -40,6 +55,9 @@ class MyPageMainVC: UIViewController {
         //컬렉션뷰 세팅
         mypageCollectionView.delegate = self
         mypageCollectionView.dataSource = self
+        
+        editIntroBtn.addTarget(self, action: #selector(editIntro), for: .touchUpInside)
+                saveIntroBtn.addTarget(self, action: #selector(saveIntro), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +78,7 @@ class MyPageMainVC: UIViewController {
         navigationController?.pushViewController(noticeVC, animated: true)
     }
     
-    // 확인 번튼 눌렀을 때 작품 업로드 창 넘어가기
+    // 확인 버튼 눌렀을 때 작품 업로드 창 넘어가기
     @IBAction func okBtn(_ sender: Any) {
         guard let uploadVC = storyboard?.instantiateViewController(withIdentifier: "uploadMain") as? UploadMainVC else { return }
         
@@ -73,45 +91,6 @@ class MyPageMainVC: UIViewController {
         guard let settingVC = storyboard?.instantiateViewController(withIdentifier: "settingMainPage") as? SettingMainVC else { return }
         navigationController?.pushViewController(settingVC, animated: true)
     }
-    
-    //버튼 눌렀을 때
-    @IBAction func EditBtn(_ sender: Any) {
-        EditTextView.isEditable = true
-        MainIntroductionLabel.textColor = UIColor.lightGray
-    }
-    
-    /*
-     //저장 버튼 눌렀을 때
-     @IBAction func SaveBtn(_ sender: Any) {
-     EditTextView.isEditable = false
-     MainIntroductionLabel.textColor = UIColor.darkGray
-     let userIndex = UserDefaults.standard.integer(forKey: "userIndex")
-     UserModifyService.shared.modifyUserInfo(user_idx: userIndex) {
-     (res) in guard let status = res.status else { return }
-     switch status {
-     case 200:
-     print("hi1")
-     //editable = true, 색깔 바꿔놓은 회색이 다시 검은색
-     //그 정보가 띄워지면 됨.
-     
-     //회원 정보 수정 성공
-     case 404:
-     print("hi2")
-     //유저 조회 실패
-     case 401:
-     print("hi3")
-     //회원 인증 실패
-     default:
-     print("hi")
-     
-     }
-     
-     }
-     }
-     */
-    //    //버튼에 따라서 아래 뷰가 바뀌기.
-    //    @IBAction func changeView(_ sender: UIButton) {
-    //    }
     
     //art_page리턴
     private lazy var artPage: MyPageArtVC = {
@@ -175,13 +154,13 @@ extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
     }
     
     
-
-
-func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     
-    return 48
-}
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 48
+    }
+    
 }
 
 extension MyPageMainVC : UICollectionViewDataSource {
@@ -190,7 +169,7 @@ extension MyPageMainVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let data = Array(tabInfo.keys)
         let count = Array(tabInfo.values)
         let cell =  mypageCollectionView.dequeueReusableCell(withReuseIdentifier: "MyPageTabCell", for: indexPath) as! MyPageTabCell
@@ -222,6 +201,17 @@ extension MyPageMainVC : MyMainDelegate {
 
 
 extension MyPageMainVC {
+    @objc func editIntro(){
+        saveIntroBtn.isHidden = false
+        introTextView.isUserInteractionEnabled = true
+        introTextView.becomeFirstResponder()
+    }
+    
+    @objc func saveIntro(){
+        introTextView.isUserInteractionEnabled = false
+        saveIntroBtn.isHidden = true
+        //서버로 정보 보냄(완료시 다시 버튼 없애줌
+    }
     
     private func add(asChildViewController viewController: UIViewController) {
         
