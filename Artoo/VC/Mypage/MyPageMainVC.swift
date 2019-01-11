@@ -17,11 +17,12 @@ class MyPageMainVC: UIViewController {
     var saveWorkInfo: [MyArtWork]?
     var buyInfo: [MyPurchase]?
     var reviewInfo: [MyReview]?
-
+    
     
     var userName:String?
     var userDescription:String?
     var artworkNum:Int?
+    var count:Int = 0
     
     //탭 바로 사용할 컬렉션뷰
     @IBOutlet weak var mypageCollectionView: UICollectionView!
@@ -52,23 +53,31 @@ class MyPageMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        saveIntroBtn.isHidden = true
-        introTextView.isUserInteractionEnabled = false
+        notEditable()
         
         
         // noticeView.isHidden = true
         mypageCollectionView.delegate = self
         mypageCollectionView.dataSource = self
-        setData(completion: setUI)
         
-
-    
+        
+        
         editIntroBtn.addTarget(self, action: #selector(editIntro), for: .touchUpInside)
         saveIntroBtn.addTarget(self, action: #selector(saveIntro), for: .touchUpInside)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+        introTextView.text = userDescription
+        saveIntroBtn.isHidden = true
+        introTextView.layer.borderWidth = 0
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        introTextView.resignFirstResponder()
+        setData(completion: setUI)
         addObserver()
     }
     
@@ -104,7 +113,7 @@ class MyPageMainVC: UIViewController {
         let storyboard = Storyboard.shared().mypageStoryboard
         
         var viewController = storyboard.instantiateViewController(withIdentifier: MyPageWorkVC.reuseIdentifier) as! MyPageWorkVC
-
+        
         self.add(asChildViewController: viewController)
         
         return viewController
@@ -158,7 +167,7 @@ extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 48, height: 33.5)
+        return CGSize(width: 73, height: 33.5)
     }
     
     
@@ -166,7 +175,7 @@ extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 48
+        return 20
     }
     
 }
@@ -185,7 +194,7 @@ extension MyPageMainVC : UICollectionViewDataSource {
         cell.indexPath = indexPath
         
         
-    
+        
         if selectedIndex == indexPath {
             cell.cellSelected = true
         }else {
@@ -193,7 +202,7 @@ extension MyPageMainVC : UICollectionViewDataSource {
         }
         print("\(data)")
         
-
+        
         cell.tabName.text = gsno(data)
         cell.tabCount.text = "\(gino(count))"
         return cell
@@ -224,9 +233,10 @@ extension MyPageMainVC {
                 guard let workData = data.data else { return }
                 self.workInfo = workData
                 print("\(workData)")
-                self.userName = data.u_name
+                self.userName = self.gsno(data.u_name)+"님의\n"+"작품 공간입니다."
                 self.userDescription = data.u_description
                 self.artworkNum = data.dataNum //작품 수
+                completion()
             case 500:
                 print("서버 내부 오류")
             default:
@@ -236,12 +246,12 @@ extension MyPageMainVC {
         
         MyPageSaveService.shared.getSaveWork(user_idx: userIdx ){
             (data) in guard let status = data.status else{ return }
-            print("i am status \(status)")
             switch status{
             case 201:
                 guard let saveWorkData = data.data else { return }
                 self.saveWorkInfo = saveWorkData
                 print("\(saveWorkData)")
+                completion()
             case 500:
                 print("서버 내부 오류")
             default:
@@ -257,6 +267,7 @@ extension MyPageMainVC {
             case 200:
                 guard let buyData = data.data else { return }
                 self.buyInfo = buyData
+                completion()
                 print("\(buyData)")
             case 500:
                 print("서버 내부 오류")
@@ -264,7 +275,7 @@ extension MyPageMainVC {
                 print("hihi")
             }
         }
-
+        
         MyPageReviewService.shared.getReviewList(user_idx: userIdx ){
             (data) in guard let status = data.status else{ return }
             print("i am status \(status)")
@@ -272,6 +283,7 @@ extension MyPageMainVC {
             case 201:
                 guard let reviewData = data.data else { return }
                 self.reviewInfo = reviewData
+                completion()
                 print("\(reviewData)")
             case 500:
                 print("서버 내부 오류")
@@ -286,19 +298,24 @@ extension MyPageMainVC {
     
     
     func setUI(){
+        count+=1
         
-        if let count1 = workInfo?.count {tabCount[0] = count1}
-        if let count2 = saveWorkInfo?.count {tabCount[1] = count2}
-        if let count3 = buyInfo?.count {tabCount[2] = count3}
-        if let count4 = reviewInfo?.count {tabCount[3] = count4}
-
-     //   updateView(selected: 0)
-        MainIntroductionLabel.text = userName
-        introTextView.text = userDescription
+        if(self.count == 4){
+            updateView(selected: 0)
+            
+            if let count1 = workInfo?.count {tabCount[0] = count1}
+            if let count2 = saveWorkInfo?.count {tabCount[1] = count2}
+            if let count3 = buyInfo?.count {tabCount[2] = count3}
+            if let count4 = reviewInfo?.count {tabCount[3] = count4}
+            mypageCollectionView.reloadData()
+            MainIntroductionLabel.text = userName
+            introTextView.text = userDescription
+        }
+        
         
         //작품 저장 거래 후기
         //컬렉션뷰 세팅
- 
+        
         
     }
     
@@ -308,16 +325,40 @@ extension MyPageMainVC {
         saveIntroBtn.isHidden = false
         introTextView.isUserInteractionEnabled = true
         introTextView.becomeFirstResponder()
+        introTextView.layer.borderColor = UIColor(red: 199/255, green: 199/255, blue: 199/255, alpha: 1.0).cgColor
+        introTextView.layer.borderWidth = 0.7
     }
     
     @objc func saveIntro(){
-        introTextView.isUserInteractionEnabled = false
-        saveIntroBtn.isHidden = true
+        notEditable()
+        if let text = introTextView.text {
+            saveIntroToServer(description: text)
+        }
         //서버로 정보 보냄(완료시 다시 버튼 없애줌
     }
     
-    func saveIntroToServer(){
+    func notEditable(){
+        introTextView.isUserInteractionEnabled = false
+        saveIntroBtn.isHidden = true
+        introTextView.layer.borderWidth = 0
+    }
+    
+    
+    func saveIntroToServer(description:String){
+        let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
         
+        EditUserInfoService.shared.editMyDescription(user_idx: userIdx, u_description: description){
+            (data) in guard let status = data.status else{ return }
+            switch status{
+            case 200:
+                self.introTextView.text = description
+                self.notEditable()
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
         
         
         
@@ -355,10 +396,10 @@ extension MyPageMainVC {
             if let info =  self.workInfo {
                 artPage.workInfo = info
             }
-           
+            
             add(asChildViewController: artPage)
-     
-
+            
+            
         } else if selected == 1 {
             remove(asChildViewController: artPage)
             remove(asChildViewController: buyPage)
@@ -366,7 +407,7 @@ extension MyPageMainVC {
             if let info =  self.saveWorkInfo {
                 storePage.saveWorkInfo = info
             }
-
+            
             add(asChildViewController: storePage)
         } else if selected == 2 {
             remove(asChildViewController: artPage)
@@ -376,7 +417,7 @@ extension MyPageMainVC {
             if let info =  self.buyInfo {
                 buyPage.buyInfo = info
             }
-
+            
             add(asChildViewController: buyPage)
         } else {
             remove(asChildViewController: artPage)

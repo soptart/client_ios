@@ -98,6 +98,7 @@
 		A30048E721CE57F10042C4EF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048E621CE57F10042C4EF /* Extension.swift */; };
 		A30048EC21CE63370042C4EF /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048EB21CE63370042C4EF /* Today.swift */; };
 		A30048EE21CE63400042C4EF /* TodayWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30048ED21CE63400042C4EF /* TodayWork.swift */; };
+		A301544221E909E2006944FA /* EditUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301544121E909E2006944FA /* EditUserInfoService.swift */; };
 		A32BCF8F21E5BEB700D08C60 /* HomeSeriesCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BCF8E21E5BEB700D08C60 /* HomeSeriesCell2.swift */; };
 		A32BCF9121E5C65300D08C60 /* TodayArtooDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BCF9021E5C65300D08C60 /* TodayArtooDetailVC.swift */; };
 		A34B447F21D7280F00991321 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B447E21D7280F00991321 /* LoginVC.swift */; };
@@ -274,6 +275,7 @@
 		A30048E621CE57F10042C4EF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		A30048EB21CE63370042C4EF /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		A30048ED21CE63400042C4EF /* TodayWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWork.swift; sourceTree = "<group>"; };
+		A301544121E909E2006944FA /* EditUserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoService.swift; sourceTree = "<group>"; };
 		A32BCF8E21E5BEB700D08C60 /* HomeSeriesCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSeriesCell2.swift; sourceTree = "<group>"; };
 		A32BCF9021E5C65300D08C60 /* TodayArtooDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayArtooDetailVC.swift; sourceTree = "<group>"; };
 		A34B447E21D7280F00991321 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				A35D924B21E892700032FDD9 /* MyPageSaveService.swift */,
 				A382CF1321E8B68E003AA9B7 /* MyPageBuyService.swift */,
 				A382CF1721E8C485003AA9B7 /* MyPageReviewService.swift */,
+				A301544121E909E2006944FA /* EditUserInfoService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				5D5488D321E2C91400EFDD2F /* CheckBuyItemService.swift in Sources */,
 				5DAA1ED921E7FC1100FE7A04 /* UploadArtService.swift in Sources */,
 				A34DFD0921DDDCEA00CEDA74 /* ExhibitApplyService.swift in Sources */,
+				A301544221E909E2006944FA /* EditUserInfoService.swift in Sources */,
 				5D3DA6C921DEE3D2005239F8 /* refundNoticeVC.swift in Sources */,
 				5D9B7D8421D8A970009C12D3 /* MyPageStoreVC.swift in Sources */,
 				A30048EC21CE63370042C4EF /* Today.swift in Sources */,

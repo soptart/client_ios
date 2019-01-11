@@ -163,12 +163,14 @@ extension HomeTodayVC : UICollectionViewDataSource {
                 cell.authorIntro.isHidden = true
                 cell.authorName.isHidden = true
                 cell.schoolLabel.isHidden = true
+                cell.blackImg.isHidden = true
                 cell.img.isHidden = true
                 cell.arrowImg.isHidden = true
             }else {
                 cell.authorIntro.isHidden = false
                 cell.authorName.isHidden = false
                 cell.schoolLabel.isHidden = false
+                cell.blackImg.isHidden = false
                 cell.img.isHidden = false
                 cell.arrowImg.isHidden = false
                 

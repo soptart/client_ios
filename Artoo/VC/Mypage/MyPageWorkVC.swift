@@ -11,6 +11,26 @@ import UIKit
 class MyPageWorkVC: UIViewController {
     
     
+    var workInfo:[MyArtWork]?
+    @IBOutlet weak var uploadBtn: UIButton!
+    
+    @IBOutlet weak var imageCollection: UICollectionView!
+
+    @IBOutlet weak var emptyView: UIView!
+    
+    
+    //작품 상세 정보창으로 이동하는 컨트롤러
+    private lazy var artBuyVC: BuyVC = {
+        let storyboard = Storyboard.shared().artStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "choiceArt") as! BuyVC
+        
+        return viewController
+    }()
+    
+    
+    
     //작품 업로드 하는 창
     private lazy var upLoadMainVC : UploadMainVC = {
         let storyboard = Storyboard.shared().mypageStoryboard
@@ -21,29 +41,27 @@ class MyPageWorkVC: UIViewController {
     }()
 
     
-    
-    var workInfo:[MyArtWork]?
-    @IBOutlet weak var uploadBtn: UIButton!
-    
-    @IBOutlet weak var imageCollection: UICollectionView!
-    
-  
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         uploadBtn.addTarget(self, action: #selector(goUpLoad), for: .touchUpInside)
         imageCollection.dataSource = self
         imageCollection.delegate = self
+        emptyView.isHidden = true
+
+        if let count = workInfo?.count {
+            if(count == 0){
+                emptyView.isHidden = false
+            }else{
+                emptyView.isHidden = true
+
+            }
+        }
 
     }
     
 }
 
 extension MyPageWorkVC {
-//    @objc func showDialog(){
-//        self.upLoadNotiVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-//        present(upLoadNotiVC, animated: true)
-//    }
     
     @objc func goUpLoad(){
         present(upLoadMainVC, animated: true)
@@ -91,10 +109,9 @@ extension MyPageWorkVC: UICollectionViewDelegateFlowLayout{
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        let data = exhibitSeeList[indexPath.row]
-        //        artBuyVC.sendArtIndex = data.artIndex!
-        //        navigationController?.pushViewController(artBuyVC, animated: true)
-        //        print("hihi")
+        guard let data = workInfo?[indexPath.row] else { return }
+        artBuyVC.sendArtIndex = data.aIndex!
+        navigationController?.pushViewController(artBuyVC, animated: true)
     }
     
     
