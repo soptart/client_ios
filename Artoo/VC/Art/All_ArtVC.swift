@@ -134,9 +134,6 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         
         let imageHeight = UIImage(named: img.artImg!)?.size.height
         
-        print(imageHeight)
-        //moveBuyVC(selectedImg: img)
-        
         guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
             return
         }
@@ -154,7 +151,6 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
 extension All_ArtVC: PinterestLayoutDelegate{
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat{
         
-        //이거 다이나믹 제발 좀 해결,,,ㅎㅎ
         
         let imageHeight = UIImage(named: imageList[indexPath.row].artImg!)?.size.height
         
