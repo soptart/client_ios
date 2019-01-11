@@ -9,20 +9,55 @@
 import UIKit
 
 class MyPageWorkVC: UIViewController {
+    
+    //업로드 주의사항
+    private lazy var upLoadNotiVC: UpLoadNotiVC = {
+        let storyboard = Storyboard.shared().mypageStoryboard
+        
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: UpLoadNotiVC.reuseIdentifier) as! UpLoadNotiVC
+        
+        
+        return viewController
+    }()
+    
+    //작품 업로드 하는 창
+    private lazy var upLoadMainVC : UploadMainVC = {
+        let storyboard = Storyboard.shared().mypageStoryboard
+        
+        var viewController = storyboard.instantiateViewController(withIdentifier: "uploadMain") as! UploadMainVC
+        
+        return viewController
+    }()
 
+    
+    
     var workInfo:[MyArtWork]?
-
-    //collectionView하고 collectionController하고 연결해줌.
+    @IBOutlet weak var uploadBtn: UIButton!
+    
     @IBOutlet weak var imageCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        uploadBtn.addTarget(self, action: #selector(showDialog), for: .touchUpInside)
         imageCollection.dataSource = self
         imageCollection.delegate = self
     }
     
 }
+
+extension MyPageWorkVC {
+    @objc func showDialog(){
+        self.upLoadNotiVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        present(upLoadNotiVC, animated: true)
+    }
+    
+    func goUpLoad(){
+        present(upLoadMainVC, animated: true)
+    }
+    
+}
+
 
 extension MyPageWorkVC: UICollectionViewDataSource{
     
@@ -35,7 +70,7 @@ extension MyPageWorkVC: UICollectionViewDataSource{
         
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier:"MyWorkCell", for: indexPath) as! MyWorkCell
         
-         let data = workInfo![indexPath.row]
+        let data = workInfo![indexPath.row]
         cell.showImg.imageFromUrl(gsno(data.aUrl), defaultImgPath: "")
         cell.showImg.roundImage(num: 0.08)
         
@@ -63,11 +98,11 @@ extension MyPageWorkVC: UICollectionViewDelegateFlowLayout{
     
     //콜렉션 뷰 아이템 클릭 시 이벤트
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let data = exhibitSeeList[indexPath.row]
-//        artBuyVC.sendArtIndex = data.artIndex!
-//        navigationController?.pushViewController(artBuyVC, animated: true)
-//        print("hihi")
+        //        let data = exhibitSeeList[indexPath.row]
+        //        artBuyVC.sendArtIndex = data.artIndex!
+        //        navigationController?.pushViewController(artBuyVC, animated: true)
+        //        print("hihi")
     }
-
-
+    
+    
 }

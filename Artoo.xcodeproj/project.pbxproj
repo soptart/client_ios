@@ -115,6 +115,8 @@
 		A35D924221E85E380032FDD9 /* MyPageWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924121E85E380032FDD9 /* MyPageWorkService.swift */; };
 		A35D924621E85F150032FDD9 /* MyArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924521E85F150032FDD9 /* MyArtWork.swift */; };
 		A35D924821E8660F0032FDD9 /* ResponseCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924721E8660F0032FDD9 /* ResponseCustom.swift */; };
+		A35D924A21E884110032FDD9 /* UpLoadNotiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924921E884110032FDD9 /* UpLoadNotiVC.swift */; };
+		A35D924C21E892700032FDD9 /* MyPageSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924B21E892700032FDD9 /* MyPageSaveService.swift */; };
 		A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4621DB526B00EC3A8D /* APIManager.swift */; };
 		A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4821DB52FF00EC3A8D /* Requestable.swift */; };
 		A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */; };
@@ -282,6 +284,8 @@
 		A35D924121E85E380032FDD9 /* MyPageWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkService.swift; sourceTree = "<group>"; };
 		A35D924521E85F150032FDD9 /* MyArtWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArtWork.swift; sourceTree = "<group>"; };
 		A35D924721E8660F0032FDD9 /* ResponseCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCustom.swift; sourceTree = "<group>"; };
+		A35D924921E884110032FDD9 /* UpLoadNotiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpLoadNotiVC.swift; sourceTree = "<group>"; };
+		A35D924B21E892700032FDD9 /* MyPageSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSaveService.swift; sourceTree = "<group>"; };
 		A3699B4621DB526B00EC3A8D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A3699B4821DB52FF00EC3A8D /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayService.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 				A3559EC821E61B9800A7A31B /* SellThirdCell.swift */,
 				A3AD880821E7163500AEE977 /* SellCell.swift */,
 				A3F77FD221E7E07800D890D5 /* MyPageTabCell.swift */,
+				A35D924921E884110032FDD9 /* UpLoadNotiVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				A3AD880A21E717C000AEE977 /* AlarmSellService.swift */,
 				A3AD880C21E728B400AEE977 /* AlarmExhibitService.swift */,
 				A35D924121E85E380032FDD9 /* MyPageWorkService.swift */,
+				A35D924B21E892700032FDD9 /* MyPageSaveService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -814,6 +820,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9E582C21DF9E88008225F6 /* StoreArtPhoto.swift in Sources */,
+				A35D924A21E884110032FDD9 /* UpLoadNotiVC.swift in Sources */,
 				A3AF370821E121600013DD5E /* AuthorCellDelegate.swift in Sources */,
 				5DB4138C21DF070100576883 /* SettingMainCell.swift in Sources */,
 				A30048E721CE57F10042C4EF /* Extension.swift in Sources */,
@@ -850,6 +857,7 @@
 				5D3DA6AF21DDE65B005239F8 /* SellVC.swift in Sources */,
 				5DB4139E21DF10E000576883 /* MyInfo.swift in Sources */,
 				5DC6F0DF21DFDB34002C8DBE /* UserDescriptionService.swift in Sources */,
+				A35D924C21E892700032FDD9 /* MyPageSaveService.swift in Sources */,
 				5D3DA6C721DEE3BA005239F8 /* reviewNotice.swift in Sources */,
 				5D40FA0321DD38C200636890 /* BuyItemInfo.swift in Sources */,
 				5D40F9FF21DD252700636890 /* sellFirstCell.swift in Sources */,
@@ -1114,6 +1122,7 @@
 			baseConfigurationReference = 79FF4C226C2AC22C260F3A43 /* Pods-Artoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Artoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1132,6 +1141,7 @@
 			baseConfigurationReference = ED83EAC316788AD98FE61B6C /* Pods-Artoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Artoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

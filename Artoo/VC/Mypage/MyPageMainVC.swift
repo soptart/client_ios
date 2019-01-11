@@ -11,7 +11,8 @@ import UIKit
 
 class MyPageMainVC: UIViewController {
     
-    var tabInfo : [String:Int] = ["작품":0, "저장":0, "거래":0 , "후기":0]
+    var tabName : [String] = ["작품", "저장", "거래" , "후기"]
+    var tabCount : [Int] = [0,0,0,0]
     var workInfo: [MyArtWork]? //MyPageWork는 세부 데이터
     var userName:String?
     var userDescription:String?
@@ -172,27 +173,29 @@ extension MyPageMainVC : UICollectionViewDelegateFlowLayout {
 
 extension MyPageMainVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tabInfo.count
+        return tabName.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let data = Array(tabInfo.keys)
-        let count = Array(tabInfo.values)
+        let data = tabName[indexPath.row]
+        let count = tabCount[indexPath.row]
         let cell =  mypageCollectionView.dequeueReusableCell(withReuseIdentifier: "MyPageTabCell", for: indexPath) as! MyPageTabCell
         cell.delegate = self
         cell.indexPath = indexPath
         
         
-        
+    
         if selectedIndex == indexPath {
             cell.cellSelected = true
         }else {
             cell.cellSelected = false
         }
+        print("\(data)")
         
-        cell.tabName.text = gsno(data[indexPath.row])
-        cell.tabCount.text = "\(gino(count[indexPath.row]))"
+
+        cell.tabName.text = gsno(data)
+        cell.tabCount.text = "\(gino(count))"
         return cell
     }
     
