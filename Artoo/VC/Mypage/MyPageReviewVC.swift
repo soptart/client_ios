@@ -8,10 +8,10 @@
 
 import UIKit
 
-var reviews: [reviewData] = []
 
 class MyPageReviewVC: UIViewController {
-    
+    var reviewInfo: [MyReview]?
+
     @IBOutlet weak var reviewTable: UITableView!
 
     override func viewDidLoad() {
@@ -19,43 +19,69 @@ class MyPageReviewVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        setData()
-        reviewTable.delegate = self
-        reviewTable.dataSource = self
+        setData(completion: setUI)
 
     }
 
 
 }
 
-extension MyPageReviewVC: UITableViewDelegate, UITableViewDataSource {
+
+
+extension MyPageReviewVC: UITableViewDelegate {
+    
+}
+extension MyPageReviewVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviews.count
+        guard let count =  reviewInfo?.count else { return 1}
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = reviewTable.dequeueReusableCell(withIdentifier: "reviewCell") as! MyPageReviewCell
         
-        let review = reviews[indexPath.row]
+        guard let data = reviewInfo?[indexPath.row] else { return UITableViewCell() }
         
-        cell.reviewImg.image = UIImage(named: review.reviewImg)
-        cell.reviewItem.text = review.reviewItem
-        cell.reviewBuyer.text = review.buyer
-        cell.reviewDate.text = review.reviewDate
-        cell.reviewText.text = review.reviewText
+        cell.reviewImg.imageFromUrl(gsno(data.aPicURL), defaultImgPath: "")
+        cell.reviewImg.roundImage(num: 0.08)
         
+        cell.reviewItem.text = gsno(data.aName)
+        cell.reviewBuyer.text = gsno(data.uName)
+        cell.reviewText.text = gsno(data.pComment)
+        cell.reviewDate.text = gsno(data.pDate)
+
         return cell
     }
 }
 
 extension MyPageReviewVC{
         
-        func setData(){
-            let review1 = reviewData(reviewImg:"01", reviewItem: "hell", buyer: "배선영", reviewText: "좋아요 최고에요, 번창하세요", reviewDate: "2019.01.03")
-            
-            reviews = [review1]
+    func setUI(){
+        reviewTable.reloadData()
+        reviewTable.dataSource = self
+        reviewTable.delegate = self
+    }
+    
+    func setData(completion: @escaping() -> Void){
+        let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+        print("\(userIdx)")
+        MyPageReviewService.shared.getReviewList(user_idx: userIdx ){
+            (data) in guard let status = data.status else{ return }
+            print("i am status \(status)")
+            switch status{
+            case 201:
+                guard let reviewData = data.data else { return }
+                self.reviewInfo = reviewData
+                print("\(reviewData)")
+                completion()
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
         }
+    }
 }
 
