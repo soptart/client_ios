@@ -371,6 +371,7 @@ extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerD
     }
 }
 
+
 extension UploadMainVC{
     
     //서버에 등록하기
