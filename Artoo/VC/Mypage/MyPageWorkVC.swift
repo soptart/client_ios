@@ -10,11 +10,13 @@ import UIKit
 
 class MyPageWorkVC: UIViewController {
     
-
+    
     var workInfo:[MyArtWork]?
     @IBOutlet weak var uploadBtn: UIButton!
     
     @IBOutlet weak var imageCollection: UICollectionView!
+
+    @IBOutlet weak var emptyView: UIView!
     
     
     //작품 상세 정보창으로 이동하는 컨트롤러
@@ -44,6 +46,16 @@ class MyPageWorkVC: UIViewController {
         uploadBtn.addTarget(self, action: #selector(goUpLoad), for: .touchUpInside)
         imageCollection.dataSource = self
         imageCollection.delegate = self
+        emptyView.isHidden = true
+
+        if let count = workInfo?.count {
+            if(count == 0){
+                emptyView.isHidden = false
+            }else{
+                emptyView.isHidden = true
+
+            }
+        }
 
     }
     

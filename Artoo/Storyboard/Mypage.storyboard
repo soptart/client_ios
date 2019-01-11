@@ -537,29 +537,6 @@
                     <view key="view" contentMode="scaleToFill" id="Jms-wI-G8V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="자신의 작품을 보여주세요! 더 많은 피드백과 판매 기회를 얻을 수 있어요 :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-6E-8Kz">
-                                <rect key="frame" x="0.0" y="160" width="275" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-vD-pgr">
-                                <rect key="frame" x="63" y="204" width="140" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="작품 업로드하기">
-                                    <color key="titleColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadBtn:" destination="3aI-6d-CqQ" eventType="touchUpInside" id="LIY-0U-Fis"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDO-jq-Eya">
-                                <rect key="frame" x="112" y="107" width="227" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7nE-bi-LBY"/>
                     </view>
@@ -576,8 +553,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-Iq-u1H">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-Iq-u1H">
                                 <rect key="frame" x="0.0" y="102" width="375" height="676"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hUj-vQ-qLr">
                                     <size key="itemSize" width="134" height="158"/>
@@ -593,63 +571,94 @@
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-Jw-lfk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-Jw-lfk">
                                                     <rect key="frame" x="0.0" y="0.0" width="134" height="158"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="vNM-Jw-lfk" firstAttribute="leading" secondItem="L7c-mL-Jmc" secondAttribute="leading" id="BlX-8t-cEN"/>
-                                            <constraint firstAttribute="bottom" secondItem="vNM-Jw-lfk" secondAttribute="bottom" id="PAJ-Qx-5nL"/>
-                                            <constraint firstItem="vNM-Jw-lfk" firstAttribute="top" secondItem="L7c-mL-Jmc" secondAttribute="top" id="luF-kc-zNG"/>
-                                            <constraint firstAttribute="trailing" secondItem="vNM-Jw-lfk" secondAttribute="trailing" id="qZ5-Da-oeN"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="showImg" destination="vNM-Jw-lfk" id="xOB-ib-VbH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Fg-PBb">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Fg-PBb">
                                 <rect key="frame" x="345" y="65" width="12" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="eIV-Kt-SFL"/>
-                                    <constraint firstAttribute="width" constant="12" id="srI-74-HdD"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="upload"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작품 올리기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-v1-Myg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="작품 올리기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-v1-Myg">
                                 <rect key="frame" x="252.66666666666663" y="65" width="83" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" priority="250" constant="62" id="IkC-2K-imD"/>
-                                    <constraint firstAttribute="height" constant="19" id="ToF-Od-ysC"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GsF-tm-3Wn">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mypagePicture" translatesAutoresizingMaskIntoConstraints="NO" id="6aR-ja-Zgs">
+                                        <rect key="frame" x="155.66666666666666" y="66" width="63.666666666666657" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="63.899999999999999" id="4yY-ga-1vo"/>
+                                            <constraint firstAttribute="height" constant="59.100000000000001" id="85t-FL-D8G"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자신의 작품을 보여주세요! 더 많은 피드백과 판매 기회를 얻을 수 있어요 :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-6E-8Kz">
+                                        <rect key="frame" x="45.333333333333343" y="145" width="284.66666666666663" height="44.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="47" id="3Y5-zs-UVe"/>
+                                            <constraint firstAttribute="width" priority="250" constant="280" id="Xkd-hl-zX0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                        <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-vD-pgr">
+                                        <rect key="frame" x="146" y="272.66666666666669" width="83" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="H0f-6v-vCe"/>
+                                            <constraint firstAttribute="width" priority="250" constant="80" id="HDI-yg-54s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
+                                        <state key="normal" title="작품 올리기">
+                                            <color key="titleColor" red="0.69019607839999997" green="0.70196078429999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadBtn:" destination="3aI-6d-CqQ" eventType="touchUpInside" id="LIY-0U-Fis"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6aR-ja-Zgs" firstAttribute="centerX" secondItem="GsF-tm-3Wn" secondAttribute="centerX" id="6eD-eS-Yxg"/>
+                                    <constraint firstItem="rtY-6E-8Kz" firstAttribute="centerX" secondItem="6aR-ja-Zgs" secondAttribute="centerX" id="Jqr-Ep-JkF"/>
+                                    <constraint firstItem="IGF-vD-pgr" firstAttribute="centerX" secondItem="rtY-6E-8Kz" secondAttribute="centerX" id="UvW-JH-ndK"/>
+                                    <constraint firstItem="IGF-vD-pgr" firstAttribute="top" secondItem="rtY-6E-8Kz" secondAttribute="bottom" constant="83" id="hl7-Eh-d33"/>
+                                    <constraint firstItem="6aR-ja-Zgs" firstAttribute="top" secondItem="GsF-tm-3Wn" secondAttribute="top" constant="66" id="smP-9e-Cmc"/>
+                                    <constraint firstItem="rtY-6E-8Kz" firstAttribute="top" secondItem="6aR-ja-Zgs" secondAttribute="bottom" constant="19.899999999999999" id="vrw-aQ-A9t"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="itq-dN-38u" firstAttribute="trailing" secondItem="efp-Fg-PBb" secondAttribute="trailing" constant="18" id="06T-iw-Vcb"/>
-                            <constraint firstItem="efp-Fg-PBb" firstAttribute="top" secondItem="itq-dN-38u" secondAttribute="top" constant="21" id="7Kh-7j-AmG"/>
-                            <constraint firstItem="itq-dN-38u" firstAttribute="bottom" secondItem="tNj-Iq-u1H" secondAttribute="bottom" id="8jC-zK-8x7"/>
-                            <constraint firstItem="efp-Fg-PBb" firstAttribute="leading" secondItem="dYj-v1-Myg" secondAttribute="trailing" constant="9.5" id="Z00-F5-HsO"/>
-                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="leading" secondItem="itq-dN-38u" secondAttribute="leading" id="qd7-4n-ik3"/>
-                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="top" secondItem="dYj-v1-Myg" secondAttribute="bottom" constant="18" id="rxU-VL-6Sr"/>
-                            <constraint firstItem="tNj-Iq-u1H" firstAttribute="trailing" secondItem="itq-dN-38u" secondAttribute="trailing" id="sz1-oK-4JS"/>
-                            <constraint firstItem="efp-Fg-PBb" firstAttribute="centerY" secondItem="dYj-v1-Myg" secondAttribute="centerY" id="xMZ-dq-Ade"/>
+                            <constraint firstItem="GsF-tm-3Wn" firstAttribute="bottom" secondItem="itq-dN-38u" secondAttribute="bottom" id="GIR-hi-edt"/>
+                            <constraint firstItem="GsF-tm-3Wn" firstAttribute="top" secondItem="itq-dN-38u" secondAttribute="top" id="N7L-NE-Nc9"/>
+                            <constraint firstItem="GsF-tm-3Wn" firstAttribute="leading" secondItem="itq-dN-38u" secondAttribute="leading" id="TZe-io-n2x"/>
+                            <constraint firstItem="GsF-tm-3Wn" firstAttribute="trailing" secondItem="itq-dN-38u" secondAttribute="trailing" id="pvJ-8D-P0G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="itq-dN-38u"/>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="GsF-tm-3Wn" id="3yz-ej-iKr"/>
                         <outlet property="imageCollection" destination="tNj-Iq-u1H" id="PUo-DL-7MB"/>
                         <outlet property="uploadBtn" destination="efp-Fg-PBb" id="OSE-6B-7H5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dss-6X-ehx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-621"/>
+            <point key="canvasLocation" x="832.79999999999995" y="-621.42857142857144"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="gM7-ly-pgc">
@@ -3728,6 +3737,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
         <image name="loginRound" width="5" height="5"/>
         <image name="mypageAlert" width="17" height="23"/>
         <image name="mypageLine" width="50" height="3"/>
+        <image name="mypagePicture" width="64" height="60"/>
         <image name="mypageSave" width="63" height="23"/>
         <image name="mypageSaveicon" width="21" height="21"/>
         <image name="mypageSetup" width="20" height="20"/>
