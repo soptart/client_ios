@@ -248,10 +248,11 @@ extension SignVC3 {
             case 201:
                 //회원가입 완료
                 let alert = UIAlertController(title: "회원가입성공", message: "로그인 창으로 이동합니다", preferredStyle: UIAlertController.Style.alert)
-                let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+                let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default){(UIAlertAction) in
+                   self.dismiss(animated: true)
+                }
                 alert.addAction(action)
-                self.present(alert, animated: true, completion:{ self.navigationController?.pushViewController(self.loginVC, animated: true)
-                })
+                self.present(alert, animated: true)
             case 400:
                 //이메일 중복
                 let alert = UIAlertController(title: "경고", message: "이미 존재하는 이메일입니다", preferredStyle: UIAlertController.Style.alert)
