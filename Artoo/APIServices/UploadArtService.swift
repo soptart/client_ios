@@ -16,7 +16,7 @@ struct UploadArtService: APIManager, Requestable{
     static let shared = UploadArtService()
     let uploadURL = url("/artworks")
     let header: HTTPHeaders = [
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         "Authorization" : UserDefaults.standard.string(forKey: "token") ?? "hi"
     ]
     
