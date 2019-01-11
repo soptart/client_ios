@@ -94,8 +94,7 @@ class DealVC: UIViewController {
         takerAddress = deliveryService.takerAddressLabel.text!
         takerPhone = deliveryService.takerPhoneLabel.text!
         isPayment = 1
-        
-        print("\(takerName)"+"\(takerAddress)"+"\(takerPhone)")
+
         sendTakerInfo()
     }
     
@@ -152,7 +151,7 @@ extension DealVC {
                     self.deliveryFee = self.buyItemInfo.deliveryCharge!
                     self.totalPrice = self.buyPrice! + self.deliveryFee!
                     self.totalPriceLabel.text = String(describing:(self.totalPrice!))
-                    self.totalPriceBtn.text = String(describing:(self.totalPrice!))
+                    self.totalPriceBtn.text = ("\(String(describing:(self.totalPrice!)))" + "원")
                 }
             case 400:
                 print("미술 작품 없음")
@@ -165,6 +164,8 @@ extension DealVC {
     
     func sendTakerInfo(){
         print("\(sendArtIndex)" + "\(sendUserIndex)" + "\(isDelivery)")
+        print("\(takerName)" + "\(takerAddress)" + "\(takerPhone)")
+            
         CheckBuyItemService.shared.buy(art_index: sendArtIndex!, user_index: sendUserIndex!, delivery: isDelivery!, buyerName: takerName!, buyerAddress: takerAddress!, buyerPhone: takerPhone!, Payment: 1){
             (data) in guard let status = data.status else { return }
             
@@ -174,6 +175,9 @@ extension DealVC {
             switch status{
             case 200:
                 self.view.makeToast("구매 저장 정보 성공")
+                if let alldata = data.data{
+                    print(alldata)
+                }
             case 204:
                 self.view.makeToast("구매 항목 미기입")
             case 600:

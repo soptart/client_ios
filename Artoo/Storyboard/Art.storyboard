@@ -554,14 +554,14 @@
             <objects>
                 <viewController storyboardIdentifier="deal" id="I3j-fz-502" customClass="DealVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abM-cY-gnm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-NX-2ZJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-Hh-JDp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvt-2y-DK6">
                                                 <rect key="frame" x="18" y="63" width="77" height="76"/>
@@ -704,13 +704,13 @@
                                                 </connections>
                                             </button>
                                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3e-mC-HzV">
-                                                <rect key="frame" x="15" y="481" width="339" height="399"/>
+                                                <rect key="frame" x="15" y="470" width="339" height="842"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                             </containerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="900" id="CWR-dU-r4B"/>
+                                            <constraint firstAttribute="height" constant="1400" id="CWR-dU-r4B"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -723,13 +723,13 @@
                                 </constraints>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artworkPriceColor" translatesAutoresizingMaskIntoConstraints="NO" id="zxt-nj-pHK">
-                                <rect key="frame" x="0.0" y="826" width="198" height="74"/>
+                                <rect key="frame" x="0.0" y="1326" width="198" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="7R2-IJ-NGC"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6p-6v-AiK">
-                                <rect key="frame" x="82" y="847" width="42" height="29"/>
+                                <rect key="frame" x="82" y="1347" width="42" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Zsv-V1-OCV"/>
                                 </constraints>
@@ -738,7 +738,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysz-Vu-GTU">
-                                <rect key="frame" x="198" y="826" width="177" height="74"/>
+                                <rect key="frame" x="198" y="1326" width="177" height="74"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="OvL-cR-uML"/>
@@ -770,7 +770,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KAu-bh-6oj"/>
                     </view>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="buyImage" destination="Cvt-2y-DK6" id="foi-ef-jT5"/>
                         <outlet property="buyItemNameLabel" destination="opc-vR-gy6" id="sG5-Tv-v47"/>
@@ -789,10 +789,10 @@
             </objects>
             <point key="canvasLocation" x="2032.8" y="884.25787106446785"/>
         </scene>
-        <!--View Controller-->
+        <!--AccountVC-->
         <scene sceneID="AHF-vp-Qnv">
             <objects>
-                <viewController id="2Rj-wJ-dl6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="account" id="2Rj-wJ-dl6" customClass="AccountVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1t-Pf-Fdx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1384,6 +1384,7 @@
                     <connections>
                         <outlet property="accountMethodBtn" destination="fhT-my-isF" id="7on-VM-5pv"/>
                         <outlet property="cardMethodBtn" destination="fwI-ny-QVV" id="rfz-V9-DOt"/>
+                        <outlet property="containerView" destination="7CF-bm-RV0" id="H0h-Pq-hoS"/>
                         <outlet property="takerAddressLabel" destination="WFG-lm-wYe" id="ubl-ed-Cty"/>
                         <outlet property="takerDetailAddrssLabel" destination="qYF-De-PeX" id="mWs-no-5B7"/>
                         <outlet property="takerNameLabel" destination="JOx-us-k4l" id="3ZW-KB-ePM"/>
@@ -1394,10 +1395,10 @@
             </objects>
             <point key="canvasLocation" x="2796" y="628.78560719640188"/>
         </scene>
-        <!--View Controller-->
+        <!--CreditVC-->
         <scene sceneID="SL7-jv-h4t">
             <objects>
-                <viewController id="nBX-AZ-Dui" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="credit" id="nBX-AZ-Dui" customClass="CreditVC" customModule="Artoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PUP-Gy-ZTk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1492,6 +1493,7 @@
                             <constraint firstItem="gl7-ed-LiX" firstAttribute="leading" secondItem="PXf-nu-mFn" secondAttribute="leading" id="jTA-PA-C1e"/>
                             <constraint firstItem="PXf-nu-mFn" firstAttribute="top" secondItem="PUP-Gy-ZTk" secondAttribute="top" constant="34" id="mBg-oI-jF1"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="DRr-rJ-ty3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4DV-2Z-MKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
