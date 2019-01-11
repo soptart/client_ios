@@ -24,7 +24,6 @@ struct CheckBuyItemService: APIManager, Requestable {
     func buy(art_index: Int, user_index: Int, delivery: Bool, buyerName: String, buyerAddress: String,
              buyerPhone: String, Payment: Int?, completion: @escaping(NetworkData) -> Void) {
         
-    
         
         let body = delivery ?  [
             "p_isPost" : true,
@@ -39,7 +38,7 @@ struct CheckBuyItemService: APIManager, Requestable {
         ]
         
         
-        postable(checkBuyItemUrl+"\(art_index)"+"/purchase/"+"\(user_index)", body: body, header: header) { res in
+        postable(checkBuyItemUrl+"\(art_index)"+"/purchases/"+"\(user_index)", body: body, header: header) { res in
             switch res {
             case .success(let value):
                 completion(value)

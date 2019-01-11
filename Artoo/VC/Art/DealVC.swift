@@ -163,8 +163,6 @@ extension DealVC {
     }
     
     func sendTakerInfo(){
-        print("\(sendArtIndex)" + "\(sendUserIndex)" + "\(isDelivery)")
-        print("\(takerName)" + "\(takerAddress)" + "\(takerPhone)")
             
         CheckBuyItemService.shared.buy(art_index: sendArtIndex!, user_index: sendUserIndex!, delivery: isDelivery!, buyerName: takerName!, buyerAddress: takerAddress!, buyerPhone: takerPhone!, Payment: 1){
             (data) in guard let status = data.status else { return }
@@ -177,9 +175,10 @@ extension DealVC {
                 self.view.makeToast("구매 저장 정보 성공")
                 if let alldata = data.data{
                     print(alldata)
+                    
                 }
-            case 204:
-                self.view.makeToast("구매 항목 미기입")
+            case 400:
+                print(data.message!)
             case 600:
                 self.view.makeToast("데이터베이스 에러")
             case 500:

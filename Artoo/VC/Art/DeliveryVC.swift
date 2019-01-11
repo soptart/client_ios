@@ -31,19 +31,14 @@ class DeliveryVC: UIViewController {
         // Do any additional setup after loading the view.
         
         isDelivery = true
-        
         guard let deal = storyboard?.instantiateViewController(withIdentifier: "deal") as? DealVC else { return }
         
-        
-//        takerName = takerNameLabel.text!
-//        takerAddress = takerAddressLabel.text!
-//        takerPhone = takerPhoneLabel.text!
     }
     
     private lazy var creditService : CreditVC = {
         let storyboard = Storyboard.shared().artStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "delivery") as! CreditVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: "credit") as! CreditVC
         
         self.add(asChildViewConroller: viewController)
         
@@ -53,7 +48,7 @@ class DeliveryVC: UIViewController {
     private lazy var accountService: AccountVC = {
         let storyboard = Storyboard.shared().artStoryboard
         
-        var viewController = storyboard.instantiateViewController(withIdentifier: "direct") as! AccountVC
+        var viewController = storyboard.instantiateViewController(withIdentifier: "account") as! AccountVC
         
         self.add(asChildViewConroller: viewController)
         
@@ -61,6 +56,7 @@ class DeliveryVC: UIViewController {
     }()
 
     @IBAction func choiceCheckMethodBtn(_ sender: UIButton) {
+        updateView(selected: sender.tag)
         if sender.tag == 0 {
             cardMethodBtn.setBackgroundColor(UIColor(displayP3Red: 255/255, green: 111/255, blue: 97/255, alpha: 1), forState: .normal)
             cardMethodBtn.setTitleColor(UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1), for: .normal)
