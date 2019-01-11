@@ -89,7 +89,8 @@ extension All_ArtVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AllImageCell
         let image = imageList[indexPath.row]
-        cell.showImg.imageFromUrl(gsno(image.artImg), defaultImgPath: "ggobuk")
+        cell.showImg.imageFromUrl(gsno(image.artImg), defaultImgPath: "")
+        cell.showImg.roundImage(num: 0.08)
         
         return cell
     }
@@ -129,13 +130,17 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
     
     //컬렉션 뷰 아이템 클릭 시
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
         imageIndex = indexPath.row
         let img = imageList[indexPath.row]
         
+        /*
         let imageHeight = UIImage(named: img.artImg!)?.size.height
         
         print(imageHeight)
         //moveBuyVC(selectedImg: img)
+        */
         
         guard let bVC = self.storyboard?.instantiateViewController(withIdentifier: "choiceArt") as? BuyVC else {
             return
@@ -147,6 +152,14 @@ extension All_ArtVC: UICollectionViewDelegateFlowLayout{
         self.navigationController?.pushViewController(bVC, animated: true)
         
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 155, height: 213)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 11
     }
   
 }
