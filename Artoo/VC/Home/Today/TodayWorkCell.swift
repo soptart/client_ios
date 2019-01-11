@@ -8,6 +8,7 @@ import UIKit
 class TodayWorkCell: UICollectionViewCell {
     @IBOutlet weak var workImg: UIImageView!
 
+    @IBOutlet weak var blackImg: UIImageView!
     //작가 이름
     @IBOutlet weak var authorName: UILabel!
     
