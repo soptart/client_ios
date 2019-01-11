@@ -11,7 +11,9 @@ class MyPageStoreVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // setData(completion: setUI)
-
+        imageCollection.reloadData()
+        imageCollection.dataSource = self
+        imageCollection.delegate = self
     }
     
 }
@@ -19,9 +21,7 @@ class MyPageStoreVC: UIViewController {
 extension MyPageStoreVC {
     
     func setUI(){
-        imageCollection.reloadData()
-        imageCollection.dataSource = self
-        imageCollection.delegate = self
+      
     }
     
     func setData(completion: @escaping() -> Void){

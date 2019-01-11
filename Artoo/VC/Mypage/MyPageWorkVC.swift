@@ -27,11 +27,14 @@ class MyPageWorkVC: UIViewController {
     
     @IBOutlet weak var imageCollection: UICollectionView!
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         uploadBtn.addTarget(self, action: #selector(goUpLoad), for: .touchUpInside)
         imageCollection.dataSource = self
         imageCollection.delegate = self
+
     }
     
 }
@@ -60,7 +63,7 @@ extension MyPageWorkVC: UICollectionViewDataSource{
         
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier:"MyWorkCell", for: indexPath) as! MyWorkCell
         
-        let data = workInfo![indexPath.row]
+        guard let data = workInfo?[indexPath.row] else {return UICollectionViewCell() }
         cell.showImg.imageFromUrl(gsno(data.aUrl), defaultImgPath: "")
         cell.showImg.roundImage(num: 0.08)
         

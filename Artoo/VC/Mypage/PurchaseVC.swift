@@ -154,9 +154,9 @@ extension PurchaseVC : UITableViewDataSource {
 
 extension PurchaseVC {
     func setUI(){
-        putchaseTableView.delegate = self
-        putchaseTableView.dataSource = self
         putchaseTableView.reloadData()
+        putchaseTableView.dataSource = self
+        putchaseTableView.delegate = self
     }
     
     

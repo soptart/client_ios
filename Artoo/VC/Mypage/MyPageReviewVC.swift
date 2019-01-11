@@ -16,7 +16,9 @@ class MyPageReviewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        reviewTable.reloadData()
+        reviewTable.dataSource = self
+        reviewTable.delegate = self
         // Do any additional setup after loading the view.
         
         //setData(completion: setUI)

@@ -57,17 +57,12 @@ class MyPageMainVC: UIViewController {
         
         
         // noticeView.isHidden = true
-        
-        setData(completion: setUI)
-        
-        
-        
-        
-        //작품 저장 거래 후기
-        //컬렉션뷰 세팅
         mypageCollectionView.delegate = self
         mypageCollectionView.dataSource = self
+        setData(completion: setUI)
         
+
+    
         editIntroBtn.addTarget(self, action: #selector(editIntro), for: .touchUpInside)
         saveIntroBtn.addTarget(self, action: #selector(saveIntro), for: .touchUpInside)
     }
@@ -285,7 +280,6 @@ extension MyPageMainVC {
             }
         }
         
-        completion()
         
         
     }
@@ -298,10 +292,14 @@ extension MyPageMainVC {
         if let count3 = buyInfo?.count {tabCount[2] = count3}
         if let count4 = reviewInfo?.count {tabCount[3] = count4}
 
-        updateView(selected: 0)
+     //   updateView(selected: 0)
         MainIntroductionLabel.text = userName
         introTextView.text = userDescription
-        mypageCollectionView.reloadData()
+        
+        //작품 저장 거래 후기
+        //컬렉션뷰 세팅
+ 
+        
     }
     
     
@@ -354,9 +352,7 @@ extension MyPageMainVC {
             remove(asChildViewController: storePage)
             remove(asChildViewController: buyPage)
             remove(asChildViewController: reviewPage)
-            print("hihihi")
             if let info =  self.workInfo {
-                print("정보오오전달")
                 artPage.workInfo = info
             }
            
@@ -367,16 +363,29 @@ extension MyPageMainVC {
             remove(asChildViewController: artPage)
             remove(asChildViewController: buyPage)
             remove(asChildViewController: reviewPage)
+            if let info =  self.saveWorkInfo {
+                storePage.saveWorkInfo = info
+            }
+
             add(asChildViewController: storePage)
         } else if selected == 2 {
             remove(asChildViewController: artPage)
             remove(asChildViewController: storePage)
             remove(asChildViewController: reviewPage)
+            
+            if let info =  self.buyInfo {
+                buyPage.buyInfo = info
+            }
+
             add(asChildViewController: buyPage)
         } else {
             remove(asChildViewController: artPage)
             remove(asChildViewController: storePage)
             remove(asChildViewController: buyPage)
+            
+            if let info =  self.reviewInfo {
+                reviewPage.reviewInfo = info
+            }
             add(asChildViewController: reviewPage)
         }
     }

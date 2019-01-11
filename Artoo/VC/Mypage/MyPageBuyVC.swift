@@ -17,7 +17,9 @@ class MyPageBuyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // setData(completion: setUI)
-        
+        BuyTable.reloadData()
+        BuyTable.dataSource = self
+        BuyTable.delegate = self
     }
 
 }
