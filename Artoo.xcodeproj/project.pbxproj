@@ -113,6 +113,9 @@
 		A3559EC921E61B9800A7A31B /* SellThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3559EC821E61B9800A7A31B /* SellThirdCell.swift */; };
 		A3559ECB21E6200300A7A31B /* AlarmBuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3559ECA21E6200300A7A31B /* AlarmBuyService.swift */; };
 		A35D924021E851670032FDD9 /* MyMainDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D923F21E851670032FDD9 /* MyMainDelegate.swift */; };
+		A35D924221E85E380032FDD9 /* MyPageWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924121E85E380032FDD9 /* MyPageWorkService.swift */; };
+		A35D924621E85F150032FDD9 /* MyArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924521E85F150032FDD9 /* MyArtWork.swift */; };
+		A35D924821E8660F0032FDD9 /* ResponseCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35D924721E8660F0032FDD9 /* ResponseCustom.swift */; };
 		A3699B4721DB526B00EC3A8D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4621DB526B00EC3A8D /* APIManager.swift */; };
 		A3699B4921DB52FF00EC3A8D /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4821DB52FF00EC3A8D /* Requestable.swift */; };
 		A3699B4B21DB532800EC3A8D /* HomeTodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */; };
@@ -278,6 +281,9 @@
 		A3559EC821E61B9800A7A31B /* SellThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellThirdCell.swift; sourceTree = "<group>"; };
 		A3559ECA21E6200300A7A31B /* AlarmBuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmBuyService.swift; sourceTree = "<group>"; };
 		A35D923F21E851670032FDD9 /* MyMainDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainDelegate.swift; sourceTree = "<group>"; };
+		A35D924121E85E380032FDD9 /* MyPageWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageWorkService.swift; sourceTree = "<group>"; };
+		A35D924521E85F150032FDD9 /* MyArtWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArtWork.swift; sourceTree = "<group>"; };
+		A35D924721E8660F0032FDD9 /* ResponseCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCustom.swift; sourceTree = "<group>"; };
 		A3699B4621DB526B00EC3A8D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A3699B4821DB52FF00EC3A8D /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		A3699B4A21DB532800EC3A8D /* HomeTodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayService.swift; sourceTree = "<group>"; };
@@ -484,6 +490,8 @@
 				5D9E582521DF993E008225F6 /* reviewData.swift */,
 				A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */,
 				A3AD880E21E728CF00AEE977 /* ExhibitAlarm.swift */,
+				A35D924521E85F150032FDD9 /* MyArtWork.swift */,
+				A35D924721E8660F0032FDD9 /* ResponseCustom.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -538,6 +546,7 @@
 				A3559ECA21E6200300A7A31B /* AlarmBuyService.swift */,
 				A3AD880A21E717C000AEE977 /* AlarmSellService.swift */,
 				A3AD880C21E728B400AEE977 /* AlarmExhibitService.swift */,
+				A35D924121E85E380032FDD9 /* MyPageWorkService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -822,6 +831,7 @@
 				5D3C387321E4BA06005CF329 /* AllCommentsService.swift in Sources */,
 				5DD5460121E798E400E5FF31 /* BuyItemInfoService.swift in Sources */,
 				5D3C387121E4B985005CF329 /* Comments.swift in Sources */,
+				A35D924221E85E380032FDD9 /* MyPageWorkService.swift in Sources */,
 				A3FCBAAA21D20CF200CB8E51 /* Exhibit.swift in Sources */,
 				A34B447F21D7280F00991321 /* LoginVC.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
@@ -830,6 +840,7 @@
 				A3D5067321D0FC7800BB6E4C /* ThemeDetailCell.swift in Sources */,
 				5D3DA6C321DE1122005239F8 /* BuyInfo.swift in Sources */,
 				5D9B7D8221D8A94D009C12D3 /* MyPageArtVC.swift in Sources */,
+				A35D924821E8660F0032FDD9 /* ResponseCustom.swift in Sources */,
 				5DB4139021DF073000576883 /* MyInfoCell.swift in Sources */,
 				5DC6F0E321E09FE2002C8DBE /* CheckartWorksService.swift in Sources */,
 				5DB413A221DF18AA00576883 /* QnaCell.swift in Sources */,
@@ -921,6 +932,7 @@
 				A30048DB21CE4FC30042C4EF /* TodayAuthorCell.swift in Sources */,
 				5DEC42D021D901C8003F75B5 /* DeliveryVC.swift in Sources */,
 				A350ADDA21D532BC00EC199E /* ExhibitApplyVC.swift in Sources */,
+				A35D924621E85F150032FDD9 /* MyArtWork.swift in Sources */,
 				A3F77FD321E7E07800D890D5 /* MyPageTabCell.swift in Sources */,
 				A3866D7121E4773400CE3C94 /* ExhibitGoApplyService.swift in Sources */,
 				A3FE1B1821CF801F0073F40F /* ThemeDetailVC.swift in Sources */,

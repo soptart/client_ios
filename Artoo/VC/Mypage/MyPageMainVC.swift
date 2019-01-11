@@ -11,9 +11,11 @@ import UIKit
 
 class MyPageMainVC: UIViewController {
     
-    var userInfo: String!
     var tabInfo : [String:Int] = ["작품":0, "저장":0, "거래":0 , "후기":0]
-    
+    var workInfo: MyArtWork? //MyPageWork는 세부 데이터
+    var userName:String?
+    var userDescription:String?
+    var artworkNum:Int?
     
     //탭 바로 사용할 컬렉션뷰
     @IBOutlet weak var mypageCollectionView: UICollectionView!
@@ -23,7 +25,7 @@ class MyPageMainVC: UIViewController {
     
     
     @IBOutlet weak var MainIntroductionLabel: UILabel!
- 
+    
     @IBOutlet weak var introTextView: UITextView!
     
     //자기 소개 변경하는 버튼
@@ -46,10 +48,15 @@ class MyPageMainVC: UIViewController {
         
         saveIntroBtn.isHidden = true
         introTextView.isUserInteractionEnabled = false
-
+        
         
         updateView(selected: 0)
         // noticeView.isHidden = true
+        
+        setData(completion: setUI)
+        
+        
+        
         
         //작품 저장 거래 후기
         //컬렉션뷰 세팅
@@ -57,7 +64,7 @@ class MyPageMainVC: UIViewController {
         mypageCollectionView.dataSource = self
         
         editIntroBtn.addTarget(self, action: #selector(editIntro), for: .touchUpInside)
-                saveIntroBtn.addTarget(self, action: #selector(saveIntro), for: .touchUpInside)
+        saveIntroBtn.addTarget(self, action: #selector(saveIntro), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -200,7 +207,40 @@ extension MyPageMainVC : MyMainDelegate {
 }
 
 
+////여기서부터 extension VC
+
 extension MyPageMainVC {
+    
+    func setData(completion: @escaping() -> Void){
+        let userIdx = UserDefaults.standard.integer(forKey: "userIndex")
+        print("\(userIdx)")
+        MyPageWorkService.shared.getMyPageWork(user_idx: userIdx ){
+            (data) in guard let status = data.status else{ return }
+            switch status{
+            case 200:
+                guard let workData = data.data else { return }
+                print("\(workData)")
+                self.userName = data.u_name
+                self.userDescription = data.u_description
+                self.artworkNum = data.dataNum //작품 수
+                completion()
+            case 500:
+                print("서버 내부 오류")
+            default:
+                print("hihi")
+            }
+        }
+    }
+    
+    
+    func setUI(){
+        print("hihihihihihihhi")
+        MainIntroductionLabel.text = userName
+        introTextView.text = userDescription
+    }
+    
+    
+    
     @objc func editIntro(){
         saveIntroBtn.isHidden = false
         introTextView.isUserInteractionEnabled = true
@@ -212,6 +252,19 @@ extension MyPageMainVC {
         saveIntroBtn.isHidden = true
         //서버로 정보 보냄(완료시 다시 버튼 없애줌
     }
+    
+    func saveIntroToServer(){
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     private func add(asChildViewController viewController: UIViewController) {
         
