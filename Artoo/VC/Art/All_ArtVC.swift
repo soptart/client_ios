@@ -212,6 +212,7 @@ extension All_ArtVC{
                     print("\(allFilterData)")
                     self.imageCollection.reloadData()
                     self.artCountLabel.text = String(describing: self.imageList.count)
+                    self.artCountLabel.sizeToFit()
                 }
             case 204:
                 print("컨텐츠가 존재하지 않습니다")
