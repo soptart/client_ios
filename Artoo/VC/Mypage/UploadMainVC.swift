@@ -161,7 +161,6 @@ class UploadMainVC: UIViewController{
         } else {
             if(sender.tag == 1){
                 a_tag.append(String(describing: sender.tag))
-                firstBtn.setImage(UIImage(named: "uploadHashtagColor2"), for: .normal)
             }
             if(sender.tag == 2) {
                 a_tag.append(String(describing: sender.tag))
