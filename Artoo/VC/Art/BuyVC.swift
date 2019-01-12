@@ -12,7 +12,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var moreImg: UIImageView!
     @IBOutlet weak var desc: UITextView?
-    @IBOutlet weak var slideButton: UIButton?
     @IBOutlet weak var figureLabel: UILabel?
     @IBOutlet weak var feedBackLabel: UILabel?
     @IBOutlet weak var feedContentLabel: UILabel?
@@ -151,35 +150,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
         navigationController?.popViewController(animated: true)
         
     }
-    
-    
-    //아래 버튼 누르면
-    @IBAction func slideBtn(_ sender: Any) {
-        
-        desc?.delegate = self
-        
-        let fixedHeight = desc?.frame.size.width
-        
-        //새로운 사이즈 저장해주기.
-        let newSize: CGSize = desc!.sizeThatFits(CGSize(width: fixedHeight!, height: CGFloat(MAXFLOAT)))
-        
-        var newFrame = desc!.frame
-        
-        newFrame.size = CGSize(width: CGFloat(fmaxf(Float(newSize.width), Float(fixedHeight!))), height: newSize.height)
-        
-        // 아래로 이동시킬 높이
-        var height = newFrame.size.height - 76
-        
-        desc!.frame = newFrame
-
-        //버튼, 라벨 아래로 내리기
-        slideButton!.frame.origin = CGPoint(x: 0, y: 500 + height)
-        
-        figureLabel!.frame.origin = CGPoint(x: 113, y:541 + height)
-        feedBackLabel!.frame.origin = CGPoint(x:20, y:608 + height)
-        feedContentLabel!.frame.origin = CGPoint(x:20, y:632 + height)
-        feedContentTV!.frame.origin = CGPoint(x:20, y:662 + height)
-        }
     
     //구매하기 버튼 누른다면 거래 창으로 이동
     @IBAction func buyBtn(_ sender: Any) {
