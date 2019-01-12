@@ -81,15 +81,6 @@ class BuyVC: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if (artDetailInfo?.artIsLike == true) {
-            
-            print("이미 눌렸다구요!")
-            heartImg.setImage(UIImage(named:"heartColor"), for: .normal)
-        }else {
-            heartImg.setImage(UIImage(named:"heartGray"), for: .normal
-            )
-        }
     }
     
    
@@ -236,7 +227,7 @@ extension BuyVC {
             licenseImage.image = UIImage(named: "ccByNcNd")
         }
 
-        /*
+        
         //좋아요를 이미 눌렀을 경우i
          if (artDetailInfo?.artIsLike == true) {
         
@@ -245,8 +236,8 @@ extension BuyVC {
          }else {
          heartImg.setImage(UIImage(named:"heartGray"), for: .normal
          )
-         }
- */
+        }
+ 
         //판매자라면
         if (artDetailInfo?.auth == true) {
             figureLabel?.isHidden = true
@@ -263,6 +254,7 @@ extension BuyVC {
         } else {
             buyBtn.setImage(UIImage(named:"artworkComplete"), for: .normal)
             priceImage.image = UIImage(named: "artworkPriceGray")
+            buyBtn.isEnabled = false
         }
         
         setUpData(completion: setUI)

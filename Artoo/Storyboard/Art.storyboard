@@ -1221,6 +1221,7 @@
                         <outlet property="buyItemNameLabel" destination="opc-vR-gy6" id="sG5-Tv-v47"/>
                         <outlet property="buyItemPriceLabel" destination="s1g-Wx-9bW" id="lLk-L4-Y3G"/>
                         <outlet property="buyItemPriceLabel2" destination="a8n-j1-CIN" id="DDe-eF-Pji"/>
+                        <outlet property="buyVATLabel" destination="rCa-Av-dIx" id="zEj-LU-5A5"/>
                         <outlet property="containerView" destination="p3e-mC-HzV" id="85K-as-egw"/>
                         <outlet property="deliveryBtn" destination="Ckm-dr-xqn" id="k2R-0M-vTi"/>
                         <outlet property="deliveryFeeLabel" destination="aJ2-Kv-NTu" id="BoT-m4-pey"/>
@@ -1232,7 +1233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGc-ig-IQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2032.8" y="884.25787106446785"/>
+            <point key="canvasLocation" x="2033" y="904"/>
         </scene>
         <!--AccountVC-->
         <scene sceneID="AHF-vp-Qnv">

@@ -20,6 +20,7 @@ class DealVC: UIViewController {
     @IBOutlet weak var buyItemPriceLabel2: UILabel!
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var buyVATLabel: UILabel!
     
     @IBOutlet weak var totalPriceBtn: UILabel!
     
@@ -36,6 +37,8 @@ class DealVC: UIViewController {
     var isPayment: Int?
     var deliveryFee: Int?
     var buyItemInfo: buyItemBuyerInfo!
+    var vatFee: Double?
+    var authorInfo: String?
     
     //택배나 직거래 버튼 눌렀을 때 화면이 변하기
     @IBAction func changeView(_ sender: UIButton) {
@@ -144,14 +147,16 @@ extension DealVC {
                     print("\(allArtData)")
                     self.buyItemNameLabel.text = (self.buyItemInfo?.artworkName)!
                     self.buyItemPriceLabel.text = String(describing: (self.buyItemInfo?.artworkPrice!)!)
-                    self.buyItemPriceLabel2.text = String(describing: (self.buyItemInfo?.artworkPrice!)!)
+                    self.authorInfo = "\(self.buyItemInfo?.artistSchool!)" + "\(self.buyItemInfo?.artistName!)"
+                    self.buyItemPriceLabel2.text = self.authorInfo
                     self.deliveryFeeLabel.text = String(describing:(self.buyItemInfo?.deliveryCharge!)!)
-                    
                     self.buyPrice = self.buyItemInfo.artworkPrice!
                     self.deliveryFee = self.buyItemInfo.deliveryCharge!
-                    self.totalPrice = self.buyPrice! + self.deliveryFee!
+                    self.totalPrice = self.buyPrice! + self.deliveryFee! + Int(self.vatFee!)
                     self.totalPriceLabel.text = String(describing:(self.totalPrice!))
                     self.totalPriceBtn.text = ("\(String(describing:(self.totalPrice!)))" + "원")
+                   self.vatFee = Double(self.buyItemInfo.artworkPrice!) * 0.1
+                    self.buyVATLabel.text = String(describing: self.vatFee!)
                 }
             case 400:
                 print("미술 작품 없음")
