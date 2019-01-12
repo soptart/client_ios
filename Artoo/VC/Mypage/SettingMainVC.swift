@@ -13,6 +13,8 @@ class SettingMainVC: UIViewController {
     
     @IBOutlet weak var settingTable: UITableView!
     
+    @IBOutlet weak var touchBackBtn: UIButton!
+    
     var settings: [Setting] = []
     
     override func viewDidLoad() {
@@ -22,11 +24,28 @@ class SettingMainVC: UIViewController {
         // Do any additional setup after loading the view.
         settingTable.dataSource = self
         settingTable.delegate = self
+        
+        touchBackBtn.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
     
 }
 
 extension SettingMainVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        let headerHeight: CGFloat
+        
+        switch section {
+        case 0:
+            headerHeight = CGFloat.leastNonzeroMagnitude
+        default:
+            headerHeight = 10
+        }
+        
+        return headerHeight
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         
@@ -58,28 +77,44 @@ extension SettingMainVC: UITableViewDelegate {
 
 extension SettingMainVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settings.count
+        if(section == 0){
+            return settings.count}
+        else{
+            return 1
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = settingTable.dequeueReusableCell(withIdentifier: "settingMain") as! SettingMainCell
         
-        
+        if(indexPath.section == 0){
         let setting = settings[indexPath.row]
         
         cell.myInfoImg.image = UIImage(named: setting.settingImg)
         cell.settingMoveItem.text = setting.settingTitle
         
         return cell
+        }else {
+            cell.myInfoImg.image = UIImage(named: "exhibitionExit")
+            cell.settingMoveItem.text = "로그아웃"
+            return cell
+        }
         
+  
     }
     
     
 }
 
 extension SettingMainVC{
-    
+    @objc func goBack(){
+        navigationController?.popViewController(animated: true)
+    }
     func setData(){
         let settingInfo1 = Setting(settingImg:"settingMy", settingTitle:"내 정보")
         
@@ -88,6 +123,8 @@ extension SettingMainVC{
         let settingInfo3 = Setting(settingImg:"settingService", settingTitle:"서비스 이용약관")
         
         let settingInfo4 = Setting(settingImg:"settingPrivacy", settingTitle:"개인정보 보호정책")
+  
+        
         
         settings=[settingInfo1,settingInfo2,settingInfo3,settingInfo4]
     }
