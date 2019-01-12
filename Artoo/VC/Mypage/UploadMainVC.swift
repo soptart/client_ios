@@ -20,8 +20,17 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var heightTF: UITextField!
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var puchaseStateBtn: UIButton!
+    @IBOutlet weak var firstBtn: UIButton!
+    @IBOutlet weak var secondBtn: UIButton!
+    @IBOutlet weak var thirdBtn: UIButton!
+    @IBOutlet weak var fouthBtn: UIButton!
+    @IBOutlet weak var fifthBtn: UIButton!
+    @IBOutlet weak var sixthBtn: UIButton!
+    @IBOutlet weak var seventhBtn: UIButton!
+    @IBOutlet weak var eighthBtn: UIButton!
+    @IBOutlet weak var nineBtn: UIButton!
+    @IBOutlet weak var tenBtn: UIButton!
     
-
     @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var popUpView: UIView!
@@ -152,6 +161,7 @@ class UploadMainVC: UIViewController{
         } else {
             if(sender.tag == 1){
                 a_tag.append(String(describing: sender.tag))
+                firstBtn.setImage(UIImage(named: "uploadHashtagColor2"), for: .normal)
             }
             if(sender.tag == 2) {
                 a_tag.append(String(describing: sender.tag))

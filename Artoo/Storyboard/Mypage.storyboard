@@ -2138,9 +2138,12 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="addTagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="vNC-ji-ktn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wv-A3-jX1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wv-A3-jX1">
                                                 <rect key="frame" x="15" y="898" width="159" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="bGv-aS-Wdw"/>
+                                                    <constraint firstAttribute="width" constant="159" id="qdW-fP-HmX"/>
+                                                </constraints>
                                                 <state key="normal" title="택배">
                                                     <color key="titleColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
@@ -2148,9 +2151,12 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="transactionBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="bAz-JU-DOQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-xf-Hpa">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-xf-Hpa">
                                                 <rect key="frame" x="198" y="898" width="159" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="159" id="dT9-Di-QWf"/>
+                                                    <constraint firstAttribute="height" constant="34" id="wgL-8I-b55"/>
+                                                </constraints>
                                                 <state key="normal" title="직거래">
                                                     <color key="titleColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
@@ -2198,18 +2204,25 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="puchaseBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="pkR-HI-1YF"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="띄어쓰기 포함 100자 이내" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ0-uA-Tpp">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="띄어쓰기 포함 100자 이내" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ0-uA-Tpp">
                                                 <rect key="frame" x="15" y="1139" width="345" height="74"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="74" id="jxX-ma-OMm"/>
+                                                    <constraint firstAttribute="width" constant="345" id="vjP-ai-k0y"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnZ-Xj-uxq">
-                                                <rect key="frame" x="0.0" y="1238" width="375" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnZ-Xj-uxq">
+                                                <rect key="frame" x="0.0" y="1240" width="375" height="70"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="375" id="tnO-ci-bME"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="u0c-cc-QYg"/>
+                                                    <constraint firstAttribute="height" constant="70" id="zxQ-h5-ZUr"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" title="완료">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2218,9 +2231,12 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="uploadBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="6yS-gF-H8B"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="띄어쓰기 포함 30자 이내" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oom-hD-7ei">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="띄어쓰기 포함 30자 이내" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oom-hD-7ei">
                                                 <rect key="frame" x="15" y="1069" width="345" height="15"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="345" id="RuA-ZZ-pU0"/>
+                                                    <constraint firstAttribute="height" constant="15" id="zKc-CZ-UUC"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="0.50414704619999995" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2397,25 +2413,33 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="iJQ-jP-BOL" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="0Sm-X9-x4d"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZQ0-uA-Tpp" secondAttribute="trailing" constant="15" id="29t-rz-Oi2"/>
                                             <constraint firstItem="0hO-Eb-ozo" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="109" id="2Be-Pk-OV7"/>
                                             <constraint firstItem="Na0-wn-CkO" firstAttribute="top" secondItem="qJ7-94-94c" secondAttribute="bottom" constant="17" id="2mJ-xP-5RG"/>
                                             <constraint firstAttribute="height" constant="1310" id="5Cq-KI-Msx"/>
                                             <constraint firstItem="Na0-wn-CkO" firstAttribute="width" secondItem="qJ7-94-94c" secondAttribute="width" id="5pN-zi-ewj"/>
                                             <constraint firstItem="n3x-VQ-grz" firstAttribute="width" secondItem="Na0-wn-CkO" secondAttribute="width" id="6ab-oH-If5"/>
+                                            <constraint firstItem="ZQ0-uA-Tpp" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="1139" id="7bS-i0-rjJ"/>
                                             <constraint firstItem="2QT-GN-XMT" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="110" id="7d2-lZ-giu"/>
                                             <constraint firstItem="Na0-wn-CkO" firstAttribute="height" secondItem="0hO-Eb-ozo" secondAttribute="height" id="A2m-ky-aw8"/>
                                             <constraint firstItem="xzP-eA-Sfe" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="B4K-0k-w45"/>
                                             <constraint firstItem="J6P-KI-Irf" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="D6Z-Pp-LnP"/>
                                             <constraint firstItem="qJ7-94-94c" firstAttribute="top" secondItem="0hO-Eb-ozo" secondAttribute="bottom" constant="17" id="E45-cX-6F5"/>
+                                            <constraint firstItem="1wv-A3-jX1" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="898" id="EVu-er-XfA"/>
+                                            <constraint firstItem="oom-hD-7ei" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="1069" id="Esa-Za-Tqf"/>
                                             <constraint firstItem="ztW-gL-qMZ" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="EvZ-Qm-zLe"/>
                                             <constraint firstItem="J6P-KI-Irf" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="419" id="IuS-A0-7ob"/>
                                             <constraint firstAttribute="trailing" secondItem="0hO-Eb-ozo" secondAttribute="trailing" constant="20" id="J3O-LP-jDR"/>
                                             <constraint firstItem="n3x-VQ-grz" firstAttribute="top" secondItem="Na0-wn-CkO" secondAttribute="bottom" constant="17" id="JrZ-bl-TXN"/>
                                             <constraint firstItem="lOT-dS-3lk" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="46" id="K4v-Bo-fd2"/>
+                                            <constraint firstAttribute="trailing" secondItem="oom-hD-7ei" secondAttribute="trailing" constant="15" id="Lx5-UB-uZe"/>
                                             <constraint firstItem="fs9-SH-6ZD" firstAttribute="leading" secondItem="IEF-VM-HqB" secondAttribute="trailing" constant="23" id="Oy0-pF-SL0"/>
                                             <constraint firstItem="3cD-DG-5rg" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="PJx-Ki-Dac"/>
+                                            <constraint firstItem="ZQ0-uA-Tpp" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="PjU-tk-tw4"/>
                                             <constraint firstAttribute="trailing" secondItem="fs9-SH-6ZD" secondAttribute="trailing" constant="14" id="R60-La-us9"/>
+                                            <constraint firstAttribute="bottom" secondItem="MnZ-Xj-uxq" secondAttribute="bottom" id="RLI-kY-vPM"/>
                                             <constraint firstItem="eNy-JV-CVm" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="14" id="S4D-Wg-jTR"/>
+                                            <constraint firstItem="1wv-A3-jX1" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="SDI-Sg-eWH"/>
                                             <constraint firstAttribute="trailing" secondItem="n3x-VQ-grz" secondAttribute="trailing" constant="20" id="StI-bh-1gs"/>
                                             <constraint firstItem="dH4-P8-Bpi" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="T6c-4r-IR6"/>
                                             <constraint firstItem="rdD-zt-sBN" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="361" id="TB3-vQ-znQ"/>
@@ -2426,6 +2450,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <constraint firstAttribute="trailing" secondItem="eMH-9U-Ewy" secondAttribute="trailing" constant="17" id="XlO-Wd-ZR1"/>
                                             <constraint firstItem="eMH-9U-Ewy" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="50" id="Ybu-hi-u2U"/>
                                             <constraint firstItem="Lzy-if-ch5" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="583" id="ZrJ-rp-dHV"/>
+                                            <constraint firstItem="MnZ-Xj-uxq" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" id="aBv-5u-34k"/>
                                             <constraint firstItem="rIv-qS-zZa" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="673" id="bGl-TB-mhH"/>
                                             <constraint firstItem="Lzy-if-ch5" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="bWy-iA-G3Y"/>
                                             <constraint firstItem="2QT-GN-XMT" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="14" id="cz4-Ml-2eh"/>
@@ -2434,16 +2459,23 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <constraint firstItem="rdD-zt-sBN" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="fsy-4F-RK9"/>
                                             <constraint firstItem="lS8-hz-HqD" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="842" id="g7g-Ou-Y0j"/>
                                             <constraint firstItem="iJQ-jP-BOL" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="1015" id="gtz-7e-DqN"/>
+                                            <constraint firstItem="bMw-xf-Hpa" firstAttribute="leading" secondItem="1wv-A3-jX1" secondAttribute="trailing" constant="24" id="hqU-IX-2CY"/>
+                                            <constraint firstItem="oom-hD-7ei" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="iIP-dI-D3w"/>
                                             <constraint firstItem="Na0-wn-CkO" firstAttribute="height" secondItem="qJ7-94-94c" secondAttribute="height" id="iSE-mw-YD6"/>
                                             <constraint firstItem="3cD-DG-5rg" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="302" id="jd5-eh-fGB"/>
                                             <constraint firstItem="n3x-VQ-grz" firstAttribute="height" secondItem="Na0-wn-CkO" secondAttribute="height" id="mZV-Zz-0LI"/>
                                             <constraint firstItem="fs9-SH-6ZD" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="707" id="nI1-Hq-3Hd"/>
+                                            <constraint firstAttribute="bottom" secondItem="MnZ-Xj-uxq" secondAttribute="bottom" id="o9d-Wu-3W5"/>
                                             <constraint firstAttribute="trailing" secondItem="qJ7-94-94c" secondAttribute="trailing" constant="20" id="oDV-lR-Pzw"/>
+                                            <constraint firstItem="bMw-xf-Hpa" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="898" id="pNd-M6-EQM"/>
                                             <constraint firstItem="rIv-qS-zZa" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="pcd-el-N3b"/>
                                             <constraint firstItem="xzP-eA-Sfe" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="707" id="q20-Jl-p4L"/>
                                             <constraint firstItem="IEF-VM-HqB" firstAttribute="leading" secondItem="xzP-eA-Sfe" secondAttribute="trailing" constant="23" id="qed-8c-UMU"/>
+                                            <constraint firstItem="MnZ-Xj-uxq" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" id="sHT-ct-Ovd"/>
+                                            <constraint firstAttribute="trailing" secondItem="bMw-xf-Hpa" secondAttribute="trailing" constant="18" id="skC-eR-st3"/>
                                             <constraint firstItem="ztW-gL-qMZ" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="1104" id="stY-Ne-Mmw"/>
                                             <constraint firstItem="ctT-cW-xRO" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="uux-Jj-G78"/>
+                                            <constraint firstAttribute="trailing" secondItem="MnZ-Xj-uxq" secondAttribute="trailing" id="vo4-u9-Jgx"/>
                                             <constraint firstItem="lOT-dS-3lk" firstAttribute="leading" secondItem="R3Q-fw-Rny" secondAttribute="leading" constant="15" id="xoo-dT-9e2"/>
                                             <constraint firstItem="dH4-P8-Bpi" firstAttribute="top" secondItem="R3Q-fw-Rny" secondAttribute="top" constant="762" id="zfO-rM-RXk"/>
                                         </constraints>
@@ -2720,7 +2752,6 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                         </state>
                                         <connections>
                                             <action selector="finishBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="kPt-pH-Jne"/>
-                                            <segue destination="vis-e8-DtT" kind="presentation" identifier="backSegue" id="gai-bC-6GW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2789,11 +2820,21 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="artNameUploadTF" destination="ctT-cW-xRO" id="8rI-rw-0Lf"/>
                         <outlet property="artPriceTF" destination="c37-UL-2uK" id="RUW-tS-Iwt"/>
                         <outlet property="choiceImg" destination="2QT-GN-XMT" id="LNM-gC-0hr"/>
+                        <outlet property="eighthBtn" destination="2ru-C3-GKo" id="Vja-IV-jwZ"/>
+                        <outlet property="fifthBtn" destination="DlF-uN-HdD" id="bE5-Oe-LuR"/>
+                        <outlet property="firstBtn" destination="g6z-0v-DrG" id="B79-ER-JXy"/>
+                        <outlet property="fouthBtn" destination="LG2-7E-F7Q" id="muP-Ra-GMW"/>
                         <outlet property="heightTF" destination="fs9-SH-6ZD" id="Srk-jZ-Luy"/>
+                        <outlet property="nineBtn" destination="bvj-2I-Xhu" id="3MW-di-b6m"/>
                         <outlet property="popUpConstraint" destination="VZm-LM-RHQ" id="P3h-0o-rIs"/>
                         <outlet property="popUpView" destination="2II-GX-HaV" id="Uo5-ph-0Tt"/>
                         <outlet property="price" destination="c37-UL-2uK" id="yKM-aq-O1T"/>
                         <outlet property="puchaseStateBtn" destination="zas-q9-d1T" id="lmU-VY-jWK"/>
+                        <outlet property="secondBtn" destination="foW-WN-nwW" id="K0s-4E-H9f"/>
+                        <outlet property="seventhBtn" destination="WgN-LH-dFh" id="mb2-oW-BEX"/>
+                        <outlet property="sixthBtn" destination="UaQ-IB-rP7" id="teE-9p-ocA"/>
+                        <outlet property="tenBtn" destination="tRw-zB-R6z" id="Dds-tb-hxY"/>
+                        <outlet property="thirdBtn" destination="1to-fg-Oql" id="WbV-YH-88M"/>
                         <outlet property="uploadTagBtn" destination="eNy-JV-CVm" id="5dl-Sf-VRk"/>
                         <outlet property="widthTF" destination="xzP-eA-Sfe" id="eqW-er-ylB"/>
                         <outlet property="yOffTF" destination="IEF-VM-HqB" id="FT4-qr-XVB"/>
