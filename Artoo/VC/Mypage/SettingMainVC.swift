@@ -13,6 +13,8 @@ class SettingMainVC: UIViewController {
     
     @IBOutlet weak var settingTable: UITableView!
     
+    @IBOutlet weak var touchBackBtn: UIButton!
+    
     var settings: [Setting] = []
     
     override func viewDidLoad() {
@@ -22,6 +24,8 @@ class SettingMainVC: UIViewController {
         // Do any additional setup after loading the view.
         settingTable.dataSource = self
         settingTable.delegate = self
+        
+        touchBackBtn.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
     
 }
@@ -108,7 +112,9 @@ extension SettingMainVC: UITableViewDataSource{
 }
 
 extension SettingMainVC{
-    
+    @objc func goBack(){
+        navigationController?.popViewController(animated: true)
+    }
     func setData(){
         let settingInfo1 = Setting(settingImg:"settingMy", settingTitle:"내 정보")
         

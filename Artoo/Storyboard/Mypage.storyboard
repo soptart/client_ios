@@ -714,7 +714,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="X4P-VG-8h3">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="X4P-VG-8h3">
                                 <rect key="frame" x="0.0" y="82" width="375" height="696"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -801,6 +801,7 @@
                     </view>
                     <connections>
                         <outlet property="settingTable" destination="X4P-VG-8h3" id="HD5-ND-0zM"/>
+                        <outlet property="touchBackBtn" destination="Kw9-Px-IO0" id="A6Y-kB-cZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlN-DC-vjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3180,7 +3181,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배송 방식" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5Z-eb-WTf">
-                                                    <rect key="frame" x="123" y="190" width="66" height="22"/>
+                                                    <rect key="frame" x="123" y="187" width="66" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="4gT-j1-3aQ"/>
                                                         <constraint firstAttribute="height" constant="22" id="FI5-zi-Ilg"/>
@@ -3203,7 +3204,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작가" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxZ-q2-7NY">
-                                                    <rect key="frame" x="123" y="167" width="34" height="22"/>
+                                                    <rect key="frame" x="123" y="164" width="34" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="34" id="6O5-aL-eJ3"/>
                                                         <constraint firstAttribute="height" constant="22" id="UH7-76-cCN"/>
@@ -3263,7 +3264,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최윤정" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idn-gx-ieu">
-                                                    <rect key="frame" x="167" y="167" width="102" height="22"/>
+                                                    <rect key="frame" x="167" y="165.66666666666666" width="102" height="19"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                     <color key="textColor" red="0.20784313730000001" green="0.23921568630000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -3271,7 +3272,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작품명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYg-jA-jML">
                                                     <rect key="frame" x="123" y="142" width="48" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="48" id="8ON-FH-ExY"/>
+                                                        <constraint firstAttribute="width" priority="250" constant="40" id="8ON-FH-ExY"/>
                                                         <constraint firstAttribute="height" constant="22" id="okj-XH-Dc8"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
@@ -3300,14 +3301,18 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="직거래" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezA-Ol-ZFE">
-                                                    <rect key="frame" x="199" y="190" width="70" height="22"/>
+                                                    <rect key="frame" x="199" y="187" width="70" height="22"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                     <color key="textColor" red="0.20784313730000001" green="0.23921568630000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7살과 그녀" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHE-Xb-Bm3">
-                                                    <rect key="frame" x="181" y="142" width="88" height="22"/>
-                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                                    <rect key="frame" x="176" y="142.66666666666666" width="93" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" priority="750" constant="93" id="c8z-nd-n8w"/>
+                                                        <constraint firstAttribute="height" priority="250" constant="30" id="dCj-9z-pEb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                     <color key="textColor" red="0.20784313730000001" green="0.23921568630000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -3334,7 +3339,8 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="u5N-Jt-22u" firstAttribute="top" secondItem="fmS-7f-gdt" secondAttribute="bottom" constant="5" id="0l5-jr-pnR"/>
-                                                <constraint firstItem="yxZ-q2-7NY" firstAttribute="top" secondItem="kYg-jA-jML" secondAttribute="bottom" constant="3" id="2QB-z6-MGe"/>
+                                                <constraint firstItem="Idn-gx-ieu" firstAttribute="top" secondItem="kHE-Xb-Bm3" secondAttribute="bottom" constant="2" id="1hR-vb-7gk"/>
+                                                <constraint firstItem="yxZ-q2-7NY" firstAttribute="top" secondItem="kYg-jA-jML" secondAttribute="bottom" id="2QB-z6-MGe"/>
                                                 <constraint firstItem="ezA-Ol-ZFE" firstAttribute="trailing" secondItem="Idn-gx-ieu" secondAttribute="trailing" id="3oW-yP-uUg"/>
                                                 <constraint firstItem="zKy-Eb-5zD" firstAttribute="leading" secondItem="gCf-qB-Srb" secondAttribute="leading" id="3ur-vv-5zq"/>
                                                 <constraint firstItem="fmS-7f-gdt" firstAttribute="top" secondItem="ACX-EG-2Jz" secondAttribute="bottom" constant="5" id="4LZ-Yo-7AC"/>
@@ -3383,7 +3389,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                 <constraint firstItem="fIX-r5-pOh" firstAttribute="top" secondItem="zKy-Eb-5zD" secondAttribute="bottom" constant="15" id="nab-5y-iuF"/>
                                                 <constraint firstItem="kHE-Xb-Bm3" firstAttribute="centerY" secondItem="kYg-jA-jML" secondAttribute="centerY" id="oTD-98-dIX"/>
                                                 <constraint firstItem="kHE-Xb-Bm3" firstAttribute="trailing" secondItem="7qs-ub-ujx" secondAttribute="trailing" constant="-20" id="p1i-GR-vXk"/>
-                                                <constraint firstItem="kHE-Xb-Bm3" firstAttribute="leading" secondItem="kYg-jA-jML" secondAttribute="trailing" constant="10" id="s6U-ZG-Nqp"/>
+                                                <constraint firstItem="kHE-Xb-Bm3" firstAttribute="leading" secondItem="kYg-jA-jML" secondAttribute="trailing" constant="5" id="s6U-ZG-Nqp"/>
                                                 <constraint firstItem="w5Z-eb-WTf" firstAttribute="top" secondItem="yxZ-q2-7NY" secondAttribute="bottom" constant="1" id="y31-zW-XqU"/>
                                                 <constraint firstItem="w5Z-eb-WTf" firstAttribute="leading" secondItem="yxZ-q2-7NY" secondAttribute="leading" id="yD4-xH-aHY"/>
                                                 <constraint firstItem="oSQ-Sa-Agd" firstAttribute="top" secondItem="Gbs-va-yWX" secondAttribute="bottom" constant="5" id="yrm-QH-B2G"/>

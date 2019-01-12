@@ -42,6 +42,7 @@ extension SellVC : UITableViewDataSource {
         cell.dateLabel.text = gsno(data.pDate)
         cell.workImageView.imageFromUrl(gsno(data.aPicUrl), defaultImgPath: "")
         cell.workNameLabel.text = gsno(data.aName)
+        cell.workNameLabel.sizeToFit()
         cell.workAuthorLabel.text = gsno(data.auName)
         
         if(isDelivery == 0) {
