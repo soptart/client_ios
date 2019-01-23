@@ -99,6 +99,7 @@ class UploadMainVC: UIViewController{
         
         picker.delegate = self
         
+        popUpConstraint.constant = 0
     }
     
     @IBAction func puchaseBtn(_ sender: Any) {

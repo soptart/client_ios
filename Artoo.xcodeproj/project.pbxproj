@@ -38,7 +38,6 @@
 		5D49021F21E3656100D661C4 /* uploadCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D49021E21E3656100D661C4 /* uploadCommentService.swift */; };
 		5D5488D121E2C67D00EFDD2F /* BuyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D021E2C67D00EFDD2F /* BuyService.swift */; };
 		5D5488D321E2C91400EFDD2F /* CheckBuyItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */; };
-		5D6A20EB21E8E139001D9F40 /* NotoSansCJKkr-hinted (1) in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A20EA21E8E139001D9F40 /* NotoSansCJKkr-hinted (1) */; };
 		5D6EA77621E89871002C4746 /* CreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EA77521E89871002C4746 /* CreditVC.swift */; };
 		5D6EA77821E8989C002C4746 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EA77721E8989C002C4746 /* AccountVC.swift */; };
 		5D79DF7321DB7483007AE800 /* NotifyUploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */; };
@@ -213,7 +212,6 @@
 		5D49021E21E3656100D661C4 /* uploadCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadCommentService.swift; sourceTree = "<group>"; };
 		5D5488D021E2C67D00EFDD2F /* BuyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyService.swift; sourceTree = "<group>"; };
 		5D5488D221E2C91400EFDD2F /* CheckBuyItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBuyItemService.swift; sourceTree = "<group>"; };
-		5D6A20EA21E8E139001D9F40 /* NotoSansCJKkr-hinted (1) */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "NotoSansCJKkr-hinted (1)"; sourceTree = "<group>"; };
 		5D6EA77521E89871002C4746 /* CreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreditVC.swift; path = Artoo/VC/Art/CreditVC.swift; sourceTree = SOURCE_ROOT; };
 		5D6EA77721E8989C002C4746 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		5D79DF7221DB7483007AE800 /* NotifyUploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotifyUploadVC.swift; path = Artoo/VC/Mypage/NotifyUploadVC.swift; sourceTree = SOURCE_ROOT; };
@@ -624,7 +622,6 @@
 				A3CEF95421CE2423000C7938 /* Assets.xcassets */,
 				A3CEF95621CE2423000C7938 /* LaunchScreen.storyboard */,
 				A3CEF95921CE2423000C7938 /* Info.plist */,
-				5D6A20EA21E8E139001D9F40 /* NotoSansCJKkr-hinted (1) */,
 			);
 			path = Artoo;
 			sourceTree = "<group>";
@@ -773,7 +770,6 @@
 				A3CEF96621CE2A78000C7938 /* Exhibit.storyboard in Resources */,
 				A3CEF95821CE2423000C7938 /* LaunchScreen.storyboard in Resources */,
 				A36D46B921D884FE00B45FC1 /* NotoSansCJKkr-Black.otf in Resources */,
-				5D6A20EB21E8E139001D9F40 /* NotoSansCJKkr-hinted (1) in Resources */,
 				A3CEF96421CE2A6A000C7938 /* Mypage.storyboard in Resources */,
 				A36D46BB21D8850400B45FC1 /* NotoSansCJKkr-DemiLight.otf in Resources */,
 				A3CEF95521CE2423000C7938 /* Assets.xcassets in Resources */,
