@@ -10,6 +10,10 @@ import UIKit
 
 class UploadMainVC: UIViewController{
 
+    
+    //닫기 버튼
+    @IBOutlet weak var closeBtn: UIButton!
+    
     @IBOutlet weak var choiceImg: UIImageView!
     
     //카테고리 텍스트 필드들 - 피커와 연결
@@ -160,6 +164,8 @@ class UploadMainVC: UIViewController{
         artMethodTV.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
 
         
+        //닫기 버튼 클릭시 dismiss
+        closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         
          let pictureTap = UITapGestureRecognizer(target: self, action: #selector(choiceImage))
         
@@ -249,9 +255,6 @@ class UploadMainVC: UIViewController{
             self.view.layoutIfNeeded()
         })
         
-          print("\(a_tag[a_tag.count-3])" + "," + "\(a_tag[a_tag.count-2])" + "," + "\(a_tag[a_tag.count-1])")
-        
-        a_tagValue = ("\(a_tag[a_tag.count-3])" + "," + "\(a_tag[a_tag.count-2])" + "," + "\(a_tag[a_tag.count-1])")
     }
     
     
@@ -259,6 +262,7 @@ class UploadMainVC: UIViewController{
     //태그 선택했을 때
     @IBAction func tagBtn(_ sender: UIButton) {
         
+        //여기 로직 수정해야 함
         if(a_tag.count>3){
             a_tag.remove(at: 0)
         } else {
@@ -543,6 +547,9 @@ extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerD
 
 extension UploadMainVC{
     
+    @objc func close(){
+        dismiss(animated: true)
+    }
   
     //서버에 등록하기
     func upload(){

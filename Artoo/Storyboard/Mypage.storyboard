@@ -2953,6 +2953,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="artNameUploadTF" destination="ctT-cW-xRO" id="8rI-rw-0Lf"/>
                         <outlet property="artPriceTF" destination="c37-UL-2uK" id="RUW-tS-Iwt"/>
                         <outlet property="choiceImg" destination="2QT-GN-XMT" id="LNM-gC-0hr"/>
+                        <outlet property="closeBtn" destination="eMH-9U-Ewy" id="OkA-pJ-xmX"/>
                         <outlet property="deliveryBtn" destination="1wv-A3-jX1" id="jue-U6-bVc"/>
                         <outlet property="eighthBtn" destination="2ru-C3-GKo" id="Vja-IV-jwZ"/>
                         <outlet property="fifthBtn" destination="DlF-uN-HdD" id="bE5-Oe-LuR"/>
