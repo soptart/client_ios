@@ -11,15 +11,50 @@ import UIKit
 class UploadMainVC: UIViewController{
 
     @IBOutlet weak var choiceImg: UIImageView!
+    
+    //카테고리 텍스트 필드들 - 피커와 연결
     @IBOutlet weak var CategoryUploadLabel: UITextField!
     @IBOutlet weak var FigureUploadLabel: UITextField!
     @IBOutlet weak var YearUploadLabel: UITextField!
     @IBOutlet weak var LicenseUploadLabel: UITextField!
+    
+    
+    //택배 / 직거래 버튼
+    @IBOutlet weak var deliveryBtn: UIButton!
+    @IBOutlet weak var meetBtn: UIButton!
+    
+
+    //작품 이름
+    @IBOutlet weak var artNameUploadTF: UITextField!
+    
+    //작품 설명
+    @IBOutlet weak var artDescriptionTV: UITextView!
+
+    //가로, 세로, 높이
     @IBOutlet weak var widthTF: UITextField!
     @IBOutlet weak var yOffTF: UITextField!
     @IBOutlet weak var heightTF: UITextField!
-    @IBOutlet weak var price: UITextField!
+    
+    //가격 텍스트 필드
+    @IBOutlet weak var artPriceTF: UITextField!
+    
+    //작품 재료 텍스트 필드
+    @IBOutlet weak var artArticleTF: UITextField!
+    
+    //표현 기법 텍스트 뷰
+        @IBOutlet weak var artMethodTV: UITextView!
+    
+    
+    //태그 추가하기 버튼
+    @IBOutlet weak var uploadTagBtn: UIButton!
+
+    
+    
+    
+    //개인 소장인지 체크하는 체크 박스
     @IBOutlet weak var puchaseStateBtn: UIButton!
+    
+    //해시태그 버튼들
     @IBOutlet weak var firstBtn: UIButton!
     @IBOutlet weak var secondBtn: UIButton!
     @IBOutlet weak var thirdBtn: UIButton!
@@ -31,18 +66,14 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var nineBtn: UIButton!
     @IBOutlet weak var tenBtn: UIButton!
     
+    
+    //팝업 뷰 제어할 constraint
     @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
     
+    //해시태그 팝업 뷰
     @IBOutlet weak var popUpView: UIView!
     
-    @IBOutlet weak var artNameUploadTF: UITextField!
-    @IBOutlet weak var artPriceTF: UITextField!
-    @IBOutlet weak var artArticleTF: UITextField!
-    
-    
-    @IBOutlet weak var uploadTagBtn: UIButton!
-    @IBOutlet weak var artDescriptionTV: UITextView!
-    @IBOutlet weak var artMethodTV: UITextView!
+ 
     
     var CategoryPickerView: UIPickerView!
     var figurePickerView: UIPickerView!
@@ -77,10 +108,59 @@ class UploadMainVC: UIViewController{
     let year: [String] = ["2015", "2016","2017","2018"]
     let license: [String] = ["CCL표시안함","저작권표시","저작권표시 - 비영리", "저작자표시-동일조건변경허락","저작자표시-변경표시","저작자표시-비영리-동일조건변경허락","저작자표시-비영리-변경금지"]
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        //팝업뷰 0인 상태로 안보이게 만듬
         popUpConstraint.constant = 0
+        
+        
+        //택배 - 직거래 버튼 테두리 처리
+        deliveryBtn.layer.borderWidth = 1
+        deliveryBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+        
+        meetBtn.layer.borderWidth = 1
+        meetBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+        
+        
+        //작품설명 텍스트뷰 테두리 처리
+        artDescriptionTV.layer.borderWidth = 1
+        artDescriptionTV.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+        
+        
+        
+        //작품 사이즈 테두리 처리
+        widthTF.layer.borderWidth = 1
+        widthTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+
+        yOffTF.layer.borderWidth = 1
+        yOffTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+
+        heightTF.layer.borderWidth = 1
+        heightTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+
+        
+        //작품 가격 테두리 처리
+        artPriceTF.layer.borderWidth = 1
+        artPriceTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+        
+        
+        //작품 재료 테두리 처리
+        artArticleTF.layer.borderWidth = 1
+        artArticleTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+
+        
+        
+        //표현 기법 테두리 처리
+        artMethodTV.layer.borderWidth = 1
+        artMethodTV.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+
+        
+        
          let pictureTap = UITapGestureRecognizer(target: self, action: #selector(choiceImage))
         
         choiceImg.addGestureRecognizer(pictureTap)
@@ -99,8 +179,8 @@ class UploadMainVC: UIViewController{
         
         picker.delegate = self
         
-        popUpConstraint.constant = 0
     }
+    
     
     @IBAction func puchaseBtn(_ sender: Any) {
         if puchaseStateBtn.isFocused == true{
@@ -115,13 +195,14 @@ class UploadMainVC: UIViewController{
         upload()
     }
     
-    //작품명 클릭하면 placeholder없어지기
     
-    
-    //추가하기 버튼을 누른다면 해시태그 골라줘야 함 -> present로 띄울게영
+    //추가하기 버튼 누르면 팝업 뷰 띄우기
     @IBAction func addTagBtn(_ sender: Any) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.popUpConstraint.constant = 390
+            self.popUpConstraint.constant = 378
+            
+            
+            //그림자 지정
             self.popUpView.layer.shadowColor = UIColor.init(red: 146/255, green: 146/255, blue: 146/255, alpha: 1).cgColor
             self.popUpView.layer.shadowOpacity = 0.5
             self.popUpView.layer.shadowRadius = 7
@@ -129,13 +210,34 @@ class UploadMainVC: UIViewController{
         })
     }
     
+    
+    // 배송 여부
     // 택배하고 직거래 버튼 누르면 그 해당 정보를 문자열에 저장함
     @IBAction func transactionBtn(_ sender: UIButton) {
         
         if(sender.tag == 0) {
             transactionMethod = "택배"
+            
+            deliveryBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+            
+            deliveryBtn.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0), for: .normal)
+            
+            
+                   meetBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+            meetBtn.setTitleColor(UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0), for: .normal)
+
+            
         }else {
+            
             transactionMethod = "직거래"
+            
+            meetBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+            
+            meetBtn.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0), for: .normal)
+            
+            deliveryBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+            deliveryBtn.setTitleColor(UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0), for: .normal)
+            
         }
     }
     
