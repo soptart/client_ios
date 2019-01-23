@@ -113,16 +113,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="O8l-gy-uey">
-                                                    <rect key="frame" x="7.6666666666666679" y="7.3333333333333321" width="46.666666666666657" height="21"/>
+                                                    <rect key="frame" x="7" y="4.6666666666666661" width="48.333333333333336" height="26.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작품" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-Ev-vA7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="26.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-1Q-zXq">
-                                                            <rect key="frame" x="36.333333333333336" y="0.0" width="10.333333333333336" height="21"/>
+                                                            <rect key="frame" x="38.333333333333336" y="0.0" width="10" height="26.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="18"/>
                                                             <color key="textColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -616,7 +616,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자신의 작품을 보여주세요! 더 많은 피드백과 판매 기회를 얻을 수 있어요 :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-6E-8Kz">
-                                        <rect key="frame" x="50" y="145" width="275" height="35"/>
+                                        <rect key="frame" x="45.333333333333343" y="145" width="284.66666666666663" height="44.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="47" id="3Y5-zs-UVe"/>
                                             <constraint firstAttribute="width" priority="250" constant="280" id="Xkd-hl-zX0"/>
@@ -625,8 +625,8 @@
                                         <color key="textColor" red="0.69019607843137254" green="0.70196078431372544" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-vD-pgr">
-                                        <rect key="frame" x="146" y="263" width="83" height="25"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-vD-pgr">
+                                        <rect key="frame" x="146" y="272.66666666666669" width="83" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="H0f-6v-vCe"/>
                                             <constraint firstAttribute="width" priority="250" constant="80" id="HDI-yg-54s"/>
@@ -726,7 +726,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEg-DR-yTf">
-                                                    <rect key="frame" x="47.666666666666671" y="22" width="54.666666666666671" height="28"/>
+                                                    <rect key="frame" x="47.666666666666657" y="22" width="58" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" priority="250" constant="141" id="LBq-v6-vSt"/>
                                                         <constraint firstAttribute="height" constant="28" id="LfU-mI-zhJ"/>
@@ -1260,7 +1260,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                 <rect key="frame" x="0.0" y="169" width="375" height="491"/>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxw-Zj-Tly">
-                                <rect key="frame" x="18.000000000000004" y="77" width="43.333333333333343" height="37"/>
+                                <rect key="frame" x="18" y="77" width="46" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="6jz-y2-tCW"/>
                                     <constraint firstAttribute="width" priority="250" constant="45" id="AVJ-FU-3dW"/>
@@ -1284,13 +1284,13 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                     <constraint firstAttribute="height" constant="1" id="TQI-yZ-I6L"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="3TN-kQ-vrh">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="3TN-kQ-vrh">
                                 <rect key="frame" x="18" y="136" width="274" height="32"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="37H-gy-0uY">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="37H-gy-0uY">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-fA-lUq">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-fA-lUq">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="1ah-xW-It3"/>
@@ -1304,7 +1304,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="RNS-fj-pfR"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMN-gD-4lZ">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZMN-gD-4lZ">
                                                 <rect key="frame" x="0.0" y="29" width="72" height="2"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1313,10 +1313,10 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8an-G6-kQK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8an-G6-kQK">
                                         <rect key="frame" x="101" y="0.0" width="72" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-Ve-4bf">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-Ve-4bf">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" priority="250" constant="69" id="CPm-IQ-X4p"/>
@@ -1330,7 +1330,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="DYq-DL-yDq"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gsp-sr-MH9">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gsp-sr-MH9">
                                                 <rect key="frame" x="0.0" y="30" width="72" height="2"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1339,10 +1339,10 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="e87-Sl-Bh8">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="e87-Sl-Bh8">
                                         <rect key="frame" x="202" y="0.0" width="72" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRQ-ZD-iJ0">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRQ-ZD-iJ0">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" priority="250" constant="69" id="TgK-cK-fOo"/>
@@ -1356,7 +1356,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <action selector="ChangeTapBtn:" destination="vqo-kV-I5U" eventType="touchUpInside" id="Ncb-ZL-bXY"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-PG-q22">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-PG-q22">
                                                 <rect key="frame" x="0.0" y="30" width="72" height="2"/>
                                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -2621,7 +2621,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2II-GX-HaV">
-                                <rect key="frame" x="0.0" y="908" width="375" height="378"/>
+                                <rect key="frame" x="0.0" y="979" width="375" height="378"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 3개의 테마 해시태그를 골라주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kG-pu-izK">
                                         <rect key="frame" x="28" y="28" width="300.66666666666669" height="27"/>
@@ -2923,7 +2923,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <constraints>
                             <constraint firstItem="hBs-Xs-z5a" firstAttribute="trailing" secondItem="5g4-5s-X6k" secondAttribute="trailing" id="7aD-B2-tLH"/>
                             <constraint firstItem="hBs-Xs-z5a" firstAttribute="leading" secondItem="5g4-5s-X6k" secondAttribute="leading" id="BwV-q8-eD8"/>
-                            <constraint firstItem="MnZ-Xj-uxq" firstAttribute="top" secondItem="2II-GX-HaV" secondAttribute="bottom" id="PsY-2Q-NMH"/>
+                            <constraint firstAttribute="bottom" secondItem="2II-GX-HaV" secondAttribute="bottom" id="PsY-2Q-NMH"/>
                             <constraint firstItem="R3Q-fw-Rny" firstAttribute="width" secondItem="T21-M8-WK6" secondAttribute="width" id="QaV-n8-4XR"/>
                             <constraint firstAttribute="bottom" secondItem="hBs-Xs-z5a" secondAttribute="bottom" constant="3" id="gCV-if-Vyw"/>
                             <constraint firstItem="hBs-Xs-z5a" firstAttribute="top" secondItem="5g4-5s-X6k" secondAttribute="top" id="hmh-yN-UXy"/>
