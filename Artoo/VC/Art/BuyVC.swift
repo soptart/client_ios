@@ -123,7 +123,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
                 self.figureLabel?.isHidden = true
                 self.feedContentTV?.text = ""
                 self.setUpData(completion: self.setUI)
-                self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
+//                self.buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
                 self.priceImage.image = UIImage(named:"artworkPriceColor")
             }
             self.view.makeToast("댓글 작성 성공")
@@ -187,7 +187,7 @@ class BuyVC: UIViewController, UITextViewDelegate {
 extension BuyVC {
     
     func setDetail(){
-        moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
+        moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "")
         artNameLabel.text = artDetailInfo?.artName!
         authorSchoolLabel.text = artDetailInfo?.userSchool!
         authorNameabel.text = artDetailInfo?.userName!
@@ -244,25 +244,26 @@ extension BuyVC {
         } else {
             figureLabel?.isHidden = false
         }
-        
+        print("하이하이ㅏ히아ㅣ\(artDetailInfo?.artPurchaseState)")
+        /*
         if (artDetailInfo?.artPurchaseState == 0){
             buyBtn.setImage(UIImage(named:"artworkBuyGray"), for: .normal)
             priceImage.image = UIImage(named: "artworkPriceGray")
         } else if (artDetailInfo?.artPurchaseState == 1){
             buyBtn.setImage(UIImage(named:"artworkBuyColor"), for: .normal)
             priceImage.image = UIImage(named: "artworkPriceColor")
-        } else {
+        } else if (artDetailInfo?.artPurchaseState == 11){
             buyBtn.setImage(UIImage(named:"artworkComplete"), for: .normal)
             priceImage.image = UIImage(named: "artworkPriceGray")
             buyBtn.isEnabled = false
         }
-        
+        */
         setUpData(completion: setUI)
     }
     
     func heartDetail(){
        
-            moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "ggobuk")
+            moreImg.imageFromUrl(gsno(artDetailInfo?.artImg), defaultImgPath: "")
             artNameLabel.text = likeDetailInfo?.artName!
             artLikeCountLabel.text = String(describing: gino(artDetailInfo?.likeCount!))
             desc?.text = artDetailInfo?.workDetail!

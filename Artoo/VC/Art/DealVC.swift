@@ -147,8 +147,8 @@ extension DealVC {
                     print("\(allArtData)")
                     self.buyItemNameLabel.text = (self.buyItemInfo?.artworkName)!
                     self.buyItemPriceLabel.text = String(describing: (self.buyItemInfo?.artworkPrice!)!)
-                    self.authorInfo = "\(self.buyItemInfo?.artistSchool!)" + "\(self.buyItemInfo?.artistName!)"
-                    self.buyItemPriceLabel2.text = self.authorInfo
+                    
+                    
                     self.deliveryFeeLabel.text = String(describing:(self.buyItemInfo?.deliveryCharge!)!)
                     self.buyPrice = self.buyItemInfo.artworkPrice!
                     self.deliveryFee = self.buyItemInfo.deliveryCharge!

@@ -378,7 +378,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVg-Bb-U52">
-                                                <rect key="frame" x="111" y="697" width="230" height="21"/>
+                                                <rect key="frame" x="111" y="697" width="230" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -697,25 +697,27 @@
                                     <action selector="backBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="DEC-Z8-dQy"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artworkPriceGray" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-TG-RdH">
-                                <rect key="frame" x="0.0" y="1276" width="198" height="74"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0VY-cd-P07">
+                                <rect key="frame" x="0.0" y="1276" width="375" height="74"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artworkPriceGray" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-TG-RdH">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="tSc-Px-OdA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSH-gf-bDB">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="Bdm-wb-NuJ"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="artworkBuyColor"/>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="tSc-Px-OdA"/>
+                                    <constraint firstAttribute="height" constant="74" id="ViE-yl-XES"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4F-mh-MAU">
-                                <rect key="frame" x="198" y="1276" width="177" height="74"/>
-                                <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="SgC-n0-JgA"/>
-                                </constraints>
-                                <state key="normal" image="artworkBuyGray">
-                                    <color key="titleColor" red="0.99259229270000005" green="0.99259229270000005" blue="0.99259229270000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="buyBtn:" destination="MxQ-K4-qwm" eventType="touchUpInside" id="Fou-V5-C3o"/>
-                                </connections>
-                            </button>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-RF-P7I">
                                 <rect key="frame" x="66" y="1299" width="42" height="29"/>
                                 <constraints>
@@ -728,20 +730,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8pL-TG-RdH" firstAttribute="bottom" secondItem="1bu-2h-rVO" secondAttribute="bottom" id="7VW-xV-RMB"/>
-                            <constraint firstItem="8pL-TG-RdH" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" id="8DW-eO-LVi"/>
-                            <constraint firstItem="C4F-mh-MAU" firstAttribute="trailing" secondItem="1bu-2h-rVO" secondAttribute="trailing" id="EfN-Qv-1U9"/>
+                            <constraint firstItem="0VY-cd-P07" firstAttribute="bottom" secondItem="1bu-2h-rVO" secondAttribute="bottom" id="5IO-5s-6Ly"/>
                             <constraint firstItem="cE1-5p-lSY" firstAttribute="width" secondItem="k42-DH-QTz" secondAttribute="width" id="FMR-uq-nib"/>
-                            <constraint firstItem="1bu-2h-rVO" firstAttribute="bottom" secondItem="C4F-mh-MAU" secondAttribute="bottom" id="HLN-yN-XR9"/>
                             <constraint firstItem="1bu-2h-rVO" firstAttribute="bottom" secondItem="UXT-wm-J69" secondAttribute="bottom" id="Jss-Oe-sz5"/>
                             <constraint firstItem="1bu-2h-rVO" firstAttribute="bottom" secondItem="iVl-RF-P7I" secondAttribute="bottom" constant="22" id="Jyq-St-tec"/>
                             <constraint firstItem="1bu-2h-rVO" firstAttribute="trailing" secondItem="UXT-wm-J69" secondAttribute="trailing" id="MW8-Vv-X0O"/>
                             <constraint firstItem="UXT-wm-J69" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" id="MYB-j2-oga"/>
                             <constraint firstItem="iVl-RF-P7I" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" constant="66" id="P43-Co-GB4"/>
-                            <constraint firstItem="C4F-mh-MAU" firstAttribute="trailing" secondItem="1bu-2h-rVO" secondAttribute="trailing" id="fdl-he-OJe"/>
+                            <constraint firstItem="0VY-cd-P07" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" id="PZp-qi-d3a"/>
+                            <constraint firstAttribute="trailing" secondItem="0VY-cd-P07" secondAttribute="trailing" id="h1k-Au-JSj"/>
                             <constraint firstItem="UXT-wm-J69" firstAttribute="top" secondItem="k42-DH-QTz" secondAttribute="top" id="kY2-vJ-aKQ"/>
                             <constraint firstItem="z0j-VG-dxR" firstAttribute="top" secondItem="k42-DH-QTz" secondAttribute="top" constant="44" id="oN0-Yf-zDv"/>
-                            <constraint firstItem="C4F-mh-MAU" firstAttribute="bottom" secondItem="1bu-2h-rVO" secondAttribute="bottom" id="pIB-et-rPZ"/>
                             <constraint firstItem="z0j-VG-dxR" firstAttribute="leading" secondItem="1bu-2h-rVO" secondAttribute="leading" constant="4" id="zD2-ei-7hZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1bu-2h-rVO"/>
@@ -758,7 +757,7 @@
                         <outlet property="artYearLabel" destination="2MP-pF-6H5" id="1tB-3l-HY6"/>
                         <outlet property="authorNameabel" destination="H83-hf-whh" id="XUZ-iL-dpP"/>
                         <outlet property="authorSchoolLabel" destination="icm-ED-IpE" id="lAd-Eo-Dg7"/>
-                        <outlet property="buyBtn" destination="C4F-mh-MAU" id="Ztj-h7-4nd"/>
+                        <outlet property="buyBtn" destination="rSH-gf-bDB" id="UdD-IQ-QsT"/>
                         <outlet property="commentsTable" destination="8hy-o2-Cvu" id="VBK-jR-Yw1"/>
                         <outlet property="desc" destination="Kbs-Kd-oHB" id="wpy-rf-QH6"/>
                         <outlet property="feedBackLabel" destination="hIC-D7-Trl" id="wxV-NA-zsc"/>
@@ -775,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEp-O3-XJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="628.78560719640188"/>
+            <point key="canvasLocation" x="1418" y="629"/>
         </scene>
         <!--DealVC-->
         <scene sceneID="sap-lp-YJq">
@@ -2129,7 +2128,6 @@
     <resources>
         <image name="arrowRightBlackCopy5" width="11" height="19"/>
         <image name="artworkBuyColor" width="177" height="74"/>
-        <image name="artworkBuyGray" width="177" height="74"/>
         <image name="artworkDelete" width="7" height="25"/>
         <image name="artworkPriceColor" width="198" height="74"/>
         <image name="artworkPriceGray" width="198" height="74"/>
