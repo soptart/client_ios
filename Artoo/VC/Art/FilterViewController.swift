@@ -28,38 +28,54 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var animalBtn: UIButton!
     @IBOutlet weak var plantBtn: UIButton!
     @IBOutlet weak var sizeImage: UIImageView!
+    @IBOutlet weak var sLabel: UILabel!
+    @IBOutlet weak var mLabel: UILabel!
+    @IBOutlet weak var lLabel: UILabel!
+    @IBOutlet weak var xlLabel: UILabel!
     
     
     var delegate: FilterDataDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     //찾기 버튼 누르면 버튼에 해당하는 글자를 변수에 저장한 후 초기화면 라벨에 연결해주기.
     
     //닫기 버튼 누르면 
     @IBAction func backBtn(_ sender: Any) {
         
     }
+    
+    //사이즈 버튼 클릭 시 이미지 변경과 라벨 색 변경
     @IBAction func sizeBtn(_ sender: UIButton) {
         if sender.tag == 1 {
             filterData.size = "S"
             SsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             MsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
-             LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
-             XLsizeBtn.setImage(UIImage(named:"filterSizeM"), for: .normal)
+            LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+            XLsizeBtn.setImage(UIImage(named:"filterSizeM"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeSSelect")
+            sLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            mLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            lLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            xlLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
         }else if sender.tag == 2{
             filterData.size = "M"
-             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
+            SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             MsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             XLsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeMSelect")
+            
+            mLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            sLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            lLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            xlLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            
         }else if sender.tag == 3{
             filterData.size = "L"
             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
@@ -67,6 +83,12 @@ class FilterViewController: UIViewController {
             LsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             XLsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeLSelect")
+            
+            lLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            mLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            sLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            xlLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            
         }else if sender.tag == 4{
             filterData.size = "XL"
             SsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
@@ -74,6 +96,11 @@ class FilterViewController: UIViewController {
             LsizeBtn.setImage(UIImage(named: "filterSizeM"), for: .normal)
             XLsizeBtn.setImage(UIImage(named: "filterSizeS2"), for: .normal)
             sizeImage.image = UIImage(named:"filterSizeXlSelect")
+            
+            xlLabel.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            mLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            lLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
+            sLabel.textColor = UIColor(red: 199/255, green: 202/255, blue: 209/255, alpha: 1.0)
         }
     }
     
