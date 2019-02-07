@@ -154,6 +154,7 @@
 		A3866D7321E477B000CE3C94 /* ExhibitGoApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */; };
 		A392416C21DC89F900371E77 /* HomeThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392416B21DC89F900371E77 /* HomeThemeService.swift */; };
 		A392416E21DCB40C00371E77 /* ThemeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392416D21DCB40C00371E77 /* ThemeDetailService.swift */; };
+		A3A8E278220C55E2004AA01A /* TagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A8E277220C55E2004AA01A /* TagCollectionCell.swift */; };
 		A3AD880921E7163500AEE977 /* SellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD880821E7163500AEE977 /* SellCell.swift */; };
 		A3AD880B21E717C000AEE977 /* AlarmSellService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD880A21E717C000AEE977 /* AlarmSellService.swift */; };
 		A3AD880D21E728B400AEE977 /* AlarmExhibitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD880C21E728B400AEE977 /* AlarmExhibitService.swift */; };
@@ -330,6 +331,7 @@
 		A3866D7221E477B000CE3C94 /* ExhibitGoApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitGoApply.swift; sourceTree = "<group>"; };
 		A392416B21DC89F900371E77 /* HomeThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeService.swift; sourceTree = "<group>"; };
 		A392416D21DCB40C00371E77 /* ThemeDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailService.swift; sourceTree = "<group>"; };
+		A3A8E277220C55E2004AA01A /* TagCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionCell.swift; sourceTree = "<group>"; };
 		A3AD880821E7163500AEE977 /* SellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCell.swift; sourceTree = "<group>"; };
 		A3AD880A21E717C000AEE977 /* AlarmSellService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSellService.swift; sourceTree = "<group>"; };
 		A3AD880C21E728B400AEE977 /* AlarmExhibitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmExhibitService.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				A3AD880821E7163500AEE977 /* SellCell.swift */,
 				A3F77FD221E7E07800D890D5 /* MyPageTabCell.swift */,
 				A35D924921E884110032FDD9 /* UpLoadNotiVC.swift */,
+				A3A8E277220C55E2004AA01A /* TagCollectionCell.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				A30048EC21CE63370042C4EF /* Today.swift in Sources */,
 				5D9E582621DF993E008225F6 /* reviewData.swift in Sources */,
 				A3559EC921E61B9800A7A31B /* SellThirdCell.swift in Sources */,
+				A3A8E278220C55E2004AA01A /* TagCollectionCell.swift in Sources */,
 				A350ADD621D52BC700EC199E /* ExhibitApply.swift in Sources */,
 				A30048DF21CE50960042C4EF /* HomeTodayVC.swift in Sources */,
 				5D9B7D7221D6AB2A009C12D3 /* BigImageVC.swift in Sources */,

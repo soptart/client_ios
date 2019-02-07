@@ -11,6 +11,8 @@ import Foundation
 
 class UploadMainVC: UIViewController{
     
+    //태그를 나타낼 컬렉션 뷰
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     
     //닫기 버튼
     @IBOutlet weak var closeBtn: UIButton!
@@ -127,7 +129,6 @@ class UploadMainVC: UIViewController{
     
     var lableArr:[UILabel] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -138,6 +139,13 @@ class UploadMainVC: UIViewController{
         
         //팝업뷰 0인 상태로 안보이게 만듬
         popUpConstraint.constant = 0
+        
+        //태그 컬렉션 처음에는 안보이게
+        tagCollectionView.isHidden = true
+        tagCollectionView.delegate = self
+        tagCollectionView.dataSource = self
+        
+        
         
         
         //택배 - 직거래 버튼 테두리 처리
@@ -264,11 +272,11 @@ class UploadMainVC: UIViewController{
             deliveryBtn.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor
             deliveryBtn.setTitleColor(UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0), for: .normal)
             deliveryBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
-
+            
         }
     }
     
-    // 완료 버튼 누르면 뷰가 사라지기
+    // 해시태그 완료 버튼 누르면 뷰가 사라지기
     @IBAction func finishBtn(_ sender: Any) {
         
         tagStr = "\(tagList[0])" + "," + "\(tagList[1])" + "," + "\(tagList[2])"
@@ -278,6 +286,10 @@ class UploadMainVC: UIViewController{
             self.popUpView.layer.shadowOpacity = 0
             self.view.layoutIfNeeded()
         })
+        
+        //컬렉션 뷰 보이게 해줌
+        tagCollectionView.reloadData()
+        tagCollectionView.isHidden = false
         
     }
     
@@ -767,6 +779,39 @@ extension UploadMainVC: UIImagePickerControllerDelegate, UINavigationControllerD
         }
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+
+//태그 컬렉션 뷰 처리
+extension UploadMainVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+       return CGSize(width: 101, height: 27)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+     return 13
+}
+}
+
+extension UploadMainVC : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tagList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "tagCollectionCell", for: indexPath) as! TagCollectionCell
+        
+        cell.tagImageView.layer.cornerRadius = 15
+        
+        cell.tagImageView.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
+        cell.tagImageView.layer.borderWidth = 1.0
+        
+        
+        cell.tagLabel.text = lableArr[indexPath.item].text!
+        return cell
     }
 }
 

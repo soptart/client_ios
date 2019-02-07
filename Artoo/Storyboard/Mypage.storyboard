@@ -2518,6 +2518,67 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                     <constraint firstAttribute="height" constant="1" id="C2w-0p-ZdY"/>
                                                 </constraints>
                                             </imageView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-So-4cC">
+                                                <rect key="frame" x="15" y="576" width="329" height="27"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="8AA-W2-tM4"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zrc-6w-VzI">
+                                                    <size key="itemSize" width="100" height="25"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCollectionCell" id="cLX-fO-jVq" customClass="TagCollectionCell" customModule="Artoo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1" width="100" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mFV-Vm-0rc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9t-O6-exX">
+                                                                    <rect key="frame" x="30.666666666666668" y="1.6666666666666661" width="38.666666666666657" height="22"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" priority="250" constant="41" id="CQn-7N-Ds4"/>
+                                                                        <constraint firstAttribute="height" constant="22" id="OnH-pi-MoH"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                                                    <color key="textColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK8-eU-a5b">
+                                                                    <rect key="frame" x="83" y="7" width="8" height="11"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="11" id="Pny-9Z-DFf"/>
+                                                                        <constraint firstAttribute="width" constant="8" id="ZOA-qq-sMv"/>
+                                                                    </constraints>
+                                                                    <state key="normal" backgroundImage="uploadThemeDelete"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="ZK8-eU-a5b" secondAttribute="trailing" constant="9" id="5BN-4u-Sba"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mFV-Vm-0rc" secondAttribute="bottom" id="AN1-CP-UDh"/>
+                                                            <constraint firstItem="mFV-Vm-0rc" firstAttribute="top" secondItem="cLX-fO-jVq" secondAttribute="top" id="NJl-rf-ZN9"/>
+                                                            <constraint firstItem="ZK8-eU-a5b" firstAttribute="centerY" secondItem="cLX-fO-jVq" secondAttribute="centerY" id="Whf-1Q-8jb"/>
+                                                            <constraint firstItem="l9t-O6-exX" firstAttribute="centerX" secondItem="cLX-fO-jVq" secondAttribute="centerX" id="k7j-pA-5hL"/>
+                                                            <constraint firstItem="mFV-Vm-0rc" firstAttribute="leading" secondItem="cLX-fO-jVq" secondAttribute="leading" id="kzU-Q0-cC4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="mFV-Vm-0rc" secondAttribute="trailing" id="wi4-gI-adM"/>
+                                                            <constraint firstItem="l9t-O6-exX" firstAttribute="centerY" secondItem="cLX-fO-jVq" secondAttribute="centerY" id="zz8-Pt-bRi"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="tagImageView" destination="mFV-Vm-0rc" id="mQi-8M-NbE"/>
+                                                            <outlet property="tagLabel" destination="l9t-O6-exX" id="w4Z-Kc-pfj"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2559,6 +2620,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <constraint firstItem="fs9-SH-6ZD" firstAttribute="height" secondItem="IEF-VM-HqB" secondAttribute="height" id="QMU-zJ-B5a"/>
                                             <constraint firstItem="tKd-p6-P8t" firstAttribute="leading" secondItem="rdD-zt-sBN" secondAttribute="leading" id="Qyt-Pd-aX1"/>
                                             <constraint firstItem="iZc-74-eiv" firstAttribute="centerY" secondItem="CCq-cR-eMe" secondAttribute="centerY" id="RGd-RJ-HLF"/>
+                                            <constraint firstAttribute="trailing" secondItem="wtf-So-4cC" secondAttribute="trailing" constant="31" id="RMV-S1-JNH"/>
                                             <constraint firstItem="dH4-P8-Bpi" firstAttribute="top" secondItem="RZy-b4-V4G" secondAttribute="top" id="SJe-Qq-bSF"/>
                                             <constraint firstItem="iJQ-jP-BOL" firstAttribute="top" secondItem="yU0-yk-L3L" secondAttribute="bottom" constant="27" id="Su2-SY-r4q"/>
                                             <constraint firstItem="xm9-9I-25e" firstAttribute="centerY" secondItem="IEF-VM-HqB" secondAttribute="centerY" id="TYO-qu-UoS"/>
@@ -2575,6 +2637,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <constraint firstItem="Uoh-Ul-KSi" firstAttribute="leading" secondItem="d1m-dj-Jrl" secondAttribute="trailing" constant="3" id="a6i-mG-usi"/>
                                             <constraint firstItem="cfe-bG-gKk" firstAttribute="top" secondItem="2QT-GN-XMT" secondAttribute="top" id="aBl-e6-URO"/>
                                             <constraint firstItem="2QT-GN-XMT" firstAttribute="leading" secondItem="lOT-dS-3lk" secondAttribute="leading" id="abd-il-WEm"/>
+                                            <constraint firstItem="wtf-So-4cC" firstAttribute="leading" secondItem="Lzy-if-ch5" secondAttribute="leading" id="brv-WV-ZX6"/>
                                             <constraint firstItem="iJQ-jP-BOL" firstAttribute="leading" secondItem="yU0-yk-L3L" secondAttribute="leading" id="c09-ds-vwR"/>
                                             <constraint firstItem="d1m-dj-Jrl" firstAttribute="top" secondItem="c37-UL-2uK" secondAttribute="bottom" constant="42" id="cSi-tS-fsB"/>
                                             <constraint firstItem="J6P-KI-Irf" firstAttribute="leading" secondItem="tKd-p6-P8t" secondAttribute="leading" id="cs1-dQ-w4B"/>
@@ -2598,6 +2661,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <constraint firstItem="dH4-P8-Bpi" firstAttribute="top" secondItem="xzP-eA-Sfe" secondAttribute="bottom" constant="20" id="qDt-sB-lcK"/>
                                             <constraint firstItem="IEF-VM-HqB" firstAttribute="leading" secondItem="Bzv-R2-r9z" secondAttribute="trailing" constant="7" id="qJd-Po-K8j"/>
                                             <constraint firstItem="ZJu-28-Ncv" firstAttribute="centerX" secondItem="2QT-GN-XMT" secondAttribute="centerX" id="qlD-6x-9fb"/>
+                                            <constraint firstItem="wtf-So-4cC" firstAttribute="top" secondItem="Lzy-if-ch5" secondAttribute="bottom" constant="15" id="qzq-lA-4AP"/>
                                             <constraint firstItem="CCq-cR-eMe" firstAttribute="centerX" secondItem="R3Q-fw-Rny" secondAttribute="centerX" id="sHh-PN-bWd"/>
                                             <constraint firstItem="eNy-JV-CVm" firstAttribute="top" secondItem="Lzy-if-ch5" secondAttribute="bottom" constant="17" id="ssb-vf-lf5"/>
                                             <constraint firstItem="yU0-yk-L3L" firstAttribute="centerY" secondItem="CCq-cR-eMe" secondAttribute="centerY" id="tCp-JC-ykS"/>
@@ -2976,6 +3040,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="sixthLabel" destination="qQV-HV-B6I" id="4jH-Yg-DH9"/>
                         <outlet property="springLabel" destination="AtQ-2X-uMy" id="Yei-bi-ktj"/>
                         <outlet property="summerLabel" destination="KaX-HG-rV2" id="glw-a8-PYq"/>
+                        <outlet property="tagCollectionView" destination="wtf-So-4cC" id="9Zz-Ds-JQh"/>
                         <outlet property="tenBtn" destination="tRw-zB-R6z" id="Dds-tb-hxY"/>
                         <outlet property="thirdBtn" destination="1to-fg-Oql" id="WbV-YH-88M"/>
                         <outlet property="thirdLabel" destination="Of6-Xh-oxc" id="ehC-HU-y3V"/>
@@ -4067,6 +4132,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
         <image name="upload" width="14" height="14"/>
         <image name="uploadHashtag" width="93" height="38"/>
         <image name="uploadHashtag2" width="72" height="38"/>
+        <image name="uploadThemeDelete" width="8" height="9"/>
         <image name="withdrawalArtooLogo" width="126" height="102"/>
     </resources>
 </document>
