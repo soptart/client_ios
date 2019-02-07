@@ -2161,7 +2161,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="iTk-5p-Gs5">
                                                 <rect key="frame" x="15" y="871" width="341" height="34"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wv-A3-jX1">
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wv-A3-jX1">
                                                         <rect key="frame" x="0.0" y="0.0" width="159" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="bRq-wH-eFn"/>
@@ -2175,7 +2175,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                             <action selector="transactionBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="bAz-JU-DOQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-xf-Hpa">
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-xf-Hpa">
                                                         <rect key="frame" x="182" y="0.0" width="159" height="34"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                                                         <state key="normal" title="직거래">
@@ -2661,7 +2661,7 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                                                             <color key="titleColor" red="0.68627450980000004" green="0.68627450980000004" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="phf-r2-FtJ"/>
+                                                            <action selector="tagBtn:" destination="vis-e8-DtT" eventType="touchUpInside" id="XuN-XT-ZC0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-WN-nwW">
@@ -2956,8 +2956,12 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="closeBtn" destination="eMH-9U-Ewy" id="OkA-pJ-xmX"/>
                         <outlet property="deliveryBtn" destination="1wv-A3-jX1" id="jue-U6-bVc"/>
                         <outlet property="eighthBtn" destination="2ru-C3-GKo" id="Vja-IV-jwZ"/>
+                        <outlet property="fallLabel" destination="7wh-WK-eC8" id="MZz-X4-whY"/>
                         <outlet property="fifthBtn" destination="DlF-uN-HdD" id="bE5-Oe-LuR"/>
-                        <outlet property="firstBtn" destination="g6z-0v-DrG" id="B79-ER-JXy"/>
+                        <outlet property="fifthLabel" destination="K7j-hZ-oqg" id="vdO-PE-wkj"/>
+                        <outlet property="firstBtn" destination="g6z-0v-DrG" id="T83-Zb-9Xd"/>
+                        <outlet property="firstLabel" destination="c3t-Nh-STE" id="yIm-Gx-qqj"/>
+                        <outlet property="forthLabel" destination="gtL-1U-UgB" id="6Fj-Vx-7dj"/>
                         <outlet property="fouthBtn" destination="LG2-7E-F7Q" id="muP-Ra-GMW"/>
                         <outlet property="heightTF" destination="fs9-SH-6ZD" id="Srk-jZ-Luy"/>
                         <outlet property="meetBtn" destination="bMw-xf-Hpa" id="YAd-LF-lIM"/>
@@ -2966,12 +2970,18 @@ oo는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제
                         <outlet property="popUpView" destination="2II-GX-HaV" id="Uo5-ph-0Tt"/>
                         <outlet property="puchaseStateBtn" destination="zas-q9-d1T" id="lmU-VY-jWK"/>
                         <outlet property="secondBtn" destination="foW-WN-nwW" id="K0s-4E-H9f"/>
+                        <outlet property="secondLabel" destination="CeU-xg-Kuo" id="fJH-4n-sEc"/>
                         <outlet property="seventhBtn" destination="WgN-LH-dFh" id="mb2-oW-BEX"/>
                         <outlet property="sixthBtn" destination="UaQ-IB-rP7" id="teE-9p-ocA"/>
+                        <outlet property="sixthLabel" destination="qQV-HV-B6I" id="4jH-Yg-DH9"/>
+                        <outlet property="springLabel" destination="AtQ-2X-uMy" id="Yei-bi-ktj"/>
+                        <outlet property="summerLabel" destination="KaX-HG-rV2" id="glw-a8-PYq"/>
                         <outlet property="tenBtn" destination="tRw-zB-R6z" id="Dds-tb-hxY"/>
                         <outlet property="thirdBtn" destination="1to-fg-Oql" id="WbV-YH-88M"/>
+                        <outlet property="thirdLabel" destination="Of6-Xh-oxc" id="ehC-HU-y3V"/>
                         <outlet property="uploadTagBtn" destination="eNy-JV-CVm" id="5dl-Sf-VRk"/>
                         <outlet property="widthTF" destination="xzP-eA-Sfe" id="eqW-er-ylB"/>
+                        <outlet property="winterLabel" destination="WIB-oS-7zV" id="mXN-mB-Yuy"/>
                         <outlet property="yOffTF" destination="IEF-VM-HqB" id="FT4-qr-XVB"/>
                     </connections>
                 </viewController>

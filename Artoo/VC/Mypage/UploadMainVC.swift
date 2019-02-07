@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Foundation
 
 class UploadMainVC: UIViewController{
-
+    
     
     //닫기 버튼
     @IBOutlet weak var closeBtn: UIButton!
@@ -27,13 +28,13 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var deliveryBtn: UIButton!
     @IBOutlet weak var meetBtn: UIButton!
     
-
+    
     //작품 이름
     @IBOutlet weak var artNameUploadTF: UITextField!
     
     //작품 설명
     @IBOutlet weak var artDescriptionTV: UITextView!
-
+    
     //가로, 세로, 높이
     @IBOutlet weak var widthTF: UITextField!
     @IBOutlet weak var yOffTF: UITextField!
@@ -46,12 +47,12 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var artArticleTF: UITextField!
     
     //표현 기법 텍스트 뷰
-        @IBOutlet weak var artMethodTV: UITextView!
+    @IBOutlet weak var artMethodTV: UITextView!
     
     
     //태그 추가하기 버튼
     @IBOutlet weak var uploadTagBtn: UIButton!
-
+    
     
     
     
@@ -59,6 +60,7 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var puchaseStateBtn: UIButton!
     
     //해시태그 버튼들
+    var tagStr = ""
     @IBOutlet weak var firstBtn: UIButton!
     @IBOutlet weak var secondBtn: UIButton!
     @IBOutlet weak var thirdBtn: UIButton!
@@ -70,14 +72,25 @@ class UploadMainVC: UIViewController{
     @IBOutlet weak var nineBtn: UIButton!
     @IBOutlet weak var tenBtn: UIButton!
     
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var thirdLabel: UILabel!
+    @IBOutlet weak var forthLabel: UILabel!
+    @IBOutlet weak var fifthLabel: UILabel!
+    @IBOutlet weak var sixthLabel: UILabel!
+    @IBOutlet weak var springLabel: UILabel!
+    @IBOutlet weak var summerLabel: UILabel!
+    @IBOutlet weak var fallLabel: UILabel!
+    @IBOutlet weak var winterLabel: UILabel!
+    
+    
+    
     
     //팝업 뷰 제어할 constraint
     @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
     
     //해시태그 팝업 뷰
     @IBOutlet weak var popUpView: UIView!
-    
- 
     
     var CategoryPickerView: UIPickerView!
     var figurePickerView: UIPickerView!
@@ -100,24 +113,28 @@ class UploadMainVC: UIViewController{
     var width: String!
     var yOff: String!
     var height: String!
-    var a_tag = [String]()
+    var tagList = [Int]()
     var a_tagValue: String?
     var puchaseState: Int?
     var artPrice: Int?
     
     let picker = UIImagePickerController()
-   
+    
     let categorys: [String] = ["인물", "동물", "식물", "사물", "추상", "풍경"]
     let figures: [String] = ["동양화", "드로잉", "공예", "설치/조형", "혼합매체", "페인팅"]
     let year: [String] = ["2015", "2016","2017","2018"]
     let license: [String] = ["CCL표시안함","저작권표시","저작권표시 - 비영리", "저작자표시-동일조건변경허락","저작자표시-변경표시","저작자표시-비영리-동일조건변경허락","저작자표시-비영리-변경금지"]
     
-    
+    var lableArr:[UILabel] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //태그랑 맞출 레이블 배열
+        lableArr = [firstLabel, secondLabel, thirdLabel,
+                    forthLabel, fifthLabel, sixthLabel, springLabel,
+                    summerLabel, fallLabel, winterLabel]
         
         //팝업뷰 0인 상태로 안보이게 만듬
         popUpConstraint.constant = 0
@@ -140,13 +157,13 @@ class UploadMainVC: UIViewController{
         //작품 사이즈 테두리 처리
         widthTF.layer.borderWidth = 1
         widthTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
-
+        
         yOffTF.layer.borderWidth = 1
         yOffTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
-
+        
         heightTF.layer.borderWidth = 1
         heightTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
-
+        
         
         //작품 가격 테두리 처리
         artPriceTF.layer.borderWidth = 1
@@ -156,25 +173,25 @@ class UploadMainVC: UIViewController{
         //작품 재료 테두리 처리
         artArticleTF.layer.borderWidth = 1
         artArticleTF.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
-
+        
         
         
         //표현 기법 테두리 처리
         artMethodTV.layer.borderWidth = 1
         artMethodTV.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
-
+        
         
         //닫기 버튼 클릭시 dismiss
         closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         
-         let pictureTap = UITapGestureRecognizer(target: self, action: #selector(choiceImage))
+        let pictureTap = UITapGestureRecognizer(target: self, action: #selector(choiceImage))
         
         choiceImg.addGestureRecognizer(pictureTap)
         choiceImg.isUserInteractionEnabled = true
         //heightConstraint.constant = 0
         setupPicker()
         setUpToolbar()
-
+        
         artNameUploadTF.delegate = self
         artArticleTF.delegate = self
         artDescriptionTV.delegate = self
@@ -221,34 +238,41 @@ class UploadMainVC: UIViewController{
     // 택배하고 직거래 버튼 누르면 그 해당 정보를 문자열에 저장함
     @IBAction func transactionBtn(_ sender: UIButton) {
         
-        if(sender.tag == 0) {
+        if(sender.tag == 15) {
             transactionMethod = "택배"
             
+            deliveryBtn.layer.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
             deliveryBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
             
-            deliveryBtn.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0), for: .normal)
+            deliveryBtn.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0), for: .normal)
             
             
-                   meetBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+            meetBtn.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor
             meetBtn.setTitleColor(UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0), for: .normal)
-
+            meetBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
             
-        }else {
+        }else{
             
             transactionMethod = "직거래"
             
+            meetBtn.layer.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
             meetBtn.layer.borderColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0).cgColor
             
-            meetBtn.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1.0), for: .normal)
+            meetBtn.setTitleColor(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0), for: .normal)
             
-            deliveryBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+            
+            deliveryBtn.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor
             deliveryBtn.setTitleColor(UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0), for: .normal)
-            
+            deliveryBtn.layer.borderColor = UIColor(red: 181/255, green: 181/255, blue: 181/255, alpha: 1.0).cgColor
+
         }
     }
     
     // 완료 버튼 누르면 뷰가 사라지기
     @IBAction func finishBtn(_ sender: Any) {
+        
+        tagStr = "\(tagList[0])" + "," + "\(tagList[1])" + "," + "\(tagList[2])"
+        
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.popUpConstraint.constant = 0
             self.popUpView.layer.shadowOpacity = 0
@@ -259,51 +283,253 @@ class UploadMainVC: UIViewController{
     
     
     
-    //태그 선택했을 때
+    //태그 선택했을 때 "1,7,4" 이런식으로 보내면 됨
     @IBAction func tagBtn(_ sender: UIButton) {
         
-        //여기 로직 수정해야 함
-        if(a_tag.count>3){
-            a_tag.remove(at: 0)
-        } else {
-            if(sender.tag == 1){
-                a_tag.append(String(describing: sender.tag))
+        switch sender.tag {
+        case 1:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                
+                //버튼 처리
+                print("\(lastTag)")
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 2) {
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 2:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 3){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 3:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 4){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 4:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 5){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 5:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 6){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 6:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                
+                
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 7){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 7:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 8) {
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 8:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 9){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 9:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
-            if(sender.tag == 10){
-                a_tag.append(String(describing: sender.tag))
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        case 10:
+            if(tagList.count == 3){
+                //마지막 태그버튼일 경우 회색 배경과 회색 글씨로 바꿈
+                //리스트에서 빼줌
+                let lastTag = tagList[0]
+                print("\(lastTag)")
+                
+                //버튼 처리
+                let lastBtn = self.view.viewWithTag(lastTag) as! UIButton
+                lastBtn.setBackgroundImage(UIImage(named: "uploadHashtag"), for: .normal)
+                
+                //라벨 처리
+                let lastLabel = lableArr[tagList[0] - 1]
+                lastLabel.textColor = UIColor(red: 175/255, green:175/255, blue: 175/255, alpha: 1.0)
+                
+                
+                tagList.remove(at: 0)
+                
             }
+            sender.setBackgroundImage(UIImage(named: "uploadHashtagColor"), for: .normal)
+            lableArr[sender.tag - 1].textColor =
+                UIColor(red: 255/255, green:111/255, blue: 97/255, alpha: 1.0)
+            tagList.append(sender.tag)
+        default:
+            print("")
         }
+        
+        
     }
     
     func setUpToolbar(){
         
         toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
         
-       toolbar2 = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
+        toolbar2 = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
         
         toolbar3 = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
         
@@ -315,7 +541,7 @@ class UploadMainVC: UIViewController{
         
         let done3 = UIBarButtonItem(title: "done", style: .done, target: self, action: #selector(setYearData))
         
-         let done4 = UIBarButtonItem(title: "done", style: .done, target: self, action: #selector(setLicenseData))
+        let done4 = UIBarButtonItem(title: "done", style: .done, target: self, action: #selector(setLicenseData))
         
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
@@ -360,8 +586,8 @@ class UploadMainVC: UIViewController{
         }
     }
     
-   
-
+    
+    
     func setupPicker() {
         
         CategoryPickerView = UIPickerView()
@@ -390,11 +616,11 @@ class UploadMainVC: UIViewController{
         let row1 = CategoryPickerView.selectedRow(inComponent: 0)
         
         let part1 = categorys[row1]
-       
+        
         CategoryUploadLabel.text = part1
         CategoryUploadLabel.endEditing(true)
         category = part1
-     
+        
     }
     
     //작품 형태 데이터 등록
@@ -410,7 +636,7 @@ class UploadMainVC: UIViewController{
         FigureUploadLabel.text = part2
         FigureUploadLabel.endEditing(true)
         figure = part2
-       
+        
     }
     
     //제작년도 데이터 등록
@@ -484,11 +710,11 @@ extension UploadMainVC: UITextViewDelegate, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if artNameUploadTF.isFirstResponder == true {
-        artNameUploadTF.placeholder = nil
+            artNameUploadTF.placeholder = nil
         }
-         if artArticleTF.isFirstResponder == true {
-         artArticleTF.placeholder = nil
-         }
+        if artArticleTF.isFirstResponder == true {
+            artArticleTF.placeholder = nil
+        }
         
         if widthTF.isFirstResponder == true {
             widthTF.placeholder = nil
@@ -550,19 +776,19 @@ extension UploadMainVC{
     @objc func close(){
         dismiss(animated: true)
     }
-  
+    
     //서버에 등록하기
     func upload(){
         
-        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width)! , a_height: Int(yOff)!, a_depth: Int(height)!, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: "1,2,3", a_license: artLicense!){ (res) in guard let status = res.status else { return }
+        UploadArtService.shared.upload(a_name: artName!, a_width: Int(width)! , a_height: Int(yOff)!, a_depth: Int(height)!, a_category: category, a_purchaseState: 1, a_form: figure, a_price: 5000, a_detail: artDescription!, a_year: artYear!, pic_url: choiceImg.image!, a_tags: tagStr, a_license: artLicense!){ (res) in guard let status = res.status else { return }
             
             print(status)
             
-            }
-    print("\(artName!) " + "\(Int(width)!) " + "\(Int(yOff)!) " + "\(Int(height)!) " + "\(category!) " + "\(figure!) " + "\(artDescription!) " + "\(artYear!) " + "\(artLicense!)")
-        
         }
-    
+        print("\(artName!) " + "\(Int(width)!) " + "\(Int(yOff)!) " + "\(Int(height)!) " + "\(category!) " + "\(figure!) " + "\(artDescription!) " + "\(artYear!) " + "\(artLicense!)")
+        
     }
+    
+}
 
 
